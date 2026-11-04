@@ -2,352 +2,556 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>基因组雷达 · 文献雷达</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8f6f0">
+<meta name="description" content="聚焦植物与基因组学方向的每周文献速览，精选研究进展，持续归档。">
+<title>基因组雷达 · 植物与基因组学文献</title>
 <style>
-*,*::before,*::after{box-sizing:border-box}
 :root{
-  --ui:"Noto Sans SC","思源黑体","Source Han Sans SC","Microsoft YaHei","微软雅黑",sans-serif;
-  --desk:#e7e4dc; --sheet:#fffdf8; --ink:#1b1f22; --body:#282d31; --muted:#71767c;
-  --faint:#9aa0a6; --line:#ddd7c8; --accent:#2f6b4f; --amber:#8a6d1f; --blue:#2b5d86;
-  --z:1;                     /* 页面缩放：整张纸等比放大，横向仍占满一屏 */
+  color-scheme:light;
+  --paper:#f8f6f0;
+  --paper-deep:#f1efe5;
+  --panel:#fbfaf5;
+  --forest:#173e2d;
+  --forest-soft:#315b3e;
+  --leaf:#e7ebd9;
+  --leaf-mid:#d6dfc4;
+  --ink:#292d28;
+  --body:#42483f;
+  --muted:#777d70;
+  --line:#dadccf;
+  --line-dark:#bcc3af;
+  --serif:"Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun",serif;
+  --sans:"Noto Sans SC","Source Han Sans SC","Microsoft YaHei","微软雅黑",sans-serif;
 }
-html,body{height:100%}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:78px}
 body{
-  margin:0; background:var(--desk); color:var(--ink);
-  font-family:var(--ui);
-  font-size:19px; line-height:1.7;
+  margin:0;
+  color:var(--ink);
+  background:
+    radial-gradient(ellipse at 50% -12%,rgba(255,255,255,.76),transparent 60%),
+    repeating-linear-gradient(0deg,rgba(90,92,63,.012) 0 1px,transparent 1px 4px),
+    var(--paper);
+  font-family:var(--sans);
+  font-size:15px;
+  line-height:1.7;
   -webkit-font-smoothing:antialiased;
-  display:flex; flex-direction:column; height:100dvh; overflow:hidden;
-  -webkit-font-smoothing:antialiased;
 }
-.serif{font-family:var(--ui)}
-a{color:inherit}
-button{font:inherit}
-
-/* ---------- top bar ---------- */
-.topbar{
-  flex:none; display:flex; align-items:center; gap:14px; padding:0 20px; height:50px;
-  background:rgba(255,253,248,.94); border-bottom:1px solid var(--line); z-index:20;
+body::after{
+  position:fixed;inset:0;z-index:-1;pointer-events:none;content:"";
+  opacity:.18;
+  background-image:radial-gradient(rgba(48,61,37,.22) .42px,transparent .62px);
+  background-size:5px 5px;
 }
-.brand{display:flex; align-items:baseline; gap:9px; min-width:0}
-.brand b{font-size:18px; letter-spacing:.06em; font-weight:800; color:#14181b; white-space:nowrap}
-.brand .en{font-size:9.5px; letter-spacing:.18em; color:var(--faint); text-transform:uppercase; white-space:nowrap}
-.issue-tag{font-size:12.5px; color:var(--accent); font-weight:600; letter-spacing:.04em; white-space:nowrap}
-.tools{margin-left:auto; display:flex; align-items:center; gap:2px}
-.tools button{
-  background:none; border:1px solid transparent; color:var(--muted); cursor:pointer;
-  font-size:13px; padding:5px 10px; border-radius:5px; transition:.15s;
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+a:focus-visible,button:focus-visible,input:focus-visible{
+  outline:2px solid var(--forest-soft);outline-offset:4px;
 }
-.tools button:hover{border-color:var(--line); color:var(--ink); background:var(--sheet)}
-.tools .back{text-decoration:none; border:1px solid transparent; border-radius:5px;
-  color:var(--muted); font-size:13px; padding:5px 10px; transition:.15s}
-.tools .back:hover{border-color:var(--line); color:var(--ink); background:var(--sheet)}
-.zoom{display:flex; align-items:center; gap:1px; margin-left:6px;
-  border:1px solid var(--line); border-radius:6px; overflow:hidden; background:var(--sheet)}
-.zoom button{border:0; border-radius:0; padding:4px 9px; font-size:14px; line-height:1; color:var(--muted)}
-.zoom button:hover{background:#f0ebdd; color:var(--ink); border:0}
-.zoom .zlab{min-width:52px; text-align:center; font-size:12.5px; color:var(--muted);
-  font-variant-numeric:tabular-nums; cursor:pointer; user-select:none; padding:0 2px}
-.zoom .zlab:hover{color:var(--ink)}
-
-/* ---------- deck ---------- */
-.deck{
-  flex:1; min-height:0; display:flex; overflow-x:auto; overflow-y:hidden;
-  scroll-snap-type:x mandatory; scrollbar-width:none;
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0,0,0,0);white-space:nowrap;border:0;
 }
-.deck::-webkit-scrollbar{display:none}
-.page{
-  flex:0 0 100%; width:100%; height:100%; overflow-y:auto; overflow-x:hidden;
-  scroll-snap-align:start; display:flex; padding:12px 14px;
+.skip-link{
+  position:fixed;left:14px;top:10px;z-index:50;transform:translateY(-150%);
+  padding:8px 14px;background:var(--forest);color:#fff;border-radius:3px;
 }
-.sheet{
-  position:relative; zoom:var(--z);
-  width:100%; min-height:100%; margin:auto;
-  display:flex; flex-direction:column;
-  background:var(--sheet); border:1px solid #e2dccd; border-radius:2px;
-  box-shadow:0 1px 1px rgba(60,50,30,.05), 0 14px 34px -22px rgba(60,50,30,.45);
-  padding:30px 46px 22px;
+.skip-link:focus{transform:translateY(0)}
+.site-header{
+  position:sticky;top:0;z-index:20;
+  border-bottom:1px solid var(--line-dark);
+  background:rgba(248,246,240,.94);
+  backdrop-filter:blur(12px);
 }
-
-/* ---------- head ---------- */
-.head{position:relative; display:flex; align-items:baseline; gap:12px; font-size:15px;
-  color:var(--muted); padding:0 60px 8px 0; border-bottom:1px solid #d3ccb9}
-.head .jn{font-weight:800; color:#1b2018; font-size:16.5px; letter-spacing:.02em}
-.head .sep{color:#cfc9ba}
-.head .met{display:inline-flex; align-items:baseline; gap:7px; margin-left:3px}
-.head .met b{font-size:12.5px; font-weight:800; padding:2px 7px; border-radius:3px; background:#e9efe4; color:#2c5a44; letter-spacing:.02em}
-.head .met b.weak{background:#f1efe6; color:#7b7668}
-.head .met i{font-style:normal; font-size:12.5px; font-weight:700; color:#6d6a5e}
-.head .crumb{color:var(--muted)}
-.head .rt{margin-left:auto; display:flex; align-items:baseline; gap:12px; color:var(--muted)}
-.head .kind{letter-spacing:.06em}
-.head .lv{font-size:12.5px; padding:1px 7px; border-radius:2px; letter-spacing:.04em}
-.lv.abstract{background:#f4f0e2; color:var(--amber)}
-.lv.fulltext{background:#e7f0e9; color:var(--accent)}
-.lv.oa_url{background:#eef0e6; color:#6b7a3c}
-.lv.preprint{background:#e8eef5; color:var(--blue)}
-.head .no{position:absolute; right:-6px; top:-20px; font-family:var(--ui); font-size:46px;
-  line-height:1; font-weight:800; color:#ece6d5; letter-spacing:.01em}
-
-h2.t-zh{margin:16px 0 0; font-size:46px; line-height:1.28; font-weight:800; color:#14181b; letter-spacing:-.005em}
-.t-en{margin:10px 0 0; font-size:15.5px; color:#a2a8ae; line-height:1.45; letter-spacing:.005em}
-
-.lead{
-  margin:14px 0 0; padding:12px 16px 12px 15px; background:#f5f0e2; border-left:3px solid #2f6b4f;
-  font-size:21px; line-height:1.72; color:#2e332c; letter-spacing:.005em;
+.header-inner{
+  width:min(1380px,calc(100% - 60px));min-height:64px;margin:0 auto;
+  display:grid;grid-template-columns:minmax(300px,1fr) auto minmax(220px,270px);
+  align-items:center;gap:28px;
 }
-
-/* ---------- 2x2 blocks ---------- */
-.art-body{flex:1 0 auto; display:flex; flex-direction:column}
-.grid{margin-top:18px; display:grid; grid-template-columns:1fr 1fr; gap:20px 56px}
-.blk h3{
-  margin:0 0 10px; padding-bottom:7px; border-bottom:1px solid #cfc9b8;
-  font-size:21px; font-weight:800; letter-spacing:.02em; color:#24503a;
+.brand{display:flex;align-items:center;gap:10px;min-width:0;color:var(--forest)}
+.brand-mark{width:36px;height:36px;flex:none}
+.brand-name{font-family:var(--serif);font-size:23px;font-weight:800;letter-spacing:.07em;white-space:nowrap}
+.brand-en{margin-left:2px;color:#53634f;font-family:var(--serif);font-size:11px;letter-spacing:.25em;white-space:nowrap}
+.primary-nav{height:100%;display:flex;align-items:center;justify-content:center;gap:6px}
+.primary-nav a{
+  position:relative;display:grid;place-items:center;min-width:74px;height:100%;
+  padding:0 10px;color:#52584e;font-family:var(--serif);font-size:15px;letter-spacing:.04em;
+  transition:color .18s ease;
 }
-.blk p{margin:0; font-size:19px; line-height:1.70; color:#2b3136; letter-spacing:.005em}
-
-.stage{
-  margin-top:auto; padding-top:8px; border-top:1px solid var(--line);
-  font-size:14.5px; color:var(--muted);
+.primary-nav a::after{
+  position:absolute;right:13px;bottom:8px;left:13px;height:2px;content:"";
+  background:var(--forest);transform:scaleX(0);transform-origin:center;transition:transform .18s ease;
 }
-.stage b{color:#24503a; font-weight:800; letter-spacing:.03em; margin-right:11px}
-
-.foot{margin-top:9px; display:flex; align-items:center; gap:18px; font-size:14px; color:var(--muted)}
-.foot .doi{font-family:var(--ui); font-size:14px; color:#1b2018; letter-spacing:.01em; font-weight:600}
-.foot .doi i{font-style:normal; color:var(--faint); margin-right:7px; font-family:inherit;
-  letter-spacing:.14em; font-size:11.5px; font-weight:700}
-.foot a{text-decoration:none; border-bottom:1px solid #e0dacb; color:var(--muted); padding-bottom:1px}
-.foot a:hover{color:var(--accent); border-color:var(--accent)}
-.foot .src{margin-left:auto}
-.foot .affil{margin-left:auto; margin-right:22px; font-size:13.5px; color:#4a5049; max-width:64ch; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
-.star{background:none; border:none; cursor:pointer; font-size:15px; color:#d3cdbd; padding:0 2px; line-height:1}
-.star[data-on="1"]{color:#d29b2c}
-
-/* ---------- pager ---------- */
-.dots{
-  flex:none; display:flex; align-items:center; justify-content:center; gap:5px;
-  height:32px; background:rgba(255,253,248,.94); border-top:1px solid var(--line);
+.primary-nav a:hover,.primary-nav a[aria-current="page"]{color:var(--forest);font-weight:700}
+.primary-nav a[aria-current="page"]::after,.primary-nav a:hover::after{transform:scaleX(1)}
+.search-form{
+  display:flex;align-items:center;gap:8px;min-width:0;height:37px;padding:0 10px;
+  border:1px solid transparent;border-radius:22px;background:rgba(231,235,217,.68);
+  transition:border-color .18s ease,background .18s ease;
 }
-.dots i{width:4.5px; height:4.5px; border-radius:50%; background:#d2ccbd; cursor:pointer; transition:.18s}
-.dots i.on{background:var(--accent); transform:scale(1.5)}
-.pgnum{font-size:10.5px; color:var(--muted); letter-spacing:.1em; margin-left:10px; min-width:50px}
-
-/* ---------- toc ---------- */
-.toc{
-  position:fixed; inset:0; z-index:40; background:rgba(26,24,20,.55);
-  display:none; align-items:flex-start; justify-content:center; padding:50px 16px 30px; overflow:auto;
+.search-form:focus-within{border-color:var(--line-dark);background:var(--panel)}
+.search-icon{width:18px;height:18px;flex:none;color:var(--forest-soft)}
+.search-form input{
+  width:100%;min-width:0;padding:0;border:0;outline:0;background:transparent;
+  color:var(--ink);font-size:12.5px;
 }
-.toc.open{display:flex}
-.toc-inner{width:100%; max-width:770px; background:var(--sheet); border-radius:3px; padding:22px 28px 18px;
-  box-shadow:0 24px 60px -20px rgba(0,0,0,.45)}
-.toc-inner h3{margin:0 0 12px; font-size:11.5px; letter-spacing:.18em; color:var(--muted); font-weight:800}
-.toc-search{display:flex; align-items:center; gap:12px; margin:0 0 10px}
-.toc-search input{flex:1; min-width:0; border:1px solid var(--line); border-radius:2px; padding:8px 10px;background:var(--sheet); color:#242a30; font:inherit; font-size:14px}
-.toc-search input:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
-.toc-count{flex:none; color:var(--muted); font-size:12px; white-space:nowrap}
-.toc-empty{margin:0; padding:14px 2px; color:var(--muted); font-size:14px}
-.toc-sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;clip:rect(0,0,0,0); white-space:nowrap; border:0}
-.toc-inner ol{list-style:none; margin:0; padding:0}
-.toc-inner li button{
-  display:grid; grid-template-columns:26px 1fr auto; gap:11px; align-items:baseline; width:100%;
-  background:none; border:none; border-top:1px dotted var(--line); padding:8px 2px; text-align:left;
-  cursor:pointer; font-size:14.5px; color:#242a30; line-height:1.5; font-weight:600;
+.search-form input::placeholder{color:#858a7b;opacity:1}
+.clear-search{
+  width:23px;height:23px;flex:none;border:0;border-radius:50%;background:transparent;
+  color:var(--muted);cursor:pointer;line-height:1;
 }
-.toc-inner li:first-child button{border-top:none}
-.toc-inner li button:hover{color:var(--accent)}
-.toc-inner .i{font-family:var(--ui); font-size:12px; color:#b0aa9a; font-weight:700}
-.toc-inner .j{font-size:12px; color:var(--muted); white-space:nowrap}
-
-/* ---------- 封面 ---------- */
-.cover .sheet{padding:48px 56px 40px}
-.cv-kicker{font-size:12px; letter-spacing:.3em; color:#a8aea9; text-transform:uppercase; font-weight:700}
-.cv-title{margin:9px 0 0; font-size:58px; letter-spacing:.08em; font-weight:800; color:#14181b; line-height:1.15}
-.cv-week{margin-top:13px; font-size:17px; color:var(--accent); letter-spacing:.05em; font-weight:600}
-.cv-rule{height:5px; background:#14181b; margin:18px 0 22px; border-radius:1px}
-.cv-hl{margin:0; font-size:23px; line-height:1.78; color:#2b3136; max-width:1400px}
-.cv-body{flex:1 0 auto; display:flex; flex-direction:column}
-.cv-intro{margin:22px 0 0; font-size:15.5px; line-height:1.85; color:#4a5149; max-width:1400px}
-.cv-pts{margin:26px 0 0; padding:0; list-style:none; max-width:1400px}
-.cv-pts li{display:flex; gap:14px; padding:9px 0; border-top:1px solid var(--line);
-  font-size:16.5px; line-height:1.58; color:#2b3136}
-.cv-pts li:last-child{border-bottom:1px solid var(--line)}
-.cv-pts .n{flex:none; font-size:12.5px; font-weight:800; color:#b3ac99; letter-spacing:.1em;
-  padding-top:4px; min-width:22px}
-.cv-src{margin-top:20px; font-size:14px; color:var(--muted); line-height:1.8}
-.cv-hint{margin-top:auto; padding-top:12px; border-top:1px solid var(--line); font-size:14px; color:var(--muted)}
-
-/* ---------- 连读模式 ---------- */
-html.flow body{height:auto; overflow:auto; display:block}
-html.flow .deck{display:block; overflow:visible; height:auto}
-html.flow .page{display:block; height:auto; width:auto; overflow:visible; padding:14px 14px 0}
-html.flow .page:last-child{padding-bottom:44px}
-html.flow .sheet{max-width:1180px; box-shadow:none; border:none; border-bottom:1px dotted #cbc5b6; border-radius:0; padding:24px 28px 20px}
-html.flow .dots{display:none}
-html.flow .topbar{position:sticky; top:0}
-
-@media (max-width:680px){
-  .brand .en{display:none}
-  .topbar{padding:0 12px; gap:6px}
-  .issue-tag{display:none}
-  .tools{gap:0}
-  .tools button{padding:5px 6px; font-size:11.5px; white-space:nowrap}
-  .tools .back{padding:5px 6px; font-size:11.5px}
-  .zoom{display:none}          /* 手机上用手指缩放，顶栏这组省掉 */
-  .page{padding:12px 10px}
-  .sheet{padding:22px 18px 18px}
-  h2.t-zh{font-size:30px; line-height:1.34}
-  .t-en{font-size:13px}
-  .lead{font-size:17px; padding:11px 13px; margin-top:13px}
-  .grid{grid-template-columns:1fr; gap:13px; margin-top:14px}
-  .blk p{font-size:16.5px; line-height:1.76}
-  .blk h3{font-size:18.5px; padding-bottom:6px}
-  .head{gap:7px; font-size:12px; flex-wrap:wrap; padding-right:0}
-  .head .no{display:none}
-  .stage{font-size:12px}
-  .foot{gap:10px; flex-wrap:wrap}
-  .foot .doi{font-size:11.5px}
-  .foot .affil{margin:0; max-width:100%; flex-basis:100%}
-  .cv-title{font-size:38px}
-  .cv-hl{font-size:18px; line-height:1.76}
-  .cv-intro{font-size:14px; line-height:1.8; margin-top:16px}
-  .cv-pts{margin-top:18px}
-  .cv-pts li{font-size:14.5px; padding:9px 0}
-  .toc-inner{padding:18px 16px 14px}
+.clear-search:hover{background:var(--leaf);color:var(--forest)}
+.search-status{position:absolute;right:max(30px,calc((100vw - 1380px)/2));top:58px;z-index:21;
+  padding:4px 10px;border:1px solid var(--line);background:var(--panel);color:var(--forest);
+  font-size:12px;box-shadow:0 5px 18px rgba(35,48,30,.08)}
+.page-shell{width:min(1360px,calc(100% - 64px));margin:0 auto}
+.hero{
+  display:grid;grid-template-columns:minmax(330px,.74fr) minmax(0,1.26fr);gap:42px;
+  align-items:stretch;padding:34px 0 28px;border-bottom:1px solid var(--line-dark);
 }
-
-@media (max-height:720px) and (min-width:681px){
-  .sheet{padding:22px 34px 16px}
-  h2.t-zh{font-size:34px}
-  .lead{margin-top:12px; padding:9px 13px; font-size:18px; line-height:1.7}
-  .grid{margin-top:14px; gap:14px 36px}
-  .blk p{font-size:16px; line-height:1.68}
-  .stage{margin-top:11px; padding-top:7px}
-  .cv-title{font-size:40px}
-  .cv-hl{font-size:19px; line-height:1.7}
-  .cv-intro{font-size:14px; line-height:1.75; margin-top:14px}
-  .cv-pts{margin-top:16px}
-  .cv-pts li{font-size:14.5px; padding:8px 0}
+.hero-intro{display:flex;flex-direction:column;justify-content:center;padding:4px 4px 0 22px}
+.intro-kicker{margin:0 0 11px;color:#6c7b60;font-family:var(--serif);font-size:11px;
+  letter-spacing:.23em;text-transform:uppercase}
+.hero h1{margin:0;color:var(--forest);font-family:var(--serif);font-size:58px;font-weight:800;
+  letter-spacing:.07em;line-height:1.2}
+.hero-subtitle{margin:9px 0 0;color:#3f493d;font-family:var(--serif);font-size:24px;
+  letter-spacing:.08em;line-height:1.55}
+.intro-rule{width:58px;height:3px;margin:20px 0 18px;background:var(--forest);border-radius:2px}
+.intro-copy{max-width:430px;margin:0;color:#4d5248;font-family:var(--serif);font-size:15.5px;line-height:1.9}
+.feature-list{display:grid;grid-template-columns:repeat(3,1fr);margin:22px 0 0;padding:0;list-style:none}
+.feature-list li{display:flex;flex-direction:column;align-items:center;gap:6px;padding:0 8px;
+  color:#555d4c;text-align:center;font-family:var(--serif);font-size:12.5px;line-height:1.4}
+.feature-list li+li{border-left:1px solid var(--line-dark)}
+.feature-list svg{width:31px;height:31px;color:#557447}
+.latest-card{
+  position:relative;isolation:isolate;display:flex;align-items:stretch;min-height:336px;overflow:hidden;
+  border:1px solid #c8cbb9;border-left:5px solid #8a9b6d;border-radius:9px;
+  background:linear-gradient(120deg,#fcfbf5 2%,#f7f5e9 62%,#edf0df 100%);
+  box-shadow:0 13px 30px -27px rgba(42,59,35,.42);
+  transition:box-shadow .22s ease,border-color .22s ease,transform .22s ease;
 }
-
-@media print{
-  @page{size:A4 landscape; margin:11mm}
-  html,body{height:auto; overflow:visible; background:#fff; display:block}
-  .topbar,.dots,.toc,.star{display:none !important}
-.sheet{zoom:1 !important; width:100% !important; min-height:0 !important}
-  .deck{display:block; overflow:visible; height:auto}
-  .page{display:block; height:auto; width:auto; overflow:visible; padding:0;
-    break-after:page; page-break-after:always}
-  .page:last-child{break-after:auto; page-break-after:auto}
-  .sheet{min-height:0; display:block; border:none; box-shadow:none; border-radius:0; padding:0;
-    break-inside:avoid; page-break-inside:avoid}
-  h2.t-zh{font-size:20pt}
-  .lead{font-size:11pt; line-height:1.6}
-  .blk p{font-size:10pt; line-height:1.6}
-  .blk h3{font-size:10pt}
-  .head,.stage,.foot{font-size:8pt}
+.latest-card:hover{border-color:#aab59a;box-shadow:0 17px 35px -25px rgba(42,59,35,.5);transform:translateY(-2px)}
+.latest-card:focus-visible{outline:3px solid var(--forest-soft);outline-offset:4px}
+.latest-art{position:absolute;inset:0 0 0 auto;z-index:-2;width:58%;height:100%;color:#738760}
+.latest-art svg{display:block;width:100%;height:100%}
+.latest-card::after{position:absolute;inset:0;z-index:-1;content:"";
+  background:linear-gradient(90deg,#fbfaf5 0%,rgba(251,250,245,.99) 39%,rgba(251,250,245,.94) 57%,rgba(251,250,245,.25) 77%,rgba(251,250,245,.01) 100%)}
+.latest-copy{width:61%;max-width:540px;padding:27px 25px 25px 34px}
+.latest-ribbon{
+  position:absolute;top:0;left:22px;padding:6px 17px 7px;background:var(--forest);color:#fff;
+  font-family:var(--serif);font-size:13px;letter-spacing:.08em;
+  clip-path:polygon(0 0,100% 0,93% 100%,0 100%);
 }
-
-body{display:block;height:auto;overflow:auto}
-.wrap{max-width:960px;margin:0 auto;padding:52px 30px 64px}
-.mast{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;
-  padding-bottom:22px;border-bottom:1px solid var(--line)}
-.mast .kicker{font-size:10.5px;letter-spacing:.24em;color:#8f9992;font-weight:700;text-transform:uppercase}
-.mast h1{margin:8px 0 0;font-size:46px;font-weight:800;letter-spacing:.06em;color:#14181b;line-height:1.18}
-.mast-note{margin:0 0 4px;padding-left:16px;border-left:2px solid var(--accent);
-  display:grid;gap:3px;color:var(--muted);font-size:13px;line-height:1.5}
-.mast-note strong{font-size:15px;color:var(--ink);font-weight:700}
-.feature{display:grid;grid-template-columns:190px 1fr;margin-top:26px;background:var(--sheet);
-  border:1px solid var(--line);border-left:4px solid var(--accent);color:inherit;text-decoration:none}
-.feature:hover{border-color:#c4cbbd;border-left-color:var(--accent)}
-.feature:focus-visible,ul.issues a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
-.feature-meta{padding:22px 22px 20px;border-right:1px solid var(--line);display:flex;flex-direction:column;align-items:flex-start}
-.feature-label{font-size:12px;color:var(--accent);font-weight:800;letter-spacing:.04em}
-.feature-week{margin-top:20px;font-size:18px;color:var(--ink);letter-spacing:.01em}
-.feature-date{margin-top:3px;font-size:12.5px;color:var(--faint);letter-spacing:.03em}
-.feature-count{width:100%;margin-top:auto;padding-top:16px;border-top:1px solid var(--line);
-  display:flex;align-items:baseline;gap:5px;color:var(--muted);font-size:12.5px}
-.feature-count strong{font-size:20px;color:#24503a;font-variant-numeric:tabular-nums}
-.feature-main{padding:23px 28px 22px}
-.feature-kicker{display:block;font-size:12px;color:var(--muted);letter-spacing:.05em}
-.feature-headline{display:block;margin-top:8px;font-size:19px;line-height:1.58;font-weight:600;color:#29312d}
-.feature-cta{display:inline-block;margin-top:17px;padding-bottom:3px;border-bottom:1px solid #8ca58f;
-  color:#24503a;font-size:13px;font-weight:800;letter-spacing:.03em}
-.archive{margin-top:34px}
-.archive-head{display:flex;align-items:baseline;gap:12px;padding-bottom:9px;border-bottom:1px solid #cfc9ba}
-.archive-head h2{margin:0;font-size:19px;font-weight:800;letter-spacing:.03em;color:#20251f}
-.archive-head span{margin-left:auto;color:var(--muted);font-size:12.5px}
-ul.issues{list-style:none;margin:0;padding:0}
-ul.issues li{border-bottom:1px solid #ded8c7}
-ul.issues a{display:block;padding:15px 2px 14px;text-decoration:none;color:inherit}
-ul.issues a:hover .wk,ul.issues a:hover .hl{color:var(--accent)}
-.row{display:flex;align-items:baseline;gap:12px}
-.wk{font-size:14.5px;font-weight:800;color:#24503a;letter-spacing:.03em;white-space:nowrap}
-.dt{font-size:12.5px;color:#a8aea9;letter-spacing:.04em;white-space:nowrap}
-.ct{margin-left:auto;font-size:12.5px;color:var(--faint);white-space:nowrap;font-weight:600}
-.hl{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
-  margin-top:5px;font-size:15.5px;line-height:1.58;color:#3f463f}
-ul.issues .empty{padding:18px 2px;color:var(--muted);font-size:14px}
-.tail{margin-top:30px;padding-top:17px;border-top:1px solid var(--line);
-  display:grid;grid-template-columns:88px 1fr;gap:18px;color:var(--muted)}
-.tail h2{margin:0;font-size:13px;color:#24503a;font-weight:800;letter-spacing:.04em}
-.tail p{margin:0;max-width:720px;font-size:13.5px;line-height:1.8}
-@media (max-width:680px){
-  .wrap{padding:34px 18px 46px}
-  .mast{align-items:flex-start;flex-direction:column;gap:14px;padding-bottom:18px}
-  .mast h1{font-size:38px}
-  .mast-note{display:flex;align-items:center;gap:12px;padding:0;border:0}
-  .mast-note strong{font-size:13px}
-  .feature{grid-template-columns:1fr;margin-top:20px}
-  .feature-meta{padding:15px 17px;border-right:0;border-bottom:1px solid var(--line);
-    flex-direction:row;align-items:center;flex-wrap:wrap;gap:5px 11px}
-  .feature-week,.feature-date{margin-top:0}
-  .feature-count{width:auto;margin:0 0 0 auto;padding:0;border:0}
-  .feature-count strong{font-size:18px}
-  .feature-main{padding:17px 18px 19px}
-  .feature-headline{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:5;overflow:hidden;font-size:16px;line-height:1.58}
-  .archive{margin-top:27px}
-  ul.issues a{padding:13px 1px}
-  .row{gap:8px;flex-wrap:wrap}
-  .ct{margin-left:auto}
-  .hl{font-size:14.5px}
-  .tail{grid-template-columns:1fr;gap:5px;margin-top:24px}
+.latest-kicker{margin:18px 0 5px;color:#6a795f;font-size:12px;letter-spacing:.1em}
+.latest-week{margin:0;color:var(--forest);font-family:var(--serif);font-size:33px;font-weight:800;
+  letter-spacing:.015em;line-height:1.4}
+.latest-meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;margin-top:7px;color:#555b50;
+  font-family:var(--serif);font-size:13.5px}
+.latest-meta span{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+.latest-meta svg{width:17px;height:17px;color:#526f47}
+.latest-meta .meta-divider{width:1px;height:16px;background:#b8beab}
+.latest-summary{
+  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:4;overflow:hidden;
+  margin:13px 0 0;color:#3f453c;font-family:var(--serif);font-size:15px;line-height:1.75;
+}
+.latest-cta{
+  display:inline-flex;align-items:center;gap:12px;margin-top:17px;padding:8px 17px 9px;
+  border:1px solid var(--forest);border-radius:6px;background:var(--forest);color:#fff;
+  font-family:var(--serif);font-size:14px;font-weight:700;letter-spacing:.06em;
+  transition:background .18s ease,color .18s ease,transform .18s ease;
+}
+.latest-card:hover .latest-cta{background:#28533b;transform:translateY(-1px)}
+.latest-cta svg{width:17px;height:17px}
+.search-empty{margin:18px 0;padding:16px;border:1px dashed var(--line-dark);color:var(--muted);font-size:14px}
+.archive-layout{display:grid;grid-template-columns:minmax(0,2.08fr) minmax(285px,.92fr);gap:30px;padding:31px 0 0}
+.archive-column{min-width:0}
+.section-heading{display:flex;align-items:baseline;gap:14px;padding:0 3px 9px;border-bottom:1px solid var(--line-dark)}
+.section-heading h2{display:flex;align-items:center;gap:12px;margin:0;color:var(--forest);font-family:var(--serif);
+  font-size:26px;font-weight:800;letter-spacing:.04em}
+.section-heading h2 svg{width:34px;height:34px;color:#617c4c}
+.section-heading .english{color:#8a8c7a;font-family:var(--serif);font-size:11px;font-style:italic;letter-spacing:.26em}
+.archive-note{margin-left:auto;color:#777b6d;font-family:var(--serif);font-size:12px;letter-spacing:.025em;white-space:nowrap}
+.archive-list{margin:0;padding:0;list-style:none}
+.archive-item{border-bottom:1px solid #d5d8c9}
+.archive-link{
+  display:grid;grid-template-columns:168px minmax(0,1fr) 48px;align-items:center;gap:21px;
+  min-height:153px;padding:15px 8px 15px 4px;transition:background .18s ease;
+}
+.archive-link:hover{background:rgba(231,235,217,.36)}
+.archive-thumb{width:168px;height:126px;overflow:hidden;border:1px solid #c4c9b3;border-radius:10px;background:#e4e7d4}
+.archive-thumb svg{display:block;width:100%;height:100%}
+.archive-copy{min-width:0}
+.archive-row-meta{display:flex;align-items:baseline;gap:14px;min-width:0}
+.archive-week{color:var(--forest);font-family:var(--serif);font-size:27px;font-weight:800;letter-spacing:.015em;line-height:1.4}
+.archive-date{color:#8a9080;font-size:12.5px;letter-spacing:.03em;white-space:nowrap}
+.archive-count{display:inline-flex;align-items:center;gap:6px;margin-top:5px;color:#676d60;font-family:var(--serif);font-size:12.5px}
+.archive-count svg{width:15px;height:15px;color:#62794e}
+.archive-summary{
+  display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;
+  margin:7px 0 0;color:#4b5147;font-family:var(--serif);font-size:14px;line-height:1.72;
+}
+.archive-arrow{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--leaf);
+  color:var(--forest-soft);transition:background .18s ease,color .18s ease,transform .18s ease}
+.archive-arrow svg{width:19px;height:19px}
+.archive-link:hover .archive-arrow{background:var(--forest);color:#fff;transform:translateX(2px)}
+.archive-cta{
+  display:grid;grid-template-columns:112px minmax(0,1fr) auto;align-items:center;gap:18px;
+  min-height:74px;margin-top:20px;padding:8px 20px 8px 12px;border:1px solid #eeecdd;border-radius:10px;
+  background:linear-gradient(100deg,rgba(231,235,217,.78),rgba(242,241,225,.88));
+}
+.archive-cta-art{width:104px;height:58px;color:#647c50}
+.archive-cta-art svg{width:100%;height:100%}
+.archive-cta-copy{min-width:0}
+.archive-cta-title{display:block;color:var(--forest);font-family:var(--serif);font-size:20px;font-weight:800;letter-spacing:.06em}
+.archive-cta-text{display:block;margin-top:1px;color:#656b5e;font-family:var(--serif);font-size:11.5px;line-height:1.55}
+.archive-cta-button{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid var(--forest);
+  border-radius:5px;background:var(--forest);color:#fff;font-family:var(--serif);font-size:12px;white-space:nowrap;
+  transition:background .18s ease}
+.archive-cta-button:hover{background:#28533b}
+.archive-cta-button svg{width:15px;height:15px}
+.reading-guide{min-width:0;padding-left:28px;border-left:1px solid var(--line-dark)}
+.guide-heading{display:flex;align-items:center;gap:12px;margin:1px 0 13px;color:var(--forest);font-family:var(--serif);
+  font-size:23px;font-weight:800;letter-spacing:.035em}
+.guide-heading svg{width:36px;height:36px;color:#567347}
+.guide-intro{margin:0;padding:13px 16px;border:1px solid #edf0e1;border-radius:10px;background:rgba(231,235,217,.78);
+  color:#454c40;font-family:var(--serif);font-size:13.5px;line-height:1.8}
+.guide-intro strong{color:var(--forest);font-size:15px}
+.guide-list{margin:8px 0 0;padding:0;list-style:none}
+.guide-list li{display:grid;grid-template-columns:39px minmax(0,1fr);gap:12px;align-items:center;
+  min-height:65px;border-bottom:1px dashed #d2d5c8}
+.guide-list li:last-child{border-bottom:0}
+.guide-icon{width:31px;height:31px;color:#557447}
+.guide-title{display:block;color:#273c2e;font-family:var(--serif);font-size:15px;font-weight:800}
+.guide-description{display:block;margin-top:1px;color:#6a6e63;font-family:var(--serif);font-size:11.5px;line-height:1.55}
+.site-footer{position:relative;overflow:hidden;margin-top:29px;border-top:1px solid var(--line-dark)}
+.footer-inner{position:relative;display:flex;justify-content:center;align-items:center;min-height:76px;
+  width:min(1360px,calc(100% - 64px));margin:0 auto}
+.footer-brand{position:relative;z-index:1;padding:0 18px;background:var(--paper);color:#52634b;
+  font-family:var(--serif);font-size:12px;letter-spacing:.35em;white-space:nowrap}
+.footer-brand span{margin:0 9px;color:#9c9d8b}
+.footer-art{position:absolute;right:0;bottom:0;left:0;width:100%;height:76px;color:#849568;opacity:.68;pointer-events:none}
+.footer-art svg{display:block;width:100%;height:100%}
+[hidden]{display:none!important}
+@media(max-width:1050px){
+  .header-inner{grid-template-columns:minmax(0,1fr) minmax(210px,260px);gap:0 18px;padding:0 2px}
+  .brand{grid-column:1;grid-row:1}.search-form{grid-column:2;grid-row:1}
+  .primary-nav{grid-column:1/-1;grid-row:2;justify-content:flex-start;height:42px;border-top:1px solid rgba(188,195,175,.5)}
+  .primary-nav a{min-width:82px}
+  .primary-nav a::after{bottom:5px}
+  .hero{grid-template-columns:1fr;gap:22px;padding-top:27px}
+  .hero-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.72fr);column-gap:30px;align-items:center;padding:4px 10px 0}
+  .intro-kicker,.hero h1,.hero-subtitle,.intro-rule,.intro-copy{grid-column:1}
+  .hero h1{font-size:48px}.hero-subtitle{font-size:21px}
+  .intro-rule{margin:13px 0 10px}.intro-copy{font-size:14px}
+  .feature-list{grid-column:2;grid-row:2/6;margin:0}
+  .feature-list li{font-size:11.5px}
+  .latest-card{min-height:320px}
+  .latest-copy{width:61%;max-width:650px}
+  .archive-layout{grid-template-columns:1fr;gap:32px}
+  .reading-guide{padding:0;border-left:0;border-top:1px solid var(--line-dark)}
+  .guide-heading{margin-top:22px}
+  .guide-list{display:grid;grid-template-columns:1fr 1fr;column-gap:28px}
+  .guide-list li:nth-child(3){border-bottom:0}
+}
+@media(max-width:640px){
+  html{scroll-padding-top:118px}
+  .header-inner{width:calc(100% - 30px);grid-template-columns:minmax(0,1fr) minmax(130px,.82fr);gap:0 10px;padding:8px 0 0}
+  .brand{gap:7px;min-width:0}.brand-mark{width:30px;height:30px}
+  .brand-name{font-size:18px;letter-spacing:.05em}.brand-en{display:none}
+  .search-form{height:34px;padding:0 8px;gap:6px}
+  .search-form input{font-size:11px}.search-form input::placeholder{font-size:10.5px}
+  .search-icon{width:16px;height:16px}
+  .primary-nav{height:39px;justify-content:space-between;gap:0;margin-top:7px}
+  .primary-nav a{min-width:0;padding:0 9px;font-size:12.5px}
+  .primary-nav a::after{right:9px;bottom:4px;left:9px}
+  .search-status{right:15px;top:44px}
+  .page-shell{width:calc(100% - 36px)}
+  .hero{gap:19px;padding:24px 0 23px}
+  .hero-intro{display:flex;align-items:flex-start;padding:0 1px}
+  .intro-kicker{margin-bottom:6px;font-size:9px;letter-spacing:.2em}
+  .hero h1{font-size:40px;letter-spacing:.055em}
+  .hero-subtitle{margin-top:5px;font-size:18px;letter-spacing:.045em}
+  .intro-rule{width:43px;height:2px;margin:12px 0 10px}
+  .intro-copy{font-size:13px;line-height:1.8}
+  .feature-list{width:100%;margin:17px 0 0}
+  .feature-list li{gap:4px;padding:0 4px;font-size:11px}
+  .feature-list svg{width:26px;height:26px}
+  .latest-card{min-height:0;border-left-width:4px;border-radius:7px}
+  .latest-art{width:78%;opacity:.24}
+  .latest-card::after{background:linear-gradient(90deg,rgba(251,250,245,.98),rgba(251,250,245,.91) 62%,rgba(251,250,245,.62))}
+  .latest-copy{width:100%;max-width:none;padding:26px 17px 18px}
+  .latest-ribbon{left:14px;padding:5px 14px 6px;font-size:11px}
+  .latest-kicker{margin:16px 0 3px;font-size:10.5px}
+  .latest-week{font-size:26px}
+  .latest-meta{gap:6px 12px;margin-top:5px;font-size:11.5px}
+  .latest-meta svg{width:15px;height:15px}
+  .latest-summary{-webkit-line-clamp:5;margin-top:10px;font-size:12.6px;line-height:1.68}
+  .latest-cta{gap:8px;margin-top:12px;padding:7px 12px;font-size:12px}
+  .archive-layout{gap:27px;padding-top:24px}
+  .section-heading{gap:8px;padding-bottom:8px}
+  .section-heading h2{gap:8px;font-size:21px}
+  .section-heading h2 svg{width:27px;height:27px}
+  .section-heading .english{display:none}
+  .archive-note{font-size:10px}
+  .archive-link{grid-template-columns:84px minmax(0,1fr) 30px;gap:11px;min-height:112px;padding:11px 1px}
+  .archive-thumb{width:84px;height:82px;border-radius:7px}
+  .archive-row-meta{flex-wrap:wrap;gap:0 8px}
+  .archive-week{font-size:17px;line-height:1.4}
+  .archive-date{font-size:10px}
+  .archive-count{gap:4px;margin-top:2px;font-size:10px}
+  .archive-count svg{width:13px;height:13px}
+  .archive-summary{-webkit-line-clamp:2;margin-top:3px;font-size:11px;line-height:1.55}
+  .archive-arrow{width:27px;height:27px}.archive-arrow svg{width:15px;height:15px}
+  .archive-cta{grid-template-columns:58px minmax(0,1fr);gap:8px;margin-top:15px;padding:8px 10px}
+  .archive-cta-art{width:56px;height:44px}
+  .archive-cta-title{font-size:15px}.archive-cta-text{font-size:10px}
+  .archive-cta-button{grid-column:2;justify-self:start;margin-top:1px;padding:5px 9px;font-size:10.5px}
+  .reading-guide{padding-top:0}
+  .guide-heading{gap:9px;margin:19px 0 10px;font-size:20px}
+  .guide-heading svg{width:30px;height:30px}
+  .guide-intro{padding:10px 12px;font-size:12px;line-height:1.7}
+  .guide-intro strong{font-size:13px}
+  .guide-list{grid-template-columns:1fr;column-gap:0;margin-top:5px}
+  .guide-list li{grid-template-columns:34px minmax(0,1fr);gap:7px;min-height:58px}
+  .guide-list li:nth-child(3){border-bottom:1px dashed #d2d5c8}
+  .guide-icon{width:27px;height:27px}
+  .guide-title{font-size:13px}.guide-description{font-size:10.5px}
+  .site-footer{margin-top:22px}
+  .footer-inner{width:calc(100% - 36px);min-height:63px}
+  .footer-art{height:63px}.footer-brand{padding:0 10px;font-size:10px;letter-spacing:.25em}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
 }
 </style>
 </head>
 <body>
-<main class="wrap">
-  <header class="mast">
-    <div class="mast-copy">
-      <div class="kicker">Genome Radar</div>
-      <h1>基因组雷达</h1>
+<a class="skip-link" href="#main-content">跳到主要内容</a>
+<header class="site-header" id="top">
+  <div class="header-inner">
+    <a class="brand" href="#top" aria-label="基因组雷达首页">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <path d="M23.8 42C22.4 30.8 22.8 19.6 28 6" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+        <path d="M25.8 27.4C16.4 27.2 10.7 22 8.1 13.1c9.4.2 15.1 5.4 17.7 14.3Z" fill="#e7ebd9" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+        <path d="M25.2 32.1c1.1-9.5 6.5-15.1 15.3-17.3-1 9.3-6.3 14.9-15.3 17.3Z" fill="#e7ebd9" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+        <path d="m11 15 12 11m15-8L27 30" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M18 41h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">基因组雷达</span>
+      <span class="brand-en">GENOME RADAR</span>
+    </a>
+    <nav class="primary-nav" aria-label="主导航">
+      <a href="#top" aria-current="page">首页</a>
+      <a href="#archive">文献归档</a>
+      <a href="#reading-guide">阅读说明</a>
+      <a href="#about">关于</a>
+    </nav>
+    <form class="search-form" role="search" onsubmit="return false">
+      <label class="sr-only" for="issue-search">搜索期次、主题或关键词</label>
+      <svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="10.8" cy="10.8" r="6.5" stroke="currentColor" stroke-width="1.8"/>
+        <path d="m16 16 4.2 4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <input id="issue-search" type="search" placeholder="搜索期次、主题或关键词…" autocomplete="off" aria-controls="archive-list">
+      <button class="clear-search" id="clear-search" type="button" aria-label="清除搜索" hidden>×</button>
+    </form>
+  </div>
+  <div class="search-status" id="search-status" aria-live="polite" hidden></div>
+</header>
+<main class="page-shell" id="main-content">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-intro">
+      <p class="intro-kicker">Plant genomics · weekly reading</p>
+      <h1 id="hero-title">基因组雷达</h1>
+      <p class="hero-subtitle">植物与基因组学每周文献速览</p>
+      <span class="intro-rule" aria-hidden="true"></span>
+      <p class="intro-copy">聚焦植物与基因组学方向的最新研究进展，每周精选约 20 篇高质量文献，提炼要点、把握动态，帮助你高效追踪领域前沿。</p>
+      <ul class="feature-list" aria-label="栏目特点">
+        <li>
+          <svg viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="m5 11 13-7 13 7-13 7L5 11Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m5 18 13 7 13-7M5 25l13 7 13-7" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          <span>每周更新</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M29.8 5.5C17 5.8 9.2 11.4 8.2 21.1c-.4 4.5 2.7 7.8 7.1 7.1 9.7-1.5 14.1-10.2 14.5-22.7Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M7 31c4.5-8.1 10.2-13.7 18.4-19.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <span>植物 × 基因组学</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M7 7h6v23H7zM16 5h6v25h-6zM25 9h5v21h-5zM5 31h27" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          <span>持续归档</span>
+        </li>
+      </ul>
     </div>
-    <p class="mast-note"><span>植物与基因组学</span><strong>每周文献速览</strong></p>
-  </header>
-  <a class="feature" href="2026-11-01/index.html">
-    <span class="feature-meta">
-      <span class="feature-label">最新一期</span>
-      <strong class="feature-week">2026年第44周</strong>
-      <span class="feature-date">2026-11-01</span>
-      <span class="feature-count"><strong>20</strong><span> 篇精选</span></span>
-    </span>
-    <span class="feature-main">
-      <span class="feature-kicker">本周观察</span>
-      <strong class="feature-headline">本周技术线集中在两处：把变异从「频率」和「类型」两个维度拆开看。玉米3,367份基因组的频率分层GREML显示，稀有变异效应约为常见的2.4倍，411个关联信号中359个归因于全局稀有变异；水稻SNP-GWAS与SV-GWAS各检出127和119个QTL、仅25个重叠，说明常见变异与结构变异捕获的遗传架构并不重合。另一条线是单细胞分辨率下的调控解析：水稻花粉caQTL有48.6%具细胞类型特异性，猪骨骼肌与鸡肝脏的选择信号被映射到具体细胞类型，胚乳图谱则把12类细胞与7个解剖区域对应起来。</strong>
-      <span class="feature-cta">阅读本期</span>
-    </span>
-  </a>
-  <section class="archive" aria-labelledby="archive-title">
-    <div class="archive-head"><h2 id="archive-title">往期</h2><span>2 期存档</span></div>
-    <ul class="issues">
-<li><a href="2026-10-25/index.html"><span class="issue-copy"><span class="row"><b class="wk">2026年第43周</b><span class="dt">2026-10-25</span><span class="ct">20 篇</span></span><span class="hl">本周基因组学的主线是组装完整度与变异解析精度的同步抬升：小麦着丝粒可被靶向重写、单代最多重构11条染色体，野生二粒小麦近完整组装则显示A、B亚基因组着丝粒重组模式分化；花生豫花15达到端粒到端粒并锁定AhYABBY，大麻将无间隙组装用于追溯γ三倍化后的重复保留。方法侧，Manc-COJO多祖先独立信号检出更多且假阳性更少，fastGxE在生物样本库规模检出7个与18个位点、其中4个和12个为新位点，LAVrefiner把indel与结构变异的拷贝数细化后提升遗传力估计。</span></span></a></li>
-<li><a href="2026-10-19/index.html"><span class="issue-copy"><span class="row"><b class="wk">2026年第42周</b><span class="dt">2026-10-19</span><span class="ct">20 篇</span></span><span class="hl">多倍体是本期的聚集点：GPhase 把组装图连通性接入 3C 定相，三项组装指标同向改善；苜蓿借全同胞 2x/4x 把 WGD 效应从杂交背景中剥离；油菜则显示亚基因组偏倚会随品种、组织与发育阶段改变方向。另两项工作把不可及变为可及：Hicberg 从 Hi-C 回收被丢弃的重复元件接触，near-T2T 组装在黑色素瘤中检出 GRCh38 里并不存在的 16% 体细胞变异。</span></span></a></li>
-    </ul>
+    <div class="latest-slot">
+  <a class="latest-card" href="2026-11-01/index.html" data-searchable="2026年第44周 2026-11-01 20 本周技术线集中在两处：把变异从「频率」和「类型」两个维度拆开看。玉米3,367份基因组的频率分层GREML显示，稀有变异效应约为常见的2.4倍，411个关联信号中359个归因于全局稀有变异；水稻SNP-GWAS与SV-GWAS各检出127和119个QTL、仅25个重叠，说明常见变异与结构变异捕获的遗传架构并不重合。另一条线是单细胞分辨率下的调控解析：水稻花粉caQTL有48.6%具细胞类型特异性，猪骨骼肌与鸡肝脏的选择信号被映射到具体细胞类型，胚乳图谱则把12类细胞与7个解剖区域对应起来。" aria-label="阅读 2026年第44周，2026-11-01，20 篇精选">
+      <div class="latest-art" aria-hidden="true">
+        <svg viewBox="0 0 620 420" fill="none" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="paperGlow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fbfaf4"/><stop offset="1" stop-color="#e9eddc"/></linearGradient>
+            <linearGradient id="husk" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e8ebd5"/><stop offset="1" stop-color="#bac89e"/></linearGradient>
+            <pattern id="kernelPattern" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="2.1" fill="#99a56f"/><circle cx="10" cy="10" r="2.1" fill="#b2ba83"/></pattern>
+          </defs>
+          <circle cx="148" cy="102" r="63" stroke="#91a27b" stroke-width="1.1" stroke-dasharray="2 5" opacity=".76"/>
+          <circle cx="148" cy="102" r="48" stroke="#a3b08d" stroke-width=".8" opacity=".55"/>
+          <path d="M112 137v-29m13 29V88m13 49V72m13 65V94m13 43V81m13 56v-21m13 21V97" stroke="#617c50" stroke-width="3" stroke-linecap="round"/>
+          <path d="M105 139h87m-78-10h70m-56-57h1m13-10h1m13 5h1m13-9h1" stroke="#7d9164" stroke-width="1"/>
+          <path d="M399 423c-7-117-1-218 14-329 3-21 9-44 19-69" stroke="#647b4f" stroke-width="2.6" stroke-linecap="round"/>
+          <path d="M408 348c-62-21-120-59-178-113 72-8 133 20 181 82" fill="#e7ebd9" stroke="#748760" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="M413 295c-49-49-79-104-88-166 58 33 91 82 98 145" fill="#eef0df" stroke="#748760" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="M415 318c46-48 101-77 164-82-25 60-76 98-158 111" fill="#e4ead5" stroke="#748760" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="M406 379c-64-15-123-11-179 15 48 34 107 39 177 14" fill="#edf0df" stroke="#748760" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="M414 369c55-28 113-33 176-14-43 44-101 59-179 38" fill="#e1e8d0" stroke="#748760" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="M414 230c-40-48-57-99-51-153 49 37 73 88 68 151" fill="#e9eddb" stroke="#748760" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M422 212c41-43 91-66 151-64-26 46-76 72-151 80" fill="#e7ebd9" stroke="#748760" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M408 348 230 235m183 60-88-166m90 189 164-82m-173 143-179 15m187-25 176-14m-176-125-60-153m68 167 151-64" stroke="#91a078" stroke-width="1" opacity=".78"/>
+          <path d="M422 84c-25-24-33-47-23-75m23 75c-10-29-6-56 10-81m-10 81c4-34 20-58 44-71m-44 71c24-25 50-36 77-32m-77 32c-31-11-52-29-62-53m62 53c-18-29-20-56-7-80" stroke="#71845a" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M408 221c12-26 34-47 61-56 18 17 24 43 14 71-12 26-32 46-57 57-19-15-26-40-18-72Z" fill="url(#husk)" stroke="#667b4c" stroke-width="1.8"/>
+          <path d="M408 221c12-26 34-47 61-56 18 17 24 43 14 71-12 26-32 46-57 57-19-15-26-40-18-72Z" fill="url(#kernelPattern)" opacity=".82"/>
+          <path d="M414 251c-23 15-40 37-51 65 29-11 51-29 67-54m45-23c25 9 43 26 54 50-29-4-51-18-66-41" fill="#e4ead4" stroke="#748760" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M557 52c-42 24-42 51 0 75 42 24 42 51 0 75-42 24-42 51 0 75m-42-300c42 24 42 51 0 75-42 24-42 51 0 75 42 24 42 51 0 75-42 24-42 51 0 75" stroke="#6f8758" stroke-width="1.7" opacity=".78"/>
+          <path d="M518 72h39m-52 31h65m-62 31h49m-48 32h47m-51 31h67m-60 32h49m-43 31h40m-44 31h55" stroke="#87966d" stroke-width="1.1" opacity=".7"/>
+          <path d="M557 52c-42 24-42 51 0 75 42 24 42 51 0 75-42 24-42 51 0 75m-42-300c42 24 42 51 0 75-42 24-42 51 0 75 42 24 42 51 0 75-42 24-42 51 0 75" stroke="#6f8758" stroke-width="1.7" opacity=".78"/>
+          <path d="M518 72h39m-52 31h65m-62 31h49m-48 32h47m-51 31h67m-60 32h49m-43 31h40m-44 31h55" stroke="#87966d" stroke-width="1.1" opacity=".7"/>
+          <path d="M59 377h507m-507 9h507M250 358v-9m18 9v-17m18 17v-25m18 25v-13m18 13v-34m18 34v-22m18 22v-15m18 15v-28m18 28v-11m18 11v-20m18 20v-31m18 31v-17m18 17v-24m18 24v-12" stroke="#a3ad8e" stroke-width=".9" opacity=".65"/>
+        </svg>
+      </div>
+      <span class="latest-ribbon">本期最新</span>
+      <div class="latest-copy">
+        <p class="latest-kicker">本周观察</p>
+        <h2 class="latest-week">2026年第44周</h2>
+        <div class="latest-meta">
+          <span><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="4" width="14" height="13" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M6 2.8v3M14 2.8v3M3 8h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>2026-11-01</span>
+          <i class="meta-divider" aria-hidden="true"></i>
+          <span><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 2.8h7l4 4V17H5V2.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 3v4h4M8 11h5m-5 3h5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/></svg>20 篇精选</span>
+        </div>
+        <p class="latest-summary">本周技术线集中在两处：把变异从「频率」和「类型」两个维度拆开看。玉米3,367份基因组的频率分层GREML显示，稀有变异效应约为常见的2.4倍，411个关联信号中359个归因于全局稀有变异；水稻SNP-GWAS与SV-GWAS各检出127和119个QTL、仅25个重叠，说明常见变异与结构变异捕获的遗传架构并不重合。另一条线是单细胞分辨率下的调控解析：水稻花粉caQTL有48.6%具细胞类型特异性，猪骨骼肌与鸡肝脏的选择信号被映射到具体细胞类型，胚乳图谱则把12类细胞与7个解剖区域对应起来。</p>
+        <span class="latest-cta">阅读本期<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
+    </a>
+    </div>
   </section>
-  <aside class="tail">
-    <h2>怎么读</h2>
-    <p>每期约 20 篇，按一篇一页展开。每篇提供研究内容、主要结论、关注价值和未来展望，方便快速浏览后选择精读。</p>
-  </aside>
+  <div class="archive-layout">
+    <section class="archive-column" id="archive" aria-labelledby="archive-title">
+      <div class="section-heading">
+        <h2 id="archive-title">
+          <svg viewBox="0 0 38 38" fill="none" aria-hidden="true"><path d="M5 10h6v22H5zM14 6h6v26h-6zM23 12h6v20h-6zM32 9h2v23h-2zM4 34h31" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          <span>文献归档</span>
+        </h2>
+        <span class="english">ARCHIVE LIBRARY</span>
+        <span class="archive-note">持续更新 · 逐周归档 · 便捷浏览</span>
+      </div>
+      <ul class="archive-list" id="archive-list">
+        <li class="archive-item" data-searchable="2026年第43周 2026-10-25 20 本周基因组学的主线是组装完整度与变异解析精度的同步抬升：小麦着丝粒可被靶向重写、单代最多重构11条染色体，野生二粒小麦近完整组装则显示A、B亚基因组着丝粒重组模式分化；花生豫花15达到端粒到端粒并锁定AhYABBY，大麻将无间隙组装用于追溯γ三倍化后的重复保留。方法侧，Manc-COJO多祖先独立信号检出更多且假阳性更少，fastGxE在生物样本库规模检出7个与18个位点、其中4个和12个为新位点，LAVrefiner把indel与结构变异的拷贝数细化后提升遗传力估计。">
+          <a class="archive-link" href="2026-10-25/index.html" aria-label="阅读 2026年第43周，2026-10-25，20 篇精选">
+            <span class="archive-thumb"><svg viewBox="0 0 168 126" fill="none" aria-hidden="true"><defs><linearGradient id="thumbRice" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a7b68a"/><stop offset="1" stop-color="#526b3e"/></linearGradient></defs><path fill="url(#thumbRice)" d="M0 0h168v126H0z"/><path d="M74 132c-3-34 2-67 14-103m-14 93C52 91 39 67 29 37m44 78c26-24 45-53 62-87M84 65c-17-11-32-25-43-43m38 59c18-8 34-19 49-35M64 95c-14-4-25-13-34-26m57 4c11-15 16-29 17-45" stroke="#d9dfbf" stroke-width="2" stroke-linecap="round"/><path d="M94 31c-10-4-16-11-18-22 12 2 19 8 22 18m-54-7c-11-1-18-7-23-17 12-1 20 3 26 12m78-1c-4-10-2-18 5-27 6 10 6 19 0 28m-53 34c-11 0-19-5-25-14 11-3 20-1 27 6m35-16c-2-10 2-18 10-25 4 12 2 20-6 28" fill="#e5e9d0" stroke="#cbd5b0" stroke-width="1" stroke-linejoin="round"/><path d="M0 105c28-8 53-7 76 3 29 12 60 13 92 1v17H0v-21Z" fill="#435b35" opacity=".24"/></svg></span>
+            <span class="archive-copy">
+              <span class="archive-row-meta"><strong class="archive-week">2026年第43周</strong><time class="archive-date" datetime="2026-10-25">2026-10-25</time></span>
+              <span class="archive-count"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="3" y="4" width="12" height="11" rx="1" stroke="currentColor" stroke-width="1.3"/><path d="M6 2.5v3M12 2.5v3M3 7h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>20 篇精选</span>
+              <span class="archive-summary">本周基因组学的主线是组装完整度与变异解析精度的同步抬升：小麦着丝粒可被靶向重写、单代最多重构11条染色体，野生二粒小麦近完整组装则显示A、B亚基因组着丝粒重组模式分化；花生豫花15达到端粒到端粒并锁定AhYABBY，大麻将无间隙组装用于追溯γ三倍化后的重复保留。方法侧，Manc-COJO多祖先独立信号检出更多且假阳性更少，fastGxE在生物样本库规模检出7个与18个位点、其中4个和12个为新位点，LAVrefiner把indel与结构变异的拷贝数细化后提升遗传力估计。</span>
+            </span>
+            <span class="archive-arrow" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M3 10h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </li>
+        <li class="archive-item" data-searchable="2026年第42周 2026-10-19 20 多倍体是本期的聚集点：GPhase 把组装图连通性接入 3C 定相，三项组装指标同向改善；苜蓿借全同胞 2x/4x 把 WGD 效应从杂交背景中剥离；油菜则显示亚基因组偏倚会随品种、组织与发育阶段改变方向。另两项工作把不可及变为可及：Hicberg 从 Hi-C 回收被丢弃的重复元件接触，near-T2T 组装在黑色素瘤中检出 GRCh38 里并不存在的 16% 体细胞变异。">
+          <a class="archive-link" href="2026-10-19/index.html" aria-label="阅读 2026年第42周，2026-10-19，20 篇精选">
+            <span class="archive-thumb"><svg viewBox="0 0 168 126" fill="none" aria-hidden="true"><defs><linearGradient id="thumbFlower" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#75875c"/><stop offset="1" stop-color="#465c39"/></linearGradient></defs><path fill="url(#thumbFlower)" d="M0 0h168v126H0z"/><path d="M87 128c-2-34 1-66 7-94m-7 73c-17-18-30-38-39-62m40 44c19-15 35-34 49-58M57 112c0-18 4-33 13-47m23 33c-10-17-13-32-10-49" stroke="#dce3c7" stroke-width="1.8" stroke-linecap="round"/><g fill="#f2f0dd" stroke="#d8ddc7" stroke-width=".8"><circle cx="94" cy="29" r="5"/><circle cx="88" cy="26" r="4"/><circle cx="100" cy="25" r="4"/><circle cx="96" cy="20" r="4"/><circle cx="93" cy="35" r="4"/><circle cx="54" cy="46" r="4"/><circle cx="49" cy="42" r="3.5"/><circle cx="59" cy="41" r="3.5"/><circle cx="55" cy="37" r="3.5"/><circle cx="127" cy="38" r="4.5"/><circle cx="121" cy="34" r="3.5"/><circle cx="132" cy="33" r="3.5"/><circle cx="128" cy="29" r="3.5"/><circle cx="70" cy="65" r="4"/><circle cx="65" cy="61" r="3.5"/><circle cx="74" cy="60" r="3.5"/></g><g fill="#d5bd79"><circle cx="94" cy="28" r="1.8"/><circle cx="54" cy="45" r="1.5"/><circle cx="127" cy="37" r="1.7"/><circle cx="70" cy="64" r="1.5"/></g><path d="M0 112c30-9 53-5 79 4 27 9 55 8 89-4v14H0v-14Z" fill="#344c32" opacity=".3"/></svg></span>
+            <span class="archive-copy">
+              <span class="archive-row-meta"><strong class="archive-week">2026年第42周</strong><time class="archive-date" datetime="2026-10-19">2026-10-19</time></span>
+              <span class="archive-count"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="3" y="4" width="12" height="11" rx="1" stroke="currentColor" stroke-width="1.3"/><path d="M6 2.5v3M12 2.5v3M3 7h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>20 篇精选</span>
+              <span class="archive-summary">多倍体是本期的聚集点：GPhase 把组装图连通性接入 3C 定相，三项组装指标同向改善；苜蓿借全同胞 2x/4x 把 WGD 效应从杂交背景中剥离；油菜则显示亚基因组偏倚会随品种、组织与发育阶段改变方向。另两项工作把不可及变为可及：Hicberg 从 Hi-C 回收被丢弃的重复元件接触，near-T2T 组装在黑色素瘤中检出 GRCh38 里并不存在的 16% 体细胞变异。</span>
+            </span>
+            <span class="archive-arrow" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M3 10h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </li>
+      </ul>
+      <p class="search-empty" id="search-empty" hidden>没有找到匹配的期次，试试日期、周数或研究主题。</p>
+      <div class="archive-cta">
+        <div class="archive-cta-art" aria-hidden="true">
+          <svg viewBox="0 0 130 68" fill="none">
+            <path d="m10 47 25-9 56 8-25 11-56-10Z" fill="#e4e8d4" stroke="currentColor" stroke-width="1.2"/>
+            <path d="m10 39 25-9 56 8-25 11-56-10Z" fill="#f2f1e4" stroke="currentColor" stroke-width="1.2"/>
+            <path d="m10 31 25-9 56 8-25 11-56-10Z" fill="#faf9f1" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M21 30 38 24m-18 22 17-6m-18-2 17-6m29 18 16-7m-16-1 17-7M35 30l1-6m8 5 1-7m9 9 1-7m9 10 1-8" stroke="currentColor" stroke-width=".8" opacity=".8"/>
+            <path d="M98 52c5-8 11-13 20-16m-9 18c2-7 2-13 0-21m0 13c4-5 9-8 15-9" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="archive-cta-copy">
+          <strong class="archive-cta-title">浏览完整归档</strong>
+          <span class="archive-cta-text">按周查看研究内容，持续积累你的领域研究档案。</span>
+        </div>
+        <a class="archive-cta-button" href="#archive">进入文献归档
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </section>
+    <aside class="reading-guide" id="reading-guide" aria-labelledby="guide-title">
+      <h2 class="guide-heading" id="guide-title">
+        <svg viewBox="0 0 38 38" fill="none" aria-hidden="true"><path d="M4 8c6-2 11-.8 15 3v22c-4-3.8-9-5-15-3V8Zm30 0c-6-2-11-.8-15 3v22c4-3.8 9-5 15-3V8Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 13c2-.3 4 0 6 1m14-1c-2-.3-4 0-6 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        <span>怎么读 / 阅读说明</span>
+      </h2>
+      <p class="guide-intro">每期收录约 <strong>20 篇</strong>植物与基因组学相关的最新研究，并对每篇文献进行结构化梳理，包含以下四个部分：</p>
+      <ul class="guide-list">
+        <li>
+          <svg class="guide-icon" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M13 4h10m-8 0v9L7 29a2 2 0 0 0 1.8 3h18.4a2 2 0 0 0 1.8-3l-8-16V4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 24h14m-11-5h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          <span><strong class="guide-title">研究内容</strong><span class="guide-description">研究对象、方法与核心问题。</span></span>
+        </li>
+        <li>
+          <svg class="guide-icon" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M5 30h27M8 26V18h5v8m4 0V11h5v15m4 0V6h5v20" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span><strong class="guide-title">主要结论</strong><span class="guide-description">关键发现、核心数据与证据。</span></span>
+        </li>
+        <li>
+          <svg class="guide-icon" viewBox="0 0 36 36" fill="none" aria-hidden="true"><circle cx="16" cy="19" r="11" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="19" r="6" stroke="currentColor" stroke-width="1.5"/><path d="m15 20 7-7 8-7m-7 0h7v7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span><strong class="guide-title">关注价值</strong><span class="guide-description">这项研究对领域意味着什么。</span></span>
+        </li>
+        <li>
+          <svg class="guide-icon" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M18 31V17m0 5C9 22 5 17 5 9c8 0 13 3 13 13Zm0-2c0-8 4-13 13-14 0 9-4 14-13 14Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 31h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          <span><strong class="guide-title">未来展望</strong><span class="guide-description">后续研究方向、应用前景与待解问题。</span></span>
+        </li>
+      </ul>
+    </aside>
+  </div>
 </main>
+<footer class="site-footer" id="about">
+  <div class="footer-inner">
+    <div class="footer-art" aria-hidden="true">
+      <svg viewBox="0 0 1440 82" fill="none" preserveAspectRatio="none">
+        <path d="M0 60c80-4 111-39 190-34 46 3 61 26 99 25 42-1 53-35 99-34 35 1 50 23 89 24 42 1 65-26 106-27m767 31c-70-1-103-32-171-28-41 3-59 24-92 24-37 0-51-33-92-32-33 1-50 20-84 21-41 1-62-21-98-23" stroke="currentColor" stroke-width="1.1" opacity=".68"/>
+        <path d="M30 60c35-1 43-31 77-31s42 30 76 30c34 0 45-30 77-30s42 29 78 29" stroke="currentColor" stroke-width=".9" opacity=".45"/>
+        <path d="M1030 65h2m10-5h2m10-8h2m10-14h2m10 21h2m10-9h2m10-5h2m10-10h2m10 19h2m10-7h2m10-13h2m10 18h2m10-8h2m10-17h2m10 21h2m10-11h2m10-8h2m10 13h2m10-19h2m10 23h2m10-9h2m10-15h2m10 19h2m10-8h2m10-12h2m10 17h2m10-6h2m10-16h2m10 19h2m10-8h2m10-10h2m10 12h2m10-7h2m10-14h2m10 20h2m10-10h2m10-5h2m10 12h2m10-8h2m10-14h2m10 23h2m10-9h2m10-12h2m10 16h2m10-7h2m10-10h2m10 12h2m10-7h2m10-13h2m10 20h2" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".72"/>
+        <path d="M1280 75c7-14 21-25 41-32m-22 37c5-17 4-31 0-48m1 30c11-11 24-16 40-17m-19 30c8-12 18-19 31-24" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/>
+        <path d="M1298 44c-8-7-13-13-16-21 10 2 17 8 20 18m21 1c5-9 11-15 20-19-1 11-7 18-17 23m-24 16c-10-2-17-7-22-16 11 0 19 4 25 12" fill="#e7ebd9" stroke="currentColor" stroke-width="1" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <p class="footer-brand">基因组雷达 <span>·</span> GENOME RADAR</p>
+  </div>
+</footer>
+<script>
+(() => {
+  const input = document.getElementById('issue-search');
+  const clear = document.getElementById('clear-search');
+  const status = document.getElementById('search-status');
+  const empty = document.getElementById('search-empty');
+  const cards = Array.from(document.querySelectorAll('[data-searchable]'));
+  input.addEventListener('input', () => {
+    const query = input.value.trim().toLocaleLowerCase();
+    let matches = 0;
+    for (const card of cards) {
+      const found = !query || card.dataset.searchable.toLocaleLowerCase().includes(query);
+      card.hidden = !found;
+      if (found) matches += 1;
+    }
+    clear.hidden = query.length === 0;
+    empty.hidden = matches > 0 || query.length === 0;
+    status.hidden = query.length === 0;
+    status.textContent = query ? (matches ? `找到 ${matches} 期文献` : '没有匹配的期次') : '';
+  });
+  clear.addEventListener('click', () => {
+    input.value = '';
+    input.dispatchEvent(new Event('input'));
+    input.focus();
+  });
+})();
+</script>
 </body>
 </html>
