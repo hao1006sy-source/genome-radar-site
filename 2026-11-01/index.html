@@ -409,6 +409,154 @@ body{background:#f0eee7;color:var(--cover-ink)}
   .cover .cv-hint{font-size:6.5pt}
   .cover-visual img{opacity:.8}
 }
+
+
+.article-page{padding:0;background:#f8f6f0}
+.article-page .sheet{
+  flex:none;width:100%;max-width:1672px;min-height:100%;margin:0 auto;
+  padding:30px 9.4% 25px;overflow:visible;align-self:flex-start;isolation:isolate;
+  border:0;border-radius:0;background:#fbfaf5;box-shadow:none;
+}
+.article-page .detail-ornament{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:fill;object-position:center;
+  opacity:.20;pointer-events:none;z-index:0;
+}
+.article-page .sheet>*:not(.detail-ornament){position:relative;z-index:1}
+.article-page .head{
+  display:flex;align-items:center;flex-wrap:wrap;gap:10px 13px;
+  padding:0 0 12px;border-bottom:1px solid #cbd1c3;
+  color:#687067;font-size:14px;line-height:1.5;
+}
+.article-page .head .jn{
+  color:#173e2d;font-family:var(--editorial);font-size:20px;font-style:italic;font-weight:700;
+}
+.article-page .head .sep{color:#b9c0b3}
+.article-page .head .met{display:inline-flex;align-items:center;gap:8px;margin-left:2px}
+.article-page .head .met b{padding:3px 10px;border-radius:8px;background:#e7ebd9;color:#24503a;font-size:12px;font-weight:750}
+.article-page .head .met b.weak{background:#f0eee5;color:#625e52}
+.article-page .head .met i{color:#555d53;font-size:12.5px;font-style:normal;font-weight:500}
+.article-page .head .crumb{color:#697068}
+.article-page .head .rt{display:flex;align-items:center;flex-wrap:wrap;gap:8px 16px;margin-left:auto;color:#697068}
+.article-page .head .kind{letter-spacing:.02em}
+.article-page .head .lv{padding:2px 8px;border-radius:6px;background:#f0eee5;color:#625e52;font-size:11px;letter-spacing:.02em}
+.article-page .head .lv.fulltext{background:#e7ebd9;color:#24503a}
+.article-page .head .lv.oa_url{background:#eef0e6;color:#4f6343}
+.article-page .head .lv.preprint{background:#eeefe9;color:#687067}
+.article-page .head .no{
+  position:static;top:auto;right:auto;padding:3px 10px;border-radius:6px;
+  background:#eeebdc;color:#62552e;font-family:var(--editorial);font-size:12px;
+  font-weight:650;line-height:1.4;letter-spacing:.03em;white-space:nowrap;
+}
+.article-page h2.t-zh{
+  max-width:1450px;margin:31px 0 0;color:#173e2d;font-family:var(--editorial);
+  font-size:clamp(36px,2.85vw,48px);font-weight:760;line-height:1.27;letter-spacing:-.035em;
+  text-wrap:pretty;
+}
+.article-page .t-en{
+  max-width:1320px;margin:9px 0 0;color:#626b62;font-family:Georgia,"Times New Roman",serif;
+  font-size:17px;line-height:1.55;letter-spacing:.005em;
+}
+.article-page .title-rule{
+  width:60px;height:3px;margin:19px 0 18px;border:0;background:#24503a;
+}
+.article-page .lead{
+  display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:17px;
+  margin:0;padding:12px 20px;border-left:4px solid #24503a;border-radius:3px;
+  background:#f0f0e5;color:#30362f;font-family:var(--editorial);font-size:18px;line-height:1.75;
+}
+.article-page .lead-label{
+  padding-right:16px;border-right:1px solid #b8c1ad;color:#173e2d;
+  font-size:18px;font-weight:750;white-space:nowrap;
+}
+.article-page .lead-copy{min-width:0}
+.article-page .art-body{flex:1 0 auto;display:flex;flex-direction:column}
+.article-page .grid{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:31px 5.2%;margin:32px 4px 24px;
+}
+.article-page .blk h3{
+  margin:0 0 10px;padding-bottom:9px;border-bottom:1px solid #aeb9aa;
+  color:#173e2d;font-family:var(--editorial);font-size:23px;font-weight:750;letter-spacing:.015em;
+}
+.article-page .blk p{
+  margin:0;color:#30342f;font-size:16.5px;line-height:1.88;letter-spacing:.005em;
+}
+.article-page .stage{
+  margin-top:auto;padding:11px 4px 0;border-top:1px solid #d6d9ce;
+  color:#626b62;font-size:12.5px;line-height:1.65;
+}
+.article-page .stage b{margin-right:10px;color:#52674c;font-size:11px;font-weight:750;letter-spacing:.06em}
+.article-page .foot{
+  display:flex;align-items:center;flex-wrap:wrap;gap:12px 24px;
+  margin-top:18px;padding:15px 4px 0;border-top:1px solid #cbd1c3;
+  color:#626b62;font-size:13px;line-height:1.6;
+}
+.article-page .foot .doi{color:#262c27;font-size:13.5px;font-weight:650;overflow-wrap:anywhere}
+.article-page .foot .doi i{margin-right:9px;color:#626b62;font-size:11px;letter-spacing:.12em}
+.article-page .foot a{border-bottom:1px solid #c7cec0;color:#596458;text-decoration:none}
+.article-page .foot a:hover{border-color:#24503a;color:#173e2d}
+.article-page .foot .affil{flex:1 1 220px;min-width:140px;max-width:none;margin:0;color:#434a42;white-space:normal;overflow-wrap:anywhere}
+.article-page .foot .src{margin-left:auto;color:#24503a;white-space:nowrap}
+.article-page .star{flex:none;color:#aaa58f;font-size:15px}
+.article-page .star[data-on="1"]{color:#a88d43}
+html.flow .page.article-page{padding:0 16px 16px}
+html.flow .page.article-page:last-child{padding-bottom:44px}
+html.flow .page.article-page .sheet{
+  max-width:1180px;min-height:0;padding:35px 38px 30px;border:0;
+  border-bottom:1px solid #d6d9ce;background:#fbfaf5;
+}
+html.flow .page.article-page .detail-ornament{opacity:.25}
+@media(max-width:900px){
+  .article-page .sheet{padding-left:7.2%;padding-right:7.2%}
+  .article-page h2.t-zh{font-size:clamp(36px,4.4vw,46px)}
+  .article-page .grid{column-gap:32px}
+  .article-page .blk p{font-size:15.5px}
+}
+@media(max-width:820px){
+  .article-page .grid{grid-template-columns:1fr;gap:25px}
+}
+@media(max-width:680px){
+  .article-page{padding:0}
+  .article-page .sheet{min-height:100%;padding:23px 22px 20px}
+  .article-page .detail-ornament{display:none}
+  .article-page .head{align-items:flex-start;gap:6px 9px;padding-bottom:10px;font-size:11.5px}
+  .article-page .head .jn{font-size:17px}
+  .article-page .head .met{gap:5px}
+  .article-page .head .met b{padding:2px 7px;font-size:10.5px}
+  .article-page .head .met i{font-size:11px}
+  .article-page .head .rt{flex-basis:100%;margin-left:0;gap:7px 11px}
+  .article-page .head .no{display:inline-flex;font-size:10.5px}
+  .article-page h2.t-zh{margin-top:23px;font-size:32px;line-height:1.38;letter-spacing:-.025em}
+  .article-page .t-en{margin-top:8px;font-size:14px;line-height:1.6}
+  .article-page .title-rule{width:46px;height:2px;margin:15px 0}
+  .article-page .lead{grid-template-columns:1fr;gap:5px;margin:0;padding:11px 13px;font-size:15.5px;line-height:1.8}
+  .article-page .lead-label{padding:0;border:0;font-size:14px}
+  .article-page .grid{grid-template-columns:1fr;gap:22px;margin:23px 0 22px}
+  .article-page .blk h3{margin-bottom:8px;padding-bottom:6px;font-size:19px}
+  .article-page .blk p{font-size:15px;line-height:1.82}
+  .article-page .stage{margin-top:10px;padding-top:9px;font-size:11.5px}
+  .article-page .foot{gap:9px 15px;margin-top:13px;padding:12px 0 0;font-size:11.5px}
+  .article-page .foot .doi{font-size:11.5px}
+  .article-page .foot .affil{flex-basis:100%;min-width:100%;order:3}
+  .article-page .foot .src{margin-left:auto}
+  html.flow .page.article-page{padding:0 8px 12px}
+  html.flow .page.article-page .sheet{padding:23px 18px 20px}
+}
+@media print{
+  .article-page{height:auto!important;min-height:0!important;padding:0!important;overflow:visible!important;break-after:page;page-break-after:always}
+  .article-page:last-child{break-after:auto;page-break-after:auto}
+  .article-page .sheet{width:100%!important;max-width:none!important;min-height:0!important;padding:6mm 8mm 5mm!important;
+    border:0!important;background:#fff!important;box-shadow:none!important;overflow:visible!important}
+  .article-page .detail-ornament{opacity:.18}
+  .article-page h2.t-zh{margin-top:7mm;font-size:23pt}
+  .article-page .t-en{font-size:9pt}
+  .article-page .lead{font-size:10pt;line-height:1.55}
+  .article-page .grid{gap:5mm 10mm;margin:7mm 1mm 5mm}
+  .article-page .blk h3{font-size:12pt}
+  .article-page .blk p{font-size:9.5pt;line-height:1.55}
+  .article-page .stage,.article-page .foot{font-size:8pt}
+}
+
 </style>
 </head>
 <body>
@@ -464,8 +612,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     <div class="cv-hint">滚轮 / 方向键 / 左右滑动翻页　·　「目录」跳转文章　·　「连读」纵向阅读　·　「打印 / PDF」导出 A4 横向</div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Cell</span><span class="met"><b>1区 Top</b><i>IF 45.5</i></span>
       <span class="sep">|</span>
@@ -474,13 +623,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">原创研究</span>
         <span>2026-10-27</span>
         <span class="lv abstract">仅摘要</span>
-        <span class="no">01</span>
+        <span class="no">文章 01</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">深度测序3,367份玉米基因组揭示稀有变异对农艺性状的重要贡献</h2>
     <p class="t-en">Deep sequencing of 3,367 maize genomes uncovers substantial contribution of rare variants to agronomic traits.</p>
-    <p class="lead">3,367份玉米自交系深度测序显示，79.2%的变异为稀有变异，其效应约为常见变异的2.4倍。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">3,367份玉米自交系深度测序显示，79.2%的变异为稀有变异，其效应约为常见变异的2.4倍。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>对3,367份遗传多样性丰富的精英玉米自交系进行深度全基因组测序，共鉴定出7,530万个变异，其中79.2%为稀有变异。针对10个农艺性状开展全基因组关联分析，并结合基于基因的检验与按频率分层的GREML分析，评估稀有变异对表型方差的贡献。</p></section>
       <section class="blk"><h3>结论</h3><p>共检测到411个独立关联信号，其中359个归因于全局稀有变异；稀有变异的效应大小约为常见变异的2.4倍。频率分层GREML分析表明，在强适应性选择性状中，稀有变异捕获了相当比例的表型方差，这与性状关联变异的等位基因频率从热带玉米中的常见转为温带玉米中的稀有相一致。基于基因的检验额外发现94个候选基因-性状关联。</p></section>
@@ -498,8 +648,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Nature</span><span class="met"><b>1区 Top</b><i>IF 50.5</i></span>
       <span class="sep">|</span>
@@ -508,13 +659,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">原创研究</span>
         <span>2026-10-28</span>
         <span class="lv abstract">仅摘要</span>
-        <span class="no">02</span>
+        <span class="no">文章 02</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">串联重复变异塑造免疫细胞类型特异性基因表达</h2>
     <p class="t-en">Tandem repeat variation shapes immune cell type-specific gene expression.</p>
-    <p class="lead">170万个串联重复位点中鉴定出逾6.9万个单细胞表达数量性状位点，30.7%具有细胞类型特异性。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">170万个串联重复位点中鉴定出逾6.9万个单细胞表达数量性状位点，30.7%具有细胞类型特异性。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>对两个队列1925人的540余万份血液来源细胞开展全基因组与单细胞RNA测序，用荟萃分析刻画逾170万个串联重复位点对免疫细胞类型特异性基因表达的影响；另取922人340余万个细胞核的单细胞ATAC测序数据，鉴定染色质可及性数量性状位点。</p></section>
       <section class="blk"><h3>结论</h3><p>鉴定出逾6.9万个单细胞表达数量性状位点，30.7%仅见于28种免疫细胞类型中的一种；近三分之一表达相关串联重复带有染色质可及性数量性状位点；精细定位将1490个串联重复列为候选因果驱动，覆盖6.1%的受检基因；共定位分析提示逾200个基因的免疫与血液性状关联可能由串联重复介导。</p></section>
@@ -532,8 +684,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Nat Genet</span><span class="met"><b>1区 Top</b><i>IF 31.7</i></span>
       <span class="sep">|</span>
@@ -542,13 +695,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">方法</span>
         <span>2026-10-30</span>
         <span class="lv oa_url">存开放获取</span>
-        <span class="no">03</span>
+        <span class="no">文章 03</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">49万UKB基因组单倍型参考面板提升全球基因型填充</h2>
     <p class="t-en">A haplotype reference panel constructed from 490,319 UK Biobank genomes improves genotype imputation for global populations.</p>
-    <p class="lead">基于490,319例UKB全基因组构建的参考面板，在22个亚群中相关性提升，东亚与南亚增益最大。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">基于490,319例UKB全基因组构建的参考面板，在22个亚群中相关性提升，东亚与南亚增益最大。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>从490,319名UK Biobank参与者的全基因组测序数据构建基因型填充参考面板，并在UK Biobank研究分析平台内通过EagleImp与EagleImp-RAP实现独立与云端定相和填充；与TOPMed r3（133,597人）对比评估定相切换错误率与填充精度。</p></section>
       <section class="blk"><h3>结论</h3><p>UKB面板在除AMR外的所有全球超级群体及26个1000 Genomes亚群中的25个，定相切换错误率低于TOPMed r3；最小等位基因频率低至0.01%的变异，填充精度（MAE）在5个超级群体中的4个、12个亚群改善；估计平方相关在全部5个超级群体和22个亚群提升，东亚与南亚增益最大；对意大利、德国、西班牙和挪威的COVID-19全基因组关联数据集重新填充，常见变异填充仍未饱和，全基因组显著位点发现增多，精细定位分辨率提高。</p></section>
@@ -566,8 +720,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Genome Biol</span><span class="met"><b>1区</b><i>IF 10.1</i></span>
       <span class="sep">|</span>
@@ -576,13 +731,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">原创研究</span>
         <span>2026-07-27</span>
         <span class="lv fulltext">全文</span>
-        <span class="no">04</span>
+        <span class="no">文章 04</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">完整参考基因组揭示甘蓝型油菜着丝粒遗传格局</h2>
     <p class="t-en">A complete reference genome reveals genetic landscape of Brassica centromeres.</p>
-    <p class="lead">首个端粒到端粒完整参考基因组显示，甘蓝型油菜亚基因组间着丝粒序列高度分化。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">首个端粒到端粒完整参考基因组显示，甘蓝型油菜亚基因组间着丝粒序列高度分化。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>以甘蓝型油菜品种中双11为材料，组装首个端粒到端粒完整参考基因组，鉴定定义着丝粒的核心卫星重复序列，并比较亚基因组间着丝粒的序列多态性与结构差异。</p></section>
       <section class="blk"><h3>结论</h3><p>着丝粒由核心卫星重复序列界定，亚基因组间存在广泛序列多态性和结构分化，与多倍化及驯化相关；核仁组织区富集的近着丝粒由反复染色体重排产生，卫星重复序列与转座子共同塑造着丝粒演化，据此提出着丝粒演化循环模型。</p></section>
@@ -600,8 +756,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Sci Adv</span><span class="met"><b>1区</b><i>IF 11.7</i></span>
       <span class="sep">|</span>
@@ -610,13 +767,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">原创研究</span>
         <span>2026-10-30</span>
         <span class="lv fulltext">全文</span>
-        <span class="no">05</span>
+        <span class="no">文章 05</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">图泛基因组揭示异源多倍化的结构变异与表达效应</h2>
     <p class="t-en">Graph-based pangenome analysis uncovers structural and functional impacts of allopolyploidization events.</p>
-    <p class="lead">异源多倍体基因组平均携带320个结构变异，是二倍体的近三倍，且27.5%的变异局部影响基因表达。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">异源多倍体基因组平均携带320个结构变异，是二倍体的近三倍，且27.5%的变异局部影响基因表达。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>以经历多次异源多倍化的酵母Brettanomyces bruxellensis为材料，整合亚基因组分辨的组装与群体规模基因组、转录组数据，构建参考图泛基因组，在1060个分离株中检测结构变异并关联基因表达。</p></section>
       <section class="blk"><h3>结论</h3><p>共检出5972个独特结构变异；异源多倍体基因组平均携带320个，显著多于二倍体的116个；27.5%的变异局部影响基因表达；源自亚基因组祖先分化的杂交相关变异形成结构多样性热点，其表达效应量大于其他变异。</p></section>
@@ -634,8 +792,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Genome Biol</span><span class="met"><b>1区</b><i>IF 10.1</i></span>
       <span class="sep">|</span>
@@ -644,13 +803,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">原创研究</span>
         <span>2026-08-01</span>
         <span class="lv fulltext">全文</span>
-        <span class="no">06</span>
+        <span class="no">文章 06</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">构建锦鸡儿属泛基因组揭示干旱适应机制</h2>
     <p class="t-en">Pan-genome analysis of Caragana reveals genomic mechanisms of drought adaptation of leguminous shrubs to arid environments.</p>
-    <p class="lead">14个锦鸡儿属物种染色体级组装构建图泛基因组，鉴定出801,351个结构变异。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">14个锦鸡儿属物种染色体级组装构建图泛基因组，鉴定出801,351个结构变异。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>对14个代表性锦鸡儿属物种进行染色体级基因组组装，其中包括柠条锦鸡儿（Caragana korshinskii，NMCN13）的近端粒到端粒组装；基于这些基因组构建图泛基因组，并系统鉴定结构变异与存在-缺失变异。</p></section>
       <section class="blk"><h3>结论</h3><p>泛基因组分析鉴定出801,351个结构变异和104,404个存在-缺失变异；比较分析发现富集于胁迫相关通路（尤其是次生代谢）的演化支特异性基因家族扩张；异源过表达实验支持CkoERF1和CkoWAKL两个候选干旱响应基因的功能；LTR反转录转座子丰度差异贡献了物种间基因组大小多样性；NIN、DMI1、DMI2和NSP1等共生相关基因在所有物种中保守。</p></section>
@@ -668,8 +828,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Plant J</span><span class="met"><b class="weak">2区</b><i>IF 6.2</i></span>
       <span class="sep">|</span>
@@ -678,13 +839,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">原创研究</span>
         <span></span>
         <span class="lv fulltext">全文</span>
-        <span class="no">07</span>
+        <span class="no">文章 07</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">整合SNP与结构变异解析水稻低温发芽遗传架构</h2>
     <p class="t-en">Genetic architecture of low-temperature germinability in rice revealed by integrated maps of SNPs and structural variation.</p>
-    <p class="lead">403份水稻在4个温度下的低温发芽力与起源纬度负相关，SV-GWAS与SNP-GWAS分别检出119和127个QTL。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">403份水稻在4个温度下的低温发芽力与起源纬度负相关，SV-GWAS与SNP-GWAS分别检出119和127个QTL。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>对403份水稻种质在13°C、15°C、18°C、21°C下评价低温发芽力，整合SNP与结构变异GWAS、转录组测序、基因编辑、群体遗传学与机器学习，解析遗传基础并构建基因组选择预测模型。</p></section>
       <section class="blk"><h3>结论</h3><p>SV-GWAS与SNP-GWAS分别检出119和127个QTL，25个位点重叠；筛选出30个候选基因和48个有利单倍型，高低温发芽力有利等位基因富集于低纬度籼稻。qLTG3-1编码区缺失负调控低温发芽力，CRISPR/Cas9证实qLT11d为关键基因。鉴定29个籼粳间和37个籼稻内分化区。基于MFGP的GS模型跨温度预测相关系数均超过0.55，18°C最优。</p></section>
@@ -702,8 +864,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Genome Biol</span><span class="met"><b>1区</b><i>IF 10.1</i></span>
       <span class="sep">|</span>
@@ -712,13 +875,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">方法</span>
         <span>2026-08-01</span>
         <span class="lv fulltext">全文</span>
-        <span class="no">08</span>
+        <span class="no">文章 08</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">构建多基因组倒位基准，评估短读长与长读长检测方法</h2>
     <p class="t-en">Multi-genome benchmark for simple and complex genome inversion detection.</p>
-    <p class="lead">五套参考样本、分层倒位基准显示：简单倒位高灵敏检出，复杂与杂合事件仍难。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">五套参考样本、分层倒位基准显示：简单倒位高灵敏检出，复杂与杂合事件仍难。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>基于Strand-seq与定相长读长组装，在五套参考样本上构建简单与复杂倒位基准，用单倍型解析长读长组装精修断点，覆盖不同倒位类别、尺寸与合子性，并纳入片段重复、反向重复与复合重排等困难区域，系统评估短读长、PacBio HiFi与Oxford Nanopore数据上的结构变异检测工具与比对策略。</p></section>
       <section class="blk"><h3>结论</h3><p>简单倒位在足够覆盖度下召回率高，复杂与杂合事件仍难检出；Sniffles2与Severus对复杂倒位召回最强，但假阳性率上升；Minimap2与VACmap两种长读长比对流程在重复区的倒位检测差异明显，比对工具选择影响显著。</p></section>
@@ -736,8 +900,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Mol Biol Evol</span><span class="met"><b>1区</b><i>IF 11.0</i></span>
       <span class="sep">|</span>
@@ -746,13 +911,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">方法</span>
         <span>2026-10-28</span>
         <span class="lv abstract">仅摘要</span>
-        <span class="no">09</span>
+        <span class="no">文章 09</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">将选择信号映射到单细胞图谱定位选择相关细胞类型</h2>
     <p class="t-en">scEvoSel maps evolutionary selection signals onto single-cell transcriptomic atlases to reveal selection-relevant cellular contexts.</p>
-    <p class="lead">scEvoSel 把群体选择信号映射到单细胞图谱，在猪肌肉与鸡肝脏中定位出选择相关的细胞类型。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">scEvoSel 把群体选择信号映射到单细胞图谱，在猪肌肉与鸡肝脏中定位出选择相关的细胞类型。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>scEvoSel 将群体水平选择信号与单细胞转录组数据整合，基于野猪与家猪、红原鸡与来航鸡的群体变异数据计算 DCMS 分数，并分别映射到野猪与杜洛克猪骨骼肌、来航鸡肝脏的单细胞图谱，以识别选择相关细胞类型并分析其关键基因与功能通路。</p></section>
       <section class="blk"><h3>结论</h3><p>在猪骨骼肌中，scEvoSel 识别出细胞比例显著变化的纤维-脂肪祖细胞（FAPs）与肌细胞，以及呈现品种相关转录分化的淋巴细胞；在鸡肝脏中，识别出肝细胞、内皮细胞、Kupffer 细胞与 B 细胞为主要选择相关细胞类型。</p></section>
@@ -770,8 +936,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Nat Genet</span><span class="met"><b>1区 Top</b><i>IF 31.7</i></span>
       <span class="sep">|</span>
@@ -780,13 +947,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">方法</span>
         <span>2026-10-26</span>
         <span class="lv oa_url">存开放获取</span>
-        <span class="no">10</span>
+        <span class="no">文章 10</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">量化方法影响eQTL分析、共定位与TWAS的可重复性</h2>
     <p class="t-en">Quantification method affects replicability of eQTL analysis, colocalization and TWAS.</p>
-    <p class="lead">转录组参考注释与量化方法的选择显著改变eQTL检测、共定位和TWAS结果，跨流程一致的结果富集于长基因、多异构体和高表达遗传力基因。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">转录组参考注释与量化方法的选择显著改变eQTL检测、共定位和TWAS结果，跨流程一致的结果富集于长基因、多异构体和高表达遗传力基因。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>以GTEx 48个组织和7种表型为材料，系统比较不同转录组参考注释与量化方法对eQTL定位、共定位和转录组关联研究的影响，评估上游RNA测序处理选择如何传导至下游遗传关联分析结果。</p></section>
       <section class="blk"><h3>结论</h3><p>参考注释与量化方法的选择大幅影响eQTL检测和基因表达预测，并对共定位与TWAS结果产生显著下游影响；跨流程一致的结果在更长基因、异构体更多的基因和表达遗传力更高的基因中富集。</p></section>
@@ -804,8 +972,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Genome Biol</span><span class="met"><b>1区</b><i>IF 10.1</i></span>
       <span class="sep">|</span>
@@ -814,13 +983,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">原创研究</span>
         <span>2026-08-04</span>
         <span class="lv abstract">仅摘要</span>
-        <span class="no">11</span>
+        <span class="no">文章 11</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">单核分辨率绘制水稻花粉染色质可及性遗传结构</h2>
     <p class="t-en">GAMETE maps the genetic architecture of chromatin accessibility in rice pollen at single-nucleus resolution.</p>
-    <p class="lead">GAMETE 在 4887 个单倍体核中同时获取染色质可及性与基因型，定位 16113 个 caQTL。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">GAMETE 在 4887 个单倍体核中同时获取染色质可及性与基因型，定位 16113 个 caQTL。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>GAMETE 将高通量单核 ATAC-seq（MPS-ATAC-seq）与稀疏单核数据的基因型推断、遗传作图流程整合，应用于杂交水稻花粉，在单核水平同时刻画染色质可及性并推断 4887 个单倍体核的基因型，覆盖不同花粉细胞类型。</p></section>
       <section class="blk"><h3>结论</h3><p>花粉细胞类型间染色质景观分明；小孢子中 gypsy 反转座子可及性升高、在精细胞中被沉默，提示监控缺口；构建单细胞重组图并定位分离畸变位点、追溯其发育来源；鉴定 16113 个 caQTL，48.6% 具明显细胞类型特异性；渗入系支持一个细胞类型特异性反式 caQTL 调控花粉必需基因 DTM1。</p></section>
@@ -838,8 +1008,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Plant Cell</span><span class="met"><b>1区 Top</b><i>IF 10.0</i></span>
       <span class="sep">|</span>
@@ -848,13 +1019,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">原创研究</span>
         <span>2026-10-26</span>
         <span class="lv abstract">仅摘要</span>
-        <span class="no">12</span>
+        <span class="no">文章 12</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">单核与空间转录组绘制水稻胚乳细胞分化与贮藏物质积累图谱</h2>
     <p class="t-en">Single-nucleus and spatial transcriptomics reveal dynamic cell differentiation and storage product accumulation in rice endosperm.</p>
-    <p class="lead">177,820个细胞核与60,003个空间点联合解析水稻胚乳，鉴定出12类细胞与7个解剖区域。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">177,820个细胞核与60,003个空间点联合解析水稻胚乳，鉴定出12类细胞与7个解剖区域。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>对水稻颖果四个发育阶段取样，单核与空间转录组并行，累计获得177,820个细胞核与60,003个空间点数据，据此构建发育中水稻胚乳的空间分辨单细胞转录组图谱，并完成细胞类型注释。</p></section>
       <section class="blk"><h3>结论</h3><p>鉴定出12类细胞、划分7个精确解剖区域；推断胚乳细胞发育轨迹，构建细胞分化调控网络，锁定3个调控糊粉层细胞命运的关键转录因子；糊粉层与淀粉胚乳均存在细胞异质性，该异质性协调灌浆期养分运输与贮藏物质合成。</p></section>
@@ -872,8 +1044,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Plant Cell</span><span class="met"><b>1区 Top</b><i>IF 10.0</i></span>
       <span class="sep">|</span>
@@ -882,13 +1055,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">原创研究</span>
         <span>2026-10-27</span>
         <span class="lv oa_url">存开放获取</span>
-        <span class="no">13</span>
+        <span class="no">文章 13</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">PDS5A限制SYN4依赖的长程染色质接触塑造拟南芥TAD样结构</h2>
     <p class="t-en">PDS5A restricts SYN4-dependent long-range chromatin contacts to shape TAD-like chromatin architecture in Arabidopsis.</p>
-    <p class="lead">PDS5A是主要黏连蛋白卸载因子，其缺失使拟南芥TAD样结构在多种组织和倍性水平高度一致。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">PDS5A是主要黏连蛋白卸载因子，其缺失使拟南芥TAD样结构在多种组织和倍性水平高度一致。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>以拟南芥黏连蛋白调节因子PDS5A为对象，用Hi-C和Micro-C比较pds5a突变体与野生型的染色质构象，结合遗传学分析检验TAD样结构对SYN4与WAPL1/2的依赖，并以生化实验检测PDS5A与黏连蛋白的结合是否依赖其Tudor结构域介导的H3K4me1识别。</p></section>
       <section class="blk"><h3>结论</h3><p>pds5a的TAD样结构模式在组织和倍性水平间高度相似；TAD样结构依赖植物kleisin SYN4，并被WAPL1/2拮抗，PDS5A为主要黏连蛋白卸载因子；PDS5A与黏连蛋白结合不依赖Tudor结构域介导的H3K4me1结合；Micro-C显示可及且高转录的启动子为染色质环和条纹锚点；破坏远端锚点后，pds5a中新形成的染色质接触可作为顺式调控模块影响靶基因表达。</p></section>
@@ -906,8 +1080,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Plant Cell Environ</span><span class="met"><b class="weak">2区</b><i>IF 6.0</i></span>
       <span class="sep">|</span>
@@ -916,13 +1091,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">原创研究</span>
         <span>2026-10-27</span>
         <span class="lv abstract">仅摘要</span>
-        <span class="no">14</span>
+        <span class="no">文章 14</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">DDM1 塑造多种染色质状态的跨代表观遗传</h2>
     <p class="t-en">DDM1 Shapes Transgenerational Epigenetic Inheritance of Diverse Chromatin States.</p>
-    <p class="lead">DDM1 调控 H3K27me3、DNA 甲基化与 H3K4me3 三种标记的跨代遗传模式</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">DDM1 调控 H3K27me3、DNA 甲基化与 H3K4me3 三种标记的跨代遗传模式</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>以拟南芥 Col-0 与 C24 正反交为材料，追踪抑制性标记 H3K27me3、DNA 甲基化与活跃标记 H3K4me3 的跨代遗传。三种标记均发生跨代遗传，但依各自强化机制呈现不同模式；DDM1 协调抑制性染色质状态的传递。染色质重塑通过影响核小体组织与组蛋白变体动态，经染色质背景塑造跨代遗传。</p></section>
       <section class="blk"><h3>结论</h3><p>三种标记均实现跨代遗传，但遗传模式因强化机制而异；DDM1 协调抑制性染色质状态的传播，染色质重塑经核小体组织与组蛋白变体动态影响跨代遗传。</p></section>
@@ -940,8 +1116,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Plant J</span><span class="met"><b class="weak">2区</b><i>IF 6.2</i></span>
       <span class="sep">|</span>
@@ -950,13 +1127,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">方法</span>
         <span></span>
         <span class="lv fulltext">全文</span>
-        <span class="no">15</span>
+        <span class="no">文章 15</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">整合QTL与GWAS解析玉米气孔密度与大小的多基因遗传基础</h2>
     <p class="t-en">Multi-locus genetic basis of stomatal density and size in maize revealed by integrated QTL and GWAS.</p>
-    <p class="lead">33个QTL与51个关联位点揭示玉米气孔密度与大小呈显著负遗传相关。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">33个QTL与51个关联位点揭示玉米气孔密度与大小呈显著负遗传相关。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>以三个重组自交系群体连锁分析与一个多样性玉米面板的全基因组关联分析整合，解析6个气孔性状的遗传结构，并叠加已报道的细胞类型特异转录组数据优先候选基因，再以EMS突变体验证。</p></section>
       <section class="blk"><h3>结论</h3><p>共检出33个数量性状位点与51个关联位点，气孔密度与大小呈显著负遗传相关，多个基因组区间同时影响两类性状；ZmbHLH140突变降低气孔密度，ZmCESA6突变则升高，ZmbHLH140位点的选择信号与玉米驯化期气孔调控相符。</p></section>
@@ -974,8 +1152,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Plant Cell</span><span class="met"><b>1区 Top</b><i>IF 10.0</i></span>
       <span class="sep">|</span>
@@ -984,13 +1163,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">原创研究</span>
         <span>2026-10-28</span>
         <span class="lv abstract">仅摘要</span>
-        <span class="no">16</span>
+        <span class="no">文章 16</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">BraHDAC1 启动子变异调控白菜类作物气孔与耐热性</h2>
     <p class="t-en">Promoter variation in BraHDAC1 modulates stomatal regulation and thermotolerance in Brassica rapa.</p>
-    <p class="lead">BraHDAC1 启动子两个 SNP 构建 ABRE-CE 模块，仅耐热单倍型受热诱导表达。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">BraHDAC1 启动子两个 SNP 构建 ABRE-CE 模块，仅耐热单倍型受热诱导表达。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>以 Brassica rapa 为材料，联合全基因组关联分析与混合分组分析定位耐热性自然变异，锁定组蛋白去乙酰化酶基因 BraHDAC1 启动子上的 SNP1 与 SNP2；这两个位点仅在耐热单倍型 Hap1 和 Hap3 中形成功能性 ABRE-CE 顺式调控模块，供转录因子 BraAREB1 结合并驱动热诱导转录。</p></section>
       <section class="blk"><h3>结论</h3><p>BraHDAC1 活性增强后，通过去乙酰化 BraPME1 启动子上的组蛋白 H3K9/K14 抑制该果胶甲酯酶基因，并协同调控其他 PME 与 PMEI 基因，改变总 PME 活性与果胶甲酯化程度；气孔表现为先开放、蒸腾增加、叶温降低，随后关闭以保水。</p></section>
@@ -1008,8 +1188,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Nucleic Acids Res</span><span class="met"><b>1区</b><i>IF 16.6</i></span>
       <span class="sep">|</span>
@@ -1018,13 +1199,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">方法</span>
         <span>2026-10-27</span>
         <span class="lv oa_url">存开放获取</span>
-        <span class="no">17</span>
+        <span class="no">文章 17</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">构建整合多组学表达谱的水稻表达数据库 RED 2.0</h2>
     <p class="t-en">Rice Expression Database (RED) 2.0: an updated rice database integrating diverse RNA expression profiles based on the telomere-to-telomere reference genome.</p>
-    <p class="lead">RED 2.0 收录 6471 个 bulk RNA-seq 实验与 984495 个单细胞，覆盖 18 种组织。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">RED 2.0 收录 6471 个 bulk RNA-seq 实验与 984495 个单细胞，覆盖 18 种组织。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>RED 2.0 基于 Nipponbare 端粒到端粒组装，整合 357 个项目、6471 个 bulk RNA-seq 实验（18 种组织）与 78 个单细胞 RNA-seq 实验（984495 个细胞），按非生物胁迫、生物胁迫、激素、发育、基因型和解剖结构人工整理分组，并提供差异表达、功能富集、共表达网络构建与基因组浏览器在线工具。</p></section>
       <section class="blk"><h3>结论</h3><p>在端粒到端粒参考基因组上，RED 2.0 给出 57359 个蛋白编码基因（67818 个转录本）、16522 个长非编码 RNA 基因（47396 个转录本）和 79007 个环状 RNA 的表达谱，覆盖编码与非编码基因。</p></section>
@@ -1042,8 +1224,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Genome Res</span><span class="met"><b class="weak">2区</b><i>IF 6.2</i></span>
       <span class="sep">|</span>
@@ -1052,13 +1235,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">原创研究</span>
         <span>2026-10-26</span>
         <span class="lv oa_url">存开放获取</span>
-        <span class="no">18</span>
+        <span class="no">文章 18</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">发布八齿鼠染色体级基因组与注释</h2>
     <p class="t-en">Chromosome-scale genome assembly and annotation of Octodon degus.</p>
-    <p class="lead">八齿鼠 OctDeg2.0 组装达 34 亿碱基对，含 28 条常染色体与两条性染色体，连续性显著优于旧短读组装。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">八齿鼠 OctDeg2.0 组装达 34 亿碱基对，含 28 条常染色体与两条性染色体，连续性显著优于旧短读组装。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>以单只雄性八齿鼠为材料，用 PacBio HiFi 长读长测序与 Hi-C 挂载，产出染色体级组装 OctDeg2.0 并完成基因注释；同时给出可复现的高分辨率从头组装与注释流程，适用于其他新兴模式生物。</p></section>
       <section class="blk"><h3>结论</h3><p>34 亿碱基对组装覆盖 28 条常染色体与两条性染色体，连续性、完整性较旧短读组装明显提升且保持高碱基准确度；基因注释增强，染色质架构与顺式调控元件图谱更清晰，着丝粒与片段重复等重复及结构复杂区域刻画改善。</p></section>
@@ -1076,8 +1260,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Sci Adv</span><span class="met"><b>1区</b><i>IF 11.7</i></span>
       <span class="sep">|</span>
@@ -1086,13 +1271,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">方法</span>
         <span>2026-10-30</span>
         <span class="lv fulltext">全文</span>
-        <span class="no">19</span>
+        <span class="no">文章 19</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">解码FFPE组织实现单细胞分辨率空间转录组</h2>
     <p class="t-en">Decoder-FFPE-seq enables sensitive, genome-wide spatial transcriptomics of archival tissues at single-cell resolution.</p>
-    <p class="lead">Decoder-FFPE-seq 在存档组织上实现全转录组单细胞空间检测，灵敏度提升逾 2.6 倍。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">Decoder-FFPE-seq 在存档组织上实现全转录组单细胞空间检测，灵敏度提升逾 2.6 倍。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>Decoder-FFPE-seq 将 RNA 到 DNA 探针转换与印迹辅助条形码编码结合，采用树枝状 DNA 坐标条形码设计，适配福尔马林固定石蜡包埋组织。在小鼠全脑与存档人类样本中完成全转录组空间分析，并扩展探针库以捕获长非编码 RNA 与病毒 RNA。</p></section>
       <section class="blk"><h3>结论</h3><p>相较现有平台，灵敏度提升逾 2.6 倍，可解析低丰度基因的细胞身份、更精细的组织结构，并捕获与上皮—间质转化相关的预后特征。扩展探针库在口腔鳞状细胞癌中揭示长非编码 RNA、病毒 RNA 与信使 RNA 的空间共调控网络；免疫治疗队列中，化疗免疫治疗前后样本分别鉴定出两个 CD8+ T 细胞亚群，可能与治疗应答相关。</p></section>
@@ -1110,8 +1296,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Nat Commun</span><span class="met"><b>1区 Top</b><i>IF 14.7</i></span>
       <span class="sep">|</span>
@@ -1120,13 +1307,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">方法</span>
         <span>2026-11-02</span>
         <span class="lv abstract">仅摘要</span>
-        <span class="no">20</span>
+        <span class="no">文章 20</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">模拟揭示转座子扩增与清除的基因组动态</h2>
     <p class="t-en">PrinTE: a forward simulation framework for studying the role of transposable elements in genome expansion and contraction.</p>
-    <p class="lead">PrinTE 模拟显示，仅靠重组清除 LTR 反转录转座子无法阻止基因组膨胀，插入与删除率误差低于 6%。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">PrinTE 模拟显示，仅靠重组清除 LTR 反转录转座子无法阻止基因组膨胀，插入与删除率误差低于 6%。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>PrinTE 以全基因组序列为对象做正向时间模拟，转座子动态可自定义，通过匹配观测基因组来推断最一致的演化参数；模拟跨四个数量级，并在拟南芥与锈菌亚门（含桃金娘锈菌 Austropuccinia psidii）上演示。</p></section>
       <section class="blk"><h3>结论</h3><p>模拟在四个数量级范围内以低于 6% 的误差回收转座子插入与删除率；桃金娘锈菌基因组经转座子扩增至 1,018 Mb；仅靠重组清除 LTR 反转录转座子不能阻止基因组膨胀，阻止其入侵更有效；桃金娘锈菌可能经历长期扩张后进入强效且持续的收缩期。</p></section>
@@ -1317,6 +1505,11 @@ body{background:#f0eee7;color:var(--cover-ink)}
   function fitAll(){
     for(var k=0;k<sheets.length;k++){
       var sh=sheets[k], pg=sh.parentNode, f=1, i;
+      if(pg.classList.contains('article-page') && window.innerWidth<=820){
+        sh.style.zoom = z;
+        pg.scrollTop = 0;
+        continue;
+      }
       sh.style.zoom = z;
       if(pg.scrollHeight - pg.clientHeight > 2){
         var total = Math.max(1, pg.scrollHeight);
