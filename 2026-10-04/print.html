@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>植物基因组学文献简报 · 2026年第40周</title>
+<style>
+:root{--paper:#fbfaf5;--ink:#292d28;--forest:#173e2d;--green:#375f42;--sage:#e9eddc;--line:#d8ddcf;--muted:#757b72}
+*{box-sizing:border-box}
+html{background:#e8e6df;color:var(--ink);font-family:"Noto Serif SC","Source Han Serif SC","Songti SC","SimSun",serif;-webkit-font-smoothing:antialiased}
+body{margin:0}
+a{color:inherit}
+.print-toolbar{position:sticky;top:0;z-index:10;display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid #d7d9cf;background:rgba(251,250,245,.94);backdrop-filter:blur(8px);font:13px/1.4 "Microsoft YaHei",sans-serif}
+.print-toolbar .toolbar-title{margin-right:auto;color:var(--forest);font-weight:700}
+.print-toolbar button,.print-toolbar a{padding:7px 13px;border:1px solid #d3dacb;border-radius:999px;background:#fffef9;color:var(--forest);text-decoration:none;cursor:pointer}
+.print-toolbar button.primary{border-color:var(--forest);background:var(--forest);color:white}
+.print-stack{width:min(100%,1000px);margin:24px auto 70px}
+.print-page{position:relative;width:210mm;min-height:297mm;margin:0 auto 22px;padding:15mm;background:var(--paper);box-shadow:0 8px 28px rgba(30,42,32,.13)}
+.print-cover{display:flex;flex-direction:column;justify-content:space-between;border:1px solid #e0e1d6}
+.brandline{display:flex;align-items:center;gap:12px;padding-bottom:8mm;border-bottom:1px solid #bfc8b7;color:var(--forest)}
+.brand-mark{width:13mm;height:13mm;flex:none;color:#315e3c}
+.brand-name{font-size:15pt;font-weight:700;letter-spacing:.09em}
+.brand-en{margin-left:2px;color:#66735d;font:9pt Georgia,serif;letter-spacing:.22em}
+.cover-top{position:relative;z-index:1}
+.cover-kicker{margin:17mm 0 4mm;color:#79856f;font:600 9pt Georgia,serif;letter-spacing:.23em}
+.cover-title{max-width:145mm;margin:0;color:var(--forest);font-size:37pt;line-height:1.28;letter-spacing:.07em}
+.cover-title span{display:block}
+.cover-subtitle{margin:5mm 0 0;color:#687260;font:11pt Georgia,serif;letter-spacing:.19em}
+.cover-rule{width:18mm;height:1.3mm;margin:8mm 0;background:#28543a}
+.cover-issue{margin:0;color:var(--forest);font-size:20pt;font-weight:700}
+.cover-window{margin:2mm 0 0;color:#626d60;font-size:10pt;letter-spacing:.04em}
+.cover-summary{display:flex;margin-top:8mm;padding:5mm 0;border-top:1px solid #d8ddcf;border-bottom:1px solid #d8ddcf}
+.cover-stat{flex:1;text-align:center}
+.cover-stat+.cover-stat{border-left:1px solid #d3d9ca}
+.cover-stat strong{display:block;color:var(--forest);font-size:21pt;line-height:1.2}
+.cover-stat span{display:block;margin-top:1.5mm;color:#66715e;font-size:9pt}
+.cover-art-wrap{position:relative;min-height:82mm;margin:4mm -3mm 0;overflow:hidden;border-radius:3mm}
+.cover-field{display:block;width:100%;height:84mm;object-fit:cover;object-position:center 55%;opacity:.96}
+.cover-dna{position:absolute;top:-5mm;right:-5mm;width:55mm;height:95mm;object-fit:cover;object-position:right center;opacity:.24;mix-blend-mode:multiply}
+.cover-caption{position:absolute;left:5mm;bottom:4mm;padding:2.4mm 4mm;border:1px solid rgba(203,211,190,.72);border-radius:2mm;background:rgba(251,250,245,.84);color:#496346;font-size:8pt;letter-spacing:.07em}
+.cover-bottom{display:flex;justify-content:space-between;align-items:end;gap:6mm;margin-top:3mm;color:#77806e;font-size:8pt;letter-spacing:.1em}
+.cover-bottom{font-size:7.4pt;letter-spacing:.06em}.cover-bottom span:first-child{min-width:48mm;white-space:nowrap}.cover-bottom span:last-child{text-align:right}
+.print-toc{padding-top:13mm}
+.section-kicker{margin:0 0 2mm;color:#78856f;font:600 8pt Georgia,serif;letter-spacing:.22em}
+.page-heading{display:flex;align-items:end;justify-content:space-between;gap:12mm;margin-bottom:7mm;padding-bottom:4mm;border-bottom:1px solid #abb8a6}
+.page-heading h1{margin:0;color:var(--forest);font-size:25pt;line-height:1.25}
+.page-heading .toc-total{color:#586653;font-size:10pt;white-space:nowrap}
+.toc-groups{display:grid;gap:7mm}
+.toc-group-title{display:flex;align-items:baseline;gap:3mm;margin:0 0 2mm;padding-bottom:2mm;border-bottom:1px solid #d5ddcf;color:var(--forest);font-size:14pt}
+.toc-group-title small{color:#768071;font:600 7pt Georgia,serif;letter-spacing:.16em}
+.toc-group-title em{margin-left:auto;color:#6b7565;font-size:8pt;font-style:normal}
+.toc-row{display:grid;grid-template-columns:10mm minmax(0,1fr) 29mm 10mm;align-items:baseline;gap:2mm;min-height:7.4mm;padding:1.25mm 0;border-bottom:1px solid #e3e4db;text-decoration:none}
+.toc-row:hover{background:#f1f2e8}
+.toc-num{color:#74805f;font:600 9pt Georgia,serif}
+.toc-title{overflow-wrap:anywhere;color:#2f342f;font-size:8.2pt;line-height:1.45}
+.toc-journal{overflow:hidden;color:#687365;font-size:7pt;text-align:right;text-overflow:ellipsis;white-space:nowrap}
+.toc-page{color:var(--forest);font:8pt Georgia,serif;text-align:right}
+.toc-page::before{content:"· "}
+.print-article{position:relative;isolation:isolate;display:flex;flex-direction:column;min-height:267mm;padding:0 1mm;break-before:page;page-break-before:always;break-inside:auto}
+.article-inner{position:relative;z-index:1;display:flex;flex:1;flex-direction:column;min-height:267mm}
+.article-ornament{position:absolute;z-index:0;top:16mm;right:-5mm;width:45mm;height:128mm;object-fit:cover;object-position:right center;opacity:.14;pointer-events:none}
+.article-brandbar{display:flex;justify-content:space-between;align-items:center;padding:0 0 3mm;border-bottom:1px solid #c8d1c1;color:var(--forest);font-size:8pt}
+.article-brandbar .brand-left{font-weight:700;letter-spacing:.08em}
+.article-brandbar .brand-left small{margin-left:2mm;color:#75816c;font:6.5pt Georgia,serif;letter-spacing:.18em}
+.article-brandbar .brand-right{color:#63705e;font-size:7.2pt}
+.article-meta{display:flex;align-items:center;flex-wrap:wrap;gap:2.5mm;margin:6mm 0 4mm;color:#586151;font-size:8pt}
+.meta-journal{color:var(--forest);font-size:12pt;font-weight:700;font-style:italic}
+.meta-pill{padding:.8mm 2.2mm;border-radius:2mm;background:#edf0e5;color:#355840;font-size:7.5pt}
+.meta-sep{color:#adb6a8}
+.meta-tags{margin-left:1mm;color:#6f786a}
+.meta-date{margin-left:auto;color:#6a7267}
+.article-title-zh{margin:0;color:var(--forest);font-size:24pt;line-height:1.36;letter-spacing:.015em;overflow-wrap:anywhere}
+.article-title-en{margin:2.5mm 0 0;color:#6c756d;font:9pt/1.55 Georgia,"Times New Roman",serif;overflow-wrap:anywhere}
+.article-rule{width:16mm;height:1mm;margin:4mm 0 5mm;background:#315f40}
+.finding-bar{display:grid;grid-template-columns:25mm minmax(0,1fr);gap:4mm;align-items:start;margin:0;padding:3mm 4mm;border-left:1.1mm solid #315e3c;border-radius:1mm;background:#f0f1e6}
+.finding-label{padding-right:3mm;border-right:1px solid #c6cfbd;color:var(--forest);font-size:10pt;font-weight:700}
+.finding-text{color:#30352f;font-size:9pt;line-height:1.6}
+.article-grid{display:grid;flex:1;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto auto;grid-template-areas:"what finding" "why next";align-content:start;gap:7mm 11mm;margin:8mm 1mm 6mm}
+.module{min-width:0;break-inside:avoid;page-break-inside:avoid}
+.module h2{margin:0 0 2.4mm;padding-bottom:2mm;border-bottom:1px solid #abb9a6;color:var(--forest);font-size:13pt;line-height:1.35}
+.module p{margin:0;color:#303530;font-size:9pt;line-height:1.74;overflow-wrap:anywhere}
+.module-what{grid-area:what}.module-finding{grid-area:finding}.module-why{grid-area:why}.module-next{grid-area:next}
+.article-stage{margin:5mm 1mm 4mm;padding-top:3mm;border-top:1px solid #e0e3d9;color:#66715f;font-size:7.5pt;line-height:1.5}
+.article-stage b{margin-right:2mm;color:#44553f}
+.article-foot{display:flex;align-items:center;flex-wrap:wrap;gap:2mm;padding-top:3mm;border-top:1px solid #bfc9b9;color:#606a5f;font-size:7.2pt}
+.article-foot .affil{flex:1;min-width:34mm;text-align:center}
+.article-foot a{color:var(--forest);text-decoration-color:#9ba995;text-underline-offset:2px}
+.article-foot .doi,.article-foot .pmid{white-space:nowrap}
+.article-foot .source-link{margin-left:auto;font-weight:700;white-space:nowrap}
+.article-foot>*+*{padding-left:3mm;border-left:1px solid #c8d1c1}
+.print-article .module,.print-article .article-foot{break-inside:avoid;page-break-inside:avoid}
+[data-mode="article"] .print-cover,[data-mode="article"] .print-toc{display:none}
+[data-mode="article"] .print-article:not(.selected-article){display:none}
+@media(max-width:800px){
+  .print-toolbar{justify-content:flex-start;overflow:auto}
+  .print-toolbar .toolbar-title{min-width:max-content}
+  .print-stack{width:100%;margin:12px auto 40px;overflow:auto}
+  .print-page{margin:0 10px 15px;transform-origin:top left}
+}
+@media print{
+  @page{size:A4 portrait;margin:15mm;
+    @top-left{content:"";font-family:"Noto Serif SC","Songti SC",serif;font-size:7pt;color:#466047}
+    @top-right{content:"";font-family:"Noto Serif SC","Songti SC",serif;font-size:7pt;color:#6e786b}
+    @bottom-left{content:"PLANT GENOMICS WEEKLY DIGEST";font-family:Georgia,serif;font-size:6.5pt;letter-spacing:1pt;color:#899181}
+    @bottom-right{content:"2026年第40周 · " counter(page) " / " counter(pages);font-family:Georgia,"Songti SC",serif;font-size:7pt;color:#53624f}
+  }
+  @page:first{@top-left{content:""}@top-right{content:""}@bottom-left{content:""}@bottom-right{content:""}}
+  html,body{width:auto;height:auto;background:white}
+  body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .print-toolbar{display:none!important}
+  .print-stack{display:block;width:auto;margin:0;overflow:visible}
+  .print-page{width:auto;min-height:0;margin:0;padding:0;border:0;border-radius:0;overflow:visible;box-shadow:none}
+  .print-cover{min-height:267mm;padding:8mm 7mm 4mm;break-after:page;page-break-after:always}
+  .print-cover .brandline{padding-bottom:5mm}
+  .cover-kicker{margin-top:13mm}
+  .cover-title{font-size:34pt}
+  .cover-art-wrap{min-height:71mm}
+  .cover-field{height:73mm}
+  .print-toc{padding-top:1mm}
+  .page-heading{margin-bottom:6mm}
+  .print-article{min-height:267mm}
+  .article-inner{min-height:267mm}
+  [data-mode="article"] .print-article{break-before:auto;page-break-before:auto}
+  .print-article:first-of-type{break-before:page;page-break-before:always}
+  [data-mode="article"] .print-article:first-of-type{break-before:auto;page-break-before:auto}
+}
+</style>
+</head>
+<body data-mode="issue">
+<div class="print-toolbar">
+  <strong class="toolbar-title">基因组雷达　·　2026年第40周</strong>
+  <span class="toolbar-mode" id="toolbarMode">整期 PDF 预览</span>
+  <button type="button" onclick="window.print()" class="primary">打印 / 保存 PDF</button>
+  <a href="index.html">返回本期网页</a>
+</div>
+<main class="print-stack">
+
+<section class="print-page print-cover" aria-label="简报封面">
+  <div class="cover-top">
+    <div class="brandline">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 43V10" stroke="currentColor" stroke-width="2"/><path d="M23 27C12 26 7 19 7 9c10 1 16 7 16 18Z" fill="#e9eddc" stroke="currentColor" stroke-width="1.7"/><path d="M25 31c1-11 7-17 17-18-1 10-7 16-17 18Z" fill="#e9eddc" stroke="currentColor" stroke-width="1.7"/><path d="m11 12 12 13m15-8L26 29M16 43h17" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      <span class="brand-name">基因组雷达</span><span class="brand-en">GENOME RADAR</span>
+    </div>
+    <p class="cover-kicker">PLANT GENOMICS · WEEKLY READING</p>
+    <h1 class="cover-title"><span>植物基因组学</span><span>文献简报</span></h1>
+    <p class="cover-subtitle">PLANT GENOMICS WEEKLY DIGEST</p>
+    <div class="cover-rule"></div>
+    <p class="cover-issue">2026年第40周</p>
+    <p class="cover-window">检索窗口　2026-09-28 ~ 2026-10-04</p>
+    <div class="cover-summary"><div class="cover-stat"><strong>20</strong><span>篇精选文献</span></div><div class="cover-stat"><strong>12</strong><span>研究文章</span></div><div class="cover-stat"><strong>8</strong><span>方法工具</span></div></div>
+  </div>
+  <div class="cover-art-wrap">
+    <img class="cover-field" src="../assets/search-maize-banner.png" alt="玉米田与植株学术插画">
+    <img class="cover-dna" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true">
+    <span class="cover-caption">PLANT GENOMICS · WEEKLY ARCHIVE</span>
+  </div>
+  <div class="cover-bottom"><span>基因组雷达　·　GENOME RADAR</span><span>Plant Cell Environ 3　·　Mol Plant 2　·　Nat Commun 2　·　Plant J 2　·　Mol Biol Evol 2</span></div>
+</section>
+
+<section class="print-page print-toc" aria-label="本期目录">
+  <p class="section-kicker">CONTENTS OF THIS ISSUE</p>
+  <div class="page-heading"><h1>本期目录</h1><span class="toc-total">20 篇　·　2026年第40周</span></div>
+  <div class="toc-groups"><section class="toc-group"><h2 class="toc-group-title">研究文章<small>RESEARCH ARTICLES</small><em>共 12 篇</em></h2><a class="toc-row" href="#article-01" data-toc-number="1"><span class="toc-num">01</span><span class="toc-title">组装十元体长穗偃麦草41.33 Gb基因组并解析同源交换</span><span class="toc-journal">Mol Plant</span><span class="toc-page" data-for="1">3</span></a><a class="toc-row" href="#article-02" data-toc-number="2"><span class="toc-num">02</span><span class="toc-title">发布 Streptochaeta 染色体级基因组，重建禾本科祖先核型</span><span class="toc-journal">Nat Commun</span><span class="toc-page" data-for="2">4</span></a><a class="toc-row" href="#article-03" data-toc-number="3"><span class="toc-num">03</span><span class="toc-title">重建禾本科祖先核型为12条原始染色体</span><span class="toc-journal">J Integr Plant Biol</span><span class="toc-page" data-for="3">5</span></a><a class="toc-row" href="#article-04" data-toc-number="4"><span class="toc-num">04</span><span class="toc-title">组装同源四倍体穿龙薯蓣单倍型基因组，揭示近期多倍化与代谢权衡</span><span class="toc-journal">Plant J</span><span class="toc-page" data-for="4">6</span></a><a class="toc-row" href="#article-05" data-toc-number="5"><span class="toc-num">05</span><span class="toc-title">单核转录组图谱揭示芸薹属杂交胚败育的细胞程序</span><span class="toc-journal">Mol Plant</span><span class="toc-page" data-for="5">7</span></a><a class="toc-row" href="#article-06" data-toc-number="6"><span class="toc-num">06</span><span class="toc-title">解析烟草宿主遗传变异关联根际微生物组组装与抗镰刀菌</span><span class="toc-journal">Plant Physiol</span><span class="toc-page" data-for="6">8</span></a><a class="toc-row" href="#article-07" data-toc-number="7"><span class="toc-num">07</span><span class="toc-title">DDM1 维持复杂植物基因组稳定性</span><span class="toc-journal">Plant Cell</span><span class="toc-page" data-for="7">9</span></a><a class="toc-row" href="#article-08" data-toc-number="8"><span class="toc-num">08</span><span class="toc-title">定位 OsAKR 揭示水稻抗旱突变体产量优势</span><span class="toc-journal">Plant Cell Environ</span><span class="toc-page" data-for="8">10</span></a><a class="toc-row" href="#article-09" data-toc-number="9"><span class="toc-num">09</span><span class="toc-title">揭示同源四倍体蓖麻种皮扩张介导种子增大的分子路径</span><span class="toc-journal">Plant J</span><span class="toc-page" data-for="9">11</span></a><a class="toc-row" href="#article-10" data-toc-number="10"><span class="toc-num">10</span><span class="toc-title">揭示高粱根际与散土AM真菌纬度梯度反向格局</span><span class="toc-journal">Plant Cell Environ</span><span class="toc-page" data-for="10">12</span></a><a class="toc-row" href="#article-11" data-toc-number="11"><span class="toc-num">11</span><span class="toc-title">揭示单核苷酸差异下地衣共生藻的生理分化策略</span><span class="toc-journal">Plant Cell Environ</span><span class="toc-page" data-for="11">13</span></a><a class="toc-row" href="#article-18" data-toc-number="18"><span class="toc-num">18</span><span class="toc-title">绘制免疫细胞多组学图谱，解析调控变异致病路径</span><span class="toc-journal">Nature</span><span class="toc-page" data-for="18">20</span></a></section><section class="toc-group"><h2 class="toc-group-title">方法工具<small>METHODS & TOOLS</small><em>共 8 篇</em></h2><a class="toc-row" href="#article-12" data-toc-number="12"><span class="toc-num">12</span><span class="toc-title">在未注释基因组组装中定向搜索直系同源基因</span><span class="toc-journal">Nucleic Acids Res</span><span class="toc-page" data-for="12">14</span></a><a class="toc-row" href="#article-13" data-toc-number="13"><span class="toc-num">13</span><span class="toc-title">在低覆盖测序数据中联合建模基因型不确定性与结构迁移</span><span class="toc-journal">Mol Biol Evol</span><span class="toc-page" data-for="13">15</span></a><a class="toc-row" href="#article-14" data-toc-number="14"><span class="toc-num">14</span><span class="toc-title">用单等位基因纳米尺度作图定位调控变异</span><span class="toc-journal">Nat Genet</span><span class="toc-page" data-for="14">16</span></a><a class="toc-row" href="#article-15" data-toc-number="15"><span class="toc-num">15</span><span class="toc-title">光学基因组图谱检出癫痫脑组织体细胞结构变异</span><span class="toc-journal">Genome Res</span><span class="toc-page" data-for="15">17</span></a><a class="toc-row" href="#article-16" data-toc-number="16"><span class="toc-num">16</span><span class="toc-title">用 kamino 绕过聚类比对，直接从蛋白质组构建氨基酸系统发育比对</span><span class="toc-journal">Mol Biol Evol</span><span class="toc-page" data-for="16">18</span></a><a class="toc-row" href="#article-17" data-toc-number="17"><span class="toc-num">17</span><span class="toc-title">用蛋白质语言模型嵌入构建快速准确的多序列比对</span><span class="toc-journal">Genome Res</span><span class="toc-page" data-for="17">19</span></a><a class="toc-row" href="#article-19" data-toc-number="19"><span class="toc-num">19</span><span class="toc-title">用无酶密集光学图谱组装酵母染色体级基因组</span><span class="toc-journal">Nat Commun</span><span class="toc-page" data-for="19">21</span></a><a class="toc-row" href="#article-20" data-toc-number="20"><span class="toc-num">20</span><span class="toc-title">以单碱基精度界定原噬菌体边界并揭示其驯化规律</span><span class="toc-journal">Sci Adv</span><span class="toc-page" data-for="20">22</span></a></section></div>
+</section>
+
+<article class="print-article" id="article-01" data-article-number="1" aria-label="文章 01">
+  <img class="article-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true">
+  <div class="article-inner">
+    <div class="article-brandbar"><span class="brand-left">基因组雷达<small>GENOME RADAR</small></span><span class="brand-right">2026年第40周　·　文章 01</span></div>
+    <div class="article-meta"><span class="meta-journal">Mol Plant</span><span class="meta-pill">1区 Top</span><span class="meta-pill">IF 17.1</span><span class="meta-sep">│</span><span class="meta-tags">组装与注释 / 进化与比较</span><span class="meta-pill">原创研究</span><span class="meta-date">2026-09-30</span></div>
+    <h1 class="article-title-zh">组装十元体长穗偃麦草41.33 Gb基因组并解析同源交换</h1>
+    <p class="article-title-en">The homoeolog-resolved assembly of the 40-Gb decaploid Thinopyrum ponticum genome reveals extensive homoeologous exchange and recombination, segmental allopolyploid organization, and allelic variations for wheat improvement.</p>
+    <div class="article-rule"></div>
+    <div class="finding-bar"><span class="finding-label">核心发现</span><span class="finding-text">41.33 Gb十元体长穗偃麦草基因组实现同源分辨组装，注释出577,421个高置信基因，为小麦改良提供等位变异资源。</span></div>
+    <div class="article-grid">
+      <section class="module module-what"><h2>做了什么</h2><p>以长读长测序结合迭代重组装策略，对2n=10x=70的长穗偃麦草进行同源分辨组装，获得41.33 Gb基因组；联合比较基因组、系统发育与k-mer分析追溯其二倍体祖先来源，并构建348份小麦—长穗偃麦草渐渗系群体。</p></section>
+      <section class="module module-finding"><h2>结论</h2><p>组装揭示广泛同源交换，支持片段异源多倍体组织；注释出577,421个高置信基因，为小麦族已报道最大基因集，含分布于5条染色体的22拷贝Fhb7串联基因簇；348份渐渗系目录捕获长期育种中的有益等位多样性，定位蓝色糊粉层候选调控因子，并确认扩展的Fhb7基因簇为可转移的赤霉病抗性资源。</p></section>
+      <section class="module module-why"><h2>为什么值得关注</h2><p>同源分辨组装与348份渐渗系目录把长穗偃麦草从抗性供体变为可检索的等位变异库；做小麦赤霉病抗性转移与多倍体同源交换分析的人，可直接以该基因集和渐渗系为参照，重新判断片段异源多倍体的稳定方式。</p></section>
+      <section class="module module-next"><h2>未来展望</h2><p>还缺一场验证：22拷贝Fhb7基因簇在渐渗系中的抗性剂量效应尚未由田间接种数据确认；同源交换与片段异源多倍体组织的因果关联也需在更多多倍体体系中检验。</p></section>
+    </div>
+    <p class="article-stage"><b>研究阶段</b>同源分辨组装 + 348份渐渗系</p>
+    <footer class="article-foot"><a class="doi" href="https://doi.org/10.1016/j.molp.2026.09.014">DOI 10.1016/j.molp.2026.09.014</a> <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/42817168/">PMID 42817168</a> <span class="affil">西北农林科技大学农学院</span> <a class="source-link" href="https://doi.org/10.1016/j.molp.2026.09.014">原始论文 ↗</a></footer>
+  </div>
+</article>
+<article class="print-article" id="article-02" data-article-number="2" aria-label="文章 02">
+  <img class="article-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true">
+  <div class="article-inner">
+    <div class="article-brandbar"><span class="brand-left">基因组雷达<small>GENOME RADAR</small></span><span class="brand-right">2026年第40周　·　文章 02</span></div>
+    <div class="article-meta"><span class="meta-journal">Nat Commun</span><span class="meta-pill">1区 Top</span><span class="meta-pill">IF 14.7</span><span class="meta-sep">│</span><span class="meta-tags">组装与注释 / 进化与比较</span><span class="meta-pill">原创研究</span><span class="meta-date">2026-08-31</span></div>
+    <h1 class="article-title-zh">发布 Streptochaeta 染色体级基因组，重建禾本科祖先核型</h1>
+    <p class="article-title-en">Chromosome-level Streptochaeta genome elucidates the ancestral karyotype and allopolyploid origin of grasses.</p>
+    <div class="article-rule"></div>
+    <div class="finding-bar"><span class="finding-label">核心发现</span><span class="finding-text">Streptochaeta 基因组证实所有现存禾本科共享 ρ-全基因组加倍，祖先染色体数 ante-ρ 为 x=8、post-ρ 为 x=12。</span></div>
+    <div class="article-grid">
+      <section class="module module-what"><h2>做了什么</h2><p>以无典型小穗、位于禾本科基部的 Streptochaeta spicata 为材料，组装染色体级基因组，并跨主要禾本科谱系做比较基因组分析，追溯 ρ-全基因组加倍后的核型演化。</p></section>
+      <section class="module module-finding"><h2>结论</h2><p>在 Streptochaeta 中确认 ρ-全基因组加倍，支持所有现存禾本科共享一次异源四倍化；重建的祖先禾本科核型显示 ante-ρ 为 x=8、post-ρ 为 x=12，随后主要亚科分化伴随融合导致的染色体数减少；亚基因组偏倚分离与显性在 Streptochaeta 和主要谱系中稳定继承。</p></section>
+      <section class="module module-why"><h2>为什么值得关注</h2><p>禾本科祖先核型此前依赖衍生谱系推断，基部姐妹群直接给出 x=8 到 x=12 的锚点；做禾本科比较基因组与核型演化的人可据此重设外群与加倍事件的时间顺序。</p></section>
+      <section class="module module-next"><h2>未来展望</h2><p>还缺一场验证：ρ-全基因组加倍后染色体融合减少核型的顺序，需在更多基部与早期分化谱系中独立检验；小穗等效结构为修饰祖先态的推断也需发育遗传学证据。</p></section>
+    </div>
+    <p class="article-stage"><b>研究阶段</b>染色体级基因组 + 跨谱系比较基因组</p>
+    <footer class="article-foot"><a class="doi" href="https://doi.org/10.1038/s41467-026-76979-2">DOI 10.1038/s41467-026-76979-2</a> <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/42811024/">PMID 42811024</a> <span class="affil">山东农业大学林学院</span> <a class="source-link" href="https://doi.org/10.1038/s41467-026-76979-2">原始论文 ↗</a></footer>
+  </div>
+</article>
+<article class="print-article" id="article-03" data-article-number="3" aria-label="文章 03">
+  <img class="article-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true">
+  <div class="article-inner">
+    <div class="article-brandbar"><span class="brand-left">基因组雷达<small>GENOME RADAR</small></span><span class="brand-right">2026年第40周　·　文章 03</span></div>
+    <div class="article-meta"><span class="meta-journal">J Integr Plant Biol</span><span class="meta-pill">1区</span><span class="meta-pill">IF 9.3</span><span class="meta-sep">│</span><span class="meta-tags">进化与比较 / 组装与注释</span><span class="meta-pill">原创研究</span><span class="meta-date">2026-09-29</span></div>
+    <h1 class="article-title-zh">重建禾本科祖先核型为12条原始染色体</h1>
+    <p class="article-title-en">Ancestral karyotype construction and chromosome fusion in Poaceae.</p>
+    <div class="article-rule"></div>
+    <div class="finding-bar"><span class="finding-label">核心发现</span><span class="finding-text">两个新染色体水平基因组与19个已发表组装重建禾本科祖先核型，支持x=12而非11。</span></div>
+    <div class="article-grid">
+      <section class="module module-what"><h2>做了什么</h2><p>以两个新测序的染色体水平基因组和19个已发表组装为材料，重建禾本科祖先核型；通过比较基因组分析鉴定染色体融合事件，并评估其作为系统发育标记的可靠性。</p></section>
+      <section class="module module-finding"><h2>结论</h2><p>禾本科祖先核型含12条原始染色体（x=12），而非此前认为的11条；共鉴定出48次染色体融合，这些融合事件可作为可靠的系统发育标记，澄清了禾本科染色体演化路径。</p></section>
+      <section class="module module-why"><h2>为什么值得关注</h2><p>x=12的结论直接修正禾本科染色体基数判断，48个融合标记可供禾本科系统发育与比较基因组研究直接取用，重新校准染色体演化推断的参照点。</p></section>
+      <section class="module module-next"><h2>未来展望</h2><p>还缺一场覆盖禾本科更多族、以高连续性组装检验48个融合标记是否普遍适用的验证。</p></section>
+    </div>
+    <p class="article-stage"><b>研究阶段</b>比较基因组学 + 21个基因组组装</p>
+    <footer class="article-foot"><a class="doi" href="https://doi.org/10.1111/jipb.70411">DOI 10.1111/jipb.70411</a> <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/42808735/">PMID 42808735</a> <span class="affil">兰州大学生态学院</span> <a class="source-link" href="https://doi.org/10.1111/jipb.70411">原始论文 ↗</a></footer>
+  </div>
+</article>
+<article class="print-article" id="article-04" data-article-number="4" aria-label="文章 04">
+  <img class="article-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true">
+  <div class="article-inner">
+    <div class="article-brandbar"><span class="brand-left">基因组雷达<small>GENOME RADAR</small></span><span class="brand-right">2026年第40周　·　文章 04</span></div>
+    <div class="article-meta"><span class="meta-journal">Plant J</span><span class="meta-pill">2区</span><span class="meta-pill">IF 6.2</span><span class="meta-sep">│</span><span class="meta-tags">组装与注释 / 泛基因组</span><span class="meta-pill">原创研究</span><span class="meta-date"></span></div>
+    <h1 class="article-title-zh">组装同源四倍体穿龙薯蓣单倍型基因组，揭示近期多倍化与代谢权衡</h1>
+    <p class="article-title-en">Haplotype-resolved autotetraploid genome of Dioscorea nipponica provides insights into recent polyploidization, metabolic rewiring, and environmental adaptation.</p>
+    <div class="article-rule"></div>
+    <div class="finding-bar"><span class="finding-label">核心发现</span><span class="finding-text">同源四倍体穿龙薯蓣单倍型基因组显示，约32%基因发生等位丢失，约60%表达四联体受等位转录抑制。</span></div>
+    <div class="article-grid">
+      <section class="module module-what"><h2>做了什么</h2><p>以2n=4x=40的穿龙薯蓣同源四倍体为材料，构建单倍型解析的染色体级基因组，并结合比较基因组、群体基因组、转录组与代谢组分析，同时纳入二倍体群体作对照，追溯四倍体起源并评估四个单倍型的序列与表达分化。</p></section>
+      <section class="module module-finding"><h2>结论</h2><p>四倍体为单一起源，时间小于1.63 Ma，晚于二倍体祖先分化（约2.5–2.9 Ma），与上新世—更新世气候波动吻合。四个单倍型平均核苷酸一致性高、共线性广泛、全局表达相似；约32%基因发生等位丢失，约60%表达四联体呈等位转录抑制，共同缓冲剂量效应。根茎中黄酮升高而薯蓣皂苷型甾体皂苷降低；PAL、CHS等黄酮基因家族扩张且部分呈正剂量效应，CYP90、CYP94等皂苷通路基因拷贝数稳定、多呈负剂量效应。</p></section>
+      <section class="module module-why"><h2>为什么值得关注</h2><p>同源多倍体常被默认与异源多倍体共享剂量缓冲逻辑，这里约32%等位丢失与约60%转录抑制同时出现，说明缓冲在四倍体内部即可完成；做多倍体表达剂量、代谢通路演化的人可直接把单倍型分辨的表达四联体框架搬到自己体系。</p></section>
+      <section class="module module-next"><h2>未来展望</h2><p>还缺一场跨代验证：等位丢失与转录抑制是建立期一次性事件还是持续进行，需在多个四倍体群体与人工合成四倍体中追踪；代谢权衡与适应性提升的因果链也需在田间 reciprocal transplant 中检验。</p></section>
+    </div>
+    <p class="article-stage"><b>研究阶段</b>单倍型基因组 + 群体与多组学比较</p>
+    <footer class="article-foot"><a class="doi" href="https://doi.org/10.1111/tpj.71153">DOI 10.1111/tpj.71153</a> <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/42804372/">PMID 42804372</a> <span class="affil">江苏省中国科学院植物研究所</span> <a class="source-link" href="https://doi.org/10.1111/tpj.71153">原始论文 ↗</a></footer>
+  </div>
+</article>
+<article class="print-article" id="article-05" data-article-number="5" aria-label="文章 05">
+  <img class="article-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true">
+  <div class="article-inner">
+    <div class="article-brandbar"><span class="brand-left">基因组雷达<small>GENOME RADAR</small></span><span class="brand-right">2026年第40周　·　文章 05</span></div>
+    <div class="article-meta"><span class="meta-journal">Mol Plant</span><span class="meta-pill">1区 Top</span><span class="meta-pill">IF 17.1</span><span class="meta-sep">│</span><span class="meta-tags">单细胞与空间 / 表观与调控</span><span class="meta-pill">原创研究</span><span class="meta-date">2026-10-01</span></div>
+    <h1 class="article-title-zh">单核转录组图谱揭示芸薹属杂交胚败育的细胞程序</h1>
+    <p class="article-title-en">Single-nucleus transcriptome atlas of Brassica developing seeds provides cellular and molecular insights into embryo abortion in interspecific hybrids.</p>
+    <div class="article-rule"></div>
+    <div class="finding-bar"><span class="finding-label">核心发现</span><span class="finding-text">杂交种子胚与胚乳细胞数量骤减，CYP78A6 在球胚期后仍活跃，母本突变可恢复种子活力。</span></div>
+    <div class="article-grid">
+      <section class="module module-what"><h2>做了什么</h2><p>对 Brassica campestris ssp. chinensis 与 Brassica oleracea 种间杂交及 B. campestris 种内杂交发育种子做时间序列单核 RNA 测序，比较单核转录组谱，并绘制配体—受体介导的细胞间通讯网络。</p></section>
+      <section class="module module-finding"><h2>结论</h2><p>正常种子发育中胚与胚乳细胞旺盛增殖，种间杂交中两类细胞大幅减少；鉴定出以 CYP78A6 特异表达为标志的种皮—胚柄细胞类型，该基因在正常种子球胚期后失活而在杂交种子中持续活跃；杂交种子激素平衡严重紊乱、细胞通讯网络广泛失调；拟南芥中母本 CYP78A6 突变与外源激素均恢复杂交种子活力，突变效应更强，二者联用仅小幅增益。</p></section>
+      <section class="module module-why"><h2>为什么值得关注</h2><p>把种间胚败育从笼统的合子后障碍改写为可定位到特定细胞类型与基因程序的调控失衡，做远缘杂交胚 rescue 与生殖隔离遗传解析的团队可据此重设候选靶点。</p></section>
+      <section class="module module-next"><h2>未来展望</h2><p>还缺在更多芸薹属种间组合中验证 CYP78A6 失活时序是否普遍，以及母本突变恢复活力的效应能否在作物杂交育种材料中复现。</p></section>
+    </div>
+    <p class="article-stage"><b>研究阶段</b>单核转录组图谱 + 拟南芥跨物种验证</p>
+    <footer class="article-foot"><a class="doi" href="https://doi.org/10.1016/j.molp.2026.09.016">DOI 10.1016/j.molp.2026.09.016</a> <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/42823797/">PMID 42823797</a> <span class="affil">浙江大学农业与生物技术学院</span> <a class="source-link" href="https://doi.org/10.1016/j.molp.2026.09.016">原始论文 ↗</a></footer>
+  </div>
+</article>
+<article class="print-article" id="article-06" data-article-number="6" aria-label="文章 06">
+  <img class="article-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true">
+  <div class="article-inner">
+    <div class="article-brandbar"><span class="brand-left">基因组雷达<small>GENOME RADAR</small></span><span class="brand-right">2026年第40周　·　文章 06</span></div>
+    <div class="article-meta"><span class="meta-journal">Plant Physiol</span><span class="meta-pill">2区</span><span class="meta-pill">IF 6.5</span><span class="meta-sep">│</span><span class="meta-tags">变异与关联 / 泛基因组</span><span class="meta-pill">原创研究</span><span class="meta-date"></span></div>
+    <h1 class="article-title-zh">解析烟草宿主遗传变异关联根际微生物组组装与抗镰刀菌</h1>
+    <p class="article-title-en">Host genetic variation is associated with root-associated microbiome assembly and resistance to Fusarium oxysporum in tobacco.</p>
+    <div class="article-rule"></div>
+    <div class="finding-bar"><span class="finding-label">核心发现</span><span class="finding-text">50 个烟草品种的多组学关联分析显示，宿主基因型显著塑造根际微生物群落，并指向抗镰刀菌的菌株资源。</span></div>
+    <div class="article-grid">
+      <section class="module module-what"><h2>做了什么</h2><p>以 50 个烟草栽培品种为材料，整合全基因组重测序、扩增子测序与代谢组数据，结合微生物全基因组关联分析和中介分析，考察宿主遗传变异与根际微生物组变异的共变关系。</p></section>
+      <section class="module module-finding"><h2>结论</h2><p>宿主基因型显著影响根际微生物群落的多样性与组成，若干宿主位点与可遗传、关联养分获取和胁迫响应的微生物类群相连；中介分析提示宿主遗传变异与假单胞菌科丰度的关联部分经萜类等次生代谢物传递，对其他类群中介效应较弱；多株基因型关联细菌分离物拮抗尖孢镰刀菌，其中铜绿假单胞菌 FZ1 在温室试验中抑制病原生长、增强宿主防御并减轻病情。</p></section>
+      <section class="module module-why"><h2>为什么值得关注</h2><p>把微生物组性状从群落描述推进到宿主位点与代谢物中介的可检验链条，做作物微生物组关联分析的人可直接借用这套重测序、扩增子与代谢组联合设计，并据此重估萜类在根际菌群组装中的权重。</p></section>
+      <section class="module module-next"><h2>未来展望</h2><p>还缺一场在多种土壤与田间条件下的验证，以确认 FZ1 的抑病效果能否脱离温室；宿主位点经萜类调控假单胞菌科的通路也需遗传学实验闭合。</p></section>
+    </div>
+    <p class="article-stage"><b>研究阶段</b>多组学关联分析 + 50 个品种 + 温室功能验证</p>
+    <footer class="article-foot"><a class="doi" href="https://doi.org/10.1093/plphys/kiag727">DOI 10.1093/plphys/kiag727</a> <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/42811751/">PMID 42811751</a> <span class="affil">中国烟草总公司郑州烟草研究院</span> <a class="source-link" href="https://doi.org/10.1093/plphys/kiag727">原始论文 ↗</a></footer>
+  </div>
+</article>
+<article class="print-article" id="article-07" data-article-number="7" aria-label="文章 07">
+  <img class="article-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true">
+  <div class="article-inner">
+    <div class="article-brandbar"><span class="brand-left">基因组雷达<small>GENOME RADAR</small></span><span class="brand-right">2026年第40周　·　文章 07</span></div>
+    <div class="article-meta"><span class="meta-journal">Plant Cell</span><span class="meta-pill">1区 Top</span><span class="meta-pill">IF 10.0</span><span class="meta-sep">│</span><span class="meta-tags">表观与调控 / 组装与注释</span><span class="meta-pill">原创研究</span><span class="meta-date"></span></div>
+    <h1 class="article-title-zh">DDM1 维持复杂植物基因组稳定性</h1>
+    <p class="article-title-en">DDM1 safeguards the stability of a Complex plant genome.</p>
+    <div class="article-rule"></div>
+    <div class="finding-bar"><span class="finding-label">核心发现</span><span class="finding-text">无摘要可依，仅凭标题判断：DDM1 缺失会破坏复杂植物基因组稳定性。</span></div>
+    <div class="article-grid">
+      <section class="module module-what"><h2>做了什么</h2><p>以复杂植物基因组为对象，检验 DDM1 对基因组稳定性的维持作用；摘要未提供材料、数据规模与方法路线，仅标题可确认 DDM1 与稳定性之间的关联，具体物种与实验设计无法从现有信息判断。</p></section>
+      <section class="module module-finding"><h2>结论</h2><p>标题表述为 DDM1 safeguards the stability of a Complex plant genome，即 DDM1 保障复杂植物基因组的稳定性；摘要未给出任何数字、统计结果或机制细节，无法判断稳定性下降的具体形式与幅度，结论强度只能停留在标题层面。</p></section>
+      <section class="module module-why"><h2>为什么值得关注</h2><p>若 DDM1 在复杂基因组中承担稳定性维持，则转座子与重复序列富集的植物基因组不能只按常规模式生物推断调控逻辑；做重复序列、甲基化与基因组组装的研究者需重新核对 DDM1 突变背景下的变异来源。</p></section>
+      <section class="module module-next"><h2>未来展望</h2><p>还缺一场在复杂基因组物种中直接测定 DDM1 缺失后转座子动员与重排频率的实验，以及该基因剂量与稳定性阈值之间的定量关系。</p></section>
+    </div>
+    <p class="article-stage"><b>研究阶段</b>仅标题信息，无摘要数据</p>
+    <footer class="article-foot"><a class="doi" href="https://doi.org/10.1093/plcell/koag304">DOI 10.1093/plcell/koag304</a> <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/42814757/">PMID 42814757</a> <span class="affil">Universitè Paris-Saclay, C</span> <a class="source-link" href="https://doi.org/10.1093/plcell/koag304">原始论文 ↗</a></footer>
+  </div>
+</article>
+<article class="print-article" id="article-08" data-article-number="8" aria-label="文章 08">
+  <img class="article-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true">
+  <div class="article-inner">
+    <div class="article-brandbar"><span class="brand-left">基因组雷达<small>GENOME RADAR</small></span><span class="brand-right">2026年第40周　·　文章 08</span></div>
+    <div class="article-meta"><span class="meta-journal">Plant Cell Environ</span><span class="meta-pill">2区</span><span class="meta-pill">IF 6.0</span><span class="meta-sep">│</span><span class="meta-tags">变异与关联 / 进化与比较</span><span class="meta-pill">原创研究</span><span class="meta-date">2026-10-01</span></div>
+    <h1 class="article-title-zh">定位 OsAKR 揭示水稻抗旱突变体产量优势</h1>
+    <p class="article-title-en">Metabolic and Gene Expression Profile Reveal Genetic Basis of Reproductive Stage Drought Tolerance in a Drought-Defying Rice Mutant.</p>
+    <div class="article-rule"></div>
+    <div class="finding-bar"><span class="finding-label">核心发现</span><span class="finding-text">IR64 伽马射线诱变获得的 DD 突变体在干旱下产量约为野生型三倍，OsAKR 被定位为关键位点。</span></div>
+    <div class="article-grid">
+      <section class="module module-what"><h2>做了什么</h2><p>对 Oryza sativa L. cv. IR64 伽马射线诱变群体在 M2、M3、M4 代于苗期、花前和花后三阶段进行多环境表型筛选，得到抗旱突变体 DD；结合代谢组、靶向基因表达与 MutMap+ 分析，并借助改进的 IR64 基因组组装定位候选基因。</p></section>
+      <section class="module module-finding"><h2>结论</h2><p>干旱下 DD 突变体产量约为野生型三倍，渗透调节物质积累更高、抗氧化防御更强；46% 的差异代谢物响应模式与 N22 相似，DREB（OsDREB2A、OsDREB2B）、乙二醛酶（OsGLYI-11.2、OsGLYII.2、OsGLYIII）与 OsTPS 协同上调；MutMap+ 将 4 号染色体上的 OsAKR 定位为主要贡献位点，其高表达伴随甲基乙二醛与丙二醛解毒增强。</p></section>
+      <section class="module module-why"><h2>为什么值得关注</h2><p>把抗旱表型的候选位点收敛到 4 号染色体的 OsAKR，并给出羰基解毒这一可检验的生理关联；做突变体筛选、代谢组与基因定位的水稻遗传团队可据此重新评估醛酮还原酶在生殖期抗旱中的权重。</p></section>
+      <section class="module module-next"><h2>未来展望</h2><p>还缺一场在 IR64 背景下的 OsAKR 敲除或过表达验证，以确认该位点对产量优势的因果贡献；DD 突变体在田间多点的生殖期抗旱稳定性也尚未检验。</p></section>
+    </div>
+    <p class="article-stage"><b>研究阶段</b>突变体筛选 + 代谢组与基因定位</p>
+    <footer class="article-foot"><a class="doi" href="https://doi.org/10.1111/pce.70929">DOI 10.1111/pce.70929</a> <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/42820932/">PMID 42820932</a> <span class="affil">Jawaharlal Nehru Universit</span> <a class="source-link" href="https://doi.org/10.1111/pce.70929">原始论文 ↗</a></footer>
+  </div>
+</article>
+<article class="print-article" id="article-09" data-article-number="9" aria-label="文章 09">
+  <img class="article-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true">
+  <div class="article-inner">
+    <div class="article-brandbar"><span class="brand-left">基因组雷达<small>GENOME RADAR</small></span><span class="brand-right">2026年第40周　·　文章 09</span></div>
+    <div class="article-meta"><span class="meta-journal">Plant J</span><span class="meta-pill">2区</span><span class="meta-pill">IF 6.2</span><span class="meta-sep">│</span><span class="meta-tags">表观与调控 / 进化与比较</span><span class="meta-pill">原创研究</span><span class="meta-date"></span></div>
+    <h1 class="article-title-zh">揭示同源四倍体蓖麻种皮扩张介导种子增大的分子路径</h1>
+    <p class="article-title-en">Molecular mechanisms underlying seed enlargement mediated by seed coat development in autotetraploid castor bean.</p>
+    <div class="article-rule"></div>
+    <div class="finding-bar"><span class="finding-label">核心发现</span><span class="finding-text">同源染色体加倍使蓖麻种子长宽厚与百粒重显著增大，种皮细胞面积增加是结构基础。</span></div>
+    <div class="article-grid">
+      <section class="module module-what"><h2>做了什么</h2><p>以同源染色体加倍获得的同源四倍体蓖麻及其二倍体为材料，比较种子形态与种皮组织学，并对种皮进行转录组测序，结合共表达分析、酵母单杂交、凝胶迁移实验与双荧光素酶报告实验验证调控关系。</p></section>
+      <section class="module module-finding"><h2>结论</h2><p>四倍体种子长、宽、厚及百粒重均显著大于二倍体，种皮细胞面积增加；种皮间鉴定出6043个非冗余差异表达基因，RcEXPA1/5/9/12/15、RcEXLA1等细胞扩张与壁松弛基因上调，木质素合成基因下调，RcPDF2结合RcEXLA1启动子两个L1-box元件并增强其活性。</p></section>
+      <section class="module module-why"><h2>为什么值得关注</h2><p>把多倍体种子变大的解释从胚乳或胚转向种皮细胞扩张，并给出RcPDF2–RcEXLA1这一可检验的调控节点；做多倍体育种与种子大小基因剂量效应的人可据此重设候选基因清单。</p></section>
+      <section class="module module-next"><h2>未来展望</h2><p>还缺一场跨倍性水平的验证：RcPDF2–RcEXLA1模块是否在其它多倍体作物种皮中保守，以及种皮细胞扩张对最终产量的贡献需田间多代数据判定。</p></section>
+    </div>
+    <p class="article-stage"><b>研究阶段</b>转录组 + 组织学 + 酵母单杂交与双荧光素酶验证</p>
+    <footer class="article-foot"><a class="doi" href="https://doi.org/10.1111/tpj.71146">DOI 10.1111/tpj.71146</a> <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/42804375/">PMID 42804375</a> <span class="affil">西南林业大学林学院</span> <a class="source-link" href="https://doi.org/10.1111/tpj.71146">原始论文 ↗</a></footer>
+  </div>
+</article>
+<article class="print-article" id="article-10" data-article-number="10" aria-label="文章 10">
+  <img class="article-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true">
+  <div class="article-inner">
+    <div class="article-brandbar"><span class="brand-left">基因组雷达<small>GENOME RADAR</small></span><span class="brand-right">2026年第40周　·　文章 10</span></div>
+    <div class="article-meta"><span class="meta-journal">Plant Cell Environ</span><span class="meta-pill">2区</span><span class="meta-pill">IF 6.0</span><span class="meta-sep">│</span><span class="meta-tags">变异与关联 / 进化与比较</span><span class="meta-pill">原创研究</span><span class="meta-date">2026-09-27</span></div>
+    <h1 class="article-title-zh">揭示高粱根际与散土AM真菌纬度梯度反向格局</h1>
+    <p class="article-title-en">Contrasting Latitudinal Patterns of Arbuscular Mycorrhizal Fungal Diversity in Sorghum Rhizosphere Versus Bulk Soils Across Climatic Zones.</p>
+    <div class="article-rule"></div>
+    <div class="finding-bar"><span class="finding-label">核心发现</span><span class="finding-text">534份样本显示，高粱根际AM真菌α多样性随纬度升高而下降，散土则相反。</span></div>
+    <div class="article-grid">
+      <section class="module module-what"><h2>做了什么</h2><p>采集亚热带、暖温带与温带三个气候带55块高粱田的534份样本，分根际与散土两个组分，用高通量测序测定丛枝菌根真菌多样性，比较α与β多样性随纬度的变化及群落构建过程。</p></section>
+      <section class="module module-finding"><h2>结论</h2><p>根际AM真菌α多样性随纬度升高而下降，亚热带最高；散土α多样性趋势相反，温带丰富度更高。β多样性在根际随纬度升高而增加，在散土则下降，两组分间β多样性差异随纬度升高而缩小，提示高纬度环境过滤更强。群落主要受确定性过程影响，年均降水、纬度与土壤pH共同塑造群落组成。</p></section>
+      <section class="module module-why"><h2>为什么值得关注</h2><p>根际与散土AM真菌多样性沿纬度反向变化，说明仅用散土采样推断作物根际共生群落会得出相反结论；做农业微生物地理格局或设计跨气候带采样方案时，须把根际与散土分开处理。</p></section>
+      <section class="module module-next"><h2>未来展望</h2><p>还缺一场跨气候带的时间序列验证，以判断纬度格局是稳定分异还是随季节与作物生育期翻转；确定性过程占主导的结论也需在更多作物系统中检验。</p></section>
+    </div>
+    <p class="article-stage"><b>研究阶段</b>测序调查 + 55块田534份样本</p>
+    <footer class="article-foot"><a class="doi" href="https://doi.org/10.1111/pce.70936">DOI 10.1111/pce.70936</a> <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/42802533/">PMID 42802533</a> <span class="affil">福建师范大学湿润亚热带生态地理过程教育部重点实验室</span> <a class="source-link" href="https://doi.org/10.1111/pce.70936">原始论文 ↗</a></footer>
+  </div>
+</article>
+<article class="print-article" id="article-11" data-article-number="11" aria-label="文章 11">
+  <img class="article-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true">
+  <div class="article-inner">
+    <div class="article-brandbar"><span class="brand-left">基因组雷达<small>GENOME RADAR</small></span><span class="brand-right">2026年第40周　·　文章 11</span></div>
+    <div class="article-meta"><span class="meta-journal">Plant Cell Environ</span><span class="meta-pill">2区</span><span class="meta-pill">IF 6.0</span><span class="meta-sep">│</span><span class="meta-tags">变异与关联 / 进化与比较</span><span class="meta-pill">原创研究</span><span class="meta-date">2026-09-28</span></div>
+    <h1 class="article-title-zh">揭示单核苷酸差异下地衣共生藻的生理分化策略</h1>
+    <p class="article-title-en">Hidden Strategies Beneath a Single Nucleotide: Contrasting Physiology in Lichen Photobiont Strains.</p>
+    <div class="article-rule"></div>
+    <div class="finding-bar"><span class="finding-label">核心发现</span><span class="finding-text">仅差一个 ITS2 单核苷酸多态性的两株共生藻，光合表现分化如阳叶与阴叶。</span></div>
+    <div class="article-grid">
+      <section class="module module-what"><h2>做了什么</h2><p>以两株 ITS2 区仅差一个单核苷酸多态性的 Trebouxia lynniae 为材料，经生物量积累、叶绿素荧光、色素定量、透射电镜、代谢组与全基因组测序表征，比较其对温度与光强的生理响应。</p></section>
+      <section class="module module-finding"><h2>结论</h2><p>两株核基因组与质体基因组相似度分别达 99.4% 与 99.9%，光合表现却分化如阳叶与阴叶；一株氨基酸与可溶性糖更高，另一株柠檬酸与胞质脂滴更多。基因组分析检出逾 1600 个携带非同义突变的基因，多涉及转录调控、蛋白周转与信号转导，而非核心代谢。</p></section>
+      <section class="module module-why"><h2>为什么值得关注</h2><p>共生藻种内变异长期被种间差异掩盖，此处显示单核苷酸差异即可对应光合与储能策略分化；做地衣共生藻分型、环境适应或种内功能差异分析的人，可据此重新评估以 ITS2 变异划分生态型的尺度。</p></section>
+      <section class="module module-next"><h2>未来展望</h2><p>还缺一场在共生状态下的验证：两株在离体培养中表现出的光合与储能差异，是否在完整地衣体内、沿温度与光强梯度仍成立。</p></section>
+    </div>
+    <p class="article-stage"><b>研究阶段</b>双菌株多组学表型比较</p>
+    <footer class="article-foot"><a class="doi" href="https://doi.org/10.1111/pce.70894">DOI 10.1111/pce.70894</a> <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/42806720/">PMID 42806720</a> <span class="affil">Real Jardín Botánico (CSIC</span> <a class="source-link" href="https://doi.org/10.1111/pce.70894">原始论文 ↗</a></footer>
+  </div>
+</article>
+<article class="print-article" id="article-12" data-article-number="12" aria-label="文章 12">
+  <img class="article-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true">
+  <div class="article-inner">
+    <div class="article-brandbar"><span class="brand-left">基因组雷达<small>GENOME RADAR</small></span><span class="brand-right">2026年第40周　·　文章 12</span></div>
+    <div class="article-meta"><span class="meta-journal">Nucleic Acids Res</span><span class="meta-pill">1区</span><span class="meta-pill">IF 16.6</span><span class="meta-sep">│</span><span class="meta-tags">方法与工具 / 组装与注释</span><span class="meta-pill">方法工具</span><span class="meta-date"></span></div>
+    <h1 class="article-title-zh">在未注释基因组组装中定向搜索直系同源基因</h1>
+    <p class="article-title-en">Targeted ortholog search in unannotated genome assemblies with fDOG-Assembly.</p>
+    <div class="article-rule"></div>
+    <div class="finding-bar"><span class="finding-label">核心发现</span><span class="finding-text">fDOG-Assembly 在未注释组装中识别直系同源基因，性能接近依赖预注释蛋白组的传统工具，且不受通用单拷贝基因限制。</span></div>
+    <div class="article-grid">
+      <section class="module module-what"><h2>做了什么</h2><p>fDOG-Assembly 直接以未注释基因组组装为输入，按特征架构感知进行定向直系同源搜索，无需先做基因预测。基准测试与 BUSCO、Compleasm 对比；并在 rat 与 Nematostella vectensis 中检索 5000 个人类基因的直系同源基因；另筛查 176 个土壤无脊椎动物基因组组装。</p></section>
+      <section class="module module-finding"><h2>结论</h2><p>基准测试中 fDOG-Assembly 的直系同源识别表现与 BUSCO、Compleasm 相近，且不限于通用单拷贝基因；在 rat 与 Nematostella vectensis 中检索 5000 个人类基因时接近依赖预注释蛋白组的传统工具，并能找回因注释不完整而被常规方法漏掉的直系同源基因；176 个土壤无脊椎动物组装中，β-内酰胺 biosynthesis 基因直系同源基因在跳虫中广泛分布，部分物种具备近乎完整的 cephamycin 生物合成基因集。</p></section>
+      <section class="module module-why"><h2>为什么值得关注</h2><p>公共数据库中多数真核基因组组装缺注释，此前做直系同源分析须先预测基因，漏检被归因于生物学缺失；fDOG-Assembly 表明部分缺口来自注释不完整，做系统发育谱与天然产物基因簇筛查的团队可绕过注释步骤直接检索组装。</p></section>
+      <section class="module module-next"><h2>未来展望</h2><p>跳虫携带近乎完整 cephamycin 基因集只是基因组层面的推断，还缺代谢产物检测或异源表达来确认这些基因集确实产出 β-内酰胺抗生素；fDOG-Assembly 在远缘物种中的召回率也需在更多已注释基因组上做回检。</p></section>
+    </div>
+    <p class="article-stage"><b>研究阶段</b>工具开发 + 176 个土壤无脊椎动物基因组组装筛查</p>
+    <footer class="article-foot"><a class="doi" href="https://doi.org/10.1093/nar/gkag929">DOI 10.1093/nar/gkag929</a> <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/42803191/">PMID 42803191</a> <span class="affil">歌德大学生物科学学院应用生物信息学组</span> <a class="source-link" href="https://doi.org/10.1093/nar/gkag929">原始论文 ↗</a></footer>
+  </div>
+</article>
+<article class="print-article" id="article-13" data-article-number="13" aria-label="文章 13">
+  <img class="article-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true">
+  <div class="article-inner">
+    <div class="article-brandbar"><span class="brand-left">基因组雷达<small>GENOME RADAR</small></span><span class="brand-right">2026年第40周　·　文章 13</span></div>
+    <div class="article-meta"><span class="meta-journal">Mol Biol Evol</span><span class="meta-pill">1区</span><span class="meta-pill">IF 11.0</span><span class="meta-sep">│</span><span class="meta-tags">方法与工具 / 变异与关联</span><span class="meta-pill">方法工具</span><span class="meta-date"></span></div>
+    <h1 class="article-title-zh">在低覆盖测序数据中联合建模基因型不确定性与结构迁移</h1>
+    <p class="article-title-en">Identifying adaptive variation in spatially structured populations using low-coverage whole-genome sequencing data.</p>
+    <div class="article-rule"></div>
+    <div class="finding-bar"><span class="finding-label">核心发现</span><span class="finding-text">把基因型不确定性传入进化模型参数，模拟中假阴性大幅下降，并在370万SNP的灰雀数据上落地。</span></div>
+    <div class="article-grid">
+      <section class="module module-what"><h2>做了什么</h2><p>方法以低覆盖全基因组测序数据为输入，不再剔除基因型不可靠的位点或直接取最可能基因型，而是把基因型不确定性沿测序数据传递到进化模型参数中；模型机制化描述局域适应、结构迁移、突变与漂移的联合作用，替代逻辑回归等现象学拆分。</p></section>
+      <section class="module module-finding"><h2>结论</h2><p>合成模拟显示，同时考虑基因型不确定性与结构迁移后假阴性显著减少；应用于北美灰雀（rosy-finches）高海拔气候受胁类群时，分析纳入370万个SNP，说明该方法可在真实低覆盖数据规模上运行。</p></section>
+      <section class="module module-why"><h2>为什么值得关注</h2><p>对做基因型—环境关联的人，这意味着低覆盖数据不必先过滤或硬判基因型再分析，丢弃数据与错误判型带来的系统偏差可以避免；气候差异地点间的结构迁移造成的非S形响应，也不再被广义线性模型误判为非适应。</p></section>
+      <section class="module module-next"><h2>未来展望</h2><p>还缺一场验证：在基因型判型质量已知、迁移—选择平衡可独立估计的真实种群中，检验该方法能否把假阴性下降转化为可复现的适应位点定位。</p></section>
+    </div>
+    <p class="article-stage"><b>研究阶段</b>方法开发 + 合成模拟 + 370万SNP实证</p>
+    <footer class="article-foot"><a class="doi" href="https://doi.org/10.1093/molbev/msag255">DOI 10.1093/molbev/msag255</a> <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/42817807/">PMID 42817807</a> <span class="affil">德克萨斯大学奥斯汀分校统计与数据科学系</span> <a class="source-link" href="https://doi.org/10.1093/molbev/msag255">原始论文 ↗</a></footer>
+  </div>
+</article>
+<article class="print-article" id="article-14" data-article-number="14" aria-label="文章 14">
+  <img class="article-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true">
+  <div class="article-inner">
+    <div class="article-brandbar"><span class="brand-left">基因组雷达<small>GENOME RADAR</small></span><span class="brand-right">2026年第40周　·　文章 14</span></div>
+    <div class="article-meta"><span class="meta-journal">Nat Genet</span><span class="meta-pill">1区 Top</span><span class="meta-pill">IF 31.7</span><span class="meta-sep">│</span><span class="meta-tags">方法与工具 / 变异与关联</span><span class="meta-pill">方法工具</span><span class="meta-date">2026-10-02</span></div>
+    <h1 class="article-title-zh">用单等位基因纳米尺度作图定位调控变异</h1>
+    <p class="article-title-en">Single-allele nanoscale mapping of regulatory variants.</p>
+    <div class="article-rule"></div>
+    <div class="finding-bar"><span class="finding-label">核心发现</span><span class="finding-text">MCCv 在 CD4+ T 细胞中解析 405 个免疫介导炎症疾病相关顺式调控元件。</span></div>
+    <div class="article-grid">
+      <section class="module module-what"><h2>做了什么</h2><p>基于单等位基因染色质结构分析构建 Micro Capture-C 变异到功能平台（MCCv），可识别纳米尺度染色质结构变化，把顺式调控元件中的变异与靶基因相连，并对位点内其他杂合变异分相，将调控变异与等位基因表达失衡对应，在基因组编辑后直接读出变异对染色质互作的影响。</p></section>
+      <section class="module module-finding"><h2>结论</h2><p>在 CD4+ T 细胞中考察 405 个与免疫介导炎症疾病相关的顺式调控元件，发现一种此前未描述的获得性功能机制：变异创建 neo-CTCF 基序，阻断超增强子与 SESN3 启动子的接触，从而提高自身免疫风险；SESN3 通过感知色氨酸调控雷帕霉素靶蛋白，小鼠模型显示其在自身免疫中的作用。</p></section>
+      <section class="module module-why"><h2>为什么值得关注</h2><p>把非编码变异从关联信号推进到单等位基因层面的因果机制，并给出可编辑验证的读出路；做免疫疾病精细定位与染色质互作解读的团队可直接借鉴其分相与编辑后读出的设计。</p></section>
+      <section class="module module-next"><h2>未来展望</h2><p>还缺在更多细胞类型与位点上验证 neo-CTCF 基序阻断超增强子接触是否普遍成立，以及小鼠表型能否对应人类风险变异的剂量效应。</p></section>
+    </div>
+    <p class="article-stage"><b>研究阶段</b>单等位基因平台 + 405 个顺式调控元件</p>
+    <footer class="article-foot"><a class="doi" href="https://doi.org/10.1038/s41588-026-02776-8">DOI 10.1038/s41588-026-02776-8</a> <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/42827183/">PMID 42827183</a> <span class="affil">牛津大学拉德克利夫医学院 Weatherall 分子</span> <a class="source-link" href="https://doi.org/10.1038/s41588-026-02776-8">原始论文 ↗</a></footer>
+  </div>
+</article>
+<article class="print-article" id="article-15" data-article-number="15" aria-label="文章 15">
+  <img class="article-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true">
+  <div class="article-inner">
+    <div class="article-brandbar"><span class="brand-left">基因组雷达<small>GENOME RADAR</small></span><span class="brand-right">2026年第40周　·　文章 15</span></div>
+    <div class="article-meta"><span class="meta-journal">Genome Res</span><span class="meta-pill">2区</span><span class="meta-pill">IF 6.2</span><span class="meta-sep">│</span><span class="meta-tags">方法与工具 / 变异与关联</span><span class="meta-pill">方法工具</span><span class="meta-date">2026-10-01</span></div>
+    <h1 class="article-title-zh">光学基因组图谱检出癫痫脑组织体细胞结构变异</h1>
+    <p class="article-title-en">Optical genome mapping identifies clinically relevant somatic structural variation in epilepsy-affected brain tissue.</p>
+    <div class="article-rule"></div>
+    <div class="finding-bar"><span class="finding-label">核心发现</span><span class="finding-text">优化后的光学基因组图谱方案从手术脑组织获得约450×有效覆盖，可检出低等位分数的体细胞变异。</span></div>
+    <div class="article-grid">
+      <section class="module module-what"><h2>做了什么</h2><p>针对临床标本高质量高分子量DNA的制备瓶颈，优化手术切除脑组织的光学基因组图谱建库流程，使有效覆盖度达到约450×，满足低等位分数体细胞变异的检出需求；随后将该流程用于四例癫痫患者的脑标本，并与同标本短读长外显子组测序结果比对。</p></section>
+      <section class="module module-finding"><h2>结论</h2><p>光学基因组图谱在四例癫痫患者脑标本中检出大型、复杂的结构变异，其中多数未被同标本的短读长外显子组测序捕获；一例携带已知胚系DEPDC5变异的患者中，该图谱揭示一个约20%变异等位分数的13.2kb体细胞缺失，符合DEPDC5相关病变性癫痫的二次打击模型，PacBio HiFi数据解析断点后显示该缺失由两侧Alu元件重组介导。</p></section>
+      <section class="module module-why"><h2>为什么值得关注</h2><p>短读长外显子组测序漏掉的大型复杂体细胞结构变异，在四例标本中占光学图谱所检出变异的大多数，这提示仅凭外显子组数据判断阴性结果并不可靠；从事癫痫皮质发育畸形遗传诊断与脑组织体细胞变异研究的实验室，可直接参照该建库流程与低等位分数判定标准。</p></section>
+      <section class="module module-next"><h2>未来展望</h2><p>还缺一场在更大患者队列中与短读长测序的头对头比较，以确定该流程相对现有检测的增量诊断率；同时需要验证其他脑组织标本类型与保存条件能否稳定达到约450×有效覆盖。</p></section>
+    </div>
+    <p class="article-stage"><b>研究阶段</b>方法优化 + 4 例癫痫脑标本验证</p>
+    <footer class="article-foot"><a class="doi" href="https://doi.org/10.1101/gr.281418.125">DOI 10.1101/gr.281418.125</a> <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/42823194/">PMID 42823194</a> <span class="affil">Nationwide Children&#x27;s Hosp</span> <a class="source-link" href="https://doi.org/10.1101/gr.281418.125">原始论文 ↗</a></footer>
+  </div>
+</article>
+<article class="print-article" id="article-16" data-article-number="16" aria-label="文章 16">
+  <img class="article-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true">
+  <div class="article-inner">
+    <div class="article-brandbar"><span class="brand-left">基因组雷达<small>GENOME RADAR</small></span><span class="brand-right">2026年第40周　·　文章 16</span></div>
+    <div class="article-meta"><span class="meta-journal">Mol Biol Evol</span><span class="meta-pill">1区</span><span class="meta-pill">IF 11.0</span><span class="meta-sep">│</span><span class="meta-tags">方法与工具 / 进化与比较</span><span class="meta-pill">方法工具</span><span class="meta-date"></span></div>
+    <h1 class="article-title-zh">用 kamino 绕过聚类比对，直接从蛋白质组构建氨基酸系统发育比对</h1>
+    <p class="article-title-en">kamino: fast proteome-wide variant calling for amino acid phylogenomics.</p>
+    <div class="article-rule"></div>
+    <div class="finding-bar"><span class="finding-label">核心发现</span><span class="finding-text">kamino 无需参考序列与比对，直接从蛋白质组构建氨基酸系统发育比对，速度比经典标记流程快数个数量级。</span></div>
+    <div class="article-grid">
+      <section class="module module-what"><h2>做了什么</h2><p>kamino 以重编码 k-mer 占据度的局部变化识别同源区内的变异位点，从蛋白质组直接抽取伪比对序列，无需先聚类、比对直系同源蛋白，也无需参考基因组。方法在多种原核与真核数据集上生成含系统发育信息的比对，程序以 Rust 实现并公开。</p></section>
+      <section class="module module-finding"><h2>结论</h2><p>重建结果准确恢复结核分枝杆菌谱系、多数经人工审校的 GTDB 分类单元，以及与已发表果蝇和哺乳动物系统发育一致的关系，信号与基于 BUSCO 的方法大体相似；运行时间与基于基因组的无比对方法相当，比经典标记流程快数个数量级，内存需求适中，适用跨度从种内到科级原核、门级真核数据集。</p></section>
+      <section class="module module-why"><h2>为什么值得关注</h2><p>对依赖直系同源聚类加比对做氨基酸系统发育的人，kamino 把这一步换成从蛋白质组直接抽取伪比对，时间从数小时压到与无比对基因组方法相当；做大规模分类单元筛查或快速拓扑核验时，可先跑它再决定哪些分支值得投入完整标记流程精算。</p></section>
+      <section class="module module-next"><h2>未来展望</h2><p>还缺一场在高度分化真核类群上与人工审校标记集的正面对照，以确认伪比对在长枝与饱和位点上的行为；内存与运行时间在数千蛋白质组规模下的表现也尚待实测。</p></section>
+    </div>
+    <p class="article-stage"><b>研究阶段</b>无比对算法 + 多类群系统发育基准</p>
+    <footer class="article-foot"><a class="doi" href="https://doi.org/10.1093/molbev/msag250">DOI 10.1093/molbev/msag250</a> <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/42802937/">PMID 42802937</a> <span class="affil">帝国理工学院公共卫生学院传染病流行病学系</span> <a class="source-link" href="https://doi.org/10.1093/molbev/msag250">原始论文 ↗</a></footer>
+  </div>
+</article>
+<article class="print-article" id="article-17" data-article-number="17" aria-label="文章 17">
+  <img class="article-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true">
+  <div class="article-inner">
+    <div class="article-brandbar"><span class="brand-left">基因组雷达<small>GENOME RADAR</small></span><span class="brand-right">2026年第40周　·　文章 17</span></div>
+    <div class="article-meta"><span class="meta-journal">Genome Res</span><span class="meta-pill">2区</span><span class="meta-pill">IF 6.2</span><span class="meta-sep">│</span><span class="meta-tags">方法与工具 / 进化与比较</span><span class="meta-pill">方法工具</span><span class="meta-date">2026-10-01</span></div>
+    <h1 class="article-title-zh">用蛋白质语言模型嵌入构建快速准确的多序列比对</h1>
+    <p class="article-title-en">Fast and accurate construction of multiple sequence alignments from protein language embeddings with ARIES.</p>
+    <div class="article-rule"></div>
+    <div class="finding-bar"><span class="finding-label">核心发现</span><span class="finding-text">ARIES 在低一致性区间比对准确率高于现有最优方法，计算量随序列数近似线性增长。</span></div>
+    <div class="article-grid">
+      <section class="module module-what"><h2>做了什么</h2><p>以蛋白质语言模型生成的氨基酸嵌入为输入，构建窗口化倒数加权嵌入相似度度量，据此生成模板嵌入，再用动态时间规整将每条序列比对到模板，从而组装全局多序列比对。在多个基准数据集上评估，覆盖不同大小与相似程度的蛋白质家族。</p></section>
+      <section class="module module-finding"><h2>结论</h2><p>在多个基准数据集上，ARIES 的比对准确率高于现有最优方法，在传统方法性能下降的低一致性区间优势尤为明显；计算量随待比对序列数近似线性增长。这是蛋白质语言模型用于跨家族多序列比对构建的首次大规模演示。</p></section>
+      <section class="module module-why"><h2>为什么值得关注</h2><p>低一致性区间一直是替换矩阵打分的盲区，嵌入相似度在此区间仍能识别对应氨基酸，改变了比对工具选型的默认判断；做远程同源比对与结构预测输入构建的团队可直接换用该度量。</p></section>
+      <section class="module module-next"><h2>未来展望</h2><p>还缺一场在真实低一致性家族上、以结构比对为金标准的独立验证，以及嵌入相似度对语言模型规模与训练语料依赖程度的系统评估。</p></section>
+    </div>
+    <p class="article-stage"><b>研究阶段</b>算法 + 多基准数据集评估</p>
+    <footer class="article-foot"><a class="doi" href="https://doi.org/10.1101/gr.282254.126">DOI 10.1101/gr.282254.126</a> <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/42823192/">PMID 42823192</a> <span class="affil">普林斯顿大学</span> <a class="source-link" href="https://doi.org/10.1101/gr.282254.126">原始论文 ↗</a></footer>
+  </div>
+</article>
+<article class="print-article" id="article-18" data-article-number="18" aria-label="文章 18">
+  <img class="article-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true">
+  <div class="article-inner">
+    <div class="article-brandbar"><span class="brand-left">基因组雷达<small>GENOME RADAR</small></span><span class="brand-right">2026年第40周　·　文章 18</span></div>
+    <div class="article-meta"><span class="meta-journal">Nature</span><span class="meta-pill">1区 Top</span><span class="meta-pill">IF 50.5</span><span class="meta-sep">│</span><span class="meta-tags">单细胞与空间 / 变异与关联</span><span class="meta-pill">原创研究</span><span class="meta-date">2026-09-30</span></div>
+    <h1 class="article-title-zh">绘制免疫细胞多组学图谱，解析调控变异致病路径</h1>
+    <p class="article-title-en">Population-scale immune multiome atlas reveals regulatory disease mechanisms.</p>
+    <div class="article-rule"></div>
+    <div class="finding-bar"><span class="finding-label">核心发现</span><span class="finding-text">1108 名芬兰人、1000 万个外周血单核细胞，构建染色质与表达同步图谱，定位 119,094 个候选因果变异。</span></div>
+    <div class="article-grid">
+      <section class="module module-what"><h2>做了什么</h2><p>对 1,108 名芬兰个体的 1000 万个外周血单核细胞同步开展 snATAC-seq 与 snRNA-seq，在免疫细胞中系统绘制顺式表达 QTL 与顺式染色质可及性 QTL，并连接峰与基因、精细定位候选因果变异。</p></section>
+      <section class="module module-finding"><h2>结论</h2><p>共鉴定 51,083 个顺式表达 QTL（覆盖 20,829 个基因）、338,100 个顺式染色质可及性 QTL（覆盖 210,584 个峰）、119,094 个候选因果变异和 593,765 个峰-基因连接；完成染色质到表达级联的变异，其疾病共定位约为仅染色质效应的两倍，MPRA 验证 10,428 个精细定位分子 QTL。</p></section>
+      <section class="module module-why"><h2>为什么值得关注</h2><p>把疾病变异从“落在非编码区”推进到“是否走完染色质到表达的级联”，并给出约束基因上调控缓冲的证据；做免疫疾病精细定位与 QTL 共定位的团队可直接用这套级联框架重排候选变异优先级。</p></section>
+      <section class="module module-next"><h2>未来展望</h2><p>还缺在独立人群与更多免疫细胞类型中复现该缓冲效应，并用 MPRA 之外的实验验证级联末端表达变化确由所连增强子驱动。</p></section>
+    </div>
+    <p class="article-stage"><b>研究阶段</b>多组学图谱 + 1108 人队列</p>
+    <footer class="article-foot"><a class="doi" href="https://doi.org/10.1038/s41586-026-11078-2">DOI 10.1038/s41586-026-11078-2</a> <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/42816628/">PMID 42816628</a> <span class="affil">Broad Institute of MIT and</span> <a class="source-link" href="https://doi.org/10.1038/s41586-026-11078-2">原始论文 ↗</a></footer>
+  </div>
+</article>
+<article class="print-article" id="article-19" data-article-number="19" aria-label="文章 19">
+  <img class="article-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true">
+  <div class="article-inner">
+    <div class="article-brandbar"><span class="brand-left">基因组雷达<small>GENOME RADAR</small></span><span class="brand-right">2026年第40周　·　文章 19</span></div>
+    <div class="article-meta"><span class="meta-journal">Nat Commun</span><span class="meta-pill">1区 Top</span><span class="meta-pill">IF 14.7</span><span class="meta-sep">│</span><span class="meta-tags">组装与注释 / 方法与工具</span><span class="meta-pill">方法工具</span><span class="meta-date">2026-10-01</span></div>
+    <h1 class="article-title-zh">用无酶密集光学图谱组装酵母染色体级基因组</h1>
+    <p class="article-title-en">Chromosome-scale assembly of yeast genomes using enzyme-free, dense optical genome mapping.</p>
+    <div class="article-rule"></div>
+    <div class="finding-bar"><span class="finding-label">核心发现</span><span class="finding-text">DOGMA 流程扩展至真核生物，重建两种酵母染色体级光学图谱，重复阵列展开超 500 kbp。</span></div>
+    <div class="article-grid">
+      <section class="module module-what"><h2>做了什么</h2><p>以酿酒酵母和粟酒裂殖酵母为材料，采用竞争性结合密集光学图谱协议，沿单分子 DNA 生成反映局部 AT/GC 含量的连续荧光强度谱；DOGMA 流程显式处理真核基因组中使组装复杂化的结构特征，重建全基因组光学图谱，避免非相邻重复位点塌缩。</p></section>
+      <section class="module module-finding"><h2>结论</h2><p>组装覆盖两种酵母全基因组并达到染色体尺度，与对应参考基因组相比存在局部差异，包括长度超过 500 kbp 的重复阵列发生扩展；结果构成将密集光学图谱扩展至更复杂基因组的框架。</p></section>
+      <section class="module module-why"><h2>为什么值得关注</h2><p>重复阵列长度差异超过 500 kbp，说明参考基因组在重复区可能系统性偏短；做重复区组装或结构变异判读的团队，可把连续强度谱当作独立于序列的验证层。</p></section>
+      <section class="module module-next"><h2>未来展望</h2><p>还缺在重复比例更高、杂合度更大的真核基因组上验证非相邻重复位点不塌缩；以及证明该流程在疾病诊断场景中能稳定检出与表型关联的结构差异。</p></section>
+    </div>
+    <p class="article-stage"><b>研究阶段</b>流程扩展 + 两种酵母染色体级组装</p>
+    <footer class="article-foot"><a class="doi" href="https://doi.org/10.1038/s41467-026-78211-7">DOI 10.1038/s41467-026-78211-7</a> <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/42823428/">PMID 42823428</a> <span class="affil">查尔姆斯理工大学生命科学系</span> <a class="source-link" href="https://doi.org/10.1038/s41467-026-78211-7">原始论文 ↗</a></footer>
+  </div>
+</article>
+<article class="print-article" id="article-20" data-article-number="20" aria-label="文章 20">
+  <img class="article-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true">
+  <div class="article-inner">
+    <div class="article-brandbar"><span class="brand-left">基因组雷达<small>GENOME RADAR</small></span><span class="brand-right">2026年第40周　·　文章 20</span></div>
+    <div class="article-meta"><span class="meta-journal">Sci Adv</span><span class="meta-pill">1区</span><span class="meta-pill">IF 11.7</span><span class="meta-sep">│</span><span class="meta-tags">方法与工具 / 进化与比较</span><span class="meta-pill">方法工具</span><span class="meta-date">2026-09-30</span></div>
+    <h1 class="article-title-zh">以单碱基精度界定原噬菌体边界并揭示其驯化规律</h1>
+    <p class="article-title-en">Deciphering pervasive domestication and active &quot;dark matter&quot; of proviruses in prokaryotes via precision border mapping.</p>
+    <div class="article-rule"></div>
+    <div class="finding-bar"><span class="finding-label">核心发现</span><span class="finding-text">ProBord 将原噬菌体边界定位到单碱基精度，构建含 430,134 个边界明确原噬菌体的数据库。</span></div>
+    <div class="article-grid">
+      <section class="module module-what"><h2>做了什么</h2><p>ProBord 通过跨基因组 attB 位点比对实现单碱基精度边界定位，据此构建 430,134 个边界明确原噬菌体（BDP）数据库；再以 ProAct 与 ProBord 联用反向挖掘主流工具漏检的「暗」原噬菌体。</p></section>
+      <section class="module module-finding"><h2>结论</h2><p>BDP 携带毒力、抗生素抗性及防御/反防御基因，分布具位置特异性；与边界无法精确界定的原噬菌体（BUP）比较显示普遍驯化模式：BUP 选择性丢失病毒核心基因，经快速缺失或渐进突变保留宿主有益功能；联用 ProAct 反向挖掘出 101 个「暗」原噬菌体，多数关联致病细菌宿主。</p></section>
+      <section class="module module-why"><h2>为什么值得关注</h2><p>边界误差会直接扭曲原噬菌体功能注释与驯化推断，单碱基精度使 430,134 个 BDP 成为可复用的比较基准；研究细菌毒力、抗性与防御系统演化的团队可据此重判既有基因组中边界模糊的原噬菌体。</p></section>
+      <section class="module module-next"><h2>未来展望</h2><p>101 个「暗」原噬菌体多与致病宿主关联，尚缺实验验证其活性与功能；BUP 的渐进突变驯化路径也需在纵向样本中检验。</p></section>
+    </div>
+    <p class="article-stage"><b>研究阶段</b>算法 + 430,134 个 BDP 数据库</p>
+    <footer class="article-foot"><a class="doi" href="https://doi.org/10.1126/sciadv.aec5299">DOI 10.1126/sciadv.aec5299</a> <a class="pmid" href="https://pubmed.ncbi.nlm.nih.gov/42814812/">PMID 42814812</a> <span class="affil">上海交通大学生命科学技术学院</span> <a class="source-link" href="https://doi.org/10.1126/sciadv.aec5299">原始论文 ↗</a></footer>
+  </div>
+</article>
+</main>
+<script>
+(function(){
+  var params=new URLSearchParams(location.search);
+  var mode=params.get('mode')==='article'?'article':'issue';
+  document.body.dataset.mode=mode;
+  if(mode==='article'){
+    var issueLabel=(document.querySelector('.brand-right')||{textContent:''}).textContent.split('　·　')[0].replace(/["\\]/g,'');
+    var firstPageFooter=document.createElement('style');
+    firstPageFooter.textContent='@media print{@page:first{@bottom-left{content:"PLANT GENOMICS WEEKLY DIGEST";font-family:Georgia,serif;font-size:6.5pt;letter-spacing:1pt;color:#899181}@bottom-right{content:"'+issueLabel+' · " counter(page) " / " counter(pages);font-family:Georgia,"Songti SC",serif;font-size:7pt;color:#53624f}}}';
+    document.head.appendChild(firstPageFooter);
+  }
+  var articles=[].slice.call(document.querySelectorAll('.print-article'));
+  var selected=Math.max(1,parseInt(params.get('article')||'1',10)||1);
+  articles.forEach(function(article){
+    if(Number(article.dataset.articleNumber)===selected) article.classList.add('selected-article');
+  });
+  document.getElementById('toolbarMode').textContent=mode==='article'?'单篇文章 PDF 预览':'整期 PDF 预览';
+  function updatePageNumbers(){
+    var page=3, pageBodyMm=267;
+    articles.forEach(function(article){
+      var height=article.getBoundingClientRect().height;
+      var pageCount=Math.max(1,Math.ceil((height-1)/(pageBodyMm*3.779527559)));
+      article.dataset.pageCount=String(pageCount);
+      var row=document.querySelector('.toc-page[data-for="'+article.dataset.articleNumber+'"]');
+      if(row) row.textContent=String(page);
+      page+=pageCount;
+    });
+  }
+  function refresh(){updatePageNumbers();requestAnimationFrame(updatePageNumbers)}
+  window.addEventListener('load',refresh);
+  window.addEventListener('beforeprint',refresh);
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(refresh);
+  window.addEventListener('resize',refresh);
+  document.querySelectorAll('img').forEach(function(img){img.addEventListener('load',refresh,{once:true})});
+  if(params.get('autoprint')==='1'){
+    var ready=document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve();
+    ready.then(function(){setTimeout(function(){
+      Promise.all([].slice.call(document.images).map(function(img){
+        return img.complete?Promise.resolve():new Promise(function(resolve){img.addEventListener('load',resolve,{once:true});img.addEventListener('error',resolve,{once:true})})
+      })).then(function(){refresh();setTimeout(function(){window.print()},500)})
+    },350)});
+  }
+})();
+</script>
+</body>
+</html>
