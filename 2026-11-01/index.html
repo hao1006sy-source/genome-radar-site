@@ -136,30 +136,112 @@ h2.t-zh{margin:16px 0 0; font-size:46px; line-height:1.28; font-weight:800; colo
 
 /* ---------- toc ---------- */
 .toc{
-  position:fixed; inset:0; z-index:40; background:rgba(26,24,20,.55);
-  display:none; align-items:flex-start; justify-content:center; padding:50px 16px 30px; overflow:auto;
+  position:fixed; inset:0; z-index:40; display:none; align-items:stretch; justify-content:flex-start;
+  padding:0; background:rgba(28,34,29,.52); backdrop-filter:blur(2px) saturate(.7);
+  overscroll-behavior:contain;
 }
 .toc.open{display:flex}
-.toc-inner{width:100%; max-width:770px; background:var(--sheet); border-radius:3px; padding:22px 28px 18px;
-  box-shadow:0 24px 60px -20px rgba(0,0,0,.45)}
-.toc-inner h3{margin:0 0 12px; font-size:11.5px; letter-spacing:.18em; color:var(--muted); font-weight:800}
-.toc-search{display:flex; align-items:center; gap:12px; margin:0 0 10px}
-.toc-search input{flex:1; min-width:0; border:1px solid var(--line); border-radius:2px; padding:8px 10px;background:var(--sheet); color:#242a30; font:inherit; font-size:14px}
-.toc-search input:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
-.toc-count{flex:none; color:var(--muted); font-size:12px; white-space:nowrap}
-.toc-empty{margin:0; padding:14px 2px; color:var(--muted); font-size:14px}
-.toc-sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;clip:rect(0,0,0,0); white-space:nowrap; border:0}
-.toc-inner ol{list-style:none; margin:0; padding:0}
-.toc-inner li button{
-  display:grid; grid-template-columns:26px 1fr auto; gap:11px; align-items:baseline; width:100%;
-  background:none; border:none; border-top:1px dotted var(--line); padding:8px 2px; text-align:left;
-  cursor:pointer; font-size:14.5px; color:#242a30; line-height:1.5; font-weight:600;
+.toc-inner{
+  position:relative; isolation:isolate; display:flex; flex-direction:column; gap:0;
+  width:clamp(420px,53vw,900px); height:100%; max-height:100dvh; min-height:0;
+  padding:22px 28px 18px; overflow:hidden; color:#29352d; background:#fbfaf5;
+  box-shadow:12px 0 30px rgba(20,31,23,.16);
 }
-.toc-inner li:first-child button{border-top:none}
-.toc-inner li button:hover{color:var(--accent)}
-.toc-inner .i{font-family:var(--ui); font-size:12px; color:#b0aa9a; font-weight:700}
-.toc-inner .j{font-size:12px; color:var(--muted); white-space:nowrap}
-
+.toc-header{
+  position:relative; display:flex; flex:none; align-items:flex-start; justify-content:space-between;
+  min-height:68px; gap:14px; padding:0 48px 12px 0; overflow:hidden;
+  border-bottom:1px solid #cfd5c8;
+}
+.toc-heading{position:relative; z-index:1; display:grid; grid-template-columns:34px auto minmax(0,1fr); grid-template-rows:auto auto; align-items:center; column-gap:10px; row-gap:4px; max-width:100%}
+.toc-brand-mark{grid-column:1; grid-row:1 / span 2; width:32px; height:32px; color:#315e43}
+.toc-title{grid-column:2; grid-row:1; margin:0; color:#173e2d; font-size:30px; line-height:1.2; letter-spacing:.09em; font-weight:800}
+.toc-en{grid-column:3; grid-row:1; color:#5f695a; font-family:Georgia,serif; font-size:10.5px; letter-spacing:.22em; font-style:italic; white-space:nowrap}
+.toc-meta{grid-column:2 / span 2; grid-row:2; margin:0; color:#355b43; font-family:Georgia,var(--ui); font-size:15px; line-height:1.35; letter-spacing:.035em}
+.toc-header-art{position:absolute; z-index:0; top:-35px; right:5px; width:190px; height:130px; object-fit:cover; object-position:50% 36%; opacity:.34; pointer-events:none}
+.toc-close{
+  position:absolute; z-index:2; top:0; right:0; display:grid; place-items:center; width:38px; height:38px;
+  border:1px solid #dce1d1; border-radius:50%; background:#eef0e4; color:#173e2d;
+  font-size:22px; line-height:1; cursor:pointer; transition:background .16s,transform .16s;
+}
+.toc-close:hover{background:#e2e8d5; transform:rotate(4deg)}
+.toc-search{display:flex; flex:none; align-items:center; gap:12px; min-height:42px; margin:14px 0 10px; padding:0 12px;
+  border:1px solid #6c856f; border-radius:6px; background:#fffdf8; color:#244934}
+.toc-search:focus-within{border-color:#315f42; box-shadow:0 0 0 2px rgba(49,95,66,.12)}
+.toc-search-icon{flex:none; width:18px; height:18px; color:#3e6445}
+.toc-search input{flex:1; min-width:0; border:0; outline:0; padding:8px 0; background:transparent; color:#29352d; font:inherit; font-size:14px}
+.toc-search input::placeholder{color:#646c60; opacity:1}
+.toc-count{flex:none; color:#5e685a; font-size:12px; white-space:nowrap; font-variant-numeric:tabular-nums}
+.toc-groups{flex:1; min-height:0; overflow-y:auto; padding-right:3px; overscroll-behavior:contain; scrollbar-color:#c6cdbb transparent; scrollbar-width:thin}
+.toc-group{margin:0 0 10px}
+.toc-group[hidden],.toc-item[hidden]{display:none!important}
+.toc-group-head{display:flex; align-items:baseline; gap:12px; padding:8px 2px 7px; border-bottom:1px solid #bfcbb8}
+.toc-group-head h3{display:flex; align-items:center; flex-wrap:wrap; gap:9px; margin:0; color:#173e2d; font-size:18px; line-height:1.25; font-weight:800}
+.toc-group-icon{flex:none; width:28px; height:28px; color:#4d704c}
+.toc-group-en{color:#606b5b; font-family:Georgia,serif; font-size:10px; font-style:italic; letter-spacing:.2em; font-weight:500}
+.toc-group-count{margin-left:auto; color:#5f6859; font-size:12px; white-space:nowrap}
+.toc-group ol{list-style:none; margin:0; padding:0}
+.toc-item{border-bottom:1px dotted #ddd9ce}
+.toc-row{display:grid; grid-template-columns:30px minmax(0,1fr) minmax(86px,auto); gap:10px; align-items:center;
+  width:100%; min-height:30px; border:0; border-left:3px solid transparent; padding:5px 8px; text-align:left;
+  background:transparent; color:#30352f; font:inherit; font-size:13.5px; line-height:1.4; cursor:pointer;
+  transition:background .14s,color .14s,border-color .14s}
+.toc-row:hover,.toc-row.is-current{border-left-color:#4c7352; background:#edf0e3; color:#173e2d}
+.toc-row .i{color:#5f6b46; font-family:Georgia,serif; font-size:13px; font-weight:700; font-variant-numeric:tabular-nums}
+.toc-row .t{font-weight:650}
+.toc-row .j{color:#5f655c; font-family:Georgia,var(--ui); font-size:11.5px; text-align:right; white-space:nowrap}
+.toc-row:focus-visible,.toc-preview:focus-visible,.toc-close:focus-visible{outline:2px solid #315f42; outline-offset:2px}
+.toc-empty{flex:none; margin:0; padding:12px 3px; color:#5e685a; font-size:13px}
+.toc-preview{display:grid; flex:none; grid-template-columns:116px minmax(0,1fr) 38px; align-items:center; gap:14px;
+  width:100%; margin-top:12px; padding:11px; border:1px solid #d8dec9; border-radius:9px;
+  background:#f3f3e8; color:inherit; text-align:left; cursor:pointer; transition:border-color .16s,background .16s}
+.toc-preview:hover{border-color:#aab99d; background:#eff1e4}
+.toc-preview:disabled{cursor:default; opacity:.64}
+.toc-preview img{display:block; width:116px; height:96px; border-radius:6px; object-fit:cover; object-position:50% 39%; background:#e5e9d9}
+.toc-preview-copy{display:grid; min-width:0; gap:3px}
+.toc-preview-top{display:flex; align-items:baseline; gap:9px; color:#596647; font-family:Georgia,serif}
+.toc-preview-number{font-size:17px; font-style:italic; font-weight:700; font-variant-numeric:tabular-nums}
+.toc-preview-title{display:-webkit-box; overflow:hidden; margin:0; color:#173e2d; font-size:16px; line-height:1.38; font-weight:800; -webkit-box-orient:vertical; -webkit-line-clamp:2}
+.toc-preview-meta{display:flex; align-items:center; gap:9px; color:#5e6755; font-size:11.5px}
+.toc-preview-summary{display:-webkit-box; overflow:hidden; margin:0; color:#5f665b; font-size:12px; line-height:1.48; -webkit-box-orient:vertical; -webkit-line-clamp:2}
+.toc-preview-arrow{display:grid; place-items:center; width:36px; height:36px; justify-self:end; border-radius:50%; background:#e5ead7; color:#214a33; transition:transform .16s,background .16s}
+.toc-preview-arrow svg{width:18px; height:18px}
+.toc-preview:hover .toc-preview-arrow{transform:translateX(2px); background:#dce5cb}
+.toc-sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+@media (max-width:980px) and (min-width:681px){
+  .toc-inner{width:min(660px,78vw); padding:20px 22px 16px}
+  .toc-group{margin-bottom:6px}
+  .toc-group-head{padding:5px 2px 4px}
+  .toc-row{grid-template-columns:28px minmax(0,1fr) minmax(72px,auto); gap:8px; min-height:26px; padding:4px 6px; font-size:12px; line-height:1.32}
+  .toc-preview{grid-template-columns:96px minmax(0,1fr) 36px; gap:11px}
+  .toc-preview img{width:96px; height:88px}
+  .toc-preview-title{font-size:14.5px}
+}
+@media (max-width:680px){
+  .toc-inner{width:100%; padding:16px 14px 14px}
+  .toc-header{min-height:62px; padding-right:46px}
+  .toc-brand-mark{width:28px; height:28px}
+  .toc-title{font-size:24px}
+  .toc-en{font-size:9px; letter-spacing:.16em}
+  .toc-meta{font-size:13px}
+  .toc-header-art{display:none}
+  .toc-search{gap:8px; min-height:40px; margin:11px 0 8px; padding:0 9px}
+  .toc-search input{font-size:13px}
+  .toc-count{font-size:10.5px}
+  .toc-group{margin-bottom:8px}
+  .toc-group-head{padding:7px 1px 6px}
+  .toc-group-head h3{font-size:16px; gap:7px}
+  .toc-group-en{font-size:8.5px; letter-spacing:.14em}
+  .toc-group-count{font-size:10.5px}
+  .toc-row{grid-template-columns:25px minmax(0,1fr) minmax(70px,auto); gap:7px; min-height:31px; padding:5px 5px; font-size:12px}
+  .toc-row .i{font-size:11.5px}
+  .toc-row .j{font-size:10px}
+  .toc-preview{grid-template-columns:74px minmax(0,1fr) 32px; gap:9px; margin-top:8px; padding:8px}
+  .toc-preview img{width:74px; height:76px}
+  .toc-preview-title{font-size:13.5px}
+  .toc-preview-meta{font-size:10px; gap:6px}
+  .toc-preview-summary{font-size:10.5px; line-height:1.4}
+  .toc-preview-arrow{width:30px; height:30px; font-size:19px}
+}
 /* ---------- 封面 ---------- */
 .cover .sheet{padding:48px 56px 40px}
 .cv-kicker{font-size:12px; letter-spacing:.3em; color:#a8aea9; text-transform:uppercase; font-weight:700}
@@ -214,7 +296,7 @@ html.flow .topbar{position:sticky; top:0}
   .cv-intro{font-size:14px; line-height:1.8; margin-top:16px}
   .cv-pts{margin-top:18px}
   .cv-pts li{font-size:14.5px; padding:9px 0}
-  .toc-inner{padding:18px 16px 14px}
+  .toc-inner{width:100%;padding:16px 14px 14px}
 }
 
 @media (max-height:720px) and (min-width:681px){
@@ -565,7 +647,7 @@ html.flow .page.article-page .detail-ornament{opacity:.25}
   <span class="issue-tag">2026年第44周</span>
   <div class="tools">
     <a class="back" href="../2026-10-25/index.html">← 往期</a>
-    <button id="tocBtn">目录</button>
+    <button id="tocBtn" aria-controls="toc" aria-expanded="false">目录</button>
     <button id="viewBtn">连读</button>
     <button onclick="window.print()">打印 / PDF</button>
     <span class="zoom">
@@ -1336,16 +1418,49 @@ html.flow .page.article-page .detail-ornament{opacity:.25}
 
 <div class="dots" id="dots"></div>
 
-<aside class="toc" id="toc"><div class="toc-inner">
-  <h3>本期 20 篇　2026-10-25 ~ 2026-11-04</h3>
-  <div class="toc-search" role="search">
-    <label class="toc-sr-only" for="tocSearch">搜索标题、期刊或主题</label>
-    <input id="tocSearch" type="search" placeholder="搜索标题、期刊或主题" autocomplete="off">
-    <span class="toc-count" id="tocCount" aria-live="polite"></span>
+<div class="toc" id="toc" role="dialog" aria-modal="true" aria-labelledby="tocTitle" aria-describedby="tocMeta" aria-hidden="true">
+  <div class="toc-inner">
+    <div class="toc-header">
+      <div class="toc-heading">
+        <svg class="toc-brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M23.8 42C22.4 30.8 22.8 19.6 28 6" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+          <path d="M25.8 27.4C16.4 27.2 10.7 22 8.1 13.1c9.4.2 15.1 5.4 17.7 14.3Z" fill="#e7ebd9" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="M25.2 32.1c1.1-9.5 6.5-15.1 15.3-17.3-1 9.3-6.3 14.9-15.3 17.3Z" fill="#e7ebd9" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="m11 15 12 11m15-8L27 30" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M18 41h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+        <h2 class="toc-title" id="tocTitle">本期目录</h2>
+        <span class="toc-en">CONTENTS OF THIS ISSUE</span>
+        <p class="toc-meta" id="tocMeta">20 篇 · 2026-10-25 ~ 2026-11-04</p>
+      </div>
+      <img class="toc-header-art" src="../assets/weekly-cover-art.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <button class="toc-close" id="tocClose" type="button" aria-label="关闭目录">×</button>
+    </div>
+    <div class="toc-search" role="search">
+      <label class="toc-sr-only" for="tocSearch">搜索标题、期刊或主题</label>
+      <svg class="toc-search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="10.8" cy="10.8" r="6.5" stroke="currentColor" stroke-width="1.8"/>
+        <path d="m16 16 4.2 4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <input id="tocSearch" type="search" placeholder="搜索标题、期刊或主题" autocomplete="off" aria-controls="tocGroups">
+      <span class="toc-count" id="tocCount" aria-live="polite"></span>
+    </div>
+    <p class="toc-empty" id="tocEmpty" hidden>没有匹配的论文，试试标题、期刊或主题词。</p>
+    <div class="toc-groups" id="tocGroups"><section class="toc-group" data-toc-group="research"><div class="toc-group-head"><h3><svg class="toc-group-icon" viewBox="0 0 38 38" fill="none" aria-hidden="true"><path d="M4 8c6-2 11-.8 15 3v22c-4-3.8-9-5-15-3V8Zm30 0c-6-2-11-.8-15 3v22c4-3.8 9-5 15-3V8Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 13c2-.3 4 0 6 1m14-1c-2-.3-4 0-6 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg><span>研究文章</span><span class="toc-group-en">RESEARCH ARTICLES</span></h3><span class="toc-group-count" data-group-count>共 12 篇</span></div><ol><li class="toc-item"><button type="button" class="toc-row" data-i="1" data-search="深度测序3,367份玉米基因组揭示稀有变异对农艺性状的重要贡献 Deep sequencing of 3,367 maize genomes uncovers substantial contribution of rare variants to agronomic traits. Cell 变异与关联 泛基因组" data-title="深度测序3,367份玉米基因组揭示稀有变异对农艺性状的重要贡献" data-journal="Cell" data-date="2026-10-27" data-lead="3,367份玉米自交系深度测序显示，79.2%的变异为稀有变异，其效应约为常见变异的2.4倍。" aria-pressed="false"><span class="i">01</span><span class="t">深度测序3,367份玉米基因组揭示稀有变异对农艺性状的重要贡献</span><span class="j">Cell</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="2" data-search="串联重复变异塑造免疫细胞类型特异性基因表达 Tandem repeat variation shapes immune cell type-specific gene expression. Nature 变异与关联 表观与调控" data-title="串联重复变异塑造免疫细胞类型特异性基因表达" data-journal="Nature" data-date="2026-10-28" data-lead="170万个串联重复位点中鉴定出逾6.9万个单细胞表达数量性状位点，30.7%具有细胞类型特异性。" aria-pressed="false"><span class="i">02</span><span class="t">串联重复变异塑造免疫细胞类型特异性基因表达</span><span class="j">Nature</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="4" data-search="完整参考基因组揭示甘蓝型油菜着丝粒遗传格局 A complete reference genome reveals genetic landscape of Brassica centromeres. Genome Biol 组装与注释 泛基因组" data-title="完整参考基因组揭示甘蓝型油菜着丝粒遗传格局" data-journal="Genome Biol" data-date="2026-07-27" data-lead="首个端粒到端粒完整参考基因组显示，甘蓝型油菜亚基因组间着丝粒序列高度分化。" aria-pressed="false"><span class="i">04</span><span class="t">完整参考基因组揭示甘蓝型油菜着丝粒遗传格局</span><span class="j">Genome Biol</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="5" data-search="图泛基因组揭示异源多倍化的结构变异与表达效应 Graph-based pangenome analysis uncovers structural and functional impacts of allopolyploidization events. Sci Adv 泛基因组 进化与比较" data-title="图泛基因组揭示异源多倍化的结构变异与表达效应" data-journal="Sci Adv" data-date="2026-10-30" data-lead="异源多倍体基因组平均携带320个结构变异，是二倍体的近三倍，且27.5%的变异局部影响基因表达。" aria-pressed="false"><span class="i">05</span><span class="t">图泛基因组揭示异源多倍化的结构变异与表达效应</span><span class="j">Sci Adv</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="6" data-search="构建锦鸡儿属泛基因组揭示干旱适应机制 Pan-genome analysis of Caragana reveals genomic mechanisms of drought adaptation of leguminous shrubs to arid environments. Genome Biol 泛基因组 进化与比较" data-title="构建锦鸡儿属泛基因组揭示干旱适应机制" data-journal="Genome Biol" data-date="2026-08-01" data-lead="14个锦鸡儿属物种染色体级组装构建图泛基因组，鉴定出801,351个结构变异。" aria-pressed="false"><span class="i">06</span><span class="t">构建锦鸡儿属泛基因组揭示干旱适应机制</span><span class="j">Genome Biol</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="7" data-search="整合SNP与结构变异解析水稻低温发芽遗传架构 Genetic architecture of low-temperature germinability in rice revealed by integrated maps of SNPs and structural variation. Plant J 变异与关联 泛基因组" data-title="整合SNP与结构变异解析水稻低温发芽遗传架构" data-journal="Plant J" data-date="" data-lead="403份水稻在4个温度下的低温发芽力与起源纬度负相关，SV-GWAS与SNP-GWAS分别检出119和127个QTL。" aria-pressed="false"><span class="i">07</span><span class="t">整合SNP与结构变异解析水稻低温发芽遗传架构</span><span class="j">Plant J</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="11" data-search="单核分辨率绘制水稻花粉染色质可及性遗传结构 GAMETE maps the genetic architecture of chromatin accessibility in rice pollen at single-nucleus resolution. Genome Biol 单细胞与空间 变异与关联" data-title="单核分辨率绘制水稻花粉染色质可及性遗传结构" data-journal="Genome Biol" data-date="2026-08-04" data-lead="GAMETE 在 4887 个单倍体核中同时获取染色质可及性与基因型，定位 16113 个 caQTL。" aria-pressed="false"><span class="i">11</span><span class="t">单核分辨率绘制水稻花粉染色质可及性遗传结构</span><span class="j">Genome Biol</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="12" data-search="单核与空间转录组绘制水稻胚乳细胞分化与贮藏物质积累图谱 Single-nucleus and spatial transcriptomics reveal dynamic cell differentiation and storage product accumulation in rice endosperm. Plant Cell 单细胞与空间 表观与调控" data-title="单核与空间转录组绘制水稻胚乳细胞分化与贮藏物质积累图谱" data-journal="Plant Cell" data-date="2026-10-26" data-lead="177,820个细胞核与60,003个空间点联合解析水稻胚乳，鉴定出12类细胞与7个解剖区域。" aria-pressed="false"><span class="i">12</span><span class="t">单核与空间转录组绘制水稻胚乳细胞分化与贮藏物质积累图谱</span><span class="j">Plant Cell</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="13" data-search="PDS5A限制SYN4依赖的长程染色质接触塑造拟南芥TAD样结构 PDS5A restricts SYN4-dependent long-range chromatin contacts to shape TAD-like chromatin architecture in Arabidopsis. Plant Cell 表观与调控 组装与注释" data-title="PDS5A限制SYN4依赖的长程染色质接触塑造拟南芥TAD样结构" data-journal="Plant Cell" data-date="2026-10-27" data-lead="PDS5A是主要黏连蛋白卸载因子，其缺失使拟南芥TAD样结构在多种组织和倍性水平高度一致。" aria-pressed="false"><span class="i">13</span><span class="t">PDS5A限制SYN4依赖的长程染色质接触塑造拟南芥TAD样结构</span><span class="j">Plant Cell</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="14" data-search="DDM1 塑造多种染色质状态的跨代表观遗传 DDM1 Shapes Transgenerational Epigenetic Inheritance of Diverse Chromatin States. Plant Cell Environ 表观与调控 进化与比较" data-title="DDM1 塑造多种染色质状态的跨代表观遗传" data-journal="Plant Cell Environ" data-date="2026-10-27" data-lead="DDM1 调控 H3K27me3、DNA 甲基化与 H3K4me3 三种标记的跨代遗传模式" aria-pressed="false"><span class="i">14</span><span class="t">DDM1 塑造多种染色质状态的跨代表观遗传</span><span class="j">Plant Cell Environ</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="16" data-search="BraHDAC1 启动子变异调控白菜类作物气孔与耐热性 Promoter variation in BraHDAC1 modulates stomatal regulation and thermotolerance in Brassica rapa. Plant Cell 变异与关联 表观与调控" data-title="BraHDAC1 启动子变异调控白菜类作物气孔与耐热性" data-journal="Plant Cell" data-date="2026-10-28" data-lead="BraHDAC1 启动子两个 SNP 构建 ABRE-CE 模块，仅耐热单倍型受热诱导表达。" aria-pressed="false"><span class="i">16</span><span class="t">BraHDAC1 启动子变异调控白菜类作物气孔与耐热性</span><span class="j">Plant Cell</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="18" data-search="发布八齿鼠染色体级基因组与注释 Chromosome-scale genome assembly and annotation of Octodon degus. Genome Res 组装与注释 进化与比较" data-title="发布八齿鼠染色体级基因组与注释" data-journal="Genome Res" data-date="2026-10-26" data-lead="八齿鼠 OctDeg2.0 组装达 34 亿碱基对，含 28 条常染色体与两条性染色体，连续性显著优于旧短读组装。" aria-pressed="false"><span class="i">18</span><span class="t">发布八齿鼠染色体级基因组与注释</span><span class="j">Genome Res</span></button></li></ol></section><section class="toc-group" data-toc-group="methods"><div class="toc-group-head"><h3><svg class="toc-group-icon" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M13 4h10m-8 0v9L7 29a2 2 0 0 0 1.8 3h18.4a2 2 0 0 0 1.8-3l-8-16V4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 24h14m-11-5h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg><span>方法工具</span><span class="toc-group-en">METHODS & TOOLS</span></h3><span class="toc-group-count" data-group-count>共 8 篇</span></div><ol><li class="toc-item"><button type="button" class="toc-row" data-i="3" data-search="49万UKB基因组单倍型参考面板提升全球基因型填充 A haplotype reference panel constructed from 490,319 UK Biobank genomes improves genotype imputation for global populations. Nat Genet 方法与工具 变异与关联" data-title="49万UKB基因组单倍型参考面板提升全球基因型填充" data-journal="Nat Genet" data-date="2026-10-30" data-lead="基于490,319例UKB全基因组构建的参考面板，在22个亚群中相关性提升，东亚与南亚增益最大。" aria-pressed="false"><span class="i">03</span><span class="t">49万UKB基因组单倍型参考面板提升全球基因型填充</span><span class="j">Nat Genet</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="8" data-search="构建多基因组倒位基准，评估短读长与长读长检测方法 Multi-genome benchmark for simple and complex genome inversion detection. Genome Biol 方法与工具 变异与关联" data-title="构建多基因组倒位基准，评估短读长与长读长检测方法" data-journal="Genome Biol" data-date="2026-08-01" data-lead="五套参考样本、分层倒位基准显示：简单倒位高灵敏检出，复杂与杂合事件仍难。" aria-pressed="false"><span class="i">08</span><span class="t">构建多基因组倒位基准，评估短读长与长读长检测方法</span><span class="j">Genome Biol</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="9" data-search="将选择信号映射到单细胞图谱定位选择相关细胞类型 scEvoSel maps evolutionary selection signals onto single-cell transcriptomic atlases to reveal selection-relevant cellular contexts. Mol Biol Evol 方法与工具 进化与比较" data-title="将选择信号映射到单细胞图谱定位选择相关细胞类型" data-journal="Mol Biol Evol" data-date="2026-10-28" data-lead="scEvoSel 把群体选择信号映射到单细胞图谱，在猪肌肉与鸡肝脏中定位出选择相关的细胞类型。" aria-pressed="false"><span class="i">09</span><span class="t">将选择信号映射到单细胞图谱定位选择相关细胞类型</span><span class="j">Mol Biol Evol</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="10" data-search="量化方法影响eQTL分析、共定位与TWAS的可重复性 Quantification method affects replicability of eQTL analysis, colocalization and TWAS. Nat Genet 方法与工具 变异与关联" data-title="量化方法影响eQTL分析、共定位与TWAS的可重复性" data-journal="Nat Genet" data-date="2026-10-26" data-lead="转录组参考注释与量化方法的选择显著改变eQTL检测、共定位和TWAS结果，跨流程一致的结果富集于长基因、多异构体和高表达遗传力基因。" aria-pressed="false"><span class="i">10</span><span class="t">量化方法影响eQTL分析、共定位与TWAS的可重复性</span><span class="j">Nat Genet</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="15" data-search="整合QTL与GWAS解析玉米气孔密度与大小的多基因遗传基础 Multi-locus genetic basis of stomatal density and size in maize revealed by integrated QTL and GWAS. Plant J 变异与关联 方法与工具" data-title="整合QTL与GWAS解析玉米气孔密度与大小的多基因遗传基础" data-journal="Plant J" data-date="" data-lead="33个QTL与51个关联位点揭示玉米气孔密度与大小呈显著负遗传相关。" aria-pressed="false"><span class="i">15</span><span class="t">整合QTL与GWAS解析玉米气孔密度与大小的多基因遗传基础</span><span class="j">Plant J</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="17" data-search="构建整合多组学表达谱的水稻表达数据库 RED 2.0 Rice Expression Database (RED) 2.0: an updated rice database integrating diverse RNA expression profiles based on the telomere-to-telomere reference genome. Nucleic Acids Res 方法与工具 组装与注释" data-title="构建整合多组学表达谱的水稻表达数据库 RED 2.0" data-journal="Nucleic Acids Res" data-date="2026-10-27" data-lead="RED 2.0 收录 6471 个 bulk RNA-seq 实验与 984495 个单细胞，覆盖 18 种组织。" aria-pressed="false"><span class="i">17</span><span class="t">构建整合多组学表达谱的水稻表达数据库 RED 2.0</span><span class="j">Nucleic Acids Res</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="19" data-search="解码FFPE组织实现单细胞分辨率空间转录组 Decoder-FFPE-seq enables sensitive, genome-wide spatial transcriptomics of archival tissues at single-cell resolution. Sci Adv 方法与工具 单细胞与空间" data-title="解码FFPE组织实现单细胞分辨率空间转录组" data-journal="Sci Adv" data-date="2026-10-30" data-lead="Decoder-FFPE-seq 在存档组织上实现全转录组单细胞空间检测，灵敏度提升逾 2.6 倍。" aria-pressed="false"><span class="i">19</span><span class="t">解码FFPE组织实现单细胞分辨率空间转录组</span><span class="j">Sci Adv</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="20" data-search="模拟揭示转座子扩增与清除的基因组动态 PrinTE: a forward simulation framework for studying the role of transposable elements in genome expansion and contraction. Nat Commun 方法与工具 进化与比较" data-title="模拟揭示转座子扩增与清除的基因组动态" data-journal="Nat Commun" data-date="2026-11-02" data-lead="PrinTE 模拟显示，仅靠重组清除 LTR 反转录转座子无法阻止基因组膨胀，插入与删除率误差低于 6%。" aria-pressed="false"><span class="i">20</span><span class="t">模拟揭示转座子扩增与清除的基因组动态</span><span class="j">Nat Commun</span></button></li></ol></section></div>
+    <button class="toc-preview" id="tocPreviewOpen" type="button" aria-label="进入所选文章">
+      <img src="../assets/weekly-cover-art.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <span class="toc-preview-copy">
+        <span class="toc-preview-top"><span class="toc-preview-number" id="tocPreviewNumber">01</span></span>
+        <span class="toc-preview-title" id="tocPreviewTitle"></span>
+        <span class="toc-preview-meta"><span id="tocPreviewJournal"></span><span aria-hidden="true">·</span><time id="tocPreviewDate"></time></span>
+        <span class="toc-preview-summary" id="tocPreviewSummary"></span>
+      </span>
+      <span class="toc-preview-arrow" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none">
+        <path d="M3 10h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg></span>
+    </button>
   </div>
-  <p class="toc-empty" id="tocEmpty" hidden>没有匹配的论文，试试标题、期刊或主题词。</p>
-  <ol><li><button data-i="1" data-search="深度测序3,367份玉米基因组揭示稀有变异对农艺性状的重要贡献 Deep sequencing of 3,367 maize genomes uncovers substantial contribution of rare variants to agronomic traits. Cell 变异与关联 泛基因组"><span class="i">01</span><span>深度测序3,367份玉米基因组揭示稀有变异对农艺性状的重要贡献</span><span class="j">Cell</span></button></li><li><button data-i="2" data-search="串联重复变异塑造免疫细胞类型特异性基因表达 Tandem repeat variation shapes immune cell type-specific gene expression. Nature 变异与关联 表观与调控"><span class="i">02</span><span>串联重复变异塑造免疫细胞类型特异性基因表达</span><span class="j">Nature</span></button></li><li><button data-i="3" data-search="49万UKB基因组单倍型参考面板提升全球基因型填充 A haplotype reference panel constructed from 490,319 UK Biobank genomes improves genotype imputation for global populations. Nat Genet 方法与工具 变异与关联"><span class="i">03</span><span>49万UKB基因组单倍型参考面板提升全球基因型填充</span><span class="j">Nat Genet</span></button></li><li><button data-i="4" data-search="完整参考基因组揭示甘蓝型油菜着丝粒遗传格局 A complete reference genome reveals genetic landscape of Brassica centromeres. Genome Biol 组装与注释 泛基因组"><span class="i">04</span><span>完整参考基因组揭示甘蓝型油菜着丝粒遗传格局</span><span class="j">Genome Biol</span></button></li><li><button data-i="5" data-search="图泛基因组揭示异源多倍化的结构变异与表达效应 Graph-based pangenome analysis uncovers structural and functional impacts of allopolyploidization events. Sci Adv 泛基因组 进化与比较"><span class="i">05</span><span>图泛基因组揭示异源多倍化的结构变异与表达效应</span><span class="j">Sci Adv</span></button></li><li><button data-i="6" data-search="构建锦鸡儿属泛基因组揭示干旱适应机制 Pan-genome analysis of Caragana reveals genomic mechanisms of drought adaptation of leguminous shrubs to arid environments. Genome Biol 泛基因组 进化与比较"><span class="i">06</span><span>构建锦鸡儿属泛基因组揭示干旱适应机制</span><span class="j">Genome Biol</span></button></li><li><button data-i="7" data-search="整合SNP与结构变异解析水稻低温发芽遗传架构 Genetic architecture of low-temperature germinability in rice revealed by integrated maps of SNPs and structural variation. Plant J 变异与关联 泛基因组"><span class="i">07</span><span>整合SNP与结构变异解析水稻低温发芽遗传架构</span><span class="j">Plant J</span></button></li><li><button data-i="8" data-search="构建多基因组倒位基准，评估短读长与长读长检测方法 Multi-genome benchmark for simple and complex genome inversion detection. Genome Biol 方法与工具 变异与关联"><span class="i">08</span><span>构建多基因组倒位基准，评估短读长与长读长检测方法</span><span class="j">Genome Biol</span></button></li><li><button data-i="9" data-search="将选择信号映射到单细胞图谱定位选择相关细胞类型 scEvoSel maps evolutionary selection signals onto single-cell transcriptomic atlases to reveal selection-relevant cellular contexts. Mol Biol Evol 方法与工具 进化与比较"><span class="i">09</span><span>将选择信号映射到单细胞图谱定位选择相关细胞类型</span><span class="j">Mol Biol Evol</span></button></li><li><button data-i="10" data-search="量化方法影响eQTL分析、共定位与TWAS的可重复性 Quantification method affects replicability of eQTL analysis, colocalization and TWAS. Nat Genet 方法与工具 变异与关联"><span class="i">10</span><span>量化方法影响eQTL分析、共定位与TWAS的可重复性</span><span class="j">Nat Genet</span></button></li><li><button data-i="11" data-search="单核分辨率绘制水稻花粉染色质可及性遗传结构 GAMETE maps the genetic architecture of chromatin accessibility in rice pollen at single-nucleus resolution. Genome Biol 单细胞与空间 变异与关联"><span class="i">11</span><span>单核分辨率绘制水稻花粉染色质可及性遗传结构</span><span class="j">Genome Biol</span></button></li><li><button data-i="12" data-search="单核与空间转录组绘制水稻胚乳细胞分化与贮藏物质积累图谱 Single-nucleus and spatial transcriptomics reveal dynamic cell differentiation and storage product accumulation in rice endosperm. Plant Cell 单细胞与空间 表观与调控"><span class="i">12</span><span>单核与空间转录组绘制水稻胚乳细胞分化与贮藏物质积累图谱</span><span class="j">Plant Cell</span></button></li><li><button data-i="13" data-search="PDS5A限制SYN4依赖的长程染色质接触塑造拟南芥TAD样结构 PDS5A restricts SYN4-dependent long-range chromatin contacts to shape TAD-like chromatin architecture in Arabidopsis. Plant Cell 表观与调控 组装与注释"><span class="i">13</span><span>PDS5A限制SYN4依赖的长程染色质接触塑造拟南芥TAD样结构</span><span class="j">Plant Cell</span></button></li><li><button data-i="14" data-search="DDM1 塑造多种染色质状态的跨代表观遗传 DDM1 Shapes Transgenerational Epigenetic Inheritance of Diverse Chromatin States. Plant Cell Environ 表观与调控 进化与比较"><span class="i">14</span><span>DDM1 塑造多种染色质状态的跨代表观遗传</span><span class="j">Plant Cell Environ</span></button></li><li><button data-i="15" data-search="整合QTL与GWAS解析玉米气孔密度与大小的多基因遗传基础 Multi-locus genetic basis of stomatal density and size in maize revealed by integrated QTL and GWAS. Plant J 变异与关联 方法与工具"><span class="i">15</span><span>整合QTL与GWAS解析玉米气孔密度与大小的多基因遗传基础</span><span class="j">Plant J</span></button></li><li><button data-i="16" data-search="BraHDAC1 启动子变异调控白菜类作物气孔与耐热性 Promoter variation in BraHDAC1 modulates stomatal regulation and thermotolerance in Brassica rapa. Plant Cell 变异与关联 表观与调控"><span class="i">16</span><span>BraHDAC1 启动子变异调控白菜类作物气孔与耐热性</span><span class="j">Plant Cell</span></button></li><li><button data-i="17" data-search="构建整合多组学表达谱的水稻表达数据库 RED 2.0 Rice Expression Database (RED) 2.0: an updated rice database integrating diverse RNA expression profiles based on the telomere-to-telomere reference genome. Nucleic Acids Res 方法与工具 组装与注释"><span class="i">17</span><span>构建整合多组学表达谱的水稻表达数据库 RED 2.0</span><span class="j">Nucleic Acids Res</span></button></li><li><button data-i="18" data-search="发布八齿鼠染色体级基因组与注释 Chromosome-scale genome assembly and annotation of Octodon degus. Genome Res 组装与注释 进化与比较"><span class="i">18</span><span>发布八齿鼠染色体级基因组与注释</span><span class="j">Genome Res</span></button></li><li><button data-i="19" data-search="解码FFPE组织实现单细胞分辨率空间转录组 Decoder-FFPE-seq enables sensitive, genome-wide spatial transcriptomics of archival tissues at single-cell resolution. Sci Adv 方法与工具 单细胞与空间"><span class="i">19</span><span>解码FFPE组织实现单细胞分辨率空间转录组</span><span class="j">Sci Adv</span></button></li><li><button data-i="20" data-search="模拟揭示转座子扩增与清除的基因组动态 PrinTE: a forward simulation framework for studying the role of transposable elements in genome expansion and contraction. Nat Commun 方法与工具 进化与比较"><span class="i">20</span><span>模拟揭示转座子扩增与清除的基因组动态</span><span class="j">Nat Commun</span></button></li></ol>
-</div></aside>
+</div>
 
 <script>
 (function(){
@@ -1354,10 +1469,32 @@ html.flow .page.article-page .detail-ornament{opacity:.25}
   var dots=document.getElementById('dots');
   var toc=document.getElementById('toc');
   var n=pages.length, cur=0;
+  var tocButton=document.getElementById('tocBtn');
+  var tocClose=document.getElementById('tocClose');
   var tocSearch=document.getElementById('tocSearch');
-  var tocButtons=[].slice.call(toc.querySelectorAll('button[data-i]'));
+  var tocButtons=[].slice.call(toc.querySelectorAll('button.toc-row[data-i]'));
+  var tocGroups=[].slice.call(toc.querySelectorAll('.toc-group'));
   var tocCount=document.getElementById('tocCount');
   var tocEmpty=document.getElementById('tocEmpty');
+  var tocPreviewOpen=document.getElementById('tocPreviewOpen');
+  var selectedTocButton=null;
+  function selectToc(button,focusButton){
+    if(!button) return;
+    selectedTocButton=button;
+    tocButtons.forEach(function(b){
+      var active=b===button;
+      b.classList.toggle('is-current',active);
+      b.setAttribute('aria-pressed',active?'true':'false');
+    });
+    document.getElementById('tocPreviewNumber').textContent=('0'+button.getAttribute('data-i')).slice(-2);
+    document.getElementById('tocPreviewTitle').textContent=button.getAttribute('data-title')||'';
+    document.getElementById('tocPreviewJournal').textContent=button.getAttribute('data-journal')||'';
+    document.getElementById('tocPreviewDate').textContent=button.getAttribute('data-date')||'';
+    document.getElementById('tocPreviewSummary').textContent=button.getAttribute('data-lead')||'';
+    tocPreviewOpen.setAttribute('data-target-i',button.getAttribute('data-i'));
+    tocPreviewOpen.setAttribute('aria-label','阅读第 '+button.getAttribute('data-i')+' 篇：'+(button.getAttribute('data-title')||''));
+    if(focusButton) button.focus();
+  }
   function filterToc(){
     var terms=(tocSearch.value||'').trim().toLocaleLowerCase().split(' ').filter(Boolean);
     var visible=0;
@@ -1367,10 +1504,32 @@ html.flow .page.article-page .detail-ornament{opacity:.25}
       b.parentElement.hidden=!show;
       if(show) visible++;
     });
+    tocGroups.forEach(function(group){
+      var rows=[].slice.call(group.querySelectorAll('.toc-item'));
+      var groupVisible=rows.filter(function(row){return !row.hidden}).length;
+      group.hidden=groupVisible===0;
+      group.querySelector('[data-group-count]').textContent='共 '+groupVisible+' 篇';
+    });
     tocCount.textContent=visible+' / '+tocButtons.length+' 篇';
     tocEmpty.hidden=visible>0;
+    tocPreviewOpen.disabled=visible===0;
+    if(visible && (!selectedTocButton || selectedTocButton.parentElement.hidden)){
+      selectToc(tocButtons.filter(function(b){return !b.parentElement.hidden})[0],false);
+    }
   }
+  function visibleTocButtons(){return tocButtons.filter(function(b){return !b.parentElement.hidden});}
+  function moveTocSelection(step){
+    var visible=visibleTocButtons();
+    if(!visible.length) return;
+    var current=visible.indexOf(selectedTocButton);
+    var nextIndex=current<0?(step>0?0:visible.length-1):Math.max(0,Math.min(visible.length-1,current+step));
+    selectToc(visible[nextIndex],true);
+  }
+  tocButtons.forEach(function(b){
+    b.addEventListener('click',function(){selectToc(b,false)});
+  });
   tocSearch.addEventListener('input',filterToc);
+  if(tocButtons.length) selectToc(tocButtons[0],false);
   filterToc();
 
   pages.forEach(function(_,i){
@@ -1443,12 +1602,29 @@ html.flow .page.article-page .detail-ornament{opacity:.25}
     go(cur+dir);
   },{passive:false});
 
+  function closeToc(restoreFocus){
+    toc.classList.remove('open');
+    toc.setAttribute('aria-hidden','true');
+    tocButton.setAttribute('aria-expanded','false');
+    if(restoreFocus!==false) tocButton.focus();
+  }
+  function openToc(){
+    tocSearch.value='';
+    filterToc();
+    var current=cur>0?tocButtons.filter(function(b){return parseInt(b.getAttribute('data-i'),10)===cur})[0]:null;
+    selectToc(current||tocButtons[0],false);
+    toc.classList.add('open');
+    toc.setAttribute('aria-hidden','false');
+    tocButton.setAttribute('aria-expanded','true');
+    window.requestAnimationFrame(function(){tocSearch.focus()});
+  }
   document.addEventListener('keydown',function(e){
     if(e.metaKey||e.ctrlKey||e.altKey) return;
-    if(toc.classList.contains('open') && e.key!=='Escape') return;
     var k=e.key;
-    if(k==='Escape'){
-      if(toc.classList.contains('open')){ toc.classList.remove('open'); document.getElementById('tocBtn').focus(); }
+    if(toc.classList.contains('open')){
+      if(k==='Escape'){e.preventDefault();closeToc();return}
+      if(k==='ArrowDown'){e.preventDefault();moveTocSelection(1);return}
+      if(k==='ArrowUp'){e.preventDefault();moveTocSelection(-1);return}
       return;
     }
     if(flow()) return;
@@ -1457,17 +1633,23 @@ html.flow .page.article-page .detail-ornament{opacity:.25}
     else if(k==='Home'){ e.preventDefault(); go(0); }
     else if(k==='End'){ e.preventDefault(); go(n-1); }
   });
-
-  document.getElementById('tocBtn').addEventListener('click',function(){ toc.classList.add('open'); tocSearch.focus(); });
-  toc.addEventListener('click',function(e){
-    if(e.target===toc){ toc.classList.remove('open'); document.getElementById('tocBtn').focus(); }
+  tocButton.addEventListener('click',openToc);
+  tocClose.addEventListener('click',function(){closeToc()});
+  toc.addEventListener('click',function(e){if(e.target===toc) closeToc()});
+  tocPreviewOpen.addEventListener('click',function(){
+    var target=parseInt(tocPreviewOpen.getAttribute('data-target-i'),10);
+    if(!target) return;
+    closeToc(false);
+    if(flow()){ document.documentElement.classList.remove('flow'); syncViewBtn(); }
+    go(target);
   });
-  [].forEach.call(toc.querySelectorAll('button[data-i]'),function(b){
-    b.addEventListener('click',function(){
-      toc.classList.remove('open');
-      if(flow()){ document.documentElement.classList.remove('flow'); syncViewBtn(); }
-      go(parseInt(b.getAttribute('data-i'),10));
-    });
+  toc.addEventListener('keydown',function(e){
+    if(e.key!=='Tab') return;
+    var focusable=[].slice.call(toc.querySelectorAll('button:not([disabled]),input:not([disabled])')).filter(function(el){return !el.closest('[hidden]')});
+    if(!focusable.length) return;
+    var first=focusable[0],last=focusable[focusable.length-1];
+    if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
   });
 
   var viewBtn=document.getElementById('viewBtn');
