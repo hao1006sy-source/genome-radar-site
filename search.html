@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8f6f0">
+<meta name="description" content="在基因组雷达全部期次中检索植物与基因组学文献。">
+<title>文献搜索 · 基因组雷达</title>
+<link rel="stylesheet" href="assets/search.css">
+<script defer src="assets/search.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#results">跳到搜索结果</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="基因组雷达首页">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <path d="M23.8 42C22.4 30.8 22.8 19.6 28 6" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+        <path d="M25.8 27.4C16.4 27.2 10.7 22 8.1 13.1c9.4.2 15.1 5.4 17.7 14.3Z" fill="#e7ebd9" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+        <path d="M25.2 32.1c1.1-9.5 6.5-15.1 15.3-17.3-1 9.3-6.3 14.9-15.3 17.3Z" fill="#e7ebd9" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+        <path d="m11 15 12 11m15-8L27 30M18 41h16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">基因组雷达</span><span class="brand-en">GENOME RADAR</span>
+    </a>
+    <nav class="primary-nav" aria-label="主导航">
+      <a href="index.html">首页</a><a href="index.html#archive">文献归档</a>
+      <a href="index.html#reading-guide">阅读说明</a><a href="index.html#about">关于</a>
+      <a href="search.html" aria-current="page">文献搜索</a>
+    </nav>
+    <form class="top-search" id="top-search" role="search" action="search.html" method="get">
+      <label class="sr-only" for="top-query">搜索全站文献</label>
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.2 4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <input id="top-query" name="q" type="search" placeholder="搜索标题、摘要或 DOI…" autocomplete="off">
+    </form>
+  </div>
+</header>
+<main id="main-content">
+  <section class="search-hero" aria-labelledby="page-title">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">PLANT GENOMICS · LITERATURE ARCHIVE</p>
+        <div class="hero-title-row">
+          <svg class="hero-search-icon" viewBox="0 0 44 44" fill="none" aria-hidden="true"><circle cx="19" cy="19" r="13" stroke="currentColor" stroke-width="2.2"/><path d="m29 29 10 10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+          <h1 id="page-title">文献搜索</h1>
+          <button class="query-chip" id="query-chip" type="button" hidden><span id="query-chip-text"></span><span aria-hidden="true">×</span><span class="sr-only">清除关键词</span></button>
+        </div>
+        <p class="result-summary" id="result-summary" aria-live="polite">正在载入全站文献索引…</p>
+        <form class="hero-search" id="hero-search" role="search" action="search.html" method="get">
+          <label class="sr-only" for="search-query">搜索标题、期刊、主题、摘要或 DOI</label>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5" stroke="currentColor" stroke-width="1.8"/><path d="m16 16 4.2 4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          <input id="search-query" name="q" type="search" placeholder="搜索标题、期刊、主题、摘要或 DOI…" autocomplete="off">
+          <button type="submit">搜索文献</button>
+        </form>
+      </div>
+      <div class="hero-note"><span>SEARCH THE ARCHIVE</span><strong>从标题到 DOI<br>直达每一篇研究</strong></div>
+    </div>
+  </section>
+  <div class="page-shell">
+    <div class="content-layout">
+      <aside class="filters" aria-labelledby="filters-title">
+        <div class="filters-heading"><h2 id="filters-title">筛选条件</h2><button id="clear-filters" type="button">清除全部</button></div>
+        <section class="facet-section"><h3>研究方向</h3><div class="facet-options" id="facet-topic"></div></section>
+        <section class="facet-section"><h3>期刊分区</h3><div class="facet-options" id="facet-quartile"></div></section>
+        <section class="facet-section"><h3>发表年份</h3><div class="facet-options" id="facet-year"></div></section>
+      </aside>
+      <section class="results" id="results" aria-labelledby="results-heading">
+        <div class="results-toolbar">
+          <div class="category-tabs" id="category-tabs" role="group" aria-label="文章类别">
+            <button type="button" data-kind="" aria-pressed="true">全部 <span data-kind-count></span></button>
+            <button type="button" data-kind="研究文章" aria-pressed="false">研究文章 <span data-kind-count></span></button>
+            <button type="button" data-kind="方法工具" aria-pressed="false">方法工具 <span data-kind-count></span></button>
+          </div>
+          <div class="view-controls">
+            <label class="sort-control">排序<select id="sort-select" aria-label="排序方式"><option value="relevance">相关性</option><option value="date">发表日期</option><option value="issue">期次</option></select></label>
+            <span class="toolbar-divider" aria-hidden="true"></span>
+            <div class="view-toggle" role="group" aria-label="结果显示方式">
+              <button type="button" data-view="grid" aria-pressed="true" aria-label="网格视图"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="2" width="6" height="6" rx="1"/><rect x="12" y="2" width="6" height="6" rx="1"/><rect x="2" y="12" width="6" height="6" rx="1"/><rect x="12" y="12" width="6" height="6" rx="1"/></svg></button>
+              <button type="button" data-view="list" aria-pressed="false" aria-label="列表视图"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 4h2m3 0h11M2 10h2m3 0h11M2 16h2m3 0h11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button>
+            </div>
+          </div>
+        </div>
+        <div class="results-caption"><h2 id="results-heading">全部文献</h2><span id="result-count"></span></div>
+        <div class="result-grid" id="result-grid" aria-live="polite" aria-busy="true"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <svg viewBox="0 0 70 70" fill="none" aria-hidden="true"><circle cx="30" cy="30" r="19" stroke="currentColor" stroke-width="1.5"/><path d="m44 44 15 15M23 30h14m-7-7v14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <h3>没有找到匹配文献</h3><p>试试缩短关键词，或清除部分筛选条件。</p><button type="button" id="empty-clear">清除筛选条件</button>
+        </div>
+        <nav class="pagination" id="pagination" aria-label="搜索结果分页"></nav>
+        <noscript><p class="noscript">全站检索需要在浏览器中启用 JavaScript。</p></noscript>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="site-footer"><div class="footer-inner"><span class="footer-rule"></span><p>基因组雷达 <b>·</b> GENOME RADAR</p><span class="footer-rule"></span></div></footer>
+</body>
+</html>

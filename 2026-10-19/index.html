@@ -1469,6 +1469,25 @@ html.flow .page.article-page .detail-ornament{opacity:.25}
   var dots=document.getElementById('dots');
   var toc=document.getElementById('toc');
   var n=pages.length, cur=0;
+  function articleFromUrl(){
+    var raw=new URLSearchParams(window.location.search).get('article');
+    if(!raw || !/^[1-9]\d*$/.test(raw)) return 0;
+    var value=parseInt(raw,10);
+    return value>0 && value<n ? value : 0;
+  }
+  var initialArticle=articleFromUrl();
+  var holdInitialArticle=initialArticle>0;
+  function writeArticleUrl(i,mode){
+    if(!mode) return;
+    var url=new URL(window.location.href);
+    if(i>0) url.searchParams.set('article',String(i));
+    else url.searchParams.delete('article');
+    var next=url.pathname+(url.search||'')+url.hash;
+    var current=window.location.pathname+window.location.search+window.location.hash;
+    if(next===current) return;
+    if(mode==='push') window.history.pushState(window.history.state,'',next);
+    else window.history.replaceState(window.history.state,'',next);
+  }
   var tocButton=document.getElementById('tocBtn');
   var tocClose=document.getElementById('tocClose');
   var tocSearch=document.getElementById('tocSearch');
@@ -1542,16 +1561,20 @@ html.flow .page.article-page .detail-ornament{opacity:.25}
   var num=document.createElement('span');
   num.className='pgnum'; dots.appendChild(num);
 
-  function mark(i){
+  function mark(i,historyMode){
     cur=i;
     dotsArr.forEach(function(d,k){ d.className = k===i?'on':'' });
     num.textContent = i===0 ? '封面' : i+' / '+(n-1);
+    writeArticleUrl(i,historyMode);
   }
-  function go(i){
+  function go(i,options){
+    options=options||{};
+    if(!options.keepInitial) holdInitialArticle=false;
     i=Math.max(0,Math.min(n-1,i));
-    var far = Math.abs(i-cur) > 2;      // 跨好几页就直跳，别让平滑滚动慢吞吞地扫过中间页
-    deck.scrollTo({left:pages[i].offsetLeft-deck.offsetLeft, behavior: far?'auto':'smooth'});
-    mark(i);
+    var far = Math.abs(i-cur) > 2;
+    var behavior=options.behavior||(far?'auto':'smooth');
+    deck.scrollTo({left:pages[i].offsetLeft-deck.offsetLeft, behavior:behavior});
+    mark(i,options.history===false?null:(options.history==='replace'?'replace':'push'));
   }
 
   var raf=false;
@@ -1560,7 +1583,7 @@ html.flow .page.article-page .detail-ornament{opacity:.25}
     requestAnimationFrame(function(){
       raf=false;
       var i=Math.round(deck.scrollLeft/Math.max(1,deck.clientWidth));
-      if(i!==cur) mark(Math.max(0,Math.min(n-1,i)));
+      if(i!==cur) mark(Math.max(0,Math.min(n-1,i)),'replace');
     });
   },{passive:true});
 
@@ -1744,14 +1767,15 @@ html.flow .page.article-page .detail-ornament{opacity:.25}
   // 会出现「两页各露一半」。浏览器还会做 scroll anchoring，所以 rAF 一次、稍后再一次。
   var touched=false;
   ['wheel','keydown','pointerdown','touchstart'].forEach(function(t){
-    window.addEventListener(t, function(){ touched=true }, {passive:true, once:true});
+    window.addEventListener(t, function(){ touched=true; holdInitialArticle=false }, {passive:true, once:true});
   });
   function realign(force){
-    if(touched && !force) return;        // 用户已经动手了，别抢他的翻页
-    var i=Math.max(0, Math.min(n-1, Math.round(deck.scrollLeft/Math.max(1,deck.clientWidth))));
+    if(touched && !force) return;
+    var i=holdInitialArticle && !touched ? initialArticle :
+      Math.max(0, Math.min(n-1, Math.round(deck.scrollLeft/Math.max(1,deck.clientWidth))));
     deck.scrollLeft = i*deck.clientWidth;
     if(pages[i]) pages[i].scrollTop = 0;
-    mark(i);
+    mark(i,'replace');
   }
   // 窗口尺寸一变，换行就变，得重新算一遍缩排
   var rzTimer=null;
@@ -1761,10 +1785,14 @@ html.flow .page.article-page .detail-ornament{opacity:.25}
   });
   window.addEventListener('load', function(){
     fitAll();
-    // 浏览器会在 load 之后异步把上次的滚动位置还回来，所以多压几次
+    if(initialArticle>0) go(initialArticle,{history:false,behavior:'auto',keepInitial:true});
     requestAnimationFrame(realign);
     [120, 320, 700].forEach(function(t){ setTimeout(realign, t); });
-    setTimeout(fitAll, 400);          // 字体真正到位之后再校一次
+    setTimeout(fitAll, 400);
+  });
+  window.addEventListener('popstate',function(){
+    holdInitialArticle=false;
+    go(articleFromUrl(),{history:false,behavior:'auto'});
   });
 })();
 </script>
