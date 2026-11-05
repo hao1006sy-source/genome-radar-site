@@ -409,6 +409,154 @@ body{background:#f0eee7;color:var(--cover-ink)}
   .cover .cv-hint{font-size:6.5pt}
   .cover-visual img{opacity:.8}
 }
+
+
+.article-page{padding:0;background:#f8f6f0}
+.article-page .sheet{
+  flex:none;width:100%;max-width:1672px;min-height:100%;margin:0 auto;
+  padding:30px 9.4% 25px;overflow:visible;align-self:flex-start;isolation:isolate;
+  border:0;border-radius:0;background:#fbfaf5;box-shadow:none;
+}
+.article-page .detail-ornament{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:fill;object-position:center;
+  opacity:.20;pointer-events:none;z-index:0;
+}
+.article-page .sheet>*:not(.detail-ornament){position:relative;z-index:1}
+.article-page .head{
+  display:flex;align-items:center;flex-wrap:wrap;gap:10px 13px;
+  padding:0 0 12px;border-bottom:1px solid #cbd1c3;
+  color:#687067;font-size:14px;line-height:1.5;
+}
+.article-page .head .jn{
+  color:#173e2d;font-family:var(--editorial);font-size:20px;font-style:italic;font-weight:700;
+}
+.article-page .head .sep{color:#b9c0b3}
+.article-page .head .met{display:inline-flex;align-items:center;gap:8px;margin-left:2px}
+.article-page .head .met b{padding:3px 10px;border-radius:8px;background:#e7ebd9;color:#24503a;font-size:12px;font-weight:750}
+.article-page .head .met b.weak{background:#f0eee5;color:#625e52}
+.article-page .head .met i{color:#555d53;font-size:12.5px;font-style:normal;font-weight:500}
+.article-page .head .crumb{color:#697068}
+.article-page .head .rt{display:flex;align-items:center;flex-wrap:wrap;gap:8px 16px;margin-left:auto;color:#697068}
+.article-page .head .kind{letter-spacing:.02em}
+.article-page .head .lv{padding:2px 8px;border-radius:6px;background:#f0eee5;color:#625e52;font-size:11px;letter-spacing:.02em}
+.article-page .head .lv.fulltext{background:#e7ebd9;color:#24503a}
+.article-page .head .lv.oa_url{background:#eef0e6;color:#4f6343}
+.article-page .head .lv.preprint{background:#eeefe9;color:#687067}
+.article-page .head .no{
+  position:static;top:auto;right:auto;padding:3px 10px;border-radius:6px;
+  background:#eeebdc;color:#62552e;font-family:var(--editorial);font-size:12px;
+  font-weight:650;line-height:1.4;letter-spacing:.03em;white-space:nowrap;
+}
+.article-page h2.t-zh{
+  max-width:1450px;margin:31px 0 0;color:#173e2d;font-family:var(--editorial);
+  font-size:clamp(36px,2.85vw,48px);font-weight:760;line-height:1.27;letter-spacing:-.035em;
+  text-wrap:pretty;
+}
+.article-page .t-en{
+  max-width:1320px;margin:9px 0 0;color:#626b62;font-family:Georgia,"Times New Roman",serif;
+  font-size:17px;line-height:1.55;letter-spacing:.005em;
+}
+.article-page .title-rule{
+  width:60px;height:3px;margin:19px 0 18px;border:0;background:#24503a;
+}
+.article-page .lead{
+  display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:17px;
+  margin:0;padding:12px 20px;border-left:4px solid #24503a;border-radius:3px;
+  background:#f0f0e5;color:#30362f;font-family:var(--editorial);font-size:18px;line-height:1.75;
+}
+.article-page .lead-label{
+  padding-right:16px;border-right:1px solid #b8c1ad;color:#173e2d;
+  font-size:18px;font-weight:750;white-space:nowrap;
+}
+.article-page .lead-copy{min-width:0}
+.article-page .art-body{flex:1 0 auto;display:flex;flex-direction:column}
+.article-page .grid{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:31px 5.2%;margin:32px 4px 24px;
+}
+.article-page .blk h3{
+  margin:0 0 10px;padding-bottom:9px;border-bottom:1px solid #aeb9aa;
+  color:#173e2d;font-family:var(--editorial);font-size:23px;font-weight:750;letter-spacing:.015em;
+}
+.article-page .blk p{
+  margin:0;color:#30342f;font-size:16.5px;line-height:1.88;letter-spacing:.005em;
+}
+.article-page .stage{
+  margin-top:auto;padding:11px 4px 0;border-top:1px solid #d6d9ce;
+  color:#626b62;font-size:12.5px;line-height:1.65;
+}
+.article-page .stage b{margin-right:10px;color:#52674c;font-size:11px;font-weight:750;letter-spacing:.06em}
+.article-page .foot{
+  display:flex;align-items:center;flex-wrap:wrap;gap:12px 24px;
+  margin-top:18px;padding:15px 4px 0;border-top:1px solid #cbd1c3;
+  color:#626b62;font-size:13px;line-height:1.6;
+}
+.article-page .foot .doi{color:#262c27;font-size:13.5px;font-weight:650;overflow-wrap:anywhere}
+.article-page .foot .doi i{margin-right:9px;color:#626b62;font-size:11px;letter-spacing:.12em}
+.article-page .foot a{border-bottom:1px solid #c7cec0;color:#596458;text-decoration:none}
+.article-page .foot a:hover{border-color:#24503a;color:#173e2d}
+.article-page .foot .affil{flex:1 1 220px;min-width:140px;max-width:none;margin:0;color:#434a42;white-space:normal;overflow-wrap:anywhere}
+.article-page .foot .src{margin-left:auto;color:#24503a;white-space:nowrap}
+.article-page .star{flex:none;color:#aaa58f;font-size:15px}
+.article-page .star[data-on="1"]{color:#a88d43}
+html.flow .page.article-page{padding:0 16px 16px}
+html.flow .page.article-page:last-child{padding-bottom:44px}
+html.flow .page.article-page .sheet{
+  max-width:1180px;min-height:0;padding:35px 38px 30px;border:0;
+  border-bottom:1px solid #d6d9ce;background:#fbfaf5;
+}
+html.flow .page.article-page .detail-ornament{opacity:.25}
+@media(max-width:900px){
+  .article-page .sheet{padding-left:7.2%;padding-right:7.2%}
+  .article-page h2.t-zh{font-size:clamp(36px,4.4vw,46px)}
+  .article-page .grid{column-gap:32px}
+  .article-page .blk p{font-size:15.5px}
+}
+@media(max-width:820px){
+  .article-page .grid{grid-template-columns:1fr;gap:25px}
+}
+@media(max-width:680px){
+  .article-page{padding:0}
+  .article-page .sheet{min-height:100%;padding:23px 22px 20px}
+  .article-page .detail-ornament{display:none}
+  .article-page .head{align-items:flex-start;gap:6px 9px;padding-bottom:10px;font-size:11.5px}
+  .article-page .head .jn{font-size:17px}
+  .article-page .head .met{gap:5px}
+  .article-page .head .met b{padding:2px 7px;font-size:10.5px}
+  .article-page .head .met i{font-size:11px}
+  .article-page .head .rt{flex-basis:100%;margin-left:0;gap:7px 11px}
+  .article-page .head .no{display:inline-flex;font-size:10.5px}
+  .article-page h2.t-zh{margin-top:23px;font-size:32px;line-height:1.38;letter-spacing:-.025em}
+  .article-page .t-en{margin-top:8px;font-size:14px;line-height:1.6}
+  .article-page .title-rule{width:46px;height:2px;margin:15px 0}
+  .article-page .lead{grid-template-columns:1fr;gap:5px;margin:0;padding:11px 13px;font-size:15.5px;line-height:1.8}
+  .article-page .lead-label{padding:0;border:0;font-size:14px}
+  .article-page .grid{grid-template-columns:1fr;gap:22px;margin:23px 0 22px}
+  .article-page .blk h3{margin-bottom:8px;padding-bottom:6px;font-size:19px}
+  .article-page .blk p{font-size:15px;line-height:1.82}
+  .article-page .stage{margin-top:10px;padding-top:9px;font-size:11.5px}
+  .article-page .foot{gap:9px 15px;margin-top:13px;padding:12px 0 0;font-size:11.5px}
+  .article-page .foot .doi{font-size:11.5px}
+  .article-page .foot .affil{flex-basis:100%;min-width:100%;order:3}
+  .article-page .foot .src{margin-left:auto}
+  html.flow .page.article-page{padding:0 8px 12px}
+  html.flow .page.article-page .sheet{padding:23px 18px 20px}
+}
+@media print{
+  .article-page{height:auto!important;min-height:0!important;padding:0!important;overflow:visible!important;break-after:page;page-break-after:always}
+  .article-page:last-child{break-after:auto;page-break-after:auto}
+  .article-page .sheet{width:100%!important;max-width:none!important;min-height:0!important;padding:6mm 8mm 5mm!important;
+    border:0!important;background:#fff!important;box-shadow:none!important;overflow:visible!important}
+  .article-page .detail-ornament{opacity:.18}
+  .article-page h2.t-zh{margin-top:7mm;font-size:23pt}
+  .article-page .t-en{font-size:9pt}
+  .article-page .lead{font-size:10pt;line-height:1.55}
+  .article-page .grid{gap:5mm 10mm;margin:7mm 1mm 5mm}
+  .article-page .blk h3{font-size:12pt}
+  .article-page .blk p{font-size:9.5pt;line-height:1.55}
+  .article-page .stage,.article-page .foot{font-size:8pt}
+}
+
 </style>
 </head>
 <body>
@@ -464,8 +612,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     <div class="cv-hint">滚轮 / 方向键 / 左右滑动翻页　·　「目录」跳转文章　·　「连读」纵向阅读　·　「打印 / PDF」导出 A4 横向</div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Nat Genet</span><span class="met"><b>1区 Top</b><i>IF 31.7</i></span>
       <span class="sep">|</span>
@@ -474,13 +623,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">原创研究</span>
         <span>2026-10-22</span>
         <span class="lv abstract">仅摘要</span>
-        <span class="no">01</span>
+        <span class="no">文章 01</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">野生二粒小麦近完整组装揭示多倍化中着丝粒重组</h2>
     <p class="t-en">Near-complete assembly of wild emmer wheat unveils centromere reorganization during polyploid evolution.</p>
-    <p class="lead">野生二粒小麦BBAA近完整组装覆盖全部14个着丝粒，A、B亚基因组着丝粒重塑模式分化。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">野生二粒小麦BBAA近完整组装覆盖全部14个着丝粒，A、B亚基因组着丝粒重塑模式分化。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>野生二粒小麦（Triticum turgidum ssp. dicoccoides，BBAA）近完整基因组组装覆盖全部14个着丝粒；与栽培四倍体和六倍体小麦比较，分析着丝粒关联序列及着丝粒近端结构变异。</p></section>
       <section class="blk"><h3>结论</h3><p>比较分析揭示着丝粒关联序列和近端结构广泛变异，A、B亚基因组模式不同：A亚基因组以富含CRW的着丝粒衍生块位置移动和序列更替为特征，B亚基因组CentT566卫星丰度降低并在特定染色体局部保留或扩张。</p></section>
@@ -498,8 +648,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Plant Biotechnol J</span><span class="met"><b>1区</b><i>IF 10.1</i></span>
       <span class="sep">|</span>
@@ -508,13 +659,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">原创研究</span>
         <span>2026-10-22</span>
         <span class="lv fulltext">全文</span>
-        <span class="no">02</span>
+        <span class="no">文章 02</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">无间隙大麻组装揭示多倍体后重塑与合成酶基因演化</h2>
     <p class="t-en">Gap-Free Cannabis sativa Assemblies Reveal Post-Polyploid Genome Remodelling and Refine the Evolution of Cannabinoid Synthase Genes.</p>
-    <p class="lead">两个单倍型分型无间隙大麻组装否定谱系特异全基因组复制，将大麻素合成酶基因起源锚定于大麻-葎草分化前的祖先重复。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">两个单倍型分型无间隙大麻组装否定谱系特异全基因组复制，将大麻素合成酶基因起源锚定于大麻-葎草分化前的祖先重复。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>两套单倍型分型、无间隙、金标准级别的大麻基因组组装被构建，用于解析多倍体后基因组重塑并厘清大麻素合成酶基因的演化历史。分析同时检索γ全基因组三倍化信号、谱系特异全基因组复制证据、γ衍生重复的长期保留与分化、非全基因组复制来源的基因重复及重复序列相关重塑。</p></section>
       <section class="blk"><h3>结论</h3><p>无间隙组装中检出与核心真双子叶植物共享的γ全基因组三倍化信号，未发现大麻谱系特异的额外全基因组复制。现存大麻基因组反映γ衍生重复子集的长期保留与分化，叠加后续非全基因组复制来源的基因重复和重复序列相关重塑。系统发育基因组学、结构与共线性证据表明，大麻-葎草分化前的祖先重复产生两个谱系，分别保留于大麻7号与2号染色体；7号染色体谱系随后扩张分化为功能性大麻素合成酶基因，葎草仅保留类似大麻2号染色体拷贝的谱系。</p></section>
@@ -532,8 +684,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Plant Commun</span><span class="met"><b>1区</b><i>IF 9.4</i></span>
       <span class="sep">|</span>
@@ -542,13 +695,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">原创研究</span>
         <span>2026-10-19</span>
         <span class="lv abstract">仅摘要</span>
-        <span class="no">03</span>
+        <span class="no">文章 03</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">完成花生品种豫花15端粒到端粒基因组组装并锁定荚果与种子大小的关键调控因子AhYABBY</h2>
     <p class="t-en">Telomere-to-telomere genome assembly of the elite peanut cultivar Yuhua 15 identifies AhYABBY as a key regulator of pod and seed size.</p>
-    <p class="lead">豫花15端粒到端粒基因组组装完成，AhYABBY被鉴定为调控荚果与种子大小的关键因子。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">豫花15端粒到端粒基因组组装完成，AhYABBY被鉴定为调控荚果与种子大小的关键因子。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>以栽培花生品种豫花15为材料，完成端粒到端粒（T2T）水平的基因组组装，获得无缺口、覆盖全部染色体的参考序列；在此基础上结合基因组信息定位并鉴定调控荚果与种子大小的候选基因AhYABBY。</p></section>
       <section class="blk"><h3>结论</h3><p>T2T组装覆盖豫花15全部染色体且达到端粒到端粒完整度，据此将荚果与种子大小的调控因子定位到AhYABBY，表明该基因是控制这两个产量相关性状的关键调控因子。</p></section>
@@ -566,8 +720,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Nat Plants</span><span class="met"><b>1区 Top</b><i>IF 15.8</i></span>
       <span class="sep">|</span>
@@ -576,13 +731,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">原创研究</span>
         <span>2026-10-23</span>
         <span class="lv abstract">仅摘要</span>
-        <span class="no">04</span>
+        <span class="no">文章 04</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">构建葡萄科染色体级基因组解析系统发育与基因组演化</h2>
     <p class="t-en">Chromosome-level phylogenomics and genome evolution of the grape family.</p>
-    <p class="lead">葡萄科染色体级基因组组装将蛇葡萄属置于地锦属与葡萄属之间，并揭示Tetrastigma与Cissus的广泛重排。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">葡萄科染色体级基因组组装将蛇葡萄属置于地锦属与葡萄属之间，并揭示Tetrastigma与Cissus的广泛重排。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>葡萄科（Vitaceae）染色体级基因组组装支撑全科系统发育基因组学分析，重建了葡萄科系统发育关系，并开展核型演化分析以界定主要染色体 rearrangements，同时进行泛3D基因组分析，检测结构变异对A/B区室和拓扑关联域的影响。</p></section>
       <section class="blk"><h3>结论</h3><p>系统发育基因组分析将蛇葡萄属（Ampelopsis）置于地锦属（Parthenocissus）与葡萄属（Vitis）之间；核型演化分析显示葡萄属内整体保守，而Tetrastigma和Cissus发生广泛重排；泛3D基因组分析表明结构变异贡献A/B区室和拓扑关联域变异，并在拓扑关联域边界呈现结构变异清除；Helitron转座子驱动葡萄属NLR抗病基因扩张并调控其表达；从野生葡萄Vitis bellula中发现的NLR基因VbRpv35异源表达增强Vitis vinifera对霜霉病的抗性。</p></section>
@@ -600,8 +756,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Nat Plants</span><span class="met"><b>1区 Top</b><i>IF 15.8</i></span>
       <span class="sep">|</span>
@@ -610,13 +767,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">方法</span>
         <span>2026-10-23</span>
         <span class="lv abstract">仅摘要</span>
-        <span class="no">05</span>
+        <span class="no">文章 05</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">靶向着丝粒重写小麦核型</h2>
     <p class="t-en">Rewriting wheat karyotypes through centromere-targeted chromosome engineering.</p>
-    <p class="lead">靶向六倍体小麦着丝粒的CRISPR-Cas9策略，单代最多重构11条染色体。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">靶向六倍体小麦着丝粒的CRISPR-Cas9策略，单代最多重构11条染色体。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>着丝粒编辑介导的染色体变异策略以六倍体小麦为材料，利用CRISPR-Cas9靶向丰富的着丝粒逆转录转座子，在全基因组范围同时诱导染色体断裂，生成多样的核型变异体。</p></section>
       <section class="blk"><h3>结论</h3><p>单代最多重构11条染色体，产生广泛的相互易位，其中一个株系携带涉及7条染色体的6次易位事件；新形成的易位染色体发生着丝粒重塑，得以相对稳定维持并可遗传传递；平衡易位对转录扰动极小，植株保持正常生长。</p></section>
@@ -634,8 +792,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Plant Commun</span><span class="met"><b>1区</b><i>IF 9.4</i></span>
       <span class="sep">|</span>
@@ -644,13 +803,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">方法</span>
         <span>2026-10-20</span>
         <span class="lv abstract">仅摘要</span>
-        <span class="no">06</span>
+        <span class="no">文章 06</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">性状信息驱动机器学习提升小麦基因组选择与杂交设计精度</h2>
     <p class="t-en">Trait-Informed Machine Learning Improves Precise Genomic Selection and Hybrid Design in Wheat.</p>
-    <p class="lead">GLRS 将 570,441 个 SNP 压缩至数百个，交叉验证精度较随机标记提升 7.2%。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">GLRS 将 570,441 个 SNP 压缩至数百个，交叉验证精度较随机标记提升 7.2%。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>GLRS 以 768 份多样材料、9 个产量相关性状、6 个环境和 570,441 个 SNP 为训练集，整合全基因组关联信号排序、连锁不平衡修剪与随机森林特征重要性，为每个性状导出数百个超稀疏标记，用于纯系与杂交基因组选择。</p></section>
       <section class="blk"><h3>结论</h3><p>交叉验证精度较随机标记提升 7.2%；在 1,163 份高级育种品系、7 个独立试验中，预测精度较随机标记和仅用关联信号排序加连锁不平衡修剪的标记分别提升 14.4% 和 5.8%；292 个杂交组合的 F1 表现（r=0.790）、一般配合力（r=0.851）和杂种优势（r=0.541）预测准确。</p></section>
@@ -668,8 +828,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Plant Cell Environ</span><span class="met"><b class="weak">2区</b><i>IF 6.0</i></span>
       <span class="sep">|</span>
@@ -678,13 +839,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">原创研究</span>
         <span>2026-10-22</span>
         <span class="lv abstract">仅摘要</span>
-        <span class="no">07</span>
+        <span class="no">文章 07</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">解析小麦气孔解剖与导度：干旱热胁迫下稳定QTL的田间定位</h2>
     <p class="t-en">Field‑Based Dissection of Stomatal Anatomy and Conductance Reveals Stable QTL Under Drought and Heat in Wheat.</p>
-    <p class="lead">小麦气孔导度在干旱下降低26.9%，解剖性状遗传力高于导度，7B等染色体区间具多效性。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">小麦气孔导度在干旱下降低26.9%，解剖性状遗传力高于导度，7B等染色体区间具多效性。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>两年大田试验对小麦进行水分限制与增温处理，测定气孔导度及解剖性状，按叶面分区解析响应，估算遗传力并开展全基因组关联分析定位QTL。</p></section>
       <section class="blk"><h3>结论</h3><p>水分限制下气孔导度降26.9%、增温降13.8%，近轴面主导变异；干旱缩小气孔增大密度、增温两者均增，但气孔导度效率下降，解剖容量与实现导度脱耦；解剖性状遗传力0.13-0.57和0.42-0.71，导度仅0.13-0.41和0.13-0.50；定位60个QTL，7B、2B、3B、5A区间多效。</p></section>
@@ -702,8 +864,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Plant Physiol</span><span class="met"><b class="weak">2区</b><i>IF 6.5</i></span>
       <span class="sep">|</span>
@@ -712,13 +875,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">原创研究</span>
         <span>2026-10-22</span>
         <span class="lv abstract">仅摘要</span>
-        <span class="no">08</span>
+        <span class="no">文章 08</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">揭示茶树两种DNA甲基化架构与转录稳健性的关联</h2>
     <p class="t-en">Conserved DNA methylation architectures are associated with transcriptional robustness and regulatory plasticity in the woody perennial tea plant.</p>
-    <p class="lead">整合两个茶树品种的甲基化组、转录组和染色质可及性数据，发现基因体甲基化与转录稳健性关联，而DNA甲基化谷与调控可塑性相关。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">整合两个茶树品种的甲基化组、转录组和染色质可及性数据，发现基因体甲基化与转录稳健性关联，而DNA甲基化谷与调控可塑性相关。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>整合两个茶树品种的DNA甲基化组、转录组和染色质可及性图谱，比较基因体甲基化（gbM）与DNA甲基化谷（DMVs）两类甲基化架构的调控特征与保守性。</p></section>
       <section class="blk"><h3>结论</h3><p>gbM基因具有独特基因结构、广泛而稳定的表达，直系同源基因间甲基化状态高度保守，且gbM-gbM直系同源基因表现出更强的选择约束并呈序列长度依赖；DMVs为高度低甲基化区域，与TE缺失和显著TF足迹信号相关，DMV相关基因富集于发育和胁迫响应功能，其模式与TF足迹谱在品种间高度保守。</p></section>
@@ -736,8 +900,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Plant J</span><span class="met"><b class="weak">2区</b><i>IF 6.2</i></span>
       <span class="sep">|</span>
@@ -746,13 +911,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">原创研究</span>
         <span></span>
         <span class="lv fulltext">全文</span>
-        <span class="no">09</span>
+        <span class="no">文章 09</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">基因组结构决定菊科rDNA的协同演化效率</h2>
     <p class="t-en">Genome architecture modulates 35S and 5S rDNA homogenization in Asteraceae.</p>
-    <p class="lead">71个菊科物种中，5S rDNA在连锁时近乎完全均质，在分离时高度多态。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">71个菊科物种中，5S rDNA在连锁时近乎完全均质，在分离时高度多态。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>以71个代表性菊科物种（50个S型、21个L型）为材料，利用全基因组测序数据与重复序列组分析，重建完整rDNA单元，并量化编码区与非编码间隔区的基因组内变异。</p></section>
       <section class="blk"><h3>结论</h3><p>未发现L型与S型共存的中间基因型。S型物种5S rDNA在基因区与间隔区均呈高水平多态，L型则近乎完全序列均质；35S rDNA整体多态水平低。5S rRNA基因的拷贝数与染色体位置关联的均质化效率及选择约束差异。</p></section>
@@ -770,8 +936,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">New Phytol</span><span class="met"><b>1区</b><i>IF 8.3</i></span>
       <span class="sep">|</span>
@@ -780,13 +947,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">原创研究</span>
         <span>2026-10-25</span>
         <span class="lv abstract">仅摘要</span>
-        <span class="no">10</span>
+        <span class="no">文章 10</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">单核多组学解析线虫合胞体调控程序</h2>
     <p class="t-en">A single-nucleus multiome profiling reveals the regulatory programs driving plant nematode-induced syncytium.</p>
-    <p class="lead">对成熟合胞体做单核RNA-seq与ATAC-seq平行测序，鉴定出数百个合胞体富集基因及多个转录细胞状态。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">对成熟合胞体做单核RNA-seq与ATAC-seq平行测序，鉴定出数百个合胞体富集基因及多个转录细胞状态。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>以拟南芥根上充分发育的甜菜胞囊线虫诱导合胞体为材料，平行构建单核RNA-seq与单核ATAC-seq文库，先独立分析高质量转录组与染色质图谱，再在整合框架下联合聚类，解析合胞体细胞状态与染色质可及性景观。</p></section>
       <section class="blk"><h3>结论</h3><p>鉴定出多个转录细胞状态，其中若干高度富集合胞体并跨越维管与皮层身份；差异表达分析得到数百个合胞体富集基因，拟时序轨迹提示合胞体核可能存在区室化或功能异质性；snATAC-seq与snRNA-seq联合聚类 delineate 合胞体独有染色质可及性景观，部分细胞状态开放染色质与上调基因关联，基序富集指向AP2、bZIP、bHLH、MYB、TCP转录因子的顺式调控元件，并锁定其中经功能验证的家族成员为合胞体身份的候选调控因子。</p></section>
@@ -804,8 +972,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">New Phytol</span><span class="met"><b>1区</b><i>IF 8.3</i></span>
       <span class="sep">|</span>
@@ -814,13 +983,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">方法</span>
         <span>2026-10-23</span>
         <span class="lv oa_url">存开放获取</span>
-        <span class="no">11</span>
+        <span class="no">文章 11</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">用十条规则甄别深部植物系统发育中的水平基因转移</h2>
     <p class="t-en">Ten rules for identifying horizontal gene transfers in deep plant phylogenies.</p>
-    <p class="lead">十条规则围绕基因组基础、分析框架与生物学解释，GH9与GH32的分析选择可完全消除表观HGT信号</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">十条规则围绕基因组基础、分析框架与生物学解释，GH9与GH32的分析选择可完全消除表观HGT信号</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>针对深部植物系统发育中HGT检测易受污染、分类群取样偏差及系统发育分析参数影响的问题，提出十条实用规则，分属基因组基础、严谨分析框架与生物学解释三个主题；以GH9、GH32和GH18三个糖苷水解酶家族为例说明分析选择对HGT信号的影响。</p></section>
       <section class="blk"><h3>结论</h3><p>可靠的基因组基础要求排除污染、验证基因组整合并避免偏倚的分类群取样；深部系统发育对序列比对参数、替换模型、生根策略和分支支持敏感，GH9与GH32中分析选择可完全消除表观HGT信号，GH18则因多结构域复杂家族难以置信推断；反复的基因复制、丢失和结构域重排常产生类HGT模式，应始终作为替代解释考虑。</p></section>
@@ -838,8 +1008,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Genome Res</span><span class="met"><b class="weak">2区</b><i>IF 6.2</i></span>
       <span class="sep">|</span>
@@ -848,13 +1019,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">方法</span>
         <span>2026-10-21</span>
         <span class="lv abstract">仅摘要</span>
-        <span class="no">12</span>
+        <span class="no">文章 12</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">用 LAVrefiner 细化 indel 与结构变异-性状关联</h2>
     <p class="t-en">Refining indel- and structural variant-trait associations with LAVrefiner.</p>
-    <p class="lead">LAVrefiner 将重叠 SV/indel 拆为非重叠序列组分，在 1000 Genomes 中得 224,708 个细化变异。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">LAVrefiner 将重叠 SV/indel 拆为非重叠序列组分，在 1000 Genomes 中得 224,708 个细化变异。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>LAVrefiner 把序列解析后的重叠 SV 与 indel 分解为非重叠细化序列组分，生成与标准 SNP 分析兼容的基因型矩阵；在串联重复区支持基序感知等位比较与重复拷贝数估计。应用于 1000 Genomes Project 变异后识别 224,708 个细化变异，模拟显示其快速、内存高效且在 TR 相关测序噪声下保持稳健基因型表示。</p></section>
       <section class="blk"><h3>结论</h3><p>基因表达分析中，LAVrefiner 拷贝数估计与细化变异联合模型在 STR 和 VNTR 区给出最高遗传力估计与预测精度，优于原始 SV/indel 表示及现有 TR 拷贝数工具；cis-eQTL 定位显示细化变异可将调控信号定位到特定序列组分，包括 TFRC 位点一个独立 VNTR 来源信号。</p></section>
@@ -872,8 +1044,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Genome Res</span><span class="met"><b class="weak">2区</b><i>IF 6.2</i></span>
       <span class="sep">|</span>
@@ -882,13 +1055,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">方法</span>
         <span>2026-10-21</span>
         <span class="lv abstract">仅摘要</span>
-        <span class="no">13</span>
+        <span class="no">文章 13</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">用可组合查询语言实时探索泛基因组与泛转录组图</h2>
     <p class="t-en">The Vizitig pangenome and pantranscriptome explorer.</p>
-    <p class="lead">Vizitig 在笔记本上交互探索最多 20 个人类单倍型的泛基因组图，无需全图载入内存。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">Vizitig 在笔记本上交互探索最多 20 个人类单倍型的泛基因组图，无需全图载入内存。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>Vizitig 从原始测序读段与参考序列构建压缩着色 de Bruijn 图，统一可视化、元数据与检索；提供基于特征的可读查询语言，支持任意长度序列、基因或外显子标识、样本标识与丰度阈值等条件的可组合搜索，并按需加载子图。</p></section>
       <section class="blk"><h3>结论</h3><p>按需子图加载使图形界面只取感兴趣区域，避免将整图载入内存；泛转录组案例在长读与短读上恢复融合转录本断点，泛基因组案例覆盖酵母、水稻、线虫与人类，最大实验含 20 个人类组装单倍型并在笔记本上运行。</p></section>
@@ -906,8 +1080,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Nat Methods</span><span class="met"><b>1区 Top</b><i>IF 36.1</i></span>
       <span class="sep">|</span>
@@ -916,13 +1091,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">方法</span>
         <span>2026-10-23</span>
         <span class="lv abstract">仅摘要</span>
-        <span class="no">14</span>
+        <span class="no">文章 14</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">基准评测空间转录组细胞分割方法</h2>
     <p class="t-en">Benchmarking segmentation methods for spatial transcriptomics.</p>
-    <p class="lead">11 种分割方法在 15 个数据集上性能差异显著，分割选择直接影响下游分析。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">11 种分割方法在 15 个数据集上性能差异显著，分割选择直接影响下游分析。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>基准评测覆盖 11 种基于图像、转录组及多模态的细胞分割方法，在 5 种空间转录组技术产生的 15 个数据集上展开，涵盖 12 种人类与小鼠组织类型。引入量化分割质量、转录本回收、细胞组成、形态、表达纯度及空间组织的生物学信息评估指标，并构建统一 Nextflow 流程。</p></section>
       <section class="blk"><h3>结论</h3><p>跨数据集、技术与评估标准，分割方法性能差异显著，分割完整性、转录组保真度与生物学可解释性之间存在权衡。跨技术分析表明，分割选择关键影响细胞类型特异性、转录本污染及配体-受体推断等下游分析。</p></section>
@@ -940,8 +1116,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Genome Res</span><span class="met"><b class="weak">2区</b><i>IF 6.2</i></span>
       <span class="sep">|</span>
@@ -950,13 +1127,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">方法</span>
         <span>2026-10-16</span>
         <span class="lv abstract">仅摘要</span>
-        <span class="no">15</span>
+        <span class="no">文章 15</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">用条件扩散模型补全单细胞Hi-C稀疏接触图</h2>
     <p class="t-en">Conditional diffusion for single-cell Hi-C data imputation and enhancement with scHiC-Diff.</p>
-    <p class="lead">scHiC-Diff在2套模拟与3套真实scHi-C数据上改善染色质互作模式恢复，并提升下游分析。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">scHiC-Diff在2套模拟与3套真实scHi-C数据上改善染色质互作模式恢复，并提升下游分析。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>scHiC-Diff以条件扩散框架处理scHi-C接触图：前向过程逐步扰动接触图，反向去噪过程从噪声观测重建染色质互作；接触矩阵被视为掩码图像，由Diffusion Transformer建模以捕获复杂三维基因组结构中的长程依赖。</p></section>
       <section class="blk"><h3>结论</h3><p>在2套互补模拟数据集和3套真实scHi-C数据集上，scHiC-Diff较现有方法改善染色质互作模式恢复并增强下游分析；应用于一套发育scHi-C数据集，进一步显示染色质组织重建改善、染色质环检测增强。</p></section>
@@ -974,8 +1152,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Nat Genet</span><span class="met"><b>1区 Top</b><i>IF 31.7</i></span>
       <span class="sep">|</span>
@@ -984,13 +1163,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">方法</span>
         <span>2026-10-20</span>
         <span class="lv oa_url">存开放获取</span>
-        <span class="no">16</span>
+        <span class="no">文章 16</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">多祖先 COJO 分析提升独立关联信号检出</h2>
     <p class="t-en">Multiancestry conditional and joint analysis applied to GWAS summary statistics.</p>
-    <p class="lead">Manc-COJO 在多祖先 GWAS 汇总数据中检出更多独立信号并减少假阳性，C++ 实现比 GCTA-COJO 快 120 倍以上。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">Manc-COJO 在多祖先 GWAS 汇总数据中检出更多独立信号并减少假阳性，C++ 实现比 GCTA-COJO 快 120 倍以上。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>Manc-COJO 面向多祖先 GWAS 汇总统计量做条件与联合分析，模拟与真实数据分析均以 GCTA 的单祖先 COJO 及其临时多祖先改编版为对照；配套 Manc-COJO:FIX 追踪祖先特异性独立关联。C++ 实现支持个体基因型数据或预计算矩阵作为连锁不平衡参考。</p></section>
       <section class="blk"><h3>结论</h3><p>模拟与真实数据分析显示，Manc-COJO 较 GCTA 单祖先 COJO 及其临时多祖先改编版检出更多独立关联信号，同时假阳性更少；C++ 实现速度超过 GCTA-COJO 的 120 倍，并支持个体基因型数据或预计算矩阵两类连锁不平衡参考，在数据共享受限时仍可分析。</p></section>
@@ -1008,8 +1188,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Nat Genet</span><span class="met"><b>1区 Top</b><i>IF 31.7</i></span>
       <span class="sep">|</span>
@@ -1018,13 +1199,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">方法</span>
         <span>2026-10-22</span>
         <span class="lv oa_url">存开放获取</span>
-        <span class="no">17</span>
+        <span class="no">文章 17</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">fastGxE 实现生物样本库规模全基因组 GxE 检测</h2>
     <p class="t-en">Genome-wide detection of genotype-environment interactions at biobank scale with fastGxE.</p>
-    <p class="lead">fastGxE 较现有方法提速 32.98–126.49 倍，在 UK Biobank 中检出 25 个关联位点，其中 16 个为新位点。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">fastGxE 较现有方法提速 32.98–126.49 倍，在 UK Biobank 中检出 25 个关联位点，其中 16 个为新位点。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>fastGxE 是一种可扩展的全基因组基因型-环境交互（GxE）分析方法，控制多基因效应、多基因交互效应与噪声异质性，对参与交互的环境因素数量保持稳健，并在大型生物样本库中实现全基因组 GxE 分析的可扩展性。方法经大量模拟及 UK Biobank 中 32 项体格性状与 67 项血液生物标志物的深入分析验证。</p></section>
       <section class="blk"><h3>结论</h3><p>在真实数据应用中，fastGxE 检出 7 个与体格性状相关的基因组位点，其中 4 个为新位点；检出 18 个与血液生物标志物相关的基因组位点，其中 12 个为新位点。新发现揭示遗传与环境的动态交互，并指向可能具有临床相关性的通路。</p></section>
@@ -1042,8 +1224,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Nat Commun</span><span class="met"><b>1区 Top</b><i>IF 14.7</i></span>
       <span class="sep">|</span>
@@ -1052,13 +1235,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">原创研究</span>
         <span>2026-09-17</span>
         <span class="lv fulltext">全文</span>
-        <span class="no">18</span>
+        <span class="no">文章 18</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">多倍化后基因组偏分隔与生态适应</h2>
     <p class="t-en">Divergent genome fractionation and adaptation following polyploidy in the Araliaceae.</p>
-    <p class="lead">20个基因组与561个转录组显示，多倍化后基因组重塑与生态分化相关。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">20个基因组与561个转录组显示，多倍化后基因组重塑与生态分化相关。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>以五加科20个基因组/亚基因组和561个转录组为材料，比较基因组结构与转录景观，结合系统发育与表型比较，追踪多次多倍化/二倍化事件后的基因组重塑与偏分隔。</p></section>
       <section class="blk"><h3>结论</h3><p>五加科现存基因组结构与转录景观随多倍化/二倍化重塑；系统发育上不同物种反复演化出荫蔽与开阔生境表型，伴随叶形态、光合效率与碳固定差异；光形态建成（PhyB、PIFs）与光合（Lhcb-1、Rubisco）网络的偏分隔和转录重塑与适应相关。</p></section>
@@ -1076,8 +1260,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Sci Adv</span><span class="met"><b>1区</b><i>IF 11.7</i></span>
       <span class="sep">|</span>
@@ -1086,13 +1271,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">原创研究</span>
         <span>2026-10-16</span>
         <span class="lv abstract">仅摘要</span>
-        <span class="no">19</span>
+        <span class="no">文章 19</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">新石器早期基因组支持东亚粟农本地起源</h2>
     <p class="t-en">Early Neolithic genomes suggest a local origin for millet farmers in East Asia.</p>
-    <p class="lead">东胡林谱系在末次盛冰期后主导东亚北方内陆，粟作农业遗传连续性贯穿全新世早期。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">东胡林谱系在末次盛冰期后主导东亚北方内陆，粟作农业遗传连续性贯穿全新世早期。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>对东胡林、邓草沟梁和四台遗址7例个体开展全基因组分析，时间跨度11000至7300年前，追踪末次盛冰期后东亚北方内陆的遗传结构。</p></section>
       <section class="blk"><h3>结论</h3><p>东胡林谱系是末次盛冰期后东亚北方内陆的主要遗传结构；从全新世早期到粟作农业强化期存在深度遗传连续性，支持本地发展模型而非外部人群扩散；一例9200年前东胡林个体携带最早的低氧适应EGLN1变异。</p></section>
@@ -1110,8 +1296,9 @@ body{background:#f0eee7;color:var(--cover-ink)}
     </div>
   </article>
 </section>
-<section class="page">
+<section class="page article-page">
   <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
     <div class="head">
       <span class="jn">Sci Adv</span><span class="met"><b>1区</b><i>IF 11.7</i></span>
       <span class="sep">|</span>
@@ -1120,13 +1307,14 @@ body{background:#f0eee7;color:var(--cover-ink)}
         <span class="kind">方法</span>
         <span>2026-10-23</span>
         <span class="lv fulltext">全文</span>
-        <span class="no">20</span>
+        <span class="no">文章 20</span>
       </span>
     </div>
     <div class="art-body">
     <h2 class="t-zh">液滴酶法单细胞甲基组测序解析表观异质性</h2>
     <p class="t-en">High-throughput droplet-based enzymatic DNA methylome profiling enables single-cell resolution of epigenetic heterogeneity.</p>
-    <p class="lead">scEM-seq 在单次实验中分析数万个单细胞，CpG 覆盖度较其他液滴微流控方法适度提升。</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">scEM-seq 在单次实验中分析数万个单细胞，CpG 覆盖度较其他液滴微流控方法适度提升。</span></p>
     <div class="grid">
       <section class="blk"><h3>做了什么</h3><p>scEM-seq 将条形码连接整合进单次乳化步骤，乳滴形成后再做胞嘧啶到尿嘧啶的转化，以液滴酶法路线构建单细胞甲基组文库。该方法用于外周血单个核细胞和前列腺癌组织，单次实验可分析数万个单细胞。</p></section>
       <section class="blk"><h3>结论</h3><p>scEM-seq 显著减少 DNA 损失，单细胞甲基组质量高，CpG 覆盖度较其他液滴微流控方法适度提升，读段利用更均衡；在外周血单个核细胞中准确区分主要免疫谱系，在前列腺癌组织中揭示多种恶性细胞状态及患者特异的表观与拷贝数结构。</p></section>
@@ -1317,6 +1505,11 @@ body{background:#f0eee7;color:var(--cover-ink)}
   function fitAll(){
     for(var k=0;k<sheets.length;k++){
       var sh=sheets[k], pg=sh.parentNode, f=1, i;
+      if(pg.classList.contains('article-page') && window.innerWidth<=820){
+        sh.style.zoom = z;
+        pg.scrollTop = 0;
+        continue;
+      }
       sh.style.zoom = z;
       if(pg.scrollHeight - pg.clientHeight > 2){
         var total = Math.max(1, pg.scrollHeight);
