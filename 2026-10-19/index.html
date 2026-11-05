@@ -248,6 +248,167 @@ html.flow .topbar{position:sticky; top:0}
   .blk h3{font-size:10pt}
   .head,.stage,.foot{font-size:8pt}
 }
+
+:root{
+  --cover-paper:#f8f6f0; --cover-forest:#173e2d; --cover-ink:#292d28;
+  --cover-leaf:#657a53; --cover-line:#d9dccf; --cover-mist:#e7ebd9;
+  --editorial:"Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun",serif;
+}
+body{background:#f0eee7;color:var(--cover-ink)}
+.serif,.cv-title,.cv-week,.cv-pts .n,.section-heading h2{font-family:var(--editorial)}
+.topbar{
+  height:56px;padding:0 clamp(16px,3.2vw,54px);gap:14px;
+  background:rgba(251,250,245,.97);border-bottom:1px solid #cfd3c7;
+}
+.brand{align-items:baseline;gap:11px}
+.brand b{color:var(--cover-forest);font-size:19px;letter-spacing:.08em}
+.brand .en{color:#687866;font-size:10px;letter-spacing:.22em}
+.issue-tag{padding-left:17px;border-left:1px solid #c9cdbf;color:var(--cover-forest);
+  font-family:var(--editorial);font-size:15px;letter-spacing:.04em}
+.tools{gap:0}
+.tools button,.tools .back{padding:5px 12px;color:#51594f;font-size:13px;border-radius:0}
+.tools button:hover,.tools .back:hover{background:#f0f1e8;border-color:transparent;color:var(--cover-forest)}
+.zoom{border:1px solid #d7dacb;border-radius:999px;background:#fbfaf5}
+.zoom .zlab{color:var(--cover-forest)}
+.page.cover{padding:0 clamp(14px,3.6vw,58px) 12px}
+.cover .sheet{
+  flex:none;width:100%;max-width:1760px;margin:0 auto;padding:17px clamp(20px,3.5vw,56px) 10px;
+  border:1px solid #e0dfd4;border-radius:2px;
+  background:radial-gradient(ellipse at 84% 18%,rgba(231,235,217,.44),transparent 34%),
+    linear-gradient(118deg,#fdfcf7 0%,#f8f6f0 66%,#fbfaf5 100%);
+  box-shadow:0 9px 34px rgba(40,53,37,.055);
+}
+.cover-hero{
+  flex:none;position:relative;display:grid;grid-template-columns:minmax(0,1.14fr) minmax(310px,.86fr);
+  align-items:center;min-height:clamp(315px,40vh,410px);
+  border-bottom:1px solid var(--cover-line);overflow:hidden;
+}
+.cover-copy{position:relative;z-index:2;max-width:880px;padding:8px 0 17px}
+.cv-kicker{font-size:11px;letter-spacing:.25em;color:#78836d;text-transform:uppercase;font-weight:700}
+.cv-title{margin:8px 0 0;font-size:clamp(52px,5.15vw,76px);letter-spacing:.09em;
+  font-weight:800;color:var(--cover-forest);line-height:1.12}
+.cv-week{display:flex;align-items:baseline;gap:13px;margin-top:13px;color:var(--cover-forest);
+  font-size:20px;letter-spacing:.025em;font-weight:650}
+.cv-week time{font-family:var(--ui);font-size:13px;color:#858c7d;font-weight:400;letter-spacing:.04em}
+.cv-week .cv-sep{color:#909984;font-size:15px}
+.cv-rule{width:54px;height:3px;background:var(--cover-forest);margin:15px 0 15px;border-radius:2px}
+.cv-hl{max-width:900px;margin:0;color:#30362f;font-family:var(--editorial);
+  font-size:clamp(15.5px,1.12vw,18px);line-height:1.78;text-wrap:pretty}
+.cv-intro{max-width:860px;margin:11px 0 0;color:#70766b;font-family:var(--editorial);
+  font-size:13px;line-height:1.75}
+.cover-window{margin:9px 0 0;color:#84907a;font-size:11px;letter-spacing:.04em}
+.cover-visual{position:relative;align-self:stretch;min-width:0;min-height:100%;overflow:hidden;
+  background:radial-gradient(ellipse at 65% 44%,rgba(231,235,217,.45),transparent 57%)}
+.cover-visual::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,#f8f6f0 0%,rgba(248,246,240,.1) 30%,transparent 66%);pointer-events:none}
+.cover-visual img{position:absolute;width:108%;height:126%;right:-3%;top:-13%;object-fit:cover;
+  object-position:center 47%;opacity:.88;mix-blend-mode:multiply;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 17%,#000 100%);
+  mask-image:linear-gradient(90deg,transparent 0%,#000 17%,#000 100%)}
+.cover-highlights{flex:none;margin:13px 0 0}
+.section-heading{display:flex;align-items:baseline;gap:13px;margin:0 0 5px}
+.section-heading h2{margin:0;color:var(--cover-forest);font-size:23px;line-height:1.4;font-weight:800}
+.section-heading span{color:#8b907f;font-size:10px;font-weight:700;letter-spacing:.27em}
+.cv-pts{display:block;max-width:none;margin:5px 0 0;padding:0;list-style:none}
+.cv-pts li{display:grid;grid-template-columns:43px minmax(0,1fr);align-items:start;gap:15px;
+  padding:6px 8px;border-top:1px solid #e0dfd4;color:#31362f;font-family:var(--editorial);
+  font-size:14px;line-height:1.48}
+.cv-pts li:last-child{border-bottom:1px solid #e0dfd4}
+.cv-pts .n{display:grid;place-items:center;width:38px;height:24px;min-width:0;margin-top:1px;
+  padding:0;border-radius:8px;background:#e8ecd9;color:var(--cover-forest);font-size:17px;
+  font-weight:700;font-style:italic;letter-spacing:0}
+.cover-journals{flex:none;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:17px;
+  padding:11px 0 8px;border-bottom:1px solid #bfc7b5}
+.cover-journals .section-heading{margin:0;white-space:nowrap}
+.cover-journals .section-heading h2{font-size:20px}
+.cv-journals{display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px;margin:0;padding:0;list-style:none}
+.journal-chip{display:inline-flex;align-items:center;gap:7px;padding:3px 10px;border:1px solid #dfe3d3;
+  border-radius:999px;background:rgba(237,240,226,.72);color:#354b3b;font-size:11.5px;line-height:1.4;white-space:nowrap}
+.journal-chip b{font-size:11px;color:var(--cover-forest);font-weight:700}
+.journal-more{margin-left:3px;padding-left:12px;border-left:1px solid #c9cdbf;color:#73796e;
+  font-family:var(--editorial);font-size:12px;white-space:nowrap}
+.cover .cv-hint{flex:none;margin-top:7px;padding:0;border:0;color:#8a8f84;font-size:10.5px;line-height:1.5;text-align:center}
+
+@media(max-width:960px){
+  .topbar{padding:0 16px;gap:8px}
+  .tools button,.tools .back{padding:5px 8px;font-size:12px}
+  .cover .sheet{padding:16px 22px 10px}
+  .cover-hero{display:block;min-height:0;padding:8px 0 12px}
+  .cover-copy{max-width:none;padding:4px 0 15px}
+  .cover-visual{position:absolute;inset:0 0 0 auto;width:50%;height:auto;min-height:0;z-index:0;opacity:.22}
+  .cover-visual img{width:115%;height:110%;top:-5%;right:-7%}
+  .cv-title{font-size:clamp(48px,6.3vw,62px)}
+  .cv-hl{font-size:15px;line-height:1.7}
+  .cv-intro{font-size:12px}
+  .cv-pts li{font-size:13px;gap:10px;padding:6px 4px}
+  .cover-journals{gap:10px}
+}
+@media(max-width:680px){
+  .topbar{height:48px;padding:0 10px;gap:5px}
+  .brand{gap:5px}
+  .brand b{font-size:15px;letter-spacing:.04em}
+  .tools button,.tools .back{padding:5px 5px;font-size:10.5px}
+  .page.cover{padding:0 9px 10px}
+  .cover .sheet{padding:17px 15px 10px}
+  .cover-hero{display:block;min-height:0;padding:7px 0 13px}
+  .cover-copy{padding:0}
+  .cover-visual{position:absolute;z-index:0;right:-5px;top:0;width:62%;height:250px;min-height:0;opacity:.22}
+  .cover-visual::after{background:linear-gradient(90deg,#f8f6f0 0%,rgba(248,246,240,.24) 60%,transparent)}
+  .cover-visual img{width:112%;height:125%;top:-11%;right:-10%}
+  .cv-kicker{font-size:9px;letter-spacing:.17em}
+  .cv-title{font-size:clamp(41px,11vw,50px);letter-spacing:.06em}
+  .cv-week{gap:8px;margin-top:10px;font-size:16px}
+  .cv-week time{font-size:10px}
+  .cv-rule{width:42px;margin:12px 0}
+  .cv-hl{font-size:13.5px;line-height:1.72}
+  .cv-intro{font-size:11.5px;line-height:1.7;margin-top:8px}
+  .cover-window{font-size:9.5px;margin-top:7px}
+  .cover-highlights{margin-top:10px}
+  .section-heading{gap:8px;margin-bottom:4px}
+  .section-heading h2{font-size:19px}
+  .section-heading span{font-size:8px;letter-spacing:.2em}
+  .cv-pts{margin-top:3px}
+  .cv-pts li{grid-template-columns:34px minmax(0,1fr);gap:8px;padding:6px 1px;font-size:11.5px;line-height:1.5}
+  .cv-pts .n{width:30px;height:21px;font-size:14px;border-radius:7px}
+  .cover-journals{grid-template-columns:1fr;gap:6px;padding:9px 0 7px}
+  .cover-journals .section-heading h2{font-size:17px}
+  .cv-journals{gap:5px}
+  .journal-chip{padding:2px 7px;font-size:9.5px;gap:5px}
+  .journal-chip b{font-size:9.5px}
+  .journal-more{padding-left:8px;font-size:10px}
+  .cover .cv-hint{font-size:9px}
+}
+@media(max-height:760px) and (min-width:681px){
+  .cover .sheet{padding-top:11px;padding-bottom:7px}
+  .cover-hero{min-height:clamp(285px,37vh,330px)}
+  .cv-title{font-size:clamp(48px,4.5vw,62px)}
+  .cv-rule{margin:10px 0}
+  .cv-hl{font-size:15px;line-height:1.65}
+  .cv-intro{margin-top:7px;font-size:11.5px;line-height:1.6}
+  .cover-window{margin-top:5px}
+  .cover-highlights{margin-top:8px}
+  .cv-pts li{padding:4px 6px;font-size:12.5px;line-height:1.42}
+  .cover-journals{padding:7px 0 5px}
+  .cover .cv-hint{margin-top:5px}
+}
+@media print{
+  .cover .sheet{min-height:0!important;padding:7mm 9mm 4mm!important;background:#fff!important;box-shadow:none}
+  .cover-hero{min-height:94mm;grid-template-columns:minmax(0,1.15fr) minmax(75mm,.85fr)}
+  .cv-title{font-size:34pt}
+  .cv-week{font-size:14pt}
+  .cv-hl{font-size:10pt;line-height:1.55}
+  .cv-intro{font-size:7.5pt;line-height:1.5}
+  .cover-window{font-size:7pt}
+  .cover-highlights{margin-top:3mm}
+  .section-heading h2{font-size:14pt}
+  .cv-pts li{font-size:8pt;line-height:1.35;padding:1.5mm 2mm;grid-template-columns:11mm 1fr;gap:3mm}
+  .cv-pts .n{width:9mm;height:6mm;font-size:9pt}
+  .cover-journals{padding:2mm 0;gap:4mm}
+  .cover-journals .section-heading h2{font-size:11pt}
+  .journal-chip{font-size:7pt;padding:1mm 2mm}
+  .cover .cv-hint{font-size:6.5pt}
+  .cover-visual img{opacity:.8}
+}
 </style>
 </head>
 <body>
@@ -268,19 +429,39 @@ html.flow .topbar{position:sticky; top:0}
 </header>
 
 <main class="deck" id="deck">
-<section class="page cover">
+<section class="page cover" id="cover">
   <article class="sheet">
-    <div class="cv-kicker">Genome Radar</div>
-    <h1 class="cv-title serif">基因组雷达</h1>
-    <div class="cv-week">2026年第42周　·　20 篇</div>
-    <div class="cv-rule"></div>
-    <div class="cv-body">
-      <p class="cv-hl">多倍体是本期的聚集点：GPhase 把组装图连通性接入 3C 定相，三项组装指标同向改善；苜蓿借全同胞 2x/4x 把 WGD 效应从杂交背景中剥离；油菜则显示亚基因组偏倚会随品种、组织与发育阶段改变方向。另两项工作把不可及变为可及：Hicberg 从 Hi-C 回收被丢弃的重复元件接触，near-T2T 组装在黑色素瘤中检出 GRCh38 里并不存在的 16% 体细胞变异。</p>
-      <p class="cv-intro">取材以植物与作物基因组学为主线：泛基因组与组装、变异与关联、表观与调控、比较与进化，外加少量可直接迁移的方法与工具工作。每篇给四块——做了什么、结论、为什么值得关注、未来展望。角标「仅摘要」表示只读到摘要，结论按摘要能支持的范围写，不外推；文中的数字均来自原文。</p>
-      <ol class="cv-pts"><li><span class="n">01</span><span>多倍体定相的技术路线正在换挡：GPhase 用长读长组装图的连通性补足 3C 短片段缺失的相互作用支持，BUSCO 漏失、k-mer 错误与 N50 三项指标同向改善，而不是互相交换。</span></li><li><span class="n">02</span><span>「亚基因组优势」是可翻转的：甘蓝型油菜 A/C 偏倚随品种、组织与发育阶段改变方向，结论取决于度量口径。这解释了文献里长期互相矛盾的结论。</span></li><li><span class="n">03</span><span>重复序列正在从盲区变成可见区域：Hicberg 用统计推断从 Hi-C 中回收被常规流程丢弃的重复元件接触信号；HicSV 则把串联重复与移动元件的复合阵列变成可检出的结构变异。</span></li><li><span class="n">04</span><span>参照系本身在被重新定义：一例 near-T2T 个体组装显示 16% 的体细胞变异落在 GRCh38 之外，卫星重复是 UV 相关突变的 hotspot。以通用参考为基础的检出存在结构性盲区。</span></li><li><span class="n">05</span><span>多祖先时代需要的不是又一个新方法，而是选型规则：联合建模与事后整合各有适用场景，取决于因果变异是跨人群共享还是人群特异——而这一点事先并不知道。</span></li></ol>
-      <div class="cv-src">检索窗口 2026-10-09 ~ 2026-10-20<br>Plant J 4　·　New Phytol 2　·　Brief Bioinform 2　·　Bioinformatics 2　·　Cell 2　·　Nat Plants 1　·　Plant Physiol 1　·　Plant Commun 1　·　另有 5 种刊</div>
+    <div class="cover-hero">
+      <div class="cover-copy">
+        <div class="cv-kicker">PLANT GENOMICS · WEEKLY READING</div>
+        <h1 class="cv-title serif">基因组雷达</h1>
+        <div class="cv-week">
+          <strong>2026年第42周</strong><span class="cv-sep">·</span>
+          <time class="cv-date" datetime="2026-10-19">2026-10-19</time><span class="cv-sep">·</span>
+          <span>20 篇精选</span>
+        </div>
+        <div class="cv-rule"></div>
+        <p class="cv-hl">多倍体是本期的聚集点：GPhase 把组装图连通性接入 3C 定相，三项组装指标同向改善；苜蓿借全同胞 2x/4x 把 WGD 效应从杂交背景中剥离；油菜则显示亚基因组偏倚会随品种、组织与发育阶段改变方向。另两项工作把不可及变为可及：Hicberg 从 Hi-C 回收被丢弃的重复元件接触，near-T2T 组装在黑色素瘤中检出 GRCh38 里并不存在的 16% 体细胞变异。</p>
+        <p class="cv-intro">取材以植物与作物基因组学为主线：泛基因组与组装、变异与关联、表观与调控、比较与进化，外加少量可直接迁移的方法与工具工作。每篇给四块——做了什么、结论、为什么值得关注、未来展望。角标「仅摘要」表示只读到摘要，结论按摘要能支持的范围写，不外推；文中的数字均来自原文。</p>
+        <p class="cover-window">检索窗口　2026-10-09 ~ 2026-10-20</p>
+      </div>
+      <figure class="cover-visual" aria-hidden="true">
+        <img src="../assets/weekly-cover-art.webp" alt="" fetchpriority="high">
+      </figure>
     </div>
-    <div class="cv-hint">滚轮 / 方向键 / 左右滑动翻页　·　「目录」跳任意一篇　·　「打印 / PDF」导出 A4 横向</div>
+    <section class="cover-highlights" id="highlights" aria-labelledby="highlights-title">
+      <div class="section-heading">
+        <h2 id="highlights-title">本周精选</h2><span>HIGHLIGHTS</span>
+      </div>
+      <ol class="cv-pts"><li><span class="n">01</span><span>多倍体定相的技术路线正在换挡：GPhase 用长读长组装图的连通性补足 3C 短片段缺失的相互作用支持，BUSCO 漏失、k-mer 错误与 N50 三项指标同向改善，而不是互相交换。</span></li><li><span class="n">02</span><span>「亚基因组优势」是可翻转的：甘蓝型油菜 A/C 偏倚随品种、组织与发育阶段改变方向，结论取决于度量口径。这解释了文献里长期互相矛盾的结论。</span></li><li><span class="n">03</span><span>重复序列正在从盲区变成可见区域：Hicberg 用统计推断从 Hi-C 中回收被常规流程丢弃的重复元件接触信号；HicSV 则把串联重复与移动元件的复合阵列变成可检出的结构变异。</span></li><li><span class="n">04</span><span>参照系本身在被重新定义：一例 near-T2T 个体组装显示 16% 的体细胞变异落在 GRCh38 之外，卫星重复是 UV 相关突变的 hotspot。以通用参考为基础的检出存在结构性盲区。</span></li><li><span class="n">05</span><span>多祖先时代需要的不是又一个新方法，而是选型规则：联合建模与事后整合各有适用场景，取决于因果变异是跨人群共享还是人群特异——而这一点事先并不知道。</span></li></ol>
+    </section>
+    <section class="cover-journals" aria-labelledby="journals-title">
+      <div class="section-heading">
+        <h2 id="journals-title">本期来源期刊</h2><span>JOURNALS</span>
+      </div>
+      <ul class="cv-journals"><li class="journal-chip"><span>Plant J</span><b>4</b></li><li class="journal-chip"><span>New Phytol</span><b>2</b></li><li class="journal-chip"><span>Brief Bioinform</span><b>2</b></li><li class="journal-chip"><span>Bioinformatics</span><b>2</b></li><li class="journal-chip"><span>Cell</span><b>2</b></li><li class="journal-chip"><span>Nat Plants</span><b>1</b></li><li class="journal-chip"><span>Plant Physiol</span><b>1</b></li><li class="journal-chip"><span>Plant Commun</span><b>1</b></li><li class="journal-more">另有 5 种刊</li></ul>
+    </section>
+    <div class="cv-hint">滚轮 / 方向键 / 左右滑动翻页　·　「目录」跳转文章　·　「连读」纵向阅读　·　「打印 / PDF」导出 A4 横向</div>
   </article>
 </section>
 <section class="page">
