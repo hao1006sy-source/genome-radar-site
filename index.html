@@ -174,7 +174,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{
 .section-heading .english{color:#8a8c7a;font-family:var(--serif);font-size:11px;font-style:italic;letter-spacing:.26em}
 .archive-note{margin-left:auto;color:#777b6d;font-family:var(--serif);font-size:12px;letter-spacing:.025em;white-space:nowrap}
 .archive-list{margin:0;padding:0;list-style:none}
-.archive-item{border-bottom:1px solid #d5d8c9}
+.archive-item{border-bottom:1px solid #d5d8c9;transition:max-height .32s ease,opacity .22s ease}
+.archive-item.is-animating{overflow:hidden}
 .archive-link{
   display:grid;grid-template-columns:168px minmax(0,1fr) 48px;align-items:center;gap:21px;
   min-height:153px;padding:15px 8px 15px 4px;transition:background .18s ease;
@@ -207,10 +208,14 @@ a:focus-visible,button:focus-visible,input:focus-visible{
 .archive-cta-title{display:block;color:var(--forest);font-family:var(--serif);font-size:20px;font-weight:800;letter-spacing:.06em}
 .archive-cta-text{display:block;margin-top:1px;color:#656b5e;font-family:var(--serif);font-size:11.5px;line-height:1.55}
 .archive-cta-button{display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border:1px solid var(--forest);
-  border-radius:5px;background:var(--forest);color:#fff;font-family:var(--serif);font-size:12px;white-space:nowrap;
-  transition:background .18s ease}
+  border-radius:5px;background:var(--forest);color:#fff;font-family:var(--serif);font-size:12px;line-height:1.4;white-space:nowrap;
+  cursor:pointer;transition:background .18s ease,opacity .18s ease}
 .archive-cta-button:hover{background:#28533b}
-.archive-cta-button svg{width:15px;height:15px}
+.archive-cta-button:focus-visible{outline:3px solid #9cab75;outline-offset:3px}
+.archive-cta-button:disabled{cursor:wait;opacity:.72}
+.archive-cta-button svg{width:15px;height:15px;transition:transform .2s ease}
+.archive-cta-button[aria-expanded="true"] .archive-toggle-icon{transform:rotate(180deg)}
+@media(prefers-reduced-motion:reduce){.archive-item,.archive-cta-button svg{transition:none}}
 .reading-guide{min-width:0;padding-left:28px;border-left:1px solid var(--line-dark)}
 .guide-heading{display:flex;align-items:center;gap:12px;margin:1px 0 13px;color:var(--forest);font-family:var(--serif);
   font-size:23px;font-weight:800;letter-spacing:.035em}
@@ -434,7 +439,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{
   </section>
   <div class="archive-layout">
     <section class="archive-column" id="archive" aria-labelledby="archive-title">
-      <div class="section-heading">
+      <div class="section-heading" id="archive-heading">
         <h2 id="archive-title">
           <svg viewBox="0 0 38 38" fill="none" aria-hidden="true"><path d="M5 10h6v22H5zM14 6h6v26h-6zM23 12h6v20h-6zM32 9h2v23h-2zM4 34h31" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
           <span>文献归档</span>
@@ -465,7 +470,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{
             <span class="archive-arrow" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M3 10h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
         </li>
-        <li class="archive-item" data-searchable="2026年第42周 2026-10-19 20 多倍体是本期的聚集点：GPhase 把组装图连通性接入 3C 定相，三项组装指标同向改善；苜蓿借全同胞 2x/4x 把 WGD 效应从杂交背景中剥离；油菜则显示亚基因组偏倚会随品种、组织与发育阶段改变方向。另两项工作把不可及变为可及：Hicberg 从 Hi-C 回收被丢弃的重复元件接触，near-T2T 组装在黑色素瘤中检出 GRCh38 里并不存在的 16% 体细胞变异。">
+        <li class="archive-item" hidden data-searchable="2026年第42周 2026-10-19 20 多倍体是本期的聚集点：GPhase 把组装图连通性接入 3C 定相，三项组装指标同向改善；苜蓿借全同胞 2x/4x 把 WGD 效应从杂交背景中剥离；油菜则显示亚基因组偏倚会随品种、组织与发育阶段改变方向。另两项工作把不可及变为可及：Hicberg 从 Hi-C 回收被丢弃的重复元件接触，near-T2T 组装在黑色素瘤中检出 GRCh38 里并不存在的 16% 体细胞变异。">
           <a class="archive-link" href="2026-10-19/index.html" aria-label="阅读 2026年第42周，2026-10-19，20 篇精选">
             <span class="archive-thumb"><svg viewBox="0 0 168 126" fill="none" aria-hidden="true"><defs><linearGradient id="thumbRice" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a7b68a"/><stop offset="1" stop-color="#526b3e"/></linearGradient></defs><path fill="url(#thumbRice)" d="M0 0h168v126H0z"/><path d="M74 132c-3-34 2-67 14-103m-14 93C52 91 39 67 29 37m44 78c26-24 45-53 62-87M84 65c-17-11-32-25-43-43m38 59c18-8 34-19 49-35M64 95c-14-4-25-13-34-26m57 4c11-15 16-29 17-45" stroke="#d9dfbf" stroke-width="2" stroke-linecap="round"/><path d="M94 31c-10-4-16-11-18-22 12 2 19 8 22 18m-54-7c-11-1-18-7-23-17 12-1 20 3 26 12m78-1c-4-10-2-18 5-27 6 10 6 19 0 28m-53 34c-11 0-19-5-25-14 11-3 20-1 27 6m35-16c-2-10 2-18 10-25 4 12 2 20-6 28" fill="#e5e9d0" stroke="#cbd5b0" stroke-width="1" stroke-linejoin="round"/><path d="M0 105c28-8 53-7 76 3 29 12 60 13 92 1v17H0v-21Z" fill="#435b35" opacity=".24"/></svg></span>
             <span class="archive-copy">
@@ -476,7 +481,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{
             <span class="archive-arrow" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M3 10h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
         </li>
-        <li class="archive-item" data-searchable="2026年第41周 2026-10-11 20 本周技术线集中在「用群体规模的结构变异与单倍型解析把调控变异落到具体序列」：黄精的 LTR 插入与 61 kb 内含子、棉铃 845 bp 结构变异改变组蛋白修饰、棉纤维 162 bp 启动子插入缺失、IAMH2 3&#x27; UTR 的 poly(U) 基序破坏，四篇都把表型差异锚定到可检验的序列元件。另一条线是预测与注释工具的可迁移性：玉米花粉适合度仅凭序列特征即达 85% 曲线下面积，蛋白大语言模型补回约 900 对同源映射，RovHer 把前 1% 罕见错义变异解释的遗传力从约 1.5% 提到 16.1%。">
+        <li class="archive-item" hidden data-searchable="2026年第41周 2026-10-11 20 本周技术线集中在「用群体规模的结构变异与单倍型解析把调控变异落到具体序列」：黄精的 LTR 插入与 61 kb 内含子、棉铃 845 bp 结构变异改变组蛋白修饰、棉纤维 162 bp 启动子插入缺失、IAMH2 3&#x27; UTR 的 poly(U) 基序破坏，四篇都把表型差异锚定到可检验的序列元件。另一条线是预测与注释工具的可迁移性：玉米花粉适合度仅凭序列特征即达 85% 曲线下面积，蛋白大语言模型补回约 900 对同源映射，RovHer 把前 1% 罕见错义变异解释的遗传力从约 1.5% 提到 16.1%。">
           <a class="archive-link" href="2026-10-11/index.html" aria-label="阅读 2026年第41周，2026-10-11，20 篇精选">
             <span class="archive-thumb"><svg viewBox="0 0 168 126" fill="none" aria-hidden="true"><defs><linearGradient id="thumbFlower" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#75875c"/><stop offset="1" stop-color="#465c39"/></linearGradient></defs><path fill="url(#thumbFlower)" d="M0 0h168v126H0z"/><path d="M87 128c-2-34 1-66 7-94m-7 73c-17-18-30-38-39-62m40 44c19-15 35-34 49-58M57 112c0-18 4-33 13-47m23 33c-10-17-13-32-10-49" stroke="#dce3c7" stroke-width="1.8" stroke-linecap="round"/><g fill="#f2f0dd" stroke="#d8ddc7" stroke-width=".8"><circle cx="94" cy="29" r="5"/><circle cx="88" cy="26" r="4"/><circle cx="100" cy="25" r="4"/><circle cx="96" cy="20" r="4"/><circle cx="93" cy="35" r="4"/><circle cx="54" cy="46" r="4"/><circle cx="49" cy="42" r="3.5"/><circle cx="59" cy="41" r="3.5"/><circle cx="55" cy="37" r="3.5"/><circle cx="127" cy="38" r="4.5"/><circle cx="121" cy="34" r="3.5"/><circle cx="132" cy="33" r="3.5"/><circle cx="128" cy="29" r="3.5"/><circle cx="70" cy="65" r="4"/><circle cx="65" cy="61" r="3.5"/><circle cx="74" cy="60" r="3.5"/></g><g fill="#d5bd79"><circle cx="94" cy="28" r="1.8"/><circle cx="54" cy="45" r="1.5"/><circle cx="127" cy="37" r="1.7"/><circle cx="70" cy="64" r="1.5"/></g><path d="M0 112c30-9 53-5 79 4 27 9 55 8 89-4v14H0v-14Z" fill="#344c32" opacity=".3"/></svg></span>
             <span class="archive-copy">
@@ -487,7 +492,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{
             <span class="archive-arrow" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none"><path d="M3 10h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           </a>
         </li>
-        <li class="archive-item" data-searchable="2026年第40周 2026-10-04 20 本周多条线汇向同一个判断：染色体级演化史与调控变异定位正在被同一批数据重写。禾本科祖先核型被独立重建为 x=12 而非 11，48 次融合成为可复用的系统发育标记；长穗偃麦草 41.33 Gb 组装揭示广泛同源交换，支持片段异源多倍体组织。调控端，单等位基因纳米尺度作图在 CD4+ T 细胞中定位到 neo-CTCF 基序阻断超增强子—启动子接触的获得性功能机制；免疫细胞图谱给出 51,083 个顺式表达 QTL 与 119,094 个候选因果变异。多倍体一侧，穿龙薯蓣与蓖麻分别给出约 32% 等位丢失和 6043 个种皮差异表达基因，把多倍化后的表达与形态代价落到数字上。">
+        <li class="archive-item" hidden data-searchable="2026年第40周 2026-10-04 20 本周多条线汇向同一个判断：染色体级演化史与调控变异定位正在被同一批数据重写。禾本科祖先核型被独立重建为 x=12 而非 11，48 次融合成为可复用的系统发育标记；长穗偃麦草 41.33 Gb 组装揭示广泛同源交换，支持片段异源多倍体组织。调控端，单等位基因纳米尺度作图在 CD4+ T 细胞中定位到 neo-CTCF 基序阻断超增强子—启动子接触的获得性功能机制；免疫细胞图谱给出 51,083 个顺式表达 QTL 与 119,094 个候选因果变异。多倍体一侧，穿龙薯蓣与蓖麻分别给出约 32% 等位丢失和 6043 个种皮差异表达基因，把多倍化后的表达与形态代价落到数字上。">
           <a class="archive-link" href="2026-10-04/index.html" aria-label="阅读 2026年第40周，2026-10-04，20 篇精选">
             <span class="archive-thumb"><svg viewBox="0 0 168 126" fill="none" aria-hidden="true"><defs><linearGradient id="thumbRice" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a7b68a"/><stop offset="1" stop-color="#526b3e"/></linearGradient></defs><path fill="url(#thumbRice)" d="M0 0h168v126H0z"/><path d="M74 132c-3-34 2-67 14-103m-14 93C52 91 39 67 29 37m44 78c26-24 45-53 62-87M84 65c-17-11-32-25-43-43m38 59c18-8 34-19 49-35M64 95c-14-4-25-13-34-26m57 4c11-15 16-29 17-45" stroke="#d9dfbf" stroke-width="2" stroke-linecap="round"/><path d="M94 31c-10-4-16-11-18-22 12 2 19 8 22 18m-54-7c-11-1-18-7-23-17 12-1 20 3 26 12m78-1c-4-10-2-18 5-27 6 10 6 19 0 28m-53 34c-11 0-19-5-25-14 11-3 20-1 27 6m35-16c-2-10 2-18 10-25 4 12 2 20-6 28" fill="#e5e9d0" stroke="#cbd5b0" stroke-width="1" stroke-linejoin="round"/><path d="M0 105c28-8 53-7 76 3 29 12 60 13 92 1v17H0v-21Z" fill="#435b35" opacity=".24"/></svg></span>
             <span class="archive-copy">
@@ -514,9 +519,10 @@ a:focus-visible,button:focus-visible,input:focus-visible{
           <strong class="archive-cta-title">浏览完整归档</strong>
           <span class="archive-cta-text">按周查看研究内容，持续积累你的领域研究档案。</span>
         </div>
-        <a class="archive-cta-button" href="#archive">进入文献归档
-          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+        <button class="archive-cta-button" id="archive-toggle" type="button" aria-expanded="false" aria-controls="archive-list">
+          <span class="archive-cta-label">进入文献归档</span>
+          <svg class="archive-toggle-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m4 7 6 6 6-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
       </div>
     </section>
     <aside class="reading-guide" id="reading-guide" aria-labelledby="guide-title">
@@ -567,14 +573,108 @@ a:focus-visible,button:focus-visible,input:focus-visible{
   const status = document.getElementById('search-status');
   const empty = document.getElementById('search-empty');
   const cards = Array.from(document.querySelectorAll('[data-searchable]'));
+  const archiveItems = Array.from(document.querySelectorAll('#archive-list .archive-item'));
+  const olderItems = archiveItems.slice(2);
+  const archiveToggle = document.getElementById('archive-toggle');
+  const archiveLabel = archiveToggle.querySelector('.archive-cta-label');
+  const archiveHeading = document.getElementById('archive-heading');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let expanded = false;
+  let activeQuery = '';
+  archiveToggle.hidden = olderItems.length === 0;
+
+  function updateToggle() {
+    archiveToggle.setAttribute('aria-expanded', String(expanded));
+    archiveLabel.textContent = expanded ? '收起文献归档' : '进入文献归档';
+  }
+
+  function clearRowAnimation(row) {
+    row.classList.remove('is-animating');
+    row.style.removeProperty('max-height');
+    row.style.removeProperty('opacity');
+    row.style.removeProperty('overflow');
+  }
+
+  function animateRows(rows, show) {
+    if (!rows.length) return;
+    if (reducedMotion) {
+      rows.forEach(row => { row.hidden = !show; clearRowAnimation(row); });
+      archiveToggle.disabled = false;
+      return;
+    }
+    archiveToggle.disabled = true;
+    rows.forEach(row => {
+      if (show && !row.hidden) return;
+      if (!show && row.hidden) return;
+      if (show) row.hidden = false;
+      row.classList.add('is-animating');
+      row.style.overflow = 'hidden';
+      row.style.maxHeight = show ? '0px' : `${row.scrollHeight}px`;
+      row.style.opacity = show ? '0' : '1';
+      requestAnimationFrame(() => {
+        row.style.maxHeight = show ? `${row.scrollHeight}px` : '0px';
+        row.style.opacity = show ? '1' : '0';
+      });
+    });
+    window.setTimeout(() => {
+      rows.forEach(row => {
+        if (!show) row.hidden = true;
+        clearRowAnimation(row);
+      });
+      archiveToggle.disabled = false;
+    }, 380);
+  }
+
+  archiveToggle.addEventListener('click', () => {
+    if (archiveToggle.disabled || activeQuery || olderItems.length === 0) return;
+    expanded = !expanded;
+    updateToggle();
+    if (expanded) {
+      animateRows(olderItems, true);
+      return;
+    }
+
+    const bounds = archiveHeading.getBoundingClientRect();
+    const headingOutsideView = bounds.bottom < 0 || bounds.top > window.innerHeight;
+    if (!headingOutsideView) {
+      animateRows(olderItems, false);
+      return;
+    }
+    if (reducedMotion) {
+      archiveHeading.scrollIntoView({ behavior: 'auto', block: 'start' });
+      animateRows(olderItems, false);
+      return;
+    }
+
+    archiveToggle.disabled = true;
+    let finished = false;
+    const finishCollapse = () => {
+      if (finished) return;
+      finished = true;
+      window.removeEventListener('scrollend', finishCollapse);
+      window.clearTimeout(fallback);
+      animateRows(olderItems, false);
+    };
+    window.addEventListener('scrollend', finishCollapse, { once: true });
+    const fallback = window.setTimeout(finishCollapse, 700);
+    archiveHeading.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+
   input.addEventListener('input', () => {
     const query = input.value.trim().toLocaleLowerCase();
+    activeQuery = query;
     let matches = 0;
     for (const card of cards) {
       const found = !query || card.dataset.searchable.toLocaleLowerCase().includes(query);
-      card.hidden = !found;
+      if (query) {
+        card.hidden = !found;
+      } else {
+        const archiveIndex = archiveItems.indexOf(card);
+        card.hidden = archiveIndex >= 2 && !expanded;
+      }
       if (found) matches += 1;
     }
+    archiveToggle.hidden = olderItems.length === 0 || query.length > 0;
     clear.hidden = query.length === 0;
     empty.hidden = matches > 0 || query.length === 0;
     status.hidden = query.length === 0;
