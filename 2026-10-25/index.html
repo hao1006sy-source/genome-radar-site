@@ -659,6 +659,7 @@ html.flow .page.article-page .detail-ornament{opacity:.25}
 .export-arrow{color:#315c40;font-size:17px}
 @media(max-width:640px){.export-dialog-inner{padding:20px 17px 21px}}
 </style>
+<link rel="stylesheet" href="../assets/library-issue.css">
 </head>
 <body>
 <header class="topbar">
@@ -666,6 +667,7 @@ html.flow .page.article-page .detail-ornament{opacity:.25}
   <span class="issue-tag">2026年第43周</span>
   <div class="tools">
     <a class="back" href="../2026-10-19/index.html">← 往期</a>
+    <a class="library-nav" href="../library.html">我的文献库</a>
     <button id="tocBtn" aria-controls="toc" aria-expanded="false">目录</button>
     <button id="viewBtn">连读</button>
     <button id="exportBtn" type="button" aria-haspopup="dialog" aria-controls="exportDialog">打印 / PDF</button>
@@ -1718,6 +1720,7 @@ html.flow .page.article-page .detail-ornament{opacity:.25}
       if(k==='ArrowUp'){e.preventDefault();moveTocSelection(-1);return}
       return;
     }
+    if(e.target.closest('input,textarea,select,[contenteditable="true"]')) return;
     if(flow()) return;
     if(k==='ArrowRight'||k==='ArrowDown'||k==='PageDown'||k===' '){ e.preventDefault(); go(cur+1); }
     else if(k==='ArrowLeft'||k==='ArrowUp'||k==='PageUp'){ e.preventDefault(); go(cur-1); }
@@ -1751,21 +1754,6 @@ html.flow .page.article-page .detail-ornament{opacity:.25}
     if(!on){ window.scrollTo(0,0); mark(cur); }
   });
   syncViewBtn();
-
-  var KEY='gr_stars';
-  function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return []}}
-  function save(a){try{localStorage.setItem(KEY,JSON.stringify(a))}catch(e){}}
-  var stars=load();
-  [].forEach.call(document.querySelectorAll('.star'),function(b){
-    var id=b.getAttribute('data-id');
-    b.setAttribute('data-on', stars.indexOf(id)>=0?'1':'0');
-    b.addEventListener('click',function(){
-      var i=stars.indexOf(id);
-      if(i>=0){stars.splice(i,1); b.setAttribute('data-on','0');}
-      else{stars.push(id); b.setAttribute('data-on','1');}
-      save(stars);
-    });
-  });
 
   // ---- 缩放：Ctrl/⌘ + 滚轮，或顶栏 − / + ----
   var ZKEY='gr_zoom', zLab=document.getElementById('zoomLab');
@@ -1864,5 +1852,7 @@ html.flow .page.article-page .detail-ornament{opacity:.25}
   });
 })();
 </script>
+<script src="../assets/library-store.js"></script>
+<script src="../assets/library-issue.js"></script>
 </body>
 </html>
