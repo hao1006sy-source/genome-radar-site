@@ -29,9 +29,9 @@
       <p id="paper-title" class="paper-title">正在读取文献信息…</p>
       <p id="paper-meta" class="paper-meta"></p>
     </div>
-    <div class="head-actions"><button type="button" data-ai-settings>AI 设置</button><a id="source-link" href="library.html" hidden>查看原文 / 周报</a><a href="library.html">返回文献库</a></div>
+    <div class="head-actions"><button type="button" id="ai-analyze">AI 一键精读</button><button type="button" data-ai-settings>AI 设置</button><a id="source-link" href="library.html" hidden>查看原文 / 周报</a><a href="library.html">返回文献库</a></div>
   </div>
-  <p id="notice" class="notice" role="status" aria-live="polite"></p>
+  <p id="notice" class="notice" role="status" aria-live="polite"></p><section id="ai-analysis" hidden><h2>AI 分析预览</h2><p id="ai-analysis-status" role="status" aria-live="polite"></p><label for="ai-analysis-preview">审阅并编辑结构化结果（JSON）</label><textarea id="ai-analysis-preview" rows="12" style="display:block;width:100%"></textarea><button type="button" id="ai-apply" disabled>确认追加分析结果</button></section>
   <div class="workbench-grid">
     <section class="pdf-panel" aria-label="论文 PDF 阅读器">
       <div class="panel-head"><h2>PDF 阅读器</h2><span class="panel-hint" id="pdf-label">仅保存在当前浏览器</span></div>
@@ -74,6 +74,7 @@
         <div class="markdown-controls" aria-label="Markdown 格式工具栏"><button type="button" data-md="heading">标题</button><button type="button" data-md="bold">粗体</button><button type="button" data-md="italic">斜体</button><button type="button" data-md="list">列表</button><button type="button" data-md="quote">引用</button><button type="button" data-md="link">链接</button><button type="button" data-md="code">代码</button><button type="button" data-md="table">表格</button><button type="button" data-md="math">公式</button></div>
         <div class="markdown-controls" aria-label="笔记显示模式"><button type="button" data-view="edit" aria-pressed="true">编辑</button><button type="button" data-view="preview" aria-pressed="false">预览</button><button type="button" data-view="split" aria-pressed="false">左右分屏</button></div>
         <div id="markdown-editor" class="markdown-editor"><textarea id="section-note" rows="15" placeholder="写下阅读记录、具体数据、疑问或后续想法……" disabled></textarea><div id="markdown-preview" class="markdown-preview" hidden></div></div>
+        <pre id="ai-advice" hidden style="white-space:pre-wrap;overflow-wrap:anywhere"></pre>
         <div class="note-actions">
           <button type="button" class="action-primary" id="save-notes" disabled>保存笔记</button>
           <span class="note-tip">输入时自动保存；切换栏目也会保存</span>
