@@ -1,4 +1,5 @@
 import { setupModules } from './deep-modules.js';
+import { setupAI } from './deep-ai.js';
 // 论文精读工作台。依赖已存在的 assets/library-store.js；不改变原有收藏/笔记字段。
 const Store = window.GenomeLibrary;
 const $ = id => document.getElementById(id);
@@ -145,6 +146,12 @@ function displaySection(sectionId, initial = false) {
   $('section-title').textContent = info[1];
   $('section-help').textContent = info[2];
   $('section-note').value = notes[sectionId] || '';
+  const aiAdvice = $('ai-advice');
+  if (aiAdvice) {
+    const value = progressRecord()?.aiInspiration || '';
+    aiAdvice.hidden = sectionId !== 'inspiration' || !value;
+    aiAdvice.textContent = value;
+  }
   for (const btn of $('note-tabs').querySelectorAll('button')) {
     btn.setAttribute('aria-selected', String(btn.dataset.section === sectionId));
     btn.tabIndex = btn.dataset.section === sectionId ? 0 : -1;
@@ -337,6 +344,7 @@ async function init() {
   $('zoom-select').value = 'fit';
   makeTabs();
   setupModules({ Store, article, getPage: () => pageNumber, setPage, notify: notice });
+  setupAI({Store, article, getFile: () => currentFile, saveNotes: saveNow});
   $('section-note').disabled = false;
   $('save-notes').disabled = false;
   $('section-note').oninput = () => { notes[activeSection] = $('section-note').value; dirty(); };
