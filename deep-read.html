@@ -25,9 +25,9 @@
       <p id="paper-title" class="paper-title">正在读取文献信息…</p>
       <p id="paper-meta" class="paper-meta"></p>
     </div>
-    <div class="head-actions"><button type="button" id="ai-analyze">AI 一键精读</button><button type="button" data-ai-settings>AI 设置</button><a id="source-link" href="library.html" hidden>查看原文 / 周报</a><a href="library.html">返回文献库</a></div>
+    <div class="head-actions"><button type="button" id="find-oa">获取论文 PDF</button><label>报告范围 <select id="report-scope"><option value="notes">七个笔记栏目</option><option value="full">完整精读报告</option></select></label><button type="button" id="export-report">导出精读 PDF</button><button type="button" id="ai-analyze">AI 一键精读</button><button type="button" data-ai-settings>AI 设置</button><a id="source-link" href="library.html" hidden>查看原文 / 周报</a><a href="library.html">返回文献库</a></div>
   </div>
-  <p id="notice" class="notice" role="status" aria-live="polite"></p><section id="ai-analysis" hidden><h2>AI 分析预览</h2><p id="ai-analysis-status" role="status" aria-live="polite"></p><label for="ai-analysis-preview">审阅并编辑结构化结果（JSON）</label><textarea id="ai-analysis-preview" rows="12" style="display:block;width:100%"></textarea><button type="button" id="ai-apply" disabled>确认追加分析结果</button></section>
+  <p id="notice" class="notice" role="status" aria-live="polite"></p><div id="oa-results"></div><section id="ai-analysis" hidden><h2>AI 分析预览</h2><p id="ai-analysis-status" role="status" aria-live="polite"></p><label for="ai-analysis-preview">审阅并编辑结构化结果（JSON）</label><textarea id="ai-analysis-preview" rows="12" style="display:block;width:100%"></textarea><button type="button" id="ai-apply" disabled>确认追加分析结果</button></section>
   <div class="workbench-grid">
     <section class="pdf-panel" aria-label="论文 PDF 阅读器">
       <div class="panel-head"><h2>PDF 阅读器</h2><span class="panel-hint" id="pdf-label">仅保存在当前浏览器</span></div>
