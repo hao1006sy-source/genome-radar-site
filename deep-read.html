@@ -58,7 +58,8 @@
     </section>
     <section class="notes-panel" aria-label="结构化精读笔记">
       <div class="panel-head"><h2>精读笔记</h2><span id="save-state" class="panel-hint">尚未修改</span></div>
-      <div id="note-tabs" class="note-tabs" role="tablist" aria-label="精读笔记栏目"></div>
+      <div id="reading-modules" class="reading-modules" role="tablist" aria-label="精读模块"><button type="button" data-module="notes" aria-selected="true">精读笔记</button><button type="button" data-module="figures" aria-selected="false">图表解析</button><button type="button" data-module="workflow" aria-selected="false">技术路线</button><button type="button" data-module="methods" aria-selected="false">方法解析</button></div>
+      <div id="module-notes"><div id="note-tabs" class="note-tabs" role="tablist" aria-label="精读笔记栏目"></div>
       <div class="note-editor">
         <h3 id="section-title">研究问题与创新点</h3>
         <p id="section-help" class="section-help"></p>
@@ -69,6 +70,7 @@
           <span class="note-tip">输入时自动保存；切换栏目也会保存</span>
         </div>
       </div>
+      </div><div id="module-figures" class="module-content" hidden></div><div id="module-workflow" class="module-content" hidden></div><div id="module-methods" class="module-content" hidden></div>
       <div class="reading-progress">
         <h3>阅读进度</h3>
         <p>当前页码：<strong id="progress-page">1</strong> <span id="progress-total">/ 未知总页数</span></p>

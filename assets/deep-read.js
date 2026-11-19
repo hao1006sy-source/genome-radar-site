@@ -1,3 +1,4 @@
+import { setupModules } from './deep-modules.js';
 // 论文精读工作台。依赖已存在的 assets/library-store.js；不改变原有收藏/笔记字段。
 const Store = window.GenomeLibrary;
 const $ = id => document.getElementById(id);
@@ -280,6 +281,7 @@ async function init() {
   }
   $('zoom-select').value = String(zoom);
   makeTabs();
+  setupModules({ Store, article, getPage: () => pageNumber, setPage, notify: notice });
   $('section-note').disabled = false;
   $('save-notes').disabled = false;
   $('section-note').oninput = () => { notes[activeSection] = $('section-note').value; dirty(); };
