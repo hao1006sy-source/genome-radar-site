@@ -272,7 +272,18 @@ async function init() {
     source.href = 'https://doi.org/' + Store.normalizeDoi(article.doi).split('/').map(encodeURIComponent).join('/');
     source.target = '_blank'; source.rel = 'noopener noreferrer'; source.hidden = false;
   } else if (article.article_url) { source.href = article.article_url; source.hidden = false; }
-  const record = progressRecord();
+  let record = progressRecord();
+  if (!record || !record.startedAt || !record.status) {
+    try {
+      Store.update(article, entry => {
+        const existing = entry.deepRead && typeof entry.deepRead === 'object' ? entry.deepRead : {};
+        const now = new Date().toISOString();
+        entry.deepRead = { ...existing, startedAt: existing.startedAt || existing.updatedAt || now,
+          status: existing.status || 'in_progress', updatedAt: existing.updatedAt || now };
+      });
+      record = progressRecord();
+    } catch (error) { notice('无法保存精读状态：' + error.message); }
+  }
   if (record) {
     for (const [key] of sections) notes[key] = typeof record.sections?.[key] === 'string' ? record.sections[key] : '';
     pageNumber = Math.max(1, Number.parseInt(record.page, 10) || 1);
