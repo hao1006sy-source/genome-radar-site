@@ -1,4 +1,5 @@
 import { setupModules } from './deep-modules.js';
+import {findOA,renderOA} from './oa-finder.js';
 import { setupAI } from './deep-ai.js';
 import { Crepe } from './milkdown.bundle.js';
 // 论文精读工作台。依赖已存在的 assets/library-store.js；不改变原有收藏/笔记字段。
@@ -301,9 +302,11 @@ async function handleFile(file) {
   pageNumber = 1; pageTotal = 0;
   await startPDF(file);
   // PDF 在本机保存，与 JSON 的笔记/进度备份互相独立。
+  let saved = true;
   try { await pdfDB('put', file); }
-  catch (error) { notice('PDF 已打开，但未能持久保存到浏览器：' + error.message + '。下次需要重新选择文件。'); }
+  catch (error) { saved = false; notice('PDF 已打开，但未能持久保存到浏览器：' + error.message + '。下次需要重新选择文件。'); }
   dirty();
+  return saved;
 }
 async function init() {
   if (!Store) { notice('文献库存储模块加载失败。'); return; }
@@ -343,8 +346,10 @@ async function init() {
   $('zoom-select').value = 'fit';
   await makeTabs();
   $('milkdown-editor').addEventListener('input', () => { if (milkEditor && !changingSection) dirty(); });
-  setupModules({ Store, article, getPage: () => pageNumber, setPage, notify: notice });
+  setupModules({ Store, article, getPage: () => pageNumber, getTotal: () => pageTotal, setPage, notify: notice });
   setupAI({Store, article, getFile: () => currentFile, saveNotes: saveNow});
+  $('find-oa').onclick = async () => {const host=$('oa-results');host.textContent='正在查询开放获取版本……';try{renderOA(host,await findOA(article.doi),async file=>{if(!await handleFile(file))throw Error('未能保存 PDF 到浏览器')})}catch(e){host.textContent='查询失败：'+e.message}};
+  $('export-report').onclick = () => { saveNow(); if(changed){ notice('笔记尚未保存，请检查存储空间后重试。'); return; } const q=new URLSearchParams({article:article.id,scope:$('report-scope').value}); window.open('deep-report.html?'+q.toString(),'_blank','noopener'); };
   $('save-notes').disabled = false;
   $('save-notes').onclick = () => { changed = true; saveNow(); notice(''); };
 
