@@ -31,6 +31,48 @@ let currentFile = null;
 let objectUrl = null;
 let dbPromise = null;
 let nativeFallback = false;
+let readingMode = 'continuous', zoomChoice = 'fit', observer = null, slots = [], jobs = new Map(), generation = 0, restoring = false;
+function clearPages() {
+  generation++; observer?.disconnect(); observer = null;
+  for (const job of jobs.values()) { try { job.cancel(); } catch (_) {} }
+  jobs.clear(); slots = []; $('pdf-pages').replaceChildren();
+}
+async function makePages() {
+  if (!pdfDoc || readingMode !== 'continuous') return;
+  clearPages(); restoring = true; const version = generation, surface = $('pdf-surface');
+  const first = await pdfDoc.getPage(1); if (version !== generation) return;
+  const unit = first.getViewport({ scale: 1 });
+  const width = Math.max(230, surface.clientWidth - 35);
+  const scale = zoomChoice === 'actual' ? 1 : width / unit.width * zoom;
+  const viewport = first.getViewport({scale});
+  for (let i=1; i<=pdfDoc.numPages; i++) {
+    const slot=document.createElement('div'); slot.className='pdf-page'; slot.dataset.page=String(i);
+    slot.style.width=viewport.width+'px'; slot.style.height=viewport.height+'px';
+    slot.setAttribute('aria-label','PDF 第 '+i+' 页'); $('pdf-pages').append(slot); slots.push(slot);
+  }
+  observer=new IntersectionObserver(entries=>{for(const entry of entries) {
+    const slot=entry.target, n=Number(slot.dataset.page);
+    if(entry.isIntersecting) drawSlot(slot,n,scale,version);
+    else if(Math.abs(n-pageNumber)>3){const job=jobs.get(n);if(job)job.cancel();jobs.delete(n);slot.replaceChildren()}
+  }},{root:surface,rootMargin:'1200px 0px'});
+  slots.forEach(slot=>observer.observe(slot));
+  const target = slots[pageNumber-1];
+  if (target) surface.scrollTop += target.getBoundingClientRect().top - surface.getBoundingClientRect().top - 15;
+  requestAnimationFrame(() => { if (version === generation) restoring = false; });
+}
+async function drawSlot(slot,n,scale,version){
+  if(slot.firstChild||jobs.has(n)||!pdfDoc)return;
+  try { const page=await pdfDoc.getPage(n);if(version!==generation||slot.firstChild)return;
+    const viewport=page.getViewport({scale}), ratio=Math.min(devicePixelRatio||1,2), canvas=document.createElement('canvas');
+    slot.style.width=viewport.width+'px';slot.style.height=viewport.height+'px';
+    canvas.width=Math.ceil(viewport.width*ratio);canvas.height=Math.ceil(viewport.height*ratio);
+    canvas.style.width=viewport.width+'px';canvas.style.height=viewport.height+'px';slot.append(canvas);
+    const ctx=canvas.getContext('2d',{alpha:false});ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);
+    const task=page.render({canvasContext:ctx,canvas,viewport,transform:[ratio,0,0,ratio,0,0],background:'#fff'});
+    jobs.set(n,task);await task.promise;if(jobs.get(n)===task)jobs.delete(n);
+  } catch(e){jobs.delete(n);if(e.name!=='RenderingCancelledException')notice('PDF 页面渲染失败：'+e.message)}
+}
+
 
 function notice(message) { $('notice').textContent = message || ''; }
 function setSaveState(value) { $('save-state').textContent = value; }
@@ -166,6 +208,7 @@ function openNative() {
 }
 async function startPDF(file) {
   if (pdfDoc) { try { await pdfDoc.destroy(); } catch (_) {} pdfDoc = null; }
+  clearPages();
   pdfRenderer = null;
   nativeFallback = false;
   setPdfFile(file);
@@ -182,10 +225,10 @@ async function startPDF(file) {
     pageNumber = Math.min(Math.max(1, pageNumber), pageTotal);
     $('prev-page').disabled = false;
     $('next-page').disabled = false;
-    $('pdf-canvas').hidden = false;
+    $('pdf-canvas').hidden = readingMode === 'continuous';
     $('pdf-fallback').hidden = true;
     notice('');
-    await renderPage();
+    if (readingMode === 'continuous') await makePages(); else await renderPage();
   } catch (error) {
     nativeFallback = true;
     pdfDoc = null;
@@ -209,7 +252,7 @@ async function renderPage() {
     const surface = $('pdf-surface');
     const width = Math.max(230, surface.clientWidth - 35);
     const unit = p.getViewport({ scale: 1 });
-    const scale = width / unit.width * zoom;
+    const scale = zoomChoice === 'actual' ? 1 : width / unit.width * zoom;
     const viewport = p.getViewport({ scale });
     const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
     canvas.width = Math.floor(viewport.width * pixelRatio);
@@ -218,8 +261,8 @@ async function renderPage() {
     canvas.style.height = `${Math.round(viewport.height)}px`;
     const ctx = canvas.getContext('2d', { alpha: false });
     ctx.setTransform(1, 0, 0, 1, 0, 0);
-    ctx.scale(pixelRatio, pixelRatio);
-    renderJob = p.render({ canvasContext: ctx, canvas, viewport });
+    ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+    renderJob = p.render({ canvasContext: ctx, canvas, viewport, transform: [pixelRatio,0,0,pixelRatio,0,0], background: '#fff' });
     await renderJob.promise;
     if (token === renderToken) { surface.scrollTop = 0; surface.scrollLeft = 0; }
   } catch (error) {
@@ -239,7 +282,8 @@ function setPage(next) {
   pageNumber = pageTotal ? Math.min(num, pageTotal) : Math.min(num, 99999);
   updatePageUI();
   dirty();
-  if (pdfDoc) renderPage();
+  if (pdfDoc && readingMode === 'continuous') slots[pageNumber-1]?.scrollIntoView({behavior:'smooth',block:'start'});
+  else if (pdfDoc) renderPage();
   else if (nativeFallback && objectUrl) $('pdf-fallback').src = objectUrl + '#page=' + pageNumber;
 }
 async function handleFile(file) {
@@ -290,23 +334,35 @@ async function init() {
     pageTotal = Math.max(0, Number.parseInt(record.totalPages, 10) || 0);
     zoom = [0.8, 1, 1.2, 1.5].includes(record.zoom) ? record.zoom : 1;
   }
-  $('zoom-select').value = String(zoom);
+  $('zoom-select').value = 'fit';
   makeTabs();
   setupModules({ Store, article, getPage: () => pageNumber, setPage, notify: notice });
   $('section-note').disabled = false;
   $('save-notes').disabled = false;
   $('section-note').oninput = () => { notes[activeSection] = $('section-note').value; dirty(); };
   $('save-notes').onclick = () => { changed = true; saveNow(); notice(''); };
+  const preview=$('markdown-preview'), editor=$('markdown-editor'), textarea=$('section-note');
+  function refreshPreview(){if(window.marked&&window.DOMPurify){preview.innerHTML=DOMPurify.sanitize(marked.parse(textarea.value),{USE_PROFILES:{html:true}});for(const a of preview.querySelectorAll('a')){a.target='_blank';a.rel='noopener noreferrer'}if(window.renderMathInElement)window.renderMathInElement(preview,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false,trust:false})}else preview.textContent=textarea.value}
+  textarea.addEventListener('input',refreshPreview);
+  for(const button of document.querySelectorAll('[data-view]'))button.addEventListener('click',()=>{const view=button.dataset.view;for(const b of document.querySelectorAll('[data-view]'))b.setAttribute('aria-pressed',String(b===button));textarea.hidden=view==='preview';preview.hidden=view==='edit';editor.classList.toggle('split',view==='split');refreshPreview()});
+  for(const button of document.querySelectorAll('[data-md]'))button.addEventListener('click',()=>{const wrappers={heading:['# ',''],bold:['**','**'],italic:['*','*'],list:['- ',''],quote:['> ',''],link:['[','](https://)'],code:['```\n','\n```'],table:['| 列 1 | 列 2 |\n| --- | --- |\n| ',' |'],math:['$','$']},pair=wrappers[button.dataset.md],start=textarea.selectionStart,end=textarea.selectionEnd,selected=textarea.value.slice(start,end);textarea.setRangeText(pair[0]+selected+pair[1],start,end,'select');textarea.dispatchEvent(new Event('input',{bubbles:true}));textarea.focus()});
+  for(const tab of $('note-tabs').querySelectorAll('button'))tab.addEventListener('click',refreshPreview);
+
   $('prev-page').onclick = () => setPage(pageNumber - 1);
   $('next-page').onclick = () => setPage(pageNumber + 1);
   $('page-number').onchange = () => setPage($('page-number').value);
-  $('zoom-select').onchange = () => { zoom = Number($('zoom-select').value) || 1; dirty(); if (pdfDoc) renderPage(); };
+  $('zoom-select').onchange = () => { zoomChoice=$('zoom-select').value; zoom=Number(zoomChoice)||1; dirty(); if(pdfDoc){if(readingMode==='continuous')makePages();else renderPage()} };
+  $('reading-mode').onchange = () => {readingMode=$('reading-mode').value;clearPages();$('pdf-canvas').hidden=readingMode==='continuous';if(pdfDoc){if(readingMode==='continuous')makePages();else renderPage()}};
+  $('pdf-surface').addEventListener('scroll',()=>{if(restoring||readingMode!=='continuous'||!slots.length)return;let top=$('pdf-surface').getBoundingClientRect().top;let closest=slots.reduce((a,b)=>Math.abs(b.getBoundingClientRect().top-top)<Math.abs(a.getBoundingClientRect().top-top)?b:a);let n=Number(closest.dataset.page);if(n!==pageNumber){pageNumber=n;updatePageUI();dirty()}});
+  const surface=$('pdf-surface'); for(const name of ['dragenter','dragover'])surface.addEventListener(name,e=>{e.preventDefault();surface.classList.add('drag-over')});for(const name of ['dragleave','drop'])surface.addEventListener(name,e=>{e.preventDefault();surface.classList.remove('drag-over')});surface.addEventListener('drop',e=>handleFile(e.dataTransfer.files?.[0]).catch(err=>notice(err.message)));
+
   $('pdf-file').onchange = async e => { try { await handleFile(e.target.files?.[0]); } catch (error) { notice(error.message); } finally { e.target.value = ''; } };
   $('pdf-native').onclick = openNative;
   $('pdf-remove').onclick = async () => {
     if (!confirm('从当前浏览器移除本篇论文的 PDF？精读笔记和阅读进度将保留。')) return;
     try { await pdfDB('delete'); } catch (error) { notice('删除本地 PDF 失败：' + error.message); return; }
     if (pdfDoc) { try { await pdfDoc.destroy(); } catch (_) {} }
+    clearPages();
     pdfDoc = null; pdfRenderer = null; nativeFallback = false;
     if (objectUrl) URL.revokeObjectURL(objectUrl);
     objectUrl = null; currentFile = null; pageTotal = 0;
@@ -322,7 +378,7 @@ async function init() {
   } catch (error) { notice('无法读取已保存的 PDF：' + error.message + '。可重新选择本地文件。'); }
   window.addEventListener('pagehide', saveNow);
   window.addEventListener('beforeunload', saveNow);
-  window.addEventListener('resize', () => { if (pdfDoc) renderPage(); });
+  let resizeTimer; window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer=setTimeout(()=>{if(pdfDoc){if(readingMode==='continuous')makePages();else renderPage()}},200); });
   window.addEventListener('storage', e => {
     if (e.key !== Store.KEY || changed) return;
     // 同一浏览器多窗口编辑时，提醒用户刷新后获取另一窗口修改。
