@@ -1,5 +1,6 @@
 import { setupModules } from './deep-modules.js';
 import { setupAI } from './deep-ai.js';
+import { Crepe } from './milkdown.bundle.js';
 // 论文精读工作台。依赖已存在的 assets/library-store.js；不改变原有收藏/笔记字段。
 const Store = window.GenomeLibrary;
 const $ = id => document.getElementById(id);
@@ -32,6 +33,7 @@ let currentFile = null;
 let objectUrl = null;
 let dbPromise = null;
 let nativeFallback = false;
+let milkEditor = null, changingSection = false, editorGeneration = 0, editorBaseline = '';
 let readingMode = 'continuous', zoomChoice = 'fit', observer = null, slots = [], jobs = new Map(), generation = 0, restoring = false;
 function clearPages() {
   generation++; observer?.disconnect(); observer = null;
@@ -108,6 +110,7 @@ function updateProgress() {
   $('progress-updated').textContent = last ? '最近保存：' + new Date(last).toLocaleString('zh-CN') : '尚未记录精读进度';
 }
 function saveNow() {
+  if (milkEditor && !changingSection) { const current = milkEditor.getMarkdown(); if (current !== editorBaseline) changed = true; notes[activeSection] = current; }
   if (!article || !changed) return;
   clearTimeout(saveTimer);
   saveTimer = null;
@@ -124,6 +127,7 @@ function saveNow() {
       };
     });
     changed = false;
+    if (milkEditor) editorBaseline = milkEditor.getMarkdown();
     setSaveState('已自动保存');
     updateProgress();
   } catch (error) {
@@ -137,38 +141,33 @@ function dirty() {
   clearTimeout(saveTimer);
   saveTimer = setTimeout(saveNow, 550);
 }
-function displaySection(sectionId, initial = false) {
-  if (!sections.some(([id]) => id === sectionId)) return;
-  // 离开栏目时保存草稿；节流保存继续由 dirty() 处理。
-  if (!initial) notes[activeSection] = $('section-note').value;
-  activeSection = sectionId;
-  const info = sections.find(([id]) => id === sectionId);
-  $('section-title').textContent = info[1];
-  $('section-help').textContent = info[2];
-  $('section-note').value = notes[sectionId] || '';
-  const aiAdvice = $('ai-advice');
-  if (aiAdvice) {
-    const value = progressRecord()?.aiInspiration || '';
-    aiAdvice.hidden = sectionId !== 'inspiration' || !value;
-    aiAdvice.textContent = value;
-  }
-  for (const btn of $('note-tabs').querySelectorAll('button')) {
-    btn.setAttribute('aria-selected', String(btn.dataset.section === sectionId));
-    btn.tabIndex = btn.dataset.section === sectionId ? 0 : -1;
-  }
+async function displaySection(sectionId, initial = false) {
+  if (!sections.some(([id]) => id === sectionId) || changingSection) return;
+  changingSection = true;
+  for (const button of $('note-tabs').querySelectorAll('button')) button.disabled = true;
+  try {
+    if (!initial && milkEditor) { const current = milkEditor.getMarkdown(); if (current !== editorBaseline) changed = true; notes[activeSection] = current; saveNow(); }
+    const generation = ++editorGeneration;
+    if (milkEditor) { await milkEditor.destroy(); milkEditor = null; }
+    activeSection = sectionId;
+    const info = sections.find(([id]) => id === sectionId);
+    $('section-title').textContent = info[1]; $('section-help').textContent = info[2];
+    const aiAdvice = $('ai-advice');
+    if (aiAdvice) { const value = progressRecord()?.aiInspiration || ''; aiAdvice.hidden = sectionId !== 'inspiration' || !value; aiAdvice.textContent = value; }
+    const editor = new Crepe({root: $('milkdown-editor'), defaultValue: notes[sectionId] || '', features: {[Crepe.Feature.Toolbar]: false, [Crepe.Feature.BlockEdit]: false, [Crepe.Feature.TopBar]: false, [Crepe.Feature.LinkTooltip]: false, [Crepe.Feature.Latex]: true}});
+    editor.on(listener => listener.markdownUpdated((_ctx, markdown) => { if (generation !== editorGeneration || changingSection) return; notes[sectionId] = markdown; dirty(); }));
+    await editor.create(); milkEditor = editor; editorBaseline = editor.getMarkdown();
+    for (const btn of $('note-tabs').querySelectorAll('button')) { btn.setAttribute('aria-selected', String(btn.dataset.section === sectionId)); btn.tabIndex = btn.dataset.section === sectionId ? 0 : -1; }
+  } catch (error) { notice('编辑器加载失败，原有笔记保持不变：' + error.message); }
+  finally { changingSection = false; for (const button of $('note-tabs').querySelectorAll('button')) button.disabled = false; }
 }
-function makeTabs() {
+async function makeTabs() {
   for (const [id, label] of sections) {
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.textContent = label;
-    button.dataset.section = id;
-    button.setAttribute('role', 'tab');
-    button.setAttribute('aria-selected', String(id === activeSection));
-    button.addEventListener('click', () => displaySection(id));
-    $('note-tabs').append(button);
+    const button = document.createElement('button'); button.type = 'button'; button.textContent = label; button.dataset.section = id;
+    button.setAttribute('role', 'tab'); button.setAttribute('aria-selected', String(id === activeSection));
+    button.addEventListener('click', () => displaySection(id)); $('note-tabs').append(button);
   }
-  displaySection(activeSection, true);
+  await displaySection(activeSection, true);
 }
 function openDatabase() {
   if (!('indexedDB' in window)) return Promise.reject(Error('当前浏览器不支持 IndexedDB。'));
@@ -342,19 +341,12 @@ async function init() {
     zoom = [0.8, 1, 1.2, 1.5].includes(record.zoom) ? record.zoom : 1;
   }
   $('zoom-select').value = 'fit';
-  makeTabs();
+  await makeTabs();
+  $('milkdown-editor').addEventListener('input', () => { if (milkEditor && !changingSection) dirty(); });
   setupModules({ Store, article, getPage: () => pageNumber, setPage, notify: notice });
   setupAI({Store, article, getFile: () => currentFile, saveNotes: saveNow});
-  $('section-note').disabled = false;
   $('save-notes').disabled = false;
-  $('section-note').oninput = () => { notes[activeSection] = $('section-note').value; dirty(); };
   $('save-notes').onclick = () => { changed = true; saveNow(); notice(''); };
-  const preview=$('markdown-preview'), editor=$('markdown-editor'), textarea=$('section-note');
-  function refreshPreview(){if(window.marked&&window.DOMPurify){preview.innerHTML=DOMPurify.sanitize(marked.parse(textarea.value),{USE_PROFILES:{html:true}});for(const a of preview.querySelectorAll('a')){a.target='_blank';a.rel='noopener noreferrer'}if(window.renderMathInElement)window.renderMathInElement(preview,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false,trust:false})}else preview.textContent=textarea.value}
-  textarea.addEventListener('input',refreshPreview);
-  for(const button of document.querySelectorAll('[data-view]'))button.addEventListener('click',()=>{const view=button.dataset.view;for(const b of document.querySelectorAll('[data-view]'))b.setAttribute('aria-pressed',String(b===button));textarea.hidden=view==='preview';preview.hidden=view==='edit';editor.classList.toggle('split',view==='split');refreshPreview()});
-  for(const button of document.querySelectorAll('[data-md]'))button.addEventListener('click',()=>{const wrappers={heading:['# ',''],bold:['**','**'],italic:['*','*'],list:['- ',''],quote:['> ',''],link:['[','](https://)'],code:['```\n','\n```'],table:['| 列 1 | 列 2 |\n| --- | --- |\n| ',' |'],math:['$','$']},pair=wrappers[button.dataset.md],start=textarea.selectionStart,end=textarea.selectionEnd,selected=textarea.value.slice(start,end);textarea.setRangeText(pair[0]+selected+pair[1],start,end,'select');textarea.dispatchEvent(new Event('input',{bubbles:true}));textarea.focus()});
-  for(const tab of $('note-tabs').querySelectorAll('button'))tab.addEventListener('click',refreshPreview);
 
   $('prev-page').onclick = () => setPage(pageNumber - 1);
   $('next-page').onclick = () => setPage(pageNumber + 1);
