@@ -134,10 +134,10 @@ a:focus-visible,button:focus-visible,input:focus-visible{
 }
 .latest-card:hover{border-color:#aab59a;box-shadow:0 17px 35px -25px rgba(42,59,35,.5);transform:translateY(-2px)}
 .latest-card:focus-visible{outline:3px solid var(--forest-soft);outline-offset:4px}
-.latest-art{position:absolute;inset:0 0 0 auto;z-index:-2;width:58%;height:100%;color:#738760}
-.latest-art svg{display:block;width:100%;height:100%}
+.latest-art{position:absolute;inset:0 0 0 auto;z-index:-2;width:43%;height:100%;overflow:hidden;color:#738760}
+.latest-art img{display:block;width:100%;height:100%;object-fit:cover;object-position:right center;transform:scale(1.12)}
 .latest-card::after{position:absolute;inset:0;z-index:-1;content:"";
-  background:linear-gradient(90deg,#fbfaf5 0%,rgba(251,250,245,.99) 39%,rgba(251,250,245,.94) 57%,rgba(251,250,245,.25) 77%,rgba(251,250,245,.01) 100%)}
+  background:linear-gradient(90deg,#fbfaf5 0%,#fbfaf5 55%,rgba(251,250,245,.5) 58%,rgba(251,250,245,0) 61%)}
 .latest-copy{width:61%;max-width:540px;padding:27px 25px 25px 34px}
 .latest-ribbon{
   position:absolute;top:0;left:22px;padding:6px 17px 7px;background:var(--forest);color:#fff;
@@ -182,7 +182,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{
 }
 .archive-link:hover{background:rgba(231,235,217,.36)}
 .archive-thumb{width:168px;height:126px;overflow:hidden;border:1px solid #c4c9b3;border-radius:10px;background:#e4e7d4}
-.archive-thumb svg{display:block;width:100%;height:100%}
+.archive-thumb img{display:block;width:100%;height:100%;object-fit:cover}
 .archive-copy{min-width:0}
 .archive-row-meta{display:flex;align-items:baseline;gap:14px;min-width:0}
 .archive-week{color:var(--forest);font-family:var(--serif);font-size:27px;font-weight:800;letter-spacing:.015em;line-height:1.4}
@@ -284,8 +284,9 @@ a:focus-visible,button:focus-visible,input:focus-visible{
   .feature-list li{gap:4px;padding:0 4px;font-size:11px}
   .feature-list svg{width:26px;height:26px}
   .latest-card{min-height:0;border-left-width:4px;border-radius:7px}
-  .latest-art{width:78%;opacity:.24}
-  .latest-card::after{background:linear-gradient(90deg,rgba(251,250,245,.98),rgba(251,250,245,.91) 62%,rgba(251,250,245,.62))}
+  .latest-art{width:48%;height:120px;top:0;bottom:auto;opacity:1}
+  .latest-art img{clip-path:inset(0 0 0 32%)}
+  .latest-card::after{background:linear-gradient(90deg,#fbfaf5 0%,#fbfaf5 49%,rgba(251,250,245,.55) 59%,rgba(251,250,245,0) 72%)}
   .latest-copy{width:100%;max-width:none;padding:26px 17px 18px}
   .latest-ribbon{left:14px;padding:5px 14px 6px;font-size:11px}
   .latest-kicker{margin:16px 0 3px;font-size:10.5px}
@@ -350,9 +351,6 @@ a:focus-visible,button:focus-visible,input:focus-visible{
     </a>
     <nav class="primary-nav" aria-label="主导航">
       <a href="#top" aria-current="page">首页</a>
-      <a href="#archive">文献归档</a>
-      <a href="#reading-guide">阅读说明</a>
-      <a href="#about">关于</a>
       <a href="search.html">文献搜索</a>
       <a href="library.html">我的文献库</a>
       <a href="deep-library.html">我的精读</a>
@@ -394,37 +392,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{
     </div>
     <div class="latest-slot">
   <a class="latest-card" href="2026-11-15/index.html" data-searchable="2026年第46周 2026-11-15 20 本周技术线集中在泛基因组与单细胞统计模型：MaizeGP 整合 48 个玉米基因组结构变异，甘蓝型油菜泛基因组鉴定出 112,417 个转座子介导结构变异并关联同源基因表达失衡；单细胞 eQTL 方面，SAIGE-QTL 与负二项模型分别提升检出效率，后者在 OneK1K 数据中 eGene 检出量比线性模型多 16%。图泛基因组同时用于体细胞变异检测，改善读段定位并降低胚系污染。这些进展共同指向变异解析的分辨率与统计效力提升。" aria-label="阅读 2026年第46周，2026-11-15，20 篇精选">
-      <div class="latest-art" aria-hidden="true">
-        <svg viewBox="0 0 620 420" fill="none" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <linearGradient id="paperGlow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fbfaf4"/><stop offset="1" stop-color="#e9eddc"/></linearGradient>
-            <linearGradient id="husk" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e8ebd5"/><stop offset="1" stop-color="#bac89e"/></linearGradient>
-            <pattern id="kernelPattern" width="12" height="12" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="2.1" fill="#99a56f"/><circle cx="10" cy="10" r="2.1" fill="#b2ba83"/></pattern>
-          </defs>
-          <circle cx="148" cy="102" r="63" stroke="#91a27b" stroke-width="1.1" stroke-dasharray="2 5" opacity=".76"/>
-          <circle cx="148" cy="102" r="48" stroke="#a3b08d" stroke-width=".8" opacity=".55"/>
-          <path d="M112 137v-29m13 29V88m13 49V72m13 65V94m13 43V81m13 56v-21m13 21V97" stroke="#617c50" stroke-width="3" stroke-linecap="round"/>
-          <path d="M105 139h87m-78-10h70m-56-57h1m13-10h1m13 5h1m13-9h1" stroke="#7d9164" stroke-width="1"/>
-          <path d="M399 423c-7-117-1-218 14-329 3-21 9-44 19-69" stroke="#647b4f" stroke-width="2.6" stroke-linecap="round"/>
-          <path d="M408 348c-62-21-120-59-178-113 72-8 133 20 181 82" fill="#e7ebd9" stroke="#748760" stroke-width="1.7" stroke-linejoin="round"/>
-          <path d="M413 295c-49-49-79-104-88-166 58 33 91 82 98 145" fill="#eef0df" stroke="#748760" stroke-width="1.7" stroke-linejoin="round"/>
-          <path d="M415 318c46-48 101-77 164-82-25 60-76 98-158 111" fill="#e4ead5" stroke="#748760" stroke-width="1.7" stroke-linejoin="round"/>
-          <path d="M406 379c-64-15-123-11-179 15 48 34 107 39 177 14" fill="#edf0df" stroke="#748760" stroke-width="1.7" stroke-linejoin="round"/>
-          <path d="M414 369c55-28 113-33 176-14-43 44-101 59-179 38" fill="#e1e8d0" stroke="#748760" stroke-width="1.7" stroke-linejoin="round"/>
-          <path d="M414 230c-40-48-57-99-51-153 49 37 73 88 68 151" fill="#e9eddb" stroke="#748760" stroke-width="1.6" stroke-linejoin="round"/>
-          <path d="M422 212c41-43 91-66 151-64-26 46-76 72-151 80" fill="#e7ebd9" stroke="#748760" stroke-width="1.6" stroke-linejoin="round"/>
-          <path d="M408 348 230 235m183 60-88-166m90 189 164-82m-173 143-179 15m187-25 176-14m-176-125-60-153m68 167 151-64" stroke="#91a078" stroke-width="1" opacity=".78"/>
-          <path d="M422 84c-25-24-33-47-23-75m23 75c-10-29-6-56 10-81m-10 81c4-34 20-58 44-71m-44 71c24-25 50-36 77-32m-77 32c-31-11-52-29-62-53m62 53c-18-29-20-56-7-80" stroke="#71845a" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M408 221c12-26 34-47 61-56 18 17 24 43 14 71-12 26-32 46-57 57-19-15-26-40-18-72Z" fill="url(#husk)" stroke="#667b4c" stroke-width="1.8"/>
-          <path d="M408 221c12-26 34-47 61-56 18 17 24 43 14 71-12 26-32 46-57 57-19-15-26-40-18-72Z" fill="url(#kernelPattern)" opacity=".82"/>
-          <path d="M414 251c-23 15-40 37-51 65 29-11 51-29 67-54m45-23c25 9 43 26 54 50-29-4-51-18-66-41" fill="#e4ead4" stroke="#748760" stroke-width="1.5" stroke-linejoin="round"/>
-          <path d="M557 52c-42 24-42 51 0 75 42 24 42 51 0 75-42 24-42 51 0 75m-42-300c42 24 42 51 0 75-42 24-42 51 0 75 42 24 42 51 0 75-42 24-42 51 0 75" stroke="#6f8758" stroke-width="1.7" opacity=".78"/>
-          <path d="M518 72h39m-52 31h65m-62 31h49m-48 32h47m-51 31h67m-60 32h49m-43 31h40m-44 31h55" stroke="#87966d" stroke-width="1.1" opacity=".7"/>
-          <path d="M557 52c-42 24-42 51 0 75 42 24 42 51 0 75-42 24-42 51 0 75m-42-300c42 24 42 51 0 75-42 24-42 51 0 75 42 24 42 51 0 75-42 24-42 51 0 75" stroke="#6f8758" stroke-width="1.7" opacity=".78"/>
-          <path d="M518 72h39m-52 31h65m-62 31h49m-48 32h47m-51 31h67m-60 32h49m-43 31h40m-44 31h55" stroke="#87966d" stroke-width="1.1" opacity=".7"/>
-          <path d="M59 377h507m-507 9h507M250 358v-9m18 9v-17m18 17v-25m18 25v-13m18 13v-34m18 34v-22m18 22v-15m18 15v-28m18 28v-11m18 11v-20m18 20v-31m18 31v-17m18 17v-24m18 24v-12" stroke="#a3ad8e" stroke-width=".9" opacity=".65"/>
-        </svg>
-      </div>
+      <div class="latest-art" aria-hidden="true"><img src="assets/niwa-latest-reference.png" alt="" fetchpriority="high"></div>
       <span class="latest-ribbon">本期最新</span>
       <div class="latest-copy">
         <p class="latest-kicker">本周观察</p>
@@ -453,7 +421,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{
       <ul class="archive-list" id="archive-list">
         <li class="archive-item" data-searchable="2026年第45周 2026-11-08 20 本周的线索是「把变异放回它所在的序列与组织里」：荔枝与大豆的端粒到端粒组装、秤锤树与枇杷的近完整基因组，把结构变异从模糊信号变成可定位的位点；小麦 PHYC-A 与 PHYA-B 的光依赖抽穗期、番茄先导编辑叠加抗病等位基因、水稻 SDEF 休眠位点，则把位点推向可验证的因果。与此同时，14 款短读长结构变异工具平均召回率仅 0.36、7 种长读长串联重复分型工具在长等位基因上准确率下降，提示组装与分型之间仍有缺口；mV2G 图谱与 Wreath 甲基化预测则把非编码变异放回组织与细胞类型语境。">
           <a class="archive-link" href="2026-11-08/index.html" aria-label="阅读 2026年第45周，2026-11-08，20 篇精选">
-            <span class="archive-thumb"><svg viewBox="0 0 168 126" fill="none" aria-hidden="true"><defs><linearGradient id="thumbRice" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a7b68a"/><stop offset="1" stop-color="#526b3e"/></linearGradient></defs><path fill="url(#thumbRice)" d="M0 0h168v126H0z"/><path d="M74 132c-3-34 2-67 14-103m-14 93C52 91 39 67 29 37m44 78c26-24 45-53 62-87M84 65c-17-11-32-25-43-43m38 59c18-8 34-19 49-35M64 95c-14-4-25-13-34-26m57 4c11-15 16-29 17-45" stroke="#d9dfbf" stroke-width="2" stroke-linecap="round"/><path d="M94 31c-10-4-16-11-18-22 12 2 19 8 22 18m-54-7c-11-1-18-7-23-17 12-1 20 3 26 12m78-1c-4-10-2-18 5-27 6 10 6 19 0 28m-53 34c-11 0-19-5-25-14 11-3 20-1 27 6m35-16c-2-10 2-18 10-25 4 12 2 20-6 28" fill="#e5e9d0" stroke="#cbd5b0" stroke-width="1" stroke-linejoin="round"/><path d="M0 105c28-8 53-7 76 3 29 12 60 13 92 1v17H0v-21Z" fill="#435b35" opacity=".24"/></svg></span>
+            <span class="archive-thumb"><img src="assets/niwa-archive-01.webp" alt="" loading="lazy" decoding="async"></span>
             <span class="archive-copy">
               <span class="archive-row-meta"><strong class="archive-week">2026年第45周</strong><time class="archive-date" datetime="2026-11-08">2026-11-08</time></span>
               <span class="archive-count"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="3" y="4" width="12" height="11" rx="1" stroke="currentColor" stroke-width="1.3"/><path d="M6 2.5v3M12 2.5v3M3 7h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>20 篇精选</span>
@@ -464,7 +432,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{
         </li>
         <li class="archive-item" data-searchable="2026年第44周 2026-11-01 20 本周技术线集中在两处：把变异从「频率」和「类型」两个维度拆开看。玉米3,367份基因组的频率分层GREML显示，稀有变异效应约为常见的2.4倍，411个关联信号中359个归因于全局稀有变异；水稻SNP-GWAS与SV-GWAS各检出127和119个QTL、仅25个重叠，说明常见变异与结构变异捕获的遗传架构并不重合。另一条线是单细胞分辨率下的调控解析：水稻花粉caQTL有48.6%具细胞类型特异性，猪骨骼肌与鸡肝脏的选择信号被映射到具体细胞类型，胚乳图谱则把12类细胞与7个解剖区域对应起来。">
           <a class="archive-link" href="2026-11-01/index.html" aria-label="阅读 2026年第44周，2026-11-01，20 篇精选">
-            <span class="archive-thumb"><svg viewBox="0 0 168 126" fill="none" aria-hidden="true"><defs><linearGradient id="thumbFlower" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#75875c"/><stop offset="1" stop-color="#465c39"/></linearGradient></defs><path fill="url(#thumbFlower)" d="M0 0h168v126H0z"/><path d="M87 128c-2-34 1-66 7-94m-7 73c-17-18-30-38-39-62m40 44c19-15 35-34 49-58M57 112c0-18 4-33 13-47m23 33c-10-17-13-32-10-49" stroke="#dce3c7" stroke-width="1.8" stroke-linecap="round"/><g fill="#f2f0dd" stroke="#d8ddc7" stroke-width=".8"><circle cx="94" cy="29" r="5"/><circle cx="88" cy="26" r="4"/><circle cx="100" cy="25" r="4"/><circle cx="96" cy="20" r="4"/><circle cx="93" cy="35" r="4"/><circle cx="54" cy="46" r="4"/><circle cx="49" cy="42" r="3.5"/><circle cx="59" cy="41" r="3.5"/><circle cx="55" cy="37" r="3.5"/><circle cx="127" cy="38" r="4.5"/><circle cx="121" cy="34" r="3.5"/><circle cx="132" cy="33" r="3.5"/><circle cx="128" cy="29" r="3.5"/><circle cx="70" cy="65" r="4"/><circle cx="65" cy="61" r="3.5"/><circle cx="74" cy="60" r="3.5"/></g><g fill="#d5bd79"><circle cx="94" cy="28" r="1.8"/><circle cx="54" cy="45" r="1.5"/><circle cx="127" cy="37" r="1.7"/><circle cx="70" cy="64" r="1.5"/></g><path d="M0 112c30-9 53-5 79 4 27 9 55 8 89-4v14H0v-14Z" fill="#344c32" opacity=".3"/></svg></span>
+            <span class="archive-thumb"><img src="assets/niwa-archive-01.webp" alt="" loading="lazy" decoding="async"></span>
             <span class="archive-copy">
               <span class="archive-row-meta"><strong class="archive-week">2026年第44周</strong><time class="archive-date" datetime="2026-11-01">2026-11-01</time></span>
               <span class="archive-count"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="3" y="4" width="12" height="11" rx="1" stroke="currentColor" stroke-width="1.3"/><path d="M6 2.5v3M12 2.5v3M3 7h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>20 篇精选</span>
@@ -475,7 +443,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{
         </li>
         <li class="archive-item" hidden data-searchable="2026年第43周 2026-10-25 20 本周基因组学的主线是组装完整度与变异解析精度的同步抬升：小麦着丝粒可被靶向重写、单代最多重构11条染色体，野生二粒小麦近完整组装则显示A、B亚基因组着丝粒重组模式分化；花生豫花15达到端粒到端粒并锁定AhYABBY，大麻将无间隙组装用于追溯γ三倍化后的重复保留。方法侧，Manc-COJO多祖先独立信号检出更多且假阳性更少，fastGxE在生物样本库规模检出7个与18个位点、其中4个和12个为新位点，LAVrefiner把indel与结构变异的拷贝数细化后提升遗传力估计。">
           <a class="archive-link" href="2026-10-25/index.html" aria-label="阅读 2026年第43周，2026-10-25，20 篇精选">
-            <span class="archive-thumb"><svg viewBox="0 0 168 126" fill="none" aria-hidden="true"><defs><linearGradient id="thumbRice" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a7b68a"/><stop offset="1" stop-color="#526b3e"/></linearGradient></defs><path fill="url(#thumbRice)" d="M0 0h168v126H0z"/><path d="M74 132c-3-34 2-67 14-103m-14 93C52 91 39 67 29 37m44 78c26-24 45-53 62-87M84 65c-17-11-32-25-43-43m38 59c18-8 34-19 49-35M64 95c-14-4-25-13-34-26m57 4c11-15 16-29 17-45" stroke="#d9dfbf" stroke-width="2" stroke-linecap="round"/><path d="M94 31c-10-4-16-11-18-22 12 2 19 8 22 18m-54-7c-11-1-18-7-23-17 12-1 20 3 26 12m78-1c-4-10-2-18 5-27 6 10 6 19 0 28m-53 34c-11 0-19-5-25-14 11-3 20-1 27 6m35-16c-2-10 2-18 10-25 4 12 2 20-6 28" fill="#e5e9d0" stroke="#cbd5b0" stroke-width="1" stroke-linejoin="round"/><path d="M0 105c28-8 53-7 76 3 29 12 60 13 92 1v17H0v-21Z" fill="#435b35" opacity=".24"/></svg></span>
+            <span class="archive-thumb"><img src="assets/niwa-archive-01.webp" alt="" loading="lazy" decoding="async"></span>
             <span class="archive-copy">
               <span class="archive-row-meta"><strong class="archive-week">2026年第43周</strong><time class="archive-date" datetime="2026-10-25">2026-10-25</time></span>
               <span class="archive-count"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="3" y="4" width="12" height="11" rx="1" stroke="currentColor" stroke-width="1.3"/><path d="M6 2.5v3M12 2.5v3M3 7h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>20 篇精选</span>
@@ -486,7 +454,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{
         </li>
         <li class="archive-item" hidden data-searchable="2026年第42周 2026-10-19 20 多倍体是本期的聚集点：GPhase 把组装图连通性接入 3C 定相，三项组装指标同向改善；苜蓿借全同胞 2x/4x 把 WGD 效应从杂交背景中剥离；油菜则显示亚基因组偏倚会随品种、组织与发育阶段改变方向。另两项工作把不可及变为可及：Hicberg 从 Hi-C 回收被丢弃的重复元件接触，near-T2T 组装在黑色素瘤中检出 GRCh38 里并不存在的 16% 体细胞变异。">
           <a class="archive-link" href="2026-10-19/index.html" aria-label="阅读 2026年第42周，2026-10-19，20 篇精选">
-            <span class="archive-thumb"><svg viewBox="0 0 168 126" fill="none" aria-hidden="true"><defs><linearGradient id="thumbFlower" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#75875c"/><stop offset="1" stop-color="#465c39"/></linearGradient></defs><path fill="url(#thumbFlower)" d="M0 0h168v126H0z"/><path d="M87 128c-2-34 1-66 7-94m-7 73c-17-18-30-38-39-62m40 44c19-15 35-34 49-58M57 112c0-18 4-33 13-47m23 33c-10-17-13-32-10-49" stroke="#dce3c7" stroke-width="1.8" stroke-linecap="round"/><g fill="#f2f0dd" stroke="#d8ddc7" stroke-width=".8"><circle cx="94" cy="29" r="5"/><circle cx="88" cy="26" r="4"/><circle cx="100" cy="25" r="4"/><circle cx="96" cy="20" r="4"/><circle cx="93" cy="35" r="4"/><circle cx="54" cy="46" r="4"/><circle cx="49" cy="42" r="3.5"/><circle cx="59" cy="41" r="3.5"/><circle cx="55" cy="37" r="3.5"/><circle cx="127" cy="38" r="4.5"/><circle cx="121" cy="34" r="3.5"/><circle cx="132" cy="33" r="3.5"/><circle cx="128" cy="29" r="3.5"/><circle cx="70" cy="65" r="4"/><circle cx="65" cy="61" r="3.5"/><circle cx="74" cy="60" r="3.5"/></g><g fill="#d5bd79"><circle cx="94" cy="28" r="1.8"/><circle cx="54" cy="45" r="1.5"/><circle cx="127" cy="37" r="1.7"/><circle cx="70" cy="64" r="1.5"/></g><path d="M0 112c30-9 53-5 79 4 27 9 55 8 89-4v14H0v-14Z" fill="#344c32" opacity=".3"/></svg></span>
+            <span class="archive-thumb"><img src="assets/niwa-archive-01.webp" alt="" loading="lazy" decoding="async"></span>
             <span class="archive-copy">
               <span class="archive-row-meta"><strong class="archive-week">2026年第42周</strong><time class="archive-date" datetime="2026-10-19">2026-10-19</time></span>
               <span class="archive-count"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="3" y="4" width="12" height="11" rx="1" stroke="currentColor" stroke-width="1.3"/><path d="M6 2.5v3M12 2.5v3M3 7h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>20 篇精选</span>
@@ -497,7 +465,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{
         </li>
         <li class="archive-item" hidden data-searchable="2026年第41周 2026-10-11 20 本周技术线集中在「用群体规模的结构变异与单倍型解析把调控变异落到具体序列」：黄精的 LTR 插入与 61 kb 内含子、棉铃 845 bp 结构变异改变组蛋白修饰、棉纤维 162 bp 启动子插入缺失、IAMH2 3&#x27; UTR 的 poly(U) 基序破坏，四篇都把表型差异锚定到可检验的序列元件。另一条线是预测与注释工具的可迁移性：玉米花粉适合度仅凭序列特征即达 85% 曲线下面积，蛋白大语言模型补回约 900 对同源映射，RovHer 把前 1% 罕见错义变异解释的遗传力从约 1.5% 提到 16.1%。">
           <a class="archive-link" href="2026-10-11/index.html" aria-label="阅读 2026年第41周，2026-10-11，20 篇精选">
-            <span class="archive-thumb"><svg viewBox="0 0 168 126" fill="none" aria-hidden="true"><defs><linearGradient id="thumbRice" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a7b68a"/><stop offset="1" stop-color="#526b3e"/></linearGradient></defs><path fill="url(#thumbRice)" d="M0 0h168v126H0z"/><path d="M74 132c-3-34 2-67 14-103m-14 93C52 91 39 67 29 37m44 78c26-24 45-53 62-87M84 65c-17-11-32-25-43-43m38 59c18-8 34-19 49-35M64 95c-14-4-25-13-34-26m57 4c11-15 16-29 17-45" stroke="#d9dfbf" stroke-width="2" stroke-linecap="round"/><path d="M94 31c-10-4-16-11-18-22 12 2 19 8 22 18m-54-7c-11-1-18-7-23-17 12-1 20 3 26 12m78-1c-4-10-2-18 5-27 6 10 6 19 0 28m-53 34c-11 0-19-5-25-14 11-3 20-1 27 6m35-16c-2-10 2-18 10-25 4 12 2 20-6 28" fill="#e5e9d0" stroke="#cbd5b0" stroke-width="1" stroke-linejoin="round"/><path d="M0 105c28-8 53-7 76 3 29 12 60 13 92 1v17H0v-21Z" fill="#435b35" opacity=".24"/></svg></span>
+            <span class="archive-thumb"><img src="assets/niwa-archive-01.webp" alt="" loading="lazy" decoding="async"></span>
             <span class="archive-copy">
               <span class="archive-row-meta"><strong class="archive-week">2026年第41周</strong><time class="archive-date" datetime="2026-10-11">2026-10-11</time></span>
               <span class="archive-count"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="3" y="4" width="12" height="11" rx="1" stroke="currentColor" stroke-width="1.3"/><path d="M6 2.5v3M12 2.5v3M3 7h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>20 篇精选</span>
@@ -508,7 +476,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{
         </li>
         <li class="archive-item" hidden data-searchable="2026年第40周 2026-10-04 20 本周多条线汇向同一个判断：染色体级演化史与调控变异定位正在被同一批数据重写。禾本科祖先核型被独立重建为 x=12 而非 11，48 次融合成为可复用的系统发育标记；长穗偃麦草 41.33 Gb 组装揭示广泛同源交换，支持片段异源多倍体组织。调控端，单等位基因纳米尺度作图在 CD4+ T 细胞中定位到 neo-CTCF 基序阻断超增强子—启动子接触的获得性功能机制；免疫细胞图谱给出 51,083 个顺式表达 QTL 与 119,094 个候选因果变异。多倍体一侧，穿龙薯蓣与蓖麻分别给出约 32% 等位丢失和 6043 个种皮差异表达基因，把多倍化后的表达与形态代价落到数字上。">
           <a class="archive-link" href="2026-10-04/index.html" aria-label="阅读 2026年第40周，2026-10-04，20 篇精选">
-            <span class="archive-thumb"><svg viewBox="0 0 168 126" fill="none" aria-hidden="true"><defs><linearGradient id="thumbFlower" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#75875c"/><stop offset="1" stop-color="#465c39"/></linearGradient></defs><path fill="url(#thumbFlower)" d="M0 0h168v126H0z"/><path d="M87 128c-2-34 1-66 7-94m-7 73c-17-18-30-38-39-62m40 44c19-15 35-34 49-58M57 112c0-18 4-33 13-47m23 33c-10-17-13-32-10-49" stroke="#dce3c7" stroke-width="1.8" stroke-linecap="round"/><g fill="#f2f0dd" stroke="#d8ddc7" stroke-width=".8"><circle cx="94" cy="29" r="5"/><circle cx="88" cy="26" r="4"/><circle cx="100" cy="25" r="4"/><circle cx="96" cy="20" r="4"/><circle cx="93" cy="35" r="4"/><circle cx="54" cy="46" r="4"/><circle cx="49" cy="42" r="3.5"/><circle cx="59" cy="41" r="3.5"/><circle cx="55" cy="37" r="3.5"/><circle cx="127" cy="38" r="4.5"/><circle cx="121" cy="34" r="3.5"/><circle cx="132" cy="33" r="3.5"/><circle cx="128" cy="29" r="3.5"/><circle cx="70" cy="65" r="4"/><circle cx="65" cy="61" r="3.5"/><circle cx="74" cy="60" r="3.5"/></g><g fill="#d5bd79"><circle cx="94" cy="28" r="1.8"/><circle cx="54" cy="45" r="1.5"/><circle cx="127" cy="37" r="1.7"/><circle cx="70" cy="64" r="1.5"/></g><path d="M0 112c30-9 53-5 79 4 27 9 55 8 89-4v14H0v-14Z" fill="#344c32" opacity=".3"/></svg></span>
+            <span class="archive-thumb"><img src="assets/niwa-archive-01.webp" alt="" loading="lazy" decoding="async"></span>
             <span class="archive-copy">
               <span class="archive-row-meta"><strong class="archive-week">2026年第40周</strong><time class="archive-date" datetime="2026-10-04">2026-10-04</time></span>
               <span class="archive-count"><svg viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="3" y="4" width="12" height="11" rx="1" stroke="currentColor" stroke-width="1.3"/><path d="M6 2.5v3M12 2.5v3M3 7h12" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>20 篇精选</span>
@@ -542,26 +510,16 @@ a:focus-visible,button:focus-visible,input:focus-visible{
     <aside class="reading-guide" id="reading-guide" aria-labelledby="guide-title">
       <h2 class="guide-heading" id="guide-title">
         <svg viewBox="0 0 38 38" fill="none" aria-hidden="true"><path d="M4 8c6-2 11-.8 15 3v22c-4-3.8-9-5-15-3V8Zm30 0c-6-2-11-.8-15 3v22c4-3.8 9-5 15-3V8Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 13c2-.3 4 0 6 1m14-1c-2-.3-4 0-6 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
-        <span>怎么读 / 阅读说明</span>
+        <span>使用指南</span>
       </h2>
-      <p class="guide-intro">每期收录约 <strong>20 篇</strong>植物与基因组学相关的最新研究，并对每篇文献进行结构化梳理，包含以下四个部分：</p>
+      <p class="guide-intro">从文献管理、PDF 阅读到研究整理，按需使用各项工具。</p>
       <ul class="guide-list">
-        <li>
-          <svg class="guide-icon" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M13 4h10m-8 0v9L7 29a2 2 0 0 0 1.8 3h18.4a2 2 0 0 0 1.8-3l-8-16V4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 24h14m-11-5h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-          <span><strong class="guide-title">研究内容</strong><span class="guide-description">研究对象、方法与核心问题。</span></span>
-        </li>
-        <li>
-          <svg class="guide-icon" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M5 30h27M8 26V18h5v8m4 0V11h5v15m4 0V6h5v20" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span><strong class="guide-title">主要结论</strong><span class="guide-description">关键发现、核心数据与证据。</span></span>
-        </li>
-        <li>
-          <svg class="guide-icon" viewBox="0 0 36 36" fill="none" aria-hidden="true"><circle cx="16" cy="19" r="11" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="19" r="6" stroke="currentColor" stroke-width="1.5"/><path d="m15 20 7-7 8-7m-7 0h7v7" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span><strong class="guide-title">关注价值</strong><span class="guide-description">这项研究对领域意味着什么。</span></span>
-        </li>
-        <li>
-          <svg class="guide-icon" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M18 31V17m0 5C9 22 5 17 5 9c8 0 13 3 13 13Zm0-2c0-8 4-13 13-14 0 9-4 14-13 14Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 31h12" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-          <span><strong class="guide-title">未来展望</strong><span class="guide-description">后续研究方向、应用前景与待解问题。</span></span>
-        </li>
+        <li><svg class="guide-icon" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M7 6h17l5 5v19H7zM24 6v6h5M12 17h12M12 22h12M12 27h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong class="guide-title">文献管理</strong><span class="guide-description">收藏、分类、管理阅读状态和研究笔记。</span></span></li>
+        <li><svg class="guide-icon" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M7 6h17l5 5v19H7zM24 6v6h5M12 17h12M12 22h12M12 27h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong class="guide-title">PDF 阅读</strong><span class="guide-description">导入本地 PDF，连续阅读并保存进度。</span></span></li>
+        <li><svg class="guide-icon" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M7 6h17l5 5v19H7zM24 6v6h5M12 17h12M12 22h12M12 27h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong class="guide-title">AI 论文精读</strong><span class="guide-description">使用个人 DeepSeek API Key 分析论文，确认后保存结果。</span></span></li>
+        <li><svg class="guide-icon" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M7 6h17l5 5v19H7zM24 6v6h5M12 17h12M12 22h12M12 27h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong class="guide-title">精读笔记</strong><span class="guide-description">用 Milkdown 编辑和保存结构化 Markdown 笔记。</span></span></li>
+        <li><svg class="guide-icon" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M7 6h17l5 5v19H7zM24 6v6h5M12 17h12M12 22h12M12 27h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong class="guide-title">图表解析</strong><span class="guide-description">记录 Figure / Table、方法和技术路线。</span></span></li>
+        <li><svg class="guide-icon" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M7 6h17l5 5v19H7zM24 6v6h5M12 17h12M12 22h12M12 27h8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span><strong class="guide-title">导出与备份</strong><span class="guide-description">打印精读报告，使用 JSON 备份个人文献数据。</span></span></li>
       </ul>
     </aside>
   </div>
@@ -701,5 +659,6 @@ a:focus-visible,button:focus-visible,input:focus-visible{
   });
 })();
 </script>
+<script defer src="assets/niwa-archive-covers.js"></script>
 </body>
 </html>
