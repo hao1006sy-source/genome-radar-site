@@ -1,0 +1,10 @@
+.related-articles{margin:13px 0 0;padding:11px 0 2px;border-top:1px solid #d8ddcd}
+.related-heading{margin:0 0 8px;color:#31513a;font:700 14px/1.4 "Noto Serif SC","Source Han Serif SC","SimSun",serif}
+.related-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.related-card{display:flex;min-width:0;flex-direction:column;gap:4px;padding:9px 10px;border:1px solid #e0e3d7;border-radius:7px;background:rgba(247,248,240,.8);color:#39463a;text-decoration:none;transition:background .15s,border-color .15s}
+.related-card:hover{border-color:#b8c7af;background:#edf0e3}
+.related-issue{color:#6f7b69;font-size:10px;letter-spacing:.03em}
+.related-title{display:-webkit-box;overflow:hidden;color:#173e2d;font:700 12px/1.48 "Noto Serif SC","Source Han Serif SC","SimSun",serif;-webkit-box-orient:vertical;-webkit-line-clamp:2}
+.related-journal{color:#6f766d;font-size:10px}.related-reasons{color:#596752;font-size:10px;line-height:1.45}
+@media(max-width:900px){.related-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.related-list{grid-template-columns:1fr}.related-card{padding:8px 9px}}
