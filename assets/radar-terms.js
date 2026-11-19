@@ -102,12 +102,13 @@
   }
   function initHome() {
     var latest = document.querySelector('.latest-card'), note = document.getElementById('latest-radar-count');
+    if (!latest || !note) return;
     function update() {
       var terms = load();
       if (!terms.length) { if (note) note.hidden = true; return; }
       if (note) note.hidden = false;
       fetch('assets/search-index.json').then(function (r) { return r.json(); }).then(function (index) {
-        if (!latest || !note || !index.articles) return;
+        if (!index.articles) return;
         var issue = latest.getAttribute('href').split('/')[0];
         var rows = index.articles.filter(function (item) { return item.issue === issue; });
         note.textContent = '本期命中 ' + uniqueCount(rows, terms) + ' 篇关注';
