@@ -473,6 +473,18 @@ body{background:#f0eee7;color:var(--cover-ink)}
   .cover-journals{padding:7px 0 5px}
   .cover .cv-hint{margin-top:5px}
 }
+/* Weekly cover: preserve article and reader styles. */
+.cover-hero{grid-template-columns:minmax(0,1.02fr) minmax(320px,.98fr);min-height:clamp(300px,36vh,350px)}
+.cover-visual{background:#faf7ef}
+.cover-visual::after{background:linear-gradient(90deg,#f8f6f0,rgba(248,246,240,0) 12%)}
+.cover-visual img{width:172%;height:auto;right:0;top:-8%;object-fit:initial;opacity:1;mix-blend-mode:normal;mask-image:none;-webkit-mask-image:none;clip-path:inset(10% 0 42.5% 45%)}
+.cover-bottom{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.9fr);gap:30px;align-items:start;margin-top:14px}
+.cover-highlights{margin:0;min-width:0}
+.cover-journals{display:block;margin:0;padding:0 0 8px 28px;border-left:1px solid #cbd1bf;border-bottom:0;min-width:0}
+.cover-journals .section-heading{padding-bottom:6px;border-bottom:1px solid #d7dcca;white-space:normal}
+.cover-journals .cv-journals{padding-top:14px}
+@media(max-width:960px){.cover-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,.8fr)}.cover-visual{position:relative;inset:auto;width:auto;min-height:100%;height:auto;opacity:1}.cover-visual img{width:172%;height:auto;right:0;top:-21%}.cover-bottom{grid-template-columns:1fr;gap:15px}.cover-journals{padding:8px 0;border-left:0;border-top:1px solid #cbd1bf}}
+@media(max-width:680px){.cover-hero{display:flex;flex-direction:column;align-items:stretch}.cover-copy{order:0}.cover-visual{order:1;position:relative;inset:auto;width:100%;height:220px;min-height:220px;opacity:1}.cover-visual img{width:172%;height:auto;right:0;top:-12%}.cover-visual::after{background:linear-gradient(90deg,#f8f6f0,rgba(248,246,240,0) 12%)}.cover-bottom{display:block}.cover-journals{margin-top:15px}.cover .sheet{height:auto;min-height:0}}
 @media print{
   .cover .sheet{min-height:0!important;padding:7mm 9mm 4mm!important;background:#fff!important;box-shadow:none}
   .cover-hero{min-height:94mm;grid-template-columns:minmax(0,1.15fr) minmax(75mm,.85fr)}
@@ -698,9 +710,10 @@ html.flow .page.article-page .detail-ornament{opacity:.25}
         <p class="cover-window">检索窗口　2026-10-05 ~ 2026-10-11</p>
       </div>
       <figure class="cover-visual" aria-hidden="true">
-        <img src="../assets/weekly-cover-art.webp" alt="" fetchpriority="high">
+        <img src="../assets/weekly-niwa-reference.png" alt="" fetchpriority="high">
       </figure>
     </div>
+    <div class="cover-bottom">
     <section class="cover-highlights" id="highlights" aria-labelledby="highlights-title">
       <div class="section-heading">
         <h2 id="highlights-title">本周精选</h2><span>HIGHLIGHTS</span>
@@ -713,6 +726,7 @@ html.flow .page.article-page .detail-ornament{opacity:.25}
       </div>
       <ul class="cv-journals"><li class="journal-chip"><span>Plant Commun</span><b>2</b></li><li class="journal-chip"><span>Plant Physiol</span><b>2</b></li><li class="journal-chip"><span>Mol Plant</span><b>2</b></li><li class="journal-chip"><span>Plant Cell</span><b>2</b></li><li class="journal-chip"><span>Nucleic Acids Res</span><b>2</b></li><li class="journal-chip"><span>Nat Commun</span><b>2</b></li><li class="journal-chip"><span>J Integr Plant Biol</span><b>1</b></li><li class="journal-chip"><span>Plant Biotechnol J</span><b>1</b></li><li class="journal-more">另有 6 种刊</li></ul>
     </section>
+    </div>
     <div class="cv-hint">滚轮 / 方向键 / 左右滑动翻页　·　「目录」跳转文章　·　「连读」纵向阅读　·　「打印 / PDF」导出 A4 横向</div>
   </article>
 </section>
@@ -1767,7 +1781,7 @@ html.flow .page.article-page .detail-ornament{opacity:.25}
   function fitAll(){
     for(var k=0;k<sheets.length;k++){
       var sh=sheets[k], pg=sh.parentNode, f=1, i;
-      if(pg.classList.contains('article-page') && window.innerWidth<=820){
+      if((pg.classList.contains('article-page') || pg.classList.contains('cover')) && window.innerWidth<=820){
         sh.style.zoom = z;
         pg.scrollTop = 0;
         continue;
