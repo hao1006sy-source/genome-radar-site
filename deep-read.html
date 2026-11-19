@@ -14,7 +14,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"></script>
 <script defer src="assets/library-store.js"></script>
 <script type="module" src="assets/deep-read.js"></script>
-</head>
+<link rel="stylesheet" href="assets/ai-settings.css"><script defer src="assets/ai-settings.js"></script></head>
 <body>
 <a href="#workbench" class="skip-link">跳到精读工作台</a>
 <header class="site-header">
@@ -29,7 +29,7 @@
       <p id="paper-title" class="paper-title">正在读取文献信息…</p>
       <p id="paper-meta" class="paper-meta"></p>
     </div>
-    <div class="head-actions"><a id="source-link" href="library.html" hidden>查看原文 / 周报</a><a href="library.html">返回文献库</a></div>
+    <div class="head-actions"><button type="button" data-ai-settings>AI 设置</button><a id="source-link" href="library.html" hidden>查看原文 / 周报</a><a href="library.html">返回文献库</a></div>
   </div>
   <p id="notice" class="notice" role="status" aria-live="polite"></p>
   <div class="workbench-grid">
