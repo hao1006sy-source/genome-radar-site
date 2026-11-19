@@ -269,8 +269,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{
   .search-form input{font-size:11px}.search-form input::placeholder{font-size:10.5px}
   .search-icon{width:16px;height:16px}
   .primary-nav{height:39px;justify-content:space-between;gap:0;margin-top:7px}
-  .primary-nav a{min-width:0;padding:0 9px;font-size:12.5px}
-  .primary-nav a::after{right:9px;bottom:4px;left:9px}
+  .primary-nav a{min-width:0;padding:0 3px;font-size:11px;white-space:nowrap}
+  .primary-nav a::after{right:3px;bottom:4px;left:3px}
   .search-status{right:15px;top:44px}
   .page-shell{width:calc(100% - 36px)}
   .hero{gap:19px;padding:24px 0 23px}
@@ -327,6 +327,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{
   .footer-inner{width:calc(100% - 36px);min-height:63px}
   .footer-art{height:63px}.footer-brand{padding:0 10px;font-size:10px;letter-spacing:.25em}
 }
+@media(max-width:360px){.primary-nav a{padding:0 2px;font-size:10px}}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
 }
@@ -354,6 +355,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{
       <a href="#about">关于</a>
       <a href="search.html">文献搜索</a>
       <a href="library.html">我的文献库</a>
+      <a href="deep-library.html">我的精读</a>
     </nav>
     <form class="search-form" role="search" action="search.html" method="get">
       <label class="sr-only" for="issue-search">搜索期次、主题或关键词</label>
