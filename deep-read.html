@@ -7,6 +7,11 @@
 <meta name="description" content="基因组雷达个人论文精读工作台：本地 PDF 阅读、结构化笔记与进度记录。">
 <title>论文精读 · 基因组雷达</title>
 <link rel="stylesheet" href="assets/deep-read.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/marked@15.0.12/marked.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"></script>
 <script defer src="assets/library-store.js"></script>
 <script type="module" src="assets/deep-read.js"></script>
 </head>
@@ -41,8 +46,9 @@
         <label for="page-number">第 <input id="page-number" type="number" min="1" value="1" aria-label="当前 PDF 页码"> 页</label>
         <span id="page-total">/ —</span>
         <button type="button" id="next-page" aria-label="下一页" disabled>下一页</button>
+        <label for="reading-mode">阅读模式</label><select id="reading-mode"><option value="continuous">连续滚动</option><option value="single">单页</option></select>
         <label for="zoom-select">缩放</label>
-        <select id="zoom-select"><option value="0.8">80%</option><option value="1" selected>100%</option><option value="1.2">120%</option><option value="1.5">150%</option></select>
+        <select id="zoom-select"><option value="fit" selected>适合宽度</option><option value="actual">实际大小</option><option value="0.8">80%</option><option value="1">100%</option><option value="1.2">120%</option><option value="1.5">150%</option></select>
       </div>
       <div id="pdf-surface" class="pdf-surface">
         <div id="pdf-empty" class="pdf-empty">
@@ -51,6 +57,7 @@
           <p>从本机选择 PDF，即可在左侧阅读，在右侧整理精读笔记。PDF 留在当前浏览器，不上传网站。</p>
           <p>精读页支持每篇论文独立保存阅读页码。</p>
         </div>
+        <div id="pdf-pages" aria-label="PDF 页面"></div>
         <canvas id="pdf-canvas" aria-label="当前 PDF 页面" hidden></canvas>
         <iframe id="pdf-fallback" title="PDF 原生阅读器" hidden></iframe>
       </div>
@@ -64,7 +71,9 @@
         <h3 id="section-title">研究问题与创新点</h3>
         <p id="section-help" class="section-help"></p>
         <label class="sr-only" for="section-note">精读笔记内容</label>
-        <textarea id="section-note" rows="15" placeholder="写下阅读记录、具体数据、疑问或后续想法……" disabled></textarea>
+        <div class="markdown-controls" aria-label="Markdown 格式工具栏"><button type="button" data-md="heading">标题</button><button type="button" data-md="bold">粗体</button><button type="button" data-md="italic">斜体</button><button type="button" data-md="list">列表</button><button type="button" data-md="quote">引用</button><button type="button" data-md="link">链接</button><button type="button" data-md="code">代码</button><button type="button" data-md="table">表格</button><button type="button" data-md="math">公式</button></div>
+        <div class="markdown-controls" aria-label="笔记显示模式"><button type="button" data-view="edit" aria-pressed="true">编辑</button><button type="button" data-view="preview" aria-pressed="false">预览</button><button type="button" data-view="split" aria-pressed="false">左右分屏</button></div>
+        <div id="markdown-editor" class="markdown-editor"><textarea id="section-note" rows="15" placeholder="写下阅读记录、具体数据、疑问或后续想法……" disabled></textarea><div id="markdown-preview" class="markdown-preview" hidden></div></div>
         <div class="note-actions">
           <button type="button" class="action-primary" id="save-notes" disabled>保存笔记</button>
           <span class="note-tip">输入时自动保存；切换栏目也会保存</span>
