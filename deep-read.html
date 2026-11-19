@@ -7,11 +7,7 @@
 <meta name="description" content="基因组雷达个人论文精读工作台：本地 PDF 阅读、结构化笔记与进度记录。">
 <title>论文精读 · 基因组雷达</title>
 <link rel="stylesheet" href="assets/deep-read.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css">
-<script defer src="https://cdn.jsdelivr.net/npm/marked@15.0.12/marked.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="assets/milkdown.bundle.css">
 <script defer src="assets/library-store.js"></script>
 <script type="module" src="assets/deep-read.js"></script>
 <link rel="stylesheet" href="assets/ai-settings.css"><script defer src="assets/ai-settings.js"></script></head>
@@ -70,10 +66,7 @@
       <div class="note-editor">
         <h3 id="section-title">研究问题与创新点</h3>
         <p id="section-help" class="section-help"></p>
-        <label class="sr-only" for="section-note">精读笔记内容</label>
-        <div class="markdown-controls" aria-label="Markdown 格式工具栏"><button type="button" data-md="heading">标题</button><button type="button" data-md="bold">粗体</button><button type="button" data-md="italic">斜体</button><button type="button" data-md="list">列表</button><button type="button" data-md="quote">引用</button><button type="button" data-md="link">链接</button><button type="button" data-md="code">代码</button><button type="button" data-md="table">表格</button><button type="button" data-md="math">公式</button></div>
-        <div class="markdown-controls" aria-label="笔记显示模式"><button type="button" data-view="edit" aria-pressed="true">编辑</button><button type="button" data-view="preview" aria-pressed="false">预览</button><button type="button" data-view="split" aria-pressed="false">左右分屏</button></div>
-        <div id="markdown-editor" class="markdown-editor"><textarea id="section-note" rows="15" placeholder="写下阅读记录、具体数据、疑问或后续想法……" disabled></textarea><div id="markdown-preview" class="markdown-preview" hidden></div></div>
+        <div id="milkdown-editor" aria-label="精读笔记内容"></div>
         <pre id="ai-advice" hidden style="white-space:pre-wrap;overflow-wrap:anywhere"></pre>
         <div class="note-actions">
           <button type="button" class="action-primary" id="save-notes" disabled>保存笔记</button>
