@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8f6f0">
+<meta name="description" content="基因组雷达个人论文精读工作台：本地 PDF 阅读、结构化笔记与进度记录。">
+<title>论文精读 · 基因组雷达</title>
+<link rel="stylesheet" href="assets/deep-read.css">
+<script defer src="assets/library-store.js"></script>
+<script type="module" src="assets/deep-read.js"></script>
+</head>
+<body>
+<a href="#workbench" class="skip-link">跳到精读工作台</a>
+<header class="site-header">
+  <a class="brand" href="index.html">基因组雷达 <small>GENOME RADAR</small></a>
+  <nav aria-label="主导航"><a href="index.html">首页</a><a href="library.html">我的文献库</a><a href="search.html">文献搜索</a></nav>
+</header>
+<main id="workbench" class="main-shell">
+  <div class="workbench-head">
+    <div>
+      <div class="kicker">DEEP READING WORKSPACE</div>
+      <h1>论文精读</h1>
+      <p id="paper-title" class="paper-title">正在读取文献信息…</p>
+      <p id="paper-meta" class="paper-meta"></p>
+    </div>
+    <div class="head-actions"><a id="source-link" href="library.html" hidden>查看原文 / 周报</a><a href="library.html">返回文献库</a></div>
+  </div>
+  <p id="notice" class="notice" role="status" aria-live="polite"></p>
+  <div class="workbench-grid">
+    <section class="pdf-panel" aria-label="论文 PDF 阅读器">
+      <div class="panel-head"><h2>PDF 阅读器</h2><span class="panel-hint" id="pdf-label">仅保存在当前浏览器</span></div>
+      <div class="file-controls">
+        <label class="action-primary" for="pdf-file">选择本机 PDF</label>
+        <input id="pdf-file" type="file" accept="application/pdf,.pdf" hidden>
+        <button type="button" id="pdf-remove" disabled>移除 PDF</button>
+        <button type="button" id="pdf-native" disabled>浏览器打开</button>
+      </div>
+      <div class="page-controls" aria-label="PDF 翻页与缩放">
+        <button type="button" id="prev-page" aria-label="上一页" disabled>上一页</button>
+        <label for="page-number">第 <input id="page-number" type="number" min="1" value="1" aria-label="当前 PDF 页码"> 页</label>
+        <span id="page-total">/ —</span>
+        <button type="button" id="next-page" aria-label="下一页" disabled>下一页</button>
+        <label for="zoom-select">缩放</label>
+        <select id="zoom-select"><option value="0.8">80%</option><option value="1" selected>100%</option><option value="1.2">120%</option><option value="1.5">150%</option></select>
+      </div>
+      <div id="pdf-surface" class="pdf-surface">
+        <div id="pdf-empty" class="pdf-empty">
+          <div class="file-symbol" aria-hidden="true">▤</div>
+          <strong>为这篇论文添加 PDF</strong>
+          <p>从本机选择 PDF，即可在左侧阅读，在右侧整理精读笔记。PDF 留在当前浏览器，不上传网站。</p>
+          <p>精读页支持每篇论文独立保存阅读页码。</p>
+        </div>
+        <canvas id="pdf-canvas" aria-label="当前 PDF 页面" hidden></canvas>
+        <iframe id="pdf-fallback" title="PDF 原生阅读器" hidden></iframe>
+      </div>
+      <p class="storage-tip">精读笔记和阅读进度会随「我的文献库」JSON 备份导出。PDF 原文件存储在本浏览器的 IndexedDB 中，需要另外保留原始 PDF 文件用于迁移设备。</p>
+    </section>
+    <section class="notes-panel" aria-label="结构化精读笔记">
+      <div class="panel-head"><h2>精读笔记</h2><span id="save-state" class="panel-hint">尚未修改</span></div>
+      <div id="note-tabs" class="note-tabs" role="tablist" aria-label="精读笔记栏目"></div>
+      <div class="note-editor">
+        <h3 id="section-title">研究问题与创新点</h3>
+        <p id="section-help" class="section-help"></p>
+        <label class="sr-only" for="section-note">精读笔记内容</label>
+        <textarea id="section-note" rows="15" placeholder="写下阅读记录、具体数据、疑问或后续想法……" disabled></textarea>
+        <div class="note-actions">
+          <button type="button" class="action-primary" id="save-notes" disabled>保存笔记</button>
+          <span class="note-tip">输入时自动保存；切换栏目也会保存</span>
+        </div>
+      </div>
+      <div class="reading-progress">
+        <h3>阅读进度</h3>
+        <p>当前页码：<strong id="progress-page">1</strong> <span id="progress-total">/ 未知总页数</span></p>
+        <p id="progress-updated">尚未记录精读进度</p>
+      </div>
+    </section>
+  </div>
+</main>
+</body>
+</html>
