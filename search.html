@@ -7,7 +7,12 @@
 <meta name="description" content="在基因组雷达全部期次中检索植物与基因组学文献。">
 <title>文献搜索 · 基因组雷达</title>
 <link rel="stylesheet" href="assets/search.css">
+<link rel="stylesheet" href="assets/search-trends.css">
+<link rel="stylesheet" href="assets/site-nav.css">
+<script defer src="assets/radar-terms.js"></script>
+<script defer src="assets/search-trends.js"></script>
 <script defer src="assets/search.js"></script>
+<script defer src="assets/site-nav.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#results">跳到搜索结果</a>
@@ -22,11 +27,9 @@
       </svg>
       <span class="brand-name">基因组雷达</span><span class="brand-en">GENOME RADAR</span>
     </a>
-    <nav class="primary-nav" aria-label="主导航">
-      <a href="index.html">首页</a><a href="index.html#archive">文献归档</a>
-      <a href="index.html#reading-guide">阅读说明</a><a href="index.html#about">关于</a>
-      <a href="search.html" aria-current="page">文献搜索</a>
-      <a href="library.html">我的文献库</a>
+    <nav class="primary-nav" aria-label="主导航" data-current="search">
+      <a href="index.html">首页</a><a href="search.html" aria-current="page">文献搜索</a>
+      <a href="library.html">我的文献库</a><a href="deep-library.html">我的精读</a>
     </nav>
     <form class="top-search" id="top-search" role="search" action="search.html" method="get">
       <label class="sr-only" for="top-query">搜索全站文献</label>
@@ -57,9 +60,25 @@
     </div>
   </section>
   <div class="page-shell">
+    <details class="trend-panel" id="trend-panel">
+      <summary><span class="trend-heading">趋势洞察</span><span class="trend-subtitle">RESEARCH TRENDS</span><span class="trend-count" id="trend-count">统计中</span></summary>
+      <div class="trend-body">
+        <div class="trend-toolbar">
+          <label for="trend-range">时间范围</label>
+          <select id="trend-range"><option value="4">最近 4 期</option><option value="12">最近 12 期</option><option value="all">全部归档</option></select>
+          <label id="trend-radar-label" class="trend-attention" hidden><input type="checkbox" id="trend-radar-only">我的关注方向</label>
+          <span class="trend-scope">统计范围：本站精选文献；反映本站收录构成</span>
+        </div>
+        <div class="trend-grid">
+          <section class="trend-module" aria-labelledby="trend-directions-title"><h3 id="trend-directions-title">研究热点变化</h3><div id="trend-chart-wrap"></div><div class="trend-legend" id="trend-legend"></div></section>
+          <section class="trend-module" aria-labelledby="trend-journals-title"><h3 id="trend-journals-title">来源期刊分布</h3><div id="trend-journals"></div></section>
+          <section class="trend-module" aria-labelledby="trend-keywords-title"><h3 id="trend-keywords-title">热门关键词</h3><div class="trend-focus-terms" id="trend-focus-terms" hidden></div><div class="trend-keywords" id="trend-keywords"></div></section>
+        </div>
+      </div>
+    </details>
     <div class="content-layout">
       <aside class="filters" aria-labelledby="filters-title">
-        <div class="filters-heading"><h2 id="filters-title">筛选条件</h2><button id="clear-filters" type="button">清除全部</button></div>
+        <div class="filters-heading"><h2 id="filters-title">筛选条件</h2><button id="clear-filters" type="button" hidden>清除全部</button></div>
         <section class="facet-section"><h3>研究方向</h3><div class="facet-options" id="facet-topic"></div></section>
         <section class="facet-section"><h3>期刊分区</h3><div class="facet-options" id="facet-quartile"></div></section>
         <section class="facet-section"><h3>发表年份</h3><div class="facet-options" id="facet-year"></div></section>

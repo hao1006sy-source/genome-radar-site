@@ -333,6 +333,9 @@ a:focus-visible,button:focus-visible,input:focus-visible{
   *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
 }
 </style>
+<link rel="stylesheet" href="assets/site-nav.css">
+<link rel="stylesheet" href="assets/radar-terms.css">
+<link rel="stylesheet" href="assets/reading-progress.css">
 </head>
 <body>
 <a class="skip-link" href="#main-content">跳到主要内容</a>
@@ -375,6 +378,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{
       <p class="hero-subtitle">植物与基因组学每周文献速览</p>
       <span class="intro-rule" aria-hidden="true"></span>
       <p class="intro-copy">聚焦植物与基因组学方向的最新研究进展，每周精选约 20 篇高质量文献，提炼要点、把握动态，帮助你高效追踪领域前沿。</p>
+      <button class="radar-terms-open" type="button" data-radar-terms-open>我的雷达词 <span aria-hidden="true">＋</span></button>
       <ul class="feature-list" aria-label="栏目特点">
         <li>
           <svg viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="m5 11 13-7 13 7-13 7L5 11Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m5 18 13 7 13-7M5 25l13 7 13-7" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
@@ -401,11 +405,17 @@ a:focus-visible,button:focus-visible,input:focus-visible{
           <span><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="3" y="4" width="14" height="13" rx="1.5" stroke="currentColor" stroke-width="1.5"/><path d="M6 2.8v3M14 2.8v3M3 8h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>2026-11-15</span>
           <i class="meta-divider" aria-hidden="true"></i>
           <span><svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 2.8h7l4 4V17H5V2.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 3v4h4M8 11h5m-5 3h5" stroke="currentColor" stroke-width="1.35" stroke-linecap="round"/></svg>20 篇精选</span>
+          <span class="latest-radar-count" id="latest-radar-count" hidden></span>
         </div>
         <p class="latest-summary">本周技术线集中在泛基因组与单细胞统计模型：MaizeGP 整合 48 个玉米基因组结构变异，甘蓝型油菜泛基因组鉴定出 112,417 个转座子介导结构变异并关联同源基因表达失衡；单细胞 eQTL 方面，SAIGE-QTL 与负二项模型分别提升检出效率，后者在 OneK1K 数据中 eGene 检出量比线性模型多 16%。图泛基因组同时用于体细胞变异检测，改善读段定位并降低胚系污染。这些进展共同指向变异解析的分辨率与统计效力提升。</p>
         <span class="latest-cta">阅读本期<svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 10h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       </div>
     </a>
+      <aside class="continue-reading" id="continue-reading" hidden aria-label="继续上次阅读">
+        <span class="resume-mark" aria-hidden="true">↗</span>
+        <span class="resume-copy"><span class="resume-label">继续阅读</span><span data-resume-label></span></span>
+        <span class="resume-actions"><a data-resume-link href="#">继续阅读</a><button type="button" data-resume-close>关闭</button></span>
+      </aside>
     </div>
   </section>
   <div class="archive-layout">
@@ -538,6 +548,11 @@ a:focus-visible,button:focus-visible,input:focus-visible{
     <p class="footer-brand">基因组雷达 <span>·</span> GENOME RADAR</p>
   </div>
 </footer>
+<dialog id="radar-terms-dialog" aria-labelledby="radar-terms-title">
+  <div class="radar-dialog-head"><h2 id="radar-terms-title">我的雷达词</h2><p>关注词只保存在当前浏览器，可用于标记周报和筛选文献。</p></div>
+  <div class="radar-dialog-body"><div class="radar-term-list" data-radar-terms-list></div><button type="button" data-radar-add>添加关注词</button><p class="radar-dialog-status" data-radar-status aria-live="polite"></p></div>
+  <div class="radar-dialog-foot"><span>示例：玉米、Maize、GWAS、泛基因组</span><span class="radar-dialog-actions"><button type="button" data-radar-close>完成</button></span></div>
+</dialog>
 <script>
 (() => {
   const input = document.getElementById('issue-search');
@@ -660,5 +675,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{
 })();
 </script>
 <script defer src="assets/niwa-archive-covers.js"></script>
+<script defer src="assets/radar-terms.js"></script>
+<script defer src="assets/reading-progress.js"></script>
+<script defer src="assets/site-nav.js"></script>
 </body>
 </html>
