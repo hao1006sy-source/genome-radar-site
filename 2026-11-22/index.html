@@ -1,0 +1,1880 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>基因组雷达 · 2026年第47周</title>
+<meta name="description" content="2026年第47周 植物与基因组学论文扫读，20 篇，一篇一页。">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --ui:"Noto Sans SC","思源黑体","Source Han Sans SC","Microsoft YaHei","微软雅黑",sans-serif;
+  --desk:#e7e4dc; --sheet:#fffdf8; --ink:#1b1f22; --body:#282d31; --muted:#71767c;
+  --faint:#9aa0a6; --line:#ddd7c8; --accent:#2f6b4f; --amber:#8a6d1f; --blue:#2b5d86;
+  --z:1;                     /* 页面缩放：整张纸等比放大，横向仍占满一屏 */
+}
+html,body{height:100%}
+body{
+  margin:0; background:var(--desk); color:var(--ink);
+  font-family:var(--ui);
+  font-size:19px; line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  display:flex; flex-direction:column; height:100dvh; overflow:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+.serif{font-family:var(--ui)}
+a{color:inherit}
+button{font:inherit}
+
+/* ---------- top bar ---------- */
+.topbar{
+  flex:none; display:flex; align-items:center; gap:14px; padding:0 20px; height:50px;
+  background:rgba(255,253,248,.94); border-bottom:1px solid var(--line); z-index:20;
+}
+.brand{display:flex; align-items:baseline; gap:9px; min-width:0}
+.brand b{font-size:18px; letter-spacing:.06em; font-weight:800; color:#14181b; white-space:nowrap}
+.brand .en{font-size:9.5px; letter-spacing:.18em; color:var(--faint); text-transform:uppercase; white-space:nowrap}
+.issue-tag{font-size:12.5px; color:var(--accent); font-weight:600; letter-spacing:.04em; white-space:nowrap}
+.tools{margin-left:auto; display:flex; align-items:center; gap:2px}
+.tools button{
+  background:none; border:1px solid transparent; color:var(--muted); cursor:pointer;
+  font-size:13px; padding:5px 10px; border-radius:5px; transition:.15s;
+}
+.tools button:hover{border-color:var(--line); color:var(--ink); background:var(--sheet)}
+.tools .back{text-decoration:none; border:1px solid transparent; border-radius:5px;
+  color:var(--muted); font-size:13px; padding:5px 10px; transition:.15s}
+.tools .back:hover{border-color:var(--line); color:var(--ink); background:var(--sheet)}
+.zoom{display:flex; align-items:center; gap:1px; margin-left:6px;
+  border:1px solid var(--line); border-radius:6px; overflow:hidden; background:var(--sheet)}
+.zoom button{border:0; border-radius:0; padding:4px 9px; font-size:14px; line-height:1; color:var(--muted)}
+.zoom button:hover{background:#f0ebdd; color:var(--ink); border:0}
+.zoom .zlab{min-width:52px; text-align:center; font-size:12.5px; color:var(--muted);
+  font-variant-numeric:tabular-nums; cursor:pointer; user-select:none; padding:0 2px}
+.zoom .zlab:hover{color:var(--ink)}
+
+/* ---------- deck ---------- */
+.deck{
+  flex:1; min-height:0; display:flex; overflow-x:auto; overflow-y:hidden;
+  scroll-snap-type:x mandatory; scrollbar-width:none;
+}
+.deck::-webkit-scrollbar{display:none}
+.page{
+  flex:0 0 100%; width:100%; height:100%; overflow-y:auto; overflow-x:hidden;
+  scroll-snap-align:start; display:flex; padding:12px 14px;
+}
+.sheet{
+  position:relative; zoom:var(--z);
+  width:100%; min-height:100%; margin:auto;
+  display:flex; flex-direction:column;
+  background:var(--sheet); border:1px solid #e2dccd; border-radius:2px;
+  box-shadow:0 1px 1px rgba(60,50,30,.05), 0 14px 34px -22px rgba(60,50,30,.45);
+  padding:30px 46px 22px;
+}
+
+/* ---------- head ---------- */
+.head{position:relative; display:flex; align-items:baseline; gap:12px; font-size:15px;
+  color:var(--muted); padding:0 60px 8px 0; border-bottom:1px solid #d3ccb9}
+.head .jn{font-weight:800; color:#1b2018; font-size:16.5px; letter-spacing:.02em}
+.head .sep{color:#cfc9ba}
+.head .met{display:inline-flex; align-items:baseline; gap:7px; margin-left:3px}
+.head .met b{font-size:12.5px; font-weight:800; padding:2px 7px; border-radius:3px; background:#e9efe4; color:#2c5a44; letter-spacing:.02em}
+.head .met b.weak{background:#f1efe6; color:#7b7668}
+.head .met i{font-style:normal; font-size:12.5px; font-weight:700; color:#6d6a5e}
+.head .crumb{color:var(--muted)}
+.head .rt{margin-left:auto; display:flex; align-items:baseline; gap:12px; color:var(--muted)}
+.head .kind{letter-spacing:.06em}
+.head .lv{font-size:12.5px; padding:1px 7px; border-radius:2px; letter-spacing:.04em}
+.lv.abstract{background:#f4f0e2; color:var(--amber)}
+.lv.fulltext{background:#e7f0e9; color:var(--accent)}
+.lv.oa_url{background:#eef0e6; color:#6b7a3c}
+.lv.preprint{background:#e8eef5; color:var(--blue)}
+.head .no{position:absolute; right:-6px; top:-20px; font-family:var(--ui); font-size:46px;
+  line-height:1; font-weight:800; color:#ece6d5; letter-spacing:.01em}
+
+h2.t-zh{margin:16px 0 0; font-size:46px; line-height:1.28; font-weight:800; color:#14181b; letter-spacing:-.005em}
+.t-en{margin:10px 0 0; font-size:15.5px; color:#a2a8ae; line-height:1.45; letter-spacing:.005em}
+
+.lead{
+  margin:14px 0 0; padding:12px 16px 12px 15px; background:#f5f0e2; border-left:3px solid #2f6b4f;
+  font-size:21px; line-height:1.72; color:#2e332c; letter-spacing:.005em;
+}
+
+/* ---------- 2x2 blocks ---------- */
+.art-body{flex:1 0 auto; display:flex; flex-direction:column}
+.grid{margin-top:18px; display:grid; grid-template-columns:1fr 1fr; gap:20px 56px}
+.blk h3{
+  margin:0 0 10px; padding-bottom:7px; border-bottom:1px solid #cfc9b8;
+  font-size:21px; font-weight:800; letter-spacing:.02em; color:#24503a;
+}
+.blk p{margin:0; font-size:19px; line-height:1.70; color:#2b3136; letter-spacing:.005em}
+
+.stage{
+  margin-top:auto; padding-top:8px; border-top:1px solid var(--line);
+  font-size:14.5px; color:var(--muted);
+}
+.stage b{color:#24503a; font-weight:800; letter-spacing:.03em; margin-right:11px}
+
+.foot{margin-top:9px; display:flex; align-items:center; gap:18px; font-size:14px; color:var(--muted)}
+.foot .doi{font-family:var(--ui); font-size:14px; color:#1b2018; letter-spacing:.01em; font-weight:600}
+.foot .doi i{font-style:normal; color:var(--faint); margin-right:7px; font-family:inherit;
+  letter-spacing:.14em; font-size:11.5px; font-weight:700}
+.foot a{text-decoration:none; border-bottom:1px solid #e0dacb; color:var(--muted); padding-bottom:1px}
+.foot a:hover{color:var(--accent); border-color:var(--accent)}
+.foot .src{margin-left:auto}
+.foot .affil{margin-left:auto; margin-right:22px; font-size:13.5px; color:#4a5049; max-width:64ch; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.star{background:none; border:none; cursor:pointer; font-size:15px; color:#d3cdbd; padding:0 2px; line-height:1}
+.star[data-on="1"]{color:#d29b2c}
+
+/* ---------- pager ---------- */
+.dots{
+  flex:none; display:flex; align-items:center; justify-content:center; gap:5px;
+  height:32px; background:rgba(255,253,248,.94); border-top:1px solid var(--line);
+}
+.dots i{width:4.5px; height:4.5px; border-radius:50%; background:#d2ccbd; cursor:pointer; transition:.18s}
+.dots i.on{background:var(--accent); transform:scale(1.5)}
+.pgnum{font-size:10.5px; color:var(--muted); letter-spacing:.1em; margin-left:10px; min-width:50px}
+
+/* ---------- toc ---------- */
+.toc{
+  position:fixed; inset:0; z-index:40; display:none; align-items:stretch; justify-content:flex-start;
+  padding:0; background:rgba(28,34,29,.52); backdrop-filter:blur(2px) saturate(.7);
+  overscroll-behavior:contain;
+}
+.toc.open{display:flex}
+.toc-inner{
+  position:relative; isolation:isolate; display:flex; flex-direction:column; gap:0;
+  width:clamp(420px,53vw,900px); height:100%; max-height:100dvh; min-height:0;
+  padding:22px 28px 18px; overflow:hidden; color:#29352d; background:#fbfaf5;
+  box-shadow:12px 0 30px rgba(20,31,23,.16);
+}
+.toc-header{
+  position:relative; display:flex; flex:none; align-items:flex-start; justify-content:space-between;
+  min-height:68px; gap:14px; padding:0 48px 12px 0; overflow:hidden;
+  border-bottom:1px solid #cfd5c8;
+}
+.toc-heading{position:relative; z-index:1; display:grid; grid-template-columns:34px auto minmax(0,1fr); grid-template-rows:auto auto; align-items:center; column-gap:10px; row-gap:4px; max-width:100%}
+.toc-brand-mark{grid-column:1; grid-row:1 / span 2; width:32px; height:32px; color:#315e43}
+.toc-title{grid-column:2; grid-row:1; margin:0; color:#173e2d; font-size:30px; line-height:1.2; letter-spacing:.09em; font-weight:800}
+.toc-en{grid-column:3; grid-row:1; color:#5f695a; font-family:Georgia,serif; font-size:10.5px; letter-spacing:.22em; font-style:italic; white-space:nowrap}
+.toc-meta{grid-column:2 / span 2; grid-row:2; margin:0; color:#355b43; font-family:Georgia,var(--ui); font-size:15px; line-height:1.35; letter-spacing:.035em}
+.toc-header-art{position:absolute; z-index:0; top:-35px; right:5px; width:190px; height:130px; object-fit:cover; object-position:50% 36%; opacity:.34; pointer-events:none}
+.toc-close{
+  position:absolute; z-index:2; top:0; right:0; display:grid; place-items:center; width:38px; height:38px;
+  border:1px solid #dce1d1; border-radius:50%; background:#eef0e4; color:#173e2d;
+  font-size:22px; line-height:1; cursor:pointer; transition:background .16s,transform .16s;
+}
+.toc-close:hover{background:#e2e8d5; transform:rotate(4deg)}
+.toc-search{display:flex; flex:none; align-items:center; gap:12px; min-height:42px; margin:14px 0 10px; padding:0 12px;
+  border:1px solid #6c856f; border-radius:6px; background:#fffdf8; color:#244934}
+.toc-search:focus-within{border-color:#315f42; box-shadow:0 0 0 2px rgba(49,95,66,.12)}
+.toc-search-icon{flex:none; width:18px; height:18px; color:#3e6445}
+.toc-search input{flex:1; min-width:0; border:0; outline:0; padding:8px 0; background:transparent; color:#29352d; font:inherit; font-size:14px}
+.toc-search input::placeholder{color:#646c60; opacity:1}
+.toc-count{flex:none; color:#5e685a; font-size:12px; white-space:nowrap; font-variant-numeric:tabular-nums}
+.toc-groups{flex:1; min-height:0; overflow-y:auto; padding-right:3px; overscroll-behavior:contain; scrollbar-color:#c6cdbb transparent; scrollbar-width:thin}
+.toc-group{margin:0 0 10px}
+.toc-group[hidden],.toc-item[hidden]{display:none!important}
+.toc-group-head{display:flex; align-items:baseline; gap:12px; padding:8px 2px 7px; border-bottom:1px solid #bfcbb8}
+.toc-group-head h3{display:flex; align-items:center; flex-wrap:wrap; gap:9px; margin:0; color:#173e2d; font-size:18px; line-height:1.25; font-weight:800}
+.toc-group-icon{flex:none; width:28px; height:28px; color:#4d704c}
+.toc-group-en{color:#606b5b; font-family:Georgia,serif; font-size:10px; font-style:italic; letter-spacing:.2em; font-weight:500}
+.toc-group-count{margin-left:auto; color:#5f6859; font-size:12px; white-space:nowrap}
+.toc-group ol{list-style:none; margin:0; padding:0}
+.toc-item{border-bottom:1px dotted #ddd9ce}
+.toc-row{display:grid; grid-template-columns:30px minmax(0,1fr) minmax(86px,auto); gap:10px; align-items:center;
+  width:100%; min-height:30px; border:0; border-left:3px solid transparent; padding:5px 8px; text-align:left;
+  background:transparent; color:#30352f; font:inherit; font-size:13.5px; line-height:1.4; cursor:pointer;
+  transition:background .14s,color .14s,border-color .14s}
+.toc-row:hover,.toc-row.is-current{border-left-color:#4c7352; background:#edf0e3; color:#173e2d}
+.toc-row .i{color:#5f6b46; font-family:Georgia,serif; font-size:13px; font-weight:700; font-variant-numeric:tabular-nums}
+.toc-row .t{font-weight:650}
+.toc-row .j{color:#5f655c; font-family:Georgia,var(--ui); font-size:11.5px; text-align:right; white-space:nowrap}
+.toc-row:focus-visible,.toc-preview:focus-visible,.toc-close:focus-visible{outline:2px solid #315f42; outline-offset:2px}
+.toc-empty{flex:none; margin:0; padding:12px 3px; color:#5e685a; font-size:13px}
+.toc-preview{display:grid; flex:none; grid-template-columns:116px minmax(0,1fr) 38px; align-items:center; gap:14px;
+  width:100%; margin-top:12px; padding:11px; border:1px solid #d8dec9; border-radius:9px;
+  background:#f3f3e8; color:inherit; text-align:left; cursor:pointer; transition:border-color .16s,background .16s}
+.toc-preview:hover{border-color:#aab99d; background:#eff1e4}
+.toc-preview:disabled{cursor:default; opacity:.64}
+.toc-preview img{display:block; width:116px; height:96px; border-radius:6px; object-fit:cover; object-position:50% 39%; background:#e5e9d9}
+.toc-preview-copy{display:grid; min-width:0; gap:3px}
+.toc-preview-top{display:flex; align-items:baseline; gap:9px; color:#596647; font-family:Georgia,serif}
+.toc-preview-number{font-size:17px; font-style:italic; font-weight:700; font-variant-numeric:tabular-nums}
+.toc-preview-title{display:-webkit-box; overflow:hidden; margin:0; color:#173e2d; font-size:16px; line-height:1.38; font-weight:800; -webkit-box-orient:vertical; -webkit-line-clamp:2}
+.toc-preview-meta{display:flex; align-items:center; gap:9px; color:#5e6755; font-size:11.5px}
+.toc-preview-summary{display:-webkit-box; overflow:hidden; margin:0; color:#5f665b; font-size:12px; line-height:1.48; -webkit-box-orient:vertical; -webkit-line-clamp:2}
+.toc-preview-arrow{display:grid; place-items:center; width:36px; height:36px; justify-self:end; border-radius:50%; background:#e5ead7; color:#214a33; transition:transform .16s,background .16s}
+.toc-preview-arrow svg{width:18px; height:18px}
+.toc-preview:hover .toc-preview-arrow{transform:translateX(2px); background:#dce5cb}
+.toc-sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+@media (max-width:980px) and (min-width:681px){
+  .toc-inner{width:min(660px,78vw); padding:20px 22px 16px}
+  .toc-group{margin-bottom:6px}
+  .toc-group-head{padding:5px 2px 4px}
+  .toc-row{grid-template-columns:28px minmax(0,1fr) minmax(72px,auto); gap:8px; min-height:26px; padding:4px 6px; font-size:12px; line-height:1.32}
+  .toc-preview{grid-template-columns:96px minmax(0,1fr) 36px; gap:11px}
+  .toc-preview img{width:96px; height:88px}
+  .toc-preview-title{font-size:14.5px}
+}
+@media (max-width:680px){
+  .toc-inner{width:100%; padding:16px 14px 14px}
+  .toc-header{min-height:62px; padding-right:46px}
+  .toc-brand-mark{width:28px; height:28px}
+  .toc-title{font-size:24px}
+  .toc-en{font-size:9px; letter-spacing:.16em}
+  .toc-meta{font-size:13px}
+  .toc-header-art{display:none}
+  .toc-search{gap:8px; min-height:40px; margin:11px 0 8px; padding:0 9px}
+  .toc-search input{font-size:13px}
+  .toc-count{font-size:10.5px}
+  .toc-group{margin-bottom:8px}
+  .toc-group-head{padding:7px 1px 6px}
+  .toc-group-head h3{font-size:16px; gap:7px}
+  .toc-group-en{font-size:8.5px; letter-spacing:.14em}
+  .toc-group-count{font-size:10.5px}
+  .toc-row{grid-template-columns:25px minmax(0,1fr) minmax(70px,auto); gap:7px; min-height:31px; padding:5px 5px; font-size:12px}
+  .toc-row .i{font-size:11.5px}
+  .toc-row .j{font-size:10px}
+  .toc-preview{grid-template-columns:74px minmax(0,1fr) 32px; gap:9px; margin-top:8px; padding:8px}
+  .toc-preview img{width:74px; height:76px}
+  .toc-preview-title{font-size:13.5px}
+  .toc-preview-meta{font-size:10px; gap:6px}
+  .toc-preview-summary{font-size:10.5px; line-height:1.4}
+  .toc-preview-arrow{width:30px; height:30px; font-size:19px}
+}
+/* ---------- 封面 ---------- */
+.cover .sheet{padding:48px 56px 40px}
+.cv-kicker{font-size:12px; letter-spacing:.3em; color:#a8aea9; text-transform:uppercase; font-weight:700}
+.cv-title{margin:9px 0 0; font-size:58px; letter-spacing:.08em; font-weight:800; color:#14181b; line-height:1.15}
+.cv-week{margin-top:13px; font-size:17px; color:var(--accent); letter-spacing:.05em; font-weight:600}
+.cv-rule{height:5px; background:#14181b; margin:18px 0 22px; border-radius:1px}
+.cv-hl{margin:0; font-size:23px; line-height:1.78; color:#2b3136; max-width:1400px}
+.cv-body{flex:1 0 auto; display:flex; flex-direction:column}
+.cv-intro{margin:22px 0 0; font-size:15.5px; line-height:1.85; color:#4a5149; max-width:1400px}
+.cv-pts{margin:26px 0 0; padding:0; list-style:none; max-width:1400px}
+.cv-pts li{display:flex; gap:14px; padding:9px 0; border-top:1px solid var(--line);
+  font-size:16.5px; line-height:1.58; color:#2b3136}
+.cv-pts li:last-child{border-bottom:1px solid var(--line)}
+.cv-pts .n{flex:none; font-size:12.5px; font-weight:800; color:#b3ac99; letter-spacing:.1em;
+  padding-top:4px; min-width:22px}
+.cv-src{margin-top:20px; font-size:14px; color:var(--muted); line-height:1.8}
+.cv-hint{margin-top:auto; padding-top:12px; border-top:1px solid var(--line); font-size:14px; color:var(--muted)}
+
+/* ---------- 连读模式 ---------- */
+html.flow body{height:auto; overflow:auto; display:block}
+html.flow .deck{display:block; overflow:visible; height:auto}
+html.flow .page{display:block; height:auto; width:auto; overflow:visible; padding:14px 14px 0}
+html.flow .page:last-child{padding-bottom:44px}
+html.flow .sheet{max-width:1180px; box-shadow:none; border:none; border-bottom:1px dotted #cbc5b6; border-radius:0; padding:24px 28px 20px}
+html.flow .dots{display:none}
+html.flow .topbar{position:sticky; top:0}
+
+@media (max-width:680px){
+  .brand .en{display:none}
+  .topbar{padding:0 12px; gap:6px}
+  .issue-tag{display:none}
+  .tools{gap:0}
+  .tools button{padding:5px 6px; font-size:11.5px; white-space:nowrap}
+  .tools .back{padding:5px 6px; font-size:11.5px}
+  .zoom{display:none}          /* 手机上用手指缩放，顶栏这组省掉 */
+  .page{padding:12px 10px}
+  .sheet{padding:22px 18px 18px}
+  h2.t-zh{font-size:30px; line-height:1.34}
+  .t-en{font-size:13px}
+  .lead{font-size:17px; padding:11px 13px; margin-top:13px}
+  .grid{grid-template-columns:1fr; gap:13px; margin-top:14px}
+  .blk p{font-size:16.5px; line-height:1.76}
+  .blk h3{font-size:18.5px; padding-bottom:6px}
+  .head{gap:7px; font-size:12px; flex-wrap:wrap; padding-right:0}
+  .head .no{display:none}
+  .stage{font-size:12px}
+  .foot{gap:10px; flex-wrap:wrap}
+  .foot .doi{font-size:11.5px}
+  .foot .affil{margin:0; max-width:100%; flex-basis:100%}
+  .cv-title{font-size:38px}
+  .cv-hl{font-size:18px; line-height:1.76}
+  .cv-intro{font-size:14px; line-height:1.8; margin-top:16px}
+  .cv-pts{margin-top:18px}
+  .cv-pts li{font-size:14.5px; padding:9px 0}
+  .toc-inner{width:100%;padding:16px 14px 14px}
+}
+
+@media (max-height:720px) and (min-width:681px){
+  .sheet{padding:22px 34px 16px}
+  h2.t-zh{font-size:34px}
+  .lead{margin-top:12px; padding:9px 13px; font-size:18px; line-height:1.7}
+  .grid{margin-top:14px; gap:14px 36px}
+  .blk p{font-size:16px; line-height:1.68}
+  .stage{margin-top:11px; padding-top:7px}
+  .cv-title{font-size:40px}
+  .cv-hl{font-size:19px; line-height:1.7}
+  .cv-intro{font-size:14px; line-height:1.75; margin-top:14px}
+  .cv-pts{margin-top:16px}
+  .cv-pts li{font-size:14.5px; padding:8px 0}
+}
+
+@media print{
+  @page{size:A4 landscape; margin:11mm}
+  html,body{height:auto; overflow:visible; background:#fff; display:block}
+  .topbar,.dots,.toc,.star{display:none !important}
+.sheet{zoom:1 !important; width:100% !important; min-height:0 !important}
+  .deck{display:block; overflow:visible; height:auto}
+  .page{display:block; height:auto; width:auto; overflow:visible; padding:0;
+    break-after:page; page-break-after:always}
+  .page:last-child{break-after:auto; page-break-after:auto}
+  .sheet{min-height:0; display:block; border:none; box-shadow:none; border-radius:0; padding:0;
+    break-inside:avoid; page-break-inside:avoid}
+  h2.t-zh{font-size:20pt}
+  .lead{font-size:11pt; line-height:1.6}
+  .blk p{font-size:10pt; line-height:1.6}
+  .blk h3{font-size:10pt}
+  .head,.stage,.foot{font-size:8pt}
+}
+
+:root{
+  --cover-paper:#f8f6f0; --cover-forest:#173e2d; --cover-ink:#292d28;
+  --cover-leaf:#657a53; --cover-line:#d9dccf; --cover-mist:#e7ebd9;
+  --editorial:"Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun",serif;
+}
+body{background:#f0eee7;color:var(--cover-ink)}
+.serif,.cv-title,.cv-week,.cv-pts .n,.section-heading h2{font-family:var(--editorial)}
+.topbar{
+  height:56px;padding:0 clamp(16px,3.2vw,54px);gap:14px;
+  background:rgba(251,250,245,.97);border-bottom:1px solid #cfd3c7;
+}
+.brand{align-items:baseline;gap:11px}
+.brand b{color:var(--cover-forest);font-size:19px;letter-spacing:.08em}
+.brand .en{color:#687866;font-size:10px;letter-spacing:.22em}
+.issue-tag{padding-left:17px;border-left:1px solid #c9cdbf;color:var(--cover-forest);
+  font-family:var(--editorial);font-size:15px;letter-spacing:.04em}
+.tools{gap:0}
+.tools button,.tools .back{padding:5px 12px;color:#51594f;font-size:13px;border-radius:0}
+.tools button:hover,.tools .back:hover{background:#f0f1e8;border-color:transparent;color:var(--cover-forest)}
+.zoom{border:1px solid #d7dacb;border-radius:999px;background:#fbfaf5}
+.zoom .zlab{color:var(--cover-forest)}
+.page.cover{padding:0 clamp(14px,3.6vw,58px) 12px}
+.cover .sheet{
+  flex:none;width:100%;max-width:1760px;margin:0 auto;padding:17px clamp(20px,3.5vw,56px) 10px;
+  border:1px solid #e0dfd4;border-radius:2px;
+  background:radial-gradient(ellipse at 84% 18%,rgba(231,235,217,.44),transparent 34%),
+    linear-gradient(118deg,#fdfcf7 0%,#f8f6f0 66%,#fbfaf5 100%);
+  box-shadow:0 9px 34px rgba(40,53,37,.055);
+}
+.cover-hero{
+  flex:none;position:relative;display:grid;grid-template-columns:minmax(0,1.14fr) minmax(310px,.86fr);
+  align-items:center;min-height:clamp(315px,40vh,410px);
+  border-bottom:1px solid var(--cover-line);overflow:hidden;
+}
+.cover-copy{position:relative;z-index:2;max-width:880px;padding:8px 0 17px}
+.cv-kicker{font-size:11px;letter-spacing:.25em;color:#78836d;text-transform:uppercase;font-weight:700}
+.cv-title{margin:8px 0 0;font-size:clamp(52px,5.15vw,76px);letter-spacing:.09em;
+  font-weight:800;color:var(--cover-forest);line-height:1.12}
+.cv-week{display:flex;align-items:baseline;gap:13px;margin-top:13px;color:var(--cover-forest);
+  font-size:20px;letter-spacing:.025em;font-weight:650}
+.cv-week time{font-family:var(--ui);font-size:13px;color:#858c7d;font-weight:400;letter-spacing:.04em}
+.cv-week .cv-sep{color:#909984;font-size:15px}
+.cv-rule{width:54px;height:3px;background:var(--cover-forest);margin:15px 0 15px;border-radius:2px}
+.cv-hl{max-width:900px;margin:0;color:#30362f;font-family:var(--editorial);
+  font-size:clamp(15.5px,1.12vw,18px);line-height:1.78;text-wrap:pretty}
+.cv-intro{max-width:860px;margin:11px 0 0;color:#70766b;font-family:var(--editorial);
+  font-size:13px;line-height:1.75}
+.cover-window{margin:9px 0 0;color:#84907a;font-size:11px;letter-spacing:.04em}
+.cover-visual{position:relative;align-self:stretch;min-width:0;min-height:100%;overflow:hidden;
+  background:radial-gradient(ellipse at 65% 44%,rgba(231,235,217,.45),transparent 57%)}
+.cover-visual::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,#f8f6f0 0%,rgba(248,246,240,.1) 30%,transparent 66%);pointer-events:none}
+.cover-visual img{position:absolute;width:108%;height:126%;right:-3%;top:-13%;object-fit:cover;
+  object-position:center 47%;opacity:.88;mix-blend-mode:multiply;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 17%,#000 100%);
+  mask-image:linear-gradient(90deg,transparent 0%,#000 17%,#000 100%)}
+.cover-highlights{flex:none;margin:13px 0 0}
+.section-heading{display:flex;align-items:baseline;gap:13px;margin:0 0 5px}
+.section-heading h2{margin:0;color:var(--cover-forest);font-size:23px;line-height:1.4;font-weight:800}
+.section-heading span{color:#8b907f;font-size:10px;font-weight:700;letter-spacing:.27em}
+.cv-pts{display:block;max-width:none;margin:5px 0 0;padding:0;list-style:none}
+.cv-pts li{display:grid;grid-template-columns:43px minmax(0,1fr);align-items:start;gap:15px;
+  padding:6px 8px;border-top:1px solid #e0dfd4;color:#31362f;font-family:var(--editorial);
+  font-size:14px;line-height:1.48}
+.cv-pts li:last-child{border-bottom:1px solid #e0dfd4}
+.cv-pts .n{display:grid;place-items:center;width:38px;height:24px;min-width:0;margin-top:1px;
+  padding:0;border-radius:8px;background:#e8ecd9;color:var(--cover-forest);font-size:17px;
+  font-weight:700;font-style:italic;letter-spacing:0}
+.cover-journals{flex:none;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:17px;
+  padding:11px 0 8px;border-bottom:1px solid #bfc7b5}
+.cover-journals .section-heading{margin:0;white-space:nowrap}
+.cover-journals .section-heading h2{font-size:20px}
+.cv-journals{display:flex;align-items:center;flex-wrap:wrap;gap:6px 8px;margin:0;padding:0;list-style:none}
+.journal-chip{display:inline-flex;align-items:center;gap:7px;padding:3px 10px;border:1px solid #dfe3d3;
+  border-radius:999px;background:rgba(237,240,226,.72);color:#354b3b;font-size:11.5px;line-height:1.4;white-space:nowrap}
+.journal-chip b{font-size:11px;color:var(--cover-forest);font-weight:700}
+.journal-more{margin-left:3px;padding-left:12px;border-left:1px solid #c9cdbf;color:#73796e;
+  font-family:var(--editorial);font-size:12px;white-space:nowrap}
+.cover .cv-hint{flex:none;margin-top:7px;padding:0;border:0;color:#8a8f84;font-size:10.5px;line-height:1.5;text-align:center}
+
+@media(max-width:960px){
+  .topbar{padding:0 16px;gap:8px}
+  .tools button,.tools .back{padding:5px 8px;font-size:12px}
+  .cover .sheet{padding:16px 22px 10px}
+  .cover-hero{display:block;min-height:0;padding:8px 0 12px}
+  .cover-copy{max-width:none;padding:4px 0 15px}
+  .cover-visual{position:absolute;inset:0 0 0 auto;width:50%;height:auto;min-height:0;z-index:0;opacity:.22}
+  .cover-visual img{width:115%;height:110%;top:-5%;right:-7%}
+  .cv-title{font-size:clamp(48px,6.3vw,62px)}
+  .cv-hl{font-size:15px;line-height:1.7}
+  .cv-intro{font-size:12px}
+  .cv-pts li{font-size:13px;gap:10px;padding:6px 4px}
+  .cover-journals{gap:10px}
+}
+@media(max-width:680px){
+  .topbar{height:48px;padding:0 10px;gap:5px}
+  .brand{gap:5px}
+  .brand b{font-size:15px;letter-spacing:.04em}
+  .tools button,.tools .back{padding:5px 5px;font-size:10.5px}
+  .page.cover{padding:0 9px 10px}
+  .cover .sheet{padding:17px 15px 10px}
+  .cover-hero{display:block;min-height:0;padding:7px 0 13px}
+  .cover-copy{padding:0}
+  .cover-visual{position:absolute;z-index:0;right:-5px;top:0;width:62%;height:250px;min-height:0;opacity:.22}
+  .cover-visual::after{background:linear-gradient(90deg,#f8f6f0 0%,rgba(248,246,240,.24) 60%,transparent)}
+  .cover-visual img{width:112%;height:125%;top:-11%;right:-10%}
+  .cv-kicker{font-size:9px;letter-spacing:.17em}
+  .cv-title{font-size:clamp(41px,11vw,50px);letter-spacing:.06em}
+  .cv-week{gap:8px;margin-top:10px;font-size:16px}
+  .cv-week time{font-size:10px}
+  .cv-rule{width:42px;margin:12px 0}
+  .cv-hl{font-size:13.5px;line-height:1.72}
+  .cv-intro{font-size:11.5px;line-height:1.7;margin-top:8px}
+  .cover-window{font-size:9.5px;margin-top:7px}
+  .cover-highlights{margin-top:10px}
+  .section-heading{gap:8px;margin-bottom:4px}
+  .section-heading h2{font-size:19px}
+  .section-heading span{font-size:8px;letter-spacing:.2em}
+  .cv-pts{margin-top:3px}
+  .cv-pts li{grid-template-columns:34px minmax(0,1fr);gap:8px;padding:6px 1px;font-size:11.5px;line-height:1.5}
+  .cv-pts .n{width:30px;height:21px;font-size:14px;border-radius:7px}
+  .cover-journals{grid-template-columns:1fr;gap:6px;padding:9px 0 7px}
+  .cover-journals .section-heading h2{font-size:17px}
+  .cv-journals{gap:5px}
+  .journal-chip{padding:2px 7px;font-size:9.5px;gap:5px}
+  .journal-chip b{font-size:9.5px}
+  .journal-more{padding-left:8px;font-size:10px}
+  .cover .cv-hint{font-size:9px}
+}
+@media(max-height:760px) and (min-width:681px){
+  .cover .sheet{padding-top:11px;padding-bottom:7px}
+  .cover-hero{min-height:clamp(285px,37vh,330px)}
+  .cv-title{font-size:clamp(48px,4.5vw,62px)}
+  .cv-rule{margin:10px 0}
+  .cv-hl{font-size:15px;line-height:1.65}
+  .cv-intro{margin-top:7px;font-size:11.5px;line-height:1.6}
+  .cover-window{margin-top:5px}
+  .cover-highlights{margin-top:8px}
+  .cv-pts li{padding:4px 6px;font-size:12.5px;line-height:1.42}
+  .cover-journals{padding:7px 0 5px}
+  .cover .cv-hint{margin-top:5px}
+}
+/* Weekly cover: preserve article and reader styles. */
+.cover-hero{grid-template-columns:minmax(0,1.02fr) minmax(320px,.98fr);min-height:clamp(300px,36vh,350px)}
+.cover-visual{background:#faf7ef}
+.cover-visual::after{background:linear-gradient(90deg,#f8f6f0,rgba(248,246,240,0) 12%)}
+.cover-visual img{width:172%;height:auto;right:0;top:-8%;object-fit:initial;opacity:1;mix-blend-mode:normal;mask-image:none;-webkit-mask-image:none;clip-path:inset(10% 0 42.5% 45%)}
+.cover-bottom{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.9fr);gap:30px;align-items:start;margin-top:14px}
+.cover-highlights{margin:0;min-width:0}
+.cover-journals{display:block;margin:0;padding:0 0 8px 28px;border-left:1px solid #cbd1bf;border-bottom:0;min-width:0}
+.cover-journals .section-heading{padding-bottom:6px;border-bottom:1px solid #d7dcca;white-space:normal}
+.cover-journals .cv-journals{padding-top:14px}
+@media(max-width:960px){.cover-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(240px,.8fr)}.cover-visual{position:relative;inset:auto;width:auto;min-height:100%;height:auto;opacity:1}.cover-visual img{width:172%;height:auto;right:0;top:-21%}.cover-bottom{grid-template-columns:1fr;gap:15px}.cover-journals{padding:8px 0;border-left:0;border-top:1px solid #cbd1bf}}
+@media(max-width:680px){.cover-hero{display:flex;flex-direction:column;align-items:stretch}.cover-copy{order:0}.cover-visual{order:1;position:relative;inset:auto;width:100%;height:220px;min-height:220px;opacity:1}.cover-visual img{width:172%;height:auto;right:0;top:-12%}.cover-visual::after{background:linear-gradient(90deg,#f8f6f0,rgba(248,246,240,0) 12%)}.cover-bottom{display:block}.cover-journals{margin-top:15px}.cover .sheet{height:auto;min-height:0}}
+@media print{
+  .cover .sheet{min-height:0!important;padding:7mm 9mm 4mm!important;background:#fff!important;box-shadow:none}
+  .cover-hero{min-height:94mm;grid-template-columns:minmax(0,1.15fr) minmax(75mm,.85fr)}
+  .cv-title{font-size:34pt}
+  .cv-week{font-size:14pt}
+  .cv-hl{font-size:10pt;line-height:1.55}
+  .cv-intro{font-size:7.5pt;line-height:1.5}
+  .cover-window{font-size:7pt}
+  .cover-highlights{margin-top:3mm}
+  .section-heading h2{font-size:14pt}
+  .cv-pts li{font-size:8pt;line-height:1.35;padding:1.5mm 2mm;grid-template-columns:11mm 1fr;gap:3mm}
+  .cv-pts .n{width:9mm;height:6mm;font-size:9pt}
+  .cover-journals{padding:2mm 0;gap:4mm}
+  .cover-journals .section-heading h2{font-size:11pt}
+  .journal-chip{font-size:7pt;padding:1mm 2mm}
+  .cover .cv-hint{font-size:6.5pt}
+  .cover-visual img{opacity:.8}
+}
+
+
+.article-page{padding:0;background:#f8f6f0}
+.article-page .sheet{
+  flex:none;width:100%;max-width:1672px;min-height:100%;margin:0 auto;
+  padding:30px 9.4% 25px;overflow:visible;align-self:flex-start;isolation:isolate;
+  border:0;border-radius:0;background:#fbfaf5;box-shadow:none;
+}
+.article-page .detail-ornament{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:fill;object-position:center;
+  opacity:.20;pointer-events:none;z-index:0;
+}
+.article-page .sheet>*:not(.detail-ornament){position:relative;z-index:1}
+.article-page .head{
+  display:flex;align-items:center;flex-wrap:wrap;gap:10px 13px;
+  padding:0 0 12px;border-bottom:1px solid #cbd1c3;
+  color:#687067;font-size:14px;line-height:1.5;
+}
+.article-page .head .jn{
+  color:#173e2d;font-family:var(--editorial);font-size:20px;font-style:italic;font-weight:700;
+}
+.article-page .head .sep{color:#b9c0b3}
+.article-page .head .met{display:inline-flex;align-items:center;gap:8px;margin-left:2px}
+.article-page .head .met b{padding:3px 10px;border-radius:8px;background:#e7ebd9;color:#24503a;font-size:12px;font-weight:750}
+.article-page .head .met b.weak{background:#f0eee5;color:#625e52}
+.article-page .head .met i{color:#555d53;font-size:12.5px;font-style:normal;font-weight:500}
+.article-page .head .crumb{color:#697068}
+.article-page .head .rt{display:flex;align-items:center;flex-wrap:wrap;gap:8px 16px;margin-left:auto;color:#697068}
+.article-page .head .kind{letter-spacing:.02em}
+.article-page .head .lv{padding:2px 8px;border-radius:6px;background:#f0eee5;color:#625e52;font-size:11px;letter-spacing:.02em}
+.article-page .head .lv.fulltext{background:#e7ebd9;color:#24503a}
+.article-page .head .lv.oa_url{background:#eef0e6;color:#4f6343}
+.article-page .head .lv.preprint{background:#eeefe9;color:#687067}
+.article-page .head .no{
+  position:static;top:auto;right:auto;padding:3px 10px;border-radius:6px;
+  background:#eeebdc;color:#62552e;font-family:var(--editorial);font-size:12px;
+  font-weight:650;line-height:1.4;letter-spacing:.03em;white-space:nowrap;
+}
+.article-page h2.t-zh{
+  max-width:1450px;margin:31px 0 0;color:#173e2d;font-family:var(--editorial);
+  font-size:clamp(36px,2.85vw,48px);font-weight:760;line-height:1.27;letter-spacing:-.035em;
+  text-wrap:pretty;
+}
+.article-page .t-en{
+  max-width:1320px;margin:9px 0 0;color:#626b62;font-family:Georgia,"Times New Roman",serif;
+  font-size:17px;line-height:1.55;letter-spacing:.005em;
+}
+.article-page .title-rule{
+  width:60px;height:3px;margin:19px 0 18px;border:0;background:#24503a;
+}
+.article-page .lead{
+  display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:17px;
+  margin:0;padding:12px 20px;border-left:4px solid #24503a;border-radius:3px;
+  background:#f0f0e5;color:#30362f;font-family:var(--editorial);font-size:18px;line-height:1.75;
+}
+.article-page .lead-label{
+  padding-right:16px;border-right:1px solid #b8c1ad;color:#173e2d;
+  font-size:18px;font-weight:750;white-space:nowrap;
+}
+.article-page .lead-copy{min-width:0}
+.article-page .art-body{flex:1 0 auto;display:flex;flex-direction:column}
+.article-page .grid{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:31px 5.2%;margin:32px 4px 24px;
+}
+.article-page .blk h3{
+  margin:0 0 10px;padding-bottom:9px;border-bottom:1px solid #aeb9aa;
+  color:#173e2d;font-family:var(--editorial);font-size:23px;font-weight:750;letter-spacing:.015em;
+}
+.article-page .blk p{
+  margin:0;color:#30342f;font-size:16.5px;line-height:1.88;letter-spacing:.005em;
+}
+.article-page .stage{
+  margin-top:auto;padding:11px 4px 0;border-top:1px solid #d6d9ce;
+  color:#626b62;font-size:12.5px;line-height:1.65;
+}
+.article-page .stage b{margin-right:10px;color:#52674c;font-size:11px;font-weight:750;letter-spacing:.06em}
+.article-page .foot{
+  display:flex;align-items:center;flex-wrap:wrap;gap:12px 24px;
+  margin-top:18px;padding:15px 4px 0;border-top:1px solid #cbd1c3;
+  color:#626b62;font-size:13px;line-height:1.6;
+}
+.article-page .foot .doi{color:#262c27;font-size:13.5px;font-weight:650;overflow-wrap:anywhere}
+.article-page .foot .doi i{margin-right:9px;color:#626b62;font-size:11px;letter-spacing:.12em}
+.article-page .foot a{border-bottom:1px solid #c7cec0;color:#596458;text-decoration:none}
+.article-page .foot a:hover{border-color:#24503a;color:#173e2d}
+.article-page .foot .affil{flex:1 1 220px;min-width:140px;max-width:none;margin:0;color:#434a42;white-space:normal;overflow-wrap:anywhere}
+.article-page .foot .src{margin-left:auto;color:#24503a;white-space:nowrap}
+.article-page .star{flex:none;color:#aaa58f;font-size:15px}
+.article-page .star[data-on="1"]{color:#a88d43}
+html.flow .page.article-page{padding:0 16px 16px}
+html.flow .page.article-page:last-child{padding-bottom:44px}
+html.flow .page.article-page .sheet{
+  max-width:1180px;min-height:0;padding:35px 38px 30px;border:0;
+  border-bottom:1px solid #d6d9ce;background:#fbfaf5;
+}
+html.flow .page.article-page .detail-ornament{opacity:.25}
+@media(max-width:900px){
+  .article-page .sheet{padding-left:7.2%;padding-right:7.2%}
+  .article-page h2.t-zh{font-size:clamp(36px,4.4vw,46px)}
+  .article-page .grid{column-gap:32px}
+  .article-page .blk p{font-size:15.5px}
+}
+@media(max-width:820px){
+  .article-page .grid{grid-template-columns:1fr;gap:25px}
+}
+@media(max-width:680px){
+  .article-page{padding:0}
+  .article-page .sheet{min-height:100%;padding:23px 22px 20px}
+  .article-page .detail-ornament{display:none}
+  .article-page .head{align-items:flex-start;gap:6px 9px;padding-bottom:10px;font-size:11.5px}
+  .article-page .head .jn{font-size:17px}
+  .article-page .head .met{gap:5px}
+  .article-page .head .met b{padding:2px 7px;font-size:10.5px}
+  .article-page .head .met i{font-size:11px}
+  .article-page .head .rt{flex-basis:100%;margin-left:0;gap:7px 11px}
+  .article-page .head .no{display:inline-flex;font-size:10.5px}
+  .article-page h2.t-zh{margin-top:23px;font-size:32px;line-height:1.38;letter-spacing:-.025em}
+  .article-page .t-en{margin-top:8px;font-size:14px;line-height:1.6}
+  .article-page .title-rule{width:46px;height:2px;margin:15px 0}
+  .article-page .lead{grid-template-columns:1fr;gap:5px;margin:0;padding:11px 13px;font-size:15.5px;line-height:1.8}
+  .article-page .lead-label{padding:0;border:0;font-size:14px}
+  .article-page .grid{grid-template-columns:1fr;gap:22px;margin:23px 0 22px}
+  .article-page .blk h3{margin-bottom:8px;padding-bottom:6px;font-size:19px}
+  .article-page .blk p{font-size:15px;line-height:1.82}
+  .article-page .stage{margin-top:10px;padding-top:9px;font-size:11.5px}
+  .article-page .foot{gap:9px 15px;margin-top:13px;padding:12px 0 0;font-size:11.5px}
+  .article-page .foot .doi{font-size:11.5px}
+  .article-page .foot .affil{flex-basis:100%;min-width:100%;order:3}
+  .article-page .foot .src{margin-left:auto}
+  html.flow .page.article-page{padding:0 8px 12px}
+  html.flow .page.article-page .sheet{padding:23px 18px 20px}
+}
+@media print{
+  .article-page{height:auto!important;min-height:0!important;padding:0!important;overflow:visible!important;break-after:page;page-break-after:always}
+  .article-page:last-child{break-after:auto;page-break-after:auto}
+  .article-page .sheet{width:100%!important;max-width:none!important;min-height:0!important;padding:6mm 8mm 5mm!important;
+    border:0!important;background:#fff!important;box-shadow:none!important;overflow:visible!important}
+  .article-page .detail-ornament{opacity:.18}
+  .article-page h2.t-zh{margin-top:7mm;font-size:23pt}
+  .article-page .t-en{font-size:9pt}
+  .article-page .lead{font-size:10pt;line-height:1.55}
+  .article-page .grid{gap:5mm 10mm;margin:7mm 1mm 5mm}
+  .article-page .blk h3{font-size:12pt}
+  .article-page .blk p{font-size:9.5pt;line-height:1.55}
+  .article-page .stage,.article-page .foot{font-size:8pt}
+}
+
+
+.export-dialog{width:min(520px,calc(100vw - 32px));padding:0;border:1px solid #d9ddce;border-radius:18px;background:#fbfaf5;color:#203b2c;box-shadow:0 24px 80px rgba(34,49,38,.24)}
+.export-dialog::backdrop{background:rgba(21,31,25,.40);backdrop-filter:blur(3px)}
+.export-dialog-inner{padding:25px 27px 28px}
+.export-dialog-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px}
+.export-kicker{margin:0 0 5px;color:#7e8b73;font:600 10px/1.4 Georgia,serif;letter-spacing:.2em}
+.export-dialog h2{margin:0;color:#173e2d;font:700 23px/1.35 "Noto Serif SC","Songti SC",serif}
+.export-close{width:34px;height:34px;border:1px solid #d9ddce;border-radius:50%;background:#f3f2e8;color:#456248;font-size:21px;line-height:1;cursor:pointer}
+.export-note{margin:15px 0 17px;color:#70786d;font-size:13px;line-height:1.7}
+.export-options{display:grid;gap:10px}
+.export-option{display:grid;grid-template-columns:38px minmax(0,1fr) 20px;align-items:center;gap:12px;padding:13px 15px;border:1px solid #dfe2d5;border-radius:12px;background:#fffef9;text-align:left;color:#26382e;cursor:pointer}
+.export-option:hover:not(:disabled){border-color:#87a07a;background:#f4f5e9;transform:translateY(-1px)}
+.export-option:focus-visible,.export-close:focus-visible{outline:3px solid #aec39e;outline-offset:2px}
+.export-option:disabled{opacity:.58;cursor:not-allowed}
+.export-option-number{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#e9eddc;color:#27533b;font:600 14px Georgia,serif}
+.export-option b{display:block;font-size:14px}
+.export-option small{display:block;margin-top:3px;color:#778073;font-size:11px}
+.export-arrow{color:#315c40;font-size:17px}
+@media(max-width:640px){.export-dialog-inner{padding:20px 17px 21px}}
+</style>
+<link rel="stylesheet" href="../assets/library-issue.css">
+<link rel="stylesheet" href="../assets/site-nav.css">
+<link rel="stylesheet" href="../assets/radar-terms.css">
+<link rel="stylesheet" href="../assets/related-articles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><b class="serif">基因组雷达</b><span class="en">Genome Radar</span></div>
+  <span class="issue-tag">2026年第47周</span>
+  <div class="tools">
+    <a class="back" href="../index.html">首页</a>
+    <a class="back" href="../2026-11-15/index.html">← 往期</a>
+    <a class="library-nav" href="../library.html">我的文献库</a>
+    <button id="tocBtn" aria-controls="toc" aria-expanded="false">目录</button>
+    <button id="viewBtn">连读</button>
+    <button id="exportBtn" type="button" aria-haspopup="dialog" aria-controls="exportDialog">打印 / PDF</button>
+    <span class="zoom">
+      <button id="zoomOut" title="缩小">−</button>
+      <span class="zlab" id="zoomLab" title="点一下复位到 100%">100%</span>
+      <button id="zoomIn" title="放大">+</button>
+    </span>
+  </div>
+</header>
+
+<main class="deck" id="deck">
+<section class="page cover" id="cover">
+  <article class="sheet">
+    <div class="cover-hero">
+      <div class="cover-copy">
+        <div class="cv-kicker">PLANT GENOMICS · WEEKLY READING</div>
+        <h1 class="cv-title serif">基因组雷达</h1>
+        <div class="cv-week">
+          <strong>2026年第47周</strong><span class="cv-sep">·</span>
+          <time class="cv-date" datetime="2026-11-22">2026-11-22</time><span class="cv-sep">·</span>
+          <span>20 篇精选</span>
+        </div>
+        <div class="cv-rule"></div>
+        <p class="cv-hl">本周技术线落在端粒到端粒组装与泛基因组图：大麦属染色体级图谱揭示倒位与水平转移，猪泛基因组把着丝粒读成演化标记，阿联酋人群泛基因组以151.9 Mb单倍型N50和59.31 QV验证二倍体组装，虎尾草与杨树则把T2T直接接到耐盐基因簇和EPFL9编辑上。另一条线是调控与编辑的通量：超多重CRISPR一次敲除大豆29个基因，单细胞Cas9联合捕获在K562检出5761个编辑细胞，Sup-seq与GI-DB分别把抑制事件和1.36亿变异纳入可检索框架。</p>
+        <p class="cv-intro">本期覆盖基因组组装、泛基因组、基因编辑与单细胞多组学，物种从大麦、大豆到人脑与肺炎链球菌。建议先读头条串起的组装—编辑线，再按需精读方法学与资源类条目；每篇只保留摘要给出的数字与结论，未列数字处按定性判断处理。</p>
+        <p class="cover-window">检索窗口　2026-11-12 ~ 2026-11-22</p>
+      </div>
+      <figure class="cover-visual" aria-hidden="true">
+        <img src="../assets/weekly-niwa-reference.png" alt="" fetchpriority="high">
+      </figure>
+    </div>
+    <div class="cover-bottom">
+    <section class="cover-highlights" id="highlights" aria-labelledby="highlights-title">
+      <div class="section-heading">
+        <h2 id="highlights-title">本周精选</h2><span>HIGHLIGHTS</span>
+      </div>
+      <ol class="cv-pts"><li><span class="n">01</span><span>大麦属比较基因组把倒位与重排读成近端共线性破坏的主因，并给出黍亚科向大麦属水平转移基因的转录与功能整合证据。</span></li><li><span class="n">02</span><span>猪T2T泛基因组将着丝粒确立为演化标记，eEF1A1稳定位于1号染色体着丝粒附近，图泛基因组提升变异检出。</span></li><li><span class="n">03</span><span>大豆GmHapMap-II在1号染色体定位到不同于FAD3的亚麻酸位点，其单倍型几乎仅见于野生种，提示驯化外变异源。</span></li><li><span class="n">04</span><span>超多重CRISPR在大豆同时敲除29个基因，rnp-29m油酸升高、过敏原与抗营养因子下降，产量无显著损失。</span></li><li><span class="n">05</span><span>GI-DB编目1.36亿个印度人群高置信变异，其中4400万未见于其他全球与南亚数据库，按部落与民族语言分层。</span></li></ol>
+    </section>
+    <section class="cover-journals" aria-labelledby="journals-title">
+      <div class="section-heading">
+        <h2 id="journals-title">本期来源期刊</h2><span>JOURNALS</span>
+      </div>
+      <ul class="cv-journals"><li class="journal-chip"><span>Nat Commun</span><b>4</b></li><li class="journal-chip"><span>Plant J</span><b>2</b></li><li class="journal-chip"><span>J Integr Plant Biol</span><b>2</b></li><li class="journal-chip"><span>Cell</span><b>2</b></li><li class="journal-chip"><span>Nat Methods</span><b>2</b></li><li class="journal-chip"><span>Nature</span><b>1</b></li><li class="journal-chip"><span>Nat Genet</span><b>1</b></li><li class="journal-chip"><span>Plant Biotechnol J</span><b>1</b></li><li class="journal-more">另有 5 种刊</li></ul>
+    </section>
+    </div>
+    <div class="cv-hint">滚轮 / 方向键 / 左右滑动翻页　·　「目录」跳转文章　·　「连读」纵向阅读　·　「打印 / PDF」导出 A4 横向</div>
+  </article>
+</section>
+<section class="page article-page">
+  <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="head">
+      <span class="jn">Nature</span><span class="met"><b>1区 Top</b><i>IF 50.5</i></span>
+      <span class="sep">|</span>
+      <span class="crumb">进化与比较 / 泛基因组</span>
+      <span class="rt">
+        <span class="kind">原创研究</span>
+        <span>2026-11-18</span>
+        <span class="lv oa_url">存开放获取</span>
+        <span class="no">文章 01</span>
+      </span>
+    </div>
+    <div class="art-body">
+    <h2 class="t-zh">构建二倍体与多倍体大麦属染色体级比较基因组图谱</h2>
+    <p class="t-en">Structural and regulatory evolution across the genus Hordeum.</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">大麦属全部二倍体物种及代表性多倍体谱系的染色体级比较基因组资源已建成，结构变异与调控元件快速更替并存。</span></p>
+    <div class="grid">
+      <section class="blk"><h3>做了什么</h3><p>以整个大麦属（Hordeum）为对象，覆盖全部已确认的二倍体物种及代表性多倍体谱系，构建染色体级比较基因组资源；通过比较分析、单拷贝基因系统发育、全基因组比对与转座子分析，解析结构变异、杂交与渗入、水平基因转移及基因组大小变化。</p></section>
+      <section class="blk"><h3>结论</h3><p>比较分析揭示大量倒位与染色体重排破坏近端共线性；单拷贝基因系统发育检出古老杂交、片段交换与渗入，表明网状演化普遍存在；发现从黍亚科（Panicoideae）向大麦属的水平基因转移广泛存在，许多转移基因有转录与功能整合证据；逆转录转座子增殖解释基因组大小差异；编码序列高度保守而调控元件快速更替。</p></section>
+      <section class="blk"><h3>为什么值得关注</h3><p>编码序列保守、调控元件快速更替的对照，把大麦属适应性变异的解释重心从蛋白改动移向调控区；做禾本科比较基因组与结构变异的人可直接取用这套染色体级比对框架，春化与颖壳发育案例给出可复用的候选区定位路径。</p></section>
+      <section class="blk"><h3>未来展望</h3><p>还缺一场把水平转移基因的转录与功能整合证据推进到表型层面的验证，以及调控元件更替与花期、花形态自然变异之间的因果检验。</p></section>
+    </div>
+    </div>
+    <div class="stage"><b>当前研究阶段</b>比较基因组资源 + 全属二倍体与多倍体取样</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1038/s41586-026-11332-7</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/43052436/" target="_blank" rel="noopener">PMID 43052436</a>
+      <span class="affil" title="莱布尼茨植物遗传与作物植物研究所（IPK）">莱布尼茨植物遗传与作物植物研究所（IPK）</span>
+      <a class="src" href="https://doi.org/10.1038/s41586-026-11332-7" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="43052436" title="加入待精读" aria-label="加入待精读">★</button>
+    </div>
+  </article>
+</section>
+<section class="page article-page">
+  <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="head">
+      <span class="jn">Nat Genet</span><span class="met"><b>1区 Top</b><i>IF 31.7</i></span>
+      <span class="sep">|</span>
+      <span class="crumb">泛基因组 / 组装与注释</span>
+      <span class="rt">
+        <span class="kind">原创研究</span>
+        <span>2026-11-16</span>
+        <span class="lv oa_url">存开放获取</span>
+        <span class="no">文章 02</span>
+      </span>
+    </div>
+    <div class="art-body">
+    <h2 class="t-zh">构建猪端粒到端粒泛基因组并解析着丝粒演化</h2>
+    <p class="t-en">High-quality pig pan-genome resources illuminate centromere evolution and enhance genotype-phenotype mapping.</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">3个端粒到端粒基因组与16个高质量组装，把猪着丝粒重定位解析到碱基对分辨率。</span></p>
+    <div class="grid">
+      <section class="blk"><h3>做了什么</h3><p>以猪为对象，组装3个端粒到端粒基因组与16个高质量基因组，并据此构建泛转录组与泛代谢组；利用12条Y染色体组装在碱基对分辨率上定位着丝粒重定位，重建着丝粒三维基因组架构，并从泛结构变异图谱中定位候选基因。</p></section>
+      <section class="blk"><h3>结论</h3><p>着丝粒被确立为独特的演化标记，其三维架构作为结构支架聚集染色质互作；转录活跃的eEF1A1稳定位于1号染色体着丝粒附近，是核型变异的候选热点；AKR1B1被锁定为低氧适应的关键基因；基于端粒到端粒基因组的图泛基因组提升了遗传力捕获。</p></section>
+      <section class="blk"><h3>为什么值得关注</h3><p>着丝粒重定位此前多停留在细胞学层面，碱基对分辨率的12条Y染色体组装把它变成可比较的演化标记；做结构变异与基因型—表型映射的猪遗传与育种团队可直接取用这套图泛基因组与泛结构变异图谱。</p></section>
+      <section class="blk"><h3>未来展望</h3><p>还缺一场跨品种、跨群体的验证：着丝粒作为演化标记的普适性，以及AKR1B1低氧适应信号能否在独立群体中重复。</p></section>
+    </div>
+    </div>
+    <div class="stage"><b>当前研究阶段</b>组装 + 泛转录组与泛代谢组资源</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1038/s41588-026-02829-y</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/43039959/" target="_blank" rel="noopener">PMID 43039959</a>
+      <span class="affil" title="中国农业大学动物科学技术学院">中国农业大学动物科学技术学院</span>
+      <a class="src" href="https://doi.org/10.1038/s41588-026-02829-y" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="43039959" title="加入待精读" aria-label="加入待精读">★</button>
+    </div>
+  </article>
+</section>
+<section class="page article-page">
+  <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="head">
+      <span class="jn">Plant J</span><span class="met"><b class="weak">2区</b><i>IF 6.2</i></span>
+      <span class="sep">|</span>
+      <span class="crumb">组装与注释 / 进化与比较</span>
+      <span class="rt">
+        <span class="kind">原创研究</span>
+        <span></span>
+        <span class="lv oa_url">存开放获取</span>
+        <span class="no">文章 03</span>
+      </span>
+    </div>
+    <div class="art-body">
+    <h2 class="t-zh">组装四倍体短芒大麦草基因组，解析A、B亚基因组耐盐碱分化</h2>
+    <p class="t-en">The genome of tetraploid Hordeum brevisubulatum underpins its evolution and saline-alkali adaptation.</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">染色体级组装解析四倍体短芒大麦草A、B亚基因组，HbNAC29在叶与根中均强诱导。</span></p>
+    <div class="grid">
+      <section class="blk"><h3>做了什么</h3><p>以强耐盐碱的四倍体短芒大麦草为材料，完成染色体级基因组组装并区分A、B亚基因组；系统发育基因组分析追溯两亚基因组来源，比较基因家族与转录组，并做结构变异分析，定位胁迫响应转录因子。</p></section>
+      <section class="blk"><h3>结论</h3><p>A亚基因组可能源自短芒大麦草谱系或近缘未采样分化谱系；盐碱胁迫下两亚基因组功能分化、同源基因表达调控动态各异；部分结构变异与基因体及调控区重叠；HbNAC29在叶和根中强诱导，其同源拷贝调控区存在亚基因组特异性插入；水稻异源过表达提供其参与耐盐碱的佐证。</p></section>
+      <section class="blk"><h3>为什么值得关注</h3><p>把四倍体野生近缘种的亚基因组来源、结构变异与同源基因表达分化放在同一框架下呈现，使耐盐碱基因资源不再按单拷贝基因检索；做禾本科多倍体驯化与抗逆基因挖掘的团队可直接借用这套亚基因组拆分与同源表达比较思路。</p></section>
+      <section class="blk"><h3>未来展望</h3><p>还缺HbNAC29在水稻中的耐盐碱表型定量验证，以及该亚基因组特异性插入是否直接改变胁迫下表达响应的调控实验。</p></section>
+    </div>
+    </div>
+    <div class="stage"><b>当前研究阶段</b>基因组组装 + 亚基因组与转录组分析</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1111/tpj.71199</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/43042498/" target="_blank" rel="noopener">PMID 43042498</a>
+      <span class="affil" title="东北林业大学林学院">东北林业大学林学院</span>
+      <a class="src" href="https://doi.org/10.1111/tpj.71199" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="43042498" title="加入待精读" aria-label="加入待精读">★</button>
+    </div>
+  </article>
+</section>
+<section class="page article-page">
+  <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="head">
+      <span class="jn">Plant Biotechnol J</span><span class="met"><b>1区</b><i>IF 10.1</i></span>
+      <span class="sep">|</span>
+      <span class="crumb">变异与关联 / 泛基因组</span>
+      <span class="rt">
+        <span class="kind">原创研究</span>
+        <span>2026-11-16</span>
+        <span class="lv fulltext">全文</span>
+        <span class="no">文章 04</span>
+      </span>
+    </div>
+    <div class="art-body">
+    <h2 class="t-zh">构建大豆单倍型图谱 GmHapMap-II 并定位亚麻酸新位点</h2>
+    <p class="t-en">Next-Generation Soybean Haplotype Map as a Genomic Resource for Enhanced Trait Discovery and Functional Analysis.</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">1278 份大豆材料构建 GmHapMap-II，含 1137 万 SNP 与 205 万 InDel，定位到驯化中丢失的亚麻酸位点。</span></p>
+    <div class="grid">
+      <section class="blk"><h3>做了什么</h3><p>对 1278 份 Glycine max 与 Glycine soja 材料全基因组测序，构建 GmHapMap-II，含 1137 万 SNP 和 205 万短 InDel。图谱基于近无缺口参考组装，纳入野生种质，突破此前仅栽培种的 GmHapMap-I 的多样性上限。</p></section>
+      <section class="blk"><h3>结论</h3><p>群体结构分析揭示 6 个地理亚群，影响连锁并塑造重组。第 15 号染色体粗蛋白含量关联被解析得比低密度 SNP 芯片更精细；第 1 号染色体亚麻酸含量位点全基因组显著，不同于已知 FAD3 基因，其单倍型几乎仅见于野生种质。rhg-1 与 Rhg-4 位点呈现新单倍型结构和拷贝数升高的种质。</p></section>
+      <section class="blk"><h3>为什么值得关注</h3><p>野生种质纳入使单倍型图谱覆盖栽培种之外的多样性，第 1 号染色体亚麻酸位点提示驯化中丢失的油脂品质变异；做大豆关联定位和 SCN 抗性预测的团队可直接以 GmHapMap-II 替换旧图谱与低密度芯片。</p></section>
+      <section class="blk"><h3>未来展望</h3><p>第 1 号染色体亚麻酸位点需在分离群体中验证其效应与因果基因，野生种质来源的拷贝数变异也需在更多抗感材料中确认与 SCN 抗性的对应关系。</p></section>
+    </div>
+    </div>
+    <div class="stage"><b>当前研究阶段</b>单倍型图谱 + 1278 份种质资源</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1111/pbi.70781</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/43036943/" target="_blank" rel="noopener">PMID 43036943</a>
+      <span class="affil" title="密苏里大学植物科学与技术部">密苏里大学植物科学与技术部</span>
+      <a class="src" href="https://doi.org/10.1111/pbi.70781" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="43036943" title="加入待精读" aria-label="加入待精读">★</button>
+    </div>
+  </article>
+</section>
+<section class="page article-page">
+  <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="head">
+      <span class="jn">Nat Commun</span><span class="met"><b>1区 Top</b><i>IF 14.7</i></span>
+      <span class="sep">|</span>
+      <span class="crumb">泛基因组 / 组装与注释</span>
+      <span class="rt">
+        <span class="kind">原创研究</span>
+        <span>2026-10-20</span>
+        <span class="lv fulltext">全文</span>
+        <span class="no">文章 05</span>
+      </span>
+    </div>
+    <div class="art-body">
+    <h2 class="t-zh">构建阿联酋人群泛基因组并实现二倍体染色体级组装</h2>
+    <p class="t-en">The Emirati pangenome featuring a diploid chromosome-level reference.</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">58个染色体级组装中31.8%达到端粒到端粒，中位N50为151.9 Mb，中位QV为59.31。</span></p>
+    <div class="grid">
+      <section class="blk"><h3>做了什么</h3><p>以深度多平台测序数据构建三联体二倍体染色体级组装，并补充57个基于HiFi测序的染色体级组装（其中27个为三联体），共58个单倍型组装构成阿联酋参考基因组项目（ERGP）的泛基因组图基础。</p></section>
+      <section class="blk"><h3>结论</h3><p>单倍型连续性中位N50为151.9 Mb，碱基准确性中位QV为59.31；全部组装染色体中31.8%为端粒到端粒支架，64.3%达到染色体级连续性。ERGP泛基因组图捕获的变异与全球多样HPRC参考图相当，同时覆盖区域富集变异；应用于独立阿联酋队列短读长基因分型，发现与表型相关GWAS变异存在连锁不平衡的结构变异位点。</p></section>
+      <section class="blk"><h3>为什么值得关注</h3><p>人群特异性泛基因组图能检出短读长比对遗漏的区域富集结构变异，并把这些变异与GWAS信号连锁起来；做人群遗传学、变异分型与精准医学的研究者可据此判断，单参考基因组在区域人群中的盲区有多大。</p></section>
+      <section class="blk"><h3>未来展望</h3><p>还缺一场在更大规模、多区域阿联酋队列中的前瞻性基因分型验证，以确认ERGP图相对线性参考在表型关联复现上的增益；同时需评估该图对非阿联酋人群样本的迁移效果。</p></section>
+    </div>
+    </div>
+    <div class="stage"><b>当前研究阶段</b>泛基因组图 + 58个单倍型组装基准</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1038/s41467-026-78776-3</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/43052272/" target="_blank" rel="noopener">PMID 43052272</a>
+      <span class="affil" title="哈利法科技大学技术中心生物技术中心">哈利法科技大学技术中心生物技术中心</span>
+      <a class="src" href="https://doi.org/10.1038/s41467-026-78776-3" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="43052272" title="加入待精读" aria-label="加入待精读">★</button>
+    </div>
+  </article>
+</section>
+<section class="page article-page">
+  <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="head">
+      <span class="jn">Plant Cell Environ</span><span class="met"><b class="weak">2区</b><i>IF 6.0</i></span>
+      <span class="sep">|</span>
+      <span class="crumb">进化与比较 / 变异与关联</span>
+      <span class="rt">
+        <span class="kind">原创研究</span>
+        <span>2026-11-17</span>
+        <span class="lv abstract">仅摘要</span>
+        <span class="no">文章 06</span>
+      </span>
+    </div>
+    <div class="art-body">
+    <h2 class="t-zh">组装虎尾草染色体级基因组并鉴定耐盐基因簇</h2>
+    <p class="t-en">Cross-Species Comparative Genome and Transcriptome Analysis Uncovers Salt Tolerance Mechanisms in the Wild Grass Species Chloris virgata.</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">虎尾草染色体级基因组组装完成，耐盐性强于四种主要禾谷类作物，CvSOS1与CvHKT1;4被功能验证。</span></p>
+    <div class="grid">
+      <section class="blk"><h3>做了什么</h3><p>以自然定殖于盐碱土的C4一年生禾草虎尾草（Chloris virgata）为材料，完成染色体级基因组组装，并与四种主要禾谷类作物开展跨物种比较基因组与转录组分析，锁定串联重复产生的耐盐相关基因。</p></section>
+      <section class="blk"><h3>结论</h3><p>虎尾草耐盐性强于四种主要禾谷类作物；比较基因组显示离子转运相关基因家族扩张，多个耐盐响应基因源于串联重复。串联重复的CvSOS1簇与CvHKT1;4调控钠离子稳态：沉默其中任一基因均降低虎尾草耐盐性，而异源表达于拟南芥则改善盐胁迫下生长并减少地上部钠离子积累。</p></section>
+      <section class="blk"><h3>为什么值得关注</h3><p>耐盐基因不再只从作物近缘种中寻找：野生盐生禾草经串联重复扩增的离子转运基因簇可直接作为候选，禾谷类耐盐改良的基因来源判断由此改变，做比较基因组与钠离子稳态研究的人可搬用这套候选清单。</p></section>
+      <section class="blk"><h3>未来展望</h3><p>还缺一场在禾谷类作物自身遗传背景下的验证：CvSOS1T与CvHKT1;4能否在作物中复现钠离子稳态改善与耐盐提升，尚未检验。</p></section>
+    </div>
+    </div>
+    <div class="stage"><b>当前研究阶段</b>基因组组装 + 跨物种比较与异源功能验证</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1111/pce.71054</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/43042739/" target="_blank" rel="noopener">PMID 43042739</a>
+      <span class="affil" title="北京大学现代农业研究院">北京大学现代农业研究院</span>
+      <a class="src" href="https://doi.org/10.1111/pce.71054" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="43042739" title="加入待精读" aria-label="加入待精读">★</button>
+    </div>
+  </article>
+</section>
+<section class="page article-page">
+  <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="head">
+      <span class="jn">J Integr Plant Biol</span><span class="met"><b>1区</b><i>IF 9.3</i></span>
+      <span class="sep">|</span>
+      <span class="crumb">组装与注释 / 方法与工具</span>
+      <span class="rt">
+        <span class="kind">方法</span>
+        <span>2026-11-19</span>
+        <span class="lv oa_url">存开放获取</span>
+        <span class="no">文章 07</span>
+      </span>
+    </div>
+    <div class="art-body">
+    <h2 class="t-zh">以T2T基因组引导编辑EPFL9降低杨树气孔密度</h2>
+    <p class="t-en">T2T-guided EPFL9 editing: Stepwise stomatal-density reductions in Populus &quot;Beilinxiongzhu 1&quot;.</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">首个‘北林雄株1号’完整基因组引导EPFL9编辑，气孔密度与失水下降，干旱下水分利用效率提高。</span></p>
+    <div class="grid">
+      <section class="blk"><h3>做了什么</h3><p>以‘北林雄株1号’首个完整基因组为引导，对气孔发育基因EPFL9进行编辑，在杨树中实现气孔密度的逐步降低，并评估叶片失水与干旱下水分利用效率的变化。</p></section>
+      <section class="blk"><h3>结论</h3><p>编辑EPFL9后，叶片气孔密度降低，失水减少，干旱条件下水分利用效率提高；该结果建立在首个‘北林雄株1号’完整基因组引导的编辑体系上。</p></section>
+      <section class="blk"><h3>为什么值得关注</h3><p>气孔密度是可编辑的性状，且编辑EPFL9能在降低失水的同时提高干旱下水分利用效率，这为杨树抗旱育种提供了可操作的靶点，做气孔发育与水分生理的团队可直接借鉴。</p></section>
+      <section class="blk"><h3>未来展望</h3><p>还缺一场在田间干旱条件下的多年验证，以确认气孔密度降低带来的水分利用效率提升能否在自然降水波动中稳定表达。</p></section>
+    </div>
+    </div>
+    <div class="stage"><b>当前研究阶段</b>T2T基因组引导的基因编辑</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1111/jipb.70447</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/43059150/" target="_blank" rel="noopener">PMID 43059150</a>
+      <span class="affil" title="北京林业大学生物科学与技术学院">北京林业大学生物科学与技术学院</span>
+      <a class="src" href="https://doi.org/10.1111/jipb.70447" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="43059150" title="加入待精读" aria-label="加入待精读">★</button>
+    </div>
+  </article>
+</section>
+<section class="page article-page">
+  <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="head">
+      <span class="jn">J Integr Plant Biol</span><span class="met"><b>1区</b><i>IF 9.3</i></span>
+      <span class="sep">|</span>
+      <span class="crumb">方法与工具 / 变异与关联</span>
+      <span class="rt">
+        <span class="kind">方法</span>
+        <span>2026-11-16</span>
+        <span class="lv oa_url">存开放获取</span>
+        <span class="no">文章 08</span>
+      </span>
+    </div>
+    <div class="art-body">
+    <h2 class="t-zh">用超多重 CRISPR 系统同时敲除大豆 29 个基因</h2>
+    <p class="t-en">An ultra-multiplex CRISPR/Cas9 system for simultaneous editing of 29 genes reshapes the nutritional profile of soybean.</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">MSA 系统经 32 条 sgRNA 同时编辑 46 个靶点，并在稳定转化中敲除大豆 29 个基因。</span></p>
+    <div class="grid">
+      <section class="blk"><h3>做了什么</h3><p>以模块化、可扩展的多 sgRNA 阵列（MSA）为架构，在保持克隆灵活性的前提下提高 sgRNA 装载量；毛状根试验验证其经 32 条 sgRNA 同时编辑 46 个靶点，随后用于大豆稳定转化，敲除覆盖抗营养因子削减、风味改良与结瘤优化三个功能模块的 29 个基因。</p></section>
+      <section class="blk"><h3>结论</h3><p>多代筛选获得 rnp-29m 突变体，29 个基因全部丧失功能；其种子性状改善，油酸升高，过敏原与抗营养因子下降，消化率提高，豆腥味减弱，产量无显著损失。</p></section>
+      <section class="blk"><h3>为什么值得关注</h3><p>多重编辑的瓶颈常被归因于 sgRNA 数量增加后效率下降与载体不稳定，MSA 在 32 条 sgRNA、46 个靶点上仍保持编辑能力，把这一判断推到可检验的规模；做大豆品质改良与复杂性状聚合的课题组可直接搬用该装载策略。</p></section>
+      <section class="blk"><h3>未来展望</h3><p>还缺一场田间多年多点产量与品质性状的验证，以确认无产量损失在稳定转化后代中成立；29 个基因逐一缺失对结瘤与农艺性状的独立贡献也需拆解。</p></section>
+    </div>
+    </div>
+    <div class="stage"><b>当前研究阶段</b>算法 + 毛状根 46 靶点验证 + 大豆稳定转化</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1111/jipb.70438</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/43036950/" target="_blank" rel="noopener">PMID 43036950</a>
+      <span class="affil" title="广州大学生命科学学院">广州大学生命科学学院</span>
+      <a class="src" href="https://doi.org/10.1111/jipb.70438" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="43036950" title="加入待精读" aria-label="加入待精读">★</button>
+    </div>
+  </article>
+</section>
+<section class="page article-page">
+  <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="head">
+      <span class="jn">Cell</span><span class="met"><b>1区 Top</b><i>IF 45.5</i></span>
+      <span class="sep">|</span>
+      <span class="crumb">单细胞与空间 / 表观与调控</span>
+      <span class="rt">
+        <span class="kind">原创研究</span>
+        <span></span>
+        <span class="lv abstract">仅摘要</span>
+        <span class="no">文章 09</span>
+      </span>
+    </div>
+    <div class="art-body">
+    <h2 class="t-zh">绘制成年小鼠脑多组学表观图谱并注释调控基因组</h2>
+    <p class="t-en">An integrative single-cell epigenomic atlas annotates the regulatory genome of the adult mouse brain.</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">2.5百万细胞核中四种组蛋白修饰与转录组联合检测，覆盖逾100个脑细胞亚类。</span></p>
+    <div class="grid">
+      <section class="blk"><h3>做了什么</h3><p>对成年小鼠脑2.5百万细胞核联合检测四种组蛋白修饰与转录组，整合染色质可及性、DNA甲基化和三维基因组组织，构建统一表观基因组图谱，覆盖逾100个脑细胞亚类，在81%基因组上划分活跃、预置和抑制染色质状态。</p></section>
+      <section class="blk"><h3>结论</h3><p>由组合组蛋白修饰标记的活跃染色质状态比单独染色质可及性更能提名有功能支持的候选增强子；H3K27me3和H3K9me3标记的染色质状态刻画了细胞类型特异性基因抑制的两种不同模式。</p></section>
+      <section class="blk"><h3>为什么值得关注</h3><p>增强子候选的提名依据从染色质可及性转向组合组蛋白修饰，直接改变非编码调控元件筛选的优先级；脑细胞类型特异性抑制模式的分型可被神经基因组学研究者搬用于解析非编码疾病风险变异。</p></section>
+      <section class="blk"><h3>未来展望</h3><p>还缺一场在独立脑细胞类型与疾病样本中的前瞻验证，以确认组合修饰提名增强子的泛化能力及深度学习模型跨细胞类型的预测精度。</p></section>
+    </div>
+    </div>
+    <div class="stage"><b>当前研究阶段</b>多组学图谱 + 2.5百万细胞核</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1016/j.cell.2026.10.022</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/43020033/" target="_blank" rel="noopener">PMID 43020033</a>
+      <span class="affil" title="加州大学圣迭戈分校医学院细胞与分子医学系">加州大学圣迭戈分校医学院细胞与分子医学系</span>
+      <a class="src" href="https://doi.org/10.1016/j.cell.2026.10.022" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="43020033" title="加入待精读" aria-label="加入待精读">★</button>
+    </div>
+  </article>
+</section>
+<section class="page article-page">
+  <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="head">
+      <span class="jn">Plant Cell</span><span class="met"><b>1区 Top</b><i>IF 10.0</i></span>
+      <span class="sep">|</span>
+      <span class="crumb">组装与注释 / 进化与比较</span>
+      <span class="rt">
+        <span class="kind">原创研究</span>
+        <span>2026-11-17</span>
+        <span class="lv abstract">仅摘要</span>
+        <span class="no">文章 10</span>
+      </span>
+    </div>
+    <div class="art-body">
+    <h2 class="t-zh">串联重复与CYP716酶混杂性驱动刺五加三萜多样性</h2>
+    <p class="t-en">Tandem duplication of oxidosqualene cyclases and enzyme promiscuity of cytochromes P450 contribute to the diversity of triterpenoids in Eleutherococcus senticosus.</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">刺五加1.39 Gb染色体级基因组揭示，串联重复的OSC基因与三种CYP716酶混杂性共同塑造三萜多样性。</span></p>
+    <div class="grid">
+      <section class="blk"><h3>做了什么</h3><p>以刺五加（Eleutherococcus senticosus）为材料，组装1.39 Gb染色体级基因组，注释51,243个基因；通过系统发育基因组学比较与常春藤（Hedera helix）的共线性关系，结合基因组挖掘、生化 assay 与定点突变，鉴定OSC基因及CYP716酶功能。</p></section>
+      <section class="blk"><h3>结论</h3><p>刺五加与常春藤共享谱系特异性全基因组复制（WGD-α，Ks=0.112），呈4:4共线性，且均缺失dammarenediol-II合酶（DDS）基因，解释其不含人参皂苷型皂苷。鉴定8个OSC基因，其中18号染色体上存在刺五加特有的串联重复簇；EsOSC4与EsOSC12合成tirucalla-7,24-dien-3β-ol（首次在五加科表征tirucallane合酶），EsOSC13产lupeol；372位残基（EsOSC13为缬氨酸，EsOSC4/12为甲硫氨酸）决定功能分化。三个CYP716酶（EsCYP716A244/A450/A452）可混杂氧化β-amyrin、lupeol和tirucalla-7,24-dien-3β-ol的多个位点。</p></section>
+      <section class="blk"><h3>为什么值得关注</h3><p>DDS缺失与WGD-α的关联为五加科皂苷谱差异提供了可检验的基因组解释；372位残基与三个CYP716的底物混杂性可直接被合成生物学团队用于设计氧化步骤，替代逐一筛选酶的传统路径。</p></section>
+      <section class="blk"><h3>未来展望</h3><p>还需在异源宿主中共表达串联重复OSC簇与CYP716酶，验证其能否重现刺五加体内三萜氧化谱，并检验372位残基在近缘物种中的功能保守性。</p></section>
+    </div>
+    </div>
+    <div class="stage"><b>当前研究阶段</b>基因组组装 + 酶功能验证</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1093/plcell/koag357</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/43042584/" target="_blank" rel="noopener">PMID 43042584</a>
+      <span class="affil" title="东北林业大学盐碱地生物资源环境研究中心">东北林业大学盐碱地生物资源环境研究中心</span>
+      <a class="src" href="https://doi.org/10.1093/plcell/koag357" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="43042584" title="加入待精读" aria-label="加入待精读">★</button>
+    </div>
+  </article>
+</section>
+<section class="page article-page">
+  <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="head">
+      <span class="jn">Nat Commun</span><span class="met"><b>1区 Top</b><i>IF 14.7</i></span>
+      <span class="sep">|</span>
+      <span class="crumb">泛基因组 / 进化与比较</span>
+      <span class="rt">
+        <span class="kind">原创研究</span>
+        <span>2026-10-22</span>
+        <span class="lv oa_url">存开放获取</span>
+        <span class="no">文章 11</span>
+      </span>
+    </div>
+    <div class="art-body">
+    <h2 class="t-zh">绘制肺炎克雷伯菌泛基因组全局转录调控网络</h2>
+    <p class="t-en">Topology and evolution of global transcriptional regulatory networks across the Klebsiella pneumoniae pan-genome.</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">临床分离株CR-HvKP4中鉴定370个转录因子，88%以上在生长期维持稳态表达。</span></p>
+    <div class="grid">
+      <section class="blk"><h3>做了什么</h3><p>以临床分离株CR-HvKP4为材料，刻画370个转录因子及其结合谱，构建全局基因调控网络；结合拓扑分析鉴定并验证毒力与耐药关键调控因子，并对2059株肺炎克雷伯菌做泛基因组比较。</p></section>
+      <section class="blk"><h3>结论</h3><p>时序转录组显示调控高度精简：超过88%的转录因子在各生长阶段维持稳态表达，中层转录因子偏好高水平表达以处理调控信号；泛基因组分析显示转录因子高度保守，序列型内呈明显地理格局；预测模型可跨独立菌株准确映射转录调控，共鉴定25个关键转录因子和两个生长阶段的4个调控子，其中VmrR（RS15210）缺失显著减弱雌鼠肺部毒力。</p></section>
+      <section class="blk"><h3>为什么值得关注</h3><p>把调控网络从单株推至2059株泛基因组尺度，并给出可跨菌株迁移的预测模型；做肺炎克雷伯菌毒力与耐药调控、比较基因组学的研究者可据此判断转录因子保守性与地理分化的取舍。</p></section>
+      <section class="blk"><h3>未来展望</h3><p>跨菌株预测模型尚缺独立队列的前瞻验证，VmrR等关键调控子的毒力效应也需在更多临床谱系中确认。</p></section>
+    </div>
+    </div>
+    <div class="stage"><b>当前研究阶段</b>调控网络构建 + 2059株泛基因组比较</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1038/s41467-026-78154-z</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/43058092/" target="_blank" rel="noopener">PMID 43058092</a>
+      <span class="affil" title="香港城市大学生物医学系">香港城市大学生物医学系</span>
+      <a class="src" href="https://doi.org/10.1038/s41467-026-78154-z" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="43058092" title="加入待精读" aria-label="加入待精读">★</button>
+    </div>
+  </article>
+</section>
+<section class="page article-page">
+  <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="head">
+      <span class="jn">Plant J</span><span class="met"><b class="weak">2区</b><i>IF 6.2</i></span>
+      <span class="sep">|</span>
+      <span class="crumb">变异与关联 / 方法与工具</span>
+      <span class="rt">
+        <span class="kind">方法</span>
+        <span></span>
+        <span class="lv abstract">仅摘要</span>
+        <span class="no">文章 12</span>
+      </span>
+    </div>
+    <div class="art-body">
+    <h2 class="t-zh">定位玉米籽粒脱水三指标的稳定位点与候选基因</h2>
+    <p class="t-en">Genetic dissection of kernel dehydration traits in maize using a recombinant inbred line population: key loci and candidate genes.</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">五环境评价重组自交系，定位100个非冗余QTL，9个多效候选区控制三个脱水指标。</span></p>
+    <div class="grid">
+      <section class="blk"><h3>做了什么</h3><p>以玉米KD重组自交系群体为材料，在5个环境中于授粉后34至58天每5天测定一次籽粒含水量，连续5个时期，据此计算脱水速率与干燥曲线下面积，并作QTL定位，再结合转录组数据与已发表文献筛选区间内差异表达基因。</p></section>
+      <section class="blk"><h3>结论</h3><p>定位到100个非冗余QTL，主要位于染色体远端；其中9个高置信多效候选区同时控制含水量、脱水速率与干燥曲线下面积，另有含水量特异位点11个、脱水速率特异位点28个、干燥曲线下面积特异位点4个。100个区间内鉴定出亲本间籽粒发育后期差异表达基因982个；与荟萃QTL共定位得到13个高置信保守区，优先候选基因为Zm00001d002455与Zm00001d005798。</p></section>
+      <section class="blk"><h3>为什么值得关注</h3><p>把含水量、脱水速率与干燥曲线下面积拆成共有的9个多效区与各自特异位点，说明三指标并非同一遗传结构，仅凭收获期含水量选种会漏掉脱水速率相关位点；做玉米脱水遗传解析与标记筛选者可直接取用这批稳定区与候选基因。</p></section>
+      <section class="blk"><h3>未来展望</h3><p>9个多效区与2个优先候选基因尚缺在独立群体和不同环境下的验证，也缺对候选基因的功能确认，方能判断其能否跨遗传背景使用。</p></section>
+    </div>
+    </div>
+    <div class="stage"><b>当前研究阶段</b>QTL定位 + 5环境重组自交系群体</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1111/tpj.71256</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/43062106/" target="_blank" rel="noopener">PMID 43062106</a>
+      <span class="affil" title="华中农业大学植物科学技术学院">华中农业大学植物科学技术学院</span>
+      <a class="src" href="https://doi.org/10.1111/tpj.71256" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="43062106" title="加入待精读" aria-label="加入待精读">★</button>
+    </div>
+  </article>
+</section>
+<section class="page article-page">
+  <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="head">
+      <span class="jn">Nat Methods</span><span class="met"><b>1区 Top</b><i>IF 36.1</i></span>
+      <span class="sep">|</span>
+      <span class="crumb">方法与工具 / 单细胞与空间</span>
+      <span class="rt">
+        <span class="kind">方法</span>
+        <span>2026-11-16</span>
+        <span class="lv oa_url">存开放获取</span>
+        <span class="no">文章 13</span>
+      </span>
+    </div>
+    <div class="art-body">
+    <h2 class="t-zh">联合捕获单细胞 Cas9 编辑与转录组</h2>
+    <p class="t-en">Joint single-cell capture of Cas9 edits and transcriptomes reveals on- and off-target effects on gene expression.</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">Superb-seq 在 3.5 万个细胞中同时读出编辑位点与转录组，检出 5761 个编辑细胞。</span></p>
+    <div class="grid">
+      <section class="blk"><h3>做了什么</h3><p>Superb-seq 把 Cas9 编辑、T7 原位转录与单细胞 RNA 测序整合在同一细胞内，对三种细胞系的 35,000 个细胞完成捕获；在 10,000 个 K562 细胞中用 7 条向导 RNA 靶向 4 个染色质重塑基因，并同 4 种群体水平脱靶检测方法做比较。</p></section>
+      <section class="blk"><h3>结论</h3><p>在 K562 细胞中检出 5,761 个编辑细胞，覆盖全部在靶位点与 36 个脱靶位点；对基因表达下游扰动效应的估计优于 Perturb-seq；与 4 种群体方法比较，3 条基准向导分别识别出 6 至 210 个编辑位点；19 个脱靶编辑与差异基因表达关联，其中 9 个具细胞类型特异性。</p></section>
+      <section class="blk"><h3>为什么值得关注</h3><p>把脱靶编辑从序列层面的计数推进到与表达变化逐细胞对应，使脱靶的转录后果可以按细胞类型拆开评估；做 CRISPR 筛选与脱靶评估的组学团队可据此重新审视仅靠群体测序得到的脱靶清单。</p></section>
+      <section class="blk"><h3>未来展望</h3><p>还缺在更多原代细胞与体内样本上的验证，以判断脱靶编辑与表达变化的关联在细胞系之外是否稳定；也需确认 19 个关联位点在更长时间尺度上是否可重复。</p></section>
+    </div>
+    </div>
+    <div class="stage"><b>当前研究阶段</b>算法 + 3.5 万个单细胞基准</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1038/s41592-026-03319-z</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/43040035/" target="_blank" rel="noopener">PMID 43040035</a>
+      <span class="affil" title="Salk Institute for Biologi">Salk Institute for Biologi</span>
+      <a class="src" href="https://doi.org/10.1038/s41592-026-03319-z" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="43040035" title="加入待精读" aria-label="加入待精读">★</button>
+    </div>
+  </article>
+</section>
+<section class="page article-page">
+  <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="head">
+      <span class="jn">Cell</span><span class="met"><b>1区 Top</b><i>IF 45.5</i></span>
+      <span class="sep">|</span>
+      <span class="crumb">单细胞与空间 / 表观与调控</span>
+      <span class="rt">
+        <span class="kind">原创研究</span>
+        <span></span>
+        <span class="lv oa_url">存开放获取</span>
+        <span class="no">文章 14</span>
+      </span>
+    </div>
+    <div class="art-body">
+    <h2 class="t-zh">绘制人脑18个脑区单细胞多模态图谱</h2>
+    <p class="t-en">Single-cell multimodal atlas reveals regulatory programs in the human brain.</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">75万个细胞核、160种细胞类型、18个脑区，转录组与组蛋白修饰被同时测定。</span></p>
+    <div class="grid">
+      <section class="blk"><h3>做了什么</h3><p>以18个成人脑区逾75万个细胞核为材料，联合测定转录组与激活性H3K27ac或抑制性H3K27me3修饰，并整合染色质可及性、DNA甲基化、三维基因组结构与空间转录组数据，覆盖160种细胞类型。</p></section>
+      <section class="blk"><h3>结论</h3><p>解析出逾50万个候选调控元件的染色质状态，识别增强子—基因连接与调控程序，发现Polycomb相关的超长距离接触及全脑表观基因组异质性；序列—功能模型可预测候选神经疾病变异的细胞类型特异性效应；跨物种比较显示激活性调控程序保守而抑制性程序分化。</p></section>
+      <section class="blk"><h3>为什么值得关注</h3><p>把抑制性组蛋白修饰与转录组放进同一细胞，使Polycomb相关超长距离接触与抑制性程序的分化程度成为可核查的量；做脑疾病变异注释与跨物种表观比较的团队可直接取用这批调控元件与连接。</p></section>
+      <section class="blk"><h3>未来展望</h3><p>还缺一场验证：序列—功能模型预测的变异效应需在携带相应变异的细胞中实测，跨物种抑制性程序的分化也需更多物种补齐。</p></section>
+    </div>
+    </div>
+    <div class="stage"><b>当前研究阶段</b>单细胞多模态图谱 + 序列—功能模型</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1016/j.cell.2026.08.012</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/43020026/" target="_blank" rel="noopener">PMID 43020026</a>
+      <span class="affil" title="New York Genome Center">New York Genome Center</span>
+      <a class="src" href="https://doi.org/10.1016/j.cell.2026.08.012" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="43020026" title="加入待精读" aria-label="加入待精读">★</button>
+    </div>
+  </article>
+</section>
+<section class="page article-page">
+  <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="head">
+      <span class="jn">New Phytol</span><span class="met"><b>1区</b><i>IF 8.3</i></span>
+      <span class="sep">|</span>
+      <span class="crumb">进化与比较 / 组装与注释</span>
+      <span class="rt">
+        <span class="kind">原创研究</span>
+        <span>2026-11-18</span>
+        <span class="lv oa_url">存开放获取</span>
+        <span class="no">文章 15</span>
+      </span>
+    </div>
+    <div class="art-body">
+    <h2 class="t-zh">异源多倍化改变柳树性染色体系统</h2>
+    <p class="t-en">A change in sex chromosomes caused by allopolyploidy in a willow lineage triggered new evolutionary changes in descendant species.</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">两个XY供体杂交产生的异源四倍体柳，转为ZW系统，Z连锁区保留ARR17部分重复。</span></p>
+    <div class="grid">
+      <section class="blk"><h3>做了什么</h3><p>以Salix与Vetrix分支杂交形成的雌雄异株异源四倍体柳为材料，完成3个四倍体与1个近缘二倍体的染色体水平组装，定位性别连锁区并比较候选性别决定基因的mRNA与小RNA表达谱。</p></section>
+      <section class="blk"><h3>结论</h3><p>两个供体均为XY系统，性别连锁区分别位于7号与15号染色体；四倍体转为ZW系统。Salix babylonica、Salix matsudana与Salix chienii保留15号染色体着丝粒附近的Z连锁区，携带ARR17部分重复，其共同祖先在性别连锁区旁发生倒位；Salix pentandra在四倍体分化前分出，ARR17部分重复位于假常染色体区，W连锁ARR22-like基因被提名为候选性别决定因子。</p></section>
+      <section class="blk"><h3>为什么值得关注</h3><p>性染色体类型可在异源多倍化后由XY翻转为ZW，且同一谱系内性别决定区位置并不固定；做柳属性别决定与多倍体基因组进化的人，可据此重新核对性染色体同源关系与候选基因位置。</p></section>
+      <section class="blk"><h3>未来展望</h3><p>ARR22-like基因作为Salix pentandra性别决定因子仍缺功能验证；三个四倍体共有的倒位与ARR17部分重复如何维持Z连锁区稳定，也需在更多群体中检验。</p></section>
+    </div>
+    </div>
+    <div class="stage"><b>当前研究阶段</b>组装 + 4个基因组的性别连锁区比较</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1111/nph.71771</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/43049179/" target="_blank" rel="noopener">PMID 43049179</a>
+      <span class="affil" title="上海市辰山植物园">上海市辰山植物园</span>
+      <a class="src" href="https://doi.org/10.1111/nph.71771" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="43049179" title="加入待精读" aria-label="加入待精读">★</button>
+    </div>
+  </article>
+</section>
+<section class="page article-page">
+  <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="head">
+      <span class="jn">Nucleic Acids Res</span><span class="met"><b>1区</b><i>IF 16.6</i></span>
+      <span class="sep">|</span>
+      <span class="crumb">变异与关联 / 方法与工具</span>
+      <span class="rt">
+        <span class="kind">方法</span>
+        <span>2026-11-19</span>
+        <span class="lv oa_url">存开放获取</span>
+        <span class="no">文章 16</span>
+      </span>
+    </div>
+    <div class="art-body">
+    <h2 class="t-zh">构建 GI-DB 收录 1.36 亿个印度人群高置信变异</h2>
+    <p class="t-en">GI-DB: a comprehensive variant database for exploring the extensive genetic diversity of the Indian population.</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">GI-DB 收录 1.36 亿个高置信变异，其中 4400 万个不见于其他全球与南亚数据库。</span></p>
+    <div class="grid">
+      <section class="blk"><h3>做了什么</h3><p>GenomeIndia 计划对 83 个群体的约 1 万个基因组测序，据此建成的 GI-DB 公开数据库按部落与非部落、生物地理和民族语言类别分层给出等位基因频率，并提供交互浏览器与程序化访问，注释整合 VEP、ClinVar，并与 1000 Genomes、gnomAD、GenomeAsia 比对。</p></section>
+      <section class="blk"><h3>结论</h3><p>GI-DB 共编目 1.36 亿个高置信变异，其中 4400 万个未出现在其他全球与南亚数据库中；等位基因频率按部落与非部落、生物地理、民族语言三类分层展示，可支撑罕见病、复杂疾病与药物基因组学中临床相关变异的解读。</p></section>
+      <section class="blk"><h3>为什么值得关注</h3><p>南亚人群在全球基因组资源中长期缺位，4400 万个独有变异意味着仅靠 1000 Genomes、gnomAD 等数据库做频率过滤会漏判或误判印度人群的变异；做临床解读与群体遗传学的人可直接把分层频率当作本地对照集。</p></section>
+      <section class="blk"><h3>未来展望</h3><p>还缺一场验证：这 4400 万个独有变异中有多少能在独立印度队列中复现，以及分层频率在临床解读中相比全球数据库能把误判降低多少。</p></section>
+    </div>
+    </div>
+    <div class="stage"><b>当前研究阶段</b>数据库构建 + 约 1 万个基因组</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1093/nar/gkag1179</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/43053325/" target="_blank" rel="noopener">PMID 43053325</a>
+      <span class="affil" title="CSIR-基因组学与整合生物学研究所">CSIR-基因组学与整合生物学研究所</span>
+      <a class="src" href="https://doi.org/10.1093/nar/gkag1179" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="43053325" title="加入待精读" aria-label="加入待精读">★</button>
+    </div>
+  </article>
+</section>
+<section class="page article-page">
+  <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="head">
+      <span class="jn">Nat Commun</span><span class="met"><b>1区 Top</b><i>IF 14.7</i></span>
+      <span class="sep">|</span>
+      <span class="crumb">进化与比较 / 表观与调控</span>
+      <span class="rt">
+        <span class="kind">原创研究</span>
+        <span>2026-11-12</span>
+        <span class="lv oa_url">存开放获取</span>
+        <span class="no">文章 17</span>
+      </span>
+    </div>
+    <div class="art-body">
+    <h2 class="t-zh">揭示DNA甲基化把关真核生物基因组规模水平基因转移</h2>
+    <p class="t-en">Epigenetic gatekeeping enables genome-scale horizontal gene transfer in eukaryotic cells.</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">哺乳动物细胞经吞噬完整藻类细胞，稳定保留逾16 Mb藻DNA达95代。</span></p>
+    <div class="grid">
+      <section class="blk"><h3>做了什么</h3><p>以哺乳动物细胞吞噬完整藻类细胞为起点，模拟内共生基因组获取，比较吞噬与细胞融合两条路径的转移频率；活细胞成像追踪融合后藻DNA入核，基因组测序与细胞遗传学分析判定藻DNA的保留状态与结构形式。</p></section>
+      <section class="blk"><h3>结论</h3><p>杂交细胞保留逾16 Mb藻DNA，含完整染色体，以端粒连接结构存在，无选择压力下持续95代；转移藻DNA的DNA甲基化逐步升高并富集抑制性组蛋白修饰，形成与宿主染色体物理关联的异染色质域；去新DNA甲基转移酶缺陷的哺乳动物细胞中，藻DNA稳定建立与保留下降。</p></section>
+      <section class="blk"><h3>为什么值得关注</h3><p>真核生物间水平基因转移此前缺乏基因组规模证据，甲基化被定位为外来大片段DNA稳定驻留的把关环节；做异源DNA整合与染色体工程的人可据此把表观状态纳入筛选判据。</p></section>
+      <section class="blk"><h3>未来展望</h3><p>还需在更多供体—受体组合中验证甲基化把关是否普遍，并以甲基化通路定向干预检验其与稳定保留的因果关系。</p></section>
+    </div>
+    </div>
+    <div class="stage"><b>当前研究阶段</b>细胞实验 + 基因组与细胞遗传学分析</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1038/s41467-026-78753-w</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/43020788/" target="_blank" rel="noopener">PMID 43020788</a>
+      <span class="affil" title="东京大学新领域创成科学研究科">东京大学新领域创成科学研究科</span>
+      <a class="src" href="https://doi.org/10.1038/s41467-026-78753-w" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="43020788" title="加入待精读" aria-label="加入待精读">★</button>
+    </div>
+  </article>
+</section>
+<section class="page article-page">
+  <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="head">
+      <span class="jn">Nat Methods</span><span class="met"><b>1区 Top</b><i>IF 36.1</i></span>
+      <span class="sep">|</span>
+      <span class="crumb">方法与工具 / 单细胞与空间</span>
+      <span class="rt">
+        <span class="kind">方法</span>
+        <span>2026-11-19</span>
+        <span class="lv oa_url">存开放获取</span>
+        <span class="no">文章 18</span>
+      </span>
+    </div>
+    <div class="art-body">
+    <h2 class="t-zh">用连续切片重建单细胞分辨率三维组织图谱</h2>
+    <p class="t-en">Space-map: 3D single-cell atlas reconstruction from serial sections.</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">Space-map 在自有与公开数据上配准精度更高，速度提升至十倍，支撑单细胞分辨率三维图谱构建。</span></p>
+    <div class="grid">
+      <section class="blk"><h3>做了什么</h3><p>Space-map 面向高内涵空间分子谱，把多尺度特征匹配与大形变微分同胚度量映射结合，自动完成连续切片间的全局对齐并保留局部微解剖结构。配套生成连续切片的 Xenium 空间转录组（约 270 万细胞）与 CODEX 空间蛋白组（约 480 万细胞）数据，用于构建结肠息肉与健康肠道组织的三维模型。</p></section>
+      <section class="blk"><h3>结论</h3><p>三维模型显示息肉内部存在细胞类型异质性；健康肠道中隐窝与腺体结构保持完整，黏膜腔连续性得以保留。在自有与公开数据集上的基准测试中，Space-map 的配准精度明显高于现有方法，速度最高提升十倍。</p></section>
+      <section class="blk"><h3>为什么值得关注</h3><p>连续切片的空间组学数据此前难以拼成可信的三维整体，判断组织结构的依据多停留在二维切片。做肠道、息肉等实体组织空间图谱的团队，可直接把配准精度与十倍速度作为选择拼接流程的参照。</p></section>
+      <section class="blk"><h3>未来展望</h3><p>还缺一场跨组织、跨平台的独立复现：现有验证集中在肠道与息肉，配准精度在切片间距更大、形变更剧烈的组织上是否仍成立尚未检验。</p></section>
+    </div>
+    </div>
+    <div class="stage"><b>当前研究阶段</b>算法 + 约 750 万细胞空间组学数据</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1038/s41592-026-03310-8</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/43058204/" target="_blank" rel="noopener">PMID 43058204</a>
+      <span class="affil" title="圣克拉拉大学计算机科学与工程系">圣克拉拉大学计算机科学与工程系</span>
+      <a class="src" href="https://doi.org/10.1038/s41592-026-03310-8" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="43058204" title="加入待精读" aria-label="加入待精读">★</button>
+    </div>
+  </article>
+</section>
+<section class="page article-page">
+  <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="head">
+      <span class="jn">Nat Commun</span><span class="met"><b>1区 Top</b><i>IF 14.7</i></span>
+      <span class="sep">|</span>
+      <span class="crumb">方法与工具 / 变异与关联</span>
+      <span class="rt">
+        <span class="kind">方法</span>
+        <span>2026-10-22</span>
+        <span class="lv oa_url">存开放获取</span>
+        <span class="no">文章 19</span>
+      </span>
+    </div>
+    <div class="art-body">
+    <h2 class="t-zh">用 Sup-seq 全基因组定位肺炎链球菌的遗传抑制事件</h2>
+    <p class="t-en">Genome-wide mapping of genetic suppression events in Streptococcus pneumoniae.</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">Sup-seq 在肺炎链球菌 7 个必需基因中检出 53 个抑制因子，覆盖多条细胞通路。</span></p>
+    <div class="grid">
+      <section class="blk"><h3>做了什么</h3><p>Sup-seq 把随机 DNA 条形码与转座子测序结合，在肺炎链球菌中全基因组检测遗传抑制。针对 7 个必需基因，检出 53 个抑制因子；这些抑制因子依据转座子插入的位置与方向，通过基因失活、过表达或下调等不同机制起作用。</p></section>
+      <section class="blk"><h3>结论</h3><p>概念验证实验鉴定出一个此前未表征的转录调控因子，它控制分子伴侣与核糖体蛋白表达；同时发现一条绕过乙酸激酶生长需求的机制。磷脂酰甘油在肺炎链球菌中为条件必需，揭示磷脂合成与钾转运之间存在意外关联。</p></section>
+      <section class="blk"><h3>为什么值得关注</h3><p>必需基因的功能注释长期依赖抑制因子筛选，Sup-seq 把这一策略从逐个基因扩展到全基因组尺度，并给出插入位置与方向决定抑制机制的规律；从事细菌必需基因功能研究与抗菌靶点筛选的实验室可直接沿用其条形码转座子设计。</p></section>
+      <section class="blk"><h3>未来展望</h3><p>还缺在肺炎链球菌之外的其他细菌中验证 Sup-seq 的通用性，以及确认所检出的抑制因子能否转化为可操作的抗菌靶点。</p></section>
+    </div>
+    </div>
+    <div class="stage"><b>当前研究阶段</b>条形码转座子测序 + 7 个必需基因验证</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1038/s41467-026-78840-y</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/43058102/" target="_blank" rel="noopener">PMID 43058102</a>
+      <span class="affil" title="新加坡国立大学杨潞龄医学院">新加坡国立大学杨潞龄医学院</span>
+      <a class="src" href="https://doi.org/10.1038/s41467-026-78840-y" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="43058102" title="加入待精读" aria-label="加入待精读">★</button>
+    </div>
+  </article>
+</section>
+<section class="page article-page">
+  <article class="sheet">
+    <img class="detail-ornament" src="../assets/weekly-detail-ornament.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+    <div class="head">
+      <span class="jn">Genome Biol</span><span class="met"><b>1区</b><i>IF 10.1</i></span>
+      <span class="sep">|</span>
+      <span class="crumb">进化与比较 / 变异与关联</span>
+      <span class="rt">
+        <span class="kind">原创研究</span>
+        <span>2026-08-20</span>
+        <span class="lv abstract">仅摘要</span>
+        <span class="no">文章 20</span>
+      </span>
+    </div>
+    <div class="art-body">
+    <h2 class="t-zh">绘制六类大猿自然选择图谱并量化有害突变分布</h2>
+    <p class="t-en">Genomic landscapes of natural selection in great apes.</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">六类大猿基因组筛选显示，近期正选择与长期平衡选择候选位点集中于感官、免疫、食性与海拔适应。</span></p>
+    <div class="grid">
+      <section class="blk"><h3>做了什么</h3><p>以倭黑猩猩、黑猩猩、东非与西非大猩猩、婆罗洲与苏门答腊猩猩的基因组多样性面板为对象，开展全基因组扫描，检测近期正选择与长期平衡选择信号，并估计适应度效应分布及其在谱系间的相关性。</p></section>
+      <section class="blk"><h3>结论</h3><p>候选位点涉及感官与免疫系统、食性或海拔等环境压力以及繁殖策略；多数非同义突变落入近中性或强有害类别，近缘谱系间适应度效应分布高度相关，并检出谱系特异性候选基因与跨谱系重复靶标。</p></section>
+      <section class="blk"><h3>为什么值得关注</h3><p>把选择图谱与有害突变负荷并列呈现，使免疫与感官基因的谱系特异性信号可与近中性、强有害突变的相对比例对照解读，为灵长类比较基因组学提供可复用的候选位点与效应分布参照。</p></section>
+      <section class="blk"><h3>未来展望</h3><p>还缺一场功能验证：候选位点是否真实影响表型尚未检验；适应度效应分布依赖的群体历史假设也需在更多独立种群中复核。</p></section>
+    </div>
+    </div>
+    <div class="stage"><b>当前研究阶段</b>全基因组扫描 + 六类大猿多样性面板</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1186/s13059-026-04247-z</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/43040362/" target="_blank" rel="noopener">PMID 43040362</a>
+      <span class="affil" title="维也纳大学进化人类学系">维也纳大学进化人类学系</span>
+      <a class="src" href="https://doi.org/10.1186/s13059-026-04247-z" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="43040362" title="加入待精读" aria-label="加入待精读">★</button>
+    </div>
+  </article>
+</section>
+</main>
+
+<div class="dots" id="dots"></div>
+
+<div class="toc" id="toc" role="dialog" aria-modal="true" aria-labelledby="tocTitle" aria-describedby="tocMeta" aria-hidden="true">
+  <div class="toc-inner">
+    <div class="toc-header">
+      <div class="toc-heading">
+        <svg class="toc-brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M23.8 42C22.4 30.8 22.8 19.6 28 6" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+          <path d="M25.8 27.4C16.4 27.2 10.7 22 8.1 13.1c9.4.2 15.1 5.4 17.7 14.3Z" fill="#e7ebd9" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="M25.2 32.1c1.1-9.5 6.5-15.1 15.3-17.3-1 9.3-6.3 14.9-15.3 17.3Z" fill="#e7ebd9" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="m11 15 12 11m15-8L27 30" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M18 41h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+        <h2 class="toc-title" id="tocTitle">本期目录</h2>
+        <span class="toc-en">CONTENTS OF THIS ISSUE</span>
+        <p class="toc-meta" id="tocMeta">20 篇 · 2026-11-12 ~ 2026-11-22</p>
+      </div>
+      <img class="toc-header-art" src="../assets/weekly-cover-art.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <button class="toc-close" id="tocClose" type="button" aria-label="关闭目录">×</button>
+    </div>
+    <div class="toc-search" role="search">
+      <label class="toc-sr-only" for="tocSearch">搜索标题、期刊或主题</label>
+      <svg class="toc-search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="10.8" cy="10.8" r="6.5" stroke="currentColor" stroke-width="1.8"/>
+        <path d="m16 16 4.2 4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <input id="tocSearch" type="search" placeholder="搜索标题、期刊或主题" autocomplete="off" aria-controls="tocGroups">
+      <span class="toc-count" id="tocCount" aria-live="polite"></span>
+    </div>
+    <p class="toc-empty" id="tocEmpty" hidden>没有匹配的论文，试试标题、期刊或主题词。</p>
+    <div class="toc-groups" id="tocGroups"><section class="toc-group" data-toc-group="research"><div class="toc-group-head"><h3><svg class="toc-group-icon" viewBox="0 0 38 38" fill="none" aria-hidden="true"><path d="M4 8c6-2 11-.8 15 3v22c-4-3.8-9-5-15-3V8Zm30 0c-6-2-11-.8-15 3v22c4-3.8 9-5 15-3V8Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 13c2-.3 4 0 6 1m14-1c-2-.3-4 0-6 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg><span>研究文章</span><span class="toc-group-en">RESEARCH ARTICLES</span></h3><span class="toc-group-count" data-group-count>共 13 篇</span></div><ol><li class="toc-item"><button type="button" class="toc-row" data-i="1" data-search="构建二倍体与多倍体大麦属染色体级比较基因组图谱 Structural and regulatory evolution across the genus Hordeum. Nature 进化与比较 泛基因组" data-title="构建二倍体与多倍体大麦属染色体级比较基因组图谱" data-journal="Nature" data-date="2026-11-18" data-lead="大麦属全部二倍体物种及代表性多倍体谱系的染色体级比较基因组资源已建成，结构变异与调控元件快速更替并存。" aria-pressed="false"><span class="i">01</span><span class="t">构建二倍体与多倍体大麦属染色体级比较基因组图谱</span><span class="j">Nature</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="2" data-search="构建猪端粒到端粒泛基因组并解析着丝粒演化 High-quality pig pan-genome resources illuminate centromere evolution and enhance genotype-phenotype mapping. Nat Genet 泛基因组 组装与注释" data-title="构建猪端粒到端粒泛基因组并解析着丝粒演化" data-journal="Nat Genet" data-date="2026-11-16" data-lead="3个端粒到端粒基因组与16个高质量组装，把猪着丝粒重定位解析到碱基对分辨率。" aria-pressed="false"><span class="i">02</span><span class="t">构建猪端粒到端粒泛基因组并解析着丝粒演化</span><span class="j">Nat Genet</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="3" data-search="组装四倍体短芒大麦草基因组，解析A、B亚基因组耐盐碱分化 The genome of tetraploid Hordeum brevisubulatum underpins its evolution and saline-alkali adaptation. Plant J 组装与注释 进化与比较" data-title="组装四倍体短芒大麦草基因组，解析A、B亚基因组耐盐碱分化" data-journal="Plant J" data-date="" data-lead="染色体级组装解析四倍体短芒大麦草A、B亚基因组，HbNAC29在叶与根中均强诱导。" aria-pressed="false"><span class="i">03</span><span class="t">组装四倍体短芒大麦草基因组，解析A、B亚基因组耐盐碱分化</span><span class="j">Plant J</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="4" data-search="构建大豆单倍型图谱 GmHapMap-II 并定位亚麻酸新位点 Next-Generation Soybean Haplotype Map as a Genomic Resource for Enhanced Trait Discovery and Functional Analysis. Plant Biotechnol J 变异与关联 泛基因组" data-title="构建大豆单倍型图谱 GmHapMap-II 并定位亚麻酸新位点" data-journal="Plant Biotechnol J" data-date="2026-11-16" data-lead="1278 份大豆材料构建 GmHapMap-II，含 1137 万 SNP 与 205 万 InDel，定位到驯化中丢失的亚麻酸位点。" aria-pressed="false"><span class="i">04</span><span class="t">构建大豆单倍型图谱 GmHapMap-II 并定位亚麻酸新位点</span><span class="j">Plant Biotechnol J</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="5" data-search="构建阿联酋人群泛基因组并实现二倍体染色体级组装 The Emirati pangenome featuring a diploid chromosome-level reference. Nat Commun 泛基因组 组装与注释" data-title="构建阿联酋人群泛基因组并实现二倍体染色体级组装" data-journal="Nat Commun" data-date="2026-10-20" data-lead="58个染色体级组装中31.8%达到端粒到端粒，中位N50为151.9 Mb，中位QV为59.31。" aria-pressed="false"><span class="i">05</span><span class="t">构建阿联酋人群泛基因组并实现二倍体染色体级组装</span><span class="j">Nat Commun</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="6" data-search="组装虎尾草染色体级基因组并鉴定耐盐基因簇 Cross-Species Comparative Genome and Transcriptome Analysis Uncovers Salt Tolerance Mechanisms in the Wild Grass Species Chloris virgata. Plant Cell Environ 进化与比较 变异与关联" data-title="组装虎尾草染色体级基因组并鉴定耐盐基因簇" data-journal="Plant Cell Environ" data-date="2026-11-17" data-lead="虎尾草染色体级基因组组装完成，耐盐性强于四种主要禾谷类作物，CvSOS1与CvHKT1;4被功能验证。" aria-pressed="false"><span class="i">06</span><span class="t">组装虎尾草染色体级基因组并鉴定耐盐基因簇</span><span class="j">Plant Cell Environ</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="9" data-search="绘制成年小鼠脑多组学表观图谱并注释调控基因组 An integrative single-cell epigenomic atlas annotates the regulatory genome of the adult mouse brain. Cell 单细胞与空间 表观与调控" data-title="绘制成年小鼠脑多组学表观图谱并注释调控基因组" data-journal="Cell" data-date="" data-lead="2.5百万细胞核中四种组蛋白修饰与转录组联合检测，覆盖逾100个脑细胞亚类。" aria-pressed="false"><span class="i">09</span><span class="t">绘制成年小鼠脑多组学表观图谱并注释调控基因组</span><span class="j">Cell</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="10" data-search="串联重复与CYP716酶混杂性驱动刺五加三萜多样性 Tandem duplication of oxidosqualene cyclases and enzyme promiscuity of cytochromes P450 contribute to the diversity of triterpenoids in Eleutherococcus senticosus. Plant Cell 组装与注释 进化与比较" data-title="串联重复与CYP716酶混杂性驱动刺五加三萜多样性" data-journal="Plant Cell" data-date="2026-11-17" data-lead="刺五加1.39 Gb染色体级基因组揭示，串联重复的OSC基因与三种CYP716酶混杂性共同塑造三萜多样性。" aria-pressed="false"><span class="i">10</span><span class="t">串联重复与CYP716酶混杂性驱动刺五加三萜多样性</span><span class="j">Plant Cell</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="11" data-search="绘制肺炎克雷伯菌泛基因组全局转录调控网络 Topology and evolution of global transcriptional regulatory networks across the Klebsiella pneumoniae pan-genome. Nat Commun 泛基因组 进化与比较" data-title="绘制肺炎克雷伯菌泛基因组全局转录调控网络" data-journal="Nat Commun" data-date="2026-10-22" data-lead="临床分离株CR-HvKP4中鉴定370个转录因子，88%以上在生长期维持稳态表达。" aria-pressed="false"><span class="i">11</span><span class="t">绘制肺炎克雷伯菌泛基因组全局转录调控网络</span><span class="j">Nat Commun</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="14" data-search="绘制人脑18个脑区单细胞多模态图谱 Single-cell multimodal atlas reveals regulatory programs in the human brain. Cell 单细胞与空间 表观与调控" data-title="绘制人脑18个脑区单细胞多模态图谱" data-journal="Cell" data-date="" data-lead="75万个细胞核、160种细胞类型、18个脑区，转录组与组蛋白修饰被同时测定。" aria-pressed="false"><span class="i">14</span><span class="t">绘制人脑18个脑区单细胞多模态图谱</span><span class="j">Cell</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="15" data-search="异源多倍化改变柳树性染色体系统 A change in sex chromosomes caused by allopolyploidy in a willow lineage triggered new evolutionary changes in descendant species. New Phytol 进化与比较 组装与注释" data-title="异源多倍化改变柳树性染色体系统" data-journal="New Phytol" data-date="2026-11-18" data-lead="两个XY供体杂交产生的异源四倍体柳，转为ZW系统，Z连锁区保留ARR17部分重复。" aria-pressed="false"><span class="i">15</span><span class="t">异源多倍化改变柳树性染色体系统</span><span class="j">New Phytol</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="17" data-search="揭示DNA甲基化把关真核生物基因组规模水平基因转移 Epigenetic gatekeeping enables genome-scale horizontal gene transfer in eukaryotic cells. Nat Commun 进化与比较 表观与调控" data-title="揭示DNA甲基化把关真核生物基因组规模水平基因转移" data-journal="Nat Commun" data-date="2026-11-12" data-lead="哺乳动物细胞经吞噬完整藻类细胞，稳定保留逾16 Mb藻DNA达95代。" aria-pressed="false"><span class="i">17</span><span class="t">揭示DNA甲基化把关真核生物基因组规模水平基因转移</span><span class="j">Nat Commun</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="20" data-search="绘制六类大猿自然选择图谱并量化有害突变分布 Genomic landscapes of natural selection in great apes. Genome Biol 进化与比较 变异与关联" data-title="绘制六类大猿自然选择图谱并量化有害突变分布" data-journal="Genome Biol" data-date="2026-08-20" data-lead="六类大猿基因组筛选显示，近期正选择与长期平衡选择候选位点集中于感官、免疫、食性与海拔适应。" aria-pressed="false"><span class="i">20</span><span class="t">绘制六类大猿自然选择图谱并量化有害突变分布</span><span class="j">Genome Biol</span></button></li></ol></section><section class="toc-group" data-toc-group="methods"><div class="toc-group-head"><h3><svg class="toc-group-icon" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M13 4h10m-8 0v9L7 29a2 2 0 0 0 1.8 3h18.4a2 2 0 0 0 1.8-3l-8-16V4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 24h14m-11-5h8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg><span>方法工具</span><span class="toc-group-en">METHODS & TOOLS</span></h3><span class="toc-group-count" data-group-count>共 7 篇</span></div><ol><li class="toc-item"><button type="button" class="toc-row" data-i="7" data-search="以T2T基因组引导编辑EPFL9降低杨树气孔密度 T2T-guided EPFL9 editing: Stepwise stomatal-density reductions in Populus &quot;Beilinxiongzhu 1&quot;. J Integr Plant Biol 组装与注释 方法与工具" data-title="以T2T基因组引导编辑EPFL9降低杨树气孔密度" data-journal="J Integr Plant Biol" data-date="2026-11-19" data-lead="首个‘北林雄株1号’完整基因组引导EPFL9编辑，气孔密度与失水下降，干旱下水分利用效率提高。" aria-pressed="false"><span class="i">07</span><span class="t">以T2T基因组引导编辑EPFL9降低杨树气孔密度</span><span class="j">J Integr Plant Biol</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="8" data-search="用超多重 CRISPR 系统同时敲除大豆 29 个基因 An ultra-multiplex CRISPR/Cas9 system for simultaneous editing of 29 genes reshapes the nutritional profile of soybean. J Integr Plant Biol 方法与工具 变异与关联" data-title="用超多重 CRISPR 系统同时敲除大豆 29 个基因" data-journal="J Integr Plant Biol" data-date="2026-11-16" data-lead="MSA 系统经 32 条 sgRNA 同时编辑 46 个靶点，并在稳定转化中敲除大豆 29 个基因。" aria-pressed="false"><span class="i">08</span><span class="t">用超多重 CRISPR 系统同时敲除大豆 29 个基因</span><span class="j">J Integr Plant Biol</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="12" data-search="定位玉米籽粒脱水三指标的稳定位点与候选基因 Genetic dissection of kernel dehydration traits in maize using a recombinant inbred line population: key loci and candidate genes. Plant J 变异与关联 方法与工具" data-title="定位玉米籽粒脱水三指标的稳定位点与候选基因" data-journal="Plant J" data-date="" data-lead="五环境评价重组自交系，定位100个非冗余QTL，9个多效候选区控制三个脱水指标。" aria-pressed="false"><span class="i">12</span><span class="t">定位玉米籽粒脱水三指标的稳定位点与候选基因</span><span class="j">Plant J</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="13" data-search="联合捕获单细胞 Cas9 编辑与转录组 Joint single-cell capture of Cas9 edits and transcriptomes reveals on- and off-target effects on gene expression. Nat Methods 方法与工具 单细胞与空间" data-title="联合捕获单细胞 Cas9 编辑与转录组" data-journal="Nat Methods" data-date="2026-11-16" data-lead="Superb-seq 在 3.5 万个细胞中同时读出编辑位点与转录组，检出 5761 个编辑细胞。" aria-pressed="false"><span class="i">13</span><span class="t">联合捕获单细胞 Cas9 编辑与转录组</span><span class="j">Nat Methods</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="16" data-search="构建 GI-DB 收录 1.36 亿个印度人群高置信变异 GI-DB: a comprehensive variant database for exploring the extensive genetic diversity of the Indian population. Nucleic Acids Res 变异与关联 方法与工具" data-title="构建 GI-DB 收录 1.36 亿个印度人群高置信变异" data-journal="Nucleic Acids Res" data-date="2026-11-19" data-lead="GI-DB 收录 1.36 亿个高置信变异，其中 4400 万个不见于其他全球与南亚数据库。" aria-pressed="false"><span class="i">16</span><span class="t">构建 GI-DB 收录 1.36 亿个印度人群高置信变异</span><span class="j">Nucleic Acids Res</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="18" data-search="用连续切片重建单细胞分辨率三维组织图谱 Space-map: 3D single-cell atlas reconstruction from serial sections. Nat Methods 方法与工具 单细胞与空间" data-title="用连续切片重建单细胞分辨率三维组织图谱" data-journal="Nat Methods" data-date="2026-11-19" data-lead="Space-map 在自有与公开数据上配准精度更高，速度提升至十倍，支撑单细胞分辨率三维图谱构建。" aria-pressed="false"><span class="i">18</span><span class="t">用连续切片重建单细胞分辨率三维组织图谱</span><span class="j">Nat Methods</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="19" data-search="用 Sup-seq 全基因组定位肺炎链球菌的遗传抑制事件 Genome-wide mapping of genetic suppression events in Streptococcus pneumoniae. Nat Commun 方法与工具 变异与关联" data-title="用 Sup-seq 全基因组定位肺炎链球菌的遗传抑制事件" data-journal="Nat Commun" data-date="2026-10-22" data-lead="Sup-seq 在肺炎链球菌 7 个必需基因中检出 53 个抑制因子，覆盖多条细胞通路。" aria-pressed="false"><span class="i">19</span><span class="t">用 Sup-seq 全基因组定位肺炎链球菌的遗传抑制事件</span><span class="j">Nat Commun</span></button></li></ol></section></div>
+    <button class="toc-preview" id="tocPreviewOpen" type="button" aria-label="进入所选文章">
+      <img src="../assets/weekly-cover-art.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <span class="toc-preview-copy">
+        <span class="toc-preview-top"><span class="toc-preview-number" id="tocPreviewNumber">01</span></span>
+        <span class="toc-preview-title" id="tocPreviewTitle"></span>
+        <span class="toc-preview-meta"><span id="tocPreviewJournal"></span><span aria-hidden="true">·</span><time id="tocPreviewDate"></time></span>
+        <span class="toc-preview-summary" id="tocPreviewSummary"></span>
+      </span>
+      <span class="toc-preview-arrow" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none">
+        <path d="M3 10h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg></span>
+    </button>
+  </div>
+</div>
+
+<dialog class="export-dialog" id="exportDialog" aria-labelledby="exportTitle">
+  <div class="export-dialog-inner">
+    <div class="export-dialog-head">
+      <div><p class="export-kicker">PRINT / PDF</p><h2 id="exportTitle">选择导出范围</h2></div>
+      <button id="exportClose" class="export-close" type="button" aria-label="关闭">×</button>
+    </div>
+    <p class="export-note" id="exportNote">PDF 将使用适合 A4 纵向阅读的学术简报版式。</p>
+    <div class="export-options">
+      <button class="export-option" id="exportArticle" type="button">
+        <span class="export-option-number">01</span>
+        <span><b>导出当前文章</b><small id="exportArticleHint">请先打开一篇文章</small></span>
+        <span class="export-arrow" aria-hidden="true">↗</span>
+      </button>
+      <button class="export-option" id="exportIssue" type="button">
+        <span class="export-option-number">全</span>
+        <span><b>导出本期全部文章</b><small>20 篇 · 含封面与目录</small></span>
+        <span class="export-arrow" aria-hidden="true">↗</span>
+      </button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  var deck=document.getElementById('deck');
+  var pages=[].slice.call(document.querySelectorAll('.page'));
+  var dots=document.getElementById('dots');
+  var toc=document.getElementById('toc');
+  var n=pages.length, cur=0;
+  var exportBtn=document.getElementById('exportBtn');
+  var exportDialog=document.getElementById('exportDialog');
+  var exportArticle=document.getElementById('exportArticle');
+  var exportIssue=document.getElementById('exportIssue');
+  var exportClose=document.getElementById('exportClose');
+  var exportHint=document.getElementById('exportArticleHint');
+  var exportNote=document.getElementById('exportNote');
+  function openPrintPage(mode){
+    if(mode==='article' && cur===0) return;
+    var target=new URL('print.html',window.location.href);
+    target.searchParams.set('mode',mode);
+    target.searchParams.set('autoprint','1');
+    if(mode==='article') target.searchParams.set('article',String(cur));
+    window.open(target.href,'_blank','noopener');
+    exportDialog.close();
+  }
+  exportBtn.addEventListener('click',function(){
+    var hasArticle=cur>0;
+    exportArticle.disabled=!hasArticle;
+    exportHint.textContent=hasArticle?'当前选择：第 '+String(cur).padStart(2,'0')+' 篇':'请先打开一篇文章';
+    exportNote.textContent=hasArticle?'将导出当前正在阅读的文章。也可生成包含本期全部文章的完整简报。':'打开任意文章后即可导出单篇；整期简报随时可用。';
+    exportDialog.showModal();
+  });
+  exportArticle.addEventListener('click',function(){openPrintPage('article')});
+  exportIssue.addEventListener('click',function(){openPrintPage('issue')});
+  exportClose.addEventListener('click',function(){exportDialog.close()});
+  exportDialog.addEventListener('click',function(event){if(event.target===exportDialog) exportDialog.close()});
+  function articleFromUrl(){
+    var raw=new URLSearchParams(window.location.search).get('article');
+    if(!raw || !/^[1-9]\d*$/.test(raw)) return 0;
+    var value=parseInt(raw,10);
+    return value>0 && value<n ? value : 0;
+  }
+  var initialArticle=articleFromUrl();
+  var holdInitialArticle=initialArticle>0;
+  function writeArticleUrl(i,mode){
+    if(!mode) return;
+    var url=new URL(window.location.href);
+    if(i>0) url.searchParams.set('article',String(i));
+    else url.searchParams.delete('article');
+    var next=url.pathname+(url.search||'')+url.hash;
+    var current=window.location.pathname+window.location.search+window.location.hash;
+    if(next===current) return;
+    if(mode==='push') window.history.pushState(window.history.state,'',next);
+    else window.history.replaceState(window.history.state,'',next);
+  }
+  var tocButton=document.getElementById('tocBtn');
+  var tocClose=document.getElementById('tocClose');
+  var tocSearch=document.getElementById('tocSearch');
+  var tocButtons=[].slice.call(toc.querySelectorAll('button.toc-row[data-i]'));
+  var tocGroups=[].slice.call(toc.querySelectorAll('.toc-group'));
+  var tocCount=document.getElementById('tocCount');
+  var tocEmpty=document.getElementById('tocEmpty');
+  var tocPreviewOpen=document.getElementById('tocPreviewOpen');
+  var selectedTocButton=null;
+  function selectToc(button,focusButton){
+    if(!button) return;
+    selectedTocButton=button;
+    tocButtons.forEach(function(b){
+      var active=b===button;
+      b.classList.toggle('is-current',active);
+      b.setAttribute('aria-pressed',active?'true':'false');
+    });
+    document.getElementById('tocPreviewNumber').textContent=('0'+button.getAttribute('data-i')).slice(-2);
+    document.getElementById('tocPreviewTitle').textContent=button.getAttribute('data-title')||'';
+    document.getElementById('tocPreviewJournal').textContent=button.getAttribute('data-journal')||'';
+    document.getElementById('tocPreviewDate').textContent=button.getAttribute('data-date')||'';
+    document.getElementById('tocPreviewSummary').textContent=button.getAttribute('data-lead')||'';
+    tocPreviewOpen.setAttribute('data-target-i',button.getAttribute('data-i'));
+    tocPreviewOpen.setAttribute('aria-label','阅读第 '+button.getAttribute('data-i')+' 篇：'+(button.getAttribute('data-title')||''));
+    if(focusButton) button.focus();
+  }
+  function filterToc(){
+    var terms=(tocSearch.value||'').trim().toLocaleLowerCase().split(' ').filter(Boolean);
+    var visible=0;
+    tocButtons.forEach(function(b){
+      var hay=(b.getAttribute('data-search')||'').toLocaleLowerCase();
+      var show=terms.every(function(term){return hay.indexOf(term)>=0});
+      b.parentElement.hidden=!show;
+      if(show) visible++;
+    });
+    tocGroups.forEach(function(group){
+      var rows=[].slice.call(group.querySelectorAll('.toc-item'));
+      var groupVisible=rows.filter(function(row){return !row.hidden}).length;
+      group.hidden=groupVisible===0;
+      group.querySelector('[data-group-count]').textContent='共 '+groupVisible+' 篇';
+    });
+    tocCount.textContent=visible+' / '+tocButtons.length+' 篇';
+    tocEmpty.hidden=visible>0;
+    tocPreviewOpen.disabled=visible===0;
+    if(visible && (!selectedTocButton || selectedTocButton.parentElement.hidden)){
+      selectToc(tocButtons.filter(function(b){return !b.parentElement.hidden})[0],false);
+    }
+  }
+  function visibleTocButtons(){return tocButtons.filter(function(b){return !b.parentElement.hidden});}
+  function moveTocSelection(step){
+    var visible=visibleTocButtons();
+    if(!visible.length) return;
+    var current=visible.indexOf(selectedTocButton);
+    var nextIndex=current<0?(step>0?0:visible.length-1):Math.max(0,Math.min(visible.length-1,current+step));
+    selectToc(visible[nextIndex],true);
+  }
+  tocButtons.forEach(function(b){
+    b.addEventListener('click',function(){selectToc(b,false)});
+  });
+  tocSearch.addEventListener('input',filterToc);
+  if(tocButtons.length) selectToc(tocButtons[0],false);
+  filterToc();
+
+  pages.forEach(function(_,i){
+    var d=document.createElement('i');
+    d.title='第 '+(i+1)+' 页';
+    d.addEventListener('click',function(){go(i)});
+    dots.appendChild(d);
+  });
+  var dotsArr=[].slice.call(dots.querySelectorAll('i'));
+  var num=document.createElement('span');
+  num.className='pgnum'; dots.appendChild(num);
+
+  function mark(i,historyMode){
+    cur=i;
+    dotsArr.forEach(function(d,k){ d.className = k===i?'on':'' });
+    num.textContent = i===0 ? '封面' : i+' / '+(n-1);
+    writeArticleUrl(i,historyMode);
+  }
+  function go(i,options){
+    options=options||{};
+    if(!options.keepInitial) holdInitialArticle=false;
+    i=Math.max(0,Math.min(n-1,i));
+    var far = Math.abs(i-cur) > 2;
+    var behavior=options.behavior||(far?'auto':'smooth');
+    deck.scrollTo({left:pages[i].offsetLeft-deck.offsetLeft, behavior:behavior});
+    mark(i,options.history===false?null:(options.history==='replace'?'replace':'push'));
+  }
+
+  var raf=false;
+  deck.addEventListener('scroll',function(){
+    if(raf) return; raf=true;
+    requestAnimationFrame(function(){
+      raf=false;
+      var i=Math.round(deck.scrollLeft/Math.max(1,deck.clientWidth));
+      if(i!==cur) mark(Math.max(0,Math.min(n-1,i)),'replace');
+    });
+  },{passive:true});
+
+  function flow(){ return document.documentElement.classList.contains('flow'); }
+
+  // 滚轮：页内可滚就先滚，滚到头再翻页
+  var acc=0, last=0, cool=0;
+  deck.addEventListener('wheel',function(e){
+    if(flow()) return;
+    if(Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;   // 横向手势交给原生
+    var dy = e.deltaY;
+    if(e.deltaMode===1) dy*=16; else if(e.deltaMode===2) dy*=deck.clientHeight;
+    if(!dy) return;
+
+    var pg=pages[cur];
+    var scrollable = pg.scrollHeight - pg.clientHeight > 2;
+    if(scrollable){
+      var atTop = pg.scrollTop <= 1;
+      var atBot = pg.scrollTop + pg.clientHeight >= pg.scrollHeight - 2;
+      if((dy>0 && !atBot) || (dy<0 && !atTop)){
+        e.preventDefault();
+        pg.scrollTop += dy;
+        acc=0;
+        return;
+      }
+      if(dy>0 && atBot) pg.scrollTop = pg.scrollHeight;
+      if(dy<0 && atTop) pg.scrollTop = 0;
+    }
+
+    e.preventDefault();
+    var now=Date.now();
+    if(now-last>260) acc=0;          // 停手就清零
+    last=now;
+    acc+=dy;
+    if(now<cool) return;
+    if(Math.abs(acc) < 55) return;
+    var dir = acc>0 ? 1 : -1;
+    acc=0; cool=now+320;
+    go(cur+dir);
+  },{passive:false});
+
+  function closeToc(restoreFocus){
+    toc.classList.remove('open');
+    toc.setAttribute('aria-hidden','true');
+    tocButton.setAttribute('aria-expanded','false');
+    if(restoreFocus!==false) tocButton.focus();
+  }
+  function openToc(){
+    tocSearch.value='';
+    filterToc();
+    var current=cur>0?tocButtons.filter(function(b){return parseInt(b.getAttribute('data-i'),10)===cur})[0]:null;
+    selectToc(current||tocButtons[0],false);
+    toc.classList.add('open');
+    toc.setAttribute('aria-hidden','false');
+    tocButton.setAttribute('aria-expanded','true');
+    window.requestAnimationFrame(function(){tocSearch.focus()});
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.metaKey||e.ctrlKey||e.altKey) return;
+    var k=e.key;
+    if(toc.classList.contains('open')){
+      if(k==='Escape'){e.preventDefault();closeToc();return}
+      if(k==='ArrowDown'){e.preventDefault();moveTocSelection(1);return}
+      if(k==='ArrowUp'){e.preventDefault();moveTocSelection(-1);return}
+      return;
+    }
+    if(e.target.closest('input,textarea,select,[contenteditable="true"]')) return;
+    if(flow()) return;
+    if(k==='ArrowRight'||k==='ArrowDown'||k==='PageDown'||k===' '){ e.preventDefault(); go(cur+1); }
+    else if(k==='ArrowLeft'||k==='ArrowUp'||k==='PageUp'){ e.preventDefault(); go(cur-1); }
+    else if(k==='Home'){ e.preventDefault(); go(0); }
+    else if(k==='End'){ e.preventDefault(); go(n-1); }
+  });
+  tocButton.addEventListener('click',openToc);
+  tocClose.addEventListener('click',function(){closeToc()});
+  toc.addEventListener('click',function(e){if(e.target===toc) closeToc()});
+  tocPreviewOpen.addEventListener('click',function(){
+    var target=parseInt(tocPreviewOpen.getAttribute('data-target-i'),10);
+    if(!target) return;
+    closeToc(false);
+    if(flow()){ document.documentElement.classList.remove('flow'); syncViewBtn(); }
+    go(target);
+  });
+  toc.addEventListener('keydown',function(e){
+    if(e.key!=='Tab') return;
+    var focusable=[].slice.call(toc.querySelectorAll('button:not([disabled]),input:not([disabled])')).filter(function(el){return !el.closest('[hidden]')});
+    if(!focusable.length) return;
+    var first=focusable[0],last=focusable[focusable.length-1];
+    if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+  });
+
+  var viewBtn=document.getElementById('viewBtn');
+  function syncViewBtn(){ viewBtn.textContent = flow() ? '展页' : '连读'; }
+  viewBtn.addEventListener('click',function(){
+    var on=document.documentElement.classList.toggle('flow');
+    syncViewBtn();
+    if(!on){ window.scrollTo(0,0); mark(cur); }
+  });
+  syncViewBtn();
+
+  // ---- 缩放：Ctrl/⌘ + 滚轮，或顶栏 − / + ----
+  var ZKEY='gr_zoom', zLab=document.getElementById('zoomLab');
+  var z=parseFloat(localStorage.getItem(ZKEY)||'1');
+  if(!(z>=0.6 && z<=2)) z=1;
+
+  // ---- 自动缩排：放不下的那一页按比例缩小，保证「一页一屏」 ----
+  // 用 zoom 而不是改字号：zoom 会等比缩放整张纸，行宽、栏距、标题层级都不走样。
+  var sheets = [].slice.call(document.querySelectorAll('.page .sheet'));
+  function fitAll(){
+    for(var k=0;k<sheets.length;k++){
+      var sh=sheets[k], pg=sh.parentNode, f=1, i;
+      if((pg.classList.contains('article-page') || pg.classList.contains('cover')) && window.innerWidth<=820){
+        sh.style.zoom = z;
+        pg.scrollTop = 0;
+        continue;
+      }
+      sh.style.zoom = z;
+      if(pg.scrollHeight - pg.clientHeight > 2){
+        var total = Math.max(1, pg.scrollHeight);
+        f = Math.max(0.62, Math.min(1, (pg.clientHeight-2)/total));
+        for(i=0;i<6;i++){
+          sh.style.zoom = z*f;
+          var over = pg.scrollHeight - pg.clientHeight;
+          if(over <= 2) break;
+          f = Math.max(0.62, f - Math.min(0.08, Math.max(0.015, (over+4)/total)));
+        }
+        sh.style.zoom = z*f;
+      }
+      pg.scrollTop = 0;
+    }
+  }
+
+  function setZoom(v, quiet){
+    z = Math.max(0.6, Math.min(2, Math.round(v*100)/100));
+    document.documentElement.style.setProperty('--z', z);
+    zLab.textContent = Math.round(z*100)+'%';
+    try{ localStorage.setItem(ZKEY, z); }catch(e){}
+    fitAll();
+    if(!quiet){
+      // 缩放后回到页首。浏览器会在布局改变后做 scroll anchoring，
+      // 所以 rAF 里做一次、稍后再做一次，否则会被拉回原来的滚动位置。
+      requestAnimationFrame(function(){ realign(true) });
+      setTimeout(function(){ realign(true) }, 160);
+    }
+  }
+  setZoom(z, true);
+
+  document.getElementById('zoomIn').addEventListener('click', function(){ setZoom(z+0.1); });
+  document.getElementById('zoomOut').addEventListener('click', function(){ setZoom(z-0.1); });
+  zLab.addEventListener('click', function(){ setZoom(1); });
+
+  window.addEventListener('wheel', function(e){
+    if(!(e.ctrlKey||e.metaKey)) return;      // 只接管 Ctrl+滚轮，普通滚轮留给翻页
+    e.preventDefault();
+    setZoom(z - e.deltaY*0.0015);
+  }, {passive:false});
+
+  document.addEventListener('keydown', function(e){
+    if(!(e.ctrlKey||e.metaKey)) return;
+    if(e.key==='=' || e.key==='+'){ e.preventDefault(); setZoom(z+0.1); }
+    else if(e.key==='-'){ e.preventDefault(); setZoom(z-0.1); }
+    else if(e.key==='0'){ e.preventDefault(); setZoom(1); }
+  });
+
+  // 缩放后回到页首并重新对齐页边界：布局一变，旧的 scrollLeft 就不再落在页边界上，
+  // 会出现「两页各露一半」。浏览器还会做 scroll anchoring，所以 rAF 一次、稍后再一次。
+  var touched=false;
+  ['wheel','keydown','pointerdown','touchstart'].forEach(function(t){
+    window.addEventListener(t, function(){ touched=true; holdInitialArticle=false }, {passive:true, once:true});
+  });
+  function realign(force){
+    if(touched && !force) return;
+    var i=holdInitialArticle && !touched ? initialArticle :
+      Math.max(0, Math.min(n-1, Math.round(deck.scrollLeft/Math.max(1,deck.clientWidth))));
+    deck.scrollLeft = i*deck.clientWidth;
+    if(pages[i]) pages[i].scrollTop = 0;
+    mark(i,'replace');
+  }
+  // 窗口尺寸一变，换行就变，得重新算一遍缩排
+  var rzTimer=null;
+  window.addEventListener('resize', function(){
+    clearTimeout(rzTimer);
+    rzTimer = setTimeout(function(){ fitAll(); realign(true); }, 200);
+  });
+  window.addEventListener('load', function(){
+    fitAll();
+    if(initialArticle>0) go(initialArticle,{history:false,behavior:'auto',keepInitial:true});
+    requestAnimationFrame(realign);
+    [120, 320, 700].forEach(function(t){ setTimeout(realign, t); });
+    setTimeout(fitAll, 400);
+  });
+  window.addEventListener('popstate',function(){
+    holdInitialArticle=false;
+    go(articleFromUrl(),{history:false,behavior:'auto'});
+  });
+})();
+</script>
+<script src="../assets/library-store.js"></script>
+<script src="../assets/library-issue.js"></script>
+<script src="../assets/radar-terms.js"></script>
+<script src="../assets/reading-progress.js"></script>
+<script src="../assets/related-articles.js"></script>
+<script src="../assets/site-nav.js"></script>
+</body>
+</html>
