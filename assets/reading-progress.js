@@ -13,6 +13,7 @@
     return Number.isFinite(n) && n >= 1 && n <= 20 ? n : 0;
   }
   function saveCurrent(force) {
+    if (global.__GR_LOCATING_TARGET) return;
     var info = issueInfo(), number = articleNumber();
     if (!info || !number) return;
     var page = document.querySelectorAll('#deck .article-page')[number - 1];
@@ -29,6 +30,7 @@
     if (!info) return;
     var lastSaved = '';
     function sync(force) {
+      if (global.__GR_LOCATING_TARGET) return;
       var n = articleNumber();
       if (!n) return;
       var key = info.issue + ':' + n;
@@ -44,6 +46,7 @@
     if ('IntersectionObserver' in global && pages.length) {
       var visible = new Map(), timer = 0;
       var observer = new IntersectionObserver(function (entries) {
+        if (global.__GR_LOCATING_TARGET) return;
         entries.forEach(function (entry) { visible.set(entry.target, entry.intersectionRatio); });
         if (!document.documentElement.classList.contains('flow')) return;
         clearTimeout(timer);
