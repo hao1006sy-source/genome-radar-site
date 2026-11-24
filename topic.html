@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8f6f0">
+<meta name="description" content="Genome Radar（基因组雷达）学科研究专题：深度汇聚该领域历期精选前沿论文，支持全文搜索、多维过滤、趋势统计、原文直达与精读笔记。">
+<title>研究专题详情 · 基因组雷达</title>
+<link rel="icon" type="image/x-icon" href="assets/brand/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/brand/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/brand/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/topics.css">
+<script defer src="assets/library-store.js"></script>
+<script defer src="assets/topics-config.js"></script>
+<script defer src="assets/topics.js"></script>
+</head>
+<body>
+<header class="site-header" id="top">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="基因组雷达首页">
+      <img class="brand-mark" src="assets/brand/logo-transparent.png" alt="基因组雷达 Logo" width="44" height="44">
+      <span class="brand-name">基因组雷达</span>
+      <span class="brand-en">GENOME RADAR</span>
+    </a>
+    <nav class="primary-nav" aria-label="主导航">
+      <a href="index.html">首页</a>
+      <a href="index.html#archive">文献归档</a>
+      <a href="search.html">文献搜索</a>
+      <a href="topics.html" aria-current="page">研究专题</a>
+      <a href="library.html">我的文献库</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page-shell" id="main-content">
+  <!-- 面包屑导航 -->
+  <nav class="topic-breadcrumb" aria-label="面包屑" style="padding-top:20px;">
+    <a href="index.html">首页</a>
+    <span>/</span>
+    <a href="topics.html">研究专题中心</a>
+    <span>/</span>
+    <span id="breadcrumb-topic" style="color:var(--forest);font-weight:700;">专题</span>
+  </nav>
+
+  <!-- 顶部快速专题切换 Tab 栏 -->
+  <nav class="topic-nav-tabs-bar" id="topic-tabs" aria-label="专题切换">
+    <!-- 动态由 topics.js 填充 -->
+  </nav>
+
+  <!-- 专题 Hero 概览区 -->
+  <section class="topic-detail-hero" aria-labelledby="hero-title-zh">
+    <div class="detail-hero-layout">
+      <div class="detail-title-group">
+        <h1 id="hero-title-zh">
+          <span id="hero-topic-icon" class="topic-icon-wrap" style="width:44px;height:44px;border-radius:8px;"></span>
+          <span id="hero-title-zh-text">专题名称</span>
+        </h1>
+        <span class="detail-en" id="hero-title-en">Topic English Name</span>
+        <div style="margin-top:8px;">
+          <span class="topic-badge" id="hero-badge">Tag</span>
+        </div>
+        <p class="detail-desc" id="hero-desc">专题描述信息加载中…</p>
+      </div>
+
+      <!-- 指标看板 -->
+      <div class="detail-stats-panel">
+        <div class="detail-stat-box">
+          <span class="d-val" id="stat-topic-total">--</span>
+          <span class="d-label">累计精选文献</span>
+        </div>
+        <div class="detail-stat-box">
+          <span class="d-val" id="stat-topic-new" style="color:#b87315;">--</span>
+          <span class="d-label">本周最新收录</span>
+        </div>
+        <div class="detail-stat-box">
+          <span class="d-val" id="stat-topic-journals">--</span>
+          <span class="d-label">涵盖权威期刊</span>
+        </div>
+        <div class="detail-stat-box">
+          <span class="d-val" id="stat-topic-span">--</span>
+          <span class="d-label">收录时间跨度</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 趋势图 -->
+    <div class="trend-section-box">
+      <div class="trend-box-title">
+        <span>周报期次收录趋势（期次分布）</span>
+        <span style="font-weight:normal;font-size:11px;color:#788072;">金黄色柱为当期最新</span>
+      </div>
+      <div id="topic-trend-chart">
+        <!-- 动态生成迷你趋势柱状图 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 检索与多维筛选工具栏 -->
+  <section class="topic-toolbar-section">
+    <div class="search-and-filters">
+      <!-- 搜索框 -->
+      <div class="filter-search-box">
+        <input type="search" id="topic-search-input" placeholder="在当前专题中搜索标题、摘要、期刊、作者或 DOI…" autocomplete="off">
+        <svg class="filter-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </div>
+
+      <!-- 分区筛选 -->
+      <select class="filter-select" id="filter-quartile" aria-label="筛选期刊分区">
+        <option value="all">全部期刊分区</option>
+        <option value="top">1区 Top 顶级期刊</option>
+        <option value="q1">中科院 1区</option>
+        <option value="q2">中科院 2区</option>
+      </select>
+
+      <!-- 年份筛选 -->
+      <select class="filter-select" id="filter-year" aria-label="筛选发表年份">
+        <option value="all">全部发表年份</option>
+      </select>
+
+      <!-- 类型筛选 -->
+      <select class="filter-select" id="filter-category" aria-label="筛选文献类型">
+        <option value="all">全部文章类型</option>
+        <option value="研究文章">研究文章 (Research)</option>
+        <option value="综述评价">综述评价 (Review)</option>
+        <option value="方法资源">方法资源 (Resource/Method)</option>
+      </select>
+
+      <!-- 排序模式 -->
+      <select class="filter-select" id="sort-select" aria-label="文章排序">
+        <option value="issue_desc">按期次降序 (最新周报优先)</option>
+        <option value="date_desc">按发表时间降序 (最新发表优先)</option>
+        <option value="if_desc">按影响因子 (高 IF 优先)</option>
+      </select>
+
+      <button type="button" class="btn-action" id="reset-filters-btn" title="重置当前所有检索与筛选条件">重置筛选</button>
+    </div>
+
+    <!-- 热门关键词快捷标签条 -->
+    <div class="filter-chips-bar" id="topic-keyword-chips">
+      <!-- 动态填充 -->
+    </div>
+  </section>
+
+  <!-- 文献列表区域 -->
+  <section aria-label="专题文献列表">
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+      <span id="topic-results-count" style="font-size:13.5px; color:var(--forest); font-weight:700; font-family:var(--serif);">正在检索专题文献…</span>
+    </div>
+
+    <div class="topic-articles-list" id="topic-articles-list">
+      <!-- 动态填充文献卡片 -->
+      <div class="empty-state">
+        <p>正在载入专题文献…</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">基因组雷达 <span>·</span> GENOME RADAR <span>·</span> RESEARCH COLLECTIONS</div>
+    <div class="footer-note">每周精选植物与基因组学前沿文献 · 静态构建 · 纯净体验</div>
+  </div>
+</footer>
+</body>
+</html>

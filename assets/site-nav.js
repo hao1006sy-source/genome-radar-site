@@ -3,6 +3,7 @@
 
   var labels = [
     ['home', '首页', 'index.html'],
+    ['topics', '研究专题', 'topics.html'],
     ['search', '文献搜索', 'search.html'],
     ['library', '我的文献库', 'library.html'],
     ['deep', '我的精读', 'deep-library.html']
