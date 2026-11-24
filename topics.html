@@ -123,13 +123,15 @@ document.addEventListener('DOMContentLoaded', function () {
         var group = agg.topics[topic.id];
         var totalCount = group ? group.articles.length : 0;
         var newCount = group ? group.latestNewCount : 0;
+        var subCount = topic.subtopics ? topic.subtopics.length : 0;
 
         var card = document.createElement('a');
         card.className = 'topic-card';
         card.href = 'topic.html?topic=' + encodeURIComponent(topic.id);
         card.setAttribute('aria-label', topic.name_zh + '，收录 ' + totalCount + ' 篇文献');
 
-        var highlightsHtml = topic.highlights.map(function (hl) {
+        var highlights = topic.highlights || (topic.subtopics || []).slice(0, 3).map(function(s){ return s.name_zh; });
+        var highlightsHtml = highlights.map(function (hl) {
           return '<span class="highlight-tag">' + hl + '</span>';
         }).join('');
 
@@ -137,26 +139,34 @@ document.addEventListener('DOMContentLoaded', function () {
           ? '<span class="topic-new-pill">本期 +' + newCount + ' 篇</span>'
           : '';
 
+        var iconSvg = topic.icon_svg || topic.icon || '';
+        var badgeText = topic.badge || '核心研究专题';
+        var descText = topic.definition || topic.description || '';
+
         card.innerHTML = 
           '<div class="topic-card-top">' +
-            '<div class="topic-icon-wrap">' + topic.icon + '</div>' +
+            '<div class="topic-icon-wrap">' + iconSvg + '</div>' +
             '<div class="topic-badge-group">' +
-              '<span class="topic-badge">' + topic.badge + '</span>' +
+              '<span class="topic-badge">' + badgeText + '</span>' +
               newPillHtml +
             '</div>' +
           '</div>' +
           '<h2>' + topic.name_zh + '</h2>' +
           '<span class="topic-card-en">' + topic.name_en + '</span>' +
-          '<p class="topic-desc">' + topic.description + '</p>' +
+          '<p class="topic-desc">' + descText + '</p>' +
           '<div class="topic-highlights">' + highlightsHtml + '</div>' +
-          '<div class="topic-card-stats">' +
+          '<div class="topic-card-stats" style="grid-template-columns: repeat(3, 1fr);">' +
             '<div class="stat-item">' +
-              '<span class="stat-num">' + totalCount + ' <small style="font-size:12px;font-weight:normal;">篇</small></span>' +
-              '<span class="stat-desc">累计精选文献</span>' +
+              '<span class="stat-num">' + totalCount + ' <small style="font-size:11px;font-weight:normal;">篇</small></span>' +
+              '<span class="stat-desc">累计收录</span>' +
             '</div>' +
             '<div class="stat-item">' +
-              '<span class="stat-num" style="color:' + (newCount > 0 ? '#b87315' : 'inherit') + ';">' + (newCount > 0 ? '+' + newCount : '0') + ' <small style="font-size:12px;font-weight:normal;">篇</small></span>' +
-              '<span class="stat-desc">当期新增收录</span>' +
+              '<span class="stat-num">' + subCount + ' <small style="font-size:11px;font-weight:normal;">个</small></span>' +
+              '<span class="stat-desc">二级方向</span>' +
+            '</div>' +
+            '<div class="stat-item">' +
+              '<span class="stat-num" style="color:' + (newCount > 0 ? '#b87315' : 'inherit') + ';">' + (newCount > 0 ? '+' + newCount : '0') + ' <small style="font-size:11px;font-weight:normal;">篇</small></span>' +
+              '<span class="stat-desc">当期新增</span>' +
             '</div>' +
           '</div>' +
           '<div class="topic-card-action">' +
