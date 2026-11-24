@@ -57,3 +57,6 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .results-toolbar .radar-result-filter input{accent-color:#315b3e}
 @media(max-width:790px){.search-hero{background-image:linear-gradient(90deg,rgba(248,246,240,.99),rgba(248,246,240,.88)),url("search-maize-banner.png")}.hero-search{width:calc(100% - 43px)}.hero-note{display:none}}
 @media(max-width:520px){.search-hero{background-position:73% center}.hero-search{gap:6px;padding-right:6px}.hero-search input{font-size:10.5px}.hero-search button{padding:5px 8px;font-size:10px}.results-toolbar .radar-result-filter{font-size:10px}}
+
+.card-tag-topic{cursor:pointer;transition:background .15s ease,color .15s ease;text-decoration:none}
+.card-tag-topic:hover{background:var(--forest)!important;color:#fff!important}

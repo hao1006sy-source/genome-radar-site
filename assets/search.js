@@ -29,7 +29,21 @@
   function card(item){var link=element('a','result-card');var href=validUrl(item);link.href=href||'#';if(!href){link.setAttribute('aria-disabled','true');link.addEventListener('click',function(e){e.preventDefault()})}
     var meta=element('span','card-meta');if(item.journal)meta.appendChild(element('span','meta-journal',item.journal));if(item.quartile)meta.appendChild(element('span','meta-zone',item.quartile));if(item.impact_factor!==null&&item.impact_factor!==undefined)meta.appendChild(element('span','meta-if','IF '+item.impact_factor));if(item.issue_week){meta.appendChild(element('span','meta-separator','·'));meta.appendChild(element('span','meta-issue',item.issue_week))}if(item.category)meta.appendChild(element('span','meta-kind',item.category));
     var h=element('h3','card-title',item.title_zh||'标题未标注'),en=element('span','card-en',item.title_en||''),lead=element('p','card-summary',item.summary||'摘要未标注'),tags=element('div','card-tags');
-    (Array.isArray(item.keywords)?item.keywords:[]).slice(0,4).forEach(function(t){tags.appendChild(element('span','card-tag',t))});
+    var allTags = (Array.isArray(item.research_direction) ? item.research_direction : []).concat(Array.isArray(item.keywords) ? item.keywords : []);
+    var uniqTags = [];
+    allTags.forEach(function(t){ if(t && uniqTags.indexOf(t)===-1) uniqTags.push(t); });
+    uniqTags.slice(0, 5).forEach(function(t){
+      var topicIds = window.GenomeRadarTopics ? window.GenomeRadarTopics.mapTagToTopicIds(t) : [];
+      if (topicIds.length > 0) {
+        var tagA = element('a', 'card-tag card-tag-topic', t);
+        tagA.href = 'topic.html?topic=' + encodeURIComponent(topicIds[0]);
+        tagA.title = '进入「' + t + '」研究专题';
+        tagA.addEventListener('click', function(e){ e.stopPropagation(); });
+        tags.appendChild(tagA);
+      } else {
+        tags.appendChild(element('span', 'card-tag', t));
+      }
+    });
     var foot=element('p','card-issue',(item.issue||'期次未标注')+' · '+(item.publication_date||'发表日期未标注'));
     var go=element('span','card-arrow');go.appendChild(arrow());go.setAttribute('aria-hidden','true');
     link.appendChild(meta);link.appendChild(h);link.appendChild(en);link.appendChild(lead);link.appendChild(tags);link.appendChild(foot);link.appendChild(go);if(window.GenomeRadarTerms&&window.GenomeRadarTerms.matchesArticle(item)){link.appendChild(element('span','radar-hit','关注词命中'))}return link

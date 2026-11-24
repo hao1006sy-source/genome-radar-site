@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8f6f0">
+<meta name="description" content="Genome Radar（基因组雷达）研究专题：按植物与基因组学核心研究方向整理的跨期文献体系，涵盖组装与注释、泛基因组、性状关联、系统演化、表观调控、单细胞与生信方法等前沿进展。">
+<title>研究专题 · 基因组雷达</title>
+<link rel="icon" type="image/x-icon" href="assets/brand/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/brand/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/brand/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/topics.css">
+<script defer src="assets/topics-config.js"></script>
+</head>
+<body>
+<header class="site-header" id="top">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="基因组雷达首页">
+      <img class="brand-mark" src="assets/brand/logo-transparent.png" alt="基因组雷达 Logo" width="44" height="44">
+      <span class="brand-name">基因组雷达</span>
+      <span class="brand-en">GENOME RADAR</span>
+    </a>
+    <nav class="primary-nav" aria-label="主导航">
+      <a href="index.html">首页</a>
+      <a href="index.html#archive">文献归档</a>
+      <a href="search.html">文献搜索</a>
+      <a href="topics.html" aria-current="page">研究专题</a>
+      <a href="library.html">我的文献库</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page-shell" id="main-content">
+  <section class="topics-hero" aria-labelledby="hero-title">
+    <p class="hero-kicker">Research Collections · 跨期文献专题归档</p>
+    <h1 id="hero-title">研究专题中心</h1>
+    <p class="hero-subtitle">打破期次限制，围绕植物与基因组学核心科研方向进行全景追踪与深度索引</p>
+    <p class="hero-desc">
+      基于基因组雷达全站收录文献与结构化研究方向标签，建立自动化、跨期次的学科专题体系。所有历史期次与未来每周更新论文均会自动归纳，支持同义多标签映射、稳定去重与全文筛选。
+    </p>
+
+    <!-- 全局动态统计栏 -->
+    <div class="topics-metrics-bar" id="topics-metrics">
+      <div class="metric-item">
+        <span class="metric-label">收录专题分类</span>
+        <span class="metric-value" id="stat-topics-count">7</span>
+        <span class="metric-sub">核心科研方向</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-label">归档文献总量</span>
+        <span class="metric-value" id="stat-articles-count">--</span>
+        <span class="metric-sub">篇高质量论文收录</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-label">最新期次</span>
+        <span class="metric-value" id="stat-latest-week" style="font-size:22px;">--</span>
+        <span class="metric-sub" id="stat-latest-date">持续每周更新</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-label">本周新增收录</span>
+        <span class="metric-value" id="stat-latest-new" style="color:#b87315;">--</span>
+        <span class="metric-sub">篇新论文归档入专题</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="topics-grid-section" aria-labelledby="grid-title">
+    <div class="section-head">
+      <h2 class="section-title" id="grid-title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:22px;height:22px;" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+        <span>七大研究专题</span>
+      </h2>
+      <span class="section-en">CURATED RESEARCH DOMAINS</span>
+    </div>
+
+    <!-- 专题卡片网格 -->
+    <div class="topics-grid" id="topics-grid">
+      <!-- 动态填充 -->
+      <div class="empty-state" style="grid-column: 1 / -1;">
+        <p>正在从全站搜索索引载入专题文献数据…</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">基因组雷达 <span>·</span> GENOME RADAR <span>·</span> RESEARCH COLLECTIONS</div>
+    <div class="footer-note">每周精选植物与基因组学前沿文献 · 静态构建 · 纯净体验</div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  fetch('assets/search-index.json')
+    .then(function (res) {
+      if (!res.ok) throw new Error('无法加载搜索索引数据');
+      return res.json();
+    })
+    .then(function (data) {
+      var articles = data.articles || [];
+      var agg = GenomeRadarTopics.aggregateTopics(articles);
+      
+      // 更新顶部全局指标
+      document.getElementById('stat-articles-count').textContent = articles.length;
+      
+      var latestArticle = articles.find(function(a){ return a.issue === agg.latestIssue; });
+      if (latestArticle) {
+        document.getElementById('stat-latest-week').textContent = latestArticle.issue_week || agg.latestIssue;
+        document.getElementById('stat-latest-date').textContent = agg.latestIssue + ' 归档发布';
+      }
+
+      // 计算本期新增在各专题的总去重文章
+      var latestNewArticles = articles.filter(function (a) { return a.issue === agg.latestIssue; });
+      document.getElementById('stat-latest-new').textContent = '+' + latestNewArticles.length;
+
+      // 渲染卡片网格
+      var grid = document.getElementById('topics-grid');
+      grid.innerHTML = '';
+
+      GenomeRadarTopics.DEFINITIONS.forEach(function (topic) {
+        var group = agg.topics[topic.id];
+        var totalCount = group ? group.articles.length : 0;
+        var newCount = group ? group.latestNewCount : 0;
+
+        var card = document.createElement('a');
+        card.className = 'topic-card';
+        card.href = 'topic.html?topic=' + encodeURIComponent(topic.id);
+        card.setAttribute('aria-label', topic.name_zh + '，收录 ' + totalCount + ' 篇文献');
+
+        var highlightsHtml = topic.highlights.map(function (hl) {
+          return '<span class="highlight-tag">' + hl + '</span>';
+        }).join('');
+
+        var newPillHtml = newCount > 0 
+          ? '<span class="topic-new-pill">本期 +' + newCount + ' 篇</span>'
+          : '';
+
+        card.innerHTML = 
+          '<div class="topic-card-top">' +
+            '<div class="topic-icon-wrap">' + topic.icon + '</div>' +
+            '<div class="topic-badge-group">' +
+              '<span class="topic-badge">' + topic.badge + '</span>' +
+              newPillHtml +
+            '</div>' +
+          '</div>' +
+          '<h2>' + topic.name_zh + '</h2>' +
+          '<span class="topic-card-en">' + topic.name_en + '</span>' +
+          '<p class="topic-desc">' + topic.description + '</p>' +
+          '<div class="topic-highlights">' + highlightsHtml + '</div>' +
+          '<div class="topic-card-stats">' +
+            '<div class="stat-item">' +
+              '<span class="stat-num">' + totalCount + ' <small style="font-size:12px;font-weight:normal;">篇</small></span>' +
+              '<span class="stat-desc">累计精选文献</span>' +
+            '</div>' +
+            '<div class="stat-item">' +
+              '<span class="stat-num" style="color:' + (newCount > 0 ? '#b87315' : 'inherit') + ';">' + (newCount > 0 ? '+' + newCount : '0') + ' <small style="font-size:12px;font-weight:normal;">篇</small></span>' +
+              '<span class="stat-desc">当期新增收录</span>' +
+            '</div>' +
+          '</div>' +
+          '<div class="topic-card-action">' +
+            '<span>浏览专题全部文献</span>' +
+            '<span class="action-arrow" aria-hidden="true">→</span>' +
+          '</div>';
+
+        grid.appendChild(card);
+      });
+    })
+    .catch(function (err) {
+      console.error(err);
+      var grid = document.getElementById('topics-grid');
+      grid.innerHTML = '<div class="empty-state" style="grid-column: 1 / -1;"><h3 style="color:#a83232;">数据加载失败</h3><p>' + err.message + '</p></div>';
+    });
+});
+</script>
+</body>
+</html>
