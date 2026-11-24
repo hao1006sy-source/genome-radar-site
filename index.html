@@ -6,6 +6,10 @@
 <meta name="theme-color" content="#f8f6f0">
 <meta name="description" content="聚焦植物与基因组学方向的每周文献速览，精选研究进展，持续归档。">
 <title>基因组雷达 · 植物与基因组学文献</title>
+<link rel="icon" type="image/x-icon" href="assets/brand/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/brand/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/brand/apple-touch-icon.png">
 <style>
 :root{
   color-scheme:light;
@@ -71,7 +75,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{
   align-items:center;gap:28px;
 }
 .brand{display:flex;align-items:center;gap:10px;min-width:0;color:var(--forest)}
-.brand-mark{width:36px;height:36px;flex:none}
+.brand-mark{width:44px;height:44px;flex:none;object-fit:contain;border-radius:6px;vertical-align:middle}
 .brand-name{font-family:var(--serif);font-size:23px;font-weight:800;letter-spacing:.07em;white-space:nowrap}
 .brand-en{margin-left:2px;color:#53634f;font-family:var(--serif);font-size:11px;letter-spacing:.25em;white-space:nowrap}
 .primary-nav{height:100%;display:flex;align-items:center;justify-content:center;gap:6px}
@@ -263,7 +267,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{
 @media(max-width:640px){
   html{scroll-padding-top:118px}
   .header-inner{width:calc(100% - 30px);grid-template-columns:minmax(0,1fr) minmax(130px,.82fr);gap:0 10px;padding:8px 0 0}
-  .brand{gap:7px;min-width:0}.brand-mark{width:30px;height:30px}
+  .brand{gap:7px;min-width:0}.brand-mark{width:36px;height:36px}
   .brand-name{font-size:18px;letter-spacing:.05em}.brand-en{display:none}
   .search-form{height:34px;padding:0 8px;gap:6px}
   .search-form input{font-size:11px}.search-form input::placeholder{font-size:10.5px}
@@ -342,13 +346,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{
 <header class="site-header" id="top">
   <div class="header-inner">
     <a class="brand" href="#top" aria-label="基因组雷达首页">
-      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-        <path d="M23.8 42C22.4 30.8 22.8 19.6 28 6" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
-        <path d="M25.8 27.4C16.4 27.2 10.7 22 8.1 13.1c9.4.2 15.1 5.4 17.7 14.3Z" fill="#e7ebd9" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
-        <path d="M25.2 32.1c1.1-9.5 6.5-15.1 15.3-17.3-1 9.3-6.3 14.9-15.3 17.3Z" fill="#e7ebd9" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
-        <path d="m11 15 12 11m15-8L27 30" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-        <path d="M18 41h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
-      </svg>
+      <img class="brand-mark" src="assets/brand/logo-transparent.png" alt="基因组雷达 Logo" width="44" height="44">
       <span class="brand-name">基因组雷达</span>
       <span class="brand-en">GENOME RADAR</span>
     </a>
