@@ -14,7 +14,8 @@
     "contribution": "发布首个完整测序的高等模式植物基因组，确立了植物染色体构造、重复序列分布与基因注释的基本范式。",
     "reason": "植物基因组学的破晓奠基之作，所有现代植物分子生物学与遗传学研究的根本基石。",
     "milestone_id": "MS-ASM-2000-ARABIDOPSIS",
-    "url": "https://doi.org/10.1038/35048692"
+    "url": "https://doi.org/10.1038/35048692",
+    "radar_article_id": null
   },
   {
     "id": "REP-ASM-02",
@@ -31,7 +32,8 @@
     "contribution": "提出单倍型分相组装图模型，在极高重复与高杂合复杂基因组中实现全自动高准确度单倍型分离组装。",
     "reason": "当前全球真核生物与复杂多倍体作物基因组从头组装的统治级核心算法工具。",
     "milestone_id": null,
-    "url": "https://doi.org/10.1038/s41592-020-01056-5"
+    "url": "https://doi.org/10.1038/s41592-020-01056-5",
+    "radar_article_id": null
   },
   {
     "id": "REP-ASM-03",
@@ -41,9 +43,9 @@
     "title_zh": "组装十元体长穗偃麦草 41.33 Gb 超大基因组并解析同源交换",
     "title_en": "Haplotype-Resolved Genome Assembly of Decaploid Thinopyrum ponticum",
     "authors": "中国农业科学院团队 / 合作课题组",
-    "journal": "Cell",
-    "publication_date": "2026-10-04",
-    "doi": "10.1016/j.cell.2026.09.015",
+    "journal": "Mol Plant",
+    "publication_date": "2026-09-30",
+    "doi": "10.1016/j.molp.2026.09.014",
     "citation_count_level": "前沿突破 (本站精选)",
     "contribution": "攻克 41.33 Gb 超大十元体植物基因组的单倍型同源分辨组装难题，解析了同源染色体交换与小麦远缘杂交抗性等位基因。",
     "reason": "多倍体巨型植物基因组组装技术极致突破的代表作，为解决多倍体作物育种提供了全新范本。",
@@ -66,7 +68,8 @@
     "contribution": "高等植物首个基于高质量组装的泛基因组实证研究，确立了植物核心与配属基因组的二元结构。",
     "reason": "植物泛基因组学领域的开山鼻祖论文，确立了挖掘失落野生等位基因的标准流程。",
     "milestone_id": "MS-PAN-2014-SOYBEAN",
-    "url": "https://doi.org/10.1038/nbt.2979"
+    "url": "https://doi.org/10.1038/nbt.2979",
+    "radar_article_id": null
   },
   {
     "id": "REP-PAN-02",
@@ -83,7 +86,8 @@
     "contribution": "创立 rGFA 变异图数据结构与图比对算法，突破了线性基因组偏倚，为大尺度结构变异泛基因组分析奠定基础。",
     "reason": "现代变异图谱与图基因组学生物信息分析的底层奠基工具。",
     "milestone_id": "MS-PAN-2020-MINIGRAPH",
-    "url": "https://doi.org/10.1186/s13059-020-02168-z"
+    "url": "https://doi.org/10.1186/s13059-020-02168-z",
+    "radar_article_id": null
   },
   {
     "id": "REP-PAN-03",
@@ -93,9 +97,9 @@
     "title_zh": "构建二倍体与多倍体大麦属染色体级比较基因组图谱",
     "title_en": "Chromosome-scale comparative genomic atlas of diploid and polyploid Hordeum species",
     "authors": "国际大麦合作研究联盟",
-    "journal": "Nature Genetics",
-    "publication_date": "2026-11-22",
-    "doi": "10.1038/s41588-026-01980-w",
+    "journal": "Nature",
+    "publication_date": "2026-11-18",
+    "doi": "10.1038/s41586-026-11332-7",
     "citation_count_level": "前沿突破 (本站精选)",
     "contribution": "覆盖大麦属全属所有二倍体及代表性多倍体，构建染色体级泛基因组比对框架，揭示编码区保守而调控区快速更替的进化规律。",
     "reason": "跨属级作物全属超级泛基因组构建与网状演化分析的最新标杆。",
@@ -118,7 +122,8 @@
     "contribution": "严格从统计学上论证了基于群体连锁不平衡 (LD) 的全基因组关联分析相比连锁分析的巨大优势。",
     "reason": "全球所有 GWAS 关联分析研究的理论源头与数理依据。",
     "milestone_id": "MS-GWAS-1996-RISCH",
-    "url": "https://doi.org/10.1126/science.273.5281.1516"
+    "url": "https://doi.org/10.1126/science.273.5281.1516",
+    "radar_article_id": null
   },
   {
     "id": "REP-VAR-02",
@@ -135,7 +140,8 @@
     "contribution": "创新迭代循环模型，既彻底消除群体结构混杂导致的假阳性，又有效避免了假阴性，显著提升微效 QTL 检测能力。",
     "reason": "全球植物科学与农作物 GWAS 分析中应用最广泛的核心统计工具之一。",
     "milestone_id": null,
-    "url": "https://doi.org/10.1371/journal.pgen.1005767"
+    "url": "https://doi.org/10.1371/journal.pgen.1005767",
+    "radar_article_id": null
   },
   {
     "id": "REP-VAR-03",
@@ -145,14 +151,14 @@
     "title_zh": "定位 OsAKR 揭示水稻抗旱突变体产量优势的分子机制",
     "title_en": "Cloning of OsAKR Reveals the Molecular Basis of Drought Tolerance and High Yield in Rice",
     "authors": "华中农业大学水稻团队",
-    "journal": "Nature Plants",
-    "publication_date": "2026-10-04",
-    "doi": "10.1038/s41477-026-01812-4",
+    "journal": "Plant Cell Environ",
+    "publication_date": "2026-10-01",
+    "doi": "10.1111/pce.70929",
     "citation_count_level": "前沿突破 (本站精选)",
     "contribution": "利用高分辨率 QTL 精细定位与功能互补，鉴定出醛酮还原酶因果变异，阐释了平衡抗逆性与产量潜力的分子通路。",
     "reason": "作物复杂农艺性状因果基因精细克隆与抗逆高产育种协同改造的典范之作。",
     "milestone_id": null,
-    "radar_article_id": "2026-10-04:8",
+    "radar_article_id": "2026-10-04:10",
     "url": "https://doi.org/10.1038/s41477-026-01812-4"
   },
   {
@@ -170,7 +176,8 @@
     "contribution": "提出基因加倍与全基因组复制是物种获得新基因与产生宏观演化创新的主导力量。",
     "reason": "分子进化生物学领域最著名的理论著作，多倍体基因组学的学术原动力。",
     "milestone_id": "MS-EVO-1970-OHNO",
-    "url": "https://doi.org/10.1007/978-3-642-86659-3"
+    "url": "https://doi.org/10.1007/978-3-642-86659-3",
+    "radar_article_id": null
   },
   {
     "id": "REP-EVO-02",
@@ -187,7 +194,8 @@
     "contribution": "提供基于 DAGchainer 改进算法的大规模共线性模块识别工具，支持区分 WGD、串联重复、近端重复与易位重复。",
     "reason": "全球比较基因组学中染色体核型进化与多倍体加倍事件判定的核心分析工具。",
     "milestone_id": "MS-EVO-2008-MCSCAN",
-    "url": "https://doi.org/10.1093/nar/gkr1293"
+    "url": "https://doi.org/10.1093/nar/gkr1293",
+    "radar_article_id": null
   },
   {
     "id": "REP-EVO-03",
@@ -197,9 +205,9 @@
     "title_zh": "发布 Streptochaeta 染色体级基因组，重建禾本科祖先核型",
     "title_en": "Chromosome-Level Genome of Streptochaeta angustifolia and Ancestral Grass Karyotype",
     "authors": "中国科学院植物研究所 / 国际禾本科演化联盟",
-    "journal": "Nature Genetics",
-    "publication_date": "2026-10-04",
-    "doi": "10.1038/s41588-026-01925-1",
+    "journal": "Nat Commun",
+    "publication_date": "2026-08-31",
+    "doi": "10.1038/s41467-026-76979-2",
     "citation_count_level": "前沿突破 (本站精选)",
     "contribution": "破译禾本科最基部代表种染色体级序列，系统重建了拥有 12 条原染色体的禾本科共同祖先核型及其裂变融合历史。",
     "reason": "解答了困扰植物比较基因组学数十年的禾本科起源与祖先染色体构型难题。",
@@ -222,7 +230,8 @@
     "contribution": "确立全基因组重亚硫酸盐测序 (MethylC-seq) 范式，首次在单碱基分辨率全面解码植物全基因组甲基化格局。",
     "reason": "植物分子表观遗传学从酶切时代跨入高通量全基因组数字化时代的划时代标志。",
     "milestone_id": "MS-EPI-2008-METHYLC",
-    "url": "https://doi.org/10.1016/j.cell.2008.03.029"
+    "url": "https://doi.org/10.1016/j.cell.2008.03.029",
+    "radar_article_id": null
   },
   {
     "id": "REP-EPI-02",
@@ -239,7 +248,8 @@
     "contribution": "发明 Tn5 转座酶原位切割捕获技术，使得微量细胞的染色质开放性与转录因子足迹检测变得极为简便高效。",
     "reason": "表观调控元件与顺式调控网络挖掘的最核心基础实验工具。",
     "milestone_id": "MS-EPI-2013-ATAC",
-    "url": "https://doi.org/10.1038/nmeth.2688"
+    "url": "https://doi.org/10.1038/nmeth.2688",
+    "radar_article_id": null
   },
   {
     "id": "REP-EPI-03",
@@ -249,14 +259,14 @@
     "title_zh": "DDM1 协同染色质重塑维持复杂植物基因组稳定性的结构机理",
     "title_en": "Structural Basis of DDM1 in Maintaining Epigenetic Stability in Complex Plant Genomes",
     "authors": "冷泉港实验室 / 清华大学团队",
-    "journal": "Science",
-    "publication_date": "2026-10-04",
-    "doi": "10.1126/science.adg8812",
+    "journal": "Plant Cell Environ",
+    "publication_date": "2026-10-27",
+    "doi": "10.1111/pce.70917",
     "citation_count_level": "前沿突破 (本站精选)",
     "contribution": "解析了经典染色质重塑蛋白 DDM1 识别异染色质密集转座子并引导 DNA 甲基化酶接触 DNA 核心的冷冻电镜结构。",
     "reason": "完美回答了紧密异染色质内部如何实现长程表观遗传沉默的分子生物学机理。",
     "milestone_id": null,
-    "radar_article_id": "2026-10-04:7",
+    "radar_article_id": "2026-11-01:12",
     "url": "https://doi.org/10.1126/science.adg8812"
   },
   {
@@ -274,7 +284,8 @@
     "contribution": "开创了微量单细胞逆转录扩增与高通量测序的完整技术链，开启了生命科学的单细胞纪元。",
     "reason": "单细胞生物学与单细胞转录组学的鼻祖研究。",
     "milestone_id": "MS-SC-2009-SCRNA",
-    "url": "https://doi.org/10.1038/nmeth.1315"
+    "url": "https://doi.org/10.1038/nmeth.1315",
+    "radar_article_id": null
   },
   {
     "id": "REP-SC-02",
@@ -291,7 +302,8 @@
     "contribution": "提出跨批次锚点 (Anchors) 整合算法与图聚类降维可视化管线，解决不同单细胞样本间批次效应消除难题。",
     "reason": "全球单细胞数据处理与细胞类型鉴定的行业绝对标准工具。",
     "milestone_id": null,
-    "url": "https://doi.org/10.1016/j.cell.2019.05.031"
+    "url": "https://doi.org/10.1016/j.cell.2019.05.031",
+    "radar_article_id": null
   },
   {
     "id": "REP-SC-03",
@@ -301,14 +313,14 @@
     "title_zh": "单核转录组图谱揭示芸薹属杂交胚败育的细胞程序",
     "title_en": "Single-nucleus transcriptomic atlas reveals cellular programs of hybrid embryo abortion in Brassica",
     "authors": "华中农业大学十字花科团队",
-    "journal": "Cell Discovery",
-    "publication_date": "2026-10-04",
-    "doi": "10.1038/s41421-026-00720-3",
+    "journal": "Mol Plant",
+    "publication_date": "2026-10-01",
+    "doi": "10.1016/j.molp.2026.09.016",
     "citation_count_level": "前沿突破 (本站精选)",
     "contribution": "在单细胞分辨率下解析了远缘杂交胚乳发育早衰与胚胎败育的异质性细胞类型与致死信号级联通路。",
     "reason": "应用单核单细胞技术成功攻关作物远缘杂交生殖隔离难题的杰出范例。",
     "milestone_id": null,
-    "radar_article_id": "2026-10-04:5",
+    "radar_article_id": "2026-10-04:4",
     "url": "https://doi.org/10.1038/s41421-026-00720-3"
   },
   {
@@ -326,7 +338,8 @@
     "contribution": "提出基于种子扩展与统计期望值 (E-value) 的快速局部比对启发式算法，奠定现代生物信息检索基石。",
     "reason": "计算生物学与生物信息学领域无可争议的丰碑经典。",
     "milestone_id": "MS-TOOL-1990-BLAST",
-    "url": "https://doi.org/10.1016/S0022-2836(05)80360-2"
+    "url": "https://doi.org/10.1016/S0022-2836(05)80360-2",
+    "radar_article_id": null
   },
   {
     "id": "REP-TOOL-02",
@@ -343,7 +356,8 @@
     "contribution": "提出基于 Minimizer 与共线链式动态规划的高速高容错比对框架，完美适配第三代长读长高错误率序列比对。",
     "reason": "第三代基因组组装、结构变异检测及共线性分析领域的工业基础通用算法。",
     "milestone_id": "MS-TOOL-2018-MINIMAP2",
-    "url": "https://doi.org/10.1093/bioinformatics/bty191"
+    "url": "https://doi.org/10.1093/bioinformatics/bty191",
+    "radar_article_id": null
   },
   {
     "id": "REP-TOOL-03",
@@ -360,6 +374,7 @@
     "contribution": "基于 Evoformer 注意力网络与空间几何变换模型，实现原子级精度从头预测全生命之树两亿个蛋白质三维结构。",
     "reason": "人工智能与现代生物学交叉的最伟大突破，重塑了基因功能发现与蛋白质结构分析全流程。",
     "milestone_id": "MS-TOOL-2021-ALPHAFOLD2",
-    "url": "https://doi.org/10.1038/s41586-021-03819-2"
+    "url": "https://doi.org/10.1038/s41586-021-03819-2",
+    "radar_article_id": null
   }
 ]
