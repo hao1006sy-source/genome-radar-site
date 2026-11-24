@@ -316,6 +316,7 @@ async function init() {
   let state;
   try { state = Store.read(); }
   catch (error) { notice('个人文献库读取失败：' + error.message); return; }
+  index.articles = (index.articles || []).concat(index.retired_articles || []);
   article = resolveArticle(index, state);
   if (!article) { $('paper-title').textContent = '未找到所选文献'; notice('请从我的文献库或每期周报点击「精读」入口。'); return; }
   $('paper-title').textContent = article.title_zh || article.title_en || '未命名文献';
