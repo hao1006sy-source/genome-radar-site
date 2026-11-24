@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f8f6f0">
-<meta name="description" content="Genome Radar（基因组雷达）学科研究专题：深度汇聚该领域历期精选前沿论文，支持全文搜索、多维过滤、趋势统计、原文直达与精读笔记。">
+<meta name="description" content="Genome Radar（基因组雷达）学科研究专题 V2：严谨学术分类体系、权威学科发展史、代表性文献体系与持续动态归档。">
 <title>研究专题详情 · 基因组雷达</title>
 <link rel="icon" type="image/x-icon" href="assets/brand/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32x32.png">
@@ -26,86 +26,219 @@
     <nav class="primary-nav" aria-label="主导航">
       <a href="index.html">首页</a>
       <a href="index.html#archive">文献归档</a>
-      <a href="search.html">文献搜索</a>
       <a href="topics.html" aria-current="page">研究专题</a>
+      <a href="search.html">文献搜索</a>
       <a href="library.html">我的文献库</a>
+      <a href="deep-library.html">我的精读</a>
     </nav>
   </div>
 </header>
 
 <main class="page-shell" id="main-content">
   <!-- 面包屑导航 -->
-  <nav class="topic-breadcrumb" aria-label="面包屑" style="padding-top:20px;">
+  <nav class="topic-breadcrumb" id="topic-breadcrumb" aria-label="面包屑">
     <a href="index.html">首页</a>
     <span>/</span>
     <a href="topics.html">研究专题中心</a>
     <span>/</span>
-    <span id="breadcrumb-topic" style="color:var(--forest);font-weight:700;">专题</span>
+    <span id="breadcrumb-primary-topic" style="color:var(--forest);font-weight:700;">一级专题</span>
+    <span id="breadcrumb-subtopic-sep" style="display:none;">/</span>
+    <span id="breadcrumb-subtopic" style="display:none;color:#b0611c;font-weight:700;">二级专题</span>
   </nav>
 
   <!-- 顶部快速专题切换 Tab 栏 -->
-  <nav class="topic-nav-tabs-bar" id="topic-tabs" aria-label="专题切换">
-    <!-- 动态由 topics.js 填充 -->
+  <nav class="topic-nav-tabs-bar" id="topic-tabs" aria-label="一级专题快速切换">
+    <!-- 动态由 topics.js 填充 7 大一级专题 -->
   </nav>
 
   <!-- 专题 Hero 概览区 -->
-  <section class="topic-detail-hero" aria-labelledby="hero-title-zh">
+  <section class="topic-detail-hero" id="topic-hero-section" aria-labelledby="hero-title-zh">
     <div class="detail-hero-layout">
       <div class="detail-title-group">
         <h1 id="hero-title-zh">
-          <span id="hero-topic-icon" class="topic-icon-wrap" style="width:44px;height:44px;border-radius:8px;"></span>
+          <span id="hero-topic-icon" class="topic-icon-wrap"></span>
           <span id="hero-title-zh-text">专题名称</span>
         </h1>
         <span class="detail-en" id="hero-title-en">Topic English Name</span>
-        <div style="margin-top:8px;">
-          <span class="topic-badge" id="hero-badge">Tag</span>
+        <div class="hero-badges-row">
+          <span class="topic-badge" id="hero-badge">主要研究方向</span>
+          <a href="#topic-articles-anchor" class="jump-to-articles-pill" title="快速滑动至论文文献列表">
+            直达文献列表 ↓
+          </a>
         </div>
-        <p class="detail-desc" id="hero-desc">专题描述信息加载中…</p>
+        <p class="detail-desc" id="hero-desc">专题学术定义正在载入…</p>
+        
+        <!-- 纳入标准与排除标准展开框 (仅一级专题) -->
+        <div class="hero-criteria-box" id="hero-criteria-box">
+          <div class="criteria-row">
+            <span class="criteria-label include">纳入标准</span>
+            <span class="criteria-text" id="hero-inclusion">--</span>
+          </div>
+          <div class="criteria-row">
+            <span class="criteria-label exclude">排除标准</span>
+            <span class="criteria-text" id="hero-exclusion">--</span>
+          </div>
+        </div>
+
+        <!-- 二级专题返回按钮 (仅二级专题视图展示) -->
+        <div id="subtopic-back-row" style="display:none;margin-top:14px;">
+          <a href="javascript:void(0)" id="subtopic-back-btn" class="btn-action" style="display:inline-flex;align-items:center;gap:6px;font-weight:600;">
+            ← 返回一级专题首页
+          </a>
+        </div>
       </div>
 
       <!-- 指标看板 -->
-      <div class="detail-stats-panel">
+      <div class="detail-stats-panel" id="detail-stats-panel">
         <div class="detail-stat-box">
           <span class="d-val" id="stat-topic-total">--</span>
-          <span class="d-label">累计精选文献</span>
+          <span class="d-label">专题文献总数</span>
         </div>
         <div class="detail-stat-box">
-          <span class="d-val" id="stat-topic-new" style="color:#b87315;">--</span>
-          <span class="d-label">本周最新收录</span>
+          <span class="d-val" id="stat-topic-subtopics">--</span>
+          <span class="d-label">细分二级方向</span>
         </div>
         <div class="detail-stat-box">
-          <span class="d-val" id="stat-topic-journals">--</span>
-          <span class="d-label">涵盖权威期刊</span>
+          <span class="d-val" id="stat-topic-milestones">--</span>
+          <span class="d-label">学科发展里程碑</span>
         </div>
         <div class="detail-stat-box">
-          <span class="d-val" id="stat-topic-span">--</span>
-          <span class="d-label">收录时间跨度</span>
+          <span class="d-val" id="stat-topic-rep">--</span>
+          <span class="d-label">经典代表文献</span>
         </div>
-      </div>
-    </div>
-
-    <!-- 趋势图 -->
-    <div class="trend-section-box">
-      <div class="trend-box-title">
-        <span>周报期次收录趋势（期次分布）</span>
-        <span style="font-weight:normal;font-size:11px;color:#788072;">金黄色柱为当期最新</span>
-      </div>
-      <div id="topic-trend-chart">
-        <!-- 动态生成迷你趋势柱状图 -->
       </div>
     </div>
   </section>
 
-  <!-- 检索与多维筛选工具栏 -->
+  <!-- 二级专题分类导航 Grid (仅一级专题首页展示) -->
+  <section class="topic-subtopics-section" id="subtopics-nav-section" aria-labelledby="subtopics-section-title">
+    <div class="section-header-row">
+      <div class="section-title-wrap">
+        <h2 id="subtopics-section-title" class="module-title">二级研究专题分类导航 (Subtopics)</h2>
+        <span class="module-subtitle">按细分科学问题、技术方向与研究体系多维归档</span>
+      </div>
+    </div>
+    <div class="subtopics-cards-grid" id="subtopics-cards-grid">
+      <!-- 动态填充二级专题卡片 -->
+    </div>
+  </section>
+
+  <!-- 学科发展史 (Research Evolution 时间线，仅一级专题展示) -->
+  <section class="topic-evolution-section" id="evolution-section" aria-labelledby="evolution-section-title">
+    <div class="section-header-row">
+      <div class="section-title-wrap">
+        <h2 id="evolution-section-title" class="module-title">学科发展史与学术里程碑 (Research Evolution)</h2>
+        <span class="module-subtitle">严谨考据奠基理论、核心算法、关键技术革命与生命科学重大发现</span>
+      </div>
+      <button type="button" class="btn-toggle-fold" id="toggle-evolution-btn" aria-expanded="true">
+        收起时间线
+      </button>
+    </div>
+
+    <div class="evolution-content-wrapper" id="evolution-content">
+      <!-- 时间线多维筛选工具条 -->
+      <div class="timeline-filter-toolbar">
+        <div class="timeline-filter-group">
+          <label for="timeline-subtopic-filter" class="t-filter-label">二级方向筛选：</label>
+          <select id="timeline-subtopic-filter" class="filter-select small-select">
+            <option value="all">全部二级方向</option>
+          </select>
+        </div>
+        <div class="timeline-filter-group">
+          <label for="timeline-type-filter" class="t-filter-label">里程碑类型：</label>
+          <select id="timeline-type-filter" class="filter-select small-select">
+            <option value="all">全部类型</option>
+            <option value="理论奠基">理论奠基</option>
+            <option value="算法突破">算法突破</option>
+            <option value="技术革命">技术革命</option>
+            <option value="里程碑发现">里程碑发现</option>
+            <option value="资源范式">资源范式</option>
+            <option value="国际大计划">国际大计划</option>
+          </select>
+        </div>
+        <div class="timeline-era-jumps" id="timeline-era-jumps">
+          <!-- 动态年代跳转芯片 -->
+        </div>
+      </div>
+
+      <!-- 多分支交互式时间轴主容器 -->
+      <div class="multibranch-timeline" id="multibranch-timeline">
+        <!-- 动态生成时间轴节点 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 专题代表性论文库 (Representative Literature) -->
+  <section class="topic-rep-papers-section" id="rep-papers-section" aria-labelledby="rep-papers-title">
+    <div class="section-header-row">
+      <div class="section-title-wrap">
+        <h2 id="rep-papers-title" class="module-title">专题代表性论文库 (Representative Literature)</h2>
+        <span class="module-subtitle">系统汇聚全球领域奠基、重要方法与前沿突破经典成果</span>
+      </div>
+      <button type="button" class="btn-toggle-fold" id="toggle-rep-btn" aria-expanded="true">
+        收起代表文献
+      </button>
+    </div>
+
+    <div class="rep-papers-content-wrapper" id="rep-papers-content">
+      <!-- 代表文献分类切换 Tab -->
+      <div class="rep-category-tabs" id="rep-category-tabs" role="tablist">
+        <button type="button" class="rep-tab active" data-cat="all" role="tab">全部代表论文 (<span id="rep-cnt-all">0</span>)</button>
+        <button type="button" class="rep-tab" data-cat="foundation" role="tab">领域奠基论文 (<span id="rep-cnt-foundation">0</span>)</button>
+        <button type="button" class="rep-tab" data-cat="method" role="tab">重要方法论文 (<span id="rep-cnt-method">0</span>)</button>
+        <button type="button" class="rep-tab" data-cat="frontier" role="tab">前沿突破论文 (<span id="rep-cnt-frontier">0</span>)</button>
+      </div>
+
+      <!-- 代表论文卡片网格 -->
+      <div class="rep-papers-grid" id="rep-papers-grid">
+        <!-- 动态生成代表论文卡片 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 文献收录趋势与关键词分析 -->
+  <section class="topic-trends-section" id="trends-section">
+    <div class="trend-section-box">
+      <div class="trend-box-title">
+        <span>历期周报收录趋势分布（按期次）</span>
+        <span style="font-weight:normal;font-size:11px;color:#788072;">金黄色柱为当期最新发布</span>
+      </div>
+      <div id="topic-trend-chart">
+        <!-- 动态柱状图 -->
+      </div>
+    </div>
+  </section>
+
+  <div id="topic-articles-anchor"></div>
+
+  <!-- 高级检索与多维筛选工具栏 -->
   <section class="topic-toolbar-section">
     <div class="search-and-filters">
       <!-- 搜索框 -->
       <div class="filter-search-box">
-        <input type="search" id="topic-search-input" placeholder="在当前专题中搜索标题、摘要、期刊、作者或 DOI…" autocomplete="off">
+        <input type="search" id="topic-search-input" placeholder="在当前专题中搜索标题、摘要、物种、方法、作者或 DOI…" autocomplete="off">
         <svg class="filter-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       </div>
 
-      <!-- 分区筛选 -->
+      <!-- 二级专题筛选 -->
+      <select class="filter-select" id="filter-subtopic" aria-label="筛选二级专题">
+        <option value="all">全部二级方向</option>
+      </select>
+
+      <!-- 贡献类型筛选 -->
+      <select class="filter-select" id="filter-contrib" aria-label="筛选研究贡献类型">
+        <option value="all">全部贡献类型</option>
+        <option value="理论创新">理论创新</option>
+        <option value="算法创新">算法创新</option>
+        <option value="技术创新">技术创新</option>
+        <option value="科研资源构建">科研资源构建</option>
+        <option value="机制发现">机制发现</option>
+        <option value="实证研究">实证研究</option>
+        <option value="方法评测">方法评测</option>
+        <option value="应用研究">应用研究</option>
+      </select>
+
+      <!-- 期刊分区筛选 -->
       <select class="filter-select" id="filter-quartile" aria-label="筛选期刊分区">
         <option value="all">全部期刊分区</option>
         <option value="top">1区 Top 顶级期刊</option>
@@ -116,14 +249,6 @@
       <!-- 年份筛选 -->
       <select class="filter-select" id="filter-year" aria-label="筛选发表年份">
         <option value="all">全部发表年份</option>
-      </select>
-
-      <!-- 类型筛选 -->
-      <select class="filter-select" id="filter-category" aria-label="筛选文献类型">
-        <option value="all">全部文章类型</option>
-        <option value="研究文章">研究文章 (Research)</option>
-        <option value="综述评价">综述评价 (Review)</option>
-        <option value="方法资源">方法资源 (Resource/Method)</option>
       </select>
 
       <!-- 排序模式 -->
@@ -142,10 +267,10 @@
     </div>
   </section>
 
-  <!-- 文献列表区域 -->
-  <section aria-label="专题文献列表">
-    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-      <span id="topic-results-count" style="font-size:13.5px; color:var(--forest); font-weight:700; font-family:var(--serif);">正在检索专题文献…</span>
+  <!-- 全部专题文献列表区域 -->
+  <section class="topic-articles-section" aria-label="专题文献列表">
+    <div class="articles-list-header">
+      <span id="topic-results-count" class="results-count-text">正在检索专题文献…</span>
     </div>
 
     <div class="topic-articles-list" id="topic-articles-list">
@@ -159,8 +284,8 @@
 
 <footer class="site-footer">
   <div class="footer-inner">
-    <div class="footer-brand">基因组雷达 <span>·</span> GENOME RADAR <span>·</span> RESEARCH COLLECTIONS</div>
-    <div class="footer-note">每周精选植物与基因组学前沿文献 · 静态构建 · 纯净体验</div>
+    <div class="footer-brand">基因组雷达 <span>·</span> GENOME RADAR <span>·</span> RESEARCH COLLECTIONS V2.0</div>
+    <div class="footer-note">严格学术分类体系 · 权威学科发展史 · 代表性文献精选 · 持续自动归档</div>
   </div>
 </footer>
 </body>

@@ -1,0 +1,5586 @@
+[
+  {
+    "id": "2026-10-04:42817168",
+    "issue": "2026-10-04",
+    "article_number": 1,
+    "doi": "10.1016/j.molp.2026.09.014",
+    "title_zh": "组装十元体长穗偃麦草41.33 Gb基因组并解析同源交换",
+    "title_en": "The homoeolog-resolved assembly of the 40-Gb decaploid Thinopyrum ponticum genome reveals extensive homoeologous exchange and recombination, segmental allopolyploid organization, and allelic variations for wheat improvement.",
+    "journal": "Mol Plant",
+    "publication_date": "2026-09-30",
+    "legacy_tags": [
+      "组装与注释",
+      "进化与比较"
+    ],
+    "primary_topic": "assembly-annotation",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "polyploid-haplotype"
+    ],
+    "research_methods": [
+      "Oxford Nanopore超长读长测序",
+      "数量性状位点 (QTL) 定位",
+      "系统发育基因组学与分子钟定年"
+    ],
+    "research_objects": [
+      "长穗偃麦草 (Thinopyrum ponticum)",
+      "小麦 (Triticum aestivum)"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "针对长穗偃麦草 (Thinopyrum ponticum)实现高精染色体级/单倍型分辨基因组从头组装与注释。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-04:42811024",
+    "issue": "2026-10-04",
+    "article_number": 2,
+    "doi": "10.1038/s41467-026-76979-2",
+    "title_zh": "发布 Streptochaeta 染色体级基因组，重建禾本科祖先核型",
+    "title_en": "Chromosome-level Streptochaeta genome elucidates the ancestral karyotype and allopolyploid origin of grasses.",
+    "journal": "Nat Commun",
+    "publication_date": "2026-08-31",
+    "legacy_tags": [
+      "组装与注释",
+      "进化与比较"
+    ],
+    "primary_topic": "assembly-annotation",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "long-read-sequencing"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "链苞草 (Streptochaeta angustifolia)",
+      "禾本科 (Poaceae)"
+    ],
+    "contribution_types": [
+      "科研资源构建"
+    ],
+    "classification_reason": "针对链苞草 (Streptochaeta angustifolia)实现高精染色体级/单倍型分辨基因组从头组装与注释。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-04:42808735",
+    "issue": "2026-10-04",
+    "article_number": 3,
+    "doi": "10.1111/jipb.70411",
+    "title_zh": "重建禾本科祖先核型为12条原始染色体",
+    "title_en": "Ancestral karyotype construction and chromosome fusion in Poaceae.",
+    "journal": "J Integr Plant Biol",
+    "publication_date": "2026-09-29",
+    "legacy_tags": [
+      "进化与比较",
+      "组装与注释"
+    ],
+    "primary_topic": "evolution",
+    "secondary_topics": [],
+    "subtopics": [
+      "synteny-collinearity"
+    ],
+    "research_methods": [
+      "系统发育基因组学与分子钟定年"
+    ],
+    "research_objects": [
+      "禾本科 (Poaceae)"
+    ],
+    "contribution_types": [
+      "理论创新",
+      "实证研究"
+    ],
+    "classification_reason": "基于多物种基因组比较分析，揭示禾本科 (Poaceae)的核型演化、多倍化或适应性辐射机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-04:42804372",
+    "issue": "2026-10-04",
+    "article_number": 4,
+    "doi": "10.1111/tpj.71153",
+    "title_zh": "组装同源四倍体穿龙薯蓣单倍型基因组，揭示近期多倍化与代谢权衡",
+    "title_en": "Haplotype-resolved autotetraploid genome of Dioscorea nipponica provides insights into recent polyploidization, metabolic rewiring, and environmental adaptation.",
+    "journal": "Plant J",
+    "publication_date": "",
+    "legacy_tags": [
+      "组装与注释",
+      "泛基因组"
+    ],
+    "primary_topic": "assembly-annotation",
+    "secondary_topics": [
+      "evolution",
+      "pangenome"
+    ],
+    "subtopics": [
+      "polyploid-haplotype"
+    ],
+    "research_methods": [
+      "全基因组多重共线性比对 (MCScan)"
+    ],
+    "research_objects": [
+      "穿龙薯蓣 (Dioscorea nipponica)"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "针对穿龙薯蓣 (Dioscorea nipponica)实现高精染色体级/单倍型分辨基因组从头组装与注释。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-04:42823797",
+    "issue": "2026-10-04",
+    "article_number": 5,
+    "doi": "10.1016/j.molp.2026.09.016",
+    "title_zh": "单核转录组图谱揭示芸薹属杂交胚败育的细胞程序",
+    "title_en": "Single-nucleus transcriptome atlas of Brassica developing seeds provides cellular and molecular insights into embryo abortion in interspecific hybrids.",
+    "journal": "Mol Plant",
+    "publication_date": "2026-10-01",
+    "legacy_tags": [
+      "单细胞与空间",
+      "表观与调控"
+    ],
+    "primary_topic": "single-cell",
+    "secondary_topics": [
+      "epigenetics",
+      "evolution"
+    ],
+    "subtopics": [
+      "single-cell-transcriptomics",
+      "cell-lineage-differentiation"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位"
+    ],
+    "research_objects": [
+      "芸薹属 (Brassica spp.)",
+      "拟南芥 (Arabidopsis thaliana)"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "在单细胞/空间原位分辨率下揭示芸薹属 (Brassica spp.)的细胞类型异质性与发育调控机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-04:42811751",
+    "issue": "2026-10-04",
+    "article_number": 6,
+    "doi": "10.1093/plphys/kiag727",
+    "title_zh": "解析烟草宿主遗传变异关联根际微生物组组装与抗镰刀菌",
+    "title_en": "Host genetic variation is associated with root-associated microbiome assembly and resistance to Fusarium oxysporum in tobacco.",
+    "journal": "Plant Physiol",
+    "publication_date": "",
+    "legacy_tags": [
+      "变异与关联",
+      "泛基因组"
+    ],
+    "primary_topic": "assembly-annotation",
+    "secondary_topics": [
+      "pangenome"
+    ],
+    "subtopics": [
+      "long-read-sequencing"
+    ],
+    "research_methods": [
+      "全基因组关联分析 (GWAS)"
+    ],
+    "research_objects": [
+      "烟草 (Nicotiana tabacum)"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "针对烟草 (Nicotiana tabacum)实现高精染色体级/单倍型分辨基因组从头组装与注释。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-04:42814757",
+    "issue": "2026-10-04",
+    "article_number": 7,
+    "doi": "10.1093/plcell/koag304",
+    "title_zh": "DDM1 维持复杂植物基因组稳定性",
+    "title_en": "DDM1 safeguards the stability of a Complex plant genome.",
+    "journal": "Plant Cell",
+    "publication_date": "",
+    "legacy_tags": [
+      "表观与调控",
+      "组装与注释"
+    ],
+    "primary_topic": "epigenetics",
+    "secondary_topics": [],
+    "subtopics": [
+      "chromatin-accessibility"
+    ],
+    "research_methods": [
+      "全基因组DNA甲基化测序"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "解析计算生物学/跨物种通用表观遗传修饰、染色质高级结构及其对关键生物学通路的调控网络。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-04:42820932",
+    "issue": "2026-10-04",
+    "article_number": 8,
+    "doi": "10.1111/pce.70929",
+    "title_zh": "定位 OsAKR 揭示水稻抗旱突变体产量优势",
+    "title_en": "Metabolic and Gene Expression Profile Reveal Genetic Basis of Reproductive Stage Drought Tolerance in a Drought-Defying Rice Mutant.",
+    "journal": "Plant Cell Environ",
+    "publication_date": "2026-10-01",
+    "legacy_tags": [
+      "变异与关联",
+      "进化与比较"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位"
+    ],
+    "research_objects": [
+      "水稻 (Oryza sativa)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定水稻 (Oryza sativa)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-04:42804375",
+    "issue": "2026-10-04",
+    "article_number": 9,
+    "doi": "10.1111/tpj.71146",
+    "title_zh": "揭示同源四倍体蓖麻种皮扩张介导种子增大的分子路径",
+    "title_en": "Molecular mechanisms underlying seed enlargement mediated by seed coat development in autotetraploid castor bean.",
+    "journal": "Plant J",
+    "publication_date": "",
+    "legacy_tags": [
+      "表观与调控",
+      "进化与比较"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "蓖麻 (Ricinus communis)",
+      "酿酒酵母 (Saccharomyces cerevisiae)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定蓖麻 (Ricinus communis)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-04:42802533",
+    "issue": "2026-10-04",
+    "article_number": 10,
+    "doi": "10.1111/pce.70936",
+    "title_zh": "揭示高粱根际与散土AM真菌纬度梯度反向格局",
+    "title_en": "Contrasting Latitudinal Patterns of Arbuscular Mycorrhizal Fungal Diversity in Sorghum Rhizosphere Versus Bulk Soils Across Climatic Zones.",
+    "journal": "Plant Cell Environ",
+    "publication_date": "2026-09-27",
+    "legacy_tags": [
+      "变异与关联",
+      "进化与比较"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "Oxford Nanopore超长读长测序"
+    ],
+    "research_objects": [
+      "高粱 (Sorghum bicolor)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定高粱 (Sorghum bicolor)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-04:42806720",
+    "issue": "2026-10-04",
+    "article_number": 11,
+    "doi": "10.1111/pce.70894",
+    "title_zh": "揭示单核苷酸差异下地衣共生藻的生理分化策略",
+    "title_en": "Hidden Strategies Beneath a Single Nucleotide: Contrasting Physiology in Lichen Photobiont Strains.",
+    "journal": "Plant Cell Environ",
+    "publication_date": "2026-09-28",
+    "legacy_tags": [
+      "变异与关联",
+      "进化与比较"
+    ],
+    "primary_topic": "single-cell",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "single-cell-transcriptomics",
+      "cell-lineage-differentiation"
+    ],
+    "research_methods": [
+      "Oxford Nanopore超长读长测序",
+      "深度学习/生成式生物学模型"
+    ],
+    "research_objects": [
+      "地衣共生藻 (Trebouxia spp.)"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "在单细胞/空间原位分辨率下揭示地衣共生藻 (Trebouxia spp.)的细胞类型异质性与发育调控机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-04:42803191",
+    "issue": "2026-10-04",
+    "article_number": 12,
+    "doi": "10.1093/nar/gkag929",
+    "title_zh": "在未注释基因组组装中定向搜索直系同源基因",
+    "title_en": "Targeted ortholog search in unannotated genome assemblies with fDOG-Assembly.",
+    "journal": "Nucleic Acids Res",
+    "publication_date": "",
+    "legacy_tags": [
+      "方法与工具",
+      "组装与注释"
+    ],
+    "primary_topic": "assembly-annotation",
+    "secondary_topics": [],
+    "subtopics": [
+      "long-read-sequencing"
+    ],
+    "research_methods": [
+      "系统发育基因组学与分子钟定年"
+    ],
+    "research_objects": [
+      "人类 (Homo sapiens)"
+    ],
+    "contribution_types": [
+      "科研资源构建"
+    ],
+    "classification_reason": "针对人类 (Homo sapiens)实现高精染色体级/单倍型分辨基因组从头组装与注释。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-04:42817807",
+    "issue": "2026-10-04",
+    "article_number": 13,
+    "doi": "10.1093/molbev/msag255",
+    "title_zh": "在低覆盖测序数据中联合建模基因型不确定性与结构迁移",
+    "title_en": "Identifying adaptive variation in spatially structured populations using low-coverage whole-genome sequencing data.",
+    "journal": "Mol Biol Evol",
+    "publication_date": "",
+    "legacy_tags": [
+      "方法与工具",
+      "变异与关联"
+    ],
+    "primary_topic": "methods-tools",
+    "secondary_topics": [],
+    "subtopics": [
+      "multi-omics-integration"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "技术创新",
+      "方法评测"
+    ],
+    "classification_reason": "研发面向计算生物学/跨物种通用相关基因组数据的原创计算算法与生物信息学分析工具。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-04:42827183",
+    "issue": "2026-10-04",
+    "article_number": 14,
+    "doi": "10.1038/s41588-026-02776-8",
+    "title_zh": "用单等位基因纳米尺度作图定位调控变异",
+    "title_en": "Single-allele nanoscale mapping of regulatory variants.",
+    "journal": "Nat Genet",
+    "publication_date": "2026-10-02",
+    "legacy_tags": [
+      "方法与工具",
+      "变异与关联"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-04:42823194",
+    "issue": "2026-10-04",
+    "article_number": 15,
+    "doi": "10.1101/gr.281418.125",
+    "title_zh": "光学基因组图谱检出癫痫脑组织体细胞结构变异",
+    "title_en": "Optical genome mapping identifies clinically relevant somatic structural variation in epilepsy-affected brain tissue.",
+    "journal": "Genome Res",
+    "publication_date": "2026-10-01",
+    "legacy_tags": [
+      "方法与工具",
+      "变异与关联"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "structural-variation-impact"
+    ],
+    "research_methods": [
+      "PacBio HiFi高保真长读长测序",
+      "深度学习/生成式生物学模型",
+      "长读长高精度结构变异 (SV) 挖掘",
+      "Bionano光学基因组图谱 (OGM)"
+    ],
+    "research_objects": [
+      "人类 (Homo sapiens)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定人类 (Homo sapiens)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-04:42802937",
+    "issue": "2026-10-04",
+    "article_number": 16,
+    "doi": "10.1093/molbev/msag250",
+    "title_zh": "用 kamino 绕过聚类比对，直接从蛋白质组构建氨基酸系统发育比对",
+    "title_en": "kamino: fast proteome-wide variant calling for amino acid phylogenomics.",
+    "journal": "Mol Biol Evol",
+    "publication_date": "",
+    "legacy_tags": [
+      "方法与工具",
+      "进化与比较"
+    ],
+    "primary_topic": "evolution",
+    "secondary_topics": [],
+    "subtopics": [
+      "phylogenomics"
+    ],
+    "research_methods": [
+      "系统发育基因组学与分子钟定年"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "基于多物种基因组比较分析，揭示计算生物学/跨物种通用的核型演化、多倍化或适应性辐射机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-04:42823192",
+    "issue": "2026-10-04",
+    "article_number": 17,
+    "doi": "10.1101/gr.282254.126",
+    "title_zh": "用蛋白质语言模型嵌入构建快速准确的多序列比对",
+    "title_en": "Fast and accurate construction of multiple sequence alignments from protein language embeddings with ARIES.",
+    "journal": "Genome Res",
+    "publication_date": "2026-10-01",
+    "legacy_tags": [
+      "方法与工具",
+      "进化与比较"
+    ],
+    "primary_topic": "methods-tools",
+    "secondary_topics": [],
+    "subtopics": [
+      "multi-omics-integration"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "算法创新",
+      "方法评测"
+    ],
+    "classification_reason": "研发面向计算生物学/跨物种通用相关基因组数据的原创计算算法与生物信息学分析工具。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-04:42816628",
+    "issue": "2026-10-04",
+    "article_number": 18,
+    "doi": "10.1038/s41586-026-11078-2",
+    "title_zh": "绘制免疫细胞多组学图谱，解析调控变异致病路径",
+    "title_en": "Population-scale immune multiome atlas reveals regulatory disease mechanisms.",
+    "journal": "Nature",
+    "publication_date": "2026-09-30",
+    "legacy_tags": [
+      "单细胞与空间",
+      "变异与关联"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位",
+      "单细胞/单核转录组测序 (scRNA-seq/snRNA-seq)",
+      "ATAC-seq染色质开放性检测"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-04:42823428",
+    "issue": "2026-10-04",
+    "article_number": 19,
+    "doi": "10.1038/s41467-026-78211-7",
+    "title_zh": "用无酶密集光学图谱组装酵母染色体级基因组",
+    "title_en": "Chromosome-scale assembly of yeast genomes using enzyme-free, dense optical genome mapping.",
+    "journal": "Nat Commun",
+    "publication_date": "2026-10-01",
+    "legacy_tags": [
+      "组装与注释",
+      "方法与工具"
+    ],
+    "primary_topic": "assembly-annotation",
+    "secondary_topics": [],
+    "subtopics": [
+      "long-read-sequencing"
+    ],
+    "research_methods": [
+      "长读长高精度结构变异 (SV) 挖掘",
+      "Bionano光学基因组图谱 (OGM)"
+    ],
+    "research_objects": [
+      "酿酒酵母 (Saccharomyces cerevisiae)"
+    ],
+    "contribution_types": [
+      "科研资源构建"
+    ],
+    "classification_reason": "针对酿酒酵母 (Saccharomyces cerevisiae)实现高精染色体级/单倍型分辨基因组从头组装与注释。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-04:42814812",
+    "issue": "2026-10-04",
+    "article_number": 20,
+    "doi": "10.1126/sciadv.aec5299",
+    "title_zh": "以单碱基精度界定原噬菌体边界并揭示其驯化规律",
+    "title_en": "Deciphering pervasive domestication and active \"dark matter\" of proviruses in prokaryotes via precision border mapping.",
+    "journal": "Sci Adv",
+    "publication_date": "2026-09-30",
+    "legacy_tags": [
+      "方法与工具",
+      "进化与比较"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位"
+    ],
+    "research_objects": [
+      "原噬菌体 (Prophage)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定原噬菌体 (Prophage)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-11:42839597",
+    "issue": "2026-10-11",
+    "article_number": 1,
+    "doi": "10.1016/j.xplc.2026.102128",
+    "title_zh": "单倍型解析基因组揭示黄精淀粉向果聚糖转变的机制",
+    "title_en": "A haplotype-resolved genome reveals intron expansion and enzyme innovation associated with the starch-to-fructan shift in Polygonatum cyrtonema.",
+    "journal": "Plant Commun",
+    "publication_date": "2026-10-06",
+    "legacy_tags": [
+      "组装与注释",
+      "进化与比较"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "全基因组关联分析 (GWAS)",
+      "数量性状位点 (QTL) 定位",
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-11:42842935",
+    "issue": "2026-10-11",
+    "article_number": 2,
+    "doi": "10.1093/plphys/kiag752",
+    "title_zh": "解析柠檬草单倍型基因组，定位萜类合成通路",
+    "title_en": "Haplotype-resolved genome assembly of lemongrass (Cymbopogon citratus) provides insights into terpenoid biosynthesis pathway.",
+    "journal": "Plant Physiol",
+    "publication_date": "",
+    "legacy_tags": [
+      "组装与注释",
+      "进化与比较"
+    ],
+    "primary_topic": "assembly-annotation",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "polyploid-haplotype"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位"
+    ],
+    "research_objects": [
+      "禾本科 (Poaceae)"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "针对禾本科 (Poaceae)实现高精染色体级/单倍型分辨基因组从头组装与注释。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-11:42836506",
+    "issue": "2026-10-11",
+    "article_number": 3,
+    "doi": "10.1111/jipb.70418",
+    "title_zh": "比较基因组学揭示小麦面筋品质的隐藏遗传决定因素",
+    "title_en": "Comparative genomics reveals hidden genetic determinants of wheat gluten quality.",
+    "journal": "J Integr Plant Biol",
+    "publication_date": "2026-10-06",
+    "legacy_tags": [
+      "变异与关联",
+      "进化与比较"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位",
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "小麦 (Triticum aestivum)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定小麦 (Triticum aestivum)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-11:42859401",
+    "issue": "2026-10-11",
+    "article_number": 4,
+    "doi": "10.1016/j.molp.2026.10.002",
+    "title_zh": "鉴定 OsNHX2 并解析其转录与翻译后调控水稻耐冷",
+    "title_en": "Transcriptional and post-transcriptional regulation of OsNHX2 encoding a tonoplast-localized transporter controls intracellular K+ accumulation to regulate cold tolerance in rice.",
+    "journal": "Mol Plant",
+    "publication_date": "2026-10-10",
+    "legacy_tags": [
+      "变异与关联",
+      "方法与工具"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "Oxford Nanopore超长读长测序",
+      "全基因组关联分析 (GWAS)",
+      "数量性状位点 (QTL) 定位"
+    ],
+    "research_objects": [
+      "水稻 (Oryza sativa)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定水稻 (Oryza sativa)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-11:42850882",
+    "issue": "2026-10-11",
+    "article_number": 5,
+    "doi": "10.1016/j.molp.2026.10.001",
+    "title_zh": "构建36种绿色植物胁迫转录组图谱",
+    "title_en": "Kingdom-wide comparative transcriptomics reveals deeply conserved and predictable stress response programs across Viridiplantae.",
+    "journal": "Mol Plant",
+    "publication_date": "2026-10-08",
+    "legacy_tags": [
+      "进化与比较",
+      "方法与工具"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "系统发育基因组学与分子钟定年"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-11:42844811",
+    "issue": "2026-10-11",
+    "article_number": 6,
+    "doi": "10.1111/pbi.70761",
+    "title_zh": "克隆 GhEBS1 并解析棉铃大小结构变异调控机制",
+    "title_en": "An Intronic Structural Variant in GhEBS1 Drives Cotton Fruit Size Divergence by Modulating Chromatin Accessibility and Gene Expression.",
+    "journal": "Plant Biotechnol J",
+    "publication_date": "2026-10-07",
+    "legacy_tags": [
+      "变异与关联",
+      "表观与调控"
+    ],
+    "primary_topic": "epigenetics",
+    "secondary_topics": [
+      "variation-gwas"
+    ],
+    "subtopics": [
+      "chromatin-accessibility"
+    ],
+    "research_methods": [
+      "全基因组DNA甲基化测序",
+      "ChIP-seq/CUT&Tag组蛋白修饰检测",
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "棉花 (Gossypium spp.)",
+      "拟南芥 (Arabidopsis thaliana)",
+      "番茄 (Solanum lycopersicum)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "解析棉花 (Gossypium spp.)表观遗传修饰、染色质高级结构及其对关键生物学通路的调控网络。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-11:42844995",
+    "issue": "2026-10-11",
+    "article_number": 7,
+    "doi": "10.1111/tpj.71167",
+    "title_zh": "鉴定 IAMH2 3' UTR 结构变异调控下胚轴伸长",
+    "title_en": "Structural variation in the IAMH2 3' UTR underlies hypocotyl elongation during light adaptation in Arabidopsis thaliana.",
+    "journal": "Plant J",
+    "publication_date": "",
+    "legacy_tags": [
+      "变异与关联",
+      "表观与调控"
+    ],
+    "primary_topic": "epigenetics",
+    "secondary_topics": [
+      "variation-gwas"
+    ],
+    "subtopics": [
+      "chromatin-accessibility"
+    ],
+    "research_methods": [
+      "全基因组关联分析 (GWAS)",
+      "数量性状位点 (QTL) 定位",
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "拟南芥 (Arabidopsis thaliana)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "解析拟南芥 (Arabidopsis thaliana)表观遗传修饰、染色质高级结构及其对关键生物学通路的调控网络。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-11:42834558",
+    "issue": "2026-10-11",
+    "article_number": 8,
+    "doi": "10.1016/j.xplc.2026.102126",
+    "title_zh": "鉴定 GhFLA9_D12 自然变异调控棉纤维细胞壁可塑性",
+    "title_en": "Natural variations in GhFLA9_D12 confer divergent fiber development and lint percentage through remodeling of cell wall plasticity in cotton.",
+    "journal": "Plant Commun",
+    "publication_date": "2026-10-05",
+    "legacy_tags": [
+      "变异与关联",
+      "进化与比较"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "棉花 (Gossypium spp.)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定棉花 (Gossypium spp.)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-11:42836381",
+    "issue": "2026-10-11",
+    "article_number": 9,
+    "doi": "10.1093/plphys/kiag740",
+    "title_zh": "鉴定PagERF173协调杨树根系硝酸盐吸收与同化",
+    "title_en": "PagERF173 regulates nitrate uptake and assimilation in poplar roots.",
+    "journal": "Plant Physiol",
+    "publication_date": "",
+    "legacy_tags": [
+      "变异与关联",
+      "方法与工具"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "全基因组关联分析 (GWAS)",
+      "数量性状位点 (QTL) 定位"
+    ],
+    "research_objects": [
+      "杨树 (Populus spp.)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定杨树 (Populus spp.)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-11:42832033",
+    "issue": "2026-10-11",
+    "article_number": 10,
+    "doi": "10.1093/plcell/koag272",
+    "title_zh": "用表达特异性预测玉米花粉适合度",
+    "title_en": "Successful predictive modeling of pollen fitness phenotypes is enabled by measures of expression specificity.",
+    "journal": "Plant Cell",
+    "publication_date": "",
+    "legacy_tags": [
+      "方法与工具",
+      "变异与关联"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "玉米 (Zea mays)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定玉米 (Zea mays)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-11:42848931",
+    "issue": "2026-10-11",
+    "article_number": 11,
+    "doi": "10.1093/plcell/koag308",
+    "title_zh": "用单核与空间转录组解析线粒体胁迫信号的细胞与空间架构",
+    "title_en": "Spatial and single-nucleus transcriptomic profiling reveal polarity and intracellular responses to mitochondrial dysfunction.",
+    "journal": "Plant Cell",
+    "publication_date": "",
+    "legacy_tags": [
+      "单细胞与空间",
+      "表观与调控"
+    ],
+    "primary_topic": "single-cell",
+    "secondary_topics": [
+      "epigenetics"
+    ],
+    "subtopics": [
+      "spatial-transcriptomics"
+    ],
+    "research_methods": [
+      "空间原位转录组测序"
+    ],
+    "research_objects": [
+      "拟南芥 (Arabidopsis thaliana)"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "在单细胞/空间原位分辨率下揭示拟南芥 (Arabidopsis thaliana)的细胞类型异质性与发育调控机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-11:42831354",
+    "issue": "2026-10-11",
+    "article_number": 12,
+    "doi": "10.1093/nar/gkag948",
+    "title_zh": "构建 PanGBank 预计算原核泛基因组库",
+    "title_en": "PanGBank: a large-scale resource of precomputed microbial pangenomes built with PPanGGOLiN.",
+    "journal": "Nucleic Acids Res",
+    "publication_date": "2026-10-05",
+    "legacy_tags": [
+      "泛基因组",
+      "方法与工具"
+    ],
+    "primary_topic": "pangenome",
+    "secondary_topics": [],
+    "subtopics": [
+      "core-dispensable-genome"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位",
+      "单细胞/单核转录组测序 (scRNA-seq/snRNA-seq)"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "构建计算生物学/跨物种通用群体水平高质量多基因组/泛基因组图谱，解析变异与演化多样性。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-11:42851130",
+    "issue": "2026-10-11",
+    "article_number": 13,
+    "doi": "10.1093/nar/gkag960",
+    "title_zh": "用Songbird识别单细胞全基因组加倍",
+    "title_en": "Wavelet-based whole genome doubling aware single-cell copy number calling.",
+    "journal": "Nucleic Acids Res",
+    "publication_date": "",
+    "legacy_tags": [
+      "方法与工具",
+      "单细胞与空间"
+    ],
+    "primary_topic": "single-cell",
+    "secondary_topics": [],
+    "subtopics": [
+      "single-cell-transcriptomics"
+    ],
+    "research_methods": [
+      "单细胞/单核转录组测序 (scRNA-seq/snRNA-seq)"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "在单细胞/空间原位分辨率下揭示计算生物学/跨物种通用的细胞类型异质性与发育调控机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-11:42855280",
+    "issue": "2026-10-11",
+    "article_number": 14,
+    "doi": "10.1101/gr.281566.125",
+    "title_zh": "用蛋白大语言模型补回跨物种一对一同源映射",
+    "title_en": "Protein large language model-assisted one-to-one gene homology mapping in cross-species single-cell transcriptome integration.",
+    "journal": "Genome Res",
+    "publication_date": "2026-11-03",
+    "legacy_tags": [
+      "方法与工具",
+      "进化与比较"
+    ],
+    "primary_topic": "methods-tools",
+    "secondary_topics": [],
+    "subtopics": [
+      "multi-omics-integration"
+    ],
+    "research_methods": [
+      "单细胞/单核转录组测序 (scRNA-seq/snRNA-seq)"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "算法创新",
+      "方法评测"
+    ],
+    "classification_reason": "研发面向计算生物学/跨物种通用相关基因组数据的原创计算算法与生物信息学分析工具。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-11:42834204",
+    "issue": "2026-10-11",
+    "article_number": 15,
+    "doi": "10.1038/s41588-026-02766-w",
+    "title_zh": "用遗传力优化评分优先排序罕见错义变异",
+    "title_en": "A heritability-optimized method for functional prioritization of rare coding variants in complex traits.",
+    "journal": "Nat Genet",
+    "publication_date": "2026-10-05",
+    "legacy_tags": [
+      "方法与工具",
+      "变异与关联"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "深度学习/生成式生物学模型"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-11:42847769",
+    "issue": "2026-10-11",
+    "article_number": 16,
+    "doi": "10.1093/bib/bbag556",
+    "title_zh": "基准测试七种可变剪接检测工具并发布注释稳健的 EPBAM",
+    "title_en": "EPBAM: annotation-robust detection of alternative splicing events and a systematic benchmarking of current tools.",
+    "journal": "Brief Bioinform",
+    "publication_date": "",
+    "legacy_tags": [
+      "方法与工具",
+      "表观与调控"
+    ],
+    "primary_topic": "methods-tools",
+    "secondary_topics": [
+      "variation-gwas"
+    ],
+    "subtopics": [
+      "variant-calling-benchmarking"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "技术创新",
+      "方法评测"
+    ],
+    "classification_reason": "研发面向计算生物学/跨物种通用相关基因组数据的原创计算算法与生物信息学分析工具。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-11:42833218",
+    "issue": "2026-10-11",
+    "article_number": 17,
+    "doi": "10.1016/j.xgen.2026.101384",
+    "title_zh": "用 RandomReadsMG 在 6 小时内生成太字节级宏基因组模拟数据",
+    "title_en": "RandomReadsMG: Rapid, realistic metagenome simulation at terabase scale for benchmarking and experimental design.",
+    "journal": "Cell Genom",
+    "publication_date": "2026-10-05",
+    "legacy_tags": [
+      "方法与工具",
+      "泛基因组"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "PacBio HiFi高保真长读长测序",
+      "Oxford Nanopore超长读长测序"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-11:42855475",
+    "issue": "2026-10-11",
+    "article_number": 18,
+    "doi": "10.1038/s41467-026-77625-7",
+    "title_zh": "头足类三维基因组重塑塑造其调控格局",
+    "title_en": "Genome reorganisation and expansion shape 3D genome architecture and define a distinct regulatory landscape in coleoid cephalopods.",
+    "journal": "Nat Commun",
+    "publication_date": "2026-10-09",
+    "legacy_tags": [
+      "进化与比较",
+      "组装与注释"
+    ],
+    "primary_topic": "epigenetics",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "3d-genome-topology"
+    ],
+    "research_methods": [
+      "Hi-C染色质高级构象捕获",
+      "ATAC-seq染色质开放性检测"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "解析计算生物学/跨物种通用表观遗传修饰、染色质高级结构及其对关键生物学通路的调控网络。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-11:42848887",
+    "issue": "2026-10-11",
+    "article_number": 19,
+    "doi": "10.1126/science.aeb2986",
+    "title_zh": "构建表观遗传时钟揭示犬类寿命压缩与转座子失调",
+    "title_en": "Epigenetic aging and transposon dysregulation reflect size-related lifespan compression in dogs.",
+    "journal": "Science",
+    "publication_date": "2026-10-08",
+    "legacy_tags": [
+      "表观与调控",
+      "进化与比较"
+    ],
+    "primary_topic": "epigenetics",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "chromatin-accessibility"
+    ],
+    "research_methods": [
+      "全基因组DNA甲基化测序"
+    ],
+    "research_objects": [
+      "人类 (Homo sapiens)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "解析人类 (Homo sapiens)表观遗传修饰、染色质高级结构及其对关键生物学通路的调控网络。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-11:42838939",
+    "issue": "2026-10-11",
+    "article_number": 20,
+    "doi": "10.1038/s41467-026-77310-9",
+    "title_zh": "端粒变异序列编码等位基因特异性端粒长度蓝图",
+    "title_en": "Telomere variant sequences encode the genetic blueprint for allele-specific telomere length.",
+    "journal": "Nat Commun",
+    "publication_date": "2026-09-07",
+    "legacy_tags": [
+      "变异与关联",
+      "组装与注释"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "PacBio HiFi高保真长读长测序",
+      "Oxford Nanopore超长读长测序"
+    ],
+    "research_objects": [
+      "人类 (Homo sapiens)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定人类 (Homo sapiens)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-19:gphase",
+    "issue": "2026-10-19",
+    "article_number": 1,
+    "doi": "10.1038/s41477-026-02422-5",
+    "title_zh": "多倍体单倍型定相：把组装图接进 3C 支架",
+    "title_en": "Assembly-graph-assisted haplotype-resolved scaffolding of polyploid genomes.",
+    "journal": "Nat Plants",
+    "publication_date": "2026-10-16",
+    "legacy_tags": [
+      "组装与注释",
+      "方法与工具"
+    ],
+    "primary_topic": "assembly-annotation",
+    "secondary_topics": [],
+    "subtopics": [
+      "polyploid-haplotype"
+    ],
+    "research_methods": [
+      "Hi-C染色质高级构象捕获",
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "科研资源构建"
+    ],
+    "classification_reason": "针对计算生物学/跨物种通用实现高精染色体级/单倍型分辨基因组从头组装与注释。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-19:wheat-bb",
+    "issue": "2026-10-19",
+    "article_number": 2,
+    "doi": "10.1111/nph.71664",
+    "title_zh": "小麦 B 基因组的来源：St 基因组留下了两次杂交的痕迹",
+    "title_en": "A St-derived genome contributes to the formation of the wheat BB genome.",
+    "journal": "New Phytol",
+    "publication_date": "2026-10-15",
+    "legacy_tags": [
+      "进化与比较"
+    ],
+    "primary_topic": "evolution",
+    "secondary_topics": [],
+    "subtopics": [
+      "hybridization-introgression"
+    ],
+    "research_methods": [
+      "Oxford Nanopore超长读长测序"
+    ],
+    "research_objects": [
+      "小麦 (Triticum aestivum)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "基于多物种基因组比较分析，揭示小麦 (Triticum aestivum)的核型演化、多倍化或适应性辐射机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-19:alfalfa-wgd",
+    "issue": "2026-10-19",
+    "article_number": 3,
+    "doi": "10.1093/plphys/kiag757",
+    "title_zh": "全基因组加倍如何重连基因–miRNA 网络：苜蓿全同胞 2x 对 4x",
+    "title_en": "Whole-genome duplication reshapes gene-miRNA regulatory networks underlying improved salt stress tolerance in Medicago sativa.",
+    "journal": "Plant Physiol",
+    "publication_date": "2026-10-12",
+    "legacy_tags": [
+      "表观与调控",
+      "进化与比较"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-19:kiwifruit",
+    "issue": "2026-10-19",
+    "article_number": 4,
+    "doi": "10.1111/tpj.71163",
+    "title_zh": "分布狭窄的猕猴桃：遗传漂变压不垮的重复适应",
+    "title_en": "Repeated genetic adaptation under demographic limits in kiwifruit.",
+    "journal": "Plant J",
+    "publication_date": "2026-10-20",
+    "legacy_tags": [
+      "变异与关联",
+      "进化与比较"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-19:barley-recomb",
+    "issue": "2026-10-19",
+    "article_number": 5,
+    "doi": "10.1111/tpj.71171",
+    "title_zh": "大麦重组图谱：甲基化与结构变异决定冷热点",
+    "title_en": "The role of methylation and structural variants in shaping the recombination landscape of barley.",
+    "journal": "Plant J",
+    "publication_date": "2026-10-20",
+    "legacy_tags": [
+      "表观与调控",
+      "变异与关联"
+    ],
+    "primary_topic": "epigenetics",
+    "secondary_topics": [
+      "variation-gwas"
+    ],
+    "subtopics": [
+      "dna-methylation"
+    ],
+    "research_methods": [
+      "全基因组DNA甲基化测序",
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "大麦属 (Hordeum spp.)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "解析大麦属 (Hordeum spp.)表观遗传修饰、染色质高级结构及其对关键生物学通路的调控网络。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-19:brapa-bias",
+    "issue": "2026-10-19",
+    "article_number": 6,
+    "doi": "10.1111/tpj.71145",
+    "title_zh": "亚基因组表达偏倚不是常数：油菜里它随品种、组织、发育阶段翻转",
+    "title_en": "The degree and direction of subgenome expression bias in Brassica napus vary between cultivars, tissues and developmental stages.",
+    "journal": "Plant J",
+    "publication_date": "2026-10-20",
+    "legacy_tags": [
+      "表观与调控",
+      "进化与比较"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "芸薹属 (Brassica spp.)",
+      "甘蓝型油菜 (Brassica napus)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定芸薹属 (Brassica spp.)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-19:wheat-landrace",
+    "issue": "2026-10-19",
+    "article_number": 7,
+    "doi": "10.1111/nph.71628",
+    "title_zh": "单粒高光谱表型，挖出地方品种里现代育种丢掉的品质位点",
+    "title_en": "Harnessing genetic variation for grain quality from diverse wheat landraces.",
+    "journal": "New Phytol",
+    "publication_date": "2026-10-09",
+    "legacy_tags": [
+      "变异与关联"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "genomic-selection-breeding"
+    ],
+    "research_methods": [
+      "全基因组关联分析 (GWAS)",
+      "数量性状位点 (QTL) 定位",
+      "深度学习/生成式生物学模型"
+    ],
+    "research_objects": [
+      "小麦 (Triticum aestivum)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定小麦 (Triticum aestivum)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-19:fast3vmrmlm",
+    "issue": "2026-10-19",
+    "article_number": 8,
+    "doi": "10.1016/j.xplc.2026.102155",
+    "title_zh": "大规模上位性 GWAS：Fast3VmrMLM",
+    "title_en": "Fast3VmrMLM enables statistically powerful and computationally efficient large-scale marker-pair epistasis GWAS in sizable populations.",
+    "journal": "Plant Commun",
+    "publication_date": "2026-10-15",
+    "legacy_tags": [
+      "方法与工具",
+      "变异与关联"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "gwas-trait-mapping"
+    ],
+    "research_methods": [
+      "全基因组关联分析 (GWAS)",
+      "数量性状位点 (QTL) 定位",
+      "深度学习/生成式生物学模型"
+    ],
+    "research_objects": [
+      "水稻 (Oryza sativa)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定水稻 (Oryza sativa)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-19:sunmao",
+    "issue": "2026-10-19",
+    "article_number": 9,
+    "doi": "10.1016/j.molp.2026.10.005",
+    "title_zh": "一个 Y 连锁非编码位点，用小 RNA 决定雌雄",
+    "title_en": "SMXL neofunctionalization and small RNAs underlie the recent evolution of a plant sex-determining system in Sapindaceae.",
+    "journal": "Mol Plant",
+    "publication_date": "2026-10-14",
+    "legacy_tags": [
+      "进化与比较",
+      "表观与调控"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位"
+    ],
+    "research_objects": [
+      "拟南芥 (Arabidopsis thaliana)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定拟南芥 (Arabidopsis thaliana)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-19:greyia",
+    "issue": "2026-10-19",
+    "article_number": 10,
+    "doi": "10.1111/tpj.71134",
+    "title_zh": "古多倍体树种 Greyia：染色体级基因组与形态分化的调控基础",
+    "title_en": "Genomic insights into trichome and inflorescence evolution of the palaeopolyploid tree genus Greyia.",
+    "journal": "Plant J",
+    "publication_date": "2026-10-20",
+    "legacy_tags": [
+      "进化与比较",
+      "组装与注释"
+    ],
+    "primary_topic": "assembly-annotation",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "polyploid-haplotype"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "科研资源构建"
+    ],
+    "classification_reason": "针对计算生物学/跨物种通用实现高精染色体级/单倍型分辨基因组从头组装与注释。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-19:combined-stress-methyl",
+    "issue": "2026-10-19",
+    "article_number": 11,
+    "doi": "10.1111/pce.70985",
+    "title_zh": "复合胁迫改写甲基化组：甲基化调的是「调控潜力」而非转录",
+    "title_en": "Combined Abiotic Stress Rewires DNA Methylation to Modulate Regulatory Potential Rather Than Transcription in Arabidopsis.",
+    "journal": "Plant Cell Environ",
+    "publication_date": "2026-10-18",
+    "legacy_tags": [
+      "表观与调控"
+    ],
+    "primary_topic": "epigenetics",
+    "secondary_topics": [],
+    "subtopics": [
+      "dna-methylation"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位",
+      "全基因组DNA甲基化测序"
+    ],
+    "research_objects": [
+      "拟南芥 (Arabidopsis thaliana)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "解析拟南芥 (Arabidopsis thaliana)表观遗传修饰、染色质高级结构及其对关键生物学通路的调控网络。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-19:hitsv",
+    "issue": "2026-10-19",
+    "article_number": 12,
+    "doi": "10.1038/s41587-026-03332-9",
+    "title_zh": "跨测序平台的结构变异检测：HitSV",
+    "title_en": "Structural variant detection across sequencing technologies.",
+    "journal": "Nat Biotechnol",
+    "publication_date": "2026-10-15",
+    "legacy_tags": [
+      "方法与工具",
+      "变异与关联"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "structural-variation-impact"
+    ],
+    "research_methods": [
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-19:pgpath",
+    "issue": "2026-10-19",
+    "article_number": 13,
+    "doi": "10.1093/bib/bbag547",
+    "title_zh": "从泛基因组子路径推荐「群体适配」的线性参考基因组",
+    "title_en": "PGpath: recommending population-adapted linear reference genomes from pangenome subpaths.",
+    "journal": "Brief Bioinform",
+    "publication_date": "2026-10-20",
+    "legacy_tags": [
+      "泛基因组与组装",
+      "方法与工具"
+    ],
+    "primary_topic": "pangenome",
+    "secondary_topics": [
+      "assembly-annotation"
+    ],
+    "subtopics": [
+      "core-dispensable-genome"
+    ],
+    "research_methods": [
+      "图基因组构建与变异图谱比对"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "构建计算生物学/跨物种通用群体水平高质量多基因组/泛基因组图谱，解析变异与演化多样性。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-19:hicberg",
+    "issue": "2026-10-19",
+    "article_number": 14,
+    "doi": "10.1101/gr.281770.125",
+    "title_zh": "用 Hi-C 把重复元件的接触信号「补」回来",
+    "title_en": "Reconstruction of contact signals from repeated elements with Hicberg.",
+    "journal": "Genome Res",
+    "publication_date": "2026-10-13",
+    "legacy_tags": [
+      "方法与工具",
+      "表观与调控"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "Oxford Nanopore超长读长测序",
+      "Hi-C染色质高级构象捕获",
+      "数量性状位点 (QTL) 定位"
+    ],
+    "research_objects": [
+      "酿酒酵母 (Saccharomyces cerevisiae)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定酿酒酵母 (Saccharomyces cerevisiae)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-19:crispr-hawk",
+    "issue": "2026-10-19",
+    "article_number": 15,
+    "doi": "10.1093/bioinformatics/btag708",
+    "title_zh": "把变异与单倍型带进 gRNA 设计",
+    "title_en": "CRISPR-HAWK: haplotype- and variant-aware guide design toolkit for CRISPR-Cas.",
+    "journal": "Bioinformatics",
+    "publication_date": "2026-10-20",
+    "legacy_tags": [
+      "方法与工具"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-19:fine-mapping",
+    "issue": "2026-10-19",
+    "article_number": 16,
+    "doi": "10.1093/bib/bbag574",
+    "title_zh": "多祖先精细定位：联合建模还是事后整合，什么时候用哪个",
+    "title_en": "Systematic benchmarking of multi-ancestry fine-mapping under variant heterogeneity and LD mismatch.",
+    "journal": "Brief Bioinform",
+    "publication_date": "2026-10-20",
+    "legacy_tags": [
+      "方法与工具",
+      "变异与关联"
+    ],
+    "primary_topic": "methods-tools",
+    "secondary_topics": [],
+    "subtopics": [
+      "multi-omics-integration"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "技术创新",
+      "方法评测"
+    ],
+    "classification_reason": "研发面向计算生物学/跨物种通用相关基因组数据的原创计算算法与生物信息学分析工具。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-19:batch-effect",
+    "issue": "2026-10-19",
+    "article_number": 17,
+    "doi": "10.1093/bioinformatics/btag735",
+    "title_zh": "批次效应校正：先把问题定义清楚，再谈方法",
+    "title_en": "Revisiting Batch Effect Correction: A Structured Problem Formulation and Novel Solutions.",
+    "journal": "Bioinformatics",
+    "publication_date": "2026-10-15",
+    "legacy_tags": [
+      "方法与工具"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-19:ukb-sv",
+    "issue": "2026-10-19",
+    "article_number": 18,
+    "doi": "10.1016/j.cell.2026.09.035",
+    "title_zh": "46.7 万人全基因组 SV 图谱与表型组关联",
+    "title_en": "A phenome-wide structural variant map from 467,152 UK Biobank genomes.",
+    "journal": "Cell",
+    "publication_date": "2026-10-15",
+    "legacy_tags": [
+      "变异与关联",
+      "方法与工具"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "gwas-trait-mapping"
+    ],
+    "research_methods": [
+      "全基因组关联分析 (GWAS)",
+      "数量性状位点 (QTL) 定位",
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-19:near-t2t-somatic",
+    "issue": "2026-10-19",
+    "article_number": 19,
+    "doi": "10.1016/j.cell.2026.09.033",
+    "title_zh": "近 T2T 二倍体组装，揭示癌症体细胞突变的「不可及」区域",
+    "title_en": "A telomere-to-telomere map of somatic mutation burden and functional impact in a cancer.",
+    "journal": "Cell",
+    "publication_date": "2026-10-20",
+    "legacy_tags": [
+      "组装与注释",
+      "变异与关联"
+    ],
+    "primary_topic": "assembly-annotation",
+    "secondary_topics": [],
+    "subtopics": [
+      "t2t-telomere-centromere"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "针对计算生物学/跨物种通用实现高精染色体级/单倍型分辨基因组从头组装与注释。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-19:microexon-code",
+    "issue": "2026-10-19",
+    "article_number": 20,
+    "doi": "10.1038/s41586-026-11119-w",
+    "title_zh": "微外显子的调控「密码」，与自闭症相关变异",
+    "title_en": "A microexon regulatory code reveals autism-linked genetic variation.",
+    "journal": "Nature",
+    "publication_date": "2026-10-14",
+    "legacy_tags": [
+      "表观与调控",
+      "方法与工具"
+    ],
+    "primary_topic": "epigenetics",
+    "secondary_topics": [
+      "variation-gwas"
+    ],
+    "subtopics": [
+      "chromatin-accessibility"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "解析计算生物学/跨物种通用表观遗传修饰、染色质高级结构及其对关键生物学通路的调控网络。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-25:42918899",
+    "issue": "2026-10-25",
+    "article_number": 1,
+    "doi": "10.1038/s41588-026-02808-3",
+    "title_zh": "野生二粒小麦近完整组装揭示多倍化中着丝粒重组",
+    "title_en": "Near-complete assembly of wild emmer wheat unveils centromere reorganization during polyploid evolution.",
+    "journal": "Nat Genet",
+    "publication_date": "2026-10-22",
+    "legacy_tags": [
+      "组装与注释",
+      "进化与比较"
+    ],
+    "primary_topic": "assembly-annotation",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "t2t-telomere-centromere"
+    ],
+    "research_methods": [
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "小麦 (Triticum aestivum)"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "针对小麦 (Triticum aestivum)实现高精染色体级/单倍型分辨基因组从头组装与注释。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-25:42922159",
+    "issue": "2026-10-25",
+    "article_number": 2,
+    "doi": "10.1111/pbi.70766",
+    "title_zh": "无间隙大麻组装揭示多倍体后重塑与合成酶基因演化",
+    "title_en": "Gap-Free Cannabis sativa Assemblies Reveal Post-Polyploid Genome Remodelling and Refine the Evolution of Cannabinoid Synthase Genes.",
+    "journal": "Plant Biotechnol J",
+    "publication_date": "2026-10-22",
+    "legacy_tags": [
+      "组装与注释",
+      "泛基因组"
+    ],
+    "primary_topic": "assembly-annotation",
+    "secondary_topics": [
+      "evolution",
+      "pangenome"
+    ],
+    "subtopics": [
+      "polyploid-haplotype"
+    ],
+    "research_methods": [
+      "全基因组多重共线性比对 (MCScan)",
+      "系统发育基因组学与分子钟定年"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "针对计算生物学/跨物种通用实现高精染色体级/单倍型分辨基因组从头组装与注释。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-25:42897845",
+    "issue": "2026-10-25",
+    "article_number": 3,
+    "doi": "10.1016/j.xplc.2026.102158",
+    "title_zh": "完成花生品种豫花15端粒到端粒基因组组装并锁定荚果与种子大小的关键调控因子AhYABBY",
+    "title_en": "Telomere-to-telomere genome assembly of the elite peanut cultivar Yuhua 15 identifies AhYABBY as a key regulator of pod and seed size.",
+    "journal": "Plant Commun",
+    "publication_date": "2026-10-19",
+    "legacy_tags": [
+      "组装与注释",
+      "变异与关联"
+    ],
+    "primary_topic": "assembly-annotation",
+    "secondary_topics": [],
+    "subtopics": [
+      "t2t-telomere-centromere"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位",
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "科研资源构建"
+    ],
+    "classification_reason": "针对计算生物学/跨物种通用实现高精染色体级/单倍型分辨基因组从头组装与注释。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-25:42919903",
+    "issue": "2026-10-25",
+    "article_number": 4,
+    "doi": "10.1038/s41477-026-02442-1",
+    "title_zh": "构建葡萄科染色体级基因组解析系统发育与基因组演化",
+    "title_en": "Chromosome-level phylogenomics and genome evolution of the grape family.",
+    "journal": "Nat Plants",
+    "publication_date": "2026-10-23",
+    "legacy_tags": [
+      "进化与比较",
+      "组装与注释"
+    ],
+    "primary_topic": "assembly-annotation",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "long-read-sequencing"
+    ],
+    "research_methods": [
+      "Hi-C染色质高级构象捕获",
+      "系统发育基因组学与分子钟定年",
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "葡萄科 (Vitaceae)"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "针对葡萄科 (Vitaceae)实现高精染色体级/单倍型分辨基因组从头组装与注释。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-25:42919901",
+    "issue": "2026-10-25",
+    "article_number": 5,
+    "doi": "10.1038/s41477-026-02441-2",
+    "title_zh": "靶向着丝粒重写小麦核型",
+    "title_en": "Rewriting wheat karyotypes through centromere-targeted chromosome engineering.",
+    "journal": "Nat Plants",
+    "publication_date": "2026-10-23",
+    "legacy_tags": [
+      "方法与工具",
+      "组装与注释"
+    ],
+    "primary_topic": "evolution",
+    "secondary_topics": [],
+    "subtopics": [
+      "synteny-collinearity"
+    ],
+    "research_methods": [
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "小麦 (Triticum aestivum)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "基于多物种基因组比较分析，揭示小麦 (Triticum aestivum)的核型演化、多倍化或适应性辐射机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-25:42902559",
+    "issue": "2026-10-25",
+    "article_number": 6,
+    "doi": "10.1016/j.xplc.2026.102157",
+    "title_zh": "性状信息驱动机器学习提升小麦基因组选择与杂交设计精度",
+    "title_en": "Trait-Informed Machine Learning Improves Precise Genomic Selection and Hybrid Design in Wheat.",
+    "journal": "Plant Commun",
+    "publication_date": "2026-10-20",
+    "legacy_tags": [
+      "变异与关联",
+      "方法与工具"
+    ],
+    "primary_topic": "evolution",
+    "secondary_topics": [
+      "variation-gwas"
+    ],
+    "subtopics": [
+      "hybridization-introgression"
+    ],
+    "research_methods": [
+      "全基因组关联分析 (GWAS)",
+      "深度学习/生成式生物学模型"
+    ],
+    "research_objects": [
+      "小麦 (Triticum aestivum)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "基于多物种基因组比较分析，揭示小麦 (Triticum aestivum)的核型演化、多倍化或适应性辐射机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-25:42908411",
+    "issue": "2026-10-25",
+    "article_number": 7,
+    "doi": "10.1111/pce.70974",
+    "title_zh": "解析小麦气孔解剖与导度：干旱热胁迫下稳定QTL的田间定位",
+    "title_en": "Field‑Based Dissection of Stomatal Anatomy and Conductance Reveals Stable QTL Under Drought and Heat in Wheat.",
+    "journal": "Plant Cell Environ",
+    "publication_date": "2026-10-22",
+    "legacy_tags": [
+      "变异与关联",
+      "进化与比较"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "全基因组关联分析 (GWAS)",
+      "数量性状位点 (QTL) 定位"
+    ],
+    "research_objects": [
+      "小麦 (Triticum aestivum)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定小麦 (Triticum aestivum)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-25:42913095",
+    "issue": "2026-10-25",
+    "article_number": 8,
+    "doi": "10.1093/plphys/kiag793",
+    "title_zh": "揭示茶树两种DNA甲基化架构与转录稳健性的关联",
+    "title_en": "Conserved DNA methylation architectures are associated with transcriptional robustness and regulatory plasticity in the woody perennial tea plant.",
+    "journal": "Plant Physiol",
+    "publication_date": "2026-10-22",
+    "legacy_tags": [
+      "表观与调控",
+      "进化与比较"
+    ],
+    "primary_topic": "epigenetics",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "dna-methylation"
+    ],
+    "research_methods": [
+      "全基因组DNA甲基化测序"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "解析计算生物学/跨物种通用表观遗传修饰、染色质高级结构及其对关键生物学通路的调控网络。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-25:42908423",
+    "issue": "2026-10-25",
+    "article_number": 9,
+    "doi": "10.1111/tpj.71174",
+    "title_zh": "基因组结构决定菊科rDNA的协同演化效率",
+    "title_en": "Genome architecture modulates 35S and 5S rDNA homogenization in Asteraceae.",
+    "journal": "Plant J",
+    "publication_date": "",
+    "legacy_tags": [
+      "进化与比较",
+      "组装与注释"
+    ],
+    "primary_topic": "evolution",
+    "secondary_topics": [],
+    "subtopics": [
+      "synteny-collinearity"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "基于多物种基因组比较分析，揭示计算生物学/跨物种通用的核型演化、多倍化或适应性辐射机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-25:42928045",
+    "issue": "2026-10-25",
+    "article_number": 10,
+    "doi": "10.1111/nph.71707",
+    "title_zh": "单核多组学解析线虫合胞体调控程序",
+    "title_en": "A single-nucleus multiome profiling reveals the regulatory programs driving plant nematode-induced syncytium.",
+    "journal": "New Phytol",
+    "publication_date": "2026-10-25",
+    "legacy_tags": [
+      "单细胞与空间",
+      "表观与调控"
+    ],
+    "primary_topic": "single-cell",
+    "secondary_topics": [
+      "epigenetics"
+    ],
+    "subtopics": [
+      "single-cell-transcriptomics"
+    ],
+    "research_methods": [
+      "单细胞/单核转录组测序 (scRNA-seq/snRNA-seq)",
+      "ATAC-seq染色质开放性检测"
+    ],
+    "research_objects": [
+      "拟南芥 (Arabidopsis thaliana)"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "在单细胞/空间原位分辨率下揭示拟南芥 (Arabidopsis thaliana)的细胞类型异质性与发育调控机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-25:42920203",
+    "issue": "2026-10-25",
+    "article_number": 11,
+    "doi": "10.1111/nph.71680",
+    "title_zh": "用十条规则甄别深部植物系统发育中的水平基因转移",
+    "title_en": "Ten rules for identifying horizontal gene transfers in deep plant phylogenies.",
+    "journal": "New Phytol",
+    "publication_date": "2026-10-23",
+    "legacy_tags": [
+      "方法与工具",
+      "进化与比较"
+    ],
+    "primary_topic": "evolution",
+    "secondary_topics": [],
+    "subtopics": [
+      "phylogenomics"
+    ],
+    "research_methods": [
+      "Oxford Nanopore超长读长测序",
+      "系统发育基因组学与分子钟定年"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "基于多物种基因组比较分析，揭示计算生物学/跨物种通用的核型演化、多倍化或适应性辐射机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-25:42907153",
+    "issue": "2026-10-25",
+    "article_number": 12,
+    "doi": "10.1101/gr.282617.126",
+    "title_zh": "用 LAVrefiner 细化 indel 与结构变异-性状关联",
+    "title_en": "Refining indel- and structural variant-trait associations with LAVrefiner.",
+    "journal": "Genome Res",
+    "publication_date": "2026-10-21",
+    "legacy_tags": [
+      "方法与工具",
+      "泛基因组"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "gwas-trait-mapping"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位",
+      "深度学习/生成式生物学模型",
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-25:42907151",
+    "issue": "2026-10-25",
+    "article_number": 13,
+    "doi": "10.1101/gr.281948.126",
+    "title_zh": "用可组合查询语言实时探索泛基因组与泛转录组图",
+    "title_en": "The Vizitig pangenome and pantranscriptome explorer.",
+    "journal": "Genome Res",
+    "publication_date": "2026-10-21",
+    "legacy_tags": [
+      "方法与工具",
+      "泛基因组"
+    ],
+    "primary_topic": "pangenome",
+    "secondary_topics": [],
+    "subtopics": [
+      "graph-pangenome"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "水稻 (Oryza sativa)",
+      "人类 (Homo sapiens)",
+      "酿酒酵母 (Saccharomyces cerevisiae)"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "构建水稻 (Oryza sativa)群体水平高质量多基因组/泛基因组图谱，解析变异与演化多样性。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-25:42919952",
+    "issue": "2026-10-25",
+    "article_number": 14,
+    "doi": "10.1038/s41592-026-03272-x",
+    "title_zh": "基准评测空间转录组细胞分割方法",
+    "title_en": "Benchmarking segmentation methods for spatial transcriptomics.",
+    "journal": "Nat Methods",
+    "publication_date": "2026-10-23",
+    "legacy_tags": [
+      "方法与工具",
+      "单细胞与空间"
+    ],
+    "primary_topic": "single-cell",
+    "secondary_topics": [],
+    "subtopics": [
+      "spatial-transcriptomics"
+    ],
+    "research_methods": [
+      "空间原位转录组测序"
+    ],
+    "research_objects": [
+      "人类 (Homo sapiens)"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "在单细胞/空间原位分辨率下揭示人类 (Homo sapiens)的细胞类型异质性与发育调控机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-25:42888029",
+    "issue": "2026-10-25",
+    "article_number": 15,
+    "doi": "10.1101/gr.281897.126",
+    "title_zh": "用条件扩散模型补全单细胞Hi-C稀疏接触图",
+    "title_en": "Conditional diffusion for single-cell Hi-C data imputation and enhancement with scHiC-Diff.",
+    "journal": "Genome Res",
+    "publication_date": "2026-10-16",
+    "legacy_tags": [
+      "方法与工具",
+      "单细胞与空间"
+    ],
+    "primary_topic": "single-cell",
+    "secondary_topics": [],
+    "subtopics": [
+      "single-cell-transcriptomics"
+    ],
+    "research_methods": [
+      "Hi-C染色质高级构象捕获",
+      "单细胞/单核转录组测序 (scRNA-seq/snRNA-seq)"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "在单细胞/空间原位分辨率下揭示计算生物学/跨物种通用的细胞类型异质性与发育调控机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-25:42901984",
+    "issue": "2026-10-25",
+    "article_number": 16,
+    "doi": "10.1038/s41588-026-02799-1",
+    "title_zh": "多祖先 COJO 分析提升独立关联信号检出",
+    "title_en": "Multiancestry conditional and joint analysis applied to GWAS summary statistics.",
+    "journal": "Nat Genet",
+    "publication_date": "2026-10-20",
+    "legacy_tags": [
+      "方法与工具",
+      "变异与关联"
+    ],
+    "primary_topic": "evolution",
+    "secondary_topics": [
+      "variation-gwas"
+    ],
+    "subtopics": [
+      "synteny-collinearity"
+    ],
+    "research_methods": [
+      "全基因组关联分析 (GWAS)",
+      "数量性状位点 (QTL) 定位"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "基于多物种基因组比较分析，揭示计算生物学/跨物种通用的核型演化、多倍化或适应性辐射机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-25:42907526",
+    "issue": "2026-10-25",
+    "article_number": 17,
+    "doi": "10.1038/s41588-026-02809-2",
+    "title_zh": "fastGxE 实现生物样本库规模全基因组 GxE 检测",
+    "title_en": "Genome-wide detection of genotype-environment interactions at biobank scale with fastGxE.",
+    "journal": "Nat Genet",
+    "publication_date": "2026-10-22",
+    "legacy_tags": [
+      "方法与工具",
+      "变异与关联"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-25:42897195",
+    "issue": "2026-10-25",
+    "article_number": 18,
+    "doi": "10.1038/s41467-026-77785-6",
+    "title_zh": "多倍化后基因组偏分隔与生态适应",
+    "title_en": "Divergent genome fractionation and adaptation following polyploidy in the Araliaceae.",
+    "journal": "Nat Commun",
+    "publication_date": "2026-09-17",
+    "legacy_tags": [
+      "进化与比较",
+      "泛基因组"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "系统发育基因组学与分子钟定年"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-25:42886807",
+    "issue": "2026-10-25",
+    "article_number": 19,
+    "doi": "10.1126/sciadv.aef9182",
+    "title_zh": "新石器早期基因组支持东亚粟农本地起源",
+    "title_en": "Early Neolithic genomes suggest a local origin for millet farmers in East Asia.",
+    "journal": "Sci Adv",
+    "publication_date": "2026-10-16",
+    "legacy_tags": [
+      "进化与比较",
+      "变异与关联"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-10-25:42913020",
+    "issue": "2026-10-25",
+    "article_number": 20,
+    "doi": "10.1126/sciadv.aef2844",
+    "title_zh": "液滴酶法单细胞甲基组测序解析表观异质性",
+    "title_en": "High-throughput droplet-based enzymatic DNA methylome profiling enables single-cell resolution of epigenetic heterogeneity.",
+    "journal": "Sci Adv",
+    "publication_date": "2026-10-23",
+    "legacy_tags": [
+      "方法与工具",
+      "表观与调控"
+    ],
+    "primary_topic": "single-cell",
+    "secondary_topics": [
+      "epigenetics"
+    ],
+    "subtopics": [
+      "single-cell-transcriptomics"
+    ],
+    "research_methods": [
+      "单细胞/单核转录组测序 (scRNA-seq/snRNA-seq)",
+      "全基因组DNA甲基化测序"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "在单细胞/空间原位分辨率下揭示计算生物学/跨物种通用的细胞类型异质性与发育调控机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-01:42945956",
+    "issue": "2026-11-01",
+    "article_number": 1,
+    "doi": "10.1016/j.cell.2026.09.063",
+    "title_zh": "深度测序3,367份玉米基因组揭示稀有变异对农艺性状的重要贡献",
+    "title_en": "Deep sequencing of 3,367 maize genomes uncovers substantial contribution of rare variants to agronomic traits.",
+    "journal": "Cell",
+    "publication_date": "2026-10-27",
+    "legacy_tags": [
+      "变异与关联",
+      "泛基因组"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "Oxford Nanopore超长读长测序",
+      "全基因组关联分析 (GWAS)",
+      "深度学习/生成式生物学模型"
+    ],
+    "research_objects": [
+      "玉米 (Zea mays)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定玉米 (Zea mays)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-01:42951975",
+    "issue": "2026-11-01",
+    "article_number": 2,
+    "doi": "10.1038/s41586-026-10438-2",
+    "title_zh": "串联重复变异塑造免疫细胞类型特异性基因表达",
+    "title_en": "Tandem repeat variation shapes immune cell type-specific gene expression.",
+    "journal": "Nature",
+    "publication_date": "2026-10-28",
+    "legacy_tags": [
+      "变异与关联",
+      "表观与调控"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位",
+      "单细胞/单核转录组测序 (scRNA-seq/snRNA-seq)"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-01:42963394",
+    "issue": "2026-11-01",
+    "article_number": 3,
+    "doi": "10.1038/s41588-026-02819-0",
+    "title_zh": "49万UKB基因组单倍型参考面板提升全球基因型填充",
+    "title_en": "A haplotype reference panel constructed from 490,319 UK Biobank genomes improves genotype imputation for global populations.",
+    "journal": "Nat Genet",
+    "publication_date": "2026-10-30",
+    "legacy_tags": [
+      "方法与工具",
+      "变异与关联"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "全基因组关联分析 (GWAS)",
+      "数量性状位点 (QTL) 定位"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-01:42958420",
+    "issue": "2026-11-01",
+    "article_number": 4,
+    "doi": "10.1186/s13059-026-04218-4",
+    "title_zh": "完整参考基因组揭示甘蓝型油菜着丝粒遗传格局",
+    "title_en": "A complete reference genome reveals genetic landscape of Brassica centromeres.",
+    "journal": "Genome Biol",
+    "publication_date": "2026-07-27",
+    "legacy_tags": [
+      "组装与注释",
+      "泛基因组"
+    ],
+    "primary_topic": "assembly-annotation",
+    "secondary_topics": [
+      "pangenome"
+    ],
+    "subtopics": [
+      "t2t-telomere-centromere"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "芸薹属 (Brassica spp.)",
+      "甘蓝型油菜 (Brassica napus)"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "针对芸薹属 (Brassica spp.)实现高精染色体级/单倍型分辨基因组从头组装与注释。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-01:42962033",
+    "issue": "2026-11-01",
+    "article_number": 5,
+    "doi": "10.1126/sciadv.aea5812",
+    "title_zh": "图泛基因组揭示异源多倍化的结构变异与表达效应",
+    "title_en": "Graph-based pangenome analysis uncovers structural and functional impacts of allopolyploidization events.",
+    "journal": "Sci Adv",
+    "publication_date": "2026-10-30",
+    "legacy_tags": [
+      "泛基因组",
+      "进化与比较"
+    ],
+    "primary_topic": "pangenome",
+    "secondary_topics": [
+      "evolution",
+      "variation-gwas"
+    ],
+    "subtopics": [
+      "graph-pangenome",
+      "structural-variation-pan"
+    ],
+    "research_methods": [
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "酿酒酵母 (Saccharomyces cerevisiae)"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "构建酿酒酵母 (Saccharomyces cerevisiae)群体水平高质量多基因组/泛基因组图谱，解析变异与演化多样性。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-01:42958427",
+    "issue": "2026-11-01",
+    "article_number": 6,
+    "doi": "10.1186/s13059-026-04230-8",
+    "title_zh": "构建锦鸡儿属泛基因组揭示干旱适应机制",
+    "title_en": "Pan-genome analysis of Caragana reveals genomic mechanisms of drought adaptation of leguminous shrubs to arid environments.",
+    "journal": "Genome Biol",
+    "publication_date": "2026-08-01",
+    "legacy_tags": [
+      "泛基因组",
+      "进化与比较"
+    ],
+    "primary_topic": "pangenome",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "core-dispensable-genome"
+    ],
+    "research_methods": [
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "构建计算生物学/跨物种通用群体水平高质量多基因组/泛基因组图谱，解析变异与演化多样性。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-01:42935185",
+    "issue": "2026-11-01",
+    "article_number": 7,
+    "doi": "10.1111/tpj.71184",
+    "title_zh": "整合SNP与结构变异解析水稻低温发芽遗传架构",
+    "title_en": "Genetic architecture of low-temperature germinability in rice revealed by integrated maps of SNPs and structural variation.",
+    "journal": "Plant J",
+    "publication_date": "",
+    "legacy_tags": [
+      "变异与关联",
+      "泛基因组"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "structural-variation-impact"
+    ],
+    "research_methods": [
+      "全基因组关联分析 (GWAS)",
+      "数量性状位点 (QTL) 定位",
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "水稻 (Oryza sativa)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定水稻 (Oryza sativa)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-01:42958560",
+    "issue": "2026-11-01",
+    "article_number": 8,
+    "doi": "10.1186/s13059-026-04223-7",
+    "title_zh": "构建多基因组倒位基准，评估短读长与长读长检测方法",
+    "title_en": "Multi-genome benchmark for simple and complex genome inversion detection.",
+    "journal": "Genome Biol",
+    "publication_date": "2026-08-01",
+    "legacy_tags": [
+      "方法与工具",
+      "变异与关联"
+    ],
+    "primary_topic": "methods-tools",
+    "secondary_topics": [
+      "variation-gwas"
+    ],
+    "subtopics": [
+      "variant-calling-benchmarking"
+    ],
+    "research_methods": [
+      "PacBio HiFi高保真长读长测序",
+      "Oxford Nanopore超长读长测序",
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "技术创新",
+      "方法评测"
+    ],
+    "classification_reason": "研发面向计算生物学/跨物种通用相关基因组数据的原创计算算法与生物信息学分析工具。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-01:42948897",
+    "issue": "2026-11-01",
+    "article_number": 9,
+    "doi": "10.1093/molbev/msag271",
+    "title_zh": "将选择信号映射到单细胞图谱定位选择相关细胞类型",
+    "title_en": "scEvoSel maps evolutionary selection signals onto single-cell transcriptomic atlases to reveal selection-relevant cellular contexts.",
+    "journal": "Mol Biol Evol",
+    "publication_date": "2026-10-28",
+    "legacy_tags": [
+      "方法与工具",
+      "进化与比较"
+    ],
+    "primary_topic": "single-cell",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "single-cell-transcriptomics",
+      "cell-lineage-differentiation"
+    ],
+    "research_methods": [
+      "Oxford Nanopore超长读长测序",
+      "数量性状位点 (QTL) 定位",
+      "单细胞/单核转录组测序 (scRNA-seq/snRNA-seq)"
+    ],
+    "research_objects": [
+      "猪 (Sus scrofa)"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "在单细胞/空间原位分辨率下揭示猪 (Sus scrofa)的细胞类型异质性与发育调控机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-01:42934278",
+    "issue": "2026-11-01",
+    "article_number": 10,
+    "doi": "10.1038/s41588-026-02827-0",
+    "title_zh": "量化方法影响eQTL分析、共定位与TWAS的可重复性",
+    "title_en": "Quantification method affects replicability of eQTL analysis, colocalization and TWAS.",
+    "journal": "Nat Genet",
+    "publication_date": "2026-10-26",
+    "legacy_tags": [
+      "方法与工具",
+      "变异与关联"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-01:42972586",
+    "issue": "2026-11-01",
+    "article_number": 11,
+    "doi": "10.1186/s13059-026-04226-4",
+    "title_zh": "单核分辨率绘制水稻花粉染色质可及性遗传结构",
+    "title_en": "GAMETE maps the genetic architecture of chromatin accessibility in rice pollen at single-nucleus resolution.",
+    "journal": "Genome Biol",
+    "publication_date": "2026-08-04",
+    "legacy_tags": [
+      "单细胞与空间",
+      "变异与关联"
+    ],
+    "primary_topic": "single-cell",
+    "secondary_topics": [
+      "epigenetics"
+    ],
+    "subtopics": [
+      "single-cell-transcriptomics"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位",
+      "单细胞/单核转录组测序 (scRNA-seq/snRNA-seq)",
+      "ATAC-seq染色质开放性检测"
+    ],
+    "research_objects": [
+      "水稻 (Oryza sativa)"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "在单细胞/空间原位分辨率下揭示水稻 (Oryza sativa)的细胞类型异质性与发育调控机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-01:42933868",
+    "issue": "2026-11-01",
+    "article_number": 12,
+    "doi": "10.1093/plcell/koag320",
+    "title_zh": "单核与空间转录组绘制水稻胚乳细胞分化与贮藏物质积累图谱",
+    "title_en": "Single-nucleus and spatial transcriptomics reveal dynamic cell differentiation and storage product accumulation in rice endosperm.",
+    "journal": "Plant Cell",
+    "publication_date": "2026-10-26",
+    "legacy_tags": [
+      "单细胞与空间",
+      "表观与调控"
+    ],
+    "primary_topic": "single-cell",
+    "secondary_topics": [
+      "epigenetics"
+    ],
+    "subtopics": [
+      "spatial-transcriptomics",
+      "cell-lineage-differentiation"
+    ],
+    "research_methods": [
+      "单细胞/单核转录组测序 (scRNA-seq/snRNA-seq)",
+      "空间原位转录组测序"
+    ],
+    "research_objects": [
+      "水稻 (Oryza sativa)"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "在单细胞/空间原位分辨率下揭示水稻 (Oryza sativa)的细胞类型异质性与发育调控机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-01:42935326",
+    "issue": "2026-11-01",
+    "article_number": 13,
+    "doi": "10.1093/plcell/koag325",
+    "title_zh": "PDS5A限制SYN4依赖的长程染色质接触塑造拟南芥TAD样结构",
+    "title_en": "PDS5A restricts SYN4-dependent long-range chromatin contacts to shape TAD-like chromatin architecture in Arabidopsis.",
+    "journal": "Plant Cell",
+    "publication_date": "2026-10-27",
+    "legacy_tags": [
+      "表观与调控",
+      "组装与注释"
+    ],
+    "primary_topic": "epigenetics",
+    "secondary_topics": [],
+    "subtopics": [
+      "chromatin-accessibility"
+    ],
+    "research_methods": [
+      "Oxford Nanopore超长读长测序",
+      "Hi-C染色质高级构象捕获"
+    ],
+    "research_objects": [
+      "拟南芥 (Arabidopsis thaliana)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "解析拟南芥 (Arabidopsis thaliana)表观遗传修饰、染色质高级结构及其对关键生物学通路的调控网络。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-01:42944616",
+    "issue": "2026-11-01",
+    "article_number": 14,
+    "doi": "10.1111/pce.70917",
+    "title_zh": "DDM1 塑造多种染色质状态的跨代表观遗传",
+    "title_en": "DDM1 Shapes Transgenerational Epigenetic Inheritance of Diverse Chromatin States.",
+    "journal": "Plant Cell Environ",
+    "publication_date": "2026-10-27",
+    "legacy_tags": [
+      "表观与调控",
+      "进化与比较"
+    ],
+    "primary_topic": "epigenetics",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "chromatin-accessibility"
+    ],
+    "research_methods": [
+      "全基因组DNA甲基化测序",
+      "ChIP-seq/CUT&Tag组蛋白修饰检测"
+    ],
+    "research_objects": [
+      "拟南芥 (Arabidopsis thaliana)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "解析拟南芥 (Arabidopsis thaliana)表观遗传修饰、染色质高级结构及其对关键生物学通路的调控网络。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-01:42969342",
+    "issue": "2026-11-01",
+    "article_number": 15,
+    "doi": "10.1111/tpj.71187",
+    "title_zh": "整合QTL与GWAS解析玉米气孔密度与大小的多基因遗传基础",
+    "title_en": "Multi-locus genetic basis of stomatal density and size in maize revealed by integrated QTL and GWAS.",
+    "journal": "Plant J",
+    "publication_date": "",
+    "legacy_tags": [
+      "变异与关联",
+      "方法与工具"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "gwas-trait-mapping"
+    ],
+    "research_methods": [
+      "全基因组关联分析 (GWAS)",
+      "数量性状位点 (QTL) 定位",
+      "深度学习/生成式生物学模型"
+    ],
+    "research_objects": [
+      "玉米 (Zea mays)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定玉米 (Zea mays)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-01:42947650",
+    "issue": "2026-11-01",
+    "article_number": 16,
+    "doi": "10.1093/plcell/koag329",
+    "title_zh": "BraHDAC1 启动子变异调控白菜类作物气孔与耐热性",
+    "title_en": "Promoter variation in BraHDAC1 modulates stomatal regulation and thermotolerance in Brassica rapa.",
+    "journal": "Plant Cell",
+    "publication_date": "2026-10-28",
+    "legacy_tags": [
+      "变异与关联",
+      "表观与调控"
+    ],
+    "primary_topic": "epigenetics",
+    "secondary_topics": [
+      "variation-gwas"
+    ],
+    "subtopics": [
+      "chromatin-accessibility"
+    ],
+    "research_methods": [
+      "全基因组关联分析 (GWAS)",
+      "数量性状位点 (QTL) 定位",
+      "ChIP-seq/CUT&Tag组蛋白修饰检测"
+    ],
+    "research_objects": [
+      "芸薹属 (Brassica spp.)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "解析芸薹属 (Brassica spp.)表观遗传修饰、染色质高级结构及其对关键生物学通路的调控网络。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-01:42935250",
+    "issue": "2026-11-01",
+    "article_number": 17,
+    "doi": "10.1093/nar/gkag1064",
+    "title_zh": "构建整合多组学表达谱的水稻表达数据库 RED 2.0",
+    "title_en": "Rice Expression Database (RED) 2.0: an updated rice database integrating diverse RNA expression profiles based on the telomere-to-telomere reference genome.",
+    "journal": "Nucleic Acids Res",
+    "publication_date": "2026-10-27",
+    "legacy_tags": [
+      "方法与工具",
+      "组装与注释"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "单细胞/单核转录组测序 (scRNA-seq/snRNA-seq)"
+    ],
+    "research_objects": [
+      "水稻 (Oryza sativa)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定水稻 (Oryza sativa)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-01:42933985",
+    "issue": "2026-11-01",
+    "article_number": 18,
+    "doi": "10.1101/gr.281858.126",
+    "title_zh": "发布八齿鼠染色体级基因组与注释",
+    "title_en": "Chromosome-scale genome assembly and annotation of Octodon degus.",
+    "journal": "Genome Res",
+    "publication_date": "2026-10-26",
+    "legacy_tags": [
+      "组装与注释",
+      "进化与比较"
+    ],
+    "primary_topic": "assembly-annotation",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "long-read-sequencing"
+    ],
+    "research_methods": [
+      "PacBio HiFi高保真长读长测序",
+      "Hi-C染色质高级构象捕获",
+      "数量性状位点 (QTL) 定位"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "科研资源构建"
+    ],
+    "classification_reason": "针对计算生物学/跨物种通用实现高精染色体级/单倍型分辨基因组从头组装与注释。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-01:42962014",
+    "issue": "2026-11-01",
+    "article_number": 19,
+    "doi": "10.1126/sciadv.ady5085",
+    "title_zh": "解码FFPE组织实现单细胞分辨率空间转录组",
+    "title_en": "Decoder-FFPE-seq enables sensitive, genome-wide spatial transcriptomics of archival tissues at single-cell resolution.",
+    "journal": "Sci Adv",
+    "publication_date": "2026-10-30",
+    "legacy_tags": [
+      "方法与工具",
+      "单细胞与空间"
+    ],
+    "primary_topic": "single-cell",
+    "secondary_topics": [],
+    "subtopics": [
+      "spatial-transcriptomics"
+    ],
+    "research_methods": [
+      "单细胞/单核转录组测序 (scRNA-seq/snRNA-seq)",
+      "空间原位转录组测序"
+    ],
+    "research_objects": [
+      "人类 (Homo sapiens)"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "在单细胞/空间原位分辨率下揭示人类 (Homo sapiens)的细胞类型异质性与发育调控机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-01:42971994",
+    "issue": "2026-11-01",
+    "article_number": 20,
+    "doi": "10.1038/s41467-026-78884-0",
+    "title_zh": "模拟揭示转座子扩增与清除的基因组动态",
+    "title_en": "PrinTE: a forward simulation framework for studying the role of transposable elements in genome expansion and contraction.",
+    "journal": "Nat Commun",
+    "publication_date": "2026-11-02",
+    "legacy_tags": [
+      "方法与工具",
+      "进化与比较"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "Oxford Nanopore超长读长测序"
+    ],
+    "research_objects": [
+      "拟南芥 (Arabidopsis thaliana)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定拟南芥 (Arabidopsis thaliana)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-08:42978223",
+    "issue": "2026-11-08",
+    "article_number": 1,
+    "doi": "10.1016/j.molp.2026.10.018",
+    "title_zh": "构建单倍型解析荔枝泛基因组，揭示结构变异关联花期与果糖",
+    "title_en": "A haplotype-resolved lychee pangenome uncovers structural and haplotype variations associated with flowering time divergence and fruit sugar composition.",
+    "journal": "Mol Plant",
+    "publication_date": "2026-11-03",
+    "legacy_tags": [
+      "泛基因组",
+      "变异与关联"
+    ],
+    "primary_topic": "pangenome",
+    "secondary_topics": [
+      "variation-gwas"
+    ],
+    "subtopics": [
+      "structural-variation-pan"
+    ],
+    "research_methods": [
+      "深度学习/生成式生物学模型",
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "构建计算生物学/跨物种通用群体水平高质量多基因组/泛基因组图谱，解析变异与演化多样性。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-08:42984256",
+    "issue": "2026-11-08",
+    "article_number": 2,
+    "doi": "10.1093/plcell/koag338",
+    "title_zh": "发布野生与栽培大豆端粒到端粒完整基因组",
+    "title_en": "Telomere-to-telomere assemblies of Glycine soja and Glycine max uncover novel genomic features of soybean.",
+    "journal": "Plant Cell",
+    "publication_date": "2026-11-05",
+    "legacy_tags": [
+      "组装与注释",
+      "进化与比较"
+    ],
+    "primary_topic": "assembly-annotation",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "t2t-telomere-centromere"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "大豆 (Glycine max)"
+    ],
+    "contribution_types": [
+      "科研资源构建"
+    ],
+    "classification_reason": "针对大豆 (Glycine max)实现高精染色体级/单倍型分辨基因组从头组装与注释。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-08:42979777",
+    "issue": "2026-11-08",
+    "article_number": 3,
+    "doi": "10.1111/tpj.71186",
+    "title_zh": "端粒到端粒组装揭示秤锤树着丝粒格局与小种群演化困境",
+    "title_en": "Telomere-to-telomere genome assembly of the endangered Jacktree (Sinojackia xylocarpa Hu) reveals its centromeric landscape and evolutionary dilemma as a small population.",
+    "journal": "Plant J",
+    "publication_date": "",
+    "legacy_tags": [
+      "组装与注释",
+      "进化与比较"
+    ],
+    "primary_topic": "assembly-annotation",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "t2t-telomere-centromere"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位",
+      "ChIP-seq/CUT&Tag组蛋白修饰检测",
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "针对计算生物学/跨物种通用实现高精染色体级/单倍型分辨基因组从头组装与注释。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-08:42983985",
+    "issue": "2026-11-08",
+    "article_number": 4,
+    "doi": "10.1111/tpj.71212",
+    "title_zh": "组装两个近完整基因组解析枇杷芽变果肉颜色与品质差异",
+    "title_en": "Two nearly complete genomes reveal the molecular mechanism underlying the significant fruit quality differences caused by bud sport between yellow and white-fleshed loquat (Eriobotrya japonica L.).",
+    "journal": "Plant J",
+    "publication_date": "",
+    "legacy_tags": [
+      "组装与注释",
+      "变异与关联"
+    ],
+    "primary_topic": "assembly-annotation",
+    "secondary_topics": [],
+    "subtopics": [
+      "long-read-sequencing"
+    ],
+    "research_methods": [
+      "Oxford Nanopore超长读长测序",
+      "数量性状位点 (QTL) 定位"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "针对计算生物学/跨物种通用实现高精染色体级/单倍型分辨基因组从头组装与注释。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-08:42984240",
+    "issue": "2026-11-08",
+    "article_number": 5,
+    "doi": "10.1111/tpj.71179",
+    "title_zh": "揭示异孢石松类地理隔离成种与冰期存续",
+    "title_en": "Population genomics of heterosporous lycophytes: allopatric speciation and historical persistence through paleoclimatic fluctuations.",
+    "journal": "Plant J",
+    "publication_date": "",
+    "legacy_tags": [
+      "进化与比较",
+      "变异与关联"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "深度学习/生成式生物学模型",
+      "系统发育基因组学与分子钟定年"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-08:42958909",
+    "issue": "2026-11-08",
+    "article_number": 6,
+    "doi": "10.1111/tpj.71203",
+    "title_zh": "克隆SDEF并解析其增强水稻种子休眠的机制",
+    "title_en": "Natural variation in the evolutionarily conserved F-box gene SDEF promotes seed dormancy in rice.",
+    "journal": "Plant J",
+    "publication_date": "",
+    "legacy_tags": [
+      "变异与关联",
+      "进化与比较"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位"
+    ],
+    "research_objects": [
+      "水稻 (Oryza sativa)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定水稻 (Oryza sativa)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-08:42960433",
+    "issue": "2026-11-08",
+    "article_number": 7,
+    "doi": "10.1111/pce.71006",
+    "title_zh": "定位小麦抽穗期光依赖位点 PHYC-A 与 PHYA-B",
+    "title_en": "PHYA and PHYC as Candidate Loci for Flowering Time and Developmental Plasticity in Wheat.",
+    "journal": "Plant Cell Environ",
+    "publication_date": "2026-10-30",
+    "legacy_tags": [
+      "变异与关联",
+      "进化与比较"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位",
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "小麦 (Triticum aestivum)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定小麦 (Triticum aestivum)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-08:42987176",
+    "issue": "2026-11-08",
+    "article_number": 8,
+    "doi": "10.1093/plcell/koag336",
+    "title_zh": "用优化先导编辑在番茄中重建并叠加抗病等位基因",
+    "title_en": "Precision recreation and multiplex stacking of disease-resistance alleles in tomato using optimized prime editing.",
+    "journal": "Plant Cell",
+    "publication_date": "2026-11-05",
+    "legacy_tags": [
+      "方法与工具",
+      "变异与关联"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "番茄 (Solanum lycopersicum)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定番茄 (Solanum lycopersicum)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-08:42951926",
+    "issue": "2026-11-08",
+    "article_number": 9,
+    "doi": "10.1038/s41477-026-02447-w",
+    "title_zh": "用双pegRNA与错配RTT提升双子叶作物先导编辑效率",
+    "title_en": "SmartPE enables efficient prime editing in dicot crops.",
+    "journal": "Nat Plants",
+    "publication_date": "2026-10-28",
+    "legacy_tags": [
+      "方法与工具"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "大豆 (Glycine max)",
+      "拟南芥 (Arabidopsis thaliana)",
+      "番茄 (Solanum lycopersicum)",
+      "甘蓝型油菜 (Brassica napus)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定大豆 (Glycine max)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-08:42974960",
+    "issue": "2026-11-08",
+    "article_number": 10,
+    "doi": "10.1111/jipb.70440",
+    "title_zh": "构建 AP/Exo-Cas12 工具箱实现水稻高效多重基因组编辑",
+    "title_en": "Engineering AP/Exo-Cas12 as an efficient toolbox for rice genome editing via integrated repair and exonuclease modules.",
+    "journal": "J Integr Plant Biol",
+    "publication_date": "2026-11-03",
+    "legacy_tags": [
+      "方法与工具"
+    ],
+    "primary_topic": "methods-tools",
+    "secondary_topics": [],
+    "subtopics": [
+      "multi-omics-integration"
+    ],
+    "research_methods": [
+      "深度学习/生成式生物学模型"
+    ],
+    "research_objects": [
+      "水稻 (Oryza sativa)"
+    ],
+    "contribution_types": [
+      "技术创新",
+      "方法评测"
+    ],
+    "classification_reason": "研发面向水稻 (Oryza sativa)相关基因组数据的原创计算算法与生物信息学分析工具。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-08:42958708",
+    "issue": "2026-11-08",
+    "article_number": 11,
+    "doi": "10.1111/tpj.71166",
+    "title_zh": "绘制高粱234个代谢酶的亚细胞定位图谱",
+    "title_en": "Sorghum Metabolic Atlas: A fluorescent protein-based subcellular localization resource for sorghum enzymes.",
+    "journal": "Plant J",
+    "publication_date": "",
+    "legacy_tags": [
+      "方法与工具",
+      "组装与注释"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位"
+    ],
+    "research_objects": [
+      "高粱 (Sorghum bicolor)",
+      "拟南芥 (Arabidopsis thaliana)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定高粱 (Sorghum bicolor)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-08:42983866",
+    "issue": "2026-11-08",
+    "article_number": 12,
+    "doi": "10.1186/s13059-026-04219-3",
+    "title_zh": "基准测试 14 款短读长结构变异检出工具：集成策略提升召回率",
+    "title_en": "Benchmarking short-read germline structural variant calling highlights advantages of using ensembles of tools and small impact of graph genome alignment.",
+    "journal": "Genome Biol",
+    "publication_date": "2026-08-07",
+    "legacy_tags": [
+      "方法与工具",
+      "变异与关联"
+    ],
+    "primary_topic": "methods-tools",
+    "secondary_topics": [
+      "variation-gwas"
+    ],
+    "subtopics": [
+      "variant-calling-benchmarking"
+    ],
+    "research_methods": [
+      "图基因组构建与变异图谱比对",
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "技术创新",
+      "方法评测"
+    ],
+    "classification_reason": "研发面向计算生物学/跨物种通用相关基因组数据的原创计算算法与生物信息学分析工具。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-08:42983859",
+    "issue": "2026-11-08",
+    "article_number": 13,
+    "doi": "10.1186/s13059-026-04210-y",
+    "title_zh": "评估七种长读长串联重复基因分型工具",
+    "title_en": "A comprehensive assessment of tandem repeat genotyping methods for Nanopore long-read genomes.",
+    "journal": "Genome Biol",
+    "publication_date": "2026-08-04",
+    "legacy_tags": [
+      "方法与工具",
+      "变异与关联"
+    ],
+    "primary_topic": "methods-tools",
+    "secondary_topics": [],
+    "subtopics": [
+      "multi-omics-integration"
+    ],
+    "research_methods": [
+      "Oxford Nanopore超长读长测序"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "技术创新",
+      "方法评测"
+    ],
+    "classification_reason": "研发面向计算生物学/跨物种通用相关基因组数据的原创计算算法与生物信息学分析工具。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-08:42977821",
+    "issue": "2026-11-08",
+    "article_number": 14,
+    "doi": "10.1038/s41588-026-02807-4",
+    "title_zh": "构建跨组织DNA甲基化图谱并预测变异效应",
+    "title_en": "A framework for genome-wide characterization of DNA methylation and variant effect prediction.",
+    "journal": "Nat Genet",
+    "publication_date": "2026-11-03",
+    "legacy_tags": [
+      "方法与工具",
+      "表观与调控"
+    ],
+    "primary_topic": "epigenetics",
+    "secondary_topics": [
+      "variation-gwas"
+    ],
+    "subtopics": [
+      "dna-methylation"
+    ],
+    "research_methods": [
+      "全基因组DNA甲基化测序",
+      "深度学习/生成式生物学模型"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "解析计算生物学/跨物种通用表观遗传修饰、染色质高级结构及其对关键生物学通路的调控网络。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-08:42983727",
+    "issue": "2026-11-08",
+    "article_number": 15,
+    "doi": "10.1186/s13059-026-04216-6",
+    "title_zh": "构建泛基因组揭示两种玉米螟的趋异与广泛渐渗",
+    "title_en": "Pangenome analyses reveal divergence and extensive introgression in two global corn pests.",
+    "journal": "Genome Biol",
+    "publication_date": "2026-08-07",
+    "legacy_tags": [
+      "泛基因组",
+      "进化与比较"
+    ],
+    "primary_topic": "pangenome",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "core-dispensable-genome"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位",
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "玉米 (Zea mays)"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "构建玉米 (Zea mays)群体水平高质量多基因组/泛基因组图谱，解析变异与演化多样性。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-08:42954304",
+    "issue": "2026-11-08",
+    "article_number": 16,
+    "doi": "10.1093/bioinformatics/btag803",
+    "title_zh": "用细粒度指标评估复杂结构变异重建保真度",
+    "title_en": "Verix: a toolkit for benchmarking and harmonization of complex structural variants.",
+    "journal": "Bioinformatics",
+    "publication_date": "2026-10-29",
+    "legacy_tags": [
+      "方法与工具",
+      "变异与关联"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "structural-variation-impact"
+    ],
+    "research_methods": [
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-08:42969051",
+    "issue": "2026-11-08",
+    "article_number": 17,
+    "doi": "10.1093/nar/gkag1089",
+    "title_zh": "整合24类功能基因组证据构建mV2G组织特异变异—基因图谱",
+    "title_en": "mV2G: a multiomic atlas for tissue-specific variant-to-gene prioritization.",
+    "journal": "Nucleic Acids Res",
+    "publication_date": "2026-11-02",
+    "legacy_tags": [
+      "方法与工具",
+      "变异与关联"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "全基因组关联分析 (GWAS)",
+      "数量性状位点 (QTL) 定位"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-08:42982778",
+    "issue": "2026-11-08",
+    "article_number": 18,
+    "doi": "10.1038/s41467-026-77453-9",
+    "title_zh": "定位单细胞表达变异的遗传效应并关联自身免疫风险",
+    "title_en": "Genetic variants associated with cell-type-specific intra-individual gene expression variability reveal mechanisms of genome regulation.",
+    "journal": "Nat Commun",
+    "publication_date": "2026-09-21",
+    "legacy_tags": [
+      "变异与关联",
+      "单细胞与空间"
+    ],
+    "primary_topic": "single-cell",
+    "secondary_topics": [],
+    "subtopics": [
+      "single-cell-transcriptomics"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位",
+      "单细胞/单核转录组测序 (scRNA-seq/snRNA-seq)"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "在单细胞/空间原位分辨率下揭示计算生物学/跨物种通用的细胞类型异质性与发育调控机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-08:42962034",
+    "issue": "2026-11-08",
+    "article_number": 19,
+    "doi": "10.1126/sciadv.aee7939",
+    "title_zh": "在非全基因组加倍肿瘤中检出活跃的全基因组加倍亚克隆",
+    "title_en": "Evidence of active whole-genome doubling (WGD) subclones in non-WGD tumors.",
+    "journal": "Sci Adv",
+    "publication_date": "2026-10-30",
+    "legacy_tags": [
+      "进化与比较",
+      "单细胞与空间"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位",
+      "单细胞/单核转录组测序 (scRNA-seq/snRNA-seq)"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-08:42983099",
+    "issue": "2026-11-08",
+    "article_number": 20,
+    "doi": "10.1038/s41586-026-11177-0",
+    "title_zh": "以单细胞多组学推断胶质母细胞瘤可塑性调控程序",
+    "title_en": "Decoding the regulatory programs governing glioblastoma plasticity.",
+    "journal": "Nature",
+    "publication_date": "2026-11-04",
+    "legacy_tags": [
+      "表观与调控",
+      "单细胞与空间"
+    ],
+    "primary_topic": "single-cell",
+    "secondary_topics": [
+      "epigenetics"
+    ],
+    "subtopics": [
+      "single-cell-transcriptomics",
+      "cell-lineage-differentiation"
+    ],
+    "research_methods": [
+      "单细胞/单核转录组测序 (scRNA-seq/snRNA-seq)",
+      "深度学习/生成式生物学模型"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "在单细胞/空间原位分辨率下揭示计算生物学/跨物种通用的细胞类型异质性与发育调控机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-15:42992586",
+    "issue": "2026-11-15",
+    "article_number": 1,
+    "doi": "10.1111/jipb.70439",
+    "title_zh": "构建玉米图形泛基因组平台 MaizeGP 整合 48 个基因组结构变异",
+    "title_en": "MaizeGP: An open graph-based maize pangenome platform for integrative multi-scale exploration of structural variation.",
+    "journal": "J Integr Plant Biol",
+    "publication_date": "2026-11-06",
+    "legacy_tags": [
+      "泛基因组",
+      "方法与工具"
+    ],
+    "primary_topic": "pangenome",
+    "secondary_topics": [
+      "variation-gwas"
+    ],
+    "subtopics": [
+      "graph-pangenome",
+      "structural-variation-pan"
+    ],
+    "research_methods": [
+      "深度学习/生成式生物学模型",
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "玉米 (Zea mays)"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "构建玉米 (Zea mays)群体水平高质量多基因组/泛基因组图谱，解析变异与演化多样性。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-15:43000418",
+    "issue": "2026-11-15",
+    "article_number": 2,
+    "doi": "10.1038/s41467-026-78567-w",
+    "title_zh": "构建无缺口甘蓝型油菜泛基因组并解析转座子介导结构变异对基因表达与品质性状的影响",
+    "title_en": "Transposable element-mediated structural variations shape gene expression and agronomic trait diversity in Brassica napus.",
+    "journal": "Nat Commun",
+    "publication_date": "2026-10-10",
+    "legacy_tags": [
+      "泛基因组",
+      "变异与关联"
+    ],
+    "primary_topic": "pangenome",
+    "secondary_topics": [
+      "variation-gwas"
+    ],
+    "subtopics": [
+      "structural-variation-pan"
+    ],
+    "research_methods": [
+      "全基因组关联分析 (GWAS)",
+      "数量性状位点 (QTL) 定位",
+      "深度学习/生成式生物学模型",
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "芸薹属 (Brassica spp.)",
+      "甘蓝型油菜 (Brassica napus)"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "构建芸薹属 (Brassica spp.)群体水平高质量多基因组/泛基因组图谱，解析变异与演化多样性。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-15:43010681",
+    "issue": "2026-11-15",
+    "article_number": 3,
+    "doi": "10.1016/j.molp.2026.11.003",
+    "title_zh": "构建环境信息整合框架 HiEGP 预测大豆基因型表现",
+    "title_en": "HiEGP: An environment-informed genomic prediction framework that facilitates soybean genebank germplasm evaluation and climate-smart breeding.",
+    "journal": "Mol Plant",
+    "publication_date": "2026-11-10",
+    "legacy_tags": [
+      "方法与工具",
+      "变异与关联"
+    ],
+    "primary_topic": "methods-tools",
+    "secondary_topics": [],
+    "subtopics": [
+      "multi-omics-integration"
+    ],
+    "research_methods": [
+      "全基因组关联分析 (GWAS)"
+    ],
+    "research_objects": [
+      "大豆 (Glycine max)"
+    ],
+    "contribution_types": [
+      "技术创新",
+      "方法评测"
+    ],
+    "classification_reason": "研发面向大豆 (Glycine max)相关基因组数据的原创计算算法与生物信息学分析工具。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-15:43023737",
+    "issue": "2026-11-15",
+    "article_number": 4,
+    "doi": "10.1111/nph.71756",
+    "title_zh": "定位 355 个根际微生物组数量性状位点并验证 ROOMIE1 控制根际微生物组组成",
+    "title_en": "ROOMIE1 controls rhizobiome assembly in Lotus japonicus and shows a genomic signature distinct from climate-associated loci.",
+    "journal": "New Phytol",
+    "publication_date": "2026-11-13",
+    "legacy_tags": [
+      "变异与关联",
+      "进化与比较"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "Oxford Nanopore超长读长测序",
+      "全基因组关联分析 (GWAS)",
+      "数量性状位点 (QTL) 定位"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-15:43009456",
+    "issue": "2026-11-15",
+    "article_number": 5,
+    "doi": "10.1111/nph.71740",
+    "title_zh": "解析川蔓藻由海生向咸水特化的演化历史",
+    "title_en": "The evolutionary history of brackish specialization from marine ancestry in the seagrass Ruppia sinensis.",
+    "journal": "New Phytol",
+    "publication_date": "2026-11-10",
+    "legacy_tags": [
+      "组装与注释",
+      "进化与比较"
+    ],
+    "primary_topic": "evolution",
+    "secondary_topics": [],
+    "subtopics": [
+      "synteny-collinearity"
+    ],
+    "research_methods": [
+      "系统发育基因组学与分子钟定年"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "基于多物种基因组比较分析，揭示计算生物学/跨物种通用的核型演化、多倍化或适应性辐射机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-15:43017767",
+    "issue": "2026-11-15",
+    "article_number": 6,
+    "doi": "10.1111/nph.71748",
+    "title_zh": "喀斯特生境岛屿驱动石山苣苔属非适应性辐射",
+    "title_en": "Karst habitat islands drove a largely nonadaptive and allopatric radiation in Petrocodon (Gesneriaceae).",
+    "journal": "New Phytol",
+    "publication_date": "2026-11-12",
+    "legacy_tags": [
+      "进化与比较",
+      "变异与关联"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "系统发育基因组学与分子钟定年"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-15:43006229",
+    "issue": "2026-11-15",
+    "article_number": 7,
+    "doi": "10.1111/tpj.71242",
+    "title_zh": "解析杂交与基因组剂量对多年生饲用玉米营养体优势的贡献",
+    "title_en": "Deciphering the contributions of hybridization and genome dosage to vegetative vigor in perennial forage maize.",
+    "journal": "Plant J",
+    "publication_date": "",
+    "legacy_tags": [
+      "进化与比较",
+      "表观与调控"
+    ],
+    "primary_topic": "evolution",
+    "secondary_topics": [],
+    "subtopics": [
+      "hybridization-introgression"
+    ],
+    "research_methods": [
+      "Oxford Nanopore超长读长测序",
+      "深度学习/生成式生物学模型"
+    ],
+    "research_objects": [
+      "玉米 (Zea mays)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "基于多物种基因组比较分析，揭示玉米 (Zea mays)的核型演化、多倍化或适应性辐射机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-15:43026182",
+    "issue": "2026-11-15",
+    "article_number": 8,
+    "doi": "10.1111/nph.71754",
+    "title_zh": "解析四倍体草莓表皮屏障抗灰霉的细胞型剂量重编程",
+    "title_en": "Cell-type-specific dosage reprogramming reveals epidermal barrier-based gray mold defense strategy in autotetraploid strawberry.",
+    "journal": "New Phytol",
+    "publication_date": "2026-11-13",
+    "legacy_tags": [
+      "单细胞与空间",
+      "表观与调控"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "单细胞/单核转录组测序 (scRNA-seq/snRNA-seq)",
+      "全基因组DNA甲基化测序"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-15:43031357",
+    "issue": "2026-11-15",
+    "article_number": 9,
+    "doi": "10.1093/plphys/kiag854",
+    "title_zh": "绘制玉米叶与胚乳H2A.Z分布，关联组织特异表达与光合速率",
+    "title_en": "Decoding the tissue-specific regulatory roles of H2A.Z in maize leaf and endosperm.",
+    "journal": "Plant Physiol",
+    "publication_date": "2026-11-14",
+    "legacy_tags": [
+      "表观与调控",
+      "组装与注释"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "gwas-trait-mapping"
+    ],
+    "research_methods": [
+      "ChIP-seq/CUT&Tag组蛋白修饰检测",
+      "深度学习/生成式生物学模型"
+    ],
+    "research_objects": [
+      "玉米 (Zea mays)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定玉米 (Zea mays)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-15:43034289",
+    "issue": "2026-11-15",
+    "article_number": 10,
+    "doi": "10.1093/plcell/koag345",
+    "title_zh": "构建14种禾草衰老转录组图谱，揭示地下库氮循环网络分化",
+    "title_en": "A transcriptomic atlas of grass senescence reveals divergent underground sink networks promote nitrogen recycling in perennials.",
+    "journal": "Plant Cell",
+    "publication_date": "2026-11-15",
+    "legacy_tags": [
+      "方法与工具",
+      "表观与调控"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位"
+    ],
+    "research_objects": [
+      "高粱 (Sorghum bicolor)",
+      "玉米 (Zea mays)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定高粱 (Sorghum bicolor)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-15:43006482",
+    "issue": "2026-11-15",
+    "article_number": 11,
+    "doi": "10.1111/pce.71046",
+    "title_zh": "鉴定GmGH3.2为大豆耐盐负调控因子",
+    "title_en": "An Indole-3-Acetic Acid-Amido Synthetase, GmGH3.2, Negatively Regulates Salt Tolerance in Soybean.",
+    "journal": "Plant Cell Environ",
+    "publication_date": "2026-11-10",
+    "legacy_tags": [
+      "变异与关联",
+      "方法与工具"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "全基因组关联分析 (GWAS)",
+      "数量性状位点 (QTL) 定位"
+    ],
+    "research_objects": [
+      "大豆 (Glycine max)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定大豆 (Glycine max)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-15:42995228",
+    "issue": "2026-11-15",
+    "article_number": 12,
+    "doi": "10.1038/s41588-026-02798-2",
+    "title_zh": "用泊松混合模型提升单细胞 eQTL 检出率",
+    "title_en": "Efficient and accurate mixed model association tool for single-cell eQTL analysis.",
+    "journal": "Nat Genet",
+    "publication_date": "2026-11-06",
+    "legacy_tags": [
+      "方法与工具",
+      "变异与关联"
+    ],
+    "primary_topic": "single-cell",
+    "secondary_topics": [],
+    "subtopics": [
+      "single-cell-transcriptomics"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位",
+      "单细胞/单核转录组测序 (scRNA-seq/snRNA-seq)",
+      "深度学习/生成式生物学模型"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "在单细胞/空间原位分辨率下揭示计算生物学/跨物种通用的细胞类型异质性与发育调控机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-15:43009566",
+    "issue": "2026-11-15",
+    "article_number": 13,
+    "doi": "10.1038/s41588-026-02830-5",
+    "title_zh": "用计数模型提升单细胞 eQTL 定位的效力与稳健性",
+    "title_en": "Efficient count-based models improve power and robustness for large-scale single-cell eQTL mapping.",
+    "journal": "Nat Genet",
+    "publication_date": "2026-11-10",
+    "legacy_tags": [
+      "方法与工具",
+      "单细胞与空间"
+    ],
+    "primary_topic": "single-cell",
+    "secondary_topics": [],
+    "subtopics": [
+      "single-cell-transcriptomics"
+    ],
+    "research_methods": [
+      "全基因组关联分析 (GWAS)",
+      "数量性状位点 (QTL) 定位",
+      "单细胞/单核转录组测序 (scRNA-seq/snRNA-seq)"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "在单细胞/空间原位分辨率下揭示计算生物学/跨物种通用的细胞类型异质性与发育调控机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-15:42987832",
+    "issue": "2026-11-15",
+    "article_number": 14,
+    "doi": "10.1016/j.xgen.2026.101419",
+    "title_zh": "用图泛基因组提升体细胞变异检测精度",
+    "title_en": "Leveraging human pangenome for improved somatic variant detection.",
+    "journal": "Cell Genom",
+    "publication_date": "2026-11-05",
+    "legacy_tags": [
+      "方法与工具",
+      "变异与关联"
+    ],
+    "primary_topic": "pangenome",
+    "secondary_topics": [
+      "variation-gwas"
+    ],
+    "subtopics": [
+      "graph-pangenome"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "构建计算生物学/跨物种通用群体水平高质量多基因组/泛基因组图谱，解析变异与演化多样性。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-15:43015900",
+    "issue": "2026-11-15",
+    "article_number": 15,
+    "doi": "10.1186/s13059-026-04238-0",
+    "title_zh": "零样本评测揭示上下文与架构决定变异效应预测",
+    "title_en": "Benchmarking DNA foundation models for zero-shot variant effect prediction shows the importance of context, training, and architecture.",
+    "journal": "Genome Biol",
+    "publication_date": "2026-08-17",
+    "legacy_tags": [
+      "方法与工具",
+      "变异与关联"
+    ],
+    "primary_topic": "methods-tools",
+    "secondary_topics": [
+      "variation-gwas"
+    ],
+    "subtopics": [
+      "variant-calling-benchmarking"
+    ],
+    "research_methods": [
+      "Oxford Nanopore超长读长测序",
+      "深度学习/生成式生物学模型"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "技术创新",
+      "方法评测"
+    ],
+    "classification_reason": "研发面向计算生物学/跨物种通用相关基因组数据的原创计算算法与生物信息学分析工具。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-15:43026550",
+    "issue": "2026-11-15",
+    "article_number": 16,
+    "doi": "10.1186/s13059-026-04213-9",
+    "title_zh": "参考基因组更新改变阿尔茨海默病差异表达基因的检出与方向",
+    "title_en": "Updates to the reference genome alter the detection and direction of genes differentially expressed in Alzheimer's disease.",
+    "journal": "Genome Biol",
+    "publication_date": "2026-08-19",
+    "legacy_tags": [
+      "组装与注释",
+      "方法与工具"
+    ],
+    "primary_topic": "assembly-annotation",
+    "secondary_topics": [],
+    "subtopics": [
+      "long-read-sequencing"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "人类 (Homo sapiens)"
+    ],
+    "contribution_types": [
+      "科研资源构建"
+    ],
+    "classification_reason": "针对人类 (Homo sapiens)实现高精染色体级/单倍型分辨基因组从头组装与注释。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-15:42984446",
+    "issue": "2026-11-15",
+    "article_number": 17,
+    "doi": "10.1093/nar/gkag1115",
+    "title_zh": "升级 UCSC 基因组浏览器：新增 28 条注释轨道与 QuickLift 跨组装迁移",
+    "title_en": "The UCSC Genome Browser database: 2027 update.",
+    "journal": "Nucleic Acids Res",
+    "publication_date": "2026-11-05",
+    "legacy_tags": [
+      "方法与工具",
+      "组装与注释"
+    ],
+    "primary_topic": "assembly-annotation",
+    "secondary_topics": [],
+    "subtopics": [
+      "long-read-sequencing"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "科研资源构建"
+    ],
+    "classification_reason": "针对计算生物学/跨物种通用实现高精染色体级/单倍型分辨基因组从头组装与注释。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-15:42993841",
+    "issue": "2026-11-15",
+    "article_number": 18,
+    "doi": "10.1126/sciadv.aee9459",
+    "title_zh": "用可解释AI识别重组率与染色质环境预测亚基因组演化",
+    "title_en": "Explainable AI identifies recombination and chromatin environment as key predictors of subgenome evolution in maize and Brassica.",
+    "journal": "Sci Adv",
+    "publication_date": "2026-11-06",
+    "legacy_tags": [
+      "进化与比较",
+      "表观与调控"
+    ],
+    "primary_topic": "evolution",
+    "secondary_topics": [],
+    "subtopics": [
+      "synteny-collinearity"
+    ],
+    "research_methods": [
+      "ChIP-seq/CUT&Tag组蛋白修饰检测",
+      "深度学习/生成式生物学模型"
+    ],
+    "research_objects": [
+      "芸薹属 (Brassica spp.)",
+      "玉米 (Zea mays)",
+      "甘蓝型油菜 (Brassica napus)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "基于多物种基因组比较分析，揭示芸薹属 (Brassica spp.)的核型演化、多倍化或适应性辐射机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-15:43019437",
+    "issue": "2026-11-15",
+    "article_number": 19,
+    "doi": "10.1126/science.aeg8777",
+    "title_zh": "构建犬癌症基因组图谱，跨10种肿瘤组织型鉴定39个驱动基因",
+    "title_en": "The genetic landscape of canine tumors: Insights from the Canine Cancer Genome Atlas (CCGA).",
+    "journal": "Science",
+    "publication_date": "2026-11-12",
+    "legacy_tags": [
+      "变异与关联",
+      "进化与比较"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "人类 (Homo sapiens)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定人类 (Homo sapiens)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-15:43020023",
+    "issue": "2026-11-15",
+    "article_number": 20,
+    "doi": "10.1016/j.cell.2026.10.019",
+    "title_zh": "绘制人基底神经节单细胞多模态表观与三维基因组图谱",
+    "title_en": "Multimodal single-cell epigenomic and 3D genome atlas of the human basal ganglia.",
+    "journal": "Cell",
+    "publication_date": "",
+    "legacy_tags": [
+      "单细胞与空间",
+      "表观与调控"
+    ],
+    "primary_topic": "single-cell",
+    "secondary_topics": [
+      "epigenetics"
+    ],
+    "subtopics": [
+      "single-cell-transcriptomics"
+    ],
+    "research_methods": [
+      "Hi-C染色质高级构象捕获",
+      "单细胞/单核转录组测序 (scRNA-seq/snRNA-seq)",
+      "全基因组DNA甲基化测序"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "在单细胞/空间原位分辨率下揭示计算生物学/跨物种通用的细胞类型异质性与发育调控机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-22:43052436",
+    "issue": "2026-11-22",
+    "article_number": 1,
+    "doi": "10.1038/s41586-026-11332-7",
+    "title_zh": "构建二倍体与多倍体大麦属染色体级比较基因组图谱",
+    "title_en": "Structural and regulatory evolution across the genus Hordeum.",
+    "journal": "Nature",
+    "publication_date": "2026-11-18",
+    "legacy_tags": [
+      "进化与比较",
+      "泛基因组"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位",
+      "全基因组多重共线性比对 (MCScan)",
+      "系统发育基因组学与分子钟定年",
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "大麦属 (Hordeum spp.)",
+      "禾本科 (Poaceae)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定大麦属 (Hordeum spp.)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-22:43039959",
+    "issue": "2026-11-22",
+    "article_number": 2,
+    "doi": "10.1038/s41588-026-02829-y",
+    "title_zh": "构建猪端粒到端粒泛基因组并解析着丝粒演化",
+    "title_en": "High-quality pig pan-genome resources illuminate centromere evolution and enhance genotype-phenotype mapping.",
+    "journal": "Nat Genet",
+    "publication_date": "2026-11-16",
+    "legacy_tags": [
+      "泛基因组",
+      "组装与注释"
+    ],
+    "primary_topic": "pangenome",
+    "secondary_topics": [
+      "evolution",
+      "assembly-annotation"
+    ],
+    "subtopics": [
+      "core-dispensable-genome"
+    ],
+    "research_methods": [
+      "Hi-C染色质高级构象捕获",
+      "数量性状位点 (QTL) 定位",
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "猪 (Sus scrofa)"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "构建猪 (Sus scrofa)群体水平高质量多基因组/泛基因组图谱，解析变异与演化多样性。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-22:43042498",
+    "issue": "2026-11-22",
+    "article_number": 3,
+    "doi": "10.1111/tpj.71199",
+    "title_zh": "组装四倍体短芒大麦草基因组，解析A、B亚基因组耐盐碱分化",
+    "title_en": "The genome of tetraploid Hordeum brevisubulatum underpins its evolution and saline-alkali adaptation.",
+    "journal": "Plant J",
+    "publication_date": "",
+    "legacy_tags": [
+      "组装与注释",
+      "进化与比较"
+    ],
+    "primary_topic": "assembly-annotation",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "polyploid-haplotype"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位",
+      "系统发育基因组学与分子钟定年",
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "水稻 (Oryza sativa)",
+      "大麦属 (Hordeum spp.)",
+      "禾本科 (Poaceae)"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "针对水稻 (Oryza sativa)实现高精染色体级/单倍型分辨基因组从头组装与注释。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-22:43036943",
+    "issue": "2026-11-22",
+    "article_number": 4,
+    "doi": "10.1111/pbi.70781",
+    "title_zh": "构建大豆单倍型图谱 GmHapMap-II 并定位亚麻酸新位点",
+    "title_en": "Next-Generation Soybean Haplotype Map as a Genomic Resource for Enhanced Trait Discovery and Functional Analysis.",
+    "journal": "Plant Biotechnol J",
+    "publication_date": "2026-11-16",
+    "legacy_tags": [
+      "变异与关联",
+      "泛基因组"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位",
+      "深度学习/生成式生物学模型"
+    ],
+    "research_objects": [
+      "大豆 (Glycine max)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定大豆 (Glycine max)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-22:43052272",
+    "issue": "2026-11-22",
+    "article_number": 5,
+    "doi": "10.1038/s41467-026-78776-3",
+    "title_zh": "构建阿联酋人群泛基因组并实现二倍体染色体级组装",
+    "title_en": "The Emirati pangenome featuring a diploid chromosome-level reference.",
+    "journal": "Nat Commun",
+    "publication_date": "2026-10-20",
+    "legacy_tags": [
+      "泛基因组",
+      "组装与注释"
+    ],
+    "primary_topic": "pangenome",
+    "secondary_topics": [
+      "assembly-annotation"
+    ],
+    "subtopics": [
+      "core-dispensable-genome"
+    ],
+    "research_methods": [
+      "PacBio HiFi高保真长读长测序",
+      "全基因组关联分析 (GWAS)",
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "构建计算生物学/跨物种通用群体水平高质量多基因组/泛基因组图谱，解析变异与演化多样性。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-22:43042739",
+    "issue": "2026-11-22",
+    "article_number": 6,
+    "doi": "10.1111/pce.71054",
+    "title_zh": "组装虎尾草染色体级基因组并鉴定耐盐基因簇",
+    "title_en": "Cross-Species Comparative Genome and Transcriptome Analysis Uncovers Salt Tolerance Mechanisms in the Wild Grass Species Chloris virgata.",
+    "journal": "Plant Cell Environ",
+    "publication_date": "2026-11-17",
+    "legacy_tags": [
+      "进化与比较",
+      "变异与关联"
+    ],
+    "primary_topic": "assembly-annotation",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "long-read-sequencing"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "拟南芥 (Arabidopsis thaliana)",
+      "虎尾草 (Chloris virgata)"
+    ],
+    "contribution_types": [
+      "科研资源构建"
+    ],
+    "classification_reason": "针对拟南芥 (Arabidopsis thaliana)实现高精染色体级/单倍型分辨基因组从头组装与注释。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-22:43059150",
+    "issue": "2026-11-22",
+    "article_number": 7,
+    "doi": "10.1111/jipb.70447",
+    "title_zh": "以T2T基因组引导编辑EPFL9降低杨树气孔密度",
+    "title_en": "T2T-guided EPFL9 editing: Stepwise stomatal-density reductions in Populus \"Beilinxiongzhu 1\".",
+    "journal": "J Integr Plant Biol",
+    "publication_date": "2026-11-19",
+    "legacy_tags": [
+      "组装与注释",
+      "方法与工具"
+    ],
+    "primary_topic": "assembly-annotation",
+    "secondary_topics": [],
+    "subtopics": [
+      "t2t-telomere-centromere"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "杨树 (Populus spp.)"
+    ],
+    "contribution_types": [
+      "科研资源构建"
+    ],
+    "classification_reason": "针对杨树 (Populus spp.)实现高精染色体级/单倍型分辨基因组从头组装与注释。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-22:43036950",
+    "issue": "2026-11-22",
+    "article_number": 8,
+    "doi": "10.1111/jipb.70438",
+    "title_zh": "用超多重 CRISPR 系统同时敲除大豆 29 个基因",
+    "title_en": "An ultra-multiplex CRISPR/Cas9 system for simultaneous editing of 29 genes reshapes the nutritional profile of soybean.",
+    "journal": "J Integr Plant Biol",
+    "publication_date": "2026-11-16",
+    "legacy_tags": [
+      "方法与工具",
+      "变异与关联"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "大豆 (Glycine max)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定大豆 (Glycine max)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-22:43020033",
+    "issue": "2026-11-22",
+    "article_number": 9,
+    "doi": "10.1016/j.cell.2026.10.022",
+    "title_zh": "绘制成年小鼠脑多组学表观图谱并注释调控基因组",
+    "title_en": "An integrative single-cell epigenomic atlas annotates the regulatory genome of the adult mouse brain.",
+    "journal": "Cell",
+    "publication_date": "",
+    "legacy_tags": [
+      "单细胞与空间",
+      "表观与调控"
+    ],
+    "primary_topic": "epigenetics",
+    "secondary_topics": [],
+    "subtopics": [
+      "chromatin-accessibility"
+    ],
+    "research_methods": [
+      "Hi-C染色质高级构象捕获",
+      "全基因组DNA甲基化测序",
+      "ChIP-seq/CUT&Tag组蛋白修饰检测",
+      "深度学习/生成式生物学模型"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "解析计算生物学/跨物种通用表观遗传修饰、染色质高级结构及其对关键生物学通路的调控网络。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-22:43042584",
+    "issue": "2026-11-22",
+    "article_number": 10,
+    "doi": "10.1093/plcell/koag357",
+    "title_zh": "串联重复与CYP716酶混杂性驱动刺五加三萜多样性",
+    "title_en": "Tandem duplication of oxidosqualene cyclases and enzyme promiscuity of cytochromes P450 contribute to the diversity of triterpenoids in Eleutherococcus senticosus.",
+    "journal": "Plant Cell",
+    "publication_date": "2026-11-17",
+    "legacy_tags": [
+      "组装与注释",
+      "进化与比较"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "Oxford Nanopore超长读长测序",
+      "全基因组多重共线性比对 (MCScan)",
+      "系统发育基因组学与分子钟定年"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-22:43058092",
+    "issue": "2026-11-22",
+    "article_number": 11,
+    "doi": "10.1038/s41467-026-78154-z",
+    "title_zh": "绘制肺炎克雷伯菌泛基因组全局转录调控网络",
+    "title_en": "Topology and evolution of global transcriptional regulatory networks across the Klebsiella pneumoniae pan-genome.",
+    "journal": "Nat Commun",
+    "publication_date": "2026-10-22",
+    "legacy_tags": [
+      "泛基因组",
+      "进化与比较"
+    ],
+    "primary_topic": "pangenome",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "core-dispensable-genome"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "构建计算生物学/跨物种通用群体水平高质量多基因组/泛基因组图谱，解析变异与演化多样性。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-22:43062106",
+    "issue": "2026-11-22",
+    "article_number": 12,
+    "doi": "10.1111/tpj.71256",
+    "title_zh": "定位玉米籽粒脱水三指标的稳定位点与候选基因",
+    "title_en": "Genetic dissection of kernel dehydration traits in maize using a recombinant inbred line population: key loci and candidate genes.",
+    "journal": "Plant J",
+    "publication_date": "",
+    "legacy_tags": [
+      "变异与关联",
+      "方法与工具"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位",
+      "深度学习/生成式生物学模型"
+    ],
+    "research_objects": [
+      "玉米 (Zea mays)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定玉米 (Zea mays)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-22:43040035",
+    "issue": "2026-11-22",
+    "article_number": 13,
+    "doi": "10.1038/s41592-026-03319-z",
+    "title_zh": "联合捕获单细胞 Cas9 编辑与转录组",
+    "title_en": "Joint single-cell capture of Cas9 edits and transcriptomes reveals on- and off-target effects on gene expression.",
+    "journal": "Nat Methods",
+    "publication_date": "2026-11-16",
+    "legacy_tags": [
+      "方法与工具",
+      "单细胞与空间"
+    ],
+    "primary_topic": "single-cell",
+    "secondary_topics": [],
+    "subtopics": [
+      "single-cell-transcriptomics"
+    ],
+    "research_methods": [
+      "单细胞/单核转录组测序 (scRNA-seq/snRNA-seq)"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "在单细胞/空间原位分辨率下揭示计算生物学/跨物种通用的细胞类型异质性与发育调控机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-22:43020026",
+    "issue": "2026-11-22",
+    "article_number": 14,
+    "doi": "10.1016/j.cell.2026.08.012",
+    "title_zh": "绘制人脑18个脑区单细胞多模态图谱",
+    "title_en": "Single-cell multimodal atlas reveals regulatory programs in the human brain.",
+    "journal": "Cell",
+    "publication_date": "",
+    "legacy_tags": [
+      "单细胞与空间",
+      "表观与调控"
+    ],
+    "primary_topic": "single-cell",
+    "secondary_topics": [
+      "epigenetics"
+    ],
+    "subtopics": [
+      "single-cell-transcriptomics",
+      "cell-lineage-differentiation"
+    ],
+    "research_methods": [
+      "Hi-C染色质高级构象捕获",
+      "单细胞/单核转录组测序 (scRNA-seq/snRNA-seq)",
+      "空间原位转录组测序",
+      "全基因组DNA甲基化测序",
+      "ChIP-seq/CUT&Tag组蛋白修饰检测",
+      "深度学习/生成式生物学模型"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "在单细胞/空间原位分辨率下揭示计算生物学/跨物种通用的细胞类型异质性与发育调控机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-22:43049179",
+    "issue": "2026-11-22",
+    "article_number": 15,
+    "doi": "10.1111/nph.71771",
+    "title_zh": "异源多倍化改变柳树性染色体系统",
+    "title_en": "A change in sex chromosomes caused by allopolyploidy in a willow lineage triggered new evolutionary changes in descendant species.",
+    "journal": "New Phytol",
+    "publication_date": "2026-11-18",
+    "legacy_tags": [
+      "进化与比较",
+      "组装与注释"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位",
+      "长读长高精度结构变异 (SV) 挖掘"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-22:43053325",
+    "issue": "2026-11-22",
+    "article_number": 16,
+    "doi": "10.1093/nar/gkag1179",
+    "title_zh": "构建 GI-DB 收录 1.36 亿个印度人群高置信变异",
+    "title_en": "GI-DB: a comprehensive variant database for exploring the extensive genetic diversity of the Indian population.",
+    "journal": "Nucleic Acids Res",
+    "publication_date": "2026-11-19",
+    "legacy_tags": [
+      "变异与关联",
+      "方法与工具"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-22:43020788",
+    "issue": "2026-11-22",
+    "article_number": 17,
+    "doi": "10.1038/s41467-026-78753-w",
+    "title_zh": "揭示DNA甲基化把关真核生物基因组规模水平基因转移",
+    "title_en": "Epigenetic gatekeeping enables genome-scale horizontal gene transfer in eukaryotic cells.",
+    "journal": "Nat Commun",
+    "publication_date": "2026-11-12",
+    "legacy_tags": [
+      "进化与比较",
+      "表观与调控"
+    ],
+    "primary_topic": "epigenetics",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "dna-methylation"
+    ],
+    "research_methods": [
+      "Oxford Nanopore超长读长测序",
+      "数量性状位点 (QTL) 定位",
+      "全基因组DNA甲基化测序",
+      "ChIP-seq/CUT&Tag组蛋白修饰检测"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "解析计算生物学/跨物种通用表观遗传修饰、染色质高级结构及其对关键生物学通路的调控网络。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-22:43058204",
+    "issue": "2026-11-22",
+    "article_number": 18,
+    "doi": "10.1038/s41592-026-03310-8",
+    "title_zh": "用连续切片重建单细胞分辨率三维组织图谱",
+    "title_en": "Space-map: 3D single-cell atlas reconstruction from serial sections.",
+    "journal": "Nat Methods",
+    "publication_date": "2026-11-19",
+    "legacy_tags": [
+      "方法与工具",
+      "单细胞与空间"
+    ],
+    "primary_topic": "single-cell",
+    "secondary_topics": [],
+    "subtopics": [
+      "single-cell-transcriptomics"
+    ],
+    "research_methods": [
+      "单细胞/单核转录组测序 (scRNA-seq/snRNA-seq)",
+      "空间原位转录组测序"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "科研资源构建",
+      "机制发现"
+    ],
+    "classification_reason": "在单细胞/空间原位分辨率下揭示计算生物学/跨物种通用的细胞类型异质性与发育调控机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-22:43058102",
+    "issue": "2026-11-22",
+    "article_number": 19,
+    "doi": "10.1038/s41467-026-78840-y",
+    "title_zh": "用 Sup-seq 全基因组定位肺炎链球菌的遗传抑制事件",
+    "title_en": "Genome-wide mapping of genetic suppression events in Streptococcus pneumoniae.",
+    "journal": "Nat Commun",
+    "publication_date": "2026-10-22",
+    "legacy_tags": [
+      "方法与工具",
+      "变异与关联"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [],
+    "subtopics": [
+      "fine-mapping-causal"
+    ],
+    "research_methods": [
+      "数量性状位点 (QTL) 定位"
+    ],
+    "research_objects": [
+      "计算生物学/跨物种通用"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定计算生物学/跨物种通用关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  },
+  {
+    "id": "2026-11-22:43040362",
+    "issue": "2026-11-22",
+    "article_number": 20,
+    "doi": "10.1186/s13059-026-04247-z",
+    "title_zh": "绘制六类大猿自然选择图谱并量化有害突变分布",
+    "title_en": "Genomic landscapes of natural selection in great apes.",
+    "journal": "Genome Biol",
+    "publication_date": "2026-08-20",
+    "legacy_tags": [
+      "进化与比较",
+      "变异与关联"
+    ],
+    "primary_topic": "variation-gwas",
+    "secondary_topics": [
+      "evolution"
+    ],
+    "subtopics": [
+      "population-genomics"
+    ],
+    "research_methods": [
+      "多组学生物信息学综合分析"
+    ],
+    "research_objects": [
+      "大猿类 (Hominidae)"
+    ],
+    "contribution_types": [
+      "机制发现",
+      "实证研究"
+    ],
+    "classification_reason": "鉴定大猿类 (Hominidae)关键农艺性状的因果遗传变异位点与功能基因机制。",
+    "classification_confidence": "high",
+    "classification_version": "v2.0",
+    "review_status": "curated"
+  }
+]
