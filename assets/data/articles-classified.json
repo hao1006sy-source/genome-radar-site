@@ -70,7 +70,10 @@
         "status": "verified",
         "evidence_excerpt": "组装40 Gb十倍体长穗偃麦草同源亚基因组"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-04:42811024",
@@ -136,7 +139,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "Streptochaeta 基因组证实 ρ-全基因组加倍为现存禾本科共有，祖先染色体数 ante-ρ 为 x=8、post-ρ 为 x=12。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-04:42804372",
@@ -212,7 +218,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "= 4x = 40），并联合比较基因组、群体基因组、转录组与代谢组分析，追溯同源多倍化的起源时间与二倍体祖先的分化历史。 四套"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-04:42823797",
@@ -285,7 +294,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "单核转录组图谱揭示杂交胚败育的细胞程序。Single-nucleus transcriptome atlas of Brassica developing seeds provides cellular and molecular insights into embryo abortion in interspecific hybrids.。杂交种子胚与胚乳细胞数量骤减，CYP78A6 在球胚期后异常持续表达。。杂交种子胚与胚乳细胞数量骤减，CYP78A6 在球胚期后异常持续表达。 对白菜亚种 chinensis 与甘蓝的种间杂交发育种子及白菜种内杂交种子做时间序列单核 RNA 测序，比较单核转录组图谱、激素调控基因表达与配体—受体介导的细胞"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-04:42823440",
@@ -352,7 +364,12 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "me3沉积却依赖从头甲基转移酶DRM2。 在多种DNA甲基化突变体中进行全基因组H3K27me3图谱分析，DNA甲基化按位点分"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [
+      "Polycomb 组蛋白表观修饰复合体"
+    ],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-04:42811751",
@@ -428,7 +445,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "以 50 个烟草品种为材料，整合全基因组重测序、扩增子测序与代谢组学，结合微生物全基因组关联分析和中介分析，考察宿主基因型与根系微生物群落的共变关系，并用分离菌株开展功能验证。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-04:42804661",
@@ -497,7 +517,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "析其招募去甲基化酶与改变染色质环化的双重作用路径；嫁接实验以过表达QingLattice接穗与野生型砧木组合验证移动性的必要性"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-04:42802906",
@@ -557,7 +580,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-04:42817230",
@@ -627,7 +653,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "用λ Red辅助CRISPR/Cas9编辑农杆菌基因组。A Lambda Red Recombinase-Assisted CRISPR/Cas9 System for Efficient and Precise Genome Editing in Agrobacterium tumefaciens.。λ Red辅助CRISPR/Cas9在18个靶点实现26.7%–100%编辑效率，并构建抗生素敏感菌株EHA105-S。。λ Red辅助CRISPR/Cas9在18个靶点实现26.7%–100%编辑效率，并构建抗生素敏感菌株EHA105-S。 以根癌农杆菌（Agrobacterium tumefaciens）染色体与Ti质粒为对象，将λ Red重组酶与CRISPR/Cas9结合，在多个菌株中引入点突变、插入、缺失与大片段替换，并加入SacB反向筛选标记以便编辑后消除质粒。 18个靶点编辑效率为26.7%–100%，脱靶编辑极少；在EHA105中依次删除四个抗性位点得到EHA105-S，其生长动力学与转化效率保持野生型水平；改造两个EF-Tu基因的MAMP后菌株可逃避EFR识别，在拟南芥中瞬时表达效率提高。 农杆菌菌株数十年未做基因组优化，内源同源重组效率低是主要障碍；26.7%–100%的编辑效率与EHA105-S表明菌株基因组可按需改造，做植物转化与合成生物学的人可把菌株优化纳入实验设计。 还缺一场验证：EHA105-S在多种植物、多种转化流程中的实际转化表现，以及改造EF-Tu后逃逸EFR识别是否影响农杆菌在植物体内的定殖与转化稳定性。 λ Red辅助CRISPR/Cas9 + 18个靶"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-04:42820932",
@@ -710,6 +739,22 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "定位 OsAKR 揭示水稻突变体抗旱增产机制。"
       }
+    ],
+    "genes": [
+      {
+        "symbol": "OsAKR",
+        "name": "水稻醛酮还原酶基因",
+        "species": "水稻 (Oryza sativa)",
+        "role": "抗旱与产量调控",
+        "family": "AKR 醛酮还原酶家族",
+        "evidence": "文中明确涉及 OsAKR (水稻醛酮还原酶基因) 功能解析"
+      }
+    ],
+    "gene_families": [
+      "AKR 醛酮还原酶家族"
+    ],
+    "gene_evidence": [
+      "文中明确涉及 OsAKR (水稻醛酮还原酶基因) 功能解析"
     ]
   },
   {
@@ -780,7 +825,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "）与二倍体为材料，比较种子长、宽、厚与百粒重，结合种皮组织学观察与转录组测序，鉴定差异表达基因，并用共表达分析、酵母单杂交、电泳迁移率变动分析和双荧光素酶报告实验验证调控关系。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-04:42811459",
@@ -863,6 +911,31 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "b 的 TaDRS1 为对象，用染色质免疫沉淀-qPCR 与双荧光素酶试验定位 Tacol-B5 蛋白对 TaDRS1 启动子 C"
       }
+    ],
+    "genes": [
+      {
+        "symbol": "TaDRS1",
+        "name": "小麦深根调控位点基因",
+        "species": "小麦 (Triticum aestivum)",
+        "role": "根系构型与产量协同",
+        "family": "根系发育调控因子",
+        "evidence": "文中明确涉及 TaDRS1 (小麦深根调控位点基因) 功能解析"
+      },
+      {
+        "symbol": "TaCOL-B5",
+        "name": "TaCOL-B5 候选基因",
+        "species": "小麦 (Triticum aestivum)",
+        "role": "关键调控/候选基因",
+        "family": "植物候选功能基因",
+        "evidence": "论文标题或摘要提及 TaCOL-B5"
+      }
+    ],
+    "gene_families": [
+      "根系发育调控因子"
+    ],
+    "gene_evidence": [
+      "文中明确涉及 TaDRS1 (小麦深根调控位点基因) 功能解析",
+      "论文标题或摘要提及 TaCOL-B5"
     ]
   },
   {
@@ -930,7 +1003,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "以 ITS2 区仅差一个单核苷酸多态性的两株 Trebouxia lynniae 为材料，经生物量积累、叶绿素荧光、色素定量、透射电镜、代谢组谱与全基因组测序进行表征，比较其对温度与辐照度的生理响应。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-04:42827295",
@@ -999,6 +1075,41 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "typhylla）为材料，借助转基因与CRISPR-Cas9突变体、蛋白互作实验、基于免疫亲和荧光电泳（IAFE）的互作组图谱"
       }
+    ],
+    "genes": [
+      {
+        "symbol": "BpSRK1",
+        "name": "白桦 S-受体激酶基因",
+        "species": "白桦 (Betula platyphylla)",
+        "role": "干旱逆境信号转导",
+        "family": "RLK/RLCK 受体激酶家族",
+        "evidence": "文中明确涉及 BpSRK1 (白桦 S-受体激酶基因) 功能解析"
+      },
+      {
+        "symbol": "BpERF3",
+        "name": "白桦 AP2/ERF 转录因子基因",
+        "species": "白桦 (Betula platyphylla)",
+        "role": "干旱响应转录调控",
+        "family": "AP2/ERF 转录因子家族",
+        "evidence": "文中明确涉及 BpERF3 (白桦 AP2/ERF 转录因子基因) 功能解析"
+      },
+      {
+        "symbol": "BpSRK1-mediated",
+        "name": "BpSRK1-mediated 候选基因",
+        "species": "白桦 (Betula platyphylla)",
+        "role": "关键调控/候选基因",
+        "family": "植物候选功能基因",
+        "evidence": "论文标题或摘要提及 BpSRK1-mediated"
+      }
+    ],
+    "gene_families": [
+      "RLK/RLCK 受体激酶家族",
+      "AP2/ERF 转录因子家族"
+    ],
+    "gene_evidence": [
+      "文中明确涉及 BpSRK1 (白桦 S-受体激酶基因) 功能解析",
+      "文中明确涉及 BpERF3 (白桦 AP2/ERF 转录因子基因) 功能解析",
+      "论文标题或摘要提及 BpSRK1-mediated"
     ]
   },
   {
@@ -1062,7 +1173,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-04:42828769",
@@ -1122,7 +1236,12 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "LE 为对象，用瞬时表达、内源表位标签和原生 Xa1 位点 prime editing，检验 TALE 激活 Xa1 的特异性及核定位的作用。 结"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [
+      "NLR 免疫受体家族"
+    ],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-04:42827415",
@@ -1191,6 +1310,20 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "蛋白 OsPDR17，并借助 CRISPR/Cas9 敲除与过表达验证其在 Xanthomonas oryzae pv ory"
       }
+    ],
+    "genes": [
+      {
+        "symbol": "OsPDR17",
+        "name": "OsPDR17 候选基因",
+        "species": "水稻 (Oryza sativa)",
+        "role": "关键调控/候选基因",
+        "family": "植物候选功能基因",
+        "evidence": "论文标题或摘要提及 OsPDR17"
+      }
+    ],
+    "gene_families": [],
+    "gene_evidence": [
+      "论文标题或摘要提及 OsPDR17"
     ]
   },
   {
@@ -1251,7 +1384,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "XXT1/2 为高温促进下胚轴伸长所必需；PIF4 过表达、phyB 与 hy5 的伸长表型部分依赖 XXT1/2。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-04:42802517",
@@ -1320,6 +1456,20 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "Osfh14 突变体胞间连丝通透性降低、对 NaCl 更敏感；OsFH14 是仅稳定现有肌动蛋白丝、无成核与加帽活性的成束蛋白。"
       }
+    ],
+    "genes": [
+      {
+        "symbol": "OsFH14",
+        "name": "OsFH14 候选基因",
+        "species": "水稻 (Oryza sativa)",
+        "role": "关键调控/候选基因",
+        "family": "植物候选功能基因",
+        "evidence": "论文标题或摘要提及 OsFH14"
+      }
+    ],
+    "gene_families": [],
+    "gene_evidence": [
+      "论文标题或摘要提及 OsFH14"
     ]
   },
   {
@@ -1392,6 +1542,29 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "VvDLK 过表达使低温下微管更早消失、抗寒性下降，番茄同源基因失活则抗寒提升。"
       }
+    ],
+    "genes": [
+      {
+        "symbol": "VvDLK",
+        "name": "VvDLK 候选基因",
+        "species": "葡萄 (Vitis vinifera)",
+        "role": "关键调控/候选基因",
+        "family": "植物候选功能基因",
+        "evidence": "论文标题或摘要提及 VvDLK"
+      },
+      {
+        "symbol": "Vv14-3",
+        "name": "Vv14-3 候选基因",
+        "species": "葡萄 (Vitis vinifera)",
+        "role": "关键调控/候选基因",
+        "family": "植物候选功能基因",
+        "evidence": "论文标题或摘要提及 Vv14-3"
+      }
+    ],
+    "gene_families": [],
+    "gene_evidence": [
+      "论文标题或摘要提及 VvDLK",
+      "论文标题或摘要提及 Vv14-3"
     ]
   },
   {
@@ -1454,7 +1627,10 @@
         "status": "verified",
         "evidence_excerpt": "构建36种绿色植物应激转录组图谱"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-11:42836506",
@@ -1514,7 +1690,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "heat gluten quality.。整合比较基因组学、QTL定位与单倍型关联，发现结构变异可能效应更大，上位性提供额外预测信息。。整合比较基因组学、QTL定位与单倍型关联，发现结构变异可能效应更大，上位性提供额外预测信息。 以比较基因组学、QTL定位与单倍型关联整合分析小麦面筋品质相关变异，评估结构变异与上位性在品质遗传解析中的贡献。 结构变异可能具有更大效应，上位性为预测提供额外信息；这些变异与小麦面筋品质相关，提示结构变异和上位性是改良面筋品质育种的重要考量。 改变仅依赖SNP与加性效应解析品质性状的判断，提醒育种者将结构变异和上位性纳入预测模型，对小麦品质基因组选择有直接参考价值。 还缺结构变异与上位性效应在独立群体中的验证，以及它们对表型预测准确性的量化评估。 比较基因组学 + QTL定位 + 单倍型关联"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-11:42848931",
@@ -1588,7 +1767,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "以单核与空间转录组解析线粒体胁迫信号的细胞与空间架构。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-11:42844811",
@@ -1664,6 +1846,20 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "局部染色质可及性与组蛋白修饰的影响，并在棉花、番茄与拟南芥中过表达或异源表达该基因。 845 bp 结构变异改变局部染色质可及"
       }
+    ],
+    "genes": [
+      {
+        "symbol": "GhEBS1",
+        "name": "GhEBS1 候选基因",
+        "species": "棉花 (Gossypium hirsutum)",
+        "role": "关键调控/候选基因",
+        "family": "植物候选功能基因",
+        "evidence": "论文标题或摘要提及 GhEBS1"
+      }
+    ],
+    "gene_families": [],
+    "gene_evidence": [
+      "论文标题或摘要提及 GhEBS1"
     ]
   },
   {
@@ -1731,7 +1927,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "结构变异。 以西藏高海拔与四川低海拔拟南芥生态型为材料，经重组自交系、精细定位与近等基因系验证锁定主效位点 LA1，确定 IAM"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-11:42834558",
@@ -1791,7 +1990,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "hirsutum；启动子 162 bp 插入缺失改变 GhAGL11 的转录激活程度，编码区非同义突变改变多糖结合偏好，过表达不同等位基因产生纤维强度与细胞壁厚度的相反表型。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-11:42836381",
@@ -1867,7 +2069,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "低氮下PagERF173突变体与显性抑制株的硝酸盐吸收与积累低于过表达株，但同化能力增强，地上部与根系生物量均增加；过表达株趋势相反。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-11:42830493",
@@ -1929,7 +2134,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-11:42859401",
@@ -1998,6 +2206,20 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "3 与其互作遮蔽液泡膜定位信号、损害钾转运并造成胞质钾累积；过表达在冷胁迫下提高孕穗期结实率且正常条件不减产。 耐冷位点从转录"
       }
+    ],
+    "genes": [
+      {
+        "symbol": "OsNHX2",
+        "name": "OsNHX2 候选基因",
+        "species": "水稻 (Oryza sativa)",
+        "role": "关键调控/候选基因",
+        "family": "植物候选功能基因",
+        "evidence": "论文标题或摘要提及 OsNHX2"
+      }
+    ],
+    "gene_families": [],
+    "gene_evidence": [
+      "论文标题或摘要提及 OsNHX2"
     ]
   },
   {
@@ -2058,7 +2280,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "把花粉适合度当作可批量测量的定量表型，并以表达特异性作为核心预测特征，改变了仅靠序列特征建模的判断；从事玉米突变体筛选与花粉传递率分析的研究者可据此优先检查表达特异性。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-11:42844231",
@@ -2144,7 +2369,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "基因组DNA甲基化响应，并分析6mA去甲基化酶ALKBH1D突变体的表型。 两种植物早期免疫激活均伴随短常染色质转座元件非CG"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-11:42842924",
@@ -2202,7 +2430,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-11:42844689",
@@ -2270,7 +2501,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "建立下胚轴针刺法实现丹参遗传转化与基因编辑。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-11:42844820",
@@ -2334,7 +2568,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "因。 以白骨壤叶片上表皮盐腺为对象，激光显微切割分离盐腺后行转录组测序，比较0与400 mM NaCl处理下的基因表达谱；非损伤微"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-11:42844233",
@@ -2403,7 +2640,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "稻优势等位为 4CL4TC，二者在本亚种内协同改善茎秆性状；过表达 STRONG3 增强抗倒伏且不减产。 抗倒伏育种长期在产量"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-11:42844830",
@@ -2472,7 +2712,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "质积累；FACR2、LACS1、HHT1、PXG4动态变化，突变体第8期花药中LACS1下调，16-FA水平改变可能关联FAC"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-11:42834486",
@@ -2537,7 +2780,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-11:42848935",
@@ -2611,7 +2857,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "HDA6-A/B与PtrLBD39的互作，并在应拉木发育中经ChIP-qPCR确认对PtrHCT1/6启动子的靶向募集。 应拉木形成伴随赤"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-11:42845060",
@@ -2681,6 +2930,22 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "ing 后复发性热胁迫处理；利用 hsfa2 CRISPR 突变体检验 SlHSFA2 功能，结合转录本分析鉴定 II 型热记"
       }
+    ],
+    "genes": [
+      {
+        "symbol": "SlHSFA2-SlERFs",
+        "name": "SlHSFA2-SlERFs 候选基因",
+        "species": "番茄 (Solanum lycopersicum)",
+        "role": "关键调控/候选基因",
+        "family": "植物候选功能基因",
+        "evidence": "论文标题或摘要提及 SlHSFA2-SlERFs"
+      }
+    ],
+    "gene_families": [
+      "AP2/ERF 转录因子家族"
+    ],
+    "gene_evidence": [
+      "论文标题或摘要提及 SlHSFA2-SlERFs"
     ]
   },
   {
@@ -2750,6 +3015,20 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "OC）为靶点，编辑该茉莉酸生物合成酶基因，获得 hvaoc 突变体，考察发育表型、遗传互作与转录组变化，并以茉莉酸甲酯处理检验"
       }
+    ],
+    "genes": [
+      {
+        "symbol": "HvAOC",
+        "name": "HvAOC 候选基因",
+        "species": "大麦 (Hordeum spp.)",
+        "role": "关键调控/候选基因",
+        "family": "植物候选功能基因",
+        "evidence": "论文标题或摘要提及 HvAOC"
+      }
+    ],
+    "gene_families": [],
+    "gene_evidence": [
+      "论文标题或摘要提及 HvAOC"
     ]
   },
   {
@@ -2812,7 +3091,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-19:42878336",
@@ -2889,7 +3171,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "CRISPR/Cas9敲除美洲品种的GmST05、在中国品种中过表达抗性GmSNAP18单倍型，验证了STINS对蛋白质含量与大豆胞囊线虫抗性的预测靶点。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-19:wheat-bb",
@@ -2951,7 +3236,10 @@
         "status": "verified",
         "evidence_excerpt": "确认St基因组经两次杂交贡献小麦BB基因组"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-19:42850280",
@@ -3013,7 +3301,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-19:greyia",
@@ -3076,7 +3367,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "flanaganii）为材料，构建染色体级基因组组装，填补牻牛儿苗目高质量基因组资源空白；结合系统基因组学、比较基因组学与转录组分析，追溯全基因组复制事件并比较表皮毛与花序相关调控网络。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-19:kiwifruit",
@@ -3136,7 +3430,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-19:wheat-landrace",
@@ -3196,7 +3493,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-19:sunmao",
@@ -3259,7 +3559,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-19:alfalfa-wgd",
@@ -3319,7 +3622,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "全基因组加倍重塑紫花苜蓿基因-miRNA调控网络并提升耐盐性。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-19:brapa-bias",
@@ -3383,7 +3689,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-19:42850239",
@@ -3453,7 +3762,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "型H3受驯化选择。 以大豆为材料，联合全基因组关联分析与基于深度学习的成熟期变异评估，在两种田间环境中定位到与成熟期关联的位点G"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-19:fast3vmrmlm",
@@ -3532,7 +3844,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "用 Fast3VmrMLM 在百万标记中检出上位性。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-19:42864913",
@@ -3592,7 +3907,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-19:42872729",
@@ -3661,7 +3979,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "单核转录组鉴定萝卜根12类细胞，RsHB8过表达使根宽增加并促进木质部分化。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-19:42861608",
@@ -3727,7 +4048,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-19:42869437",
@@ -3803,7 +4127,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "K5L3ZW 列为首选；沉默该基因提高叶片净光合速率，瞬时过表达则降低，表明其负向调控。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-19:42864397",
@@ -3866,7 +4193,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-19:42869925",
@@ -3926,7 +4256,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-19:42864594",
@@ -3988,7 +4321,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "thaliana cycd3;2 突变体内多倍化升高且根毛缺陷类似新四倍体。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-19:42852998",
@@ -4057,7 +4393,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "以单倍型定相的「UCD Royal Royce」（PFpf）基因组为基础，结合下一代测序的 k-mer 全基因组关联分析与 RNAseq 定位 PFRU。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-25:42918899",
@@ -4119,7 +4458,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-25:42919903",
@@ -4189,7 +4531,10 @@
         "status": "verified",
         "evidence_excerpt": "构建葡萄科染色体级基因组解析其演化"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-25:42919901",
@@ -4249,7 +4594,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "靶向着丝粒的 CRISPR-Cas9 策略在一代内重排最多 11 条染色体，获得可遗传的相互易位。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-25:42902559",
@@ -4311,7 +4659,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "几百个，交叉验证精度较随机标记提高 7.2%。 GLRS 以全基因组关联信号排序、连锁不平衡剪枝与随机森林特征重要性筛选串联，从 7"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-25:42928045",
@@ -4388,7 +4739,12 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "合胞体核可能存在区室化或功能异质性。联合聚类界定合胞体特有的染色质可及性景观，部分细胞状态开放染色质与上调基因相连；基序富集指向 A"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [
+      "bZIP 转录因子家族"
+    ],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-25:42920203",
@@ -4448,7 +4804,10 @@
         "status": "verified",
         "evidence_excerpt": "以十条规则甄别植物深系统发育中的水平基因转移"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-25:42908423",
@@ -4508,7 +4867,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-25:42906138",
@@ -4570,7 +4932,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-25:42913095",
@@ -4646,7 +5011,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "基化谷（DMV）两类甲基化架构的调控特征与保守性，并用基因组共线性分析检验DMV模式与转录因子足迹在品种间的保守程度。 gbM"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-25:42913476",
@@ -4706,7 +5074,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-25:42913484",
@@ -4779,7 +5150,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "基因定位 + 双突变体功能验证"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-25:42888468",
@@ -4870,7 +5244,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "H3K4me3 图谱并联合转录组测序，结合病毒诱导基因沉默、过表达、CRISPR/Cas9、酵母单/双杂交、凝胶迁移、共免疫沉"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-25:42919309",
@@ -4949,6 +5326,22 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "Aub 与 H3K27me3 水平显著下降。 以玉米微型籽粒突变体 mn8 为材料，图位克隆确定因果基因为植物特有 PcG 蛋"
       }
+    ],
+    "genes": [
+      {
+        "symbol": "H3K27me3",
+        "name": "组蛋白 H3 第 27 位赖氨酸三甲基化修饰",
+        "species": "植物通用",
+        "role": "基因转录沉默表观标记",
+        "family": "Polycomb 组蛋白表观修饰复合体",
+        "evidence": "文中明确涉及 H3K27me3 (组蛋白 H3 第 27 位赖氨酸三甲基化修饰) 功能解析"
+      }
+    ],
+    "gene_families": [
+      "Polycomb 组蛋白表观修饰复合体"
+    ],
+    "gene_evidence": [
+      "文中明确涉及 H3K27me3 (组蛋白 H3 第 27 位赖氨酸三甲基化修饰) 功能解析"
     ]
   },
   {
@@ -5018,7 +5411,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "解析小麦气孔解剖与导度：干旱热胁迫下稳定 QTL 定位。Field‑Based Dissection of Stomatal Anatomy and Conductance Reveals Stable QTL Under Drought and Heat in Wheat.。两年田间试验显示，干旱使气孔导度下降 26.9%，增温下降 13.8%，解剖性状遗传力更高。。两年田间试验显示，干旱使气孔导度下降 26.9%，增温下降 13.8%，解剖性状遗传力更高。 以小麦为材料，开展两年大规模田间试验，设置水分限制与增温处理，测定生理与解剖气孔响应；按叶面分区解析导度变异来源，估算遗传力，并用全基因组关联分析定位气孔解剖与导度的 QTL。 胁迫下气孔导度下降（水分限制 -"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-25:42896845",
@@ -5080,7 +5476,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "）及其二倍体为材料，比较短期与长期低温下的DNA甲基化、转录及代谢响应；通过5-氮杂胞苷处理、功能验证和启动子结合分析，检验BcMAM1启动子CHH甲基化与BcCBF4结合的关联。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-25:42894400",
@@ -5142,7 +5541,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-25:42920208",
@@ -5205,7 +5607,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-25:42892737",
@@ -5286,7 +5691,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "用核糖体图谱鉴定出 1199 个活跃翻译的 uORF，并建立双荧光素酶筛选流程定位强翻译抑制子；通过 CRISPR/Cas9 破坏"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-25:42922275",
@@ -5349,7 +5757,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "SDG26缺失削弱ABA相关表型；过表达或正常条件下SDG26促进CBF-COR表达与H3K36me3富集，并提高ABA积累、气孔关闭与抗旱性，表明其整合ABA依赖与非依赖两条通路。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-10-25:42895217",
@@ -5409,6 +5820,29 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "or both BADH1 and BADH2 using CRISPR/Cas9.。CRISPR/Cas9 编辑 TaBADH1"
       }
+    ],
+    "genes": [
+      {
+        "symbol": "TaBADH1",
+        "name": "TaBADH1 候选基因",
+        "species": "小麦 (Triticum aestivum)",
+        "role": "关键调控/候选基因",
+        "family": "植物候选功能基因",
+        "evidence": "论文标题或摘要提及 TaBADH1"
+      },
+      {
+        "symbol": "TaBADH2",
+        "name": "TaBADH2 候选基因",
+        "species": "小麦 (Triticum aestivum)",
+        "role": "关键调控/候选基因",
+        "family": "植物候选功能基因",
+        "evidence": "论文标题或摘要提及 TaBADH2"
+      }
+    ],
+    "gene_families": [],
+    "gene_evidence": [
+      "论文标题或摘要提及 TaBADH1",
+      "论文标题或摘要提及 TaBADH2"
     ]
   },
   {
@@ -5469,7 +5903,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-01:42958420",
@@ -5541,7 +5978,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "该循环模型目前只在甘蓝型油菜一个品种中成立，还缺跨品种、跨亚基因组的着丝粒单倍型比较，以及驯化群体中卫星重复与转座子动态的验证。 组装 + 着丝粒演化模型"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-01:42958427",
@@ -5624,7 +6064,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "生代谢为主；CkoERF1与CkoWAKL经拟南芥和苜蓿异源过表达验证增强抗旱表型；LTR反转录转座子丰度差异对应物种间基因组"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-01:42972586",
@@ -5693,7 +6136,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "同时刻画染色质可及性与基因型，鉴定出 16,113 个 caQTL。。GAMETE 在 4,887 个单倍体花粉核中同时刻画染色质可及性与基因型，鉴定出 16,113 个 caQTL。 GAMETE 把高通量单核 ATAC-seq（MPS-ATAC-seq）与稀疏单核数据的基因型推断、遗传作图流程整合，应用于杂交水稻花粉，对 4,887 个单倍体核同步测定染色质可及性并推断基因型，覆盖不同花粉细胞类型。 小孢子中 gypsy 反转座子染色质可及性在精子细胞沉默之前反而升高，暴露监控缺口；单细胞重组图谱定位分离畸变位点并追溯其发育来源；16,113 个 caQTL"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-01:42971994",
@@ -5761,7 +6207,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-01:42935326",
@@ -5828,7 +6277,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "pds5a 突变体中 TAD 样结构域跨组织与倍性高度相似，PDS5A 是主要黏连蛋白卸载因子。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-01:42933868",
@@ -5909,7 +6361,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "3 个转录因子对糊粉层命运的决定作用尚缺遗传验证，细胞异质性如何影响贮藏产物积累也需要突变体或扰动实验确认。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-01:42935097",
@@ -5971,7 +6426,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "w in maize C4 photosynthesis.。单细胞多组学显示，玉米碳同化与NDH循环电子传递由不同调控构型支配，DOF转录因子作用于NDH分支。。单细胞多组学显示，玉米碳同化与NDH循环电子传递由不同调控构型支配，DOF转录因子作用于NDH分支。 整合单核RNA测序、sci-ATAC测序、叶肉与维管束鞘富集组分的组蛋白修饰谱及原生质体转录因子结合"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-01:42935185",
@@ -6041,7 +6499,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "下评价低温发芽力，整合SNP与结构变异GWAS、转录组测序、基因编辑、群体遗传学与机器学习，解析低温发芽力的遗传基础并构建基因组"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-01:42969342",
@@ -6115,7 +6576,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "以三个重组自交系群体连锁分析与一个多样性玉米面板的全基因组关联分析并行，解析6个气孔性状的遗传结构；再整合已报道的细胞类型特异转录组数据，对候选基因排序，并用EMS突变体验证其中两个候选。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-01:42947650",
@@ -6177,7 +6641,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "raHDAC1 热诱导表达。 以白菜耐热自然变异为对象，联合全基因组关联分析与混合分组分析，锁定组蛋白去乙酰化酶基因 BraHDAC"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-01:42944616",
@@ -6237,6 +6704,22 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "拟南芥正反交显示H3K27me3、DNA甲基化与H3K4me3均可跨代遗传，但模式各异。"
       }
+    ],
+    "genes": [
+      {
+        "symbol": "DDM1",
+        "name": "染色质重塑因子 DDM1",
+        "species": "拟南芥 (Arabidopsis thaliana)",
+        "role": "异染色质与转座子沉默",
+        "family": "SWI/SNF 染色质重塑家族",
+        "evidence": "文中明确涉及 DDM1 (染色质重塑因子 DDM1) 功能解析"
+      }
+    ],
+    "gene_families": [
+      "SWI/SNF 染色质重塑家族"
+    ],
+    "gene_evidence": [
+      "文中明确涉及 DDM1 (染色质重塑因子 DDM1) 功能解析"
     ]
   },
   {
@@ -6300,6 +6783,20 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "大豆种子早期发育时空图谱划分 17 种细胞类型，过表达 GmCWINV4 增大种子与含油量。"
       }
+    ],
+    "genes": [
+      {
+        "symbol": "GmCWINV4",
+        "name": "GmCWINV4 候选基因",
+        "species": "大豆 (Glycine max)",
+        "role": "关键调控/候选基因",
+        "family": "植物候选功能基因",
+        "evidence": "论文标题或摘要提及 GmCWINV4"
+      }
+    ],
+    "gene_families": [],
+    "gene_evidence": [
+      "论文标题或摘要提及 GmCWINV4"
     ]
   },
   {
@@ -6368,7 +6865,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "定位 CNGC16 启动子变异调控番茄果重。Natural Variation in CYCLIC NUCLEOTIDE-GATED ION CHANNEL 16 Controls Fruit Weight in Tomato.。番茄 CNGC16 启动子自然变异与果重和基因表达差异关联，大果单倍型在驯化中被选择。。番茄 CNGC16 启动子自然变异与果重和基因表达差异关联，大果单倍型在驯化中被选择。 以番茄种质为材料，通过全基因组关联分析定位到 CNGC16 启动子区自然变异，该变异同时与果重和基因表达差异关联；地理与亚群分析追踪大果单倍型在驯化中的选择信号；功能实验检验 CNGC16 对果重、细胞分裂与胞质 Ca2+ 稳态的作用，并检测其与 CaM6 的互作。 大果 CNGC16 单倍型在驯化中受到选择，可能参与局部环境适应；CNGC16 通过促进细胞分裂和维持果细胞胞质 Ca2+ 稳态调控果重；CNGC16 与 CaM6 发生物理和遗传互作，介导控制果实大小的钙信号。 果重 QTL 长期停留在区间层面，此处把因果变异落到 CNGC16 启动"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-01:42929225",
@@ -6437,7 +6937,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "GWAS 锁定 FtCES18：过表达提升抗性，沉默后高度感病，栽培苦荞抗性弱于野生祖先。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-01:42952239",
@@ -6497,7 +7000,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "还缺一场在更多葫芦科物种中验证SDR110C1丢失与AKR4A1变异同C3构型差异对应关系的比较实验，以及用突变体确认5 bp缺失对甜瓜C3立体化学的实际效应。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-01:42924445",
@@ -6567,7 +7073,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "重构玉米组织培养提升农杆菌转化效率。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-01:42960660",
@@ -6630,6 +7139,29 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "籽粒为材料，异位表达单糖转运蛋白基因 SbSTP20，并用 CRISPR 编辑获得 Sbstp20 株系，比较胚乳己糖流入、糊粉下层"
       }
+    ],
+    "genes": [
+      {
+        "symbol": "SbSTP20",
+        "name": "SbSTP20 候选基因",
+        "species": "高粱 (Sorghum bicolor)",
+        "role": "关键调控/候选基因",
+        "family": "植物候选功能基因",
+        "evidence": "论文标题或摘要提及 SbSTP20"
+      },
+      {
+        "symbol": "SbSTP20-mediated",
+        "name": "SbSTP20-mediated 候选基因",
+        "species": "高粱 (Sorghum bicolor)",
+        "role": "关键调控/候选基因",
+        "family": "植物候选功能基因",
+        "evidence": "论文标题或摘要提及 SbSTP20-mediated"
+      }
+    ],
+    "gene_families": [],
+    "gene_evidence": [
+      "论文标题或摘要提及 SbSTP20",
+      "论文标题或摘要提及 SbSTP20-mediated"
     ]
   },
   {
@@ -6700,6 +7232,20 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "618 份玉米材料全基因组关联分析锁定 ZmARF27，其表达下调导致主根变短、对外源生长素不敏感。"
       }
+    ],
+    "genes": [
+      {
+        "symbol": "ZmARF27",
+        "name": "ZmARF27 候选基因",
+        "species": "玉米 (Zea mays)",
+        "role": "关键调控/候选基因",
+        "family": "植物候选功能基因",
+        "evidence": "论文标题或摘要提及 ZmARF27"
+      }
+    ],
+    "gene_families": [],
+    "gene_evidence": [
+      "论文标题或摘要提及 ZmARF27"
     ]
   },
   {
@@ -6774,7 +7320,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "过表达 GmGRF5a 使大豆种子蛋白含量提高约 1 个百分点，且 3 个独立田间季无产量损失。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-08:42978223",
@@ -6837,7 +7386,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "构建单倍型解析荔枝泛基因组，解析花期与糖分变异。A haplotype-resolved lychee pangenome uncovers structural and haplotype variations associated with flowering time divergence and fruit sugar composition.。首个荔枝泛基因组整合12份单倍型解析基因组与314份重测序材料，锁定LcFT3启动子约10 kb结构变异。。首个荔枝泛基因组整合12份单倍型解析基因组与314份重测序材料，锁定LcFT3启动子约10 kb结构变异。 以先进测序技术重新组装并借助转录组数据人工校正基因模型，升级荔枝参考基因组；组装12份代表性材料的单倍型解析基因组，构建首个荔枝泛基因组，并"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-08:42984256",
@@ -6900,7 +7452,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "组装野生与栽培大豆端粒到端粒完整基因组。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-08:42979777",
@@ -6976,7 +7531,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "ojackia xylocarpa Hu) reveals its centromeric landscape and evo"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-08:42983985",
@@ -7036,7 +7594,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-08:42960406",
@@ -7096,7 +7657,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-08:42952428",
@@ -7156,7 +7720,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-08:42958909",
@@ -7225,7 +7792,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "-to-Trp）为因果突变；结合CRISPR/Cas9敲除与过表达验证功能，并用蛋白互作实验检测SDEF与OSK1的结合。 S"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-08:42984240",
@@ -7287,7 +7857,10 @@
         "status": "verified",
         "evidence_excerpt": "异孢石松类异域成种并跨越古气候波动存续"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-08:42960433",
@@ -7357,7 +7930,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "HYA-B 的提前终止密码子与抽穗延迟关联，TILLING 突变体支持 PHYA 与 PHYC 在模拟遮荫下对开花时间、株高和"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-08:42958626",
@@ -7426,7 +8002,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "81与WRKY33互作，通过隔离辅因子广泛调控多个转录因子，过表达时削弱防御。 把石斛抗病从组织水平推进到细胞类型分辨率，说明"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-08:42963991",
@@ -7493,7 +8072,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "调控扩展到多聚腺苷酸化层面的转录组重塑，提示分析 SR45 突变体或盐响应转录组时，不能只查剪接而忽略多聚腺苷酸化位点选择，做"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-08:42987176",
@@ -7553,7 +8135,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "用优化先导编辑在番茄中重建并叠加抗病等位基因。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-08:42951926",
@@ -7623,7 +8208,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "优化先导编辑系统提升双子叶作物编辑效率。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-08:42974960",
@@ -7681,7 +8269,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "构建 AP/Exo-Cas12 工具箱实现水稻多重基因组编辑。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-08:42953965",
@@ -7742,7 +8333,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "释重叠度低，提示旧注释可靠性存疑。 mobileRNA 把 RNA 测序数据同时比对到合并参考基因组，以多基因组策略替代 SNP 依"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-08:42958684",
@@ -7813,7 +8407,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "利用茎再生能力建立紫花苜蓿高效遗传转化体系。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-08:42987919",
@@ -7885,7 +8482,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "过表达 FTO 提升苜蓿产量、品质与抗逆性。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-08:42972450",
@@ -7954,7 +8554,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "用空间转录组揭示睡莲花瓣源自雄蕊的发育轨迹。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-08:42963550",
@@ -8037,7 +8640,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "把生长与抗旱的权衡落到一个可操作的转录节点上：PtoAG1 功能缺失增加营养生物量，过表达则显著提高抗旱性，说明育种不必在产量与抗逆间二选一，做杨树与作物改良的群体遗传与基因编辑团队可直接检验该靶点。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-08:42979772",
@@ -8120,6 +8726,22 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "个熟期组的 257 份大豆种质为材料，将全基因组关联分析与深度学习方法结合，在两种田间环境下定位与熟期相关的候选位点，并对 G"
       }
+    ],
+    "genes": [
+      {
+        "symbol": "GmRVE8a",
+        "name": "大豆节律相关转录因子 GmRVE8a",
+        "species": "大豆 (Glycine max)",
+        "role": "生物钟与逆境耐受",
+        "family": "MYB 转录因子家族",
+        "evidence": "文中明确涉及 GmRVE8a (大豆节律相关转录因子 GmRVE8a) 功能解析"
+      }
+    ],
+    "gene_families": [
+      "MYB 转录因子家族"
+    ],
+    "gene_evidence": [
+      "文中明确涉及 GmRVE8a (大豆节律相关转录因子 GmRVE8a) 功能解析"
     ]
   },
   {
@@ -8183,7 +8805,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "构建玉米图泛基因组平台 MaizeGP 整合 48 个基因组结构变异。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-15:43000418",
@@ -8249,7 +8874,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "对甘蓝型油菜中双11与Westar完成无缺口参考基因组组装，另组装6份材料，统一22个基因组的基因注释，建成以基因为中心的BnaScope平台；基于基因与图泛基因组鉴定非冗余基因簇与结构变异。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-15:42993841",
@@ -8315,7 +8943,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-15:43010681",
@@ -8385,7 +9016,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "81；环境响应全基因组关联分析找回已知成熟期位点并识别 175 个候选区域，EMS 突变体表型支持部分候选基因优先级。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-15:43023737",
@@ -8447,6 +9081,22 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "由 107 株细菌分离物组成的合成群落，对根际微生物组性状做全基因组关联分析，随后通过突变与天然等位变异验证候选基因功能，并比较微生"
       }
+    ],
+    "genes": [
+      {
+        "symbol": "ROOMIE1",
+        "name": "大豆百粒重候选基因 ROOMIE1",
+        "species": "大豆 (Glycine max)",
+        "role": "籽粒大小与百粒重调控",
+        "family": "籽粒发育调控因子",
+        "evidence": "文中明确涉及 ROOMIE1 (大豆百粒重候选基因 ROOMIE1) 功能解析"
+      }
+    ],
+    "gene_families": [
+      "籽粒发育调控因子"
+    ],
+    "gene_evidence": [
+      "文中明确涉及 ROOMIE1 (大豆百粒重候选基因 ROOMIE1) 功能解析"
     ]
   },
   {
@@ -8514,7 +9164,10 @@
         "status": "verified",
         "evidence_excerpt": "解析川蔓藻由海生向咸水特化的演化史"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-15:43017767",
@@ -8579,7 +9232,10 @@
         "status": "verified",
         "evidence_excerpt": "喀斯特生境岛屿驱动石山苣苔属非适应性辐射"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-15:43006229",
@@ -8639,7 +9295,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-15:43026182",
@@ -8699,7 +9358,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "同源四倍体草莓叶片与气孔增大，灰霉抗性增强，LAC9 过表达即提升二倍体抗性。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-15:43031357",
@@ -8759,7 +9421,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "Z 在玉米叶与胚乳中分布差异与基因表达高低对应，过表达株净光合速率更高。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-15:42993019",
@@ -8840,7 +9505,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "胞转录状态并诱导细胞类型特异性免疫重编程；AhWRKY40 过表达增强对 S. rolfsii 的抗性，并伴随茉莉酸与水杨酸积"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-15:43004782",
@@ -8912,7 +9580,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "细胞类群；结合标记基因、已发表激光显微切割转录组与 RNA 原位杂交鉴定叶舌细胞群，并用拟时序与共表达网络分析划分转录程序。 图"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-15:43034289",
@@ -8981,7 +9652,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "保守候选基因能否在一年生作物中重建向地下器官的氮分配，尚缺遗传转化或基因编辑的功能验证；地下库网络分化与耐脱水、休眠性状的因果关联也需田间多年数据检验。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-15:42984258",
@@ -9048,7 +9722,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "全长转录组 + 变异注释筛选"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-15:43006482",
@@ -9129,6 +9806,31 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "2，其编码吲哚-3-乙酸酰胺合成酶；随后借助大豆毛状根干扰与过表达体系进行功能验证。"
       }
+    ],
+    "genes": [
+      {
+        "symbol": "GmGH3.2",
+        "name": "大豆生长素酰胺合成酶基因",
+        "species": "大豆 (Glycine max)",
+        "role": "生长素稳态调控",
+        "family": "GH3 基因家族",
+        "evidence": "文中明确涉及 GmGH3.2 (大豆生长素酰胺合成酶基因) 功能解析"
+      },
+      {
+        "symbol": "GmGH3",
+        "name": "GmGH3 候选基因",
+        "species": "大豆 (Glycine max)",
+        "role": "关键调控/候选基因",
+        "family": "植物候选功能基因",
+        "evidence": "论文标题或摘要提及 GmGH3"
+      }
+    ],
+    "gene_families": [
+      "GH3 基因家族"
+    ],
+    "gene_evidence": [
+      "文中明确涉及 GmGH3.2 (大豆生长素酰胺合成酶基因) 功能解析",
+      "论文标题或摘要提及 GmGH3"
     ]
   },
   {
@@ -9187,7 +9889,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "用知识库与工具编排构建植物功能基因组学检索智能体 PGCopilot。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-15:43006149",
@@ -9278,7 +9983,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "verview 面板整合转录因子结合位点密度、植物 DNA 大语言模型预测的开放染色质区域、CpG 富集区与串联重复；新增转录组调"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-15:42988739",
@@ -9345,7 +10053,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "miRNA 位点由 39 751 增至 87 667，家族由 7838 增至 18 389；新增模块覆盖初级转录本、DNA 甲基化、RNA 修饰、胁迫响应表达、代谢通路与核心基因调控网络。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-15:42995649",
@@ -9407,7 +10118,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "生长或种子产量的可检测损失；HPPD基因G419A等位基因在过表达时赋予对残留除草剂活性的耐受，但由原生位点表达时效果有限，显"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-15:43016121",
@@ -9474,7 +10188,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "SC1 在各谱系间保守；CsbHLH92 直接激活这些基因，过表达使柠檬苦素与诺米林水平大幅升高，CsMPK7 磷酸化则削弱其"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-22:43052436",
@@ -9550,7 +10267,10 @@
         "status": "verified",
         "evidence_excerpt": "构建二倍体与多倍体大麦属比较基因组图谱"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-22:43042498",
@@ -9630,7 +10350,10 @@
         "status": "verified",
         "evidence_excerpt": "发布四倍体短芒大麦染色体级基因组并解析其盐碱适应"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-22:43036943",
@@ -9693,7 +10416,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "构建大豆单倍型图谱整合野生种质解析农艺性状。Next-Generation Soybean Haplotype Map as a Genomic Resource for Enhanced Trait Discovery and Functional Analysis.。1278 份大豆种质构建单倍型图谱，含 1137 万 SNP 与 205 万 InDel，覆盖栽培与野生基因库。。1278 份大豆种质构建单倍型图谱，含 1137 万 SNP 与 205 万 InDel，覆盖栽培与野生基因库。 对 1278 份 Glycine max 与 Glycine soja 种质全基因组测序，构建 GmHapMap-II，含 11.37 百万 SNP 和 2.05 百万短 InDel；基于近无缺口参考组装，纳入野生种质以突破仅栽培种 GmHapMap-I 的多样性"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-22:43059181",
@@ -9756,7 +10482,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "整合312份梨种质资源的代谢组、变异组与蛋白质组数据，构建多组学数据集，比较驯化与改良阶段的代谢物积累模式，并关联遗传变异与代谢调控，定位影响石细胞形成、苹果酸与柠檬酸拮抗及花色苷积累的关键位点。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-22:43049179",
@@ -9833,7 +10562,10 @@
         "status": "verified",
         "evidence_excerpt": "比较性别连锁基因及候选调控因子的组织表达模式"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-22:43042739",
@@ -9898,7 +10630,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-22:43042584",
@@ -9969,7 +10704,12 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "刺五加与Hedera helix共享谱系特异性全基因组复制（WGD-α，Ks=0."
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [
+      "CYP450 细胞色素氧化酶家族"
+    ],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-22:43034288",
@@ -10039,7 +10779,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "PsbZIP44 的调控效应仅经瞬时转化初步验证，还缺稳定转基因或突变体的遗传学验证；跨物种保守回路也需在桃、杏、甜樱桃中逐一检验。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-22:43017818",
@@ -10125,7 +10868,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "ES同源物）被鉴定为关键开关，CRISPR-Cas9编辑的双突变体缺失减数分裂细胞。 把大豆雄性生殖系早期发育从细胞类型注释推"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-22:43045498",
@@ -10187,7 +10933,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-22:43062106",
@@ -10247,7 +10996,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "定位玉米籽粒脱水三类性状的稳定位点与候选基因。Genetic dissection of kernel dehydration traits in maize using a recombinant inbred line population: key loci and candidate genes.。五个环境、五个时期取样，定位100个非冗余QTL，其中9个高置信多效区控制全部三类脱水性状。。五个环境、五个时期取样，定位100个非冗余QTL，其中9个高置信多效区控制全部三类脱水性状。 以KD重组自交系群体为材料，在五个环境中于授粉后34至58天每5天测定一次籽粒含水量，共五个连续时期，据此计算脱水速率与干燥曲线下面积，并对三类指标做QTL定位，再结合转录组与已发表meta-QTL进行整合。 定位到100个非冗余QTL，主要位于染色体远端；优先保留环境稳定位点，得到9个同时控制含水量、脱水速率与干燥曲线下面积的高置信多效区，以及含水量特异位点11个、脱水速率特异位点28个、干燥曲线下面积特异位点4个。100个区间内鉴定出亲本间籽粒发育后期差异表达基因982个；与11个籽粒脱水速率和34个籽粒含水量meta-QTL共定位出13个高置信保守区，从中锁定Zm00001d002455与Zm00001d005798两个候选基因。 脱水性状的遗传结构此前多按单一指标描述，这里把含水量、脱水速率与干燥曲线下面积拆开又合并，给出多效区与特异位点并存的图景；做玉米宜机收育种和QTL整合分析的人可直接取用这批稳定区间与候选基因作验证起点。 还缺一场在多背景群体中对9个多效区与两个候选基因的独立验证，以及这些位点在脱水后期表达差异与表型之间的因果确认。 QTL定位 + 五环境重组自交系群体"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-22:43059150",
@@ -10309,7 +11061,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "T2T-guided EPFL9 editing: Stepwise stomatal-density reductions in Populus \"Beilinxiongzhu 1\"."
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-22:43036950",
@@ -10374,7 +11129,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "MSA系统经32条sgRNA同时编辑46个靶点，稳定转化获得29个基因全部失活的大豆突变体。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-22:43041074",
@@ -10435,7 +11193,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "TAHITI 用 CRISPR-Cas 替代 Pong 切割活性，靶向整合率提升且脱靶降低。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-22:43059179",
@@ -10505,7 +11266,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "卷积网络将单组学特征与杂交亲本共享图（HSPG）整合，再经 Transformer 模块捕获多组学特征的长程依赖；在四个杂交群体、13 个性状"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-22:43053334",
@@ -10563,7 +11327,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "0：整合 279 个植物蛋白质组与深度学习抗病基因优先排序。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-22:43056223",
@@ -10638,7 +11405,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "建立基于温和SCMV分离物的玉米高粱病毒过表达平台。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-22:43052700",
@@ -10715,6 +11485,20 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "以Désirée品种为例建立四倍体马铃薯全等位基因敲除流程，StBEL5突变体仅块茎起始略延迟。"
       }
+    ],
+    "genes": [
+      {
+        "symbol": "StBEL5",
+        "name": "StBEL5 候选基因",
+        "species": "马铃薯 (Solanum tuberosum)",
+        "role": "关键调控/候选基因",
+        "family": "植物候选功能基因",
+        "evidence": "论文标题或摘要提及 StBEL5"
+      }
+    ],
+    "gene_families": [],
+    "gene_evidence": [
+      "论文标题或摘要提及 StBEL5"
     ]
   },
   {
@@ -10780,7 +11564,10 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [],
+    "gene_evidence": []
   },
   {
     "id": "2026-11-22:43023394",
@@ -10853,6 +11640,11 @@
         "evidence_source": "title/summary/abstract",
         "evidence_excerpt": "对根肿菌侵染后的抗、感白菜（Brassica rapa）品系联合开展全基因组亚硫酸氢盐测序与转录组分析，比较甲基化谱与表达谱差异，并用5-氮杂胞苷处理和DME过表达验证甲基化对靶基因的调控作用。"
       }
-    ]
+    ],
+    "genes": [],
+    "gene_families": [
+      "CYP450 细胞色素氧化酶家族"
+    ],
+    "gene_evidence": []
   }
 ]

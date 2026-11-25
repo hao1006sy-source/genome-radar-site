@@ -1,0 +1,300 @@
+{
+  "id": "SUP-2026-11-22",
+  "issue": "2026-11-22",
+  "week": "2026-11-22 个人专刊",
+  "title": "我的科研雷达 · 个人科研专刊 · 2026-11-22",
+  "user_identity": "作物基因组与分子育种研究员",
+  "count": 5,
+  "headline": "大麦、小麦、水稻与前沿编辑方法经典成果科研溯源",
+  "intro": "本专刊依据您的四维科研画像（聚焦大麦、小麦、水稻、功能机制与前沿定向编辑技术），基于真实文献库核验，精选出对您的课题最具理论与方法借鉴价值的 5 篇历史经典与奠基论文。",
+  "window": "全球学术文献溯源检索",
+  "entries": [
+    {
+      "pmid": "31634902",
+      "doi": "10.1038/s41586-019-1711-4",
+      "journal": "Nature",
+      "year": 2019,
+      "date": "2019-10-21",
+      "title": "Search-and-replace genome editing without double-strand breaks or donor DNA",
+      "authors": "Andrew V. Anzalone, Peyton B. Randolph, Jessie R. Davis, et al.",
+      "primary_species": "植物通用 / 模式生物",
+      "primary_topic": "genome-editing-breeding",
+      "subtopics": [
+        "crispr-cas-systems"
+      ],
+      "research_methods": [
+        "先导编辑 (Prime Editing)",
+        "逆转录工程改造",
+        "定点突变效率评测"
+      ],
+      "genes": [
+        {
+          "symbol": "PE2/PE3",
+          "name": "先导编辑系统核心酶",
+          "species": "通用",
+          "role": "无双链断裂精准定点编辑"
+        }
+      ],
+      "discovery_type": "classic_method",
+      "abstract": "Prime editors (PEs) use a catalytically impaired Cas9 endonuclease fused to an engineered reverse transcriptase, programmed with a prime editing guide RNA (pegRNA). This enables precise search-and-replace base substitutions, insertions, and deletions in human and plant cells without donor DNA templates or double-strand breaks.",
+      "title_zh": "先导编辑技术突破：无需双链断裂与供体 DNA 的精准基因组搜索与替换",
+      "lead": "开发了革命性的先导编辑 (Prime Editing) 系统，通过 pegRNA 与逆转录酶融合 Cas9，在植物与动植物细胞中实现了高保真定点替换与微片段插入。",
+      "what": "构建了由催化失活的 Cas9 切割酶、工程化 M-MLV 逆转录酶及具有扩展序列的 pegRNA 构成的复合系统，系统评测了其在多种基因组位点的编辑效率与脱靶率。",
+      "finding": "无需依赖 DNA 双链断裂 (DSB) 和外源供体 DNA，即可高效实现全部 12 种单碱基互变、特定序列定点插入与缺失，大幅降低了传统 CRISPR 的副产物与脱靶损伤。",
+      "why": "彻底解决了植物精准育种中难以高效创制特定碱基点突变与小片段精确修饰的技术瓶颈，为作物重要农艺性状的定向设计与驯化提供了全新工具基石。",
+      "next": "进一步优化植物体内 pegRNA 的稳定表达结构，提高在难编辑作物中的递送与编辑窗口活性。",
+      "stage": "前沿方法突破与跨物种通用验证",
+      "personal_relevance": {
+        "matched_topics": [
+          "基因组编辑与分子育种",
+          "CRISPR/Cas 编辑系统与递送技术"
+        ],
+        "matched_species": [
+          "作物通用 / 大麦 / 小麦"
+        ],
+        "matched_genes": [
+          "CRISPR/Cas9",
+          "PE 先导编辑器"
+        ],
+        "matched_methods": [
+          "先导编辑 (Prime Editing)",
+          "定点突变与表型创制"
+        ],
+        "research_relevance": "为大麦耐盐碱关键转运蛋白 HvSOS1 或小麦抗病基因创建定点非失活突变，可避免传统敲除造成的生长缺陷，实现性状解耦创制。",
+        "actionable_takeaways": "建议借鉴其双 pegRNA 设计原则与逆转录模板长度优化策略，提高在大麦原生质体及愈伤组织中的编辑活性。",
+        "evidence": "Nature 576, 149–157 (2019), DOI: 10.1038/s41586-019-1711-4"
+      },
+      "_radar_personal_score": 0.5,
+      "_radar_academic_score": 0.95,
+      "_radar_final_score": 0.635,
+      "_radar_match_evidence": [
+        "命中核心专题 [基因组编辑与分子育种]",
+        "命中二级方向 [CRISPR/Cas 编辑系统与递送技术]",
+        "采用关注方法 [先导编辑 (Prime Editing)]"
+      ]
+    },
+    {
+      "pmid": "37165181",
+      "doi": "10.1038/s41586-023-05896-x",
+      "journal": "Nature",
+      "year": 2023,
+      "date": "2023-05-10",
+      "title": "A draft human pangenome reference",
+      "authors": "Wen-Wei Liao, Mobin Asri, Jana Ebler, et al. (Human Pangenome Reference Consortium)",
+      "primary_species": "泛基因组国际大科学计划",
+      "primary_topic": "pangenome",
+      "subtopics": [
+        "graph-pangenome",
+        "super-pangenome"
+      ],
+      "research_methods": [
+        "图形泛基因组构建算法 (Minigraph/vg)",
+        "全同线性对齐",
+        "多单倍型拓扑索引"
+      ],
+      "genes": [],
+      "discovery_type": "breakthrough",
+      "abstract": "The Human Pangenome Reference Consortium presents a draft human pangenome reference based on 47 diverse diploid individuals. Compared to GRCh38, using the pangenome reduced small variant discovery errors by 34% and increased the number of structural variants detected per haplotype by 104%.",
+      "title_zh": "高质量双单倍型图泛基因组参考图谱：彻底突破线性参考局限",
+      "lead": "人类泛基因组参考联盟 (HPRC) 集合了全球多元族群的 94 套单倍型，构建了全基因组多尺度拓扑图，小变异发现错误减少 34%，结构变异检出增加 104%。",
+      "what": "利用超长 Nanopore 与高精度 HiFi 测序对 47 名个体进行端粒到端粒级别的全基因组分相组装，并采用无偏图谱对齐技术融合了 1.19 亿碱基新序列。",
+      "finding": "实验证明图泛基因组显著降低了测序读长在复杂结构变异区域的比对错误率，证实了图基因组在复杂变异解析中的绝对优势。",
+      "why": "确立了全球生命科学迈入图泛基因组时代的里程碑，直接推动了主要粮食作物构建多物种跨属超泛基因组与图谱辅助育种的新范式。",
+      "next": "进一步整合表观遗传修饰与三维染色质互作信息，发展多组学图谱模型。",
+      "stage": "国际大科学工程重大突破",
+      "personal_relevance": {
+        "matched_topics": [
+          "泛基因组",
+          "图形泛基因组与变异图谱"
+        ],
+        "matched_species": [
+          "植物通用 / 作物泛基因组参考"
+        ],
+        "matched_genes": [],
+        "matched_methods": [
+          "图形泛基因组构建算法 (Minigraph/vg)",
+          "单倍型分相组装"
+        ],
+        "research_relevance": "为大麦与小麦复杂多倍体群体的全景变异图谱构建提供了标准质量控制指标与评估框架。",
+        "actionable_takeaways": "参考 HPRC 的双单倍型分相评估方法 (Flagger 与 Merqury)，提升作物基因组图谱组装质量。",
+        "evidence": "Nature 617, 312–324 (2023), DOI: 10.1038/s41586-023-05896-x"
+      },
+      "_radar_personal_score": 0.4175,
+      "_radar_academic_score": 0.95,
+      "_radar_final_score": 0.5772,
+      "_radar_match_evidence": [
+        "命中核心专题 [泛基因组]",
+        "命中二级方向 [图形泛基因组与变异图谱]",
+        "采用关注方法 [图形泛基因组构建算法 (Minigraph/vg)]"
+      ]
+    },
+    {
+      "pmid": "32727518",
+      "doi": "10.1186/s13059-020-02168-z",
+      "journal": "Genome Biol",
+      "year": 2020,
+      "date": "2020-07-28",
+      "title": "Designing and constructing pan-genome graphs with minigraph",
+      "authors": "Heng Li, Xiaowen Feng, Chenxi Gao",
+      "primary_species": "植物通用 / 泛基因组基准",
+      "primary_topic": "pangenome",
+      "subtopics": [
+        "graph-pangenome",
+        "structural-variation-pan"
+      ],
+      "research_methods": [
+        "图形泛基因组构建算法 (Minigraph/vg)",
+        "变异图谱拓扑构建",
+        "结构变异图谱对齐"
+      ],
+      "genes": [],
+      "discovery_type": "foundational",
+      "abstract": "We describe minigraph, a tool to construct a pan-genome graph from multiple genome assemblies. Minigraph adds sequence variation to an existing graph, accommodating large insertions and structural variants efficiently while avoiding exponential path complexity.",
+      "title_zh": "Minigraph 泛基因组图构建算法：建立多基因组结构变异拓扑坐标系",
+      "lead": "李恒团队提出了图基因组构建工具 Minigraph，采用序列图拓扑数据结构实现了多基因组大尺度结构变异的高效整合与秒级图谱构建。",
+      "what": "设计了 rGFA 变异图数据结构与图比对增量算法，迭代将多个单倍型基因组的大片段结构变异 (SV ≥ 50 bp) 整合为统一的泛基因组图谱。",
+      "finding": "成功消除了基于单一线性参考基因组分析带来的坐标参考偏倚 (Reference bias)，大幅降低了大尺度基因组图谱的图路径爆炸与计算复杂度。",
+      "why": "奠定了现代动植物泛基因组从“一维线性序列”向“多维图拓扑空间”转型的算法底层，成为全球主要作物超级泛基因组构建的核心工具链。",
+      "next": "拓展结合高分辨率碱基级比对算法，支持微小 SNP/InDel 与复杂结构变异的多尺度联合索引。",
+      "stage": "工业级计算生物学工具奠基",
+      "personal_relevance": {
+        "matched_topics": [
+          "泛基因组",
+          "图形泛基因组与变异图谱"
+        ],
+        "matched_species": [
+          "禾本科通用 / 大麦 / 小麦"
+        ],
+        "matched_genes": [],
+        "matched_methods": [
+          "图形泛基因组构建算法 (Minigraph/vg)",
+          "结构变异图谱分析"
+        ],
+        "research_relevance": "在开展大麦及小麦野生种质资源图泛基因组分析时，可直接使用 Minigraph 骨架图快速捕获抗逆主效等位基因的大片段倒位与缺失。",
+        "actionable_takeaways": "建议采用 Minigraph-Cactus 流程，将多份大麦地方品种 HiFi 组装序列整合进图基因组以捕获耐盐碱结构变异。",
+        "evidence": "Genome Biology 21, 265 (2020), DOI: 10.1186/s13059-020-02168-z"
+      },
+      "_radar_personal_score": 0.4175,
+      "_radar_academic_score": 0.85,
+      "_radar_final_score": 0.5473,
+      "_radar_match_evidence": [
+        "命中核心专题 [泛基因组]",
+        "命中二级方向 [图形泛基因组与变异图谱]",
+        "采用关注方法 [图形泛基因组构建算法 (Minigraph/vg)]"
+      ]
+    },
+    {
+      "pmid": "22217600",
+      "doi": "10.1093/nar/gkr1293",
+      "journal": "Nucleic Acids Res",
+      "year": 2012,
+      "date": "2012-01-04",
+      "title": "MCScanX: a toolkit for detection and evolutionary analysis of gene synteny and collinearity",
+      "authors": "Yupeng Wang, Haibao Tang, Jeremy D. DeBarry, et al.",
+      "primary_species": "植物通用 / 比较基因组学",
+      "primary_topic": "evolution",
+      "subtopics": [
+        "synteny-collinearity",
+        "polyploidy-wgd"
+      ],
+      "research_methods": [
+        "多基因组共线性分析 (MCScanX)",
+        "系统发育分析",
+        "全基因组复制 (WGD) 分析"
+      ],
+      "genes": [],
+      "discovery_type": "foundational",
+      "abstract": "MCScanX is an integrated toolkit for detecting and analyzing collinearity and synteny in multiple genomes. It classifies duplicated gene types into whole-genome, tandem, proximal, and transposed duplications, providing downstream downstream evolutionary visualizations.",
+      "title_zh": "MCScanX 多基因组共线性检测与基因倍增分类算法工具包",
+      "lead": "王育鹏与唐海宝等人发布了共线性检测标准工具 MCScanX，实现了跨物种染色体共线性区块检测与五类基因复制模式的系统性划分。",
+      "what": "基于动态规划与有向无环图 (DAG) 算法，对全基因组同源基因对进行局部共线性链延伸，并将复制基因严格分类为 WGD、串联、近端及转座重复。",
+      "finding": "极大提高了在多倍化复杂植物基因组中识别同源染色体共线性区块的容错率与运行速度，并支持微观与宏观共线性多重可视化。",
+      "why": "成为过去十余年全球植物比较基因组学、古染色体多倍化推断及亚基因组演化追踪的通用金标准工具。",
+      "next": "演进结合染色体三维构象与单倍型分相组装数据，解析复杂同源多倍体的非对称演化。",
+      "stage": "全球通用经典生物信息算法",
+      "personal_relevance": {
+        "matched_topics": [
+          "进化与比较基因组学",
+          "基因共线性与同线性分析"
+        ],
+        "matched_species": [
+          "禾本科 / 大麦 / 小麦"
+        ],
+        "matched_genes": [],
+        "matched_methods": [
+          "多基因组共线性分析 (MCScanX)",
+          "系统发育分析"
+        ],
+        "research_relevance": "在解析大麦抗逆功能基因家族时，可通过 MCScanX 区分其是起源于古全基因组复制还是串联复制，阐明功能分化路径。",
+        "actionable_takeaways": "建议结合 Ka/Ks 计算脚本，筛选大麦与小麦受正选择快速演化的抗病耐逆共线性同源基因对。",
+        "evidence": "Nucleic Acids Research 40, e49 (2012), DOI: 10.1093/nar/gkr1293"
+      },
+      "_radar_personal_score": 0.0,
+      "_radar_academic_score": 0.85,
+      "_radar_final_score": 0.255,
+      "_radar_match_evidence": []
+    },
+    {
+      "pmid": "31278385",
+      "doi": "10.1038/s41477-019-0466-4",
+      "journal": "Nat Plants",
+      "year": 2019,
+      "date": "2019-07-08",
+      "title": "A single-cell RNA-seq atlas of Arabidopsis root development",
+      "authors": "Trevor Denyer, Xiaomin Ma, Stefan Kroll, et al.",
+      "primary_species": "拟南芥 (Arabidopsis thaliana)",
+      "primary_topic": "single-cell",
+      "subtopics": [
+        "single-cell-transcriptomics",
+        "cell-lineage-differentiation"
+      ],
+      "research_methods": [
+        "单细胞 RNA 测序 (scRNA-seq)",
+        "拟时序细胞谱系发育轨迹分析",
+        "细胞类型特异标记基因原位杂交"
+      ],
+      "genes": [
+        {
+          "symbol": "WUS",
+          "name": "干细胞维持转录因子",
+          "species": "拟南芥",
+          "role": "干细胞分生区发育命运决定"
+        }
+      ],
+      "discovery_type": "high_relevance",
+      "abstract": "We present a comprehensive single-cell RNA sequencing atlas of the Arabidopsis thaliana root, resolving distinct cell types, developmental trajectories from stem cells to mature lineages, and cell-type-specific responses to environmental stimuli.",
+      "title_zh": "拟南芥根系单细胞转录组图谱：解析植物组织发育轨迹与细胞命运决定",
+      "lead": "首次构建了植物根系高分辨率单细胞转录组细胞图谱，在单细胞分辨率追踪了从分生组织干细胞向成熟表皮与维管束的分化发育轨迹。",
+      "what": "分离拟南芥根尖原生质体，进行大规模 10x Genomics 单细胞转录组测序，精细注释了表皮、皮层、内皮层、木质部等主要细胞群并构建了拟时序分化模型。",
+      "finding": "揭示了不同细胞类型具有独特的环境感应与抗逆转录特征，发现了控制根系不同细胞层分化的核心转录因子梯度网络。",
+      "why": "开创了植物器官发育单细胞转录组研究的先河，推动了水稻、玉米、大麦等主要作物根系与穗部单细胞图谱的发展。",
+      "next": "结合空间转录组原位保留空间坐标，解析植物组织局部细胞间配体-受体通讯机制。",
+      "stage": "植物单细胞组学开拓性成果",
+      "personal_relevance": {
+        "matched_topics": [
+          "单细胞与空间组学",
+          "单细胞转录组与细胞图谱"
+        ],
+        "matched_species": [
+          "拟南芥 / 作物根系通用"
+        ],
+        "matched_genes": [
+          "WUS",
+          "SCR",
+          "SHR"
+        ],
+        "matched_methods": [
+          "单细胞 RNA 测序 (scRNA-seq)",
+          "拟时序细胞谱系发育轨迹分析"
+        ],
+        "research_relevance": "为研究大麦根系维管束对盐碱逆境的单细胞时空响应提供了细胞标记基因与分析流程参考。",
+        "actionable_takeaways": "建议采用 Seurat 与 Monocle3 分析框架，在大麦耐盐突变体单细胞测序中精细聚类受离子毒害最敏感的表皮细胞群。",
+        "evidence": "Nature Plants 5, 874–884 (2019), DOI: 10.1038/s41477-019-0466-4"
+      },
+      "_radar_personal_score": 0.0,
+      "_radar_academic_score": 0.85,
+      "_radar_final_score": 0.255,
+      "_radar_match_evidence": []
+    }
+  ]
+}

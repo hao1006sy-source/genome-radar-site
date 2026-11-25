@@ -3,6 +3,7 @@
 
   var labels = [
     ['home', '首页', 'index.html'],
+    ['radar', '我的科研雷达', 'my-radar.html'],
     ['topics', '研究专题', 'topics.html'],
     ['search', '文献搜索', 'search.html'],
     ['library', '我的文献库', 'library.html'],
@@ -51,6 +52,8 @@
 
   function pageKey() {
     var path = location.pathname;
+    if (/\/my-radar\.html$/.test(path)) return 'radar';
+    if (/\/topics\.html$|\/topic\.html$/.test(path)) return 'topics';
     if (/\/search\.html$/.test(path)) return 'search';
     if (/\/library\.html$/.test(path)) return 'library';
     if (/\/deep-library\.html$|\/deep-read\.html$/.test(path)) return 'deep';
