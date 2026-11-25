@@ -92,7 +92,7 @@
       ],
       "research_methods": [
         "单倍型分相组装",
-        "系统发育与分子钟定年分析"
+        "系统发育分析"
       ],
       "research_objects": [
         "长穗偃麦草 (Thinopyrum ponticum)",
@@ -119,10 +119,10 @@
           "evidence_excerpt": "=10x=70）为材料，采用长读长测序与迭代重组装策略，克服单倍型部分塌缩，生成41.33 Gb同源亚基因组分辨的十倍体组装；结合比较基因组、系统发育与k-mer分析解析其二倍体祖先来源。 全基因组重组证据辅以配子体基因组与多项细胞学分析，揭示广泛同源交换，符合节段异源多倍体组织；注释获577,421个高置信基因，为小麦族已报道最大基因集，含分布于5条染色体的22拷贝Fhb7串联基因簇；348份小麦-长穗偃麦草渐渗系目录记录长期育种捕获的有益等位变异，定位蓝色糊粉层候选调控因子，并确认扩展的Fhb7基因簇为可转移的赤霉病抗性资源。 十倍体与41.33 Gb规模下的同源亚基因组分辨组装，改变了多倍体组装只能得到塌缩共祖序列的判断；做小麦族渐渗育种与多倍体同源交换分析的人，可直接取用该组装与348份渐渗系目录。 还缺一场在更多十倍体材料上验证同源交换模式是否普遍、以及Fhb7扩展基因簇转入小麦后抗性是否稳定表达的实验。 组装 + 348份渐渗系面板"
         },
         {
-          "method": "系统发育与分子钟定年分析",
-          "evidence_status": "confirmed",
-          "evidence_source": "title/summary/abstract",
-          "evidence_excerpt": "33 Gb同源亚基因组分辨的十倍体组装；结合比较基因组、系统发育与k-mer分析解析其二倍体祖先来源。"
+          "method": "系统发育分析",
+          "source": "title/abstract",
+          "status": "verified",
+          "evidence_excerpt": "组装40 Gb十倍体长穗偃麦草同源亚基因组"
         }
       ]
     },
@@ -1485,7 +1485,7 @@
         "transcriptome-expression-atlas"
       ],
       "research_methods": [
-        "系统发育与分子钟定年分析"
+        "系统发育分析"
       ],
       "research_objects": [
         "绿色植物 (Viridiplantae)"
@@ -1503,10 +1503,10 @@
       "validation_species": [],
       "research_methods_evidence": [
         {
-          "method": "系统发育与分子钟定年分析",
-          "evidence_status": "confirmed",
-          "evidence_source": "title/summary/abstract",
-          "evidence_excerpt": "谱系特异家族响应窄而强，呈现胁迫基因部署的分工；响应保守性随系统发育距离衰减，但在超过7亿年分歧中仍可检出，上调基因比下调基因分"
+          "method": "系统发育分析",
+          "source": "title/abstract",
+          "status": "verified",
+          "evidence_excerpt": "构建36种绿色植物应激转录组图谱"
         }
       ]
     },
@@ -2982,7 +2982,7 @@
         "gene-function-validation"
       ],
       "research_methods": [
-        "系统发育与分子钟定年分析"
+        "系统发育分析"
       ],
       "research_objects": [
         "小麦 (Triticum aestivum)"
@@ -3000,10 +3000,10 @@
       "validation_species": [],
       "research_methods_evidence": [
         {
-          "method": "系统发育与分子钟定年分析",
-          "evidence_status": "confirmed",
-          "evidence_source": "title/summary/abstract",
-          "evidence_excerpt": "比较基因组学 + 系统发育与SNP等位匹配"
+          "method": "系统发育分析",
+          "source": "title/abstract",
+          "status": "verified",
+          "evidence_excerpt": "确认St基因组经两次杂交贡献小麦BB基因组"
         }
       ]
     },
@@ -4214,7 +4214,7 @@
       ],
       "research_methods": [
         "Hi-C 三维基因组构象捕获",
-        "系统发育与分子钟定年分析"
+        "系统发育分析"
       ],
       "research_objects": [
         "葡萄 (Vitis vinifera)"
@@ -4238,10 +4238,10 @@
           "evidence_excerpt": "核型演化，鉴定主要染色体 rearrangement；整合泛三维基因组分析结构变异对 A/B 区室与拓扑关联域的影响；在葡萄属中追"
         },
         {
-          "method": "系统发育与分子钟定年分析",
-          "evidence_status": "confirmed",
-          "evidence_source": "title/summary/abstract",
-          "evidence_excerpt": "抗性。 以葡萄科为对象，生成染色体级基因组组装并开展全基因组系统发育基因组分析，重建科内系统发育关系；比较核型演化，鉴定主要染色"
+          "method": "系统发育分析",
+          "source": "title/abstract",
+          "status": "verified",
+          "evidence_excerpt": "构建葡萄科染色体级基因组解析其演化"
         }
       ]
     },
@@ -4479,7 +4479,7 @@
         "phylogenomics"
       ],
       "research_methods": [
-        "系统发育与分子钟定年分析"
+        "系统发育分析"
       ],
       "research_objects": [
         "绿色植物 (Viridiplantae)"
@@ -4497,10 +4497,10 @@
       "validation_species": [],
       "research_methods_evidence": [
         {
-          "method": "系统发育与分子钟定年分析",
-          "evidence_status": "confirmed",
-          "evidence_source": "title/summary/abstract",
-          "evidence_excerpt": "以十条规则甄别植物深系统发育中的水平基因转移。"
+          "method": "系统发育分析",
+          "source": "title/abstract",
+          "status": "verified",
+          "evidence_excerpt": "以十条规则甄别植物深系统发育中的水平基因转移"
         }
       ]
     },
@@ -7318,7 +7318,7 @@
         "phylogenomics"
       ],
       "research_methods": [
-        "系统发育与分子钟定年分析"
+        "系统发育分析"
       ],
       "research_objects": [
         "石松类植物 (Lycophytes)"
@@ -7336,10 +7336,10 @@
       "validation_species": [],
       "research_methods_evidence": [
         {
-          "method": "系统发育与分子钟定年分析",
-          "evidence_status": "confirmed",
-          "evidence_source": "title/summary/abstract",
-          "evidence_excerpt": "aitchisonii 染色体级参考基因组，对 49 个居群 191 个个体全基因组重测序，整合群体基因组、系统发育基因组、形态与生态分析。"
+          "method": "系统发育分析",
+          "source": "title/abstract",
+          "status": "verified",
+          "evidence_excerpt": "异孢石松类异域成种并跨越古气候波动存续"
         }
       ]
     },
@@ -8538,8 +8538,8 @@
         "domestication-adaptation"
       ],
       "research_methods": [
-        "系统发育与分子钟定年分析",
-        "全基因组加倍 (WGD) 分析"
+        "全基因组加倍 (WGD) 分析",
+        "系统发育分析"
       ],
       "research_objects": [
         "川蔓藻 (Ruppia maritima)"
@@ -8557,16 +8557,16 @@
       "validation_species": [],
       "research_methods_evidence": [
         {
-          "method": "系统发育与分子钟定年分析",
-          "evidence_status": "confirmed",
-          "evidence_source": "title/summary/abstract",
-          "evidence_excerpt": "以川蔓藻为对象，组装染色体水平基因组，开展比较系统发育基因组学分析，结合盐度耐受生理实验，并对19个沿海与内陆种群共103个个体的全基因组重测序数据进行分析。"
-        },
-        {
           "method": "全基因组加倍 (WGD) 分析",
           "evidence_status": "confirmed",
           "evidence_source": "title/summary/abstract",
           "evidence_excerpt": "川蔓藻属核心海草PRC分支，具川蔓藻科特异的全基因组复制，却丧失对全强度海水的耐受，为专性咸水种。"
+        },
+        {
+          "method": "系统发育分析",
+          "source": "title/abstract",
+          "status": "verified",
+          "evidence_excerpt": "解析川蔓藻由海生向咸水特化的演化史"
         }
       ]
     },
@@ -8603,8 +8603,8 @@
         "domestication-adaptation"
       ],
       "research_methods": [
-        "系统发育与分子钟定年分析",
-        "杂交渐渗与网状演化分析"
+        "杂交渐渗与网状演化分析",
+        "系统发育分析"
       ],
       "research_objects": [
         "石山苣苔属 (Petrocodon spp.)"
@@ -8622,16 +8622,16 @@
       "validation_species": [],
       "research_methods_evidence": [
         {
-          "method": "系统发育与分子钟定年分析",
-          "evidence_status": "confirmed",
-          "evidence_source": "title/summary/abstract",
-          "evidence_excerpt": "全基因组测序 + 54 个物种系统发育与生物地理分析"
-        },
-        {
           "method": "杂交渐渗与网状演化分析",
           "evidence_status": "confirmed",
           "evidence_source": "title/summary/abstract",
           "evidence_excerpt": "小隔离种群中的遗传漂变可能驱动形态演化，稳定化选择不能排除，网状演化可能贡献表型创新。 把石山苣苔属的物种积累归因于空间机会而非"
+        },
+        {
+          "method": "系统发育分析",
+          "source": "title/abstract",
+          "status": "verified",
+          "evidence_excerpt": "喀斯特生境岛屿驱动石山苣苔属非适应性辐射"
         }
       ]
     },
@@ -9568,8 +9568,8 @@
       ],
       "research_methods": [
         "共线性与同线性分析",
-        "系统发育与分子钟定年分析",
-        "杂交渐渗与网状演化分析"
+        "杂交渐渗与网状演化分析",
+        "系统发育分析"
       ],
       "research_objects": [
         "大麦 (Hordeum spp.)"
@@ -9593,16 +9593,16 @@
           "evidence_excerpt": "化。 比较分析揭示广泛结构变异，包括倒位与染色体重排破坏近端共线性；单拷贝基因系统发育鉴定古老杂交、片段交换与渐渗，表明大麦属"
         },
         {
-          "method": "系统发育与分子钟定年分析",
-          "evidence_status": "confirmed",
-          "evidence_source": "title/summary/abstract",
-          "evidence_excerpt": "为材料，构建染色体级比较基因组资源，通过比较分析、单拷贝基因系统发育、全基因组比对与转座子分析，解析结构变异、网状演化、水平基因"
-        },
-        {
           "method": "杂交渐渗与网状演化分析",
           "evidence_status": "confirmed",
           "evidence_source": "title/summary/abstract",
           "evidence_excerpt": "单拷贝基因系统发育、全基因组比对与转座子分析，解析结构变异、网状演化、水平基因转移及调控序列演化。 比较分析揭示广泛结构变异，包"
+        },
+        {
+          "method": "系统发育分析",
+          "source": "title/abstract",
+          "status": "verified",
+          "evidence_excerpt": "构建二倍体与多倍体大麦属比较基因组图谱"
         }
       ]
     },
@@ -9644,9 +9644,9 @@
         "long-read-sequencing"
       ],
       "research_methods": [
-        "系统发育与分子钟定年分析",
         "16S/ITS 微生物组扩增子测序",
-        "转基因过表达/突变体功能验证"
+        "转基因过表达/突变体功能验证",
+        "系统发育分析"
       ],
       "research_objects": [
         "大麦 (Hordeum spp.)",
@@ -9667,12 +9667,6 @@
       "validation_species": [],
       "research_methods_evidence": [
         {
-          "method": "系统发育与分子钟定年分析",
-          "evidence_status": "confirmed",
-          "evidence_source": "title/summary/abstract",
-          "evidence_excerpt": "m）为材料，完成染色体级基因组组装并拆分A、B亚基因组，结合系统发育基因组学、基因家族比较、转录组与结构变异分析，解析两个亚基因"
-        },
-        {
           "method": "16S/ITS 微生物组扩增子测序",
           "evidence_status": "confirmed",
           "evidence_source": "title/summary/abstract",
@@ -9683,6 +9677,12 @@
           "evidence_status": "confirmed",
           "evidence_source": "title/summary/abstract",
           "evidence_excerpt": "叶和根中均强诱导，其同源拷贝调控区存在亚基因组特异插入，异源过表达于水稻提供其参与耐盐碱的初步证据。 把四倍体野生大麦的亚基因"
+        },
+        {
+          "method": "系统发育分析",
+          "source": "title/abstract",
+          "status": "verified",
+          "evidence_excerpt": "发布四倍体短芒大麦染色体级基因组并解析其盐碱适应"
         }
       ]
     },
@@ -9850,7 +9850,9 @@
         "polyploidy-wgd"
       ],
       "research_methods": [
-        "未报告具体实验/计算方法"
+        "基因组组装",
+        "性别连锁区定位",
+        "表达分析"
       ],
       "research_objects": [
         "柳树 (Salix spp.)"
@@ -9868,10 +9870,22 @@
       "validation_species": [],
       "research_methods_evidence": [
         {
-          "method": "未报告具体实验/计算方法",
-          "evidence_status": "unreported",
-          "evidence_source": "title/summary/abstract",
-          "evidence_excerpt": "当前标题与摘要未明确列出具体实验或计算方法名称"
+          "method": "基因组组装",
+          "source": "abstract/summary",
+          "status": "verified",
+          "evidence_excerpt": "组装异源四倍体柳树雌雄单倍型基因组"
+        },
+        {
+          "method": "性别连锁区定位",
+          "source": "abstract/summary",
+          "status": "verified",
+          "evidence_excerpt": "鉴定并定位 ZW 性别连锁区域 (SDR)"
+        },
+        {
+          "method": "表达分析",
+          "source": "abstract/summary",
+          "status": "verified",
+          "evidence_excerpt": "比较性别连锁基因及候选调控因子的组织表达模式"
         }
       ]
     },

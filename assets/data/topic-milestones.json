@@ -493,7 +493,7 @@
       "phylogenomics"
     ],
     "year": 2012,
-    "date": "2008-04-25",
+    "date": "2012-01-04",
     "title_zh": "MCScanX 多基因组共线性与基因复制分类算法发表",
     "title_en": "MCScanX: a toolkit for detection and evolutionary analysis of gene synteny and collinearity",
     "milestone_type": "算法突破",
@@ -504,7 +504,7 @@
     "future_impact": "支撑了后续十余年数千种植物参考基因组的系统发育分析、禾本科与豆科祖先染色体重建研究。",
     "predecessors": "CollinearScan (Bioinformatics 2006)",
     "successors": "MCScan (Python jcvi 框架)、SynMap 平台",
-    "paper_title": "Synteny and collinearity in plant genomes",
+    "paper_title": "MCScanX: a toolkit for detection and evolutionary analysis of gene synteny and collinearity",
     "authors": "Yupeng Wang, Haibao Tang, Jeremy D. DeBarry, Xu Tan, Jingping Li, Xiyin Wang, Tae-ho Lee, Huizhe Jin, Barry Marler, Hui Guo, Jessica C. Kissinger, Andrew H. Paterson",
     "journal": "Nucleic Acids Research",
     "doi": "10.1093/nar/gkr1293",

@@ -23,23 +23,17 @@
 | `functional-genomics` | 植物功能基因组学 | 61 |
 | `genome-editing-breeding` | 基因组编辑与分子育种 | 22 |
 
-## 3. 里程碑关键修复核查
-- **MCScanX**：年份 `2012`，日期 `2008-04-25`，DOI `10.1093/nar/gkr1293`
-- **HPRC**：significance 为「从理论与算法底层确立了现代生物学从“一维线性坐标系”向“多维图拓扑坐标系”升级的计算基石。」
-- **MS-EDT-2019-PE-ORIGIN**：`review_status=verified`，已补充 `url` 与 `evidence`
+## 3. 里程碑关键修复核查（基于稳定事件 ID 精确定位）
+- **MCScanX (`MS-EVO-2008-MCSCAN`)**：年份 `2012`，在线发表日期 `2012-01-04`，正式出版日期 `2012-04-01`，DOI `10.1093/nar/gkr1293`，标题 `MCScanX: a toolkit for detection and evolutionary analysis of gene synteny and collinearity`
+- **HPRC (`MS-PAN-2023-HPRC`)**：significance 为「相比基于 GRCh38 的分析工作流，小变异发现错误减少 34%，每个单倍型检出的结构变异数量增加 104%。」
+- **PE 2019 (`MS-EDT-2019-PE-ORIGIN`)**：`review_status=verified`，已补充 `url` 与 `evidence`
 
-## 4. 独立回归与验证测试结果
-- **40 篇固定回归测试（`test_independent_40.py`）**：
-  - 物种识别：40/40 (100.0%)
-  - 一级专题：40/40 (100.0%)
-  - 二级专题：40/40 (100.0%)
-  - 研究方法：40/40 (100.0%)
-  - 贡献类型：40/40 (100.0%)
-- **20 篇新独立验证测试（`test_new_20_independent.py`）**：
-  - 物种识别：20/20 (100.0%)
-  - 一级专题：20/20 (100.0%)
-  - 二级专题：20/20 (100.0%)
-  - 研究方法：20/20 (100.0%)
+## 4. 固定回归测试集与流水线集成结果
+- **60 篇固定回归测试集（`test_regression_60.py`，合并原 40 篇与 20 篇基准样本，用于验证分类规则回归稳定性）**：
+  - 物种识别：60/60 (100.0%)
+  - 一级专题：60/60 (100.0%)
+  - 二级专题：60/60 (100.0%)
+  - 研究方法：60/60 (100.0%)
 - **浏览器 E2E 回归测试（`test_topics_e2e_v2_2.py`）**：
   - 9 大专题门户、详情页、收敛性核查、代表性文献像素级直达跳转 100% 通过
 - **流水线集成**：`genome-radar-pipeline/radar/search.py` 已接入 `semantic_classify_article` 自动分类。
