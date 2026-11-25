@@ -92,13 +92,19 @@
     renderCostStats();      // Module 12
   }
 
-  function updateStatusBadge() {
+  function updateStatusBadge(customMsg) {
     var badge = $('radar-status-badge');
     if (!badge) return;
+    if (customMsg) {
+      badge.innerHTML = '<span class="radar-status-dot dirty"></span> ' + escapeHtml(customMsg);
+      return;
+    }
     if (state.isDirty) {
-      badge.innerHTML = '<span class="radar-status-dot dirty"></span> 本地修改待同步至生成端 (' + escapeHtml(state.profile.profile_version || 'v3.0.0') + ')';
+      badge.innerHTML = '<span class="radar-status-dot dirty"></span> 本地修改草稿待同步 (' + escapeHtml(state.profile.profile_version || 'v3.1.0') + ')';
+    } else if (state.profile.sync_status && state.profile.sync_status.status === 'synced') {
+      badge.innerHTML = '<span class="radar-status-dot"></span> 已同步至流水线生产配置 (' + escapeHtml(state.profile.profile_version || 'v3.1.0') + ')';
     } else {
-      badge.innerHTML = '<span class="radar-status-dot"></span> 已同步至生成端流水线 (' + escapeHtml(state.profile.profile_version || 'v3.0.0') + ')';
+      badge.innerHTML = '<span class="radar-status-dot" style="background:#717873;"></span> 未同步 (使用本地配置: ' + escapeHtml(state.profile.profile_version || 'v3.1.0') + ')';
     }
   }
 
@@ -352,6 +358,39 @@
     $('chk-type-cross').checked = types.includes('cross_species_heuristic');
   }
 
+  function calcAcademicQualityScore(art) {
+    var j = (art.journal || '').toLowerCase();
+    var score = 0.60;
+    var cnsTop = ['nature', 'science', 'cell', 'nat genet', 'nat plants', 'nat biotechnol', 'nat commun', 'sci adv'];
+    var casQ1 = ['plant cell', 'mol plant', 'genome biol', 'nucleic acids res', 'pnas', 'new phytol', 'trends plant sci', 'genome res'];
+    var casQ2 = ['plant biotechnol j', 'plant j', 'j exp bot', 'plant physiol', 'theor appl genet', 'front plant sci', 'bmc plant biol', 'crop j', 'hortic res'];
+    var casQ3 = ['plos one', 'sci rep', 'plants', 'agronomy', 'int j mol sci', 'genes'];
+
+    if (cnsTop.some(function(top){ return j.includes(top); })) {
+      score = 0.94;
+    } else if (casQ1.some(function(q1){ return j.includes(q1); })) {
+      score = 0.88;
+    } else if (casQ2.some(function(q2){ return j.includes(q2); })) {
+      score = 0.80;
+    } else if (casQ3.some(function(q3){ return j.includes(q3); })) {
+      score = 0.70;
+    } else if (j) {
+      score = 0.64;
+    }
+
+    if (art.impact_factor) {
+      try {
+        var ifVal = parseFloat(art.impact_factor);
+        if (!isNaN(ifVal)) score += Math.min(Math.max(ifVal, 0), 35.0) / 350.0;
+      } catch(e){}
+    }
+
+    if (art.is_cover_highlight || art.cover_featured) score += 0.05;
+    if (art.fulltext_available || art.pmcid || art.open_access) score += 0.05;
+
+    return Math.min(1.0, Math.max(0.50, Number(score.toFixed(4))));
+  }
+
   // Module 8: Instant Matching Engine (Core Algorithm)
   function executeInstantMatching() {
     var articles = state.articles || [];
@@ -449,16 +488,15 @@
         }
       });
 
-      // Weighted personal score
-      var pScore = (topicScore * weights.topic) +
+      // Weighted personal score with dynamic normalization
+      var totalW = weights.topic + weights.species + weights.gene + weights.method || 1.0;
+      var pScore = ((topicScore * weights.topic) +
                    (speciesScore * weights.species) +
                    (geneScore * weights.gene) +
-                   (methodScore * weights.method);
+                   (methodScore * weights.method)) / totalW;
 
-      // Academic quality default score
-      var acadScore = 0.85; // baseline quality from six-dimension review
-      if (art.is_cover_highlight) acadScore += 0.10;
-      if ((art.journal || '').includes('Nature') || (art.journal || '').includes('Science') || (art.journal || '').includes('Cell')) acadScore += 0.05;
+      // Data-driven academic quality score (0.50 ~ 1.00)
+      var acadScore = calcAcademicQualityScore(art);
 
       var finalScore = (pScore * strat.personal_relevance_weight) + (acadScore * strat.academic_quality_weight);
 
@@ -568,50 +606,75 @@
   }
 
   // Module 10: Supplement Archive
-  function renderSupplements() {
+  async function renderSupplements() {
     var container = $('supplements-list');
     if (!container) return;
 
-    var supplements = [
-      {
-        id: 'SUP-2026-11-22',
-        title: '我的科研雷达 · 个人科研专刊 · 2026年第47周',
-        date: '2026-11-22',
-        count: 5,
-        theme: '大麦耐盐碱与CRISPR/Cas定向编辑前沿回溯',
-        link: 'supplements/2026-11-22/index.html'
-      }
-    ];
+    try {
+      var res = await fetch('assets/data/supplement-index.json');
+      if (!res.ok) throw new Error('not found');
+      var data = await res.json();
+      var supplements = data.supplements || [];
+      if (!supplements.length) throw new Error('empty');
 
-    var html = supplements.map(function (sup) {
-      return [
-        '<div class="overview-card" style="display:flex;justify-content:space-between;align-items:center;">',
-        '  <div>',
-        '    <a href="' + sup.link + '" target="_blank" style="font-weight:700;font-size:16px;color:#173e2d;text-decoration:none;">' + escapeHtml(sup.title) + '</a>',
-        '    <div style="font-size:13px;color:#717873;margin-top:3px;">主题观察: ' + escapeHtml(sup.theme) + ' · 收录 ' + sup.count + ' 篇经核验历史奠基论文</div>',
-        '  </div>',
-        '  <a href="' + sup.link + '" target="_blank" class="btn-radar btn-primary" style="padding:6px 14px;font-size:13px;">进入专刊阅读 →</a>',
-        '</div>'
-      ].join('\n');
-    }).join('\n');
+      var html = supplements.map(function (sup) {
+        var count = sup.article_count || (sup.articles ? sup.articles.length : 0);
+        return [
+          '<div class="overview-card" style="display:flex;justify-content:space-between;align-items:center;">',
+          '  <div>',
+          '    <a href="' + escapeHtml(sup.url) + '" target="_blank" style="font-weight:700;font-size:16px;color:#173e2d;text-decoration:none;">' + escapeHtml(sup.title) + '</a>',
+          '    <div style="font-size:13px;color:#717873;margin-top:3px;">收录 ' + count + ' 篇经核验历史奠基论文 · 专属定制人: ' + escapeHtml(sup.profile_identity || '科研人员') + ' · 依据画像: ' + escapeHtml(sup.profile_version || 'v3.1.0') + '</div>',
+          '  </div>',
+          '  <a href="' + escapeHtml(sup.url) + '" target="_blank" class="btn-radar btn-primary" style="padding:6px 14px;font-size:13px;">进入专刊阅读 →</a>',
+          '</div>'
+        ].join('\n');
+      }).join('\n');
 
-    container.innerHTML = html;
+      container.innerHTML = html;
+    } catch (e) {
+      container.innerHTML = '<div style="padding:24px;text-align:center;color:#717873;background:#fff;border-radius:8px;border:1px dashed #d0d7de;">暂无个人科研专刊归档。点击上方【发现高相关历史文献并生成专刊】即可生成首期专刊。</div>';
+    }
   }
 
   // Module 11: Sync Status
   function renderSyncStatus() {
-    $('sync-version-label').textContent = state.profile.profile_version || 'v3.0.0';
-    $('sync-time-label').textContent = state.profile.updated_at || new Date().toISOString();
-    $('sync-status-state').textContent = state.isDirty ? '本地有未同步的修改草稿' : '已与生成端完成双向同步';
+    $('sync-version-label').textContent = state.profile.profile_version || 'v3.1.0-clean';
+    $('sync-time-label').textContent = state.profile.updated_at || '未同步';
+    if (state.isDirty) {
+      $('sync-status-state').textContent = '本地有未同步的修改草稿';
+      $('sync-status-state').style.color = '#e67e22';
+    } else if (state.profile.sync_status && state.profile.sync_status.status === 'synced') {
+      $('sync-status-state').textContent = '已与流水线生产配置完成双向同步';
+      $('sync-status-state').style.color = '#27ae60';
+    } else {
+      $('sync-status-state').textContent = '未同步 (使用本地配置)';
+      $('sync-status-state').style.color = '#717873';
+    }
   }
 
   // Module 12: Cost Stats
-  function renderCostStats() {
-    // Standard DeepSeek cost stats
-    $('stat-run-tokens').textContent = '12,480';
-    $('stat-run-cost').textContent = '$0.024 (约 ¥0.17)';
-    $('stat-cache-hit').textContent = '84.2%';
-    $('stat-budget-cap').textContent = '$0.25 / 周';
+  async function renderCostStats() {
+    try {
+      var res = await fetch('assets/data/radar-cost-summary.json');
+      if (!res.ok) throw new Error('not found');
+      var summary = await res.json();
+      if (!summary || summary.total_runs === 0) {
+        $('stat-run-tokens').textContent = '0 Token';
+        $('stat-run-cost').textContent = '暂无运行记录';
+        $('stat-cache-hit').textContent = '--';
+        $('stat-budget-cap').textContent = '$0.25 / 周';
+      } else {
+        $('stat-run-tokens').textContent = Number(summary.total_tokens || 0).toLocaleString();
+        $('stat-run-cost').textContent = '$' + (summary.total_cost_usd || 0).toFixed(4) + ' (约 ¥' + (summary.total_cost_cny || 0).toFixed(2) + ')';
+        $('stat-cache-hit').textContent = '已启用';
+        $('stat-budget-cap').textContent = '$0.25 / 周';
+      }
+    } catch (e) {
+      $('stat-run-tokens').textContent = '0 Token';
+      $('stat-run-cost').textContent = '暂无运行记录';
+      $('stat-cache-hit').textContent = '--';
+      $('stat-budget-cap').textContent = '$0.25 / 周';
+    }
   }
 
   // Event handlers & API Actions
@@ -748,12 +811,22 @@
       fb[articleId][type] = !fb[articleId][type];
       localStorage.setItem(FEEDBACK_KEY, JSON.stringify(fb));
 
-      if (type === 'starred' && window.GenomeLibrary) {
+      if (window.GenomeLibrary) {
         var art = (state.articles || []).find(function(a){return a.id === articleId;});
         if (art) {
           try {
-            window.GenomeLibrary.toggleStar(art);
-          } catch(e){}
+            if (type === 'starred') {
+              window.GenomeLibrary.update(art, function(rec) {
+                rec.starred = !rec.starred;
+              });
+            } else if (type === 'read') {
+              window.GenomeLibrary.update(art, function(rec) {
+                rec.status = (rec.status === 'read' ? 'unread' : 'read');
+              });
+            }
+          } catch(e) {
+            console.warn('GenomeLibrary.update 出错:', e);
+          }
         }
       }
 
@@ -765,20 +838,121 @@
       btn.textContent = '正在同步...';
       btn.disabled = true;
 
-      // Simulate remote sync & persistence
+      // 更新本地时间与版本
       state.profile.updated_at = new Date().toISOString();
-      state.profile.profile_version = 'v3.0.' + Math.floor(Date.now() / 1000).toString().slice(-4);
+      state.profile.profile_version = 'v3.1.' + Math.floor(Date.now() / 1000).toString().slice(-4);
       localStorage.setItem(PROFILE_KEY, JSON.stringify(state.profile));
-      state.isDirty = false;
 
-      setTimeout(function () {
+      var githubToken = localStorage.getItem('gr_sync_github_token');
+      var localEndpoint = localStorage.getItem('gr_sync_endpoint') || 'http://127.0.0.1:8765/api/profile';
+
+      var synced = false;
+      var errMsg = '';
+
+      // 1. 尝试本地流水线同步服务
+      try {
+        var localResp = await fetch(localEndpoint, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(state.profile)
+        });
+        if (localResp.ok) {
+          var remoteData = await localResp.json();
+          synced = true;
+          state.isDirty = false;
+          if (remoteData.profile) state.profile = remoteData.profile;
+        }
+      } catch (localErr) {
+        // 本地服务未启动，尝试 GitHub 保护接口
+      }
+
+      // 2. 尝试 GitHub REST API
+      if (!synced && githubToken) {
+        try {
+          var repoUrl = 'https://api.github.com/repos/hao1006sy-source/genome-radar-pipeline/contents/data/research-profile.json';
+          var getResp = await fetch(repoUrl, {
+            headers: {
+              'Authorization': 'Bearer ' + githubToken,
+              'Accept': 'application/vnd.github.v3+json'
+            }
+          });
+          var sha = '';
+          if (getResp.ok) {
+            var getJson = await getResp.json();
+            sha = getJson.sha;
+          }
+
+          var putBody = {
+            message: 'chore(radar): update user research profile via web UI (' + state.profile.profile_version + ')',
+            content: btoa(unescape(encodeURIComponent(JSON.stringify(state.profile, null, 2)))),
+            sha: sha || undefined
+          };
+
+          var putResp = await fetch(repoUrl, {
+            method: 'PUT',
+            headers: {
+              'Authorization': 'Bearer ' + githubToken,
+              'Content-Type': 'application/json',
+              'Accept': 'application/vnd.github.v3+json'
+            },
+            body: JSON.stringify(putBody)
+          });
+
+          if (!putResp.ok) {
+            var errJson = await putResp.json();
+            throw new Error(errJson.message || 'GitHub API 同步失败 (' + putResp.status + ')');
+          }
+
+          // 回读核验一致性
+          var verifyResp = await fetch(repoUrl, {
+            headers: {
+              'Authorization': 'Bearer ' + githubToken,
+              'Accept': 'application/vnd.github.v3+json'
+            }
+          });
+          if (verifyResp.ok) {
+            var verifyJson = await verifyResp.json();
+            var decoded = decodeURIComponent(escape(atob(verifyJson.content.replace(/\s/g, ''))));
+            var parsed = JSON.parse(decoded);
+            if (parsed.profile_version === state.profile.profile_version) {
+              synced = true;
+              state.isDirty = false;
+            } else {
+              throw new Error('回读版本指纹不一致');
+            }
+          }
+        } catch (ghErr) {
+          errMsg = ghErr.message;
+        }
+      }
+
+      btn.disabled = false;
+      if (synced) {
         btn.textContent = '✓ 同步成功';
-        btn.disabled = false;
+        state.profile.sync_status = {
+          last_synced_at: new Date().toISOString(),
+          status: 'synced',
+          client_version: state.profile.profile_version
+        };
+        localStorage.setItem(PROFILE_KEY, JSON.stringify(state.profile));
         updateStatusBadge();
         renderSyncStatus();
-        alert('科研画像已成功保存并同步！下次周报生成将自动按照新配置执行个性化选文与历史溯源。');
-        setTimeout(function(){ btn.textContent = '☁ 保存并同步研究画像'; }, 2000);
-      }, 700);
+        alert('科研画像已成功校验并同步至流水线生产配置！版本: ' + state.profile.profile_version);
+        setTimeout(function(){ btn.textContent = '☁ 保存并同步研究画像'; }, 2500);
+      } else {
+        btn.textContent = '☁ 保存并同步研究画像';
+        if (errMsg) {
+          alert('同步至生产端失败：' + errMsg + '\n\n本地草稿已完整保留在浏览器中，未丢失。');
+          updateStatusBadge('同步失败：' + errMsg);
+        } else {
+          alert('本地草稿已成功保存！\n\n当前尚未配置 GitHub 访问令牌 (PAT) 或本地同步服务，未能直接推送到生产仓库。\n建议点击右上角【配置同步凭据】以启用云端双向同步，或使用【导出画像 JSON】进行手动同步。');
+          updateStatusBadge('本地草稿已保存 (未连接流水线)');
+          if ($('modal-sync-credentials')) {
+            $('modal-sync-credentials').classList.add('open');
+          }
+        }
+        renderSyncStatus();
+      }
     },
 
     exportJSON: function () {
@@ -845,6 +1019,30 @@
       });
     });
 
+    // Priority weight slider listeners
+    ['slider-w-topic', 'slider-w-species', 'slider-w-gene', 'slider-w-method'].forEach(function (id) {
+      var el = $(id);
+      if (el) el.addEventListener('input', function () {
+        var wt = parseInt($('slider-w-topic').value, 10) || 0;
+        var ws = parseInt($('slider-w-species').value, 10) || 0;
+        var wg = parseInt($('slider-w-gene').value, 10) || 0;
+        var wm = parseInt($('slider-w-method').value, 10) || 0;
+        var sum = wt + ws + wg + wm;
+        if (sum === 0) sum = 1;
+        state.profile.priority_weights = {
+          topic: Number((wt / sum).toFixed(2)),
+          species: Number((ws / sum).toFixed(2)),
+          gene: Number((wg / sum).toFixed(2)),
+          method: Number((1 - (wt / sum + ws / sum + wg / sum)).toFixed(2))
+        };
+        $('val-w-topic').textContent = Math.round(state.profile.priority_weights.topic * 100) + '%';
+        $('val-w-species').textContent = Math.round(state.profile.priority_weights.species * 100) + '%';
+        $('val-w-gene').textContent = Math.round(state.profile.priority_weights.gene * 100) + '%';
+        $('val-w-method').textContent = Math.round(state.profile.priority_weights.method * 100) + '%';
+        saveProfileDraft();
+      });
+    });
+
     $('slider-relevance-weight').addEventListener('input', function(e){
       var v = parseInt(e.target.value, 10) / 100;
       state.profile.weekly_selection_strategy.personal_relevance_weight = v;
@@ -852,6 +1050,74 @@
       $('val-relevance-weight').textContent = Math.round(v * 100) + '%';
       saveProfileDraft();
     });
+
+    // Sync Credentials Modal
+    if ($('btn-config-credentials')) {
+      $('btn-config-credentials').addEventListener('click', function(){
+        $('input-github-token').value = localStorage.getItem('gr_sync_github_token') || '';
+        $('input-sync-endpoint').value = localStorage.getItem('gr_sync_endpoint') || 'http://127.0.0.1:8765/api/profile';
+        $('modal-sync-credentials').classList.add('open');
+      });
+    }
+    if ($('btn-cancel-credentials')) {
+      $('btn-cancel-credentials').addEventListener('click', function(){
+        $('modal-sync-credentials').classList.remove('open');
+      });
+    }
+    if ($('btn-save-credentials')) {
+      $('btn-save-credentials').addEventListener('click', function(){
+        var token = $('input-github-token').value.trim();
+        var ep = $('input-sync-endpoint').value.trim();
+        if (token) localStorage.setItem('gr_sync_github_token', token);
+        else localStorage.removeItem('gr_sync_github_token');
+        if (ep) localStorage.setItem('gr_sync_endpoint', ep);
+        $('modal-sync-credentials').classList.remove('open');
+        alert('同步凭据保存成功！');
+      });
+    }
+
+    // Trigger Discovery Button
+    if ($('btn-trigger-discovery')) {
+      $('btn-trigger-discovery').addEventListener('click', async function(){
+        var btn = $('btn-trigger-discovery');
+        var statusMsg = $('discovery-status-msg');
+        btn.disabled = true;
+        btn.textContent = '正在检索学术数据库...';
+        if (statusMsg) statusMsg.textContent = '连接 Europe PMC / PubMed 中...';
+
+        try {
+          var localEndpoint = localStorage.getItem('gr_sync_endpoint') || 'http://127.0.0.1:8765/api/profile';
+          var localDiscoveryUrl = localEndpoint.replace('/profile', '/discovery');
+          var triggered = false;
+          try {
+            var dResp = await fetch(localDiscoveryUrl, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ profile: state.profile })
+            });
+            if (dResp.ok) {
+              triggered = true;
+              await renderSupplements();
+              await renderCostStats();
+              alert('历史学术文献发现与个人专刊生成完成！');
+            }
+          } catch(e) {}
+
+          if (!triggered) {
+            btn.textContent = '✓ 检索条件已生成';
+            if (statusMsg) statusMsg.textContent = '在 pipeline 中执行 python -m radar.discovery --generate-supplement';
+            alert('已根据您当前的四维科研画像动态构建学术检索式！\n\n您可以在流水线执行：\npython -m radar.discovery --generate-supplement\n即可自动生成最新个人科研专刊并更新站内索引。');
+          }
+        } catch(err) {
+          alert('检索遇到问题: ' + err.message);
+        } finally {
+          btn.disabled = false;
+          setTimeout(function(){
+            btn.textContent = '🔍 发现高相关历史文献并生成专刊';
+          }, 3000);
+        }
+      });
+    }
 
     // Custom Species Add Modal
     $('btn-add-custom-species').addEventListener('click', function(){

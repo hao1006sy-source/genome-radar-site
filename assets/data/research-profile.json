@@ -1,201 +1,13 @@
 {
-  "schema_version": "3.0.0",
-  "profile_version": "v3.0.0",
-  "user_identity": "作物基因组与分子育种研究员",
-  "updated_at": "2026-11-25T19:40:00Z",
-  "followed_topics": [
-    {
-      "topic_id": "functional-genomics",
-      "name_zh": "植物功能基因组学",
-      "priority": "high",
-      "weight": 1.5,
-      "auto_associate": true,
-      "status": "active"
-    },
-    {
-      "topic_id": "genome-editing-breeding",
-      "name_zh": "基因组编辑与分子育种",
-      "priority": "high",
-      "weight": 1.5,
-      "auto_associate": true,
-      "status": "active"
-    },
-    {
-      "topic_id": "variation-gwas",
-      "name_zh": "遗传变异与性状关联",
-      "priority": "normal",
-      "weight": 1.0,
-      "auto_associate": true,
-      "status": "active"
-    },
-    {
-      "topic_id": "pangenome",
-      "name_zh": "泛基因组",
-      "priority": "normal",
-      "weight": 1.0,
-      "auto_associate": false,
-      "status": "active"
-    }
-  ],
-  "followed_subtopics": [
-    {
-      "subtopic_id": "stress-immunity-mechanisms",
-      "topic_id": "functional-genomics",
-      "name_zh": "抗病与逆境应答分子机制",
-      "priority": "high",
-      "weight": 1.5,
-      "status": "active"
-    },
-    {
-      "subtopic_id": "crispr-cas-systems",
-      "topic_id": "genome-editing-breeding",
-      "name_zh": "CRISPR/Cas 编辑系统与递送技术",
-      "priority": "high",
-      "weight": 1.5,
-      "status": "active"
-    },
-    {
-      "subtopic_id": "gene-function-validation",
-      "topic_id": "functional-genomics",
-      "name_zh": "基因功能鉴定与表型验证",
-      "priority": "normal",
-      "weight": 1.0,
-      "status": "active"
-    },
-    {
-      "subtopic_id": "gwas-trait-mapping",
-      "topic_id": "variation-gwas",
-      "name_zh": "GWAS 与多重性状定位",
-      "priority": "normal",
-      "weight": 1.0,
-      "status": "active"
-    },
-    {
-      "subtopic_id": "graph-pangenome",
-      "topic_id": "pangenome",
-      "name_zh": "图形泛基因组与变异图谱",
-      "priority": "normal",
-      "weight": 1.0,
-      "status": "active"
-    }
-  ],
-  "followed_species": [
-    {
-      "name_zh": "大麦",
-      "name_en": "Barley",
-      "latin_name": "Hordeum vulgare",
-      "tax_id": 4513,
-      "role": "primary",
-      "expand_relatives": true
-    },
-    {
-      "name_zh": "小麦",
-      "name_en": "Wheat",
-      "latin_name": "Triticum aestivum",
-      "tax_id": 4565,
-      "role": "comparative",
-      "expand_relatives": true
-    },
-    {
-      "name_zh": "水稻",
-      "name_en": "Rice",
-      "latin_name": "Oryza sativa",
-      "tax_id": 4530,
-      "role": "validation",
-      "expand_relatives": false
-    },
-    {
-      "name_zh": "大豆",
-      "name_en": "Soybean",
-      "latin_name": "Glycine max",
-      "tax_id": 3847,
-      "role": "comparative",
-      "expand_relatives": false
-    }
-  ],
-  "followed_genes": [
-    {
-      "symbol": "HvSOS1",
-      "gene_id": "HORVU.MOREX.r3.3HG0261170",
-      "species": "Hordeum vulgare",
-      "aliases": [
-        "HvNHA1"
-      ],
-      "gene_family": "Cation/H+ Exchanger (NHA)",
-      "functional_annotation": "质膜 Na+/H+ 逆向转运蛋白，控制根系离子排斥与耐盐碱稳态",
-      "pathway": "SOS 耐盐信号转导通路",
-      "db_xrefs": {
-        "ncbi_gene": "12345678",
-        "ensembl_plants": "HORVU3Hr1G081230"
-      },
-      "expand_homology": true
-    },
-    {
-      "symbol": "SlZAR1",
-      "gene_id": "Solyc02g084890",
-      "species": "Solanum lycopersicum",
-      "aliases": [
-        "ZAR1-like"
-      ],
-      "gene_family": "NLR 免疫受体家族",
-      "functional_annotation": "抗青枯病免疫识别 NLR 蛋白，触发抗病小体活化及超敏细胞坏死",
-      "pathway": "ETI 效应子激发的免疫反应",
-      "db_xrefs": {
-        "ncbi_gene": "87654321",
-        "ensembl_plants": "Solyc02g084890.3"
-      },
-      "expand_homology": true
-    },
-    {
-      "symbol": "GmSW1",
-      "gene_id": "Glyma.10G123400",
-      "species": "Glycine max",
-      "aliases": [
-        "GmSWEET1",
-        "ROOMIE1"
-      ],
-      "gene_family": "籽粒大小与百粒重调控因子",
-      "functional_annotation": "控制大豆百粒重的主效位点，调控种皮发育与籽粒营养物质同化积累",
-      "pathway": "种皮细胞扩张与籽粒发育通路",
-      "db_xrefs": {
-        "ncbi_gene": "11223344",
-        "ensembl_plants": "Glyma.10G123400"
-      },
-      "expand_homology": false
-    }
-  ],
-  "followed_methods": [
-    {
-      "name": "CRISPR/Cas9 靶向敲除",
-      "category": "experimental",
-      "priority": "high",
-      "weight": 1.5
-    },
-    {
-      "name": "高分辨率单核转录组测序 (snRNA-seq)",
-      "category": "sequencing",
-      "priority": "high",
-      "weight": 1.5
-    },
-    {
-      "name": "图形泛基因组构建算法 (Minigraph/vg)",
-      "category": "bioinformatics",
-      "priority": "normal",
-      "weight": 1.0
-    },
-    {
-      "name": "全基因组关联分析 (GWAS)",
-      "category": "statistical",
-      "priority": "normal",
-      "weight": 1.0
-    },
-    {
-      "name": "先导编辑 (Prime Editing)",
-      "category": "experimental",
-      "priority": "high",
-      "weight": 1.5
-    }
-  ],
+  "schema_version": "3.1.0",
+  "profile_version": "v3.1.0-clean",
+  "user_identity": "植物基因组学研究员",
+  "updated_at": "2026-11-25T20:15:00Z",
+  "followed_topics": [],
+  "followed_subtopics": [],
+  "followed_species": [],
+  "followed_genes": [],
+  "followed_methods": [],
   "priority_weights": {
     "topic": 0.35,
     "species": 0.25,
@@ -221,9 +33,8 @@
     ]
   },
   "sync_status": {
-    "last_synced_at": "2026-11-25T19:40:00Z",
-    "status": "synced",
-    "client_version": "v3.0.0",
-    "sync_endpoint": "local_storage_and_pipeline"
+    "last_synced_at": null,
+    "status": "unconfigured",
+    "client_version": "v3.1.0"
   }
 }

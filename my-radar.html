@@ -45,6 +45,7 @@
       </div>
     </div>
     <div class="radar-hero-actions">
+      <button type="button" id="btn-config-credentials" class="btn-radar btn-secondary">⚙ 配置同步凭据</button>
       <button type="button" id="btn-sync-profile" class="btn-radar btn-primary">☁ 保存并同步研究画像</button>
       <button type="button" id="btn-export-json" class="btn-radar btn-secondary">⤓ 导出画像 JSON</button>
       <button type="button" id="btn-import-json" class="btn-radar btn-secondary">⤒ 导入画像 JSON</button>
@@ -174,22 +175,22 @@
         <h3 style="margin:0 0 14px 0;font-size:15px;color:var(--forest);">四维个人相关性评分权重</h3>
         <div class="strategy-slider-row">
           <span class="strategy-slider-label">研究专题权重:</span>
-          <input type="range" id="slider-w-topic" class="strategy-slider-input" min="0" max="100" value="35" disabled>
+          <input type="range" id="slider-w-topic" class="strategy-slider-input" min="0" max="100" value="35">
           <span id="val-w-topic" class="strategy-slider-val">35%</span>
         </div>
         <div class="strategy-slider-row">
           <span class="strategy-slider-label">研究物种权重:</span>
-          <input type="range" id="slider-w-species" class="strategy-slider-input" min="0" max="100" value="25" disabled>
+          <input type="range" id="slider-w-species" class="strategy-slider-input" min="0" max="100" value="25">
           <span id="val-w-species" class="strategy-slider-val">25%</span>
         </div>
         <div class="strategy-slider-row">
           <span class="strategy-slider-label">关注基因权重:</span>
-          <input type="range" id="slider-w-gene" class="strategy-slider-input" min="0" max="100" value="25" disabled>
+          <input type="range" id="slider-w-gene" class="strategy-slider-input" min="0" max="100" value="25">
           <span id="val-w-gene" class="strategy-slider-val">25%</span>
         </div>
         <div class="strategy-slider-row">
           <span class="strategy-slider-label">研究方法权重:</span>
-          <input type="range" id="slider-w-method" class="strategy-slider-input" min="0" max="100" value="15" disabled>
+          <input type="range" id="slider-w-method" class="strategy-slider-input" min="0" max="100" value="15">
           <span id="val-w-method" class="strategy-slider-val">15%</span>
         </div>
         <div class="strategy-slider-row" style="margin-top:14px;padding-top:12px;border-top:1px dashed #eae7de;">
@@ -226,6 +227,10 @@
           <label style="display:flex;align-items:center;gap:6px;"><input type="checkbox" id="chk-type-breakthrough" checked> 历年重大突破成果</label>
           <label style="display:flex;align-items:center;gap:6px;"><input type="checkbox" id="chk-type-high-rel" checked> 高度相关研究论文</label>
           <label style="display:flex;align-items:center;gap:6px;"><input type="checkbox" id="chk-type-cross" checked> 跨物种及跨方法启发成果</label>
+        </div>
+        <div style="margin-top:8px;padding-top:12px;border-top:1px dashed #eae7de;display:flex;gap:12px;align-items:center;">
+          <button type="button" id="btn-trigger-discovery" class="btn-radar btn-primary">🔍 发现高相关历史文献并生成专刊</button>
+          <span id="discovery-status-msg" style="font-size:13px;color:#717873;">点击即时检索 Europe PMC / PubMed 学术库</span>
         </div>
       </div>
     </section>
@@ -284,15 +289,15 @@
       <div style="background:#fff;padding:20px;border-radius:var(--radius-md);border:1px solid var(--line-light);display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:16px;">
         <div>
           <div style="font-size:12px;color:#717873;">当前画像版本</div>
-          <div id="sync-version-label" style="font-size:18px;font-weight:700;color:var(--forest);">v3.0.0</div>
+          <div id="sync-version-label" style="font-size:18px;font-weight:700;color:var(--forest);">v3.1.0-clean</div>
         </div>
         <div>
           <div style="font-size:12px;color:#717873;">最后同步时间</div>
-          <div id="sync-time-label" style="font-size:14px;color:var(--ink);">2026-11-25T19:40:00Z</div>
+          <div id="sync-time-label" style="font-size:14px;color:var(--ink);">未同步</div>
         </div>
         <div>
           <div style="font-size:12px;color:#717873;">生成端同步状态</div>
-          <div id="sync-status-state" style="font-size:14px;font-weight:600;color:#27ae60;">已与生成端完成双向同步</div>
+          <div id="sync-status-state" style="font-size:14px;font-weight:600;color:#717873;">未同步 (使用本地配置)</div>
         </div>
         <div>
           <div style="font-size:12px;color:#717873;">下次自动选文生效日</div>
@@ -313,15 +318,15 @@
       <div style="background:#fff;padding:20px;border-radius:var(--radius-md);border:1px solid var(--line-light);display:grid;grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:16px;">
         <div>
           <div style="font-size:12px;color:#717873;">当期调用消耗 Tokens</div>
-          <div id="stat-run-tokens" style="font-size:20px;font-weight:700;font-family:var(--serif);color:var(--forest);">12,480</div>
+          <div id="stat-run-tokens" style="font-size:20px;font-weight:700;font-family:var(--serif);color:var(--forest);">0 Token</div>
         </div>
         <div>
           <div style="font-size:12px;color:#717873;">当期实际费用</div>
-          <div id="stat-run-cost" style="font-size:18px;font-weight:700;color:#b87315;">$0.024 (约 ¥0.17)</div>
+          <div id="stat-run-cost" style="font-size:18px;font-weight:700;color:#717873;">暂无运行记录</div>
         </div>
         <div>
           <div style="font-size:12px;color:#717873;">上下文缓存命中率</div>
-          <div id="stat-cache-hit" style="font-size:18px;font-weight:700;color:#27ae60;">84.2%</div>
+          <div id="stat-cache-hit" style="font-size:18px;font-weight:700;color:#717873;">--</div>
         </div>
         <div>
           <div style="font-size:12px;color:#717873;">单期预算熔断上限</div>
@@ -414,7 +419,30 @@
   </div>
 </div>
 
+<!-- Modal: Sync Credentials -->
+<div id="modal-sync-credentials" class="radar-modal-backdrop">
+  <div class="radar-modal">
+    <h3>配置科研画像同步凭据</h3>
+    <p>为保障您的科研隐私，画像数据通过 GitHub 保护接口或本地同步服务与流水线实现双向受控同步。</p>
+    <div class="form-group">
+      <label>GitHub Personal Access Token (PAT)</label>
+      <input type="password" id="input-github-token" class="form-control" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
+      <div style="font-size:12px;color:#717873;margin-top:4px;">仅保存在浏览器本地 localStorage，用于向私有 pipeline 仓库推送画像配置。</div>
+    </div>
+    <div class="form-group">
+      <label>本地同步服务端点 (可选)</label>
+      <input type="text" id="input-sync-endpoint" class="form-control" placeholder="http://127.0.0.1:8765/api/profile">
+      <div style="font-size:12px;color:#717873;margin-top:4px;">若本地运行 pipeline 同步守护进程，可直接使用本地 HTTP 接口。</div>
+    </div>
+    <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:20px;">
+      <button type="button" id="btn-cancel-credentials" class="btn-radar btn-secondary">取消</button>
+      <button type="button" id="btn-save-credentials" class="btn-radar btn-primary">保存凭据</button>
+    </div>
+  </div>
+</div>
+
 <script src="assets/site-nav.js"></script>
+<script src="assets/library-store.js"></script>
 <script src="assets/my-radar.js"></script>
 </body>
 </html>

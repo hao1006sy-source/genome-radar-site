@@ -745,9 +745,9 @@
         "symbol": "OsAKR",
         "name": "水稻醛酮还原酶基因",
         "species": "水稻 (Oryza sativa)",
-        "role": "抗旱与产量调控",
+        "role": "生殖生长期抗旱与产量调控",
         "family": "AKR 醛酮还原酶家族",
-        "evidence": "文中明确涉及 OsAKR (水稻醛酮还原酶基因) 功能解析"
+        "gene_evidence": "论文中文标题明确指出『定位 OsAKR 揭示水稻突变体抗旱增产机制』，研究通过代谢与基因表达谱解析水稻生殖生长期耐旱突变体中 OsAKR 的遗传基础与功能。"
       }
     ],
     "gene_families": [
@@ -915,19 +915,19 @@
     "genes": [
       {
         "symbol": "TaDRS1",
-        "name": "小麦深根调控位点基因",
+        "name": "小麦深根发育限制基因",
         "species": "小麦 (Triticum aestivum)",
-        "role": "根系构型与产量协同",
+        "role": "限制根尖分生组织增殖与深根构型",
         "family": "根系发育调控因子",
-        "evidence": "文中明确涉及 TaDRS1 (小麦深根调控位点基因) 功能解析"
+        "gene_evidence": "论文标题原文摘录：'The Yield-Associated TaCOL-B5 Locus Activates Its Tightly Linked Target TaDRS1 to Restrict Root Apical Meristem Proliferation and Deep Rooting in Wheat'，通过编辑 TaDRS1 解耦产量与深根性状。"
       },
       {
         "symbol": "TaCOL-B5",
-        "name": "TaCOL-B5 候选基因",
+        "name": "小麦产量关联位点转录调控基因",
         "species": "小麦 (Triticum aestivum)",
-        "role": "关键调控/候选基因",
-        "family": "植物候选功能基因",
-        "evidence": "论文标题或摘要提及 TaCOL-B5"
+        "role": "激活紧密连锁靶标 TaDRS1 并调控产量",
+        "family": "CONSTANS-like (COL) 转录因子家族",
+        "gene_evidence": "论文标题原文摘录：'The Yield-Associated TaCOL-B5 Locus Activates Its Tightly Linked Target TaDRS1'，证实 TaCOL-B5 作为上游位点调控 TaDRS1 表达。"
       }
     ],
     "gene_families": [
@@ -1079,27 +1079,27 @@
     "genes": [
       {
         "symbol": "BpSRK1",
-        "name": "白桦 S-受体激酶基因",
+        "name": "白桦 S-受体样激酶基因",
         "species": "白桦 (Betula platyphylla)",
-        "role": "干旱逆境信号转导",
+        "role": "干旱逆境信号感受与磷酸化级联",
         "family": "RLK/RLCK 受体激酶家族",
-        "evidence": "文中明确涉及 BpSRK1 (白桦 S-受体激酶基因) 功能解析"
+        "gene_evidence": "论文标题原文摘录：'BpSRK1-mediated phosphorylation of BpERF3 relieves HDA6-dependent chromatin repression to enhance drought tolerance in birch'，BpSRK1 作为膜受体激酶介导下游磷酸化。"
       },
       {
         "symbol": "BpERF3",
-        "name": "白桦 AP2/ERF 转录因子基因",
+        "name": "白桦 AP2/ERF 响应转录因子基因",
         "species": "白桦 (Betula platyphylla)",
-        "role": "干旱响应转录调控",
+        "role": "干旱响应转录激活与染色质解聚",
         "family": "AP2/ERF 转录因子家族",
-        "evidence": "文中明确涉及 BpERF3 (白桦 AP2/ERF 转录因子基因) 功能解析"
+        "gene_evidence": "论文标题原文摘录：'BpSRK1-mediated phosphorylation of BpERF3 relieves HDA6-dependent chromatin repression'，BpERF3 被磷酸化后解除抑制。"
       },
       {
-        "symbol": "BpSRK1-mediated",
-        "name": "BpSRK1-mediated 候选基因",
+        "symbol": "BpHDA6",
+        "name": "白桦组蛋白去乙酰化酶基因",
         "species": "白桦 (Betula platyphylla)",
-        "role": "关键调控/候选基因",
-        "family": "植物候选功能基因",
-        "evidence": "论文标题或摘要提及 BpSRK1-mediated"
+        "role": "介导染色质抑制复合体",
+        "family": "组蛋白去乙酰化酶 (HDAC) 家族",
+        "gene_evidence": "论文标题原文摘录：'relieves HDA6-dependent chromatin repression to enhance drought tolerance in birch'，参与染色质转录抑制。"
       }
     ],
     "gene_families": [
@@ -1314,11 +1314,11 @@
     "genes": [
       {
         "symbol": "OsPDR17",
-        "name": "OsPDR17 候选基因",
+        "name": "水稻 ABCG 亚家族转运蛋白基因",
         "species": "水稻 (Oryza sativa)",
-        "role": "关键调控/候选基因",
-        "family": "植物候选功能基因",
-        "evidence": "论文标题或摘要提及 OsPDR17"
+        "role": "转运二萜植保素 5,10-diketo-casbene 并增强抗病性",
+        "family": "ABCG 转运蛋白家族",
+        "gene_evidence": "论文标题原文摘录：'The ABCG transporter OsPDR17 mediates transport of 5,10-diketo-casbene and enhances disease resistance in rice'。"
       }
     ],
     "gene_families": [],
@@ -1460,11 +1460,11 @@
     "genes": [
       {
         "symbol": "OsFH14",
-        "name": "OsFH14 候选基因",
+        "name": "水稻 Formin 同源蛋白 14 基因",
         "species": "水稻 (Oryza sativa)",
-        "role": "关键调控/候选基因",
-        "family": "植物候选功能基因",
-        "evidence": "论文标题或摘要提及 OsFH14"
+        "role": "通过微丝成束调控胞间连丝通透性促进耐盐",
+        "family": "Formin 家族",
+        "gene_evidence": "论文标题原文摘录：'OsFH14 Regulates Salt-Induced Plasmodesmata Permeability Enhancement to Promote Rice Salt Tolerance Through Actin Bundling'。"
       }
     ],
     "gene_families": [],
@@ -1546,19 +1546,19 @@
     "genes": [
       {
         "symbol": "VvDLK",
-        "name": "VvDLK 候选基因",
+        "name": "葡萄 DLK 样受体激酶基因",
         "species": "葡萄 (Vitis vinifera)",
-        "role": "关键调控/候选基因",
-        "family": "植物候选功能基因",
-        "evidence": "论文标题或摘要提及 VvDLK"
+        "role": "负调控葡萄抗寒性",
+        "family": "受体样激酶家族",
+        "gene_evidence": "论文标题原文摘录：'VvDLK negatively regulates cold tolerance by interacting with Vv14-3-3A in grapevine'。"
       },
       {
-        "symbol": "Vv14-3",
-        "name": "Vv14-3 候选基因",
+        "symbol": "Vv14-3-3A",
+        "name": "葡萄 14-3-3A 调控蛋白基因",
         "species": "葡萄 (Vitis vinifera)",
-        "role": "关键调控/候选基因",
-        "family": "植物候选功能基因",
-        "evidence": "论文标题或摘要提及 Vv14-3"
+        "role": "与 VvDLK 物理互作调控低温抗性",
+        "family": "14-3-3 信号适配蛋白家族",
+        "gene_evidence": "论文标题原文摘录：'interacting with Vv14-3-3A in grapevine'，与 VvDLK 结合介导信号转导。"
       }
     ],
     "gene_families": [],
@@ -1850,11 +1850,11 @@
     "genes": [
       {
         "symbol": "GhEBS1",
-        "name": "GhEBS1 候选基因",
+        "name": "陆地棉棉铃大小调控基因",
         "species": "棉花 (Gossypium hirsutum)",
-        "role": "关键调控/候选基因",
-        "family": "植物候选功能基因",
-        "evidence": "论文标题或摘要提及 GhEBS1"
+        "role": "内含子结构变异改变染色质可及性驱动棉铃大小分化",
+        "family": "植物器官大小发育调控家族",
+        "gene_evidence": "论文标题原文摘录：'An Intronic Structural Variant in GhEBS1 Drives Cotton Fruit Size Divergence by Modulating Chromatin Accessibility and Gene Expression'。"
       }
     ],
     "gene_families": [],
@@ -2210,11 +2210,11 @@
     "genes": [
       {
         "symbol": "OsNHX2",
-        "name": "OsNHX2 候选基因",
+        "name": "水稻液泡膜 Na+/H+ 逆向转运蛋白 2",
         "species": "水稻 (Oryza sativa)",
-        "role": "关键调控/候选基因",
-        "family": "植物候选功能基因",
-        "evidence": "论文标题或摘要提及 OsNHX2"
+        "role": "转录与翻译后修饰调控决定水稻耐冷性",
+        "family": "NHX 阳离子反向转运蛋白家族",
+        "gene_evidence": "论文标题原文摘录：'Identification of OsNHX2 and Its Transcriptional and Post-Translational Regulation Underlying Rice Cold Tolerance'。"
       }
     ],
     "gene_families": [],
@@ -2933,12 +2933,20 @@
     ],
     "genes": [
       {
-        "symbol": "SlHSFA2-SlERFs",
-        "name": "SlHSFA2-SlERFs 候选基因",
+        "symbol": "SlHSFA2",
+        "name": "番茄热激转录因子 A2",
         "species": "番茄 (Solanum lycopersicum)",
-        "role": "关键调控/候选基因",
-        "family": "植物候选功能基因",
-        "evidence": "论文标题或摘要提及 SlHSFA2-SlERFs"
+        "role": "介导热启动记忆与耐热转录调控",
+        "family": "HSF 热激转录因子家族",
+        "gene_evidence": "论文标题原文摘录：'involves SlHSFA2-SlERFs in the regulation of transcriptional thermal memory in tomato'。"
+      },
+      {
+        "symbol": "SlERFs",
+        "name": "番茄乙烯响应因子家族基因",
+        "species": "番茄 (Solanum lycopersicum)",
+        "role": "协同 SlHSFA2 维持热转录记忆",
+        "family": "AP2/ERF 转录因子家族",
+        "gene_evidence": "论文标题原文摘录：'involves SlHSFA2-SlERFs in the regulation of transcriptional thermal memory in tomato'。"
       }
     ],
     "gene_families": [
@@ -3019,11 +3027,11 @@
     "genes": [
       {
         "symbol": "HvAOC",
-        "name": "HvAOC 候选基因",
-        "species": "大麦 (Hordeum spp.)",
-        "role": "关键调控/候选基因",
-        "family": "植物候选功能基因",
-        "evidence": "论文标题或摘要提及 HvAOC"
+        "name": "大麦丙二烯氧化物环化酶基因",
+        "species": "大麦 (Hordeum vulgare)",
+        "role": "茉莉酸生物合成关键酶，调控株型、花期与粒长",
+        "family": "AOC 家族",
+        "gene_evidence": "论文标题原文摘录：'Knockout of HvAOC Reveals that Jasmonic Acid Regulates Plant Architecture, Flowering Time, and Grain Length in Barley'。"
       }
     ],
     "gene_families": [],
@@ -5329,12 +5337,12 @@
     ],
     "genes": [
       {
-        "symbol": "H3K27me3",
-        "name": "组蛋白 H3 第 27 位赖氨酸三甲基化修饰",
-        "species": "植物通用",
-        "role": "基因转录沉默表观标记",
-        "family": "Polycomb 组蛋白表观修饰复合体",
-        "evidence": "文中明确涉及 H3K27me3 (组蛋白 H3 第 27 位赖氨酸三甲基化修饰) 功能解析"
+        "symbol": "ZmEMF1a",
+        "name": "玉米多梳抑制复合体组分基因 EMF1a",
+        "species": "玉米 (Zea mays)",
+        "role": "维持玉米籽粒发育中 H2Aub 与 H3K27me3 表观修饰",
+        "family": "EMF 染色质修饰因子家族",
+        "gene_evidence": "论文标题原文摘录：'ZmEMF1a is required for the maintenance of H2Aub and H3K27me3 modifications in maize kernel development'。"
       }
     ],
     "gene_families": [
@@ -5824,19 +5832,19 @@
     "genes": [
       {
         "symbol": "TaBADH1",
-        "name": "TaBADH1 候选基因",
+        "name": "小麦甜菜碱醛脱氢酶 1 基因",
         "species": "小麦 (Triticum aestivum)",
-        "role": "关键调控/候选基因",
-        "family": "植物候选功能基因",
-        "evidence": "论文标题或摘要提及 TaBADH1"
+        "role": "CRISPR 靶向敲除调控 2-AP 芳香物质积累",
+        "family": "BADH 醛脱氢酶家族",
+        "gene_evidence": "论文标题原文摘录：'Creation of fragrant wheat by targeted mutagenesis of either BADH1 or both BADH1 and BADH2 using CRISPR/Cas9'。"
       },
       {
         "symbol": "TaBADH2",
-        "name": "TaBADH2 候选基因",
+        "name": "小麦甜菜碱醛脱氢酶 2 基因",
         "species": "小麦 (Triticum aestivum)",
-        "role": "关键调控/候选基因",
-        "family": "植物候选功能基因",
-        "evidence": "论文标题或摘要提及 TaBADH2"
+        "role": "协同 TaBADH1 敲除显著提升香味",
+        "family": "BADH 醛脱氢酶家族",
+        "gene_evidence": "论文标题原文摘录：'Creation of fragrant wheat by targeted mutagenesis of either BADH1 or both BADH1 and BADH2 using CRISPR/Cas9'。"
       }
     ],
     "gene_families": [],
@@ -6708,11 +6716,11 @@
     "genes": [
       {
         "symbol": "DDM1",
-        "name": "染色质重塑因子 DDM1",
+        "name": "拟南芥染色质重塑因子 DDM1",
         "species": "拟南芥 (Arabidopsis thaliana)",
-        "role": "异染色质与转座子沉默",
+        "role": "维持异染色质 DNA 甲基化与跨代表观遗传",
         "family": "SWI/SNF 染色质重塑家族",
-        "evidence": "文中明确涉及 DDM1 (染色质重塑因子 DDM1) 功能解析"
+        "gene_evidence": "论文标题原文摘录：'DDM1 Shapes Transgenerational Epigenetic Inheritance of Diverse Chromatin States'。"
       }
     ],
     "gene_families": [
@@ -6787,11 +6795,19 @@
     "genes": [
       {
         "symbol": "GmCWINV4",
-        "name": "GmCWINV4 候选基因",
+        "name": "大豆细胞壁转化酶 4 基因",
         "species": "大豆 (Glycine max)",
-        "role": "关键调控/候选基因",
-        "family": "植物候选功能基因",
-        "evidence": "论文标题或摘要提及 GmCWINV4"
+        "role": "受 ZF-HD 调控控制碳分配与种子粒径",
+        "family": "CWINV 转化酶家族",
+        "gene_evidence": "论文标题原文摘录：'a ZF-HD-GmCWINV4 Module Controls Carbon Partitioning and Seed Size in Soybean'。"
+      },
+      {
+        "symbol": "GmZF-HD",
+        "name": "大豆锌指同源异形盒转录因子",
+        "species": "大豆 (Glycine max)",
+        "role": "结合 GmCWINV4 启动子调控种子大小",
+        "family": "ZF-HD 转录因子家族",
+        "gene_evidence": "论文标题原文摘录：'a ZF-HD-GmCWINV4 Module Controls Carbon Partitioning and Seed Size in Soybean'。"
       }
     ],
     "gene_families": [],
@@ -7143,19 +7159,11 @@
     "genes": [
       {
         "symbol": "SbSTP20",
-        "name": "SbSTP20 候选基因",
+        "name": "高粱单糖转运蛋白 20 基因",
         "species": "高粱 (Sorghum bicolor)",
-        "role": "关键调控/候选基因",
-        "family": "植物候选功能基因",
-        "evidence": "论文标题或摘要提及 SbSTP20"
-      },
-      {
-        "symbol": "SbSTP20-mediated",
-        "name": "SbSTP20-mediated 候选基因",
-        "species": "高粱 (Sorghum bicolor)",
-        "role": "关键调控/候选基因",
-        "family": "植物候选功能基因",
-        "evidence": "论文标题或摘要提及 SbSTP20-mediated"
+        "role": "介导己糖流入与亚糊粉层增厚实现高粱籽粒生物强化",
+        "family": "STP 单糖转运蛋白家族",
+        "gene_evidence": "论文标题原文摘录：'Sorghum grain biofortification by SbSTP20-mediated hexose influx and sub-aleurone thickening'。"
       }
     ],
     "gene_families": [],
@@ -7236,11 +7244,11 @@
     "genes": [
       {
         "symbol": "ZmARF27",
-        "name": "ZmARF27 候选基因",
+        "name": "玉米生长素响应因子 27",
         "species": "玉米 (Zea mays)",
-        "role": "关键调控/候选基因",
-        "family": "植物候选功能基因",
-        "evidence": "论文标题或摘要提及 ZmARF27"
+        "role": "调控玉米根系形态建成",
+        "family": "ARF 生长素响应因子家族",
+        "gene_evidence": "论文标题原文摘录：'Identification of auxin response factor ARF27 as a regulator of maize root morphogenesis'。"
       }
     ],
     "gene_families": [],
@@ -8730,11 +8738,11 @@
     "genes": [
       {
         "symbol": "GmRVE8a",
-        "name": "大豆节律相关转录因子 GmRVE8a",
+        "name": "大豆生物钟相关转录因子 GmRVE8a",
         "species": "大豆 (Glycine max)",
-        "role": "生物钟与逆境耐受",
-        "family": "MYB 转录因子家族",
-        "evidence": "文中明确涉及 GmRVE8a (大豆节律相关转录因子 GmRVE8a) 功能解析"
+        "role": "生物钟关联基因，负调控大豆开花期与成熟期",
+        "family": "MYB 相关转录因子家族",
+        "gene_evidence": "论文标题原文摘录：'GmRVE8a, a circadian clock-associated gene, negatively regulates flowering and maturity in soybean'。"
       }
     ],
     "gene_families": [
@@ -9085,11 +9093,11 @@
     "genes": [
       {
         "symbol": "ROOMIE1",
-        "name": "大豆百粒重候选基因 ROOMIE1",
-        "species": "大豆 (Glycine max)",
-        "role": "籽粒大小与百粒重调控",
-        "family": "籽粒发育调控因子",
-        "evidence": "文中明确涉及 ROOMIE1 (大豆百粒重候选基因 ROOMIE1) 功能解析"
+        "name": "百脉根根际微生物组组装控制基因 ROOMIE1",
+        "species": "百脉根 (Lotus japonicus)",
+        "role": "控制百脉根根际菌群组装与宿主-微生物互作",
+        "family": "宿主-根际微生物互作调控因子",
+        "gene_evidence": "论文标题原文摘录：'ROOMIE1 controls rhizobiome assembly in Lotus japonicus and shows a genomic signature distinct from climate-associated loci'，明确在模式豆科植物百脉根中控制根际微生物组组装。"
       }
     ],
     "gene_families": [
@@ -9810,19 +9818,11 @@
     "genes": [
       {
         "symbol": "GmGH3.2",
-        "name": "大豆生长素酰胺合成酶基因",
+        "name": "大豆生长素酰胺合成酶基因 GmGH3.2",
         "species": "大豆 (Glycine max)",
-        "role": "生长素稳态调控",
-        "family": "GH3 基因家族",
-        "evidence": "文中明确涉及 GmGH3.2 (大豆生长素酰胺合成酶基因) 功能解析"
-      },
-      {
-        "symbol": "GmGH3",
-        "name": "GmGH3 候选基因",
-        "species": "大豆 (Glycine max)",
-        "role": "关键调控/候选基因",
-        "family": "植物候选功能基因",
-        "evidence": "论文标题或摘要提及 GmGH3"
+        "role": "生长素酰胺化代谢负调控大豆耐盐性",
+        "family": "GH3 酰胺合成酶家族",
+        "gene_evidence": "论文标题原文摘录：'An Indole-3-Acetic Acid-Amido Synthetase, GmGH3.2, Negatively Regulates Salt Tolerance in Soybean'。"
       }
     ],
     "gene_families": [
@@ -11489,11 +11489,11 @@
     "genes": [
       {
         "symbol": "StBEL5",
-        "name": "StBEL5 候选基因",
+        "name": "马铃薯 BEL1 样转录因子 5 基因",
         "species": "马铃薯 (Solanum tuberosum)",
-        "role": "关键调控/候选基因",
-        "family": "植物候选功能基因",
-        "evidence": "论文标题或摘要提及 StBEL5"
+        "role": "靶向案例验证四倍体马铃薯基因编辑效率",
+        "family": "TALE/BEL1 同源异形盒转录因子家族",
+        "gene_evidence": "论文标题原文摘录：'Optimized methodology for CRISPR-Cas9-mediated gene knockout in tetraploid potato: targeting StBEL5 as a case study'。"
       }
     ],
     "gene_families": [],
