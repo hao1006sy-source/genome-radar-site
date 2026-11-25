@@ -1,0 +1,1115 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>我的科研雷达 · 个人科研专刊 · 2026-11-22</title>
+<meta name="description" content="大麦、小麦、水稻与前沿编辑方法经典成果科研溯源">
+<link rel="icon" type="image/x-icon" href="../../assets/brand/favicon.ico">
+<style>
+
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --ui:"Noto Sans SC","思源黑体","Source Han Sans SC","Microsoft YaHei","微软雅黑",sans-serif;
+  --desk:#e7e4dc; --sheet:#fffdf8; --ink:#1b1f22; --body:#282d31; --muted:#71767c;
+  --faint:#9aa0a6; --line:#ddd7c8; --accent:#2f6b4f; --amber:#8a6d1f; --blue:#2b5d86;
+  --z:1;                     /* 页面缩放：整张纸等比放大，横向仍占满一屏 */
+}
+html,body{height:100%}
+body{
+  margin:0; background:var(--desk); color:var(--ink);
+  font-family:var(--ui);
+  font-size:19px; line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  display:flex; flex-direction:column; height:100dvh; overflow:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+.serif{font-family:var(--ui)}
+a{color:inherit}
+button{font:inherit}
+
+/* ---------- top bar ---------- */
+.topbar{
+  flex:none; display:flex; align-items:center; gap:14px; padding:0 20px; height:50px;
+  background:rgba(255,253,248,.94); border-bottom:1px solid var(--line); z-index:20;
+}
+.brand{display:flex; align-items:baseline; gap:9px; min-width:0}
+.brand b{font-size:18px; letter-spacing:.06em; font-weight:800; color:#14181b; white-space:nowrap}
+.brand .en{font-size:9.5px; letter-spacing:.18em; color:var(--faint); text-transform:uppercase; white-space:nowrap}
+.issue-tag{font-size:12.5px; color:var(--accent); font-weight:600; letter-spacing:.04em; white-space:nowrap}
+.tools{margin-left:auto; display:flex; align-items:center; gap:2px}
+.tools button{
+  background:none; border:1px solid transparent; color:var(--muted); cursor:pointer;
+  font-size:13px; padding:5px 10px; border-radius:5px; transition:.15s;
+}
+.tools button:hover{border-color:var(--line); color:var(--ink); background:var(--sheet)}
+.tools .back{text-decoration:none; border:1px solid transparent; border-radius:5px;
+  color:var(--muted); font-size:13px; padding:5px 10px; transition:.15s}
+.tools .back:hover{border-color:var(--line); color:var(--ink); background:var(--sheet)}
+.zoom{display:flex; align-items:center; gap:1px; margin-left:6px;
+  border:1px solid var(--line); border-radius:6px; overflow:hidden; background:var(--sheet)}
+.zoom button{border:0; border-radius:0; padding:4px 9px; font-size:14px; line-height:1; color:var(--muted)}
+.zoom button:hover{background:#f0ebdd; color:var(--ink); border:0}
+.zoom .zlab{min-width:52px; text-align:center; font-size:12.5px; color:var(--muted);
+  font-variant-numeric:tabular-nums; cursor:pointer; user-select:none; padding:0 2px}
+.zoom .zlab:hover{color:var(--ink)}
+
+/* ---------- deck ---------- */
+.deck{
+  flex:1; min-height:0; display:flex; overflow-x:auto; overflow-y:hidden;
+  scroll-snap-type:x mandatory; scrollbar-width:none;
+}
+.deck::-webkit-scrollbar{display:none}
+.page{
+  flex:0 0 100%; width:100%; height:100%; overflow-y:auto; overflow-x:hidden;
+  scroll-snap-align:start; display:flex; padding:12px 14px;
+}
+.sheet{
+  position:relative; zoom:var(--z);
+  width:100%; min-height:100%; margin:auto;
+  display:flex; flex-direction:column;
+  background:var(--sheet); border:1px solid #e2dccd; border-radius:2px;
+  box-shadow:0 1px 1px rgba(60,50,30,.05), 0 14px 34px -22px rgba(60,50,30,.45);
+  padding:30px 46px 22px;
+}
+
+/* ---------- head ---------- */
+.head{position:relative; display:flex; align-items:baseline; gap:12px; font-size:15px;
+  color:var(--muted); padding:0 60px 8px 0; border-bottom:1px solid #d3ccb9}
+.head .jn{font-weight:800; color:#1b2018; font-size:16.5px; letter-spacing:.02em}
+.head .sep{color:#cfc9ba}
+.head .met{display:inline-flex; align-items:baseline; gap:7px; margin-left:3px}
+.head .met b{font-size:12.5px; font-weight:800; padding:2px 7px; border-radius:3px; background:#e9efe4; color:#2c5a44; letter-spacing:.02em}
+.head .met b.weak{background:#f1efe6; color:#7b7668}
+.head .met i{font-style:normal; font-size:12.5px; font-weight:700; color:#6d6a5e}
+.head .crumb{color:var(--muted)}
+.head .rt{margin-left:auto; display:flex; align-items:baseline; gap:12px; color:var(--muted)}
+.head .kind{letter-spacing:.06em}
+.head .lv{font-size:12.5px; padding:1px 7px; border-radius:2px; letter-spacing:.04em}
+.lv.abstract{background:#f4f0e2; color:var(--amber)}
+.lv.fulltext{background:#e7f0e9; color:var(--accent)}
+.lv.oa_url{background:#eef0e6; color:#6b7a3c}
+.lv.preprint{background:#e8eef5; color:var(--blue)}
+.head .no{position:absolute; right:-6px; top:-20px; font-family:var(--ui); font-size:46px;
+  line-height:1; font-weight:800; color:#ece6d5; letter-spacing:.01em}
+
+h2.t-zh{margin:16px 0 0; font-size:46px; line-height:1.28; font-weight:800; color:#14181b; letter-spacing:-.005em}
+.t-en{margin:10px 0 0; font-size:15.5px; color:#a2a8ae; line-height:1.45; letter-spacing:.005em}
+
+.lead{
+  margin:14px 0 0; padding:12px 16px 12px 15px; background:#f5f0e2; border-left:3px solid #2f6b4f;
+  font-size:21px; line-height:1.72; color:#2e332c; letter-spacing:.005em;
+}
+
+/* ---------- 2x2 blocks ---------- */
+.art-body{flex:1 0 auto; display:flex; flex-direction:column}
+.grid{margin-top:18px; display:grid; grid-template-columns:1fr 1fr; gap:20px 56px}
+.blk h3{
+  margin:0 0 10px; padding-bottom:7px; border-bottom:1px solid #cfc9b8;
+  font-size:21px; font-weight:800; letter-spacing:.02em; color:#24503a;
+}
+.blk p{margin:0; font-size:19px; line-height:1.70; color:#2b3136; letter-spacing:.005em}
+
+.stage{
+  margin-top:auto; padding-top:8px; border-top:1px solid var(--line);
+  font-size:14.5px; color:var(--muted);
+}
+.stage b{color:#24503a; font-weight:800; letter-spacing:.03em; margin-right:11px}
+
+.foot{margin-top:9px; display:flex; align-items:center; gap:18px; font-size:14px; color:var(--muted)}
+.foot .doi{font-family:var(--ui); font-size:14px; color:#1b2018; letter-spacing:.01em; font-weight:600}
+.foot .doi i{font-style:normal; color:var(--faint); margin-right:7px; font-family:inherit;
+  letter-spacing:.14em; font-size:11.5px; font-weight:700}
+.foot a{text-decoration:none; border-bottom:1px solid #e0dacb; color:var(--muted); padding-bottom:1px}
+.foot a:hover{color:var(--accent); border-color:var(--accent)}
+.foot .src{margin-left:auto}
+.foot .affil{margin-left:auto; margin-right:22px; font-size:13.5px; color:#4a5049; max-width:64ch; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.star{background:none; border:none; cursor:pointer; font-size:15px; color:#d3cdbd; padding:0 2px; line-height:1}
+.star[data-on="1"]{color:#d29b2c}
+
+/* ---------- pager ---------- */
+.dots{
+  flex:none; display:flex; align-items:center; justify-content:center; gap:5px;
+  height:32px; background:rgba(255,253,248,.94); border-top:1px solid var(--line);
+}
+.dots i{width:4.5px; height:4.5px; border-radius:50%; background:#d2ccbd; cursor:pointer; transition:.18s}
+.dots i.on{background:var(--accent); transform:scale(1.5)}
+.pgnum{font-size:10.5px; color:var(--muted); letter-spacing:.1em; margin-left:10px; min-width:50px}
+
+/* ---------- toc ---------- */
+.toc{
+  position:fixed; inset:0; z-index:40; display:none; align-items:stretch; justify-content:flex-start;
+  padding:0; background:rgba(28,34,29,.52); backdrop-filter:blur(2px) saturate(.7);
+  overscroll-behavior:contain;
+}
+.toc.open{display:flex}
+.toc-inner{
+  position:relative; isolation:isolate; display:flex; flex-direction:column; gap:0;
+  width:clamp(420px,53vw,900px); height:100%; max-height:100dvh; min-height:0;
+  padding:22px 28px 18px; overflow:hidden; color:#29352d; background:#fbfaf5;
+  box-shadow:12px 0 30px rgba(20,31,23,.16);
+}
+.toc-header{
+  position:relative; display:flex; flex:none; align-items:flex-start; justify-content:space-between;
+  min-height:68px; gap:14px; padding:0 48px 12px 0; overflow:hidden;
+  border-bottom:1px solid #cfd5c8;
+}
+.toc-heading{position:relative; z-index:1; display:grid; grid-template-columns:34px auto minmax(0,1fr); grid-template-rows:auto auto; align-items:center; column-gap:10px; row-gap:4px; max-width:100%}
+.toc-brand-mark{grid-column:1; grid-row:1 / span 2; width:32px; height:32px; color:#315e43}
+.toc-title{grid-column:2; grid-row:1; margin:0; color:#173e2d; font-size:30px; line-height:1.2; letter-spacing:.09em; font-weight:800}
+.toc-en{grid-column:3; grid-row:1; color:#5f695a; font-family:Georgia,serif; font-size:10.5px; letter-spacing:.22em; font-style:italic; white-space:nowrap}
+.toc-meta{grid-column:2 / span 2; grid-row:2; margin:0; color:#355b43; font-family:Georgia,var(--ui); font-size:15px; line-height:1.35; letter-spacing:.035em}
+.toc-header-art{position:absolute; z-index:0; top:-35px; right:5px; width:190px; height:130px; object-fit:cover; object-position:50% 36%; opacity:.34; pointer-events:none}
+.toc-close{
+  position:absolute; z-index:2; top:0; right:0; display:grid; place-items:center; width:38px; height:38px;
+  border:1px solid #dce1d1; border-radius:50%; background:#eef0e4; color:#173e2d;
+  font-size:22px; line-height:1; cursor:pointer; transition:background .16s,transform .16s;
+}
+.toc-close:hover{background:#e2e8d5; transform:rotate(4deg)}
+.toc-search{display:flex; flex:none; align-items:center; gap:12px; min-height:42px; margin:14px 0 10px; padding:0 12px;
+  border:1px solid #6c856f; border-radius:6px; background:#fffdf8; color:#244934}
+.toc-search:focus-within{border-color:#315f42; box-shadow:0 0 0 2px rgba(49,95,66,.12)}
+.toc-search-icon{flex:none; width:18px; height:18px; color:#3e6445}
+.toc-search input{flex:1; min-width:0; border:0; outline:0; padding:8px 0; background:transparent; color:#29352d; font:inherit; font-size:14px}
+.toc-search input::placeholder{color:#646c60; opacity:1}
+.toc-count{flex:none; color:#5e685a; font-size:12px; white-space:nowrap; font-variant-numeric:tabular-nums}
+.toc-groups{flex:1; min-height:0; overflow-y:auto; padding-right:3px; overscroll-behavior:contain; scrollbar-color:#c6cdbb transparent; scrollbar-width:thin}
+.toc-group{margin:0 0 10px}
+.toc-group[hidden],.toc-item[hidden]{display:none!important}
+.toc-group-head{display:flex; align-items:baseline; gap:12px; padding:8px 2px 7px; border-bottom:1px solid #bfcbb8}
+.toc-group-head h3{display:flex; align-items:center; flex-wrap:wrap; gap:9px; margin:0; color:#173e2d; font-size:18px; line-height:1.25; font-weight:800}
+.toc-group-icon{flex:none; width:28px; height:28px; color:#4d704c}
+.toc-group-en{color:#606b5b; font-family:Georgia,serif; font-size:10px; font-style:italic; letter-spacing:.2em; font-weight:500}
+.toc-group-count{margin-left:auto; color:#5f6859; font-size:12px; white-space:nowrap}
+.toc-group ol{list-style:none; margin:0; padding:0}
+.toc-item{border-bottom:1px dotted #ddd9ce}
+.toc-row{display:grid; grid-template-columns:30px minmax(0,1fr) minmax(86px,auto); gap:10px; align-items:center;
+  width:100%; min-height:30px; border:0; border-left:3px solid transparent; padding:5px 8px; text-align:left;
+  background:transparent; color:#30352f; font:inherit; font-size:13.5px; line-height:1.4; cursor:pointer;
+  transition:background .14s,color .14s,border-color .14s}
+.toc-row:hover,.toc-row.is-current{border-left-color:#4c7352; background:#edf0e3; color:#173e2d}
+.toc-row .i{color:#5f6b46; font-family:Georgia,serif; font-size:13px; font-weight:700; font-variant-numeric:tabular-nums}
+.toc-row .t{font-weight:650}
+.toc-row .j{color:#5f655c; font-family:Georgia,var(--ui); font-size:11.5px; text-align:right; white-space:nowrap}
+.toc-row:focus-visible,.toc-preview:focus-visible,.toc-close:focus-visible{outline:2px solid #315f42; outline-offset:2px}
+.toc-empty{flex:none; margin:0; padding:12px 3px; color:#5e685a; font-size:13px}
+.toc-preview{display:grid; flex:none; grid-template-columns:116px minmax(0,1fr) 38px; align-items:center; gap:14px;
+  width:100%; margin-top:12px; padding:11px; border:1px solid #d8dec9; border-radius:9px;
+  background:#f3f3e8; color:inherit; text-align:left; cursor:pointer; transition:border-color .16s,background .16s}
+.toc-preview:hover{border-color:#aab99d; background:#eff1e4}
+.toc-preview:disabled{cursor:default; opacity:.64}
+.toc-preview img{display:block; width:116px; height:96px; border-radius:6px; object-fit:cover; object-position:50% 39%; background:#e5e9d9}
+.toc-preview-copy{display:grid; min-width:0; gap:3px}
+.toc-preview-top{display:flex; align-items:baseline; gap:9px; color:#596647; font-family:Georgia,serif}
+.toc-preview-number{font-size:17px; font-style:italic; font-weight:700; font-variant-numeric:tabular-nums}
+.toc-preview-title{display:-webkit-box; overflow:hidden; margin:0; color:#173e2d; font-size:16px; line-height:1.38; font-weight:800; -webkit-box-orient:vertical; -webkit-line-clamp:2}
+.toc-preview-meta{display:flex; align-items:center; gap:9px; color:#5e6755; font-size:11.5px}
+.toc-preview-summary{display:-webkit-box; overflow:hidden; margin:0; color:#5f665b; font-size:12px; line-height:1.48; -webkit-box-orient:vertical; -webkit-line-clamp:2}
+.toc-preview-arrow{display:grid; place-items:center; width:36px; height:36px; justify-self:end; border-radius:50%; background:#e5ead7; color:#214a33; transition:transform .16s,background .16s}
+.toc-preview-arrow svg{width:18px; height:18px}
+.toc-preview:hover .toc-preview-arrow{transform:translateX(2px); background:#dce5cb}
+.toc-sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+@media (max-width:980px) and (min-width:681px){
+  .toc-inner{width:min(660px,78vw); padding:20px 22px 16px}
+  .toc-group{margin-bottom:6px}
+  .toc-group-head{padding:5px 2px 4px}
+  .toc-row{grid-template-columns:28px minmax(0,1fr) minmax(72px,auto); gap:8px; min-height:26px; padding:4px 6px; font-size:12px; line-height:1.32}
+  .toc-preview{grid-template-columns:96px minmax(0,1fr) 36px; gap:11px}
+  .toc-preview img{width:96px; height:88px}
+  .toc-preview-title{font-size:14.5px}
+}
+@media (max-width:680px){
+  .toc-inner{width:100%; padding:16px 14px 14px}
+  .toc-header{min-height:62px; padding-right:46px}
+  .toc-brand-mark{width:28px; height:28px}
+  .toc-title{font-size:24px}
+  .toc-en{font-size:9px; letter-spacing:.16em}
+  .toc-meta{font-size:13px}
+  .toc-header-art{display:none}
+  .toc-search{gap:8px; min-height:40px; margin:11px 0 8px; padding:0 9px}
+  .toc-search input{font-size:13px}
+  .toc-count{font-size:10.5px}
+  .toc-group{margin-bottom:8px}
+  .toc-group-head{padding:7px 1px 6px}
+  .toc-group-head h3{font-size:16px; gap:7px}
+  .toc-group-en{font-size:8.5px; letter-spacing:.14em}
+  .toc-group-count{font-size:10.5px}
+  .toc-row{grid-template-columns:25px minmax(0,1fr) minmax(70px,auto); gap:7px; min-height:31px; padding:5px 5px; font-size:12px}
+  .toc-row .i{font-size:11.5px}
+  .toc-row .j{font-size:10px}
+  .toc-preview{grid-template-columns:74px minmax(0,1fr) 32px; gap:9px; margin-top:8px; padding:8px}
+  .toc-preview img{width:74px; height:76px}
+  .toc-preview-title{font-size:13.5px}
+  .toc-preview-meta{font-size:10px; gap:6px}
+  .toc-preview-summary{font-size:10.5px; line-height:1.4}
+  .toc-preview-arrow{width:30px; height:30px; font-size:19px}
+}
+/* ---------- 封面 ---------- */
+.cover .sheet{padding:48px 56px 40px}
+.cv-kicker{font-size:12px; letter-spacing:.3em; color:#a8aea9; text-transform:uppercase; font-weight:700}
+.cv-title{margin:9px 0 0; font-size:58px; letter-spacing:.08em; font-weight:800; color:#14181b; line-height:1.15}
+.cv-week{margin-top:13px; font-size:17px; color:var(--accent); letter-spacing:.05em; font-weight:600}
+.cv-rule{height:5px; background:#14181b; margin:18px 0 22px; border-radius:1px}
+.cv-hl{margin:0; font-size:23px; line-height:1.78; color:#2b3136; max-width:1400px}
+.cv-body{flex:1 0 auto; display:flex; flex-direction:column}
+.cv-intro{margin:22px 0 0; font-size:15.5px; line-height:1.85; color:#4a5149; max-width:1400px}
+.cv-pts{margin:26px 0 0; padding:0; list-style:none; max-width:1400px}
+.cv-pts li{display:flex; gap:14px; padding:9px 0; border-top:1px solid var(--line);
+  font-size:16.5px; line-height:1.58; color:#2b3136}
+.cv-pts li:last-child{border-bottom:1px solid var(--line)}
+.cv-pts .n{flex:none; font-size:12.5px; font-weight:800; color:#b3ac99; letter-spacing:.1em;
+  padding-top:4px; min-width:22px}
+.cv-src{margin-top:20px; font-size:14px; color:var(--muted); line-height:1.8}
+.cv-hint{margin-top:auto; padding-top:12px; border-top:1px solid var(--line); font-size:14px; color:var(--muted)}
+
+/* ---------- 连读模式 ---------- */
+html.flow body{height:auto; overflow:auto; display:block}
+html.flow .deck{display:block; overflow:visible; height:auto}
+html.flow .page{display:block; height:auto; width:auto; overflow:visible; padding:14px 14px 0}
+html.flow .page:last-child{padding-bottom:44px}
+html.flow .sheet{max-width:1600px; box-shadow:none; border:none; border-bottom:1px dotted #cbc5b6; border-radius:0; padding:24px 36px 20px}
+html.flow .dots{display:none}
+html.flow .topbar{position:sticky; top:0}
+
+@media (max-width:680px){
+  .brand .en{display:none}
+  .topbar{padding:0 12px; gap:6px}
+  .issue-tag{display:none}
+  .tools{gap:0}
+  .tools button{padding:5px 6px; font-size:11.5px; white-space:nowrap}
+  .tools .back{padding:5px 6px; font-size:11.5px}
+  .zoom{display:none}          /* 手机上用手指缩放，顶栏这组省掉 */
+  .page{padding:12px 10px}
+  .sheet{padding:22px 18px 18px}
+  h2.t-zh{font-size:30px; line-height:1.34}
+  .t-en{font-size:13px}
+  .lead{font-size:17px; padding:11px 13px; margin-top:13px}
+  .grid{grid-template-columns:1fr; gap:13px; margin-top:14px}
+  .blk p{font-size:16.5px; line-height:1.76}
+  .blk h3{font-size:18.5px; padding-bottom:6px}
+  .head{gap:7px; font-size:12px; flex-wrap:wrap; padding-right:0}
+  .head .no{display:none}
+  .stage{font-size:12px}
+  .foot{gap:10px; flex-wrap:wrap}
+  .foot .doi{font-size:11.5px}
+  .foot .affil{margin:0; max-width:100%; flex-basis:100%}
+  .cv-title{font-size:38px}
+  .cv-hl{font-size:18px; line-height:1.76}
+  .cv-intro{font-size:14px; line-height:1.8; margin-top:16px}
+  .cv-pts{margin-top:18px}
+  .cv-pts li{font-size:14.5px; padding:9px 0}
+  .toc-inner{width:100%;padding:16px 14px 14px}
+}
+
+@media (max-height:720px) and (min-width:681px){
+  .sheet{padding:22px 34px 16px}
+  h2.t-zh{font-size:34px}
+  .lead{margin-top:12px; padding:9px 13px; font-size:18px; line-height:1.7}
+  .grid{margin-top:14px; gap:14px 36px}
+  .blk p{font-size:16px; line-height:1.68}
+  .stage{margin-top:11px; padding-top:7px}
+  .cv-title{font-size:40px}
+  .cv-hl{font-size:19px; line-height:1.7}
+  .cv-intro{font-size:14px; line-height:1.75; margin-top:14px}
+  .cv-pts{margin-top:16px}
+  .cv-pts li{font-size:14.5px; padding:8px 0}
+}
+
+@media print{
+  @page{size:A4 landscape; margin:11mm}
+  html,body{height:auto; overflow:visible; background:#fff; display:block}
+  .topbar,.dots,.toc,.star{display:none !important}
+.sheet{zoom:1 !important; width:100% !important; min-height:0 !important}
+  .deck{display:block; overflow:visible; height:auto}
+  .page{display:block; height:auto; width:auto; overflow:visible; padding:0;
+    break-after:page; page-break-after:always}
+  .page:last-child{break-after:auto; page-break-after:auto}
+  .sheet{min-height:0; display:block; border:none; box-shadow:none; border-radius:0; padding:0;
+    break-inside:avoid; page-break-inside:avoid}
+  h2.t-zh{font-size:20pt}
+  .lead{font-size:11pt; line-height:1.6}
+  .blk p{font-size:10pt; line-height:1.6}
+  .blk h3{font-size:10pt}
+  .head,.stage,.foot{font-size:8pt}
+}
+
+
+:root{
+  --cover-paper:#f8f6f0; --cover-forest:#173e2d; --cover-ink:#292d28;
+  --cover-leaf:#657a53; --cover-line:#d9dccf; --cover-mist:#e7ebd9;
+  --editorial:"Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun",serif;
+}
+body{background:#f0eee7;color:var(--cover-ink)}
+.serif,.cv-title,.cv-week,.cv-pts .n,.section-heading h2{font-family:var(--editorial)}
+.topbar{
+  height:56px;padding:0 clamp(16px,3.2vw,54px);gap:14px;
+  background:rgba(251,250,245,.97);border-bottom:1px solid #cfd3c7;
+}
+.brand{align-items:baseline;gap:11px}
+.brand b{color:var(--cover-forest);font-size:19px;letter-spacing:.08em}
+.brand .en{color:#687866;font-size:10px;letter-spacing:.22em}
+.issue-tag{padding-left:17px;border-left:1px solid #c9cdbf;color:var(--cover-forest);
+  font-family:var(--editorial);font-size:15px;letter-spacing:.04em}
+.tools{gap:0}
+.tools button,.tools .back{padding:5px 12px;color:#51594f;font-size:13px;border-radius:0}
+.tools button:hover,.tools .back:hover{background:#f0f1e8;border-color:transparent;color:var(--cover-forest)}
+.zoom{border:1px solid #d7dacb;border-radius:999px;background:#fbfaf5}
+.zoom .zlab{color:var(--cover-forest)}
+.page.cover{padding:10px clamp(12px,1.4vw,24px) 10px}
+.cover .sheet{
+  flex:none;width:100%;max-width:none;min-height:100%;margin:0 auto;
+  padding:clamp(20px,2.4vh,34px) clamp(26px,2.4vw,46px) clamp(14px,1.6vh,22px);
+  display:flex;flex-direction:column;
+  border:1px solid #e0dfd4;border-radius:2px;
+  background:linear-gradient(118deg,#fdfcf7 0%,#f8f6f0 66%,#fbfaf5 100%);
+  box-shadow:0 9px 34px rgba(40,53,37,.055);
+}
+.cover-hero{
+  flex:none;position:relative;display:block;min-height:0;
+  padding:0 0 clamp(14px,1.8vh,22px);
+  border-bottom:1px solid var(--cover-line);
+}
+.cover-copy{position:relative;z-index:2;max-width:none;padding:0}
+.cv-kicker{font-size:clamp(11px,0.8vw,13px);letter-spacing:.25em;color:#78836d;text-transform:uppercase;font-weight:700}
+.cv-title{margin:6px 0 0;font-size:clamp(58px,min(4.8vw,8.4vh),86px);letter-spacing:.08em;
+  font-weight:800;color:var(--cover-forest);line-height:1.08}
+.cv-week{display:flex;align-items:baseline;flex-wrap:wrap;gap:12px;margin-top:clamp(8px,1.1vh,14px);color:var(--cover-forest);
+  font-size:clamp(22px,min(1.55vw,2.8vh),29px);letter-spacing:.025em;font-weight:650}
+.cv-week time{font-family:var(--ui);font-size:clamp(15px,1vw,18px);color:#757d6e;font-weight:500;letter-spacing:.04em}
+.cv-week .cv-sep{color:#909984;font-size:clamp(16px,1.1vw,20px)}
+.cv-rule{width:64px;height:3px;background:var(--cover-forest);margin:clamp(10px,1.4vh,16px) 0;border-radius:2px}
+.cv-hl{max-width:none;margin:0;color:#262c27;font-family:var(--editorial);
+  font-size:clamp(20px,min(1.32vw,2.5vh),25.5px);line-height:1.56;text-wrap:pretty}
+.cv-intro{max-width:none;margin:clamp(8px,1vh,13px) 0 0;color:#52594e;font-family:var(--editorial);
+  font-size:clamp(16px,min(1.02vw,1.95vh),19.5px);line-height:1.6}
+.cover-window{margin:clamp(6px,0.9vh,11px) 0 0;color:#7a8670;font-size:clamp(13px,0.85vw,15px);letter-spacing:.04em}
+.cover-bottom{display:flex;flex-direction:column;gap:clamp(12px,1.6vh,20px);flex:1 0 auto;margin-top:clamp(12px,1.6vh,20px)}
+.cover-highlights{flex:none;margin:0;min-width:0}
+.section-heading{display:flex;align-items:baseline;gap:13px;margin:0 0 6px}
+.section-heading h2{margin:0;color:var(--cover-forest);font-size:clamp(24px,min(1.6vw,3vh),31px);line-height:1.3;font-weight:800}
+.section-heading span{color:#8b907f;font-size:clamp(10px,0.72vw,12px);font-weight:700;letter-spacing:.26em}
+.cv-pts{display:block;max-width:none;margin:4px 0 0;padding:0;list-style:none}
+.cv-pts li{display:grid;grid-template-columns:46px minmax(0,1fr);align-items:start;gap:14px;
+  padding:clamp(6px,0.85vh,10px) 4px;border-top:1px solid #e0dfd4;color:#2b312a;font-family:var(--editorial);
+  font-size:clamp(17.5px,min(1.08vw,2.15vh),21px);line-height:1.52}
+.cv-pts li:last-child{border-bottom:1px solid #e0dfd4}
+.cv-pts .n{display:grid;place-items:center;width:40px;height:26px;min-width:0;margin-top:2px;
+  padding:0;border-radius:8px;background:#e8ecd9;color:var(--cover-forest);font-size:16px;
+  font-weight:700;font-style:italic;letter-spacing:0}
+.cover-journals{flex:none;display:flex;align-items:center;flex-wrap:wrap;gap:10px 18px;
+  margin-top:auto;padding:clamp(10px,1.2vh,14px) 0 4px;border-top:1px solid #cbd1bf;border-bottom:0;border-left:0}
+.cover-journals .section-heading{margin:0;padding:0;border:0;white-space:nowrap}
+.cover-journals .section-heading h2{font-size:clamp(18px,1.15vw,22px)}
+.cv-journals{display:flex;align-items:center;flex-wrap:wrap;gap:8px 10px;margin:0;padding:0;list-style:none}
+.journal-chip{display:inline-flex;align-items:center;gap:7px;padding:4px 12px;border:1px solid #dfe3d3;
+  border-radius:999px;background:rgba(237,240,226,.72);color:#354b3b;font-size:clamp(13.5px,0.85vw,15.5px);line-height:1.4;white-space:nowrap}
+.journal-chip b{font-size:clamp(13px,0.8vw,14.5px);color:var(--cover-forest);font-weight:700}
+.journal-more{margin-left:3px;padding-left:12px;border-left:1px solid #c9cdbf;color:#73796e;
+  font-family:var(--editorial);font-size:clamp(13px,0.82vw,14.5px);white-space:nowrap}
+.cover .cv-hint{flex:none;margin-top:clamp(8px,1vh,12px);padding:8px 0 0;border-top:1px solid var(--cover-line);color:#8a8f84;font-size:clamp(12px,0.8vw,13.5px);line-height:1.5;text-align:center}
+
+.cover .sheet[data-fit="1"]{padding-top:12px;padding-bottom:10px}
+.cover .sheet[data-fit="1"] .cover-hero{padding-bottom:10px}
+.cover .sheet[data-fit="1"] .cv-rule{margin:7px 0}
+.cover .sheet[data-fit="1"] .cover-bottom{gap:8px;margin-top:8px}
+.cover .sheet[data-fit="1"] .cv-pts li{padding:4px 4px;line-height:1.42}
+.cover .sheet[data-fit="1"] .cover-journals{padding:7px 0 2px}
+.cover .sheet[data-fit="1"] .cv-hint{margin-top:6px;padding-top:6px}
+.cover .sheet[data-fit="2"]{padding-top:10px;padding-bottom:8px}
+.cover .sheet[data-fit="2"] .cover-hero{padding-bottom:8px}
+.cover .sheet[data-fit="2"] .cv-kicker{display:none}
+.cover .sheet[data-fit="2"] .cv-title{font-size:clamp(46px,3.8vw,68px);margin-top:0}
+.cover .sheet[data-fit="2"] .cv-week{margin-top:4px;font-size:clamp(18px,1.3vw,24px)}
+.cover .sheet[data-fit="2"] .cv-rule{margin:6px 0}
+.cover .sheet[data-fit="2"] .cv-hl{font-size:clamp(17px,1.1vw,21px);line-height:1.42}
+.cover .sheet[data-fit="2"] .cv-intro{margin-top:4px;font-size:clamp(14px,0.9vw,17px);line-height:1.42}
+.cover .sheet[data-fit="2"] .cover-window{margin-top:4px}
+.cover .sheet[data-fit="2"] .cover-bottom{gap:6px;margin-top:6px}
+.cover .sheet[data-fit="2"] .section-heading{margin-bottom:2px}
+.cover .sheet[data-fit="2"] .section-heading h2{font-size:clamp(20px,1.35vw,26px)}
+.cover .sheet[data-fit="2"] .cv-pts li{font-size:clamp(15.5px,0.95vw,18.5px);padding:3px 4px;line-height:1.36}
+.cover .sheet[data-fit="2"] .cover-journals{padding:6px 0 2px}
+.cover .sheet[data-fit="2"] .journal-chip{padding:2px 9px;font-size:12.5px}
+.cover .sheet[data-fit="2"] .cv-hint{margin-top:4px;padding-top:4px;font-size:11.5px}
+
+@media(max-width:960px){
+  .topbar{padding:0 16px;gap:8px}
+  .tools button,.tools .back{padding:5px 8px;font-size:12px}
+  .cover .sheet{padding:18px 22px 14px}
+  .cv-title{font-size:clamp(46px,6.3vw,62px)}
+  .cv-week{font-size:19px}
+  .cv-hl{font-size:17px;line-height:1.6}
+  .cv-intro{font-size:14.5px}
+  .cv-pts li{font-size:15.5px;gap:10px;padding:7px 4px}
+}
+@media(max-width:680px){
+  .topbar{height:48px;padding:0 10px;gap:5px}
+  .brand{gap:5px}
+  .brand b{font-size:15px;letter-spacing:.04em}
+  .tools button,.tools .back{padding:5px 5px;font-size:10.5px}
+  .page.cover{padding:0 8px 10px}
+  .cover .sheet{height:auto;min-height:0;padding:18px 16px 12px}
+  .cover-hero{padding:0 0 14px}
+  .cv-kicker{font-size:10px;letter-spacing:.17em}
+  .cv-title{font-size:clamp(40px,10.5vw,50px);letter-spacing:.06em}
+  .cv-week{gap:8px;margin-top:10px;font-size:17px}
+  .cv-week time{font-size:12px}
+  .cv-rule{width:44px;margin:12px 0}
+  .cv-hl{font-size:16px;line-height:1.68}
+  .cv-intro{font-size:13.5px;line-height:1.65;margin-top:8px}
+  .cover-window{font-size:11px;margin-top:7px}
+  .cover-bottom{gap:14px;margin-top:14px}
+  .section-heading{gap:8px;margin-bottom:4px}
+  .section-heading h2{font-size:20px}
+  .section-heading span{font-size:9px;letter-spacing:.2em}
+  .cv-pts li{grid-template-columns:34px minmax(0,1fr);gap:8px;padding:7px 1px;font-size:14px;line-height:1.52}
+  .cv-pts .n{width:30px;height:21px;font-size:14px;border-radius:7px}
+  .cover-journals{flex-direction:column;align-items:flex-start;gap:8px;padding:10px 0 6px}
+  .cover-journals .section-heading h2{font-size:18px}
+  .cv-journals{gap:6px}
+  .journal-chip{padding:3px 9px;font-size:12px;gap:5px}
+  .journal-chip b{font-size:11.5px}
+  .journal-more{padding-left:8px;font-size:12px}
+  .cover .cv-hint{font-size:10.5px}
+}
+@media print{
+  .cover .sheet{min-height:0!important;padding:7mm 9mm 4mm!important;background:#fff!important;box-shadow:none}
+  .cover-hero{min-height:0;padding-bottom:4mm}
+  .cv-title{font-size:34pt}
+  .cv-week{font-size:14pt}
+  .cv-hl{font-size:11pt;line-height:1.55}
+  .cv-intro{font-size:8.5pt;line-height:1.5}
+  .cover-window{font-size:7.5pt}
+  .cover-bottom{gap:4mm;margin-top:4mm}
+  .section-heading h2{font-size:14pt}
+  .cv-pts li{font-size:9pt;line-height:1.4;padding:1.8mm 2mm;grid-template-columns:11mm 1fr;gap:3mm}
+  .cv-pts .n{width:9mm;height:6mm;font-size:9pt}
+  .cover-journals{padding:2.5mm 0;gap:3mm 6mm}
+  .cover-journals .section-heading h2{font-size:11pt}
+  .journal-chip{font-size:7.5pt;padding:1mm 2.5mm}
+  .cover .cv-hint{font-size:6.5pt}
+}
+
+
+.article-page{
+  --art-h2:clamp(38px,min(2.75vw,5vh),52px);
+  --art-ten:clamp(18.5px,min(1.2vw,2.25vh),22.5px);
+  --art-lead:clamp(20px,min(1.28vw,2.4vh),23.5px);
+  --art-h3:clamp(24px,min(1.55vw,2.9vh),29.5px);
+  --art-p:clamp(19.5px,min(1.22vw,2.35vh),23px);
+  --art-lh:1.60;
+  --art-meta:clamp(15px,0.9vw,16.5px);
+  --art-foot:clamp(14.5px,0.88vw,16px);
+  --art-gap-row:clamp(14px,1.7vh,24px);
+  --art-gap-col:clamp(36px,2.8vw,54px);
+  padding:8px clamp(10px,1.1vw,20px);
+  background:#f0eee7;
+}
+.article-page .sheet{
+  flex:none;width:100%;max-width:none;min-height:100%;margin:0 auto;
+  padding:clamp(16px,2vh,26px) clamp(24px,2.1vw,40px) clamp(14px,1.6vh,22px);
+  overflow:visible;align-self:flex-start;isolation:isolate;
+  border:1px solid #e0dfd4;border-radius:2px;background:#fbfaf5;
+  box-shadow:0 9px 30px rgba(40,53,37,.05);
+}
+.article-page .detail-ornament{display:none!important}
+.article-page .sheet>*:not(.detail-ornament){position:relative;z-index:1}
+.article-page .head{
+  display:flex;align-items:center;flex-wrap:wrap;gap:10px 14px;
+  padding:0 0 clamp(8px,1vh,12px);border-bottom:1px solid #cbd1c3;
+  color:#687067;font-size:var(--art-meta);line-height:1.45;
+}
+.article-page .head .jn{
+  color:#173e2d;font-family:var(--editorial);font-size:clamp(20px,1.3vw,24px);font-style:italic;font-weight:700;
+}
+.article-page .head .sep{color:#b9c0b3}
+.article-page .head .met{display:inline-flex;align-items:center;gap:8px;margin-left:2px}
+.article-page .head .met b{padding:3px 10px;border-radius:8px;background:#e7ebd9;color:#24503a;font-size:clamp(12.5px,0.8vw,14px);font-weight:750}
+.article-page .head .met b.weak{background:#f0eee5;color:#625e52}
+.article-page .head .met i{color:#555d53;font-size:clamp(13px,0.82vw,14.5px);font-style:normal;font-weight:500}
+.article-page .head .crumb{color:#697068}
+.article-page .head .rt{display:flex;align-items:center;flex-wrap:wrap;gap:8px 16px;margin-left:auto;color:#697068}
+.article-page .head .kind{letter-spacing:.02em}
+.article-page .head .lv{padding:2px 9px;border-radius:6px;background:#f0eee5;color:#625e52;font-size:clamp(12px,0.78vw,13.5px);letter-spacing:.02em}
+.article-page .head .lv.fulltext{background:#e7ebd9;color:#24503a}
+.article-page .head .lv.oa_url{background:#eef0e6;color:#4f6343}
+.article-page .head .lv.preprint{background:#eeefe9;color:#687067}
+.article-page .head .no{
+  position:static;top:auto;right:auto;padding:3px 11px;border-radius:6px;
+  background:#eeebdc;color:#62552e;font-family:var(--editorial);font-size:clamp(13px,0.84vw,14.5px);
+  font-weight:650;line-height:1.4;letter-spacing:.03em;white-space:nowrap;
+}
+.article-page h2.t-zh{
+  max-width:none;margin:clamp(14px,1.8vh,24px) 0 0;color:#173e2d;font-family:var(--editorial);
+  font-size:var(--art-h2);font-weight:760;line-height:1.25;letter-spacing:-.03em;
+  text-wrap:pretty;
+}
+.article-page .t-en{
+  max-width:none;margin:clamp(6px,0.8vh,10px) 0 0;color:#5f685f;font-family:Georgia,"Times New Roman",serif;
+  font-size:var(--art-ten);line-height:1.45;letter-spacing:.005em;
+}
+.article-page .title-rule{
+  width:60px;height:3px;margin:clamp(10px,1.3vh,16px) 0;border:0;background:#24503a;
+}
+.article-page .lead{
+  display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:16px;
+  margin:0;padding:clamp(10px,1.2vh,14px) 20px;border-left:4px solid #24503a;border-radius:3px;
+  background:#f0f0e5;color:#2b312a;font-family:var(--editorial);font-size:var(--art-lead);line-height:1.58;
+}
+.article-page .lead-label{
+  padding-right:16px;border-right:1px solid #b8c1ad;color:#173e2d;
+  font-size:var(--art-lead);font-weight:750;white-space:nowrap;
+}
+.article-page .lead-copy{min-width:0}
+.article-page .art-body{flex:1 0 auto;display:flex;flex-direction:column}
+.article-page .grid{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:var(--art-gap-row) var(--art-gap-col);margin:clamp(14px,1.8vh,22px) 0 clamp(14px,1.6vh,20px);
+}
+.article-page .blk h3{
+  margin:0 0 8px;padding-bottom:7px;border-bottom:1px solid #aeb9aa;
+  color:#173e2d;font-family:var(--editorial);font-size:var(--art-h3);font-weight:750;letter-spacing:.015em;
+}
+.article-page .blk p{
+  margin:0;color:#2b302b;font-size:var(--art-p);line-height:var(--art-lh);letter-spacing:.005em;
+}
+.article-page .stage{
+  margin-top:auto;padding:10px 2px 0;border-top:1px solid #d6d9ce;
+  color:#586158;font-size:var(--art-foot);line-height:1.55;
+}
+.article-page .stage b{margin-right:10px;color:#41563c;font-size:clamp(13px,0.82vw,14.5px);font-weight:750;letter-spacing:.06em}
+.article-page .foot{
+  display:flex;align-items:center;flex-wrap:wrap;gap:10px 22px;
+  margin-top:clamp(10px,1.2vh,15px);padding:clamp(10px,1.2vh,14px) 2px 0;border-top:1px solid #cbd1c3;
+  color:#586158;font-size:var(--art-foot);line-height:1.5;
+}
+.article-page .foot .doi{color:#262c27;font-size:var(--art-foot);font-weight:650;overflow-wrap:anywhere}
+.article-page .foot .doi i{margin-right:8px;color:#626b62;font-size:clamp(12px,0.78vw,13.5px);letter-spacing:.12em}
+.article-page .foot a{border-bottom:1px solid #c7cec0;color:#4f5a4e;text-decoration:none}
+.article-page .foot a:hover{border-color:#24503a;color:#173e2d}
+.article-page .foot .affil{flex:1 1 220px;min-width:140px;max-width:none;margin:0;color:#434a42;white-space:normal;overflow-wrap:anywhere}
+.article-page .foot .src{margin-left:auto;color:#24503a;white-space:nowrap}
+.article-page .star{flex:none;color:#aaa58f;font-size:17px}
+.article-page .star[data-on="1"]{color:#a88d43}
+
+/* 非缩放两级紧凑适配（绝不缩小 zoom，保证字号清晰可读） */
+.article-page .sheet[data-fit="1"]{
+  padding-top:14px;padding-bottom:12px;
+  --art-lh:1.56;--art-gap-row:12px;
+}
+.article-page .sheet[data-fit="1"] h2.t-zh{margin-top:10px}
+.article-page .sheet[data-fit="1"] .title-rule{margin:9px 0}
+.article-page .sheet[data-fit="1"] .lead{padding:9px 16px;line-height:1.52}
+.article-page .sheet[data-fit="1"] .grid{margin:12px 0 10px}
+.article-page .sheet[data-fit="1"] .blk h3{margin-bottom:5px;padding-bottom:5px}
+.article-page .sheet[data-fit="1"] .foot{margin-top:8px;padding-top:9px}
+
+.article-page .sheet[data-fit="2"]{
+  padding-top:12px;padding-bottom:10px;
+  --art-h2:clamp(33px,2.25vw,44px);
+  --art-ten:clamp(16px,1.02vw,20px);
+  --art-lead:clamp(18px,1.08vw,21px);
+  --art-h3:clamp(21px,1.32vw,26px);
+  --art-p:clamp(18px,1.05vw,20px);
+  --art-lh:1.55;
+  --art-gap-row:10px;
+}
+.article-page .sheet[data-fit="2"] h2.t-zh{margin-top:8px}
+.article-page .sheet[data-fit="2"] .title-rule{margin:8px 0}
+.article-page .sheet[data-fit="2"] .lead{padding:8px 15px;line-height:1.5}
+.article-page .sheet[data-fit="2"] .grid{margin:10px 0 8px}
+.article-page .sheet[data-fit="2"] .blk h3{margin-bottom:4px;padding-bottom:4px}
+.article-page .sheet[data-fit="2"] .stage{padding-top:7px}
+.article-page .sheet[data-fit="2"] .foot{margin-top:7px;padding-top:8px}
+
+html.flow .page.article-page{padding:0 16px 16px}
+html.flow .page.article-page:last-child{padding-bottom:44px}
+html.flow .page.article-page .sheet{
+  max-width:1600px;min-height:0;padding:30px 40px 26px;border:0;
+  border-bottom:1px solid #d6d9ce;background:#fbfaf5;box-shadow:none;
+}
+@media(max-width:960px){
+  .article-page{padding:8px 10px}
+  .article-page .sheet{padding:20px 22px 18px}
+  .article-page h2.t-zh{font-size:clamp(30px,4.2vw,42px)}
+  .article-page .grid{column-gap:28px}
+  .article-page .blk p{font-size:17px;line-height:1.65}
+}
+@media(max-width:820px){
+  .article-page .grid{grid-template-columns:1fr;gap:20px}
+}
+@media(max-width:680px){
+  .article-page{padding:0}
+  .article-page .sheet{min-height:100%;padding:20px 18px 18px;border:0;box-shadow:none}
+  .article-page .head{align-items:flex-start;gap:6px 9px;padding-bottom:10px;font-size:12px}
+  .article-page .head .jn{font-size:17px}
+  .article-page .head .met{gap:5px}
+  .article-page .head .met b{padding:2px 7px;font-size:11px}
+  .article-page .head .met i{font-size:11.5px}
+  .article-page .head .rt{flex-basis:100%;margin-left:0;gap:7px 11px}
+  .article-page .head .no{display:inline-flex;font-size:11px}
+  .article-page h2.t-zh{margin-top:18px;font-size:28px;line-height:1.36;letter-spacing:-.02em}
+  .article-page .t-en{margin-top:7px;font-size:14.5px;line-height:1.55}
+  .article-page .title-rule{width:46px;height:2px;margin:13px 0}
+  .article-page .lead{grid-template-columns:1fr;gap:5px;margin:0;padding:11px 13px;font-size:16px;line-height:1.65}
+  .article-page .lead-label{padding:0;border:0;font-size:14.5px}
+  .article-page .grid{grid-template-columns:1fr;gap:18px;margin:18px 0}
+  .article-page .blk h3{margin-bottom:6px;padding-bottom:5px;font-size:19px}
+  .article-page .blk p{font-size:16px;line-height:1.75}
+  .article-page .stage{margin-top:10px;padding-top:9px;font-size:12.5px}
+  .article-page .foot{gap:9px 15px;margin-top:13px;padding:12px 0 0;font-size:12.5px}
+  .article-page .foot .doi{font-size:12.5px}
+  .article-page .foot .affil{flex-basis:100%;min-width:100%;order:3}
+  .article-page .foot .src{margin-left:auto}
+  html.flow .page.article-page{padding:0 8px 12px}
+  html.flow .page.article-page .sheet{padding:20px 16px 18px}
+}
+@media print{
+  .article-page{height:auto!important;min-height:0!important;padding:0!important;overflow:visible!important;break-after:page;page-break-after:always;background:#fff!important}
+  .article-page:last-child{break-after:auto;page-break-after:auto}
+  .article-page .sheet{width:100%!important;max-width:none!important;min-height:0!important;padding:6mm 8mm 5mm!important;
+    border:0!important;background:#fff!important;box-shadow:none!important;overflow:visible!important}
+  .article-page h2.t-zh{margin-top:7mm;font-size:23pt}
+  .article-page .t-en{font-size:9pt}
+  .article-page .lead{font-size:10pt;line-height:1.55}
+  .article-page .grid{gap:5mm 10mm;margin:7mm 1mm 5mm}
+  .article-page .blk h3{font-size:12pt}
+  .article-page .blk p{font-size:9.5pt;line-height:1.55}
+  .article-page .stage,.article-page .foot{font-size:8pt}
+}
+
+
+/* 个人科研专刊专属样式 */
+.personal-relevance-panel {
+  margin-top: 14px;
+  padding: 12px 18px;
+  background: #f4f8f4;
+  border: 1px solid #c9decb;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pr-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #173e2d;
+  letter-spacing: 0.02em;
+}
+.pr-badge {
+  background: #173e2d;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+.pr-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.pr-tag {
+  font-size: 11.5px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: #fff;
+  border: 1px solid #d4e5d6;
+  color: #2c5943;
+  font-weight: 600;
+}
+.pr-body {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #282d31;
+}
+.pr-takeaway {
+  font-size: 13px;
+  color: #52584e;
+  border-left: 3px solid #2f6b4f;
+  padding-left: 10px;
+  margin-top: 4px;
+}
+
+</style>
+<link rel="stylesheet" href="../../assets/site-nav.css">
+<link rel="stylesheet" href="../../assets/library-issue.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><b class="serif">基因组雷达</b><span class="en">Genome Radar</span></div>
+  <span class="issue-tag">个人科研专刊 · 2026-11-22</span>
+  <div class="tools">
+    <a class="back" href="../../my-radar.html">我的科研雷达</a>
+    <a class="back" href="../../index.html">首页</a>
+    <a class="library-nav" href="../../library.html">我的文献库</a>
+    <button id="tocBtn" aria-controls="toc" aria-expanded="false">目录</button>
+    <button id="viewBtn">连读</button>
+    <div class="zoom" role="group" aria-label="页面缩放">
+      <button id="zOut" title="缩小" aria-label="缩小">−</button>
+      <button id="zRst" title="恢复 100%" aria-label="恢复 100%">100%</button>
+      <button id="zIn" title="放大" aria-label="放大">+</button>
+    </div>
+  </div>
+</header>
+
+<nav id="toc" class="toc-drawer" aria-label="文章目录" hidden>
+  <div class="toc-head">
+    <b>专刊目录</b>
+    <span class="toc-total">共 5 篇历史经典</span>
+    <button id="tocClose" aria-label="关闭目录">✕</button>
+  </div>
+  <ol class="toc-list">
+    <li class="toc-item"><button type="button" class="toc-row" data-i="1" data-title="先导编辑技术突破：无需双链断裂与供体 DNA 的精准基因组搜索与替换" data-journal="Nature" data-date="2019" aria-pressed="false"><span class="i">01</span><span class="t">先导编辑技术突破：无需双链断裂与供体 DNA 的精准基因组搜索与替换</span><span class="j">Nature</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="2" data-title="高质量双单倍型图泛基因组参考图谱：彻底突破线性参考局限" data-journal="Nature" data-date="2023" aria-pressed="false"><span class="i">02</span><span class="t">高质量双单倍型图泛基因组参考图谱：彻底突破线性参考局限</span><span class="j">Nature</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="3" data-title="Minigraph 泛基因组图构建算法：建立多基因组结构变异拓扑坐标系" data-journal="Genome Biol" data-date="2020" aria-pressed="false"><span class="i">03</span><span class="t">Minigraph 泛基因组图构建算法：建立多基因组结构变异拓扑坐标系</span><span class="j">Genome Biol</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="4" data-title="MCScanX 多基因组共线性检测与基因倍增分类算法工具包" data-journal="Nucleic Acids Res" data-date="2012" aria-pressed="false"><span class="i">04</span><span class="t">MCScanX 多基因组共线性检测与基因倍增分类算法工具包</span><span class="j">Nucleic Acids Res</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="5" data-title="拟南芥根系单细胞转录组图谱：解析植物组织发育轨迹与细胞命运决定" data-journal="Nat Plants" data-date="2019" aria-pressed="false"><span class="i">05</span><span class="t">拟南芥根系单细胞转录组图谱：解析植物组织发育轨迹与细胞命运决定</span><span class="j">Nat Plants</span></button></li>
+  </ol>
+</nav>
+
+<main id="deck" class="deck" tabindex="0" aria-label="横向文章翻页区">
+  <section class="page cover-page" id="page-cover">
+  <article class="sheet cover-sheet">
+    <div class="cover-hero">
+      <div class="cover-copy">
+        <div class="cv-kicker">PERSONAL RESEARCH SUPPLEMENT · 科研溯源</div>
+        <h1 class="cv-title serif">我的科研雷达 · 个人科研专刊</h1>
+        <div class="cv-week">
+          <strong>2026-11-22 个人专刊</strong><span class="cv-sep">·</span>
+          <span>专属定制对象：作物基因组与分子育种研究员</span><span class="cv-sep">·</span>
+          <span>5 篇历史经典溯源</span>
+        </div>
+        <div class="cv-rule"></div>
+        <p class="cv-hl">大麦、小麦、水稻与前沿编辑方法经典成果科研溯源</p>
+        <p class="cv-intro">本专刊依据您的四维科研画像（聚焦大麦、小麦、水稻、功能机制与前沿定向编辑技术），基于真实文献库核验，精选出对您的课题最具理论与方法借鉴价值的 5 篇历史经典与奠基论文。</p>
+        <p class="cover-window">溯源范围　全球学术文献溯源检索</p>
+      </div>
+    </div>
+    <div class="cover-bottom">
+      <section class="cover-highlights">
+        <div class="section-heading"><h2>本期溯源推荐成果</h2><span>CLASSIC HIGHLIGHTS</span></div>
+        <ol class="cv-pts"><li><strong>先导编辑技术突破：无需双链断裂与供体 DNA 的精准基因组搜索与替换</strong> — 开发了革命性的先导编辑 (Prime Editing) 系统，通过 pegRNA 与逆转录酶融合 Cas9，在植物与动植物细胞中实现了高保真定点替换与微片段插入。</li><li><strong>高质量双单倍型图泛基因组参考图谱：彻底突破线性参考局限</strong> — 人类泛基因组参考联盟 (HPRC) 集合了全球多元族群的 94 套单倍型，构建了全基因组多尺度拓扑图，小变异发现错误减少 34%，结构变异检出增加 104%。</li><li><strong>Minigraph 泛基因组图构建算法：建立多基因组结构变异拓扑坐标系</strong> — 李恒团队提出了图基因组构建工具 Minigraph，采用序列图拓扑数据结构实现了多基因组大尺度结构变异的高效整合与秒级图谱构建。</li><li><strong>MCScanX 多基因组共线性检测与基因倍增分类算法工具包</strong> — 王育鹏与唐海宝等人发布了共线性检测标准工具 MCScanX，实现了跨物种染色体共线性区块检测与五类基因复制模式的系统性划分。</li><li><strong>拟南芥根系单细胞转录组图谱：解析植物组织发育轨迹与细胞命运决定</strong> — 首次构建了植物根系高分辨率单细胞转录组细胞图谱，在单细胞分辨率追踪了从分生组织干细胞向成熟表皮与维管束的分化发育轨迹。</li></ol>
+      </section>
+      <section class="cover-journals">
+        <div class="section-heading"><h2>来源期刊与年份</h2><span>JOURNALS & TIMELINE</span></div>
+        <ul class="cv-journals"><li>Nature <span style='font-size:12px;color:#71767c;'>(2019)</span></li><li>Nature <span style='font-size:12px;color:#71767c;'>(2023)</span></li><li>Genome Biol <span style='font-size:12px;color:#71767c;'>(2020)</span></li><li>Nucleic Acids Res <span style='font-size:12px;color:#71767c;'>(2012)</span></li><li>Nat Plants <span style='font-size:12px;color:#71767c;'>(2019)</span></li></ul>
+      </section>
+    </div>
+    <div class="cv-hint">滚轮 / 方向键 / 左右滑动翻页　·　「目录」跳转文章　·　「连读」纵向阅读　·　「打印 / PDF」导出 A4 横向</div>
+  </article>
+</section><section class="page article-page">
+  <article class="sheet">
+    <div class="head">
+      <span class="jn">Nature (2019)</span>
+      <span class="sep">|</span>
+      <span class="crumb">crispr-cas-systems</span>
+      <span class="rt">
+        <span class="kind">历史经典溯源</span>
+        <span>2019-10-21</span>
+        <span class="lv fulltext">真实核验</span>
+        <span class="no">文献 01</span>
+      </span>
+    </div>
+    <div class="art-body">
+      <h2 class="t-zh">先导编辑技术突破：无需双链断裂与供体 DNA 的精准基因组搜索与替换</h2>
+      <p class="t-en">Search-and-replace genome editing without double-strand breaks or donor DNA</p>
+      <hr class="title-rule" aria-hidden="true">
+      <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">开发了革命性的先导编辑 (Prime Editing) 系统，通过 pegRNA 与逆转录酶融合 Cas9，在植物与动植物细胞中实现了高保真定点替换与微片段插入。</span></p>
+      <div class="grid">
+        <section class="blk"><h3>做了什么</h3><p>构建了由催化失活的 Cas9 切割酶、工程化 M-MLV 逆转录酶及具有扩展序列的 pegRNA 构成的复合系统，系统评测了其在多种基因组位点的编辑效率与脱靶率。</p></section>
+        <section class="blk"><h3>结论</h3><p>无需依赖 DNA 双链断裂 (DSB) 和外源供体 DNA，即可高效实现全部 12 种单碱基互变、特定序列定点插入与缺失，大幅降低了传统 CRISPR 的副产物与脱靶损伤。</p></section>
+        <section class="blk"><h3>为什么值得关注</h3><p>彻底解决了植物精准育种中难以高效创制特定碱基点突变与小片段精确修饰的技术瓶颈，为作物重要农艺性状的定向设计与驯化提供了全新工具基石。</p></section>
+        <section class="blk"><h3>未来展望</h3><p>进一步优化植物体内 pegRNA 的稳定表达结构，提高在难编辑作物中的递送与编辑窗口活性。</p></section>
+      </div>
+      <div class="personal-relevance-panel">
+  <div class="pr-head">
+    <span>★ 专属科研画像关联分析 (Personal Relevance)</span>
+    <span class="pr-badge">科研溯源高相关</span>
+  </div>
+  <div class="pr-tags"><span class="pr-tag">专题: 基因组编辑与分子育种</span><span class="pr-tag">专题: CRISPR/Cas 编辑系统与递送技术</span><span class="pr-tag">物种: 作物通用 / 大麦 / 小麦</span><span class="pr-tag">基因: CRISPR/Cas9</span><span class="pr-tag">基因: PE 先导编辑器</span><span class="pr-tag">方法: 先导编辑 (Prime Editing)</span><span class="pr-tag">方法: 定点突变与表型创制</span></div>
+  <div class="pr-body"><b>与您课题的关联：</b>为大麦耐盐碱关键转运蛋白 HvSOS1 或小麦抗病基因创建定点非失活突变，可避免传统敲除造成的生长缺陷，实现性状解耦创制。</div>
+  <div class="pr-takeaway"><b>可借鉴设计/流程：</b>建议借鉴其双 pegRNA 设计原则与逆转录模板长度优化策略，提高在大麦原生质体及愈伤组织中的编辑活性。</div>
+</div>
+    </div>
+    <div class="stage"><b>研究阶段与地位</b>前沿方法突破与跨物种通用验证</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1038/s41586-019-1711-4</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/31634902/" target="_blank" rel="noopener">PMID 31634902</a>
+      <a class="src" href="https://doi.org/10.1038/s41586-019-1711-4" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="31634902" title="收藏到个人文献库" aria-label="收藏到个人文献库">★</button>
+    </div>
+  </article>
+</section><section class="page article-page">
+  <article class="sheet">
+    <div class="head">
+      <span class="jn">Nature (2023)</span>
+      <span class="sep">|</span>
+      <span class="crumb">graph-pangenome / super-pangenome</span>
+      <span class="rt">
+        <span class="kind">历史经典溯源</span>
+        <span>2023-05-10</span>
+        <span class="lv fulltext">真实核验</span>
+        <span class="no">文献 02</span>
+      </span>
+    </div>
+    <div class="art-body">
+      <h2 class="t-zh">高质量双单倍型图泛基因组参考图谱：彻底突破线性参考局限</h2>
+      <p class="t-en">A draft human pangenome reference</p>
+      <hr class="title-rule" aria-hidden="true">
+      <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">人类泛基因组参考联盟 (HPRC) 集合了全球多元族群的 94 套单倍型，构建了全基因组多尺度拓扑图，小变异发现错误减少 34%，结构变异检出增加 104%。</span></p>
+      <div class="grid">
+        <section class="blk"><h3>做了什么</h3><p>利用超长 Nanopore 与高精度 HiFi 测序对 47 名个体进行端粒到端粒级别的全基因组分相组装，并采用无偏图谱对齐技术融合了 1.19 亿碱基新序列。</p></section>
+        <section class="blk"><h3>结论</h3><p>实验证明图泛基因组显著降低了测序读长在复杂结构变异区域的比对错误率，证实了图基因组在复杂变异解析中的绝对优势。</p></section>
+        <section class="blk"><h3>为什么值得关注</h3><p>确立了全球生命科学迈入图泛基因组时代的里程碑，直接推动了主要粮食作物构建多物种跨属超泛基因组与图谱辅助育种的新范式。</p></section>
+        <section class="blk"><h3>未来展望</h3><p>进一步整合表观遗传修饰与三维染色质互作信息，发展多组学图谱模型。</p></section>
+      </div>
+      <div class="personal-relevance-panel">
+  <div class="pr-head">
+    <span>★ 专属科研画像关联分析 (Personal Relevance)</span>
+    <span class="pr-badge">科研溯源高相关</span>
+  </div>
+  <div class="pr-tags"><span class="pr-tag">专题: 泛基因组</span><span class="pr-tag">专题: 图形泛基因组与变异图谱</span><span class="pr-tag">物种: 植物通用 / 作物泛基因组参考</span><span class="pr-tag">方法: 图形泛基因组构建算法 (Minigraph/vg)</span><span class="pr-tag">方法: 单倍型分相组装</span></div>
+  <div class="pr-body"><b>与您课题的关联：</b>为大麦与小麦复杂多倍体群体的全景变异图谱构建提供了标准质量控制指标与评估框架。</div>
+  <div class="pr-takeaway"><b>可借鉴设计/流程：</b>参考 HPRC 的双单倍型分相评估方法 (Flagger 与 Merqury)，提升作物基因组图谱组装质量。</div>
+</div>
+    </div>
+    <div class="stage"><b>研究阶段与地位</b>国际大科学工程重大突破</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1038/s41586-023-05896-x</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/37165181/" target="_blank" rel="noopener">PMID 37165181</a>
+      <a class="src" href="https://doi.org/10.1038/s41586-023-05896-x" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="37165181" title="收藏到个人文献库" aria-label="收藏到个人文献库">★</button>
+    </div>
+  </article>
+</section><section class="page article-page">
+  <article class="sheet">
+    <div class="head">
+      <span class="jn">Genome Biol (2020)</span>
+      <span class="sep">|</span>
+      <span class="crumb">graph-pangenome / structural-variation-pan</span>
+      <span class="rt">
+        <span class="kind">历史经典溯源</span>
+        <span>2020-07-28</span>
+        <span class="lv fulltext">真实核验</span>
+        <span class="no">文献 03</span>
+      </span>
+    </div>
+    <div class="art-body">
+      <h2 class="t-zh">Minigraph 泛基因组图构建算法：建立多基因组结构变异拓扑坐标系</h2>
+      <p class="t-en">Designing and constructing pan-genome graphs with minigraph</p>
+      <hr class="title-rule" aria-hidden="true">
+      <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">李恒团队提出了图基因组构建工具 Minigraph，采用序列图拓扑数据结构实现了多基因组大尺度结构变异的高效整合与秒级图谱构建。</span></p>
+      <div class="grid">
+        <section class="blk"><h3>做了什么</h3><p>设计了 rGFA 变异图数据结构与图比对增量算法，迭代将多个单倍型基因组的大片段结构变异 (SV ≥ 50 bp) 整合为统一的泛基因组图谱。</p></section>
+        <section class="blk"><h3>结论</h3><p>成功消除了基于单一线性参考基因组分析带来的坐标参考偏倚 (Reference bias)，大幅降低了大尺度基因组图谱的图路径爆炸与计算复杂度。</p></section>
+        <section class="blk"><h3>为什么值得关注</h3><p>奠定了现代动植物泛基因组从“一维线性序列”向“多维图拓扑空间”转型的算法底层，成为全球主要作物超级泛基因组构建的核心工具链。</p></section>
+        <section class="blk"><h3>未来展望</h3><p>拓展结合高分辨率碱基级比对算法，支持微小 SNP/InDel 与复杂结构变异的多尺度联合索引。</p></section>
+      </div>
+      <div class="personal-relevance-panel">
+  <div class="pr-head">
+    <span>★ 专属科研画像关联分析 (Personal Relevance)</span>
+    <span class="pr-badge">科研溯源高相关</span>
+  </div>
+  <div class="pr-tags"><span class="pr-tag">专题: 泛基因组</span><span class="pr-tag">专题: 图形泛基因组与变异图谱</span><span class="pr-tag">物种: 禾本科通用 / 大麦 / 小麦</span><span class="pr-tag">方法: 图形泛基因组构建算法 (Minigraph/vg)</span><span class="pr-tag">方法: 结构变异图谱分析</span></div>
+  <div class="pr-body"><b>与您课题的关联：</b>在开展大麦及小麦野生种质资源图泛基因组分析时，可直接使用 Minigraph 骨架图快速捕获抗逆主效等位基因的大片段倒位与缺失。</div>
+  <div class="pr-takeaway"><b>可借鉴设计/流程：</b>建议采用 Minigraph-Cactus 流程，将多份大麦地方品种 HiFi 组装序列整合进图基因组以捕获耐盐碱结构变异。</div>
+</div>
+    </div>
+    <div class="stage"><b>研究阶段与地位</b>工业级计算生物学工具奠基</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1186/s13059-020-02168-z</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/32727518/" target="_blank" rel="noopener">PMID 32727518</a>
+      <a class="src" href="https://doi.org/10.1186/s13059-020-02168-z" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="32727518" title="收藏到个人文献库" aria-label="收藏到个人文献库">★</button>
+    </div>
+  </article>
+</section><section class="page article-page">
+  <article class="sheet">
+    <div class="head">
+      <span class="jn">Nucleic Acids Res (2012)</span>
+      <span class="sep">|</span>
+      <span class="crumb">synteny-collinearity / polyploidy-wgd</span>
+      <span class="rt">
+        <span class="kind">历史经典溯源</span>
+        <span>2012-01-04</span>
+        <span class="lv fulltext">真实核验</span>
+        <span class="no">文献 04</span>
+      </span>
+    </div>
+    <div class="art-body">
+      <h2 class="t-zh">MCScanX 多基因组共线性检测与基因倍增分类算法工具包</h2>
+      <p class="t-en">MCScanX: a toolkit for detection and evolutionary analysis of gene synteny and collinearity</p>
+      <hr class="title-rule" aria-hidden="true">
+      <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">王育鹏与唐海宝等人发布了共线性检测标准工具 MCScanX，实现了跨物种染色体共线性区块检测与五类基因复制模式的系统性划分。</span></p>
+      <div class="grid">
+        <section class="blk"><h3>做了什么</h3><p>基于动态规划与有向无环图 (DAG) 算法，对全基因组同源基因对进行局部共线性链延伸，并将复制基因严格分类为 WGD、串联、近端及转座重复。</p></section>
+        <section class="blk"><h3>结论</h3><p>极大提高了在多倍化复杂植物基因组中识别同源染色体共线性区块的容错率与运行速度，并支持微观与宏观共线性多重可视化。</p></section>
+        <section class="blk"><h3>为什么值得关注</h3><p>成为过去十余年全球植物比较基因组学、古染色体多倍化推断及亚基因组演化追踪的通用金标准工具。</p></section>
+        <section class="blk"><h3>未来展望</h3><p>演进结合染色体三维构象与单倍型分相组装数据，解析复杂同源多倍体的非对称演化。</p></section>
+      </div>
+      <div class="personal-relevance-panel">
+  <div class="pr-head">
+    <span>★ 专属科研画像关联分析 (Personal Relevance)</span>
+    <span class="pr-badge">科研溯源高相关</span>
+  </div>
+  <div class="pr-tags"><span class="pr-tag">专题: 进化与比较基因组学</span><span class="pr-tag">专题: 基因共线性与同线性分析</span><span class="pr-tag">物种: 禾本科 / 大麦 / 小麦</span><span class="pr-tag">方法: 多基因组共线性分析 (MCScanX)</span><span class="pr-tag">方法: 系统发育分析</span></div>
+  <div class="pr-body"><b>与您课题的关联：</b>在解析大麦抗逆功能基因家族时，可通过 MCScanX 区分其是起源于古全基因组复制还是串联复制，阐明功能分化路径。</div>
+  <div class="pr-takeaway"><b>可借鉴设计/流程：</b>建议结合 Ka/Ks 计算脚本，筛选大麦与小麦受正选择快速演化的抗病耐逆共线性同源基因对。</div>
+</div>
+    </div>
+    <div class="stage"><b>研究阶段与地位</b>全球通用经典生物信息算法</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1093/nar/gkr1293</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/22217600/" target="_blank" rel="noopener">PMID 22217600</a>
+      <a class="src" href="https://doi.org/10.1093/nar/gkr1293" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="22217600" title="收藏到个人文献库" aria-label="收藏到个人文献库">★</button>
+    </div>
+  </article>
+</section><section class="page article-page">
+  <article class="sheet">
+    <div class="head">
+      <span class="jn">Nat Plants (2019)</span>
+      <span class="sep">|</span>
+      <span class="crumb">single-cell-transcriptomics / cell-lineage-differentiation</span>
+      <span class="rt">
+        <span class="kind">历史经典溯源</span>
+        <span>2019-07-08</span>
+        <span class="lv fulltext">真实核验</span>
+        <span class="no">文献 05</span>
+      </span>
+    </div>
+    <div class="art-body">
+      <h2 class="t-zh">拟南芥根系单细胞转录组图谱：解析植物组织发育轨迹与细胞命运决定</h2>
+      <p class="t-en">A single-cell RNA-seq atlas of Arabidopsis root development</p>
+      <hr class="title-rule" aria-hidden="true">
+      <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">首次构建了植物根系高分辨率单细胞转录组细胞图谱，在单细胞分辨率追踪了从分生组织干细胞向成熟表皮与维管束的分化发育轨迹。</span></p>
+      <div class="grid">
+        <section class="blk"><h3>做了什么</h3><p>分离拟南芥根尖原生质体，进行大规模 10x Genomics 单细胞转录组测序，精细注释了表皮、皮层、内皮层、木质部等主要细胞群并构建了拟时序分化模型。</p></section>
+        <section class="blk"><h3>结论</h3><p>揭示了不同细胞类型具有独特的环境感应与抗逆转录特征，发现了控制根系不同细胞层分化的核心转录因子梯度网络。</p></section>
+        <section class="blk"><h3>为什么值得关注</h3><p>开创了植物器官发育单细胞转录组研究的先河，推动了水稻、玉米、大麦等主要作物根系与穗部单细胞图谱的发展。</p></section>
+        <section class="blk"><h3>未来展望</h3><p>结合空间转录组原位保留空间坐标，解析植物组织局部细胞间配体-受体通讯机制。</p></section>
+      </div>
+      <div class="personal-relevance-panel">
+  <div class="pr-head">
+    <span>★ 专属科研画像关联分析 (Personal Relevance)</span>
+    <span class="pr-badge">科研溯源高相关</span>
+  </div>
+  <div class="pr-tags"><span class="pr-tag">专题: 单细胞与空间组学</span><span class="pr-tag">专题: 单细胞转录组与细胞图谱</span><span class="pr-tag">物种: 拟南芥 / 作物根系通用</span><span class="pr-tag">基因: WUS</span><span class="pr-tag">基因: SCR</span><span class="pr-tag">基因: SHR</span><span class="pr-tag">方法: 单细胞 RNA 测序 (scRNA-seq)</span><span class="pr-tag">方法: 拟时序细胞谱系发育轨迹分析</span></div>
+  <div class="pr-body"><b>与您课题的关联：</b>为研究大麦根系维管束对盐碱逆境的单细胞时空响应提供了细胞标记基因与分析流程参考。</div>
+  <div class="pr-takeaway"><b>可借鉴设计/流程：</b>建议采用 Seurat 与 Monocle3 分析框架，在大麦耐盐突变体单细胞测序中精细聚类受离子毒害最敏感的表皮细胞群。</div>
+</div>
+    </div>
+    <div class="stage"><b>研究阶段与地位</b>植物单细胞组学开拓性成果</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1038/s41477-019-0466-4</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/31278385/" target="_blank" rel="noopener">PMID 31278385</a>
+      <a class="src" href="https://doi.org/10.1038/s41477-019-0466-4" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="31278385" title="收藏到个人文献库" aria-label="收藏到个人文献库">★</button>
+    </div>
+  </article>
+</section>
+</main>
+
+<div class="progress" role="progressbar" aria-valuemin="1" aria-valuemax="6" aria-valuenow="1">
+  <div class="bar" id="bar"></div>
+</div>
+
+<script>
+(function(){
+  var deck = document.getElementById('deck');
+  var pages = Array.from(document.querySelectorAll('.page'));
+  var bar = document.getElementById('bar');
+  var tocBtn = document.getElementById('tocBtn');
+  var tocDrawer = document.getElementById('toc');
+  var tocClose = document.getElementById('tocClose');
+  var viewBtn = document.getElementById('viewBtn');
+
+  function updateProgress() {
+    var scrollLeft = deck.scrollLeft;
+    var pageWidth = deck.clientWidth;
+    var idx = Math.round(scrollLeft / pageWidth);
+    var pct = Math.min(100, Math.max(0, ((idx + 1) / pages.length) * 100));
+    bar.style.width = pct + '%';
+  }
+
+  deck.addEventListener('scroll', updateProgress, { passive: true });
+
+  // Direct link support: ?article=N
+  var params = new URLSearchParams(window.location.search);
+  var artNum = parseInt(params.get('article'), 10);
+  if (artNum && artNum >= 1 && artNum < pages.length) {
+    setTimeout(function() {
+      pages[artNum].scrollIntoView({ behavior: 'smooth' });
+    }, 150);
+  }
+
+  // TOC drawer toggle
+  tocBtn.addEventListener('click', function() {
+    var isOpen = tocDrawer.hasAttribute('hidden');
+    if (isOpen) {
+      tocDrawer.removeAttribute('hidden');
+      tocBtn.setAttribute('aria-expanded', 'true');
+    } else {
+      tocDrawer.setAttribute('hidden', '');
+      tocBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
+  tocClose.addEventListener('click', function() {
+    tocDrawer.setAttribute('hidden', '');
+    tocBtn.setAttribute('aria-expanded', 'false');
+  });
+
+  // TOC click to jump
+  document.querySelectorAll('.toc-row').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var i = parseInt(btn.getAttribute('data-i'), 10);
+      if (pages[i]) {
+        pages[i].scrollIntoView({ behavior: 'smooth' });
+        tocDrawer.setAttribute('hidden', '');
+        tocBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
+  // View switch: continuous vs carousel
+  var isContinuous = false;
+  viewBtn.addEventListener('click', function() {
+    isContinuous = !isContinuous;
+    if (isContinuous) {
+      deck.style.flexDirection = 'column';
+      deck.style.overflowX = 'hidden';
+      deck.style.overflowY = 'auto';
+      viewBtn.textContent = '翻页';
+    } else {
+      deck.style.flexDirection = 'row';
+      deck.style.overflowX = 'auto';
+      deck.style.overflowY = 'hidden';
+      viewBtn.textContent = '连读';
+    }
+  });
+
+  // Zoom controls
+  var zoomLevel = 1.0;
+  function setZoom(z) {
+    zoomLevel = Math.max(0.8, Math.min(1.4, z));
+    document.documentElement.style.setProperty('--z', zoomLevel);
+    document.getElementById('zRst').textContent = Math.round(zoomLevel * 100) + '%';
+  }
+  document.getElementById('zIn').addEventListener('click', function(){ setZoom(zoomLevel + 0.1); });
+  document.getElementById('zOut').addEventListener('click', function(){ setZoom(zoomLevel - 0.1); });
+  document.getElementById('zRst').addEventListener('click', function(){ setZoom(1.0); });
+
+  // Keyboard navigation
+  window.addEventListener('keydown', function(e) {
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') {
+      deck.scrollBy({ left: deck.clientWidth, behavior: 'smooth' });
+    } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      deck.scrollBy({ left: -deck.clientWidth, behavior: 'smooth' });
+    }
+  });
+})();
+</script>
+<script src="../../assets/reading-progress.js"></script>
+</body>
+</html>

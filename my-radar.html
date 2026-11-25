@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>我的科研雷达 · 基因组雷达</title>
+  <meta name="description" content="Genome Radar（基因组雷达）我的科研雷达：配置专属科研画像，定制未来每期文献检索、筛选与中文解读策略，自动开展跨库历史学术溯源。">
+  <link rel="icon" type="image/x-icon" href="assets/brand/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/brand/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/brand/apple-touch-icon.png">
+  <link rel="stylesheet" href="assets/site-nav.css">
+  <link rel="stylesheet" href="assets/my-radar.css">
+</head>
+<body class="radar-body">
+
+<header class="site-header" id="top">
+  <div class="header-inner">
+    <a class="brand" href="index.html" aria-label="基因组雷达首页">
+      <img class="brand-mark" src="assets/brand/logo-transparent.png" alt="基因组雷达 Logo" width="44" height="44">
+      <span class="brand-name">基因组雷达</span>
+      <span class="brand-en">GENOME RADAR</span>
+    </a>
+    <nav class="primary-nav" aria-label="主导航">
+      <a href="index.html">首页</a>
+      <a href="my-radar.html" aria-current="page">我的科研雷达</a>
+      <a href="topics.html">研究专题</a>
+      <a href="search.html">文献搜索</a>
+      <a href="library.html">我的文献库</a>
+      <a href="deep-library.html">我的精读</a>
+    </nav>
+  </div>
+</header>
+
+<main class="radar-shell" id="main-content">
+  <!-- Hero Section -->
+  <section class="radar-hero">
+    <div class="radar-hero-top">
+      <div class="radar-title-group">
+        <h1>我的科研雷达 <span style="font-size:15px;font-family:var(--sans);color:#b87315;font-weight:600;background:#fdf5ea;padding:3px 10px;border-radius:12px;border:1px solid #f0deb8;">V3.0 个性化情报引擎</span></h1>
+        <p>配置您的专注研究专题、物种、基因和实验方法，定制未来每期文献检索与中文解读，利用 DeepSeek API 自动进行历史学术溯源。</p>
+      </div>
+      <div id="radar-status-badge" class="radar-status-badge">
+        <span class="radar-status-dot"></span> 正在读取生成端同步状态...
+      </div>
+    </div>
+    <div class="radar-hero-actions">
+      <button type="button" id="btn-sync-profile" class="btn-radar btn-primary">☁ 保存并同步研究画像</button>
+      <button type="button" id="btn-export-json" class="btn-radar btn-secondary">⤓ 导出画像 JSON</button>
+      <button type="button" id="btn-import-json" class="btn-radar btn-secondary">⤒ 导入画像 JSON</button>
+      <input type="file" id="file-import-json" accept=".json" style="display:none;">
+      <button type="button" id="btn-reset-default" class="btn-radar btn-secondary" style="color:#c0392b;">↺ 重置默认画像</button>
+    </div>
+  </section>
+
+  <div class="radar-grid">
+    <!-- Module 1: 我的研究画像概览 -->
+    <section class="radar-section" id="sec-overview">
+      <div class="radar-section-header">
+        <div class="radar-section-title">
+          <span class="section-num">1</span>
+          <h2>我的研究画像概览</h2>
+        </div>
+        <div class="radar-section-desc">当前四维个性化学术特征统计</div>
+      </div>
+      <div id="overview-cards-container" class="profile-overview-cards">
+        <!-- Rendered by my-radar.js -->
+      </div>
+    </section>
+
+    <!-- Module 2: 关注专题 -->
+    <section class="radar-section" id="sec-topics">
+      <div class="radar-section-header">
+        <div class="radar-section-title">
+          <span class="section-num">2</span>
+          <h2>关注专题 (九大一级专题与61个二级方向)</h2>
+        </div>
+        <div class="radar-section-desc">支持多层级勾选与权重调节，可自动关联相邻学术专题</div>
+      </div>
+      <div id="topic-tree-container" class="topic-tree-container">
+        <!-- Rendered by my-radar.js -->
+      </div>
+    </section>
+
+    <!-- Module 3: 关注物种 -->
+    <section class="radar-section" id="sec-species">
+      <div class="radar-section-header">
+        <div class="radar-section-title">
+          <span class="section-num">3</span>
+          <h2>关注研究物种</h2>
+        </div>
+        <div>
+          <button type="button" id="btn-add-custom-species" class="btn-radar btn-secondary">+ 添加自定义物种</button>
+        </div>
+      </div>
+      <div id="species-grid" class="species-grid">
+        <!-- Rendered by my-radar.js -->
+      </div>
+      <div style="font-size:13px;font-weight:600;color:var(--forest);margin-bottom:6px;">快捷添加常用作物与模式植物：</div>
+      <div class="quick-species-presets">
+        <span class="preset-chip" onclick="window.GenomeRadarUI.addSpeciesPreset('大麦', 'Barley', 'Hordeum vulgare', 4513)">+ 大麦 (Hordeum vulgare)</span>
+        <span class="preset-chip" onclick="window.GenomeRadarUI.addSpeciesPreset('小麦', 'Wheat', 'Triticum aestivum', 4565)">+ 小麦 (Triticum aestivum)</span>
+        <span class="preset-chip" onclick="window.GenomeRadarUI.addSpeciesPreset('水稻', 'Rice', 'Oryza sativa', 4530)">+ 水稻 (Oryza sativa)</span>
+        <span class="preset-chip" onclick="window.GenomeRadarUI.addSpeciesPreset('玉米', 'Maize', 'Zea mays', 4577)">+ 玉米 (Zea mays)</span>
+        <span class="preset-chip" onclick="window.GenomeRadarUI.addSpeciesPreset('大豆', 'Soybean', 'Glycine max', 3847)">+ 大豆 (Glycine max)</span>
+        <span class="preset-chip" onclick="window.GenomeRadarUI.addSpeciesPreset('拟南芥', 'Arabidopsis', 'Arabidopsis thaliana', 3702)">+ 拟南芥 (Arabidopsis thaliana)</span>
+        <span class="preset-chip" onclick="window.GenomeRadarUI.addSpeciesPreset('番茄', 'Tomato', 'Solanum lycopersicum', 4081)">+ 番茄 (Solanum lycopersicum)</span>
+        <span class="preset-chip" onclick="window.GenomeRadarUI.addSpeciesPreset('棉花', 'Cotton', 'Gossypium hirsutum', 3635)">+ 棉花 (Gossypium hirsutum)</span>
+        <span class="preset-chip" onclick="window.GenomeRadarUI.addSpeciesPreset('油菜', 'Rapeseed', 'Brassica napus', 3708)">+ 油菜 (Brassica napus)</span>
+        <span class="preset-chip" onclick="window.GenomeRadarUI.addSpeciesPreset('马铃薯', 'Potato', 'Solanum tuberosum', 4113)">+ 马铃薯 (Solanum tuberosum)</span>
+      </div>
+    </section>
+
+    <!-- Module 4: 关注基因 -->
+    <section class="radar-section" id="sec-genes">
+      <div class="radar-section-header">
+        <div class="radar-section-title">
+          <span class="section-num">4</span>
+          <h2>关注基因与基因家族</h2>
+        </div>
+        <div>
+          <button type="button" id="btn-add-custom-gene" class="btn-radar btn-secondary">+ 添加关注基因实体</button>
+        </div>
+      </div>
+      <div id="gene-cards-grid" class="gene-cards-grid">
+        <!-- Rendered by my-radar.js -->
+      </div>
+    </section>
+
+    <!-- Module 5: 关注研究方法 -->
+    <section class="radar-section" id="sec-methods">
+      <div class="radar-section-header">
+        <div class="radar-section-title">
+          <span class="section-num">5</span>
+          <h2>关注实验技术与生物信息方法</h2>
+        </div>
+        <div class="radar-section-desc">包含实验技术、测序技术、生物信息分析算法及软件工具</div>
+      </div>
+      <div id="methods-container">
+        <!-- Rendered by my-radar.js -->
+      </div>
+    </section>
+
+    <!-- Module 6: 每周选文策略 -->
+    <section class="radar-section" id="sec-strategy">
+      <div class="radar-section-header">
+        <div class="radar-section-title">
+          <span class="section-num">6</span>
+          <h2>每周选文策略与目标分配</h2>
+        </div>
+        <div class="radar-section-desc">设定每期20篇候选论文在核心关注、关联拓展与全局突破之间的配比</div>
+      </div>
+
+      <div style="background:#fff;padding:20px;border-radius:var(--radius-md);border:1px solid var(--line-light);margin-bottom:20px;">
+        <h3 style="margin:0 0 14px 0;font-size:15px;color:var(--forest);">目标选文比例配置 (合计 100%)</h3>
+        <div class="strategy-slider-row">
+          <span class="strategy-slider-label">核心关注方向 (Core):</span>
+          <input type="range" id="slider-core" class="strategy-slider-input" min="10" max="100" value="70">
+          <span id="val-core" class="strategy-slider-val">70%</span>
+        </div>
+        <div class="strategy-slider-row">
+          <span class="strategy-slider-label">关联研究方向 (Related):</span>
+          <input type="range" id="slider-related" class="strategy-slider-input" min="0" max="80" value="20">
+          <span id="val-related" class="strategy-slider-val">20%</span>
+        </div>
+        <div class="strategy-slider-row">
+          <span class="strategy-slider-label">植物基因组学重要突破 (Breakthrough):</span>
+          <input type="range" id="slider-breakthrough" class="strategy-slider-input" min="0" max="50" value="10">
+          <span id="val-breakthrough" class="strategy-slider-val">10%</span>
+        </div>
+      </div>
+
+      <div style="background:#fff;padding:20px;border-radius:var(--radius-md);border:1px solid var(--line-light);">
+        <h3 style="margin:0 0 14px 0;font-size:15px;color:var(--forest);">四维个人相关性评分权重</h3>
+        <div class="strategy-slider-row">
+          <span class="strategy-slider-label">研究专题权重:</span>
+          <input type="range" id="slider-w-topic" class="strategy-slider-input" min="0" max="100" value="35" disabled>
+          <span id="val-w-topic" class="strategy-slider-val">35%</span>
+        </div>
+        <div class="strategy-slider-row">
+          <span class="strategy-slider-label">研究物种权重:</span>
+          <input type="range" id="slider-w-species" class="strategy-slider-input" min="0" max="100" value="25" disabled>
+          <span id="val-w-species" class="strategy-slider-val">25%</span>
+        </div>
+        <div class="strategy-slider-row">
+          <span class="strategy-slider-label">关注基因权重:</span>
+          <input type="range" id="slider-w-gene" class="strategy-slider-input" min="0" max="100" value="25" disabled>
+          <span id="val-w-gene" class="strategy-slider-val">25%</span>
+        </div>
+        <div class="strategy-slider-row">
+          <span class="strategy-slider-label">研究方法权重:</span>
+          <input type="range" id="slider-w-method" class="strategy-slider-input" min="0" max="100" value="15" disabled>
+          <span id="val-w-method" class="strategy-slider-val">15%</span>
+        </div>
+        <div class="strategy-slider-row" style="margin-top:14px;padding-top:12px;border-top:1px dashed #eae7de;">
+          <span class="strategy-slider-label">综合排序相关性占比:</span>
+          <input type="range" id="slider-relevance-weight" class="strategy-slider-input" min="30" max="100" value="70">
+          <span id="val-relevance-weight" class="strategy-slider-val">70%</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Module 7: 历史关联论文发现策略 -->
+    <section class="radar-section" id="sec-discovery">
+      <div class="radar-section-header">
+        <div class="radar-section-title">
+          <span class="section-num">7</span>
+          <h2>历史关联论文发现策略 (科研溯源)</h2>
+        </div>
+        <div class="radar-section-desc">基于 DeepSeek 与 PubMed / Europe PMC 跨库检索奠基与突破成果</div>
+      </div>
+      <div style="background:#fff;padding:20px;border-radius:var(--radius-md);border:1px solid var(--line-light);display:flex;flex-direction:column;gap:14px;">
+        <label style="display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;color:var(--forest);cursor:pointer;">
+          <input type="checkbox" id="chk-discovery-enabled" checked>
+          <span>启用每周历史经典与高相关论文自动溯源发现</span>
+        </label>
+        <div class="strategy-slider-row">
+          <span class="strategy-slider-label">每期补充推荐数量:</span>
+          <input type="range" id="slider-discovery-quota" class="strategy-slider-input" min="1" max="10" value="5">
+          <span id="val-discovery-quota" class="strategy-slider-val">5 篇</span>
+        </div>
+        <div style="font-size:13.5px;font-weight:600;color:var(--ink);margin-top:4px;">优先挖掘的历史文献类型：</div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:13.5px;">
+          <label style="display:flex;align-items:center;gap:6px;"><input type="checkbox" id="chk-type-foundational" checked> 领域奠基论文</label>
+          <label style="display:flex;align-items:center;gap:6px;"><input type="checkbox" id="chk-type-classic" checked> 经典方法与算法论文</label>
+          <label style="display:flex;align-items:center;gap:6px;"><input type="checkbox" id="chk-type-breakthrough" checked> 历年重大突破成果</label>
+          <label style="display:flex;align-items:center;gap:6px;"><input type="checkbox" id="chk-type-high-rel" checked> 高度相关研究论文</label>
+          <label style="display:flex;align-items:center;gap:6px;"><input type="checkbox" id="chk-type-cross" checked> 跨物种及跨方法启发成果</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Module 8: 本周个性化推荐 -->
+    <section class="radar-section" id="sec-recommendations">
+      <div class="radar-section-header">
+        <div class="radar-section-title">
+          <span class="section-num">8</span>
+          <h2>本周个性化推荐文献 (即时匹配)</h2>
+        </div>
+        <div class="radar-section-desc">根据您当前设置的研究画像，从站内文献库即时计算并高亮匹配成果</div>
+      </div>
+      <div id="recommendations-list" class="rec-articles-list">
+        <!-- Rendered by my-radar.js -->
+      </div>
+    </section>
+
+    <!-- Module 9: 经典及高相关论文 -->
+    <section class="radar-section" id="sec-classics">
+      <div class="radar-section-header">
+        <div class="radar-section-title">
+          <span class="section-num">9</span>
+          <h2>经典学科里程碑与基准论文</h2>
+        </div>
+        <div class="radar-section-desc">与您当前研究方向匹配的全球经典奠基论文</div>
+      </div>
+      <div id="classic-papers-grid" class="profile-overview-cards">
+        <!-- Rendered by my-radar.js -->
+      </div>
+    </section>
+
+    <!-- Module 10: 个人科研专刊历史归档 -->
+    <section class="radar-section" id="sec-supplements">
+      <div class="radar-section-header">
+        <div class="radar-section-title">
+          <span class="section-num">10</span>
+          <h2>个人科研专刊历史归档 (Personal Research Supplement)</h2>
+        </div>
+        <div class="radar-section-desc">独立于每周20篇周报的历史溯源专题专刊</div>
+      </div>
+      <div id="supplements-list" style="display:flex;flex-direction:column;gap:12px;">
+        <!-- Rendered by my-radar.js -->
+      </div>
+    </section>
+
+    <!-- Module 11: 配置同步与运行状态 -->
+    <section class="radar-section" id="sec-sync">
+      <div class="radar-section-header">
+        <div class="radar-section-title">
+          <span class="section-num">11</span>
+          <h2>配置同步与运行状态</h2>
+        </div>
+        <div class="radar-section-desc">流水线接入与跨设备配置备份</div>
+      </div>
+      <div style="background:#fff;padding:20px;border-radius:var(--radius-md);border:1px solid var(--line-light);display:grid;grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));gap:16px;">
+        <div>
+          <div style="font-size:12px;color:#717873;">当前画像版本</div>
+          <div id="sync-version-label" style="font-size:18px;font-weight:700;color:var(--forest);">v3.0.0</div>
+        </div>
+        <div>
+          <div style="font-size:12px;color:#717873;">最后同步时间</div>
+          <div id="sync-time-label" style="font-size:14px;color:var(--ink);">2026-11-25T19:40:00Z</div>
+        </div>
+        <div>
+          <div style="font-size:12px;color:#717873;">生成端同步状态</div>
+          <div id="sync-status-state" style="font-size:14px;font-weight:600;color:#27ae60;">已与生成端完成双向同步</div>
+        </div>
+        <div>
+          <div style="font-size:12px;color:#717873;">下次自动选文生效日</div>
+          <div style="font-size:14px;font-weight:600;color:var(--forest);">每周日 21:30 (北京时间)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Module 12: DeepSeek API 使用及费用统计 -->
+    <section class="radar-section" id="sec-cost">
+      <div class="radar-section-header">
+        <div class="radar-section-title">
+          <span class="section-num">12</span>
+          <h2>DeepSeek API 使用及费用统计</h2>
+        </div>
+        <div class="radar-section-desc">单期预算上限管理与透明化调用追踪</div>
+      </div>
+      <div style="background:#fff;padding:20px;border-radius:var(--radius-md);border:1px solid var(--line-light);display:grid;grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:16px;">
+        <div>
+          <div style="font-size:12px;color:#717873;">当期调用消耗 Tokens</div>
+          <div id="stat-run-tokens" style="font-size:20px;font-weight:700;font-family:var(--serif);color:var(--forest);">12,480</div>
+        </div>
+        <div>
+          <div style="font-size:12px;color:#717873;">当期实际费用</div>
+          <div id="stat-run-cost" style="font-size:18px;font-weight:700;color:#b87315;">$0.024 (约 ¥0.17)</div>
+        </div>
+        <div>
+          <div style="font-size:12px;color:#717873;">上下文缓存命中率</div>
+          <div id="stat-cache-hit" style="font-size:18px;font-weight:700;color:#27ae60;">84.2%</div>
+        </div>
+        <div>
+          <div style="font-size:12px;color:#717873;">单期预算熔断上限</div>
+          <div id="stat-budget-cap" style="font-size:18px;font-weight:700;color:var(--forest);">$0.25 / 周</div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- Modal: Custom Species -->
+<div id="modal-custom-species" class="radar-modal-backdrop">
+  <div class="radar-modal">
+    <h3>添加关注植物物种</h3>
+    <p>输入标准植物名称与分类信息，区分主要研究物种或比较物种。</p>
+    <div class="form-group">
+      <label>中文常用名 (例如: 大麦)</label>
+      <input type="text" id="form-sp-zh" class="form-control" placeholder="输入物种中文名">
+    </div>
+    <div class="form-group">
+      <label>英文常用名 (例如: Barley)</label>
+      <input type="text" id="form-sp-en" class="form-control" placeholder="输入物种英文名">
+    </div>
+    <div class="form-group">
+      <label>拉丁学名 (例如: Hordeum vulgare)</label>
+      <input type="text" id="form-sp-latin" class="form-control" placeholder="输入拉丁学名">
+    </div>
+    <div class="form-group">
+      <label>NCBI Taxonomy ID (可选)</label>
+      <input type="number" id="form-sp-taxid" class="form-control" placeholder="例如: 4513">
+    </div>
+    <div class="form-group">
+      <label>研究角色定位</label>
+      <select id="form-sp-role" class="form-control">
+        <option value="primary">主要研究物种 (Primary)</option>
+        <option value="comparative">比较物种 (Comparative)</option>
+        <option value="validation">实验验证物种 (Validation)</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;">
+        <input type="checkbox" id="form-sp-expand" checked> 允许扩展检索近缘属种与跨物种研究
+      </label>
+    </div>
+    <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:20px;">
+      <button type="button" id="btn-cancel-species" class="btn-radar btn-secondary">取消</button>
+      <button type="button" id="btn-save-species" class="btn-radar btn-primary">确定添加</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Custom Gene -->
+<div id="modal-custom-gene" class="radar-modal-backdrop">
+  <div class="radar-modal">
+    <h3>添加关注基因实体</h3>
+    <p>建立规范化基因名称、ID、所属物种及功能通路关联。</p>
+    <div class="form-group">
+      <label>基因标准名称/缩写 (例如: HvSOS1, SlZAR1)</label>
+      <input type="text" id="form-gene-sym" class="form-control" placeholder="输入基因符号">
+    </div>
+    <div class="form-group">
+      <label>所属物种</label>
+      <input type="text" id="form-gene-sp" class="form-control" placeholder="例如: 大麦 (Hordeum vulgare)">
+    </div>
+    <div class="form-group">
+      <label>基因序列/转录本 ID (可选)</label>
+      <input type="text" id="form-gene-id" class="form-control" placeholder="例如: HORVU.MOREX.r3.3HG0261170">
+    </div>
+    <div class="form-group">
+      <label>基因家族分类</label>
+      <input type="text" id="form-gene-fam" class="form-control" placeholder="例如: Cation/H+ Exchanger, NLR受体家族">
+    </div>
+    <div class="form-group">
+      <label>功能注释与关键作用</label>
+      <textarea id="form-gene-anno" class="form-control" rows="2" placeholder="简要描述该基因的调控机制与表型效应"></textarea>
+    </div>
+    <div class="form-group">
+      <label>已知相关生物学通路 (可选)</label>
+      <input type="text" id="form-gene-pway" class="form-control" placeholder="例如: SOS 盐胁迫信号转导通路">
+    </div>
+    <div class="form-group">
+      <label style="display:flex;align-items:center;gap:6px;cursor:pointer;">
+        <input type="checkbox" id="form-gene-homology" checked> 仅在具有可靠同源证据时启用同源基因扩展
+      </label>
+    </div>
+    <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:20px;">
+      <button type="button" id="btn-cancel-gene" class="btn-radar btn-secondary">取消</button>
+      <button type="button" id="btn-save-gene" class="btn-radar btn-primary">确定添加</button>
+    </div>
+  </div>
+</div>
+
+<script src="assets/site-nav.js"></script>
+<script src="assets/my-radar.js"></script>
+</body>
+</html>
