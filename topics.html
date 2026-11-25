@@ -44,7 +44,7 @@
     <div class="topics-metrics-bar" id="topics-metrics">
       <div class="metric-item">
         <span class="metric-label">收录专题分类</span>
-        <span class="metric-value" id="stat-topics-count">7</span>
+        <span class="metric-value" id="stat-topics-count">9</span>
         <span class="metric-sub">核心科研方向</span>
       </div>
       <div class="metric-item">
@@ -69,7 +69,7 @@
     <div class="section-head">
       <h2 class="section-title" id="grid-title">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:22px;height:22px;" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
-        <span>七大研究专题</span>
+        <span>九大研究专题</span>
       </h2>
       <span class="section-en">CURATED RESEARCH DOMAINS</span>
     </div>
@@ -103,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var agg = GenomeRadarTopics.aggregateTopics(articles);
       
       // 更新顶部全局指标
+      document.getElementById('stat-topics-count').textContent = GenomeRadarTopics.TOPICS.length;
       document.getElementById('stat-articles-count').textContent = articles.length;
       
       var latestArticle = articles.find(function(a){ return a.issue === agg.latestIssue; });
