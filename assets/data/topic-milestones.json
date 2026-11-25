@@ -495,7 +495,7 @@
     "year": 2012,
     "date": "2008-04-25",
     "title_zh": "MCScanX 多基因组共线性与基因复制分类算法发表",
-    "title_en": "Synteny and Collinearity in Plant Genomes: MCScan",
+    "title_en": "MCScanX: a toolkit for detection and evolutionary analysis of gene synteny and collinearity",
     "milestone_type": "算法突破",
     "background": "随着多种植物基因组陆续释放，学界迫切需要跨越数亿年演化距离，在染色体级别精确追踪基因倍增、转座、倒位和缺失的自动化比对算法。",
     "core_question": "面对经历过多轮全基因组复制与严重染色体重排的复杂植物物种，如何高效计算多对多的直系与旁系同源染色体共线性？",
@@ -505,10 +505,10 @@
     "predecessors": "CollinearScan (Bioinformatics 2006)",
     "successors": "MCScan (Python jcvi 框架)、SynMap 平台",
     "paper_title": "Synteny and collinearity in plant genomes",
-    "authors": "Yupeng Wang, Haibao Tang, Jeremy D. DeBarry, Andrew H. Paterson et al.",
+    "authors": "Yupeng Wang, Haibao Tang, Jeremy D. DeBarry, Xu Tan, Jingping Li, Xiyin Wang, Tae-ho Lee, Huizhe Jin, Barry Marler, Hui Guo, Jessica C. Kissinger, Andrew H. Paterson",
     "journal": "Nucleic Acids Research",
     "doi": "10.1093/nar/gkr1293",
-    "url": "https://doi.org/10.1126/science.1153917",
+    "url": "https://doi.org/10.1093/nar/gkr1293",
     "review_status": "curated_verified",
     "publication_date": "2012-04-01"
   },
@@ -680,7 +680,10 @@
     "doi": "10.1038/s41586-019-1711-4",
     "milestone_type": "method",
     "quantitative_conclusion": "利用逆转录酶融合 Cas9 切口酶与 pegRNA，无需双链断裂即可实现全部 12 种碱基置换及靶向插入缺失。",
-    "significance": "奠定了先导编辑技术的底层理论与工具框架，直接催生了 2020 年植物先导编辑系统的成功应用。"
+    "significance": "奠定了先导编辑技术的底层理论与工具框架，直接催生了 2020 年植物先导编辑系统的成功应用。",
+    "url": "https://doi.org/10.1038/s41586-019-1711-4",
+    "review_status": "verified",
+    "evidence": "Anzalone et al., Nature 576:149-157 (2019), DOI: 10.1038/s41586-019-1711-4"
   },
   {
     "id": "MS-SC-2019-PLANT-ROOT",
@@ -852,7 +855,7 @@
     "background": "过去二十年的人类基因组 GRCh38 主要源于单个个体，无法反映全球人类族群在结构变异层面的多样性。",
     "core_question": "如何联合全球多族群的高质量无间隙基因组构建真正的无偏参考图谱，以替代使用了20年的线性参考体系？",
     "contribution": "人类泛基因组参考联盟 (HPRC) 集合了来自全球各地的 47 个不同族群个体的 94 套单倍型，构建了全基因组多尺度拓扑图，增加了 1.19 亿碱基新序列。",
-    "significance": "标志着全球基因组学全面迈入“图泛基因组时代”，消除了单参考基因组引入的比对假象，检测复杂结构变异准确率提高 104%。",
+    "significance": "相比基于 GRCh38 的分析工作流，小变异发现错误减少 34%，每个单倍型检出的结构变异数量增加 104%。",
     "future_impact": "加速了全球植物与作物科学向多物种超泛基因组与图泛基因组育种的范式转变。",
     "predecessors": "千人基因组计划 (1000 Genomes Project)",
     "successors": "跨属超级植物泛基因组 (Super-pangenomics, 2024)",
