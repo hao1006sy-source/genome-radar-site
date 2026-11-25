@@ -201,6 +201,11 @@
                 "id": "horizontal-gene-transfer",
                 "name_zh": "水平基因转移与外源基因流动",
                 "name_en": "Horizontal Gene Transfer & Alien Chromosome Introgressions"
+            },
+            {
+                "id": "sex-chromosome-evolution",
+                "name_zh": "性染色体与性别决定演化",
+                "name_en": "Sex Chromosome & Sex-determination Evolution"
             }
         ],
         "color": "#634832",
@@ -343,6 +348,21 @@
                 "id": "workflow-pipeline-reproducibility",
                 "name_zh": "高通量分析工作流与可重复计算框架",
                 "name_en": "Pipelines & Reproducible Computational Frameworks"
+            },
+            {
+                "id": "statistical-genetics-algorithms",
+                "name_zh": "统计遗传学算法",
+                "name_en": "Statistical Genetics Algorithms"
+            },
+            {
+                "id": "sequence-alignment-search",
+                "name_zh": "序列比对与相似性搜索算法",
+                "name_en": "Sequence Alignment & Similarity Search Algorithms"
+            },
+            {
+                "id": "bioinformatics-databases",
+                "name_zh": "生物信息学数据库与知识资源",
+                "name_en": "Bioinformatics Databases & Knowledge Resources"
             }
         ],
         "color": "#3f5368",

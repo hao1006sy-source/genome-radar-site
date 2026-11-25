@@ -29,7 +29,6 @@
     "id": "MS-ASM-1977-SANGER",
     "topic_id": "assembly-annotation",
     "subtopic_ids": [
-      "long-read-sequencing",
       "structural-annotation"
     ],
     "year": 1977,
@@ -106,8 +105,7 @@
     "id": "MS-TOOL-1990-BLAST",
     "topic_id": "methods-tools",
     "subtopic_ids": [
-      "assembly-polishing-tools",
-      "variant-calling-benchmarking"
+      "sequence-alignment-search"
     ],
     "year": 1990,
     "date": "1990-10-05",
@@ -385,32 +383,6 @@
     "review_status": "curated_verified"
   },
   {
-    "id": "MS-EVO-2008-MCSCAN",
-    "topic_id": "evolution",
-    "subtopic_ids": [
-      "synteny-collinearity",
-      "phylogenomics"
-    ],
-    "year": 2008,
-    "date": "2008-04-25",
-    "title_zh": "多物种基因组多重共线性比对算法与工具 MCScan 发布",
-    "title_en": "Synteny and Collinearity in Plant Genomes: MCScan",
-    "milestone_type": "算法突破",
-    "background": "随着多种植物基因组陆续释放，学界迫切需要跨越数亿年演化距离，在染色体级别精确追踪基因倍增、转座、倒位和缺失的自动化比对算法。",
-    "core_question": "面对经历过多轮全基因组复制与严重染色体重排的复杂植物物种，如何高效计算多对多的直系与旁系同源染色体共线性？",
-    "contribution": "唐海宝 (Haibao Tang) 等人在 Science 与后续改进版本中提出了 MCScan 与 MCScanX 算法，基于动态规划与有向无环图 (DAG) 模型，实现了高容错度的染色体级多重共线性区块检测与宏观微观可视化。",
-    "significance": "成为全球植物比较基因组学、古染色体核型推断与全基因组复制分析的“工业级通用金标准”工具。",
-    "future_impact": "支撑了后续十余年数千种植物参考基因组的系统发育分析、禾本科与豆科祖先染色体重建研究。",
-    "predecessors": "CollinearScan (Bioinformatics 2006)",
-    "successors": "MCScan (Python jcvi 框架)、SynMap 平台",
-    "paper_title": "Synteny and collinearity in plant genomes",
-    "authors": "Haibao Tang, John E. Bowers, Xiyin Wang, et al.",
-    "journal": "Science",
-    "doi": "10.1126/science.1153917",
-    "url": "https://doi.org/10.1126/science.1153917",
-    "review_status": "curated_verified"
-  },
-  {
     "id": "MS-EPI-2008-METHYLC",
     "topic_id": "epigenetics",
     "subtopic_ids": [
@@ -466,8 +438,7 @@
     "id": "MS-TOOL-2009-BWA",
     "topic_id": "methods-tools",
     "subtopic_ids": [
-      "variant-calling-benchmarking",
-      "workflow-pipeline-reproducibility"
+      "sequence-alignment-search"
     ],
     "year": 2009,
     "date": "2009-07-15",
@@ -513,6 +484,33 @@
     "doi": "10.1038/ng.695",
     "url": "https://doi.org/10.1038/ng.695",
     "review_status": "curated_verified"
+  },
+  {
+    "id": "MS-EVO-2008-MCSCAN",
+    "topic_id": "evolution",
+    "subtopic_ids": [
+      "synteny-collinearity",
+      "phylogenomics"
+    ],
+    "year": 2012,
+    "date": "2008-04-25",
+    "title_zh": "MCScanX 多基因组共线性与基因复制分类算法发表",
+    "title_en": "Synteny and Collinearity in Plant Genomes: MCScan",
+    "milestone_type": "算法突破",
+    "background": "随着多种植物基因组陆续释放，学界迫切需要跨越数亿年演化距离，在染色体级别精确追踪基因倍增、转座、倒位和缺失的自动化比对算法。",
+    "core_question": "面对经历过多轮全基因组复制与严重染色体重排的复杂植物物种，如何高效计算多对多的直系与旁系同源染色体共线性？",
+    "contribution": "唐海宝 (Haibao Tang) 等人在 Science 与后续改进版本中提出了 MCScan 与 MCScanX 算法，基于动态规划与有向无环图 (DAG) 模型，实现了高容错度的染色体级多重共线性区块检测与宏观微观可视化。",
+    "significance": "成为全球植物比较基因组学、古染色体核型推断与全基因组复制分析的“工业级通用金标准”工具。",
+    "future_impact": "支撑了后续十余年数千种植物参考基因组的系统发育分析、禾本科与豆科祖先染色体重建研究。",
+    "predecessors": "CollinearScan (Bioinformatics 2006)",
+    "successors": "MCScan (Python jcvi 框架)、SynMap 平台",
+    "paper_title": "Synteny and collinearity in plant genomes",
+    "authors": "Yupeng Wang, Haibao Tang, Jeremy D. DeBarry, Andrew H. Paterson et al.",
+    "journal": "Nucleic Acids Research",
+    "doi": "10.1093/nar/gkr1293",
+    "url": "https://doi.org/10.1126/science.1153917",
+    "review_status": "curated_verified",
+    "publication_date": "2012-04-01"
   },
   {
     "id": "MS-EDT-2013-PLANTCRISPR",
@@ -646,8 +644,7 @@
     "id": "MS-TOOL-2018-MINIMAP2",
     "topic_id": "methods-tools",
     "subtopic_ids": [
-      "assembly-polishing-tools",
-      "graph-algorithms-tools"
+      "sequence-alignment-search"
     ],
     "year": 2018,
     "date": "2018-09-15",
@@ -667,6 +664,23 @@
     "doi": "10.1093/bioinformatics/bty191",
     "url": "https://doi.org/10.1093/bioinformatics/bty191",
     "review_status": "curated_verified"
+  },
+  {
+    "id": "MS-EDT-2019-PE-ORIGIN",
+    "topic_id": "genome-editing-breeding",
+    "subtopic_ids": [
+      "prime-editing"
+    ],
+    "year": 2019,
+    "publication_date": "2019-10-21",
+    "title_zh": "先导编辑 (Prime Editing) 底层技术首次提出实现无双链断裂精准写入",
+    "title_en": "Search-and-replace genome editing without double-strand breaks or donor DNA",
+    "authors": "Andrew V. Anzalone, Peyton B. Randolph, Jessie R. Davis, David R. Liu et al.",
+    "journal": "Nature",
+    "doi": "10.1038/s41586-019-1711-4",
+    "milestone_type": "method",
+    "quantitative_conclusion": "利用逆转录酶融合 Cas9 切口酶与 pegRNA，无需双链断裂即可实现全部 12 种碱基置换及靶向插入缺失。",
+    "significance": "奠定了先导编辑技术的底层理论与工具框架，直接催生了 2020 年植物先导编辑系统的成功应用。"
   },
   {
     "id": "MS-SC-2019-PLANT-ROOT",

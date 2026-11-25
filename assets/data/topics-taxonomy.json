@@ -1,5 +1,5 @@
 {
-  "version": "2.2.0",
+  "version": "2.2.1",
   "updated_at": "2026-11-25",
   "description": "Genome Radar 科研文献学术分类体系 V2.2：构建植物功能基因组学与基因组编辑育种独立一级专题，实现九大核心学科方向全景标引",
   "contribution_types": [
@@ -245,6 +245,14 @@
           "id": "horizontal-gene-transfer",
           "name_zh": "水平基因转移与外源基因流动",
           "name_en": "Horizontal Gene Transfer & Alien Chromosome Introgressions"
+        },
+        {
+          "id": "sex-chromosome-evolution",
+          "name_zh": "性染色体与性别决定演化",
+          "name_en": "Sex Chromosome & Sex-determination Evolution",
+          "definition": "研究植物雌雄异株性染色体（XY/ZW）起源、重组抑制、性别决定区（SDR）分化、性染色体退化及性别决定系统转换的演化机制。",
+          "inclusion_criteria": "以植物性染色体演化、性别决定基因/区域鉴定及性染色体系统转换（如 XY→ZW）为核心的研究。",
+          "exclusion_criteria": "仅研究常规花器官发育而无性染色体演化分析的论文。"
         }
       ]
     },
@@ -375,6 +383,30 @@
           "id": "workflow-pipeline-reproducibility",
           "name_zh": "高通量分析工作流与可重复计算框架",
           "name_en": "Pipelines & Reproducible Computational Frameworks"
+        },
+        {
+          "id": "statistical-genetics-algorithms",
+          "name_zh": "统计遗传学算法",
+          "name_en": "Statistical Genetics Algorithms",
+          "definition": "研发用于全基因组关联分析（GWAS）、上位性互作检测、数量性状基因座（QTL）定位及复杂性状遗传力估计的高效统计模型与计算算法。",
+          "inclusion_criteria": "提出新的统计遗传学模型、加速算法（如 Fast3VmrMLM、EMMAX、BLUP 变体）及基准测试的论文。",
+          "exclusion_criteria": "仅使用既有 GWAS/QTL 软件分析特定物种性状的应用型论文。"
+        },
+        {
+          "id": "sequence-alignment-search",
+          "name_zh": "序列比对与相似性搜索算法",
+          "name_en": "Sequence Alignment & Similarity Search Algorithms",
+          "definition": "研发用于高通量测序读长比对、全基因组共线性比对、同源序列快速检索及多序列比对的底层算法与索引数据结构。",
+          "inclusion_criteria": "提出新的序列比对、映射或相似性搜索工具（如 BLAST、BWA、Minimap2、多基因组比对流程）的论文。",
+          "exclusion_criteria": "仅常规调用比对软件进行下游分析的论文。"
+        },
+        {
+          "id": "bioinformatics-databases",
+          "name_zh": "生物信息学数据库与知识资源",
+          "name_en": "Bioinformatics Databases & Knowledge Resources",
+          "definition": "构建面向植物基因组、转录调控、非编码 RNA、抗病基因或表观遗传数据的综合公共数据库、知识图谱与在线检索平台。",
+          "inclusion_criteria": "发布或重大升级具有长期公共访问价值的植物生物信息学数据库（如 PlantPAN、PmiREN、PRGdb）的论文。",
+          "exclusion_criteria": "仅作为单篇研究附件提供的静态数据表格。"
         }
       ]
     },
