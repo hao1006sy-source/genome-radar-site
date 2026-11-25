@@ -1,7 +1,7 @@
 {
-  "version": "2.0.0",
-  "updated_at": "2026-11-24",
-  "description": "Genome Radar 科研文献学术分类体系 V2.0：覆盖植物科学、基因组学、遗传学与计算生物学",
+  "version": "2.2.0",
+  "updated_at": "2026-11-25",
+  "description": "Genome Radar 科研文献学术分类体系 V2.2：构建植物功能基因组学与基因组编辑育种独立一级专题，实现九大核心学科方向全景标引",
   "contribution_types": [
     {
       "id": "theory",
@@ -167,39 +167,39 @@
       ],
       "name_zh": "遗传变异与性状关联",
       "name_en": "Genetic Variation & Trait Association",
-      "definition": "系统鉴定基因组自然变异（SNP、InDel、SV、CNV），结合表型组学与统计遗传学模型（GWAS、QTL、TWAS），精细解析复杂农艺与适应性性状的因果遗传基础及育种价值。",
-      "inclusion_criteria": "以自然群体遗传变异检测、全基因组关联分析 (GWAS)、数量性状位点 (QTL) 定位、分子标记辅助育种、因果变异功能验证为核心贡献的研究。",
-      "exclusion_criteria": "缺乏表型关联的纯进化系统发育分析；未定位到基因组具体位点的纯生理生化生测。",
+      "definition": "系统鉴定基因组自然与诱变遗传变异（SNP、InDel、SV、CNV），结合表型组学与统计遗传学模型（GWAS、连锁 QTL、单倍型分析），解析复杂农艺与适应性性状的群体遗传构型与连锁不平衡演化。",
+      "inclusion_criteria": "以全基因组重测序群体变异调查、全基因组关联分析 (GWAS)、双亲高密度 QTL 定位、大尺度染色体结构变异性状关联、单倍型块结构与上位性分析为核心成果的论文。",
+      "exclusion_criteria": "未定位具体遗传变异或缺乏群体遗传关联的单一基因分子生化功能验证（归入植物功能基因组学）；纯基因编辑技术开发或分子设计育种实证（归入基因组编辑与分子育种）。",
       "subtopics": [
         {
           "id": "gwas-trait-mapping",
-          "name_zh": "全基因组关联分析与 QTL 定位",
-          "name_en": "GWAS & QTL Mapping"
+          "name_zh": "全基因组关联分析与变异定位",
+          "name_en": "GWAS & Trait Mapping"
         },
         {
-          "id": "structural-variation-impact",
-          "name_zh": "结构变异 (SV/CNV) 与性状效应",
-          "name_en": "Structural Variation & Trait Effects"
+          "id": "qtl-linkage-mapping",
+          "name_zh": "双亲连锁群体与 QTL 精细定位",
+          "name_en": "Biparental QTL Linkage Mapping"
         },
         {
           "id": "fine-mapping-causal",
-          "name_zh": "精细定位与因果变异鉴定",
+          "name_zh": "候选区间精细定位与因果变异鉴定",
           "name_en": "Fine Mapping & Causal Variant Identification"
         },
         {
-          "id": "population-genomics",
-          "name_zh": "群体等位基因频率与选择清除",
-          "name_en": "Population Allele Frequencies & Selective Sweeps"
+          "id": "structural-variation-impact",
+          "name_zh": "大尺度结构变异 (SV/CNV) 与农艺性状",
+          "name_en": "Structural Variation & Agronomic Traits"
         },
         {
-          "id": "genomic-selection-breeding",
-          "name_zh": "全基因组选择与分子设计育种",
-          "name_en": "Genomic Selection & Breeding Optimization"
+          "id": "haplotype-linkage-disequilibrium",
+          "name_zh": "单倍型块结构与连锁不平衡分析",
+          "name_en": "Haplotype Block & Linkage Disequilibrium"
         },
         {
-          "id": "expression-qtl-twas",
-          "name_zh": "表达数量性状位点 (eQTL) 与 TWAS",
-          "name_en": "eQTL, TWAS & Multi-omics Association"
+          "id": "population-genomics-diversity",
+          "name_zh": "群体等位基因多样性与选择清除",
+          "name_en": "Population Diversity & Selective Sweeps"
         }
       ]
     },
@@ -375,6 +375,112 @@
           "id": "workflow-pipeline-reproducibility",
           "name_zh": "高通量分析工作流与可重复计算框架",
           "name_en": "Pipelines & Reproducible Computational Frameworks"
+        }
+      ]
+    },
+    {
+      "id": "functional-genomics",
+      "aliases": [
+        "functional",
+        "功能基因组学",
+        "植物功能基因组学"
+      ],
+      "name_zh": "植物功能基因组学",
+      "name_en": "Plant Functional Genomics",
+      "definition": "从全基因组尺度深入探究植物基因时空转录表达、转录后调控与生物生化功能，解析抗逆应激、生长发育、特征次生代谢与植物-微生物互作的分子调控网络与生化机制。",
+      "inclusion_criteria": "以植物基因功能鉴定与验证、时空转录组与全长表达图谱、非生物抗逆（旱/寒/盐/热）与免疫应答通路、器官形态建成发育、特征代谢物合成生物学解析、根际微生态与共生互作为核心科学发现的研究。",
+      "exclusion_criteria": "仅涉及全基因组从头序列拼接而不涉及功能深入探索的研究；纯粹的群体等位基因频率统计或纯 GWAS 统计分析（归入变异与关联）；以基因组编辑工具创新为主要贡献的论文（归入基因编辑与育种）。",
+      "subtopics": [
+        {
+          "id": "gene-function-validation",
+          "name_zh": "关键农艺基因功能鉴定与生化验证",
+          "name_en": "Gene Function Characterization & Validation"
+        },
+        {
+          "id": "stress-immunity-mechanisms",
+          "name_zh": "非生物抗逆与抗病免疫分子网络",
+          "name_en": "Abiotic Stress & Plant Immunity Mechanisms"
+        },
+        {
+          "id": "plant-developmental-genomics",
+          "name_zh": "器官形态建成与发育时相调控",
+          "name_en": "Organogenesis & Developmental Genomics"
+        },
+        {
+          "id": "metabolic-pathways-metabolomics",
+          "name_zh": "特征代谢通路重构与代谢组学",
+          "name_en": "Metabolic Pathway & Metabolomics"
+        },
+        {
+          "id": "transcriptome-expression-atlas",
+          "name_zh": "时空动态表达图谱与全长转录本",
+          "name_en": "Spatiotemporal Transcriptome & Isoform Atlas"
+        },
+        {
+          "id": "plant-microbe-interactions",
+          "name_zh": "根际微生态与植物-微生物互作",
+          "name_en": "Plant-Microbe Interactions & Rhizobiome"
+        },
+        {
+          "id": "multi-omics-mechanisms",
+          "name_zh": "跨层次多组学整合与系统生物学机制",
+          "name_en": "Multi-omics Integration & System Mechanisms"
+        }
+      ]
+    },
+    {
+      "id": "genome-editing-breeding",
+      "aliases": [
+        "breeding",
+        "editing",
+        "基因组编辑与分子育种",
+        "基因编辑与育种"
+      ],
+      "name_zh": "基因组编辑与分子育种",
+      "name_en": "Genome Editing & Molecular Breeding",
+      "definition": "聚焦 CRISPR/Cas 基因组定向编辑、单碱基编辑、先导编辑及组织培养转化等前沿生物工程技术，结合全基因组选择 (GS) 与分子设计模型，加速创制优异等位基因与突破性农作物新种质。",
+      "inclusion_criteria": "以植物 CRISPR/Cas 靶向编辑、碱基编辑系统优化、先导编辑 (Prime Editing) 效率提升、多位点高通量基因编辑、无愈伤直接再生与高效遗传转化技术建立、全基因组选择模型构建与分子设计育种实证为主要成果的论文。",
+      "exclusion_criteria": "仅将标准商品化 CRISPR 试剂作为常规生物学辅助手段用于已知基因敲除且核心发现为基础生物学机制的论文（归入植物功能基因组学）；纯测序数据统计且无分子育种应用导向的研究。",
+      "subtopics": [
+        {
+          "id": "crispr-cas-systems",
+          "name_zh": "CRISPR/Cas 编辑系统优化与分子改造",
+          "name_en": "CRISPR/Cas System Optimization"
+        },
+        {
+          "id": "prime-editing",
+          "name_zh": "先导编辑 (Prime Editing) 系统与效率优化",
+          "name_en": "Plant Prime Editing Technologies"
+        },
+        {
+          "id": "base-editing",
+          "name_zh": "胞嘧啶/腺嘌呤单碱基精准编辑系统",
+          "name_en": "Cytidine & Adenine Base Editing"
+        },
+        {
+          "id": "multiplex-gene-editing",
+          "name_zh": "多靶点超高通量基因协同编辑",
+          "name_en": "Multiplex & High-throughput Gene Editing"
+        },
+        {
+          "id": "transformation-regeneration",
+          "name_zh": "高效离体组织培养、转化与再生技术",
+          "name_en": "Plant Transformation & Direct Regeneration"
+        },
+        {
+          "id": "genomic-selection",
+          "name_zh": "全基因组选择 (GS) 与多组学预测模型",
+          "name_en": "Genomic Selection & Omics Prediction"
+        },
+        {
+          "id": "elite-allele-creation",
+          "name_zh": "优异人工等位基因创制与驯化改良",
+          "name_en": "Elite Allele Creation & De Novo Domestication"
+        },
+        {
+          "id": "molecular-design-breeding",
+          "name_zh": "分子设计育种与多重抗逆品质聚合",
+          "name_en": "Molecular Design Breeding & Trait Pyramiding"
         }
       ]
     }
