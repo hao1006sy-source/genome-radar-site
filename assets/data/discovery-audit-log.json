@@ -1,0 +1,106 @@
+{
+  "profile_version": "v3.1.0-clean",
+  "timestamp": "2026-11-25T15:41:08.825971+00:00",
+  "retrieval_mode": "offline_classic_fallback",
+  "retrieval_status_msg": "外部检索接口网络连接受限或无直接匹配结果，明确标记为离线经典文献推荐模式",
+  "constructed_queries": [
+    "(\"plant genomics\" OR \"crop genetics\") AND (\"genome assembly\" OR \"CRISPR\" OR \"pangenome\")"
+  ],
+  "query_details": [
+    {
+      "query": "(\"plant genomics\" OR \"crop genetics\") AND (\"genome assembly\" OR \"CRISPR\" OR \"pangenome\")",
+      "endpoint": "https://www.ebi.ac.uk/europepmc/webservices/rest/search",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/search?query=%28%22plant%20genomics%22%20OR%20%22crop%20genetics%22%29%20AND%20%28%22genome%20assembly%22%20OR%20%22CRISPR%22%20OR%20%22pangenome%22%29&format=json&pageSize=10&resultType=core",
+      "status": "error",
+      "result_count": 0,
+      "error": "The read operation timed out",
+      "candidate_dois": []
+    }
+  ],
+  "total_raw_candidates": 6,
+  "live_candidates_retrieved": 0,
+  "candidate_dois": [
+    "10.1038/s41586-019-1711-4",
+    "10.1186/s13059-020-02168-z",
+    "10.1093/nar/gkr1293",
+    "10.1038/s41477-019-0466-4",
+    "10.1038/s41588-019-0557-7",
+    "10.1038/nature20580"
+  ],
+  "dedup_dropped_vs_160_count": 0,
+  "dedup_dropped_sample": [],
+  "scored_candidates_count": 6,
+  "selected_papers": [
+    {
+      "article_num": 1,
+      "title_zh": "六倍体普通小麦泛基因组图谱：全面揭示大尺度染色体结构变异与野生种渗入",
+      "title_en": "A pan-genome of hexaploid bread wheat",
+      "journal": "Nat Genet",
+      "year": 2020,
+      "doi": "10.1038/s41588-019-0557-7",
+      "pmid": "31915383",
+      "source": "verified_corpus",
+      "final_score": 0.6202,
+      "personal_score": 0.5,
+      "academic_score": 0.9008
+    },
+    {
+      "article_num": 2,
+      "title_zh": "先导编辑技术突破：无需双链断裂与供体 DNA 的精准基因组搜索与替换",
+      "title_en": "Search-and-replace genome editing without double-strand breaks or donor DNA",
+      "journal": "Nature",
+      "year": 2019,
+      "doi": "10.1038/s41586-019-1711-4",
+      "pmid": "31634902",
+      "source": "verified_corpus",
+      "final_score": 0.6195,
+      "personal_score": 0.5,
+      "academic_score": 0.8982
+    },
+    {
+      "article_num": 3,
+      "title_zh": "拟南芥根系单细胞转录组图谱：解析植物组织发育轨迹与细胞命运决定",
+      "title_en": "A single-cell RNA-seq atlas of Arabidopsis root development",
+      "journal": "Nat Plants",
+      "year": 2019,
+      "doi": "10.1038/s41477-019-0466-4",
+      "pmid": "31278385",
+      "source": "verified_corpus",
+      "final_score": 0.6174,
+      "personal_score": 0.5,
+      "academic_score": 0.8913
+    },
+    {
+      "article_num": 4,
+      "title_zh": "加速光保护恢复提升光合效率与作物生物量：合成生物学改造型农艺突破",
+      "title_en": "Improving photosynthesis and crop productivity by accelerating recovery from photoprotection",
+      "journal": "Nature",
+      "year": 2016,
+      "doi": "10.1038/nature20580",
+      "pmid": "27842067",
+      "source": "verified_corpus",
+      "final_score": 0.6172,
+      "personal_score": 0.5,
+      "academic_score": 0.8907
+    },
+    {
+      "article_num": 5,
+      "title_zh": "Minigraph 泛基因组图构建算法：建立多基因组结构变异拓扑坐标系",
+      "title_en": "Designing and constructing pan-genome graphs with minigraph",
+      "journal": "Genome Biol",
+      "year": 2020,
+      "doi": "10.1186/s13059-020-02168-z",
+      "pmid": "32727518",
+      "source": "verified_corpus",
+      "final_score": 0.6096,
+      "personal_score": 0.5,
+      "academic_score": 0.8652
+    }
+  ],
+  "deepseek_llm_usage": {
+    "prompt_tokens": 0,
+    "completion_tokens": 0,
+    "actual_cost_usd": 0.0,
+    "api_calls": 0
+  }
+}

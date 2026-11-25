@@ -1,5 +1,92 @@
 {
-  "total_supplements": 0,
-  "last_updated": null,
-  "supplements": []
+  "total_supplements": 1,
+  "last_updated": "2026-11-25T15:41:08.841575+00:00",
+  "supplements": [
+    {
+      "supplement_id": "2026-11-25-supplement",
+      "date": "2026-11-25",
+      "title": "基因组雷达 · 历史文献发现专刊 (2026-11-25)",
+      "article_count": 5,
+      "url": "personal-supplement/2026-11-25/index.html",
+      "profile_identity": "植物基因组学前沿研究",
+      "profile_version": "v3.1.0-clean",
+      "articles": [
+        {
+          "id": "2026-11-25-supp:31915383",
+          "article_num": 1,
+          "title_zh": "六倍体普通小麦泛基因组图谱：全面揭示大尺度染色体结构变异与野生种渗入",
+          "title_en": "A pan-genome of hexaploid bread wheat",
+          "journal": "Nat Genet",
+          "year": 2020,
+          "doi": "10.1038/s41588-019-0557-7",
+          "pmid": "31915383",
+          "final_score": 0.6202,
+          "personal_score": 0.5,
+          "academic_score": 0.9008,
+          "url": "personal-supplement/2026-11-25/index.html?article=1",
+          "source_type": "personal_supplement"
+        },
+        {
+          "id": "2026-11-25-supp:31634902",
+          "article_num": 2,
+          "title_zh": "先导编辑技术突破：无需双链断裂与供体 DNA 的精准基因组搜索与替换",
+          "title_en": "Search-and-replace genome editing without double-strand breaks or donor DNA",
+          "journal": "Nature",
+          "year": 2019,
+          "doi": "10.1038/s41586-019-1711-4",
+          "pmid": "31634902",
+          "final_score": 0.6195,
+          "personal_score": 0.5,
+          "academic_score": 0.8982,
+          "url": "personal-supplement/2026-11-25/index.html?article=2",
+          "source_type": "personal_supplement"
+        },
+        {
+          "id": "2026-11-25-supp:31278385",
+          "article_num": 3,
+          "title_zh": "拟南芥根系单细胞转录组图谱：解析植物组织发育轨迹与细胞命运决定",
+          "title_en": "A single-cell RNA-seq atlas of Arabidopsis root development",
+          "journal": "Nat Plants",
+          "year": 2019,
+          "doi": "10.1038/s41477-019-0466-4",
+          "pmid": "31278385",
+          "final_score": 0.6174,
+          "personal_score": 0.5,
+          "academic_score": 0.8913,
+          "url": "personal-supplement/2026-11-25/index.html?article=3",
+          "source_type": "personal_supplement"
+        },
+        {
+          "id": "2026-11-25-supp:27842067",
+          "article_num": 4,
+          "title_zh": "加速光保护恢复提升光合效率与作物生物量：合成生物学改造型农艺突破",
+          "title_en": "Improving photosynthesis and crop productivity by accelerating recovery from photoprotection",
+          "journal": "Nature",
+          "year": 2016,
+          "doi": "10.1038/nature20580",
+          "pmid": "27842067",
+          "final_score": 0.6172,
+          "personal_score": 0.5,
+          "academic_score": 0.8907,
+          "url": "personal-supplement/2026-11-25/index.html?article=4",
+          "source_type": "personal_supplement"
+        },
+        {
+          "id": "2026-11-25-supp:32727518",
+          "article_num": 5,
+          "title_zh": "Minigraph 泛基因组图构建算法：建立多基因组结构变异拓扑坐标系",
+          "title_en": "Designing and constructing pan-genome graphs with minigraph",
+          "journal": "Genome Biol",
+          "year": 2020,
+          "doi": "10.1186/s13059-020-02168-z",
+          "pmid": "32727518",
+          "final_score": 0.6096,
+          "personal_score": 0.5,
+          "academic_score": 0.8652,
+          "url": "personal-supplement/2026-11-25/index.html?article=5",
+          "source_type": "personal_supplement"
+        }
+      ]
+    }
+  ]
 }

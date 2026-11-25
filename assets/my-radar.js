@@ -29,25 +29,218 @@
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
 
-  // Load Initial Data
+  var ACTIVE_DISCOVERY_KEY = 'gr_active_discovery_run';
+  var discoveryPollTimer = null;
+
+  // Profile Hash & Equivalence Helpers (SHA-256)
+  async function computeProfileSha256(profileObj) {
+    if (!profileObj) return '';
+    var copy = JSON.parse(JSON.stringify(profileObj));
+    delete copy.sync_status;
+    delete copy.updated_at;
+    var str = JSON.stringify(copy, Object.keys(copy).sort());
+    if (window.crypto && window.crypto.subtle) {
+      try {
+        var encoder = new TextEncoder();
+        var data = encoder.encode(str);
+        var hashBuffer = await window.crypto.subtle.digest('SHA-256', data);
+        var hashArray = Array.from(new Uint8Array(hashBuffer));
+        return hashArray.map(function(b){ return b.toString(16).padStart(2, '0'); }).join('');
+      } catch(e){}
+    }
+    // Lightweight deterministic hash fallback
+    var hash = 0;
+    for (var i = 0; i < str.length; i++) {
+      hash = ((hash << 5) - hash) + str.charCodeAt(i);
+      hash |= 0;
+    }
+    return Math.abs(hash).toString(16).padStart(16, '0');
+  }
+
+  function areProfilesEquivalent(p1, p2) {
+    if (!p1 || !p2) return false;
+    var c1 = JSON.parse(JSON.stringify(p1));
+    var c2 = JSON.parse(JSON.stringify(p2));
+    delete c1.sync_status;
+    delete c2.sync_status;
+    delete c1.updated_at;
+    delete c2.updated_at;
+    return JSON.stringify(c1, Object.keys(c1).sort()) === JSON.stringify(c2, Object.keys(c2).sort());
+  }
+
+  function updateDiscoveryStatusUI(status, label, desc, linksHtml) {
+    var box = $('discovery-job-box');
+    var badge = $('discovery-job-badge');
+    var descEl = $('discovery-job-desc');
+    var linksEl = $('discovery-job-links');
+    var btn = $('btn-trigger-discovery');
+
+    if (!box) return;
+    box.style.display = 'block';
+
+    if (badge) {
+      badge.textContent = label || status;
+      if (status === 'queued') {
+        badge.style.background = '#fef3c7';
+        badge.style.color = '#92400e';
+      } else if (status === 'in_progress') {
+        badge.style.background = '#e0f2fe';
+        badge.style.color = '#0369a1';
+      } else if (status === 'completed') {
+        badge.style.background = '#dcfce7';
+        badge.style.color = '#15803d';
+      } else if (status === 'failed') {
+        badge.style.background = '#fee2e2';
+        badge.style.color = '#b91c1c';
+      }
+    }
+
+    if (descEl) descEl.innerHTML = desc || '';
+    if (linksEl) linksEl.innerHTML = linksHtml || '';
+
+    if (btn) {
+      if (status === 'queued' || status === 'in_progress') {
+        btn.disabled = true;
+        btn.textContent = '⏳ ' + (label || '发现任务正在运行...');
+      } else {
+        btn.disabled = false;
+        btn.textContent = '🔍 发现高相关历史文献并生成专刊';
+      }
+    }
+  }
+
+  async function pollDiscoveryRun(runId, githubToken) {
+    if (!runId || !githubToken) return;
+
+    try {
+      var resp = await fetch('https://api.github.com/repos/hao1006sy-source/genome-radar-pipeline/actions/runs/' + runId, {
+        headers: {
+          'Authorization': 'Bearer ' + githubToken,
+          'Accept': 'application/vnd.github.v3+json'
+        }
+      });
+      if (!resp.ok) return;
+      var data = await resp.json();
+      var status = data.status; // queued, in_progress, completed
+      var conclusion = data.conclusion; // success, failure, cancelled
+      var runUrl = data.html_url;
+
+      var links = '<a href="' + runUrl + '" target="_blank" style="color:#0284c7;text-decoration:none;">查看 GitHub Actions 运行日志 (Run #' + runId + ')</a>';
+
+      if (status === 'queued') {
+        updateDiscoveryStatusUI('queued', '已排队 (Queued)', '云端 GitHub Actions 正在调度运行环境，等待就绪...', links);
+      } else if (status === 'in_progress') {
+        updateDiscoveryStatusUI('in_progress', '正在运行 (In Progress)', '云端流水线正在执行：检索学术数据库 (Europe PMC/PubMed) ➔ 核验与初筛候选文献 ➔ 调用 DeepSeek 大模型解读 ➔ 发布专刊...', links);
+      } else if (status === 'completed') {
+        if (discoveryPollTimer) { clearInterval(discoveryPollTimer); discoveryPollTimer = null; }
+        localStorage.removeItem(ACTIVE_DISCOVERY_KEY);
+
+        if (conclusion === 'success') {
+          links += ' | <a href="personal-supplement/index.html" style="color:#15803d;font-weight:700;text-decoration:none;">直达最新生成的科研专刊 ➔</a>';
+          updateDiscoveryStatusUI('completed', '✓ 已完成 (Success)', '历史文献发现任务已顺利完成！个人科研专刊已自动发布至全站，并更新全站搜索索引与成本统计。', links);
+          await renderSupplements();
+          await renderCostStats();
+        } else {
+          updateDiscoveryStatusUI('failed', '运行失败 (' + (conclusion || 'Failed') + ')', '云端工作流执行未成功，请点击链接检查 GitHub Actions 日志排查原因。', links);
+        }
+      }
+    } catch(e) {
+      console.warn('轮询 GitHub Actions 运行状态出错:', e);
+    }
+  }
+
+  function checkAndResumeActiveDiscovery() {
+    var savedRun = localStorage.getItem(ACTIVE_DISCOVERY_KEY);
+    if (!savedRun) return;
+    try {
+      var runInfo = JSON.parse(savedRun);
+      var githubToken = localStorage.getItem('gr_sync_github_token');
+      if (runInfo.run_id && githubToken) {
+        var elapsed = Date.now() - (runInfo.started_at || 0);
+        if (elapsed < 30 * 60 * 1000) {
+          updateDiscoveryStatusUI('in_progress', '恢复监控中', '检测到此前启动的发现任务 (Run #' + runInfo.run_id + ')，正在恢复状态追踪...');
+          pollDiscoveryRun(runInfo.run_id, githubToken);
+          discoveryPollTimer = setInterval(function() {
+            pollDiscoveryRun(runInfo.run_id, githubToken);
+          }, 5000);
+        } else {
+          localStorage.removeItem(ACTIVE_DISCOVERY_KEY);
+        }
+      }
+    } catch(e) {}
+  }
+
+  // Load Initial Data with Cloud Config Priority and Cross-Device Recovery
   async function init() {
     try {
       // 1. Load taxonomy
       var taxRes = await fetch('assets/data/topics-taxonomy.json');
       state.taxonomy = await taxRes.json();
 
-      // 2. Load profile (check local draft first, then remote)
-      var localDraft = localStorage.getItem(PROFILE_KEY);
-      if (localDraft) {
+      // 2. Load profile: priority given to authenticated private production profile
+      var githubToken = localStorage.getItem('gr_sync_github_token');
+      var localEndpoint = localStorage.getItem('gr_sync_endpoint') || 'http://127.0.0.1:8765/api/profile';
+      var localDraftStr = localStorage.getItem(PROFILE_KEY);
+      var localDraft = null;
+      if (localDraftStr) {
+        try { localDraft = JSON.parse(localDraftStr); } catch (e) {}
+      }
+
+      var remoteProfile = null;
+      if (githubToken) {
         try {
-          state.profile = JSON.parse(localDraft);
-          state.isDirty = true;
-        } catch (e) {
-          console.warn('Invalid local draft, falling back to server profile');
+          var ghResp = await fetch('https://api.github.com/repos/hao1006sy-source/genome-radar-pipeline/contents/data/research-profile.json', {
+            headers: {
+              'Authorization': 'Bearer ' + githubToken,
+              'Accept': 'application/vnd.github.v3+json'
+            }
+          });
+          if (ghResp.ok) {
+            var ghData = await ghResp.json();
+            var decoded = decodeURIComponent(escape(atob(ghData.content.replace(/\s/g, ''))));
+            remoteProfile = JSON.parse(decoded);
+          }
+        } catch(e) {
+          console.warn('获取 GitHub 远程配置失败:', e);
         }
       }
 
-      if (!state.profile) {
+      if (!remoteProfile && localEndpoint) {
+        try {
+          var locResp = await fetch(localEndpoint, { method: 'GET' });
+          if (locResp.ok) {
+            var locData = await locResp.json();
+            if (locData.profile) remoteProfile = locData.profile;
+          }
+        } catch(e) {}
+      }
+
+      if (remoteProfile) {
+        if (localDraft && !areProfilesEquivalent(localDraft, remoteProfile)) {
+          var useRemote = confirm(
+            '【科研画像跨设备同步提示】\n\n' +
+            '检测到云端存在已生效的生产配置 (版本: ' + (remoteProfile.profile_version || '最新') + ')，\n' +
+            '同时当前浏览器存在未同步的本地草稿 (版本: ' + (localDraft.profile_version || '草稿') + ')。\n\n' +
+            '• 点击【确定】：使用云端生产配置覆盖本地（推荐用于跨设备恢复）；\n' +
+            '• 点击【取消】：保留本地未同步修改草稿继续编辑。'
+          );
+          if (useRemote) {
+            state.profile = remoteProfile;
+            state.isDirty = false;
+            localStorage.setItem(PROFILE_KEY, JSON.stringify(state.profile));
+          } else {
+            state.profile = localDraft;
+            state.isDirty = true;
+          }
+        } else {
+          state.profile = remoteProfile;
+          state.isDirty = false;
+          localStorage.setItem(PROFILE_KEY, JSON.stringify(state.profile));
+        }
+      } else if (localDraft) {
+        state.profile = localDraft;
+        state.isDirty = true;
+      } else {
         var profRes = await fetch('assets/data/research-profile.json');
         state.profile = await profRes.json();
         state.isDirty = false;
@@ -70,6 +263,7 @@
       // Render all 12 modules
       renderAll();
       bindEvents();
+      checkAndResumeActiveDiscovery();
     } catch (err) {
       console.error('Failed to initialize My Radar:', err);
       alert('加载科研雷达数据失败，请刷新重试：' + err.message);
@@ -359,6 +553,15 @@
   }
 
   function calcAcademicQualityScore(art) {
+    if (art && art.academic_quality) {
+      if (typeof art.academic_quality.overall_score === 'number') {
+        return art.academic_quality.overall_score;
+      }
+      if (typeof art.academic_quality.content_score === 'number') {
+        return art.academic_quality.content_score;
+      }
+    }
+
     var j = (art.journal || '').toLowerCase();
     var score = 0.60;
     var cnsTop = ['nature', 'science', 'cell', 'nat genet', 'nat plants', 'nat biotechnol', 'nat commun', 'sci adv'];
@@ -391,6 +594,106 @@
     return Math.min(1.0, Math.max(0.50, Number(score.toFixed(4))));
   }
 
+  // Helper: Gene Entity Matching with Species Disambiguation
+  function matchGeneEntity(art, followedGene) {
+    var sym = (followedGene.symbol || '').trim();
+    if (!sym) return { score: 0, tags: [] };
+
+    var symLower = sym.toLowerCase();
+    var targetSp = (followedGene.species || '').toLowerCase();
+    var geneId = (followedGene.gene_id || '').toLowerCase();
+    var fam = (followedGene.gene_family || '').toLowerCase();
+    var expandHomology = !!followedGene.expand_homology;
+    var aliases = (followedGene.aliases || []).map(function(a){ return String(a).trim().toLowerCase(); }).filter(Boolean);
+
+    var artSp = (art.primary_species || '').toLowerCase();
+    var artObjs = (art.research_objects || []).map(function(o){ return String(o).toLowerCase(); }).join(' ');
+    var artFams = (art.gene_families || []).map(function(f){ return String(f).toLowerCase(); });
+    var fullText = [
+      art.title_zh || '',
+      art.title_en || '',
+      art.lead || '',
+      art.what || '',
+      art.abstract || ''
+    ].join(' ').toLowerCase();
+
+    function isSpeciesMatched(geneSpStr) {
+      if (!targetSp) return true;
+      var checkStr = (geneSpStr || '') + ' ' + artSp + ' ' + artObjs;
+      var tokens = targetSp.split(/[\s()（）/、]+/).filter(function(t){ return t.length >= 2; });
+      return tokens.some(function(t){ return checkStr.includes(t); });
+    }
+
+    // 1. Check structured genes array (compatible with both strings and objects)
+    var rawGenes = (art.genes || []).concat(art.gene_entities || []);
+    for (var i = 0; i < rawGenes.length; i++) {
+      var item = rawGenes[i];
+      var itemSym = '';
+      var itemSp = '';
+      var itemGid = '';
+      var itemAliases = [];
+
+      if (typeof item === 'string') {
+        itemSym = item.trim().toLowerCase();
+      } else if (item && typeof item === 'object') {
+        itemSym = (item.symbol || '').trim().toLowerCase();
+        itemSp = (item.species || '').trim().toLowerCase();
+        itemGid = (item.gene_id || '').trim().toLowerCase();
+        itemAliases = (item.aliases || []).map(function(a){ return String(a).trim().toLowerCase(); });
+      }
+
+      var hit = (itemSym === symLower) || (itemSym && aliases.includes(itemSym)) || (geneId && itemGid && geneId === itemGid);
+      if (!hit && aliases.length && itemAliases.some(function(a){ return aliases.includes(a); })) {
+        hit = true;
+      }
+
+      if (hit) {
+        if (isSpeciesMatched(itemSp)) {
+          var spLabel = (followedGene.species || '').split(/[\s(]/)[0];
+          var tag = spLabel ? ('精确定位关注基因 [' + sym + '] (' + spLabel + ')') : ('精确定位关注基因 [' + sym + ']');
+          return { score: 1.0, tags: [tag] };
+        } else if (expandHomology) {
+          return { score: 0.80, tags: ['同源基因拓展 [' + sym + '] (跨物种)'] };
+        }
+      }
+    }
+
+    // 2. Full text matching with word boundaries
+    var escapedSym = symLower.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    var regex = new RegExp('(?:^|[^a-zA-Z0-9_])' + escapedSym + '(?:$|[^a-zA-Z0-9_])', 'i');
+    var textHit = regex.test(fullText);
+
+    if (!textHit && aliases.length) {
+      for (var j = 0; j < aliases.length; j++) {
+        var al = aliases[j];
+        if (al.length >= 3) {
+          var escAl = al.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          if (new RegExp('(?:^|[^a-zA-Z0-9_])' + escAl + '(?:$|[^a-zA-Z0-9_])', 'i').test(fullText)) {
+            textHit = true;
+            break;
+          }
+        }
+      }
+    }
+
+    if (textHit) {
+      if (isSpeciesMatched()) {
+        return { score: 0.90, tags: ['文献涉及关注基因 [' + sym + ']'] };
+      } else if (expandHomology && (fullText.includes('homolog') || fullText.includes('ortholog') || fullText.includes('同源'))) {
+        return { score: 0.75, tags: ['文献提及同源候选 [' + sym + ']'] };
+      }
+    }
+
+    // 3. Family level match (only if expandHomology is enabled)
+    if (expandHomology && fam) {
+      if (artFams.some(function(af){ return af.includes(fam) || fam.includes(af); }) || (fam.length >= 4 && fullText.includes(fam))) {
+        return { score: 0.65, tags: ['命中同源基因家族 [' + (followedGene.gene_family || fam) + ']'] };
+      }
+    }
+
+    return { score: 0.0, tags: [] };
+  }
+
   // Module 8: Instant Matching Engine (Core Algorithm)
   function executeInstantMatching() {
     var articles = state.articles || [];
@@ -415,6 +718,7 @@
       var artSecs = art.secondary_topics || [];
 
       followedTopics.forEach(function (t) {
+        if (t.status === 'paused') return;
         if (t.topic_id === artPt) {
           topicScore = Math.max(topicScore, t.priority === 'high' ? 1.0 : t.priority === 'normal' ? 0.8 : 0.5);
           matchTags.push({ type: 'topic', label: '核心专题: ' + (t.name_zh || t.topic_id) });
@@ -425,6 +729,7 @@
       });
 
       followedSubtopics.forEach(function (st) {
+        if (st.status === 'paused') return;
         if (artSubs.includes(st.subtopic_id)) {
           topicScore = Math.max(topicScore, st.priority === 'high' ? 1.0 : 0.85);
           matchTags.push({ type: 'topic', label: '二级方向: ' + (st.name_zh || st.subtopic_id) });
@@ -437,18 +742,18 @@
       var artText = (art.title_zh + ' ' + art.title_en + ' ' + (art.lead || '')).toLowerCase();
 
       followedSpecies.forEach(function (sp) {
-        var spZh = sp.name_zh.toLowerCase();
+        if (sp.status === 'paused') return;
+        var spZh = (sp.name_zh || '').toLowerCase();
         var spEn = (sp.name_en || '').toLowerCase();
         var spLat = (sp.latin_name || '').toLowerCase();
 
-        if (artSp.includes(sp.name_zh) || (spLat && artSp.toLowerCase().includes(spLat))) {
+        if ((spZh && artSp.toLowerCase().includes(spZh)) || (spLat && artSp.toLowerCase().includes(spLat))) {
           speciesScore = Math.max(speciesScore, sp.role === 'primary' ? 1.0 : sp.role === 'comparative' ? 0.8 : 0.6);
           matchTags.push({ type: 'species', label: '主要物种: ' + sp.name_zh });
-        } else if (artObjs.includes(sp.name_zh) || artText.includes(spZh) || (spEn && artText.includes(spEn))) {
+        } else if ((spZh && artObjs.toLowerCase().includes(spZh)) || (spZh && artText.includes(spZh)) || (spEn && artText.includes(spEn))) {
           speciesScore = Math.max(speciesScore, 0.7);
           matchTags.push({ type: 'species', label: '涉及物种: ' + sp.name_zh });
         } else if (sp.expand_relatives) {
-          // Relatives check (e.g. 禾本科 for wheat/barley/rice, 豆科 for soybean)
           if ((spZh === '大麦' || spZh === '小麦') && (artSp.includes('小麦') || artSp.includes('大麦') || artSp.includes('偃麦草') || artSp.includes('草林'))) {
             speciesScore = Math.max(speciesScore, 0.5);
             matchTags.push({ type: 'species', label: '近缘物种: ' + artSp.split(' ')[0] });
@@ -456,44 +761,51 @@
         }
       });
 
-      // 3. Gene scoring
-      var artGenes = (art.genes || []).concat(art.gene_entities ? art.gene_entities.map(function(g){return g.symbol;}) : []);
-      var artFams = art.gene_families || [];
-
+      // 3. Gene scoring (with entity & species disambiguation)
       followedGenes.forEach(function (g) {
-        var sym = g.symbol.toLowerCase();
-        var aliases = (g.aliases || []).map(function(a){return a.toLowerCase();});
-
-        if (artGenes.some(function(ag){ return ag.toLowerCase() === sym || aliases.includes(ag.toLowerCase()); })) {
-          geneScore = Math.max(geneScore, 1.0);
-          matchTags.push({ type: 'gene', label: '关注基因: ' + g.symbol });
-        } else if (artText.includes(sym) || aliases.some(function(al){ return artText.includes(al); })) {
-          geneScore = Math.max(geneScore, 0.9);
-          matchTags.push({ type: 'gene', label: '文本命中基因: ' + g.symbol });
-        } else if (g.gene_family && artFams.some(function(f){ return f.includes(g.gene_family) || g.gene_family.includes(f); })) {
-          geneScore = Math.max(geneScore, 0.65);
-          matchTags.push({ type: 'gene', label: '同源家族: ' + g.gene_family });
+        if (g.status === 'paused') return;
+        var gRes = matchGeneEntity(art, g);
+        if (gRes.score > geneScore) {
+          geneScore = gRes.score;
         }
+        gRes.tags.forEach(function (tag) {
+          matchTags.push({ type: 'gene', label: tag });
+        });
       });
 
       // 4. Method scoring
       var artMethods = art.research_methods || [];
       followedMethods.forEach(function (m) {
-        if (artMethods.some(function(am){ return am.includes(m.name) || m.name.includes(am); })) {
+        if (m.status === 'paused') return;
+        var mName = m.name || '';
+        if (mName && artMethods.some(function(am){ return am.includes(mName) || mName.includes(am); })) {
           methodScore = Math.max(methodScore, m.priority === 'high' ? 1.0 : 0.8);
-          matchTags.push({ type: 'method', label: '关注方法: ' + m.name.split(' ')[0] });
-        } else if (artText.includes(m.name.toLowerCase())) {
+          matchTags.push({ type: 'method', label: '关注方法: ' + mName.split(' ')[0] });
+        } else if (mName && artText.includes(mName.toLowerCase())) {
           methodScore = Math.max(methodScore, 0.6);
-          matchTags.push({ type: 'method', label: '方法提及: ' + m.name.split(' ')[0] });
+          matchTags.push({ type: 'method', label: '方法提及: ' + mName.split(' ')[0] });
         }
       });
 
-      // Weighted personal score with dynamic normalization
-      var totalW = weights.topic + weights.species + weights.gene + weights.method || 1.0;
-      var pScore = ((topicScore * weights.topic) +
-                   (speciesScore * weights.species) +
-                   (geneScore * weights.gene) +
-                   (methodScore * weights.method)) / totalW;
+      // Weighted personal score with dynamic normalization (only active dimensions participate)
+      var hasActiveTopic = (followedTopics.length > 0 || followedSubtopics.length > 0);
+      var hasActiveSpecies = (followedSpecies.length > 0);
+      var hasActiveGene = (followedGenes.length > 0);
+      var hasActiveMethod = (followedMethods.length > 0);
+
+      var wTopic = hasActiveTopic ? (Number(weights.topic) || 0.35) : 0.0;
+      var wSpecies = hasActiveSpecies ? (Number(weights.species) || 0.25) : 0.0;
+      var wGene = hasActiveGene ? (Number(weights.gene) || 0.25) : 0.0;
+      var wMethod = hasActiveMethod ? (Number(weights.method) || 0.15) : 0.0;
+
+      var totalActiveW = wTopic + wSpecies + wGene + wMethod;
+      var pScore = 0.50; // Neutral baseline when all active weights are 0
+      if (totalActiveW > 0) {
+        pScore = ((topicScore * wTopic) +
+                  (speciesScore * wSpecies) +
+                  (geneScore * wGene) +
+                  (methodScore * wMethod)) / totalActiveW;
+      }
 
       // Data-driven academic quality score (0.50 ~ 1.00)
       var acadScore = calcAcademicQualityScore(art);
@@ -557,7 +869,9 @@
         '    <span>' + escapeHtml(art.date || art.publication_date || '') + '</span>',
         '    <span>' + escapeHtml(art.primary_species || '植物') + '</span>',
         '    ' + (art.doi ? '<a href="https://doi.org/' + art.doi + '" target="_blank" style="color:#173e2d;text-decoration:none;">DOI: ' + art.doi + '</a>' : ''),
+        '    <span class="match-tag" style="background:#f1f5f9;color:#334155;border:1px solid #cbd5e1;font-weight:600;" title="' + escapeHtml(art.academic_quality ? art.academic_quality.rationale : '') + '">六维学术质量: ' + Math.round(item.academicScore * 100) + '分</span>',
         '  </div>',
+        (art.academic_quality && art.academic_quality.rationale ? '  <div style="font-size:12px;color:#0284c7;background:#f0f9ff;padding:4px 8px;border-radius:4px;margin-bottom:8px;border:1px solid #e0f2fe;"><b>六维学术评价:</b> ' + escapeHtml(art.academic_quality.rationale) + '</div>' : ''),
         '  <div class="rec-match-reasons">' + tagSpans + '</div>',
         '  <div class="rec-card-snippet">' + escapeHtml(art.lead || art.what || art.finding || '') + '</div>',
         '  <div class="rec-feedback-bar">',
@@ -686,7 +1000,9 @@
     executeInstantMatching();
   }
 
+  window.state = state;
   window.GenomeRadarUI = {
+    getState: function() { return state; },
     toggleTopicNode: function (headerEl) {
       var node = headerEl.closest('.topic-tree-node');
       if (node) node.classList.toggle('expanded');
@@ -843,6 +1159,8 @@
       state.profile.profile_version = 'v3.1.' + Math.floor(Date.now() / 1000).toString().slice(-4);
       localStorage.setItem(PROFILE_KEY, JSON.stringify(state.profile));
 
+      var localHash = await computeProfileSha256(state.profile);
+
       var githubToken = localStorage.getItem('gr_sync_github_token');
       var localEndpoint = localStorage.getItem('gr_sync_endpoint') || 'http://127.0.0.1:8765/api/profile';
 
@@ -858,12 +1176,19 @@
         });
         if (localResp.ok) {
           var remoteData = await localResp.json();
-          synced = true;
-          state.isDirty = false;
-          if (remoteData.profile) state.profile = remoteData.profile;
+          var remoteHash = remoteData.sha256 || (remoteData.profile ? await computeProfileSha256(remoteData.profile) : '');
+          if (localHash === remoteHash || areProfilesEquivalent(state.profile, remoteData.profile)) {
+            synced = true;
+            state.isDirty = false;
+            if (remoteData.profile) state.profile = remoteData.profile;
+          } else {
+            throw new Error('本地服务返回配置指纹与本地提交不一致');
+          }
         }
       } catch (localErr) {
-        // 本地服务未启动，尝试 GitHub 保护接口
+        if (localErr.message && localErr.message.includes('指纹')) {
+          errMsg = localErr.message;
+        }
       }
 
       // 2. 尝试 GitHub REST API
@@ -903,7 +1228,7 @@
             throw new Error(errJson.message || 'GitHub API 同步失败 (' + putResp.status + ')');
           }
 
-          // 回读核验一致性
+          // 回读核验完整配置一致性 (基于 SHA-256 指纹比对)
           var verifyResp = await fetch(repoUrl, {
             headers: {
               'Authorization': 'Bearer ' + githubToken,
@@ -914,12 +1239,16 @@
             var verifyJson = await verifyResp.json();
             var decoded = decodeURIComponent(escape(atob(verifyJson.content.replace(/\s/g, ''))));
             var parsed = JSON.parse(decoded);
-            if (parsed.profile_version === state.profile.profile_version) {
+            var remoteHash = await computeProfileSha256(parsed);
+
+            if (localHash === remoteHash || areProfilesEquivalent(state.profile, parsed)) {
               synced = true;
               state.isDirty = false;
             } else {
-              throw new Error('回读版本指纹不一致');
+              throw new Error('回读完整配置与提交配置 SHA-256 指纹不一致 (本地: ' + localHash.slice(0, 8) + ', 远程: ' + remoteHash.slice(0, 8) + ')');
             }
+          } else {
+            throw new Error('回读已提交配置失败 (' + verifyResp.status + ')');
           }
         } catch (ghErr) {
           errMsg = ghErr.message;
@@ -932,15 +1261,17 @@
         state.profile.sync_status = {
           last_synced_at: new Date().toISOString(),
           status: 'synced',
-          client_version: state.profile.profile_version
+          client_version: state.profile.profile_version,
+          sha256: localHash
         };
         localStorage.setItem(PROFILE_KEY, JSON.stringify(state.profile));
         updateStatusBadge();
         renderSyncStatus();
-        alert('科研画像已成功校验并同步至流水线生产配置！版本: ' + state.profile.profile_version);
+        alert('科研画像已成功校验并同步至流水线生产配置！\n版本: ' + state.profile.profile_version + '\nSHA-256 指纹: ' + localHash.slice(0, 16));
         setTimeout(function(){ btn.textContent = '☁ 保存并同步研究画像'; }, 2500);
       } else {
         btn.textContent = '☁ 保存并同步研究画像';
+        state.isDirty = true; // 确保保留未同步状态
         if (errMsg) {
           alert('同步至生产端失败：' + errMsg + '\n\n本地草稿已完整保留在浏览器中，未丢失。');
           updateStatusBadge('同步失败：' + errMsg);
@@ -1076,46 +1407,134 @@
       });
     }
 
-    // Trigger Discovery Button
+    if ($('btn-clear-credentials')) {
+      $('btn-clear-credentials').addEventListener('click', function(){
+        if (!confirm('确定要清除所有保存在本地的 GitHub 访问凭据与端点配置吗？')) return;
+        localStorage.removeItem('gr_sync_github_token');
+        localStorage.removeItem('gr_sync_endpoint');
+        if ($('input-github-token')) $('input-github-token').value = '';
+        if ($('input-sync-endpoint')) $('input-sync-endpoint').value = '';
+        if ($('modal-sync-credentials')) $('modal-sync-credentials').classList.remove('open');
+        updateStatusBadge('已安全清除凭据 (未连接流水线)');
+        renderSyncStatus();
+        alert('所有同步凭据已从浏览器安全移除。');
+      });
+    }
+
+    // Trigger Discovery Button (Real Local and GitHub Actions workflow_dispatch State Machine)
     if ($('btn-trigger-discovery')) {
       $('btn-trigger-discovery').addEventListener('click', async function(){
         var btn = $('btn-trigger-discovery');
-        var statusMsg = $('discovery-status-msg');
-        btn.disabled = true;
-        btn.textContent = '正在检索学术数据库...';
-        if (statusMsg) statusMsg.textContent = '连接 Europe PMC / PubMed 中...';
 
-        try {
-          var localEndpoint = localStorage.getItem('gr_sync_endpoint') || 'http://127.0.0.1:8765/api/profile';
-          var localDiscoveryUrl = localEndpoint.replace('/profile', '/discovery');
-          var triggered = false;
-          try {
-            var dResp = await fetch(localDiscoveryUrl, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ profile: state.profile })
-            });
-            if (dResp.ok) {
-              triggered = true;
-              await renderSupplements();
-              await renderCostStats();
-              alert('历史学术文献发现与个人专刊生成完成！');
-            }
-          } catch(e) {}
-
-          if (!triggered) {
-            btn.textContent = '✓ 检索条件已生成';
-            if (statusMsg) statusMsg.textContent = '在 pipeline 中执行 python -m radar.discovery --generate-supplement';
-            alert('已根据您当前的四维科研画像动态构建学术检索式！\n\n您可以在流水线执行：\npython -m radar.discovery --generate-supplement\n即可自动生成最新个人科研专刊并更新站内索引。');
-          }
-        } catch(err) {
-          alert('检索遇到问题: ' + err.message);
-        } finally {
-          btn.disabled = false;
-          setTimeout(function(){
-            btn.textContent = '🔍 发现高相关历史文献并生成专刊';
-          }, 3000);
+        if (state.isDirty) {
+          var proceed = confirm('【提示】检测到本地存在未同步至生成端的修改草稿。\n\n建议点击【取消】并先点击【保存并同步研究画像】，确保外部检索和专刊使用最新配置。\n\n若您确认以生成端已生效的配置继续运行，请点击【确定】。');
+          if (!proceed) return;
         }
+
+        var quota = parseInt($('slider-discovery-quota').value, 10) || 5;
+        var githubToken = localStorage.getItem('gr_sync_github_token');
+        var localEndpoint = localStorage.getItem('gr_sync_endpoint') || 'http://127.0.0.1:8765/api/profile';
+
+        btn.disabled = true;
+        btn.textContent = '⏳ 正在提交科研发现任务...';
+        updateDiscoveryStatusUI('queued', '正在准备', '正在建立检索连接与任务调度...');
+
+        // 1. 尝试本地同步服务的 /api/discovery/trigger 端点
+        var triggeredLocally = false;
+        try {
+          var localDiscoveryUrl = localEndpoint.replace(/\/profile\/?$/, '/discovery/trigger');
+          var dResp = await fetch(localDiscoveryUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ quota: quota, profile: state.profile })
+          });
+          if (dResp.ok) {
+            triggeredLocally = true;
+            updateDiscoveryStatusUI('completed', '✓ 本地任务已完成', '已通过本地流水线服务完成检索与专刊生成！', '<a href="personal-supplement/index.html" target="_blank" style="color:#15803d;font-weight:700;">查看最新科研专刊 ➔</a>');
+            await renderSupplements();
+            await renderCostStats();
+            btn.disabled = false;
+            btn.textContent = '🔍 发现高相关历史文献并生成专刊';
+            return;
+          }
+        } catch(e) {}
+
+        // 2. 尝试云端 GitHub Actions workflow_dispatch
+        if (githubToken) {
+          try {
+            updateDiscoveryStatusUI('queued', '正在触发云端工作流', '向私有流水线提交 workflow_dispatch 调度请求...');
+            var dispatchUrl = 'https://api.github.com/repos/hao1006sy-source/genome-radar-pipeline/actions/workflows/discovery.yml/dispatches';
+            var dispResp = await fetch(dispatchUrl, {
+              method: 'POST',
+              headers: {
+                'Authorization': 'Bearer ' + githubToken,
+                'Accept': 'application/vnd.github.v3+json',
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                ref: 'main',
+                inputs: {
+                  quota: String(quota),
+                  profile_version: state.profile.profile_version || 'v3.1.0',
+                  publish: true
+                }
+              })
+            });
+
+            if (!dispResp.ok) {
+              var errJson = await dispResp.json();
+              throw new Error(errJson.message || 'HTTP ' + dispResp.status);
+            }
+
+            // 等待 3 秒后获取刚触发的 Run ID
+            updateDiscoveryStatusUI('queued', '工作流已排队 (Queued)', '已成功触发云端 Actions 工作流，正在获取运行实例...');
+            await new Promise(function(resolve){ setTimeout(resolve, 3000); });
+
+            var runsUrl = 'https://api.github.com/repos/hao1006sy-source/genome-radar-pipeline/actions/workflows/discovery.yml/runs?event=workflow_dispatch&per_page=1';
+            var runsResp = await fetch(runsUrl, {
+              headers: {
+                'Authorization': 'Bearer ' + githubToken,
+                'Accept': 'application/vnd.github.v3+json'
+              }
+            });
+
+            if (runsResp.ok) {
+              var runsData = await runsResp.json();
+              var latestRun = (runsData.workflow_runs || [])[0];
+              if (latestRun) {
+                var runId = latestRun.id;
+                localStorage.setItem(ACTIVE_DISCOVERY_KEY, JSON.stringify({
+                  run_id: runId,
+                  started_at: Date.now(),
+                  quota: quota,
+                  profile_version: state.profile.profile_version
+                }));
+                var linkHtml = '<a href="' + latestRun.html_url + '" target="_blank" style="color:#0284c7;text-decoration:none;">查看 GitHub Actions 实时运行日志 (Run #' + runId + ')</a>';
+                updateDiscoveryStatusUI('in_progress', '云端流水线运行中', '已进入实时运行状态机：检索学术数据库 ➔ 核验初筛 ➔ DeepSeek解读 ➔ 发布专刊', linkHtml);
+
+                if (discoveryPollTimer) clearInterval(discoveryPollTimer);
+                discoveryPollTimer = setInterval(function(){
+                  pollDiscoveryRun(runId, githubToken);
+                }, 5000);
+                return;
+              }
+            }
+
+            updateDiscoveryStatusUI('in_progress', '任务已调度', '工作流已成功派发至云端执行，请稍后刷新专刊列表。');
+          } catch(ghErr) {
+            updateDiscoveryStatusUI('failed', '云端触发失败', 'GitHub Actions 调度遇到问题: ' + ghErr.message);
+          } finally {
+            btn.disabled = false;
+            btn.textContent = '🔍 发现高相关历史文献并生成专刊';
+          }
+          return;
+        }
+
+        // 3. 无凭据无本地服务时的友好引导
+        updateDiscoveryStatusUI('failed', '未配置流水线凭据', '未检测到可用的本地同步服务或 GitHub 访问令牌 (PAT)。请点击右上角【配置同步凭据】配置细粒度 PAT。');
+        btn.disabled = false;
+        btn.textContent = '🔍 发现高相关历史文献并生成专刊';
+        if ($('modal-sync-credentials')) $('modal-sync-credentials').classList.add('open');
       });
     }
 

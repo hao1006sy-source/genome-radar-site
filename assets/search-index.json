@@ -127,7 +127,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8882,
+        "content_score": 0.891,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.95,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.888)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源。辅助指标参考 Mol Plant。",
+        "auxiliary_metrics": {
+          "journal": "Mol Plant",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-04:42811024",
@@ -196,7 +215,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8837,
+        "content_score": 0.865,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.884)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Nat Commun。",
+        "auxiliary_metrics": {
+          "journal": "Nat Commun",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-04:42804372",
@@ -275,7 +313,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.869,
+        "content_score": 0.892,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.85,
+          "reliability": 0.96,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.869)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-04:42823797",
@@ -351,7 +408,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8864,
+        "content_score": 0.8885,
+        "dimensions": {
+          "scientific_importance": 0.87,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.886)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源。辅助指标参考 Mol Plant。",
+        "auxiliary_metrics": {
+          "journal": "Mol Plant",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-04:42823440",
@@ -423,7 +499,26 @@
       "gene_entities": [],
       "gene_families": [
         "Polycomb 组蛋白表观修饰复合体"
-      ]
+      ],
+      "academic_quality": {
+        "overall_score": 0.8942,
+        "content_score": 0.879,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.894)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Nat Commun。",
+        "auxiliary_metrics": {
+          "journal": "Nat Commun",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-04:42811751",
@@ -502,7 +597,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8521,
+        "content_score": 0.8695,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.96,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.852)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant Physiol。",
+        "auxiliary_metrics": {
+          "journal": "Plant Physiol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-04:42804661",
@@ -574,7 +688,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8837,
+        "content_score": 0.865,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.884)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant Cell。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-04:42802906",
@@ -637,7 +770,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8574,
+        "content_score": 0.8765,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.9,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.9,
+          "heuristic_value": 0.82
+        },
+        "rationale": "六维内容质量综合评估 (0.857)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-04:42817230",
@@ -710,7 +862,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8626,
+        "content_score": 0.8835,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.8,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.863)：科学问题重大且阐释深入，方法或算法具有明显前沿创新。辅助指标参考 Plant Biotechnol J。",
+        "auxiliary_metrics": {
+          "journal": "Plant Biotechnol J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-04:42820932",
@@ -816,7 +987,26 @@
       ],
       "gene_families": [
         "AKR 醛酮还原酶家族"
-      ]
+      ],
+      "academic_quality": {
+        "overall_score": 0.9051,
+        "content_score": 0.8935,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.8,
+          "reliability": 0.96,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.905)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Cell Environ。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell Environ",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-04:42804375",
@@ -889,7 +1079,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8525,
+        "content_score": 0.87,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.853)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-04:42811459",
@@ -1011,7 +1220,26 @@
       ],
       "gene_families": [
         "根系发育调控因子"
-      ]
+      ],
+      "academic_quality": {
+        "overall_score": 0.9077,
+        "content_score": 0.897,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.8,
+          "reliability": 0.91,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.908)：科学问题重大且阐释深入，方法或算法具有明显前沿创新，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Cell Environ。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell Environ",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-04:42806720",
@@ -1081,7 +1309,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.895,
+        "content_score": 0.88,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.895)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant Cell Environ。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell Environ",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-04:42827295",
@@ -1206,7 +1453,26 @@
       "gene_families": [
         "RLK/RLCK 受体激酶家族",
         "AP2/ERF 转录因子家族"
-      ]
+      ],
+      "academic_quality": {
+        "overall_score": 0.88,
+        "content_score": 0.88,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.880)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 New Phytol。",
+        "auxiliary_metrics": {
+          "journal": "New Phytol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-04:42820940",
@@ -1272,7 +1538,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8942,
+        "content_score": 0.879,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.894)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Cell Environ。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell Environ",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-04:42828769",
@@ -1337,7 +1622,26 @@
       "gene_entities": [],
       "gene_families": [
         "NLR 免疫受体家族"
-      ]
+      ],
+      "academic_quality": {
+        "overall_score": 0.898,
+        "content_score": 0.884,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.898)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Cell。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-04:42827415",
@@ -1427,7 +1731,26 @@
           "evidence": "论文标题或摘要提及 OsPDR17"
         }
       ],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.883,
+        "content_score": 0.884,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.883)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 New Phytol。",
+        "auxiliary_metrics": {
+          "journal": "New Phytol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-04:42823822",
@@ -1490,7 +1813,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8755,
+        "content_score": 0.874,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.875)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 New Phytol。",
+        "auxiliary_metrics": {
+          "journal": "New Phytol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-04:42802517",
@@ -1580,7 +1922,26 @@
           "evidence": "论文标题或摘要提及 OsFH14"
         }
       ],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.898,
+        "content_score": 0.884,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.898)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Cell Environ。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell Environ",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-04:42814784",
@@ -1689,7 +2050,26 @@
           "evidence": "论文标题或摘要提及 Vv14-3"
         }
       ],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8562,
+        "content_score": 0.875,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.856)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant Physiol。",
+        "auxiliary_metrics": {
+          "journal": "Plant Physiol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-11:42850882",
@@ -1754,7 +2134,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8642,
+        "content_score": 0.859,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.9,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.82
+        },
+        "rationale": "六维内容质量综合评估 (0.864)：贡献了高质量基因组或图谱资源，实验验证闭环且分析严谨。辅助指标参考 Mol Plant。",
+        "auxiliary_metrics": {
+          "journal": "Mol Plant",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-11:42836506",
@@ -1817,7 +2216,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8193,
+        "content_score": 0.879,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.819)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 J Integr Plant Biol。",
+        "auxiliary_metrics": {
+          "journal": "J Integr Plant Biol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-11:42848931",
@@ -1894,7 +2312,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.9115,
+        "content_score": 0.902,
+        "dimensions": {
+          "scientific_importance": 0.87,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.9,
+          "reliability": 0.91,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.911)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Cell。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-11:42844811",
@@ -1991,7 +2428,26 @@
           "evidence": "论文标题或摘要提及 GhEBS1"
         }
       ],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8555,
+        "content_score": 0.874,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.856)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Biotechnol J。",
+        "auxiliary_metrics": {
+          "journal": "Plant Biotechnol J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-11:42844995",
@@ -2061,7 +2517,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8555,
+        "content_score": 0.874,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.856)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-11:42834558",
@@ -2124,7 +2599,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8155,
+        "content_score": 0.874,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.816)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Commun。",
+        "auxiliary_metrics": {
+          "journal": "Plant Commun",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-11:42836381",
@@ -2203,7 +2697,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8521,
+        "content_score": 0.8695,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.96,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.852)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant Physiol。",
+        "auxiliary_metrics": {
+          "journal": "Plant Physiol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-11:42830493",
@@ -2268,7 +2781,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8193,
+        "content_score": 0.879,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.819)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 J Integr Plant Biol。",
+        "auxiliary_metrics": {
+          "journal": "J Integr Plant Biol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-11:42859401",
@@ -2358,7 +2890,26 @@
           "evidence": "论文标题或摘要提及 OsNHX2"
         }
       ],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8792,
+        "content_score": 0.879,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.879)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Mol Plant。",
+        "auxiliary_metrics": {
+          "journal": "Mol Plant",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-11:42832033",
@@ -2421,7 +2972,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8905,
+        "content_score": 0.874,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.890)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Cell。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-11:42844231",
@@ -2510,7 +3080,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8864,
+        "content_score": 0.8885,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.8,
+          "reliability": 0.96,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.886)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 New Phytol。",
+        "auxiliary_metrics": {
+          "journal": "New Phytol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-11:42842924",
@@ -2571,7 +3160,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8574,
+        "content_score": 0.8765,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.9,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.9,
+          "heuristic_value": 0.82
+        },
+        "rationale": "六维内容质量综合评估 (0.857)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Physiol。",
+        "auxiliary_metrics": {
+          "journal": "Plant Physiol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-11:42844689",
@@ -2642,7 +3250,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8626,
+        "content_score": 0.8835,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.863)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-11:42844820",
@@ -2709,7 +3336,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8589,
+        "content_score": 0.8785,
+        "dimensions": {
+          "scientific_importance": 0.87,
+          "methodological_innovation": 0.9,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.859)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-11:42844233",
@@ -2781,7 +3427,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8755,
+        "content_score": 0.874,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.875)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 New Phytol。",
+        "auxiliary_metrics": {
+          "journal": "New Phytol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-11:42844830",
@@ -2853,7 +3518,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8667,
+        "content_score": 0.889,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.867)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-11:42834486",
@@ -2921,7 +3605,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8525,
+        "content_score": 0.87,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.853)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-11:42848935",
@@ -2998,7 +3701,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.869,
+        "content_score": 0.892,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.9,
+          "reliability": 0.91,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.869)：科学问题重大且阐释深入，贡献了高质量基因组或图谱资源，实验验证闭环且分析严谨。辅助指标参考 Plant Physiol。",
+        "auxiliary_metrics": {
+          "journal": "Plant Physiol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-11:42845060",
@@ -3099,7 +3821,26 @@
       ],
       "gene_families": [
         "AP2/ERF 转录因子家族"
-      ]
+      ],
+      "academic_quality": {
+        "overall_score": 0.86,
+        "content_score": 0.88,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.860)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-11:42844871",
@@ -3189,7 +3930,26 @@
           "evidence": "论文标题或摘要提及 HvAOC"
         }
       ],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8931,
+        "content_score": 0.8975,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.8,
+          "reliability": 0.88,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.893)：科学问题重大且阐释深入，方法或算法具有明显前沿创新，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 New Phytol。",
+        "auxiliary_metrics": {
+          "journal": "New Phytol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-19:barley-recomb",
@@ -3254,7 +4014,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8593,
+        "content_score": 0.879,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.859)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-19:42878336",
@@ -3334,7 +4113,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8301,
+        "content_score": 0.8935,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.8,
+          "reliability": 0.96,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.830)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 J Integr Plant Biol。",
+        "auxiliary_metrics": {
+          "journal": "J Integr Plant Biol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-19:wheat-bb",
@@ -3399,7 +4197,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8755,
+        "content_score": 0.874,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.875)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 New Phytol。",
+        "auxiliary_metrics": {
+          "journal": "New Phytol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-19:42850280",
@@ -3464,7 +4281,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8939,
+        "content_score": 0.8785,
+        "dimensions": {
+          "scientific_importance": 0.87,
+          "methodological_innovation": 0.9,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.894)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源。辅助指标参考 Nat Commun。",
+        "auxiliary_metrics": {
+          "journal": "Nat Commun",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-19:greyia",
@@ -3530,7 +4366,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8589,
+        "content_score": 0.8785,
+        "dimensions": {
+          "scientific_importance": 0.87,
+          "methodological_innovation": 0.9,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.859)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-19:kiwifruit",
@@ -3593,7 +4448,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8525,
+        "content_score": 0.87,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.853)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-19:wheat-landrace",
@@ -3656,7 +4530,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.871,
+        "content_score": 0.868,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.9,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.82
+        },
+        "rationale": "六维内容质量综合评估 (0.871)：贡献了高质量基因组或图谱资源，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 New Phytol。",
+        "auxiliary_metrics": {
+          "journal": "New Phytol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-19:sunmao",
@@ -3722,7 +4615,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8725,
+        "content_score": 0.87,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.873)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Mol Plant。",
+        "auxiliary_metrics": {
+          "journal": "Mol Plant",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-19:alfalfa-wgd",
@@ -3785,7 +4697,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8525,
+        "content_score": 0.87,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.853)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant Physiol。",
+        "auxiliary_metrics": {
+          "journal": "Plant Physiol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-19:brapa-bias",
@@ -3852,7 +4783,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8525,
+        "content_score": 0.87,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.853)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-19:42850239",
@@ -3925,7 +4875,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8905,
+        "content_score": 0.874,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.890)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Nat Commun。",
+        "auxiliary_metrics": {
+          "journal": "Nat Commun",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-19:fast3vmrmlm",
@@ -4007,7 +4976,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.814,
+        "content_score": 0.872,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.9,
+          "data_resource_value": 0.9,
+          "reliability": 0.91,
+          "representativeness": 0.84,
+          "heuristic_value": 0.82
+        },
+        "rationale": "六维内容质量综合评估 (0.814)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源，实验验证闭环且分析严谨。辅助指标参考 Plant Commun。",
+        "auxiliary_metrics": {
+          "journal": "Plant Commun",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-19:42864913",
@@ -4070,7 +5058,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8256,
+        "content_score": 0.8875,
+        "dimensions": {
+          "scientific_importance": 0.87,
+          "methodological_innovation": 0.9,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.826)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Commun。",
+        "auxiliary_metrics": {
+          "journal": "Plant Commun",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-19:42872729",
@@ -4142,7 +5149,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8226,
+        "content_score": 0.8835,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.823)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源。辅助指标参考 J Integr Plant Biol。",
+        "auxiliary_metrics": {
+          "journal": "J Integr Plant Biol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-19:42861608",
@@ -4211,7 +5237,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8506,
+        "content_score": 0.8675,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.9,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.82
+        },
+        "rationale": "六维内容质量综合评估 (0.851)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-19:42869437",
@@ -4290,7 +5335,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8521,
+        "content_score": 0.8695,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.96,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.852)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant Physiol。",
+        "auxiliary_metrics": {
+          "journal": "Plant Physiol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-19:42864397",
@@ -4356,7 +5420,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8804,
+        "content_score": 0.8605,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.9,
+          "heuristic_value": 0.82
+        },
+        "rationale": "六维内容质量综合评估 (0.880)：贡献了高质量基因组或图谱资源，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Nat Plants。",
+        "auxiliary_metrics": {
+          "journal": "Nat Plants",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-19:42869925",
@@ -4419,7 +5502,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8875,
+        "content_score": 0.87,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.887)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Nat Commun。",
+        "auxiliary_metrics": {
+          "journal": "Nat Commun",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-19:42864594",
@@ -4484,7 +5586,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8755,
+        "content_score": 0.874,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.875)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 New Phytol。",
+        "auxiliary_metrics": {
+          "journal": "New Phytol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-19:42852998",
@@ -4556,7 +5677,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8626,
+        "content_score": 0.8835,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.8,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.863)：科学问题重大且阐释深入，方法或算法具有明显前沿创新。辅助指标参考 Plant Physiol。",
+        "auxiliary_metrics": {
+          "journal": "Plant Physiol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-25:42918899",
@@ -4621,7 +5761,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.9006,
+        "content_score": 0.8875,
+        "dimensions": {
+          "scientific_importance": 0.87,
+          "methodological_innovation": 0.9,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.901)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Nat Genet。",
+        "auxiliary_metrics": {
+          "journal": "Nat Genet",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-25:42919903",
@@ -4694,7 +5853,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.9014,
+        "content_score": 0.8885,
+        "dimensions": {
+          "scientific_importance": 0.87,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.901)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源。辅助指标参考 Nat Plants。",
+        "auxiliary_metrics": {
+          "journal": "Nat Plants",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-25:42919901",
@@ -4757,7 +5935,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.9044,
+        "content_score": 0.8925,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.8,
+          "reliability": 0.88,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.904)：科学问题重大且阐释深入，方法或算法具有明显前沿创新，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Nat Plants。",
+        "auxiliary_metrics": {
+          "journal": "Nat Plants",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-25:42902559",
@@ -4822,7 +6019,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8061,
+        "content_score": 0.8615,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.9,
+          "data_resource_value": 0.8,
+          "reliability": 0.88,
+          "representativeness": 0.9,
+          "heuristic_value": 0.82
+        },
+        "rationale": "六维内容质量综合评估 (0.806)：方法或算法具有明显前沿创新，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Commun。",
+        "auxiliary_metrics": {
+          "journal": "Plant Commun",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-25:42928045",
@@ -4904,7 +6120,26 @@
       "gene_entities": [],
       "gene_families": [
         "bZIP 转录因子家族"
-      ]
+      ],
+      "academic_quality": {
+        "overall_score": 0.892,
+        "content_score": 0.896,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.9,
+          "reliability": 0.91,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.892)：科学问题重大且阐释深入，贡献了高质量基因组或图谱资源，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 New Phytol。",
+        "auxiliary_metrics": {
+          "journal": "New Phytol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-25:42920203",
@@ -4967,7 +6202,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8687,
+        "content_score": 0.865,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.869)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 New Phytol。",
+        "auxiliary_metrics": {
+          "journal": "New Phytol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-25:42908423",
@@ -5030,7 +6284,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8487,
+        "content_score": 0.865,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.849)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-25:42906138",
@@ -5095,7 +6368,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8155,
+        "content_score": 0.874,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.816)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Mol Biol Evol。",
+        "auxiliary_metrics": {
+          "journal": "Mol Biol Evol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-25:42913095",
@@ -5174,7 +6466,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8521,
+        "content_score": 0.8695,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.96,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.852)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant Physiol。",
+        "auxiliary_metrics": {
+          "journal": "Plant Physiol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-25:42913476",
@@ -5237,7 +6548,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.848,
+        "content_score": 0.864,
+        "dimensions": {
+          "scientific_importance": 0.87,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.9,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.82
+        },
+        "rationale": "六维内容质量综合评估 (0.848)：贡献了高质量基因组或图谱资源，实验验证闭环且分析严谨。辅助指标参考 Plant Physiol。",
+        "auxiliary_metrics": {
+          "journal": "Plant Physiol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-25:42913484",
@@ -5313,7 +6643,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8562,
+        "content_score": 0.875,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.856)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant Physiol。",
+        "auxiliary_metrics": {
+          "journal": "Plant Physiol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-25:42888468",
@@ -5407,7 +6756,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8927,
+        "content_score": 0.897,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.9,
+          "reliability": 0.91,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.893)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 New Phytol。",
+        "auxiliary_metrics": {
+          "journal": "New Phytol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-25:42919309",
@@ -5509,7 +6877,26 @@
       ],
       "gene_families": [
         "Polycomb 组蛋白表观修饰复合体"
-      ]
+      ],
+      "academic_quality": {
+        "overall_score": 0.8789,
+        "content_score": 0.8785,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.96,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.879)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Genome Biol。",
+        "auxiliary_metrics": {
+          "journal": "Genome Biol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-25:42908411",
@@ -5581,7 +6968,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8942,
+        "content_score": 0.879,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.894)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Cell Environ。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell Environ",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-25:42896845",
@@ -5646,7 +7052,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8525,
+        "content_score": 0.87,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.853)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant Physiol。",
+        "auxiliary_metrics": {
+          "journal": "Plant Physiol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-25:42894400",
@@ -5711,7 +7136,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8593,
+        "content_score": 0.879,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.859)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Physiol。",
+        "auxiliary_metrics": {
+          "journal": "Plant Physiol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-25:42920208",
@@ -5777,7 +7221,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8687,
+        "content_score": 0.865,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.869)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 New Phytol。",
+        "auxiliary_metrics": {
+          "journal": "New Phytol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-25:42892737",
@@ -5861,7 +7324,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8762,
+        "content_score": 0.875,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.9,
+          "reliability": 0.91,
+          "representativeness": 0.9,
+          "heuristic_value": 0.82
+        },
+        "rationale": "六维内容质量综合评估 (0.876)：贡献了高质量基因组或图谱资源，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 New Phytol。",
+        "auxiliary_metrics": {
+          "journal": "New Phytol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-25:42922275",
@@ -5927,7 +7409,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8555,
+        "content_score": 0.874,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.856)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-10-25:42895217",
@@ -6024,7 +7525,26 @@
           "evidence": "论文标题或摘要提及 TaBADH2"
         }
       ],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8181,
+        "content_score": 0.8775,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.8,
+          "reliability": 0.88,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.818)：方法或算法具有明显前沿创新，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 J Integr Plant Biol。",
+        "auxiliary_metrics": {
+          "journal": "J Integr Plant Biol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-01:42945956",
@@ -6087,7 +7607,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8942,
+        "content_score": 0.879,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.894)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Cell。",
+        "auxiliary_metrics": {
+          "journal": "Cell",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-01:42958420",
@@ -6162,7 +7701,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.892,
+        "content_score": 0.896,
+        "dimensions": {
+          "scientific_importance": 0.87,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.95,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.892)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源。辅助指标参考 Genome Biol。",
+        "auxiliary_metrics": {
+          "journal": "Genome Biol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-01:42958427",
@@ -6248,7 +7806,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8807,
+        "content_score": 0.881,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.95,
+          "reliability": 0.96,
+          "representativeness": 0.84,
+          "heuristic_value": 0.82
+        },
+        "rationale": "六维内容质量综合评估 (0.881)：贡献了高质量基因组或图谱资源，实验验证闭环且分析严谨。辅助指标参考 Genome Biol。",
+        "auxiliary_metrics": {
+          "journal": "Genome Biol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-01:42972586",
@@ -6320,7 +7897,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8755,
+        "content_score": 0.874,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.875)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Genome Biol。",
+        "auxiliary_metrics": {
+          "journal": "Genome Biol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-01:42971994",
@@ -6391,7 +7987,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8856,
+        "content_score": 0.8675,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.9,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.82
+        },
+        "rationale": "六维内容质量综合评估 (0.886)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源。辅助指标参考 Nat Commun。",
+        "auxiliary_metrics": {
+          "journal": "Nat Commun",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-01:42935326",
@@ -6461,7 +8076,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.898,
+        "content_score": 0.884,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.898)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Cell。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-01:42933868",
@@ -6545,7 +8179,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.9077,
+        "content_score": 0.897,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.9,
+          "reliability": 0.91,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.908)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Cell。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-01:42935097",
@@ -6610,7 +8263,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.883,
+        "content_score": 0.884,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.883)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Mol Plant。",
+        "auxiliary_metrics": {
+          "journal": "Mol Plant",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-01:42935185",
@@ -6683,7 +8355,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8622,
+        "content_score": 0.883,
+        "dimensions": {
+          "scientific_importance": 0.87,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.9,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.82
+        },
+        "rationale": "六维内容质量综合评估 (0.862)：贡献了高质量基因组或图谱资源，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-01:42969342",
@@ -6760,7 +8451,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8626,
+        "content_score": 0.8835,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.96,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.863)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-01:42947650",
@@ -6825,7 +8535,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8837,
+        "content_score": 0.865,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.884)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant Cell。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-01:42944616",
@@ -6908,7 +8637,26 @@
       ],
       "gene_families": [
         "SWI/SNF 染色质重塑家族"
-      ]
+      ],
+      "academic_quality": {
+        "overall_score": 0.8942,
+        "content_score": 0.879,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.894)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Cell Environ。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell Environ",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-01:42947622",
@@ -7000,7 +8748,26 @@
           "evidence": "论文标题或摘要提及 GmCWINV4"
         }
       ],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8547,
+        "content_score": 0.873,
+        "dimensions": {
+          "scientific_importance": 0.87,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.9,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.82
+        },
+        "rationale": "六维内容质量综合评估 (0.855)：贡献了高质量基因组或图谱资源，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Biotechnol J。",
+        "auxiliary_metrics": {
+          "journal": "Plant Biotechnol J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-01:42949206",
@@ -7071,7 +8838,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8487,
+        "content_score": 0.865,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.849)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant Biotechnol J。",
+        "auxiliary_metrics": {
+          "journal": "Plant Biotechnol J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-01:42929225",
@@ -7143,7 +8929,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8487,
+        "content_score": 0.865,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.849)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-01:42952239",
@@ -7206,7 +9011,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8687,
+        "content_score": 0.865,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.869)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Mol Plant。",
+        "auxiliary_metrics": {
+          "journal": "Mol Plant",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-01:42924445",
@@ -7279,7 +9103,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8694,
+        "content_score": 0.8925,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.869)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-01:42960660",
@@ -7371,7 +9214,26 @@
           "evidence": "论文标题或摘要提及 SbSTP20-mediated"
         }
       ],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8912,
+        "content_score": 0.875,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.891)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant Cell。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-01:42973439",
@@ -7462,7 +9324,26 @@
           "evidence": "论文标题或摘要提及 ZmARF27"
         }
       ],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.883,
+        "content_score": 0.884,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.883)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 New Phytol。",
+        "auxiliary_metrics": {
+          "journal": "New Phytol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-01:42956005",
@@ -7539,7 +9420,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8664,
+        "content_score": 0.8885,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.8,
+          "reliability": 0.96,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.866)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Physiol。",
+        "auxiliary_metrics": {
+          "journal": "Plant Physiol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-08:42978223",
@@ -7605,7 +9505,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8811,
+        "content_score": 0.8815,
+        "dimensions": {
+          "scientific_importance": 0.87,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.95,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.82
+        },
+        "rationale": "六维内容质量综合评估 (0.881)：贡献了高质量基因组或图谱资源，实验验证闭环且分析严谨。辅助指标参考 Mol Plant。",
+        "auxiliary_metrics": {
+          "journal": "Mol Plant",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-08:42984256",
@@ -7671,7 +9590,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.91,
+        "content_score": 0.9,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.95,
+          "reliability": 0.88,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.910)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Cell。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-08:42979777",
@@ -7750,7 +9688,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8754,
+        "content_score": 0.9005,
+        "dimensions": {
+          "scientific_importance": 0.87,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.95,
+          "reliability": 0.91,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.875)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源，实验验证闭环且分析严谨。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-08:42983985",
@@ -7813,7 +9770,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8589,
+        "content_score": 0.8785,
+        "dimensions": {
+          "scientific_importance": 0.87,
+          "methodological_innovation": 0.9,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.859)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-08:42960406",
@@ -7876,7 +9852,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8894,
+        "content_score": 0.8725,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.889)：科学问题重大且阐释深入，贡献了高质量基因组或图谱资源。辅助指标参考 Plant Cell Environ。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell Environ",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-08:42952428",
@@ -7939,7 +9934,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8837,
+        "content_score": 0.865,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.884)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant Cell。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-08:42958909",
@@ -8011,7 +10025,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8667,
+        "content_score": 0.889,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.867)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-08:42984240",
@@ -8076,7 +10109,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8487,
+        "content_score": 0.865,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.849)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-08:42960433",
@@ -8149,7 +10201,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8905,
+        "content_score": 0.874,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.890)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Cell Environ。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell Environ",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-08:42958626",
@@ -8221,7 +10292,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8664,
+        "content_score": 0.8885,
+        "dimensions": {
+          "scientific_importance": 0.87,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.866)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-08:42963991",
@@ -8291,7 +10381,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8593,
+        "content_score": 0.879,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.859)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Physiol。",
+        "auxiliary_metrics": {
+          "journal": "Plant Physiol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-08:42987176",
@@ -8354,7 +10463,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8864,
+        "content_score": 0.8685,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.8,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.886)：方法或算法具有明显前沿创新。辅助指标参考 Plant Cell。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-08:42951926",
@@ -8427,7 +10555,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8931,
+        "content_score": 0.8775,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.8,
+          "reliability": 0.88,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.893)：方法或算法具有明显前沿创新，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Nat Plants。",
+        "auxiliary_metrics": {
+          "journal": "Nat Plants",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-08:42974960",
@@ -8488,7 +10635,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8181,
+        "content_score": 0.8775,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.8,
+          "reliability": 0.88,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.818)：方法或算法具有明显前沿创新，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 J Integr Plant Biol。",
+        "auxiliary_metrics": {
+          "journal": "J Integr Plant Biol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-08:42953965",
@@ -8552,7 +10718,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8706,
+        "content_score": 0.8675,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.9,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.82
+        },
+        "rationale": "六维内容质量综合评估 (0.871)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源。辅助指标参考 Nucleic Acids Res。",
+        "auxiliary_metrics": {
+          "journal": "Nucleic Acids Res",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-08:42958684",
@@ -8626,7 +10811,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8626,
+        "content_score": 0.8835,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.863)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-08:42987919",
@@ -8701,7 +10905,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8521,
+        "content_score": 0.8695,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.96,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.852)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant Physiol。",
+        "auxiliary_metrics": {
+          "journal": "Plant Physiol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-08:42972450",
@@ -8773,7 +10996,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8864,
+        "content_score": 0.8885,
+        "dimensions": {
+          "scientific_importance": 0.87,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.886)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源。辅助指标参考 Genome Biol。",
+        "auxiliary_metrics": {
+          "journal": "Genome Biol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-08:42963550",
@@ -8859,7 +11101,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8796,
+        "content_score": 0.8795,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.8,
+          "reliability": 0.96,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.880)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Genome Biol。",
+        "auxiliary_metrics": {
+          "journal": "Genome Biol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-08:42979772",
@@ -8965,7 +11226,26 @@
       ],
       "gene_families": [
         "MYB 转录因子家族"
-      ]
+      ],
+      "academic_quality": {
+        "overall_score": 0.8664,
+        "content_score": 0.8885,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.8,
+          "reliability": 0.96,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.866)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-15:42992586",
@@ -9031,7 +11311,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8166,
+        "content_score": 0.8755,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.95,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.82
+        },
+        "rationale": "六维内容质量综合评估 (0.817)：贡献了高质量基因组或图谱资源，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 J Integr Plant Biol。",
+        "auxiliary_metrics": {
+          "journal": "J Integr Plant Biol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-15:43000418",
@@ -9100,7 +11399,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8886,
+        "content_score": 0.8715,
+        "dimensions": {
+          "scientific_importance": 0.87,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.95,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.82
+        },
+        "rationale": "六维内容质量综合评估 (0.889)：贡献了高质量基因组或图谱资源，实验验证闭环且分析严谨。辅助指标参考 Nat Commun。",
+        "auxiliary_metrics": {
+          "journal": "Nat Commun",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-15:42993841",
@@ -9169,7 +11487,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8905,
+        "content_score": 0.874,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.890)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Sci Adv。",
+        "auxiliary_metrics": {
+          "journal": "Sci Adv",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-15:43010681",
@@ -9242,7 +11579,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8661,
+        "content_score": 0.8615,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.9,
+          "data_resource_value": 0.8,
+          "reliability": 0.88,
+          "representativeness": 0.9,
+          "heuristic_value": 0.82
+        },
+        "rationale": "六维内容质量综合评估 (0.866)：方法或算法具有明显前沿创新，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Mol Plant。",
+        "auxiliary_metrics": {
+          "journal": "Mol Plant",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-15:43023737",
@@ -9327,7 +11683,26 @@
       ],
       "gene_families": [
         "籽粒发育调控因子"
-      ]
+      ],
+      "academic_quality": {
+        "overall_score": 0.8687,
+        "content_score": 0.865,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.869)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 New Phytol。",
+        "auxiliary_metrics": {
+          "journal": "New Phytol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-15:43009456",
@@ -9397,7 +11772,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8725,
+        "content_score": 0.87,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.873)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 New Phytol。",
+        "auxiliary_metrics": {
+          "journal": "New Phytol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-15:43017767",
@@ -9465,7 +11859,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8687,
+        "content_score": 0.865,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.869)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 New Phytol。",
+        "auxiliary_metrics": {
+          "journal": "New Phytol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-15:43006229",
@@ -9528,7 +11941,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8593,
+        "content_score": 0.879,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.859)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-15:43026182",
@@ -9591,7 +12023,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8725,
+        "content_score": 0.87,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.873)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 New Phytol。",
+        "auxiliary_metrics": {
+          "journal": "New Phytol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-15:43031357",
@@ -9654,7 +12105,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8555,
+        "content_score": 0.874,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.856)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Physiol。",
+        "auxiliary_metrics": {
+          "journal": "Plant Physiol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-15:42993019",
@@ -9738,7 +12208,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.901,
+        "content_score": 0.888,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.9,
+          "reliability": 0.91,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.901)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源，实验验证闭环且分析严谨。辅助指标参考 Plant Cell Environ。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell Environ",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-15:43004782",
@@ -9813,7 +12302,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8765,
+        "content_score": 0.902,
+        "dimensions": {
+          "scientific_importance": 0.87,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.9,
+          "reliability": 0.91,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.876)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-15:43034289",
@@ -9885,7 +12393,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8905,
+        "content_score": 0.874,
+        "dimensions": {
+          "scientific_importance": 0.87,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.9,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.82
+        },
+        "rationale": "六维内容质量综合评估 (0.890)：贡献了高质量基因组或图谱资源，实验验证闭环且分析严谨。辅助指标参考 Plant Cell。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-15:42984258",
@@ -9955,7 +12482,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8912,
+        "content_score": 0.875,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.891)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant Cell。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-15:43006482",
@@ -10067,7 +12613,26 @@
       ],
       "gene_families": [
         "GH3 基因家族"
-      ]
+      ],
+      "academic_quality": {
+        "overall_score": 0.9014,
+        "content_score": 0.8885,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.8,
+          "reliability": 0.96,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.901)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Cell Environ。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell Environ",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-15:43000621",
@@ -10128,7 +12693,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8706,
+        "content_score": 0.8675,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.9,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.82
+        },
+        "rationale": "六维内容质量综合评估 (0.871)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源。辅助指标参考 New Phytol。",
+        "auxiliary_metrics": {
+          "journal": "New Phytol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-15:43006149",
@@ -10222,7 +12806,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.889,
+        "content_score": 0.892,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.9,
+          "reliability": 0.91,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.889)：科学问题重大且阐释深入，贡献了高质量基因组或图谱资源，实验验证闭环且分析严谨。辅助指标参考 Nucleic Acids Res。",
+        "auxiliary_metrics": {
+          "journal": "Nucleic Acids Res",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-15:42988739",
@@ -10292,7 +12895,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8706,
+        "content_score": 0.8675,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.9,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.82
+        },
+        "rationale": "六维内容质量综合评估 (0.871)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源。辅助指标参考 Nucleic Acids Res。",
+        "auxiliary_metrics": {
+          "journal": "Nucleic Acids Res",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-15:42995649",
@@ -10357,7 +12979,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8487,
+        "content_score": 0.865,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.849)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant Biotechnol J。",
+        "auxiliary_metrics": {
+          "journal": "Plant Biotechnol J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-15:43016121",
@@ -10427,7 +13068,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8219,
+        "content_score": 0.8825,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.822)：科学问题重大且阐释深入，贡献了高质量基因组或图谱资源。辅助指标参考 Plant Commun。",
+        "auxiliary_metrics": {
+          "journal": "Plant Commun",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-22:43052436",
@@ -10506,7 +13166,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8894,
+        "content_score": 0.8725,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.9,
+          "reliability": 0.96,
+          "representativeness": 0.9,
+          "heuristic_value": 0.82
+        },
+        "rationale": "六维内容质量综合评估 (0.889)：贡献了高质量基因组或图谱资源，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Nature。",
+        "auxiliary_metrics": {
+          "journal": "Nature",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-22:43042498",
@@ -10589,7 +13268,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.869,
+        "content_score": 0.892,
+        "dimensions": {
+          "scientific_importance": 0.87,
+          "methodological_innovation": 0.9,
+          "data_resource_value": 0.9,
+          "reliability": 0.91,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.869)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-22:43036943",
@@ -10655,7 +13353,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8679,
+        "content_score": 0.8905,
+        "dimensions": {
+          "scientific_importance": 0.87,
+          "methodological_innovation": 0.87,
+          "data_resource_value": 0.95,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.82
+        },
+        "rationale": "六维内容质量综合评估 (0.868)：贡献了高质量基因组或图谱资源，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Biotechnol J。",
+        "auxiliary_metrics": {
+          "journal": "Plant Biotechnol J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-22:43059181",
@@ -10721,7 +13438,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8725,
+        "content_score": 0.87,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.873)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Mol Plant。",
+        "auxiliary_metrics": {
+          "journal": "Mol Plant",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-22:43049179",
@@ -10801,7 +13537,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8815,
+        "content_score": 0.882,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.85,
+          "reliability": 0.96,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.881)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 New Phytol。",
+        "auxiliary_metrics": {
+          "journal": "New Phytol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-22:43042739",
@@ -10869,7 +13624,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8939,
+        "content_score": 0.8785,
+        "dimensions": {
+          "scientific_importance": 0.87,
+          "methodological_innovation": 0.9,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.894)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源。辅助指标参考 Plant Cell Environ。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell Environ",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-22:43042584",
@@ -10945,7 +13719,26 @@
       "gene_entities": [],
       "gene_families": [
         "CYP450 细胞色素氧化酶家族"
-      ]
+      ],
+      "academic_quality": {
+        "overall_score": 0.8837,
+        "content_score": 0.865,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.884)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant Cell。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-22:43034288",
@@ -11018,7 +13811,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8931,
+        "content_score": 0.8775,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.893)：科学问题重大且阐释深入，贡献了高质量基因组或图谱资源。辅助指标参考 Plant Cell。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-22:43017818",
@@ -11107,7 +13919,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.9077,
+        "content_score": 0.897,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.9,
+          "reliability": 0.91,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.908)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Cell。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-22:43045498",
@@ -11172,7 +14003,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8897,
+        "content_score": 0.873,
+        "dimensions": {
+          "scientific_importance": 0.87,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.9,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.82
+        },
+        "rationale": "六维内容质量综合评估 (0.890)：贡献了高质量基因组或图谱资源，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Cell。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-22:43062106",
@@ -11235,7 +14085,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8555,
+        "content_score": 0.874,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.856)：科学问题重大且阐释深入，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-22:43059150",
@@ -11300,7 +14169,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8283,
+        "content_score": 0.891,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.85,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.828)：科学问题重大且阐释深入，方法或算法具有明显前沿创新。辅助指标参考 J Integr Plant Biol。",
+        "auxiliary_metrics": {
+          "journal": "J Integr Plant Biol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-22:43036950",
@@ -11368,7 +14256,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8219,
+        "content_score": 0.8825,
+        "dimensions": {
+          "scientific_importance": 0.87,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.8,
+          "reliability": 0.88,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.822)：方法或算法具有明显前沿创新，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 J Integr Plant Biol。",
+        "auxiliary_metrics": {
+          "journal": "J Integr Plant Biol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-22:43041074",
@@ -11432,7 +14339,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8694,
+        "content_score": 0.8925,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.8,
+          "reliability": 0.88,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.869)：科学问题重大且阐释深入，方法或算法具有明显前沿创新，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Biotechnol J。",
+        "auxiliary_metrics": {
+          "journal": "Plant Biotechnol J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-22:43059179",
@@ -11505,7 +14431,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8661,
+        "content_score": 0.8615,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.9,
+          "data_resource_value": 0.8,
+          "reliability": 0.88,
+          "representativeness": 0.9,
+          "heuristic_value": 0.82
+        },
+        "rationale": "六维内容质量综合评估 (0.866)：方法或算法具有明显前沿创新，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Mol Plant。",
+        "auxiliary_metrics": {
+          "journal": "Mol Plant",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-22:43053334",
@@ -11566,7 +14511,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8706,
+        "content_score": 0.8675,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.9,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.82
+        },
+        "rationale": "六维内容质量综合评估 (0.871)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源。辅助指标参考 Nucleic Acids Res。",
+        "auxiliary_metrics": {
+          "journal": "Nucleic Acids Res",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-22:43056223",
@@ -11644,7 +14608,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8619,
+        "content_score": 0.8825,
+        "dimensions": {
+          "scientific_importance": 0.85,
+          "methodological_innovation": 0.9,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.862)：方法或算法具有明显前沿创新，贡献了高质量基因组或图谱资源，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant Physiol。",
+        "auxiliary_metrics": {
+          "journal": "Plant Physiol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-22:43052700",
@@ -11742,7 +14725,26 @@
           "evidence": "论文标题或摘要提及 StBEL5"
         }
       ],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8727,
+        "content_score": 0.897,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.95,
+          "data_resource_value": 0.8,
+          "reliability": 0.91,
+          "representativeness": 0.9,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.873)：科学问题重大且阐释深入，方法或算法具有明显前沿创新，实验验证闭环且分析严谨，在重要粮食/主要经济植物中具有高度代表性。辅助指标参考 Plant J。",
+        "auxiliary_metrics": {
+          "journal": "Plant J",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-22:43017807",
@@ -11810,7 +14812,26 @@
       ],
       "genes": [],
       "gene_entities": [],
-      "gene_families": []
+      "gene_families": [],
+      "academic_quality": {
+        "overall_score": 0.8894,
+        "content_score": 0.8725,
+        "dimensions": {
+          "scientific_importance": 0.91,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.9,
+          "reliability": 0.88,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.889)：科学问题重大且阐释深入，贡献了高质量基因组或图谱资源。辅助指标参考 Plant Cell。",
+        "auxiliary_metrics": {
+          "journal": "Plant Cell",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
     },
     {
       "id": "2026-11-22:43023394",
@@ -11888,7 +14909,194 @@
       "gene_entities": [],
       "gene_families": [
         "CYP450 细胞色素氧化酶家族"
-      ]
+      ],
+      "academic_quality": {
+        "overall_score": 0.8525,
+        "content_score": 0.87,
+        "dimensions": {
+          "scientific_importance": 0.93,
+          "methodological_innovation": 0.82,
+          "data_resource_value": 0.8,
+          "reliability": 0.93,
+          "representativeness": 0.84,
+          "heuristic_value": 0.88
+        },
+        "rationale": "六维内容质量综合评估 (0.853)：科学问题重大且阐释深入，实验验证闭环且分析严谨。辅助指标参考 Plant Physiol。",
+        "auxiliary_metrics": {
+          "journal": "Plant Physiol",
+          "impact_factor": null,
+          "quartile": "1区",
+          "is_cover_highlight": false
+        }
+      }
+    },
+    {
+      "id": "2026-11-25-supplement:31915383",
+      "issue_date": "2026-11-25",
+      "article_num": 1,
+      "title_zh": "六倍体普通小麦泛基因组图谱：全面揭示大尺度染色体结构变异与野生种渗入",
+      "title_en": "A pan-genome of hexaploid bread wheat",
+      "doi": "10.1038/s41588-019-0557-7",
+      "pmid": "31915383",
+      "journal": "Nat Genet",
+      "pub_date": "2020-01-08",
+      "primary_topic": "pangenome",
+      "subtopics": [
+        "crop-pan-genome",
+        "structural-variation-pan"
+      ],
+      "primary_species": "小麦 (Triticum aestivum)",
+      "genes": [
+        {
+          "symbol": "NLRs",
+          "name": "核苷酸结合富亮氨酸重复抗病受体家族",
+          "species": "小麦",
+          "role": "广谱抗病性"
+        }
+      ],
+      "research_methods": [
+        "多组装泛基因组比对",
+        "大片段染色体渐渗检测",
+        "抗病基因簇多样性分析"
+      ],
+      "takeaway": "国际团队组装了 15 套高精度六倍体小麦基因组，构建了普通小麦全景泛基因组，系统解析了小麦亚基因组间的不平衡演化与抗病位点多样性。",
+      "url": "personal-supplement/2026-11-25/index.html?article=1",
+      "source_type": "personal_supplement",
+      "source_label": "个人科研专刊"
+    },
+    {
+      "id": "2026-11-25-supplement:31634902",
+      "issue_date": "2026-11-25",
+      "article_num": 2,
+      "title_zh": "先导编辑技术突破：无需双链断裂与供体 DNA 的精准基因组搜索与替换",
+      "title_en": "Search-and-replace genome editing without double-strand breaks or donor DNA",
+      "doi": "10.1038/s41586-019-1711-4",
+      "pmid": "31634902",
+      "journal": "Nature",
+      "pub_date": "2019-10-21",
+      "primary_topic": "genome-editing-breeding",
+      "subtopics": [
+        "crispr-cas-systems"
+      ],
+      "primary_species": "植物通用 / 模式生物",
+      "genes": [
+        {
+          "symbol": "PE2/PE3",
+          "name": "先导编辑系统核心酶",
+          "species": "通用",
+          "role": "无双链断裂精准定点编辑"
+        }
+      ],
+      "research_methods": [
+        "先导编辑 (Prime Editing)",
+        "逆转录工程改造",
+        "定点突变效率评测"
+      ],
+      "takeaway": "开发了革命性的先导编辑 (Prime Editing) 系统，通过 pegRNA 与逆转录酶融合 Cas9，在植物与动植物细胞中实现了高保真定点替换与微片段插入。",
+      "url": "personal-supplement/2026-11-25/index.html?article=2",
+      "source_type": "personal_supplement",
+      "source_label": "个人科研专刊"
+    },
+    {
+      "id": "2026-11-25-supplement:31278385",
+      "issue_date": "2026-11-25",
+      "article_num": 3,
+      "title_zh": "拟南芥根系单细胞转录组图谱：解析植物组织发育轨迹与细胞命运决定",
+      "title_en": "A single-cell RNA-seq atlas of Arabidopsis root development",
+      "doi": "10.1038/s41477-019-0466-4",
+      "pmid": "31278385",
+      "journal": "Nat Plants",
+      "pub_date": "2019-07-08",
+      "primary_topic": "single-cell",
+      "subtopics": [
+        "single-cell-transcriptomics",
+        "cell-lineage-differentiation"
+      ],
+      "primary_species": "拟南芥 (Arabidopsis thaliana)",
+      "genes": [
+        {
+          "symbol": "WUS",
+          "name": "干细胞维持转录因子",
+          "species": "拟南芥",
+          "role": "干细胞分生区发育命运决定"
+        }
+      ],
+      "research_methods": [
+        "单细胞 RNA 测序 (scRNA-seq)",
+        "拟时序细胞谱系发育轨迹分析",
+        "细胞类型特异标记基因原位杂交"
+      ],
+      "takeaway": "首次构建了植物根系高分辨率单细胞转录组细胞图谱，在单细胞分辨率追踪了从分生组织干细胞向成熟表皮与维管束的分化发育轨迹。",
+      "url": "personal-supplement/2026-11-25/index.html?article=3",
+      "source_type": "personal_supplement",
+      "source_label": "个人科研专刊"
+    },
+    {
+      "id": "2026-11-25-supplement:27842067",
+      "issue_date": "2026-11-25",
+      "article_num": 4,
+      "title_zh": "加速光保护恢复提升光合效率与作物生物量：合成生物学改造型农艺突破",
+      "title_en": "Improving photosynthesis and crop productivity by accelerating recovery from photoprotection",
+      "doi": "10.1038/nature20580",
+      "pmid": "27842067",
+      "journal": "Nature",
+      "pub_date": "2016-11-14",
+      "primary_topic": "functional-genomics",
+      "subtopics": [
+        "stress-immunity-mechanisms",
+        "photosynthesis-efficiency"
+      ],
+      "primary_species": "烟草 (Nicotiana tabacum) / 作物通用",
+      "genes": [
+        {
+          "symbol": "PsbS",
+          "name": "光系统 II 亚基 S",
+          "species": "通用",
+          "role": "非光化学淬灭 (NPQ) 快速感应"
+        },
+        {
+          "symbol": "VDE",
+          "name": "紫黄质脱环氧化酶",
+          "species": "通用",
+          "role": "叶黄素循环激活"
+        }
+      ],
+      "research_methods": [
+        "转基因光保护基因叠加表达",
+        "叶绿素荧光动力学测定",
+        "大田生物量与光合效率评测"
+      ],
+      "takeaway": "首次通过基因工程协同加速植物在光照波动下的非光化学淬灭 (NPQ) 恢复，在大田试验中实现作物生物量增产 15%~20%。",
+      "url": "personal-supplement/2026-11-25/index.html?article=4",
+      "source_type": "personal_supplement",
+      "source_label": "个人科研专刊"
+    },
+    {
+      "id": "2026-11-25-supplement:32727518",
+      "issue_date": "2026-11-25",
+      "article_num": 5,
+      "title_zh": "Minigraph 泛基因组图构建算法：建立多基因组结构变异拓扑坐标系",
+      "title_en": "Designing and constructing pan-genome graphs with minigraph",
+      "doi": "10.1186/s13059-020-02168-z",
+      "pmid": "32727518",
+      "journal": "Genome Biol",
+      "pub_date": "2020-07-28",
+      "primary_topic": "pangenome",
+      "subtopics": [
+        "graph-pangenome",
+        "structural-variation-pan"
+      ],
+      "primary_species": "植物通用 / 泛基因组基准",
+      "genes": [],
+      "research_methods": [
+        "图形泛基因组构建算法 (Minigraph/vg)",
+        "变异图谱拓扑构建",
+        "结构变异图谱对齐"
+      ],
+      "takeaway": "李恒团队提出了图基因组构建工具 Minigraph，采用序列图拓扑数据结构实现了多基因组大尺度结构变异的高效整合与秒级图谱构建。",
+      "url": "personal-supplement/2026-11-25/index.html?article=5",
+      "source_type": "personal_supplement",
+      "source_label": "个人科研专刊"
     }
   ],
   "retired_articles": [
@@ -14543,5 +17751,5 @@
       "withdrawal_reason": "收录范围整改；原个人收藏和笔记继续保留"
     }
   ],
-  "total_articles": 160
+  "total_articles": 165
 }

@@ -228,9 +228,17 @@
           <label style="display:flex;align-items:center;gap:6px;"><input type="checkbox" id="chk-type-high-rel" checked> 高度相关研究论文</label>
           <label style="display:flex;align-items:center;gap:6px;"><input type="checkbox" id="chk-type-cross" checked> 跨物种及跨方法启发成果</label>
         </div>
-        <div style="margin-top:8px;padding-top:12px;border-top:1px dashed #eae7de;display:flex;gap:12px;align-items:center;">
+        <div style="margin-top:8px;padding-top:12px;border-top:1px dashed #eae7de;display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
           <button type="button" id="btn-trigger-discovery" class="btn-radar btn-primary">🔍 发现高相关历史文献并生成专刊</button>
           <span id="discovery-status-msg" style="font-size:13px;color:#717873;">点击即时检索 Europe PMC / PubMed 学术库</span>
+        </div>
+        <div id="discovery-job-box" style="display:none;margin-top:12px;padding:12px 16px;background:#f8fafc;border-radius:8px;border:1px solid #cbd5e1;font-size:13.5px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
+            <strong id="discovery-job-title" style="color:#1e293b;">任务状态</strong>
+            <span id="discovery-job-badge" style="padding:2px 8px;border-radius:4px;font-size:12px;font-weight:600;background:#e2e8f0;color:#475569;">已就绪</span>
+          </div>
+          <div id="discovery-job-desc" style="color:#64748b;line-height:1.5;">准备就绪</div>
+          <div id="discovery-job-links" style="margin-top:8px;display:flex;gap:12px;font-size:13px;"></div>
         </div>
       </div>
     </section>
@@ -426,17 +434,20 @@
     <p>为保障您的科研隐私，画像数据通过 GitHub 保护接口或本地同步服务与流水线实现双向受控同步。</p>
     <div class="form-group">
       <label>GitHub Personal Access Token (PAT)</label>
-      <input type="password" id="input-github-token" class="form-control" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx">
-      <div style="font-size:12px;color:#717873;margin-top:4px;">仅保存在浏览器本地 localStorage，用于向私有 pipeline 仓库推送画像配置。</div>
+      <input type="password" id="input-github-token" class="form-control" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx 或 github_pat_xxxxxxxx">
+      <div style="font-size:12px;color:#717873;margin-top:4px;">仅保存在浏览器本地 localStorage。支持细粒度 PAT（仅需 Contents: Read &amp; Write 与 Actions: Read &amp; Write 权限），用于向私有 pipeline 推送配置与触发发现工作流。</div>
     </div>
     <div class="form-group">
       <label>本地同步服务端点 (可选)</label>
       <input type="text" id="input-sync-endpoint" class="form-control" placeholder="http://127.0.0.1:8765/api/profile">
-      <div style="font-size:12px;color:#717873;margin-top:4px;">若本地运行 pipeline 同步守护进程，可直接使用本地 HTTP 接口。</div>
+      <div style="font-size:12px;color:#717873;margin-top:4px;">若本地运行 pipeline 同步守护进程（python -m radar.sync_profile --serve），可直接使用本地 HTTP 接口，支持 Origin 安全校验。</div>
     </div>
-    <div style="display:flex;justify-content:flex-end;gap:10px;margin-top:20px;">
-      <button type="button" id="btn-cancel-credentials" class="btn-radar btn-secondary">取消</button>
-      <button type="button" id="btn-save-credentials" class="btn-radar btn-primary">保存凭据</button>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:20px;">
+      <button type="button" id="btn-clear-credentials" class="btn-radar btn-secondary" style="color:#b91c1c;border-color:#fca5a5;">清除已存凭据</button>
+      <div style="display:flex;gap:10px;">
+        <button type="button" id="btn-cancel-credentials" class="btn-radar btn-secondary">取消</button>
+        <button type="button" id="btn-save-credentials" class="btn-radar btn-primary">保存凭据</button>
+      </div>
     </div>
   </div>
 </div>
