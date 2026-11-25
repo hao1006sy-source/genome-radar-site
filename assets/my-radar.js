@@ -32,13 +32,72 @@
   var ACTIVE_DISCOVERY_KEY = 'gr_active_discovery_run';
   var discoveryPollTimer = null;
 
-  // Profile Hash & Equivalence Helpers (SHA-256)
+  // Profile Hash & Equivalence Helpers (Recursive Canonical JSON SHA-256)
+  function canonicalizeProfile(obj) {
+    if (obj === null || typeof obj !== 'object') {
+      return obj;
+    }
+    if (Array.isArray(obj)) {
+      return obj.map(canonicalizeProfile);
+    }
+    var sortedKeys = Object.keys(obj).sort();
+    var result = {};
+    for (var i = 0; i < sortedKeys.length; i++) {
+      var k = sortedKeys[i];
+      if (k === 'sync_status' || k === 'updated_at') continue;
+      result[k] = canonicalizeProfile(obj[k]);
+    }
+    return result;
+  }
+
+  function sha256Pure(s) {
+    var ascii = unescape(encodeURIComponent(s));
+    function rightRotate(value, amount) { return (value>>>amount) | (value<<(32 - amount)); }
+    var mathPow = Math.pow, maxWord = mathPow(2, 32), lengthProperty = 'length', i, j, result = '', words = [];
+    var asciiBitLength = ascii[lengthProperty]*8, hash = sha256Pure.h = sha256Pure.h || [], k = sha256Pure.k = sha256Pure.k || [];
+    var primeCounter = k[lengthProperty], isComposite = {};
+    for (var candidate = 2; primeCounter < 64; candidate++) {
+      if (!isComposite[candidate]) {
+        for (i = 0; i < 313; i += candidate) isComposite[i] = candidate;
+        hash[primeCounter] = (mathPow(candidate, .5)*maxWord)|0;
+        k[primeCounter++] = (mathPow(candidate, 1/3)*maxWord)|0;
+      }
+    }
+    hash = hash.slice(0);
+    ascii += '\x80';
+    while (ascii[lengthProperty]%64 - 56) ascii += '\x00';
+    for (i = 0; i < ascii[lengthProperty]; i++) {
+      j = ascii.charCodeAt(i);
+      words[i>>2] |= j << ((3 - i)%4)*8;
+    }
+    words[words[lengthProperty]] = ((asciiBitLength/maxWord)|0);
+    words[words[lengthProperty]] = (asciiBitLength);
+    for (j = 0; j < words[lengthProperty];) {
+      var w = words.slice(j, j += 16), oldHash = hash;
+      hash = hash.slice(0, 8);
+      for (i = 0; i < 64; i++) {
+        var i2 = i + j, w15 = w[i - 15], w2 = w[i - 2];
+        var a = hash[0], e = hash[4];
+        var temp1 = hash[7] + (rightRotate(e, 6) ^ rightRotate(e, 11) ^ rightRotate(e, 25)) + ((e & hash[5]) ^ ((~e) & hash[6])) + k[i] + (w[i] = (i < 16) ? w[i] : (w[i - 16] + (rightRotate(w15, 7) ^ rightRotate(w15, 18) ^ (w15>>>3)) + w[i - 7] + (rightRotate(w2, 17) ^ rightRotate(w2, 19) ^ (w2>>>10)))|0);
+        var temp2 = (rightRotate(a, 2) ^ rightRotate(a, 13) ^ rightRotate(a, 22)) + ((a & hash[1]) ^ (a & hash[2]) ^ (hash[1] & hash[2]));
+        hash = [(temp1 + temp2)|0].concat(hash);
+        hash[4] = (hash[4] + temp1)|0;
+      }
+      for (i = 0; i < 8; i++) hash[i] = (hash[i] + oldHash[i])|0;
+    }
+    for (i = 0; i < 8; i++) {
+      for (i2 = 3; i2 >= 0; i2--) {
+        var b = (hash[i]>>(i2*8))&255;
+        result += ((b < 16) ? 0 : '') + b.toString(16);
+      }
+    }
+    return result;
+  }
+
   async function computeProfileSha256(profileObj) {
     if (!profileObj) return '';
-    var copy = JSON.parse(JSON.stringify(profileObj));
-    delete copy.sync_status;
-    delete copy.updated_at;
-    var str = JSON.stringify(copy, Object.keys(copy).sort());
+    var canonicalObj = canonicalizeProfile(profileObj);
+    var str = JSON.stringify(canonicalObj);
     if (window.crypto && window.crypto.subtle) {
       try {
         var encoder = new TextEncoder();
@@ -48,24 +107,14 @@
         return hashArray.map(function(b){ return b.toString(16).padStart(2, '0'); }).join('');
       } catch(e){}
     }
-    // Lightweight deterministic hash fallback
-    var hash = 0;
-    for (var i = 0; i < str.length; i++) {
-      hash = ((hash << 5) - hash) + str.charCodeAt(i);
-      hash |= 0;
-    }
-    return Math.abs(hash).toString(16).padStart(16, '0');
+    return sha256Pure(str);
   }
 
   function areProfilesEquivalent(p1, p2) {
     if (!p1 || !p2) return false;
-    var c1 = JSON.parse(JSON.stringify(p1));
-    var c2 = JSON.parse(JSON.stringify(p2));
-    delete c1.sync_status;
-    delete c2.sync_status;
-    delete c1.updated_at;
-    delete c2.updated_at;
-    return JSON.stringify(c1, Object.keys(c1).sort()) === JSON.stringify(c2, Object.keys(c2).sort());
+    var c1 = JSON.stringify(canonicalizeProfile(p1));
+    var c2 = JSON.stringify(canonicalizeProfile(p2));
+    return c1 === c2;
   }
 
   function updateDiscoveryStatusUI(status, label, desc, linksHtml) {
@@ -109,7 +158,7 @@
     }
   }
 
-  async function pollDiscoveryRun(runId, githubToken) {
+  async function pollDiscoveryRun(runId, githubToken, reqId) {
     if (!runId || !githubToken) return;
 
     try {
@@ -136,7 +185,26 @@
         localStorage.removeItem(ACTIVE_DISCOVERY_KEY);
 
         if (conclusion === 'success') {
-          links += ' | <a href="personal-supplement/index.html" style="color:#15803d;font-weight:700;text-decoration:none;">直达最新生成的科研专刊 ➔</a>';
+          var targetSuppUrl = 'personal-supplement/index.html';
+          var suppLabel = '直达最新生成的科研专刊 ➔';
+          try {
+            var sResp = await fetch('assets/data/supplement-index.json?_t=' + Date.now());
+            if (sResp.ok) {
+              var sData = await sResp.json();
+              var supps = sData.supplements || [];
+              var matchedSupp = null;
+              if (reqId) {
+                matchedSupp = supps.find(function(s){ return s.request_id === reqId; });
+              }
+              if (!matchedSupp && supps.length > 0) matchedSupp = supps[0];
+              if (matchedSupp) {
+                targetSuppUrl = matchedSupp.url || targetSuppUrl;
+                suppLabel = '直达最新科研专刊 (' + (matchedSupp.date || '最新') + ') ➔';
+              }
+            }
+          } catch(e) {}
+
+          links += ' | <a href="' + targetSuppUrl + '" style="color:#15803d;font-weight:700;text-decoration:none;">' + escapeHtml(suppLabel) + '</a>';
           updateDiscoveryStatusUI('completed', '✓ 已完成 (Success)', '历史文献发现任务已顺利完成！个人科研专刊已自动发布至全站，并更新全站搜索索引与成本统计。', links);
           await renderSupplements();
           await renderCostStats();
@@ -617,11 +685,49 @@
       art.abstract || ''
     ].join(' ').toLowerCase();
 
+    function parseSpeciesIdentifiers(spStr) {
+      var spLower = (spStr || '').toLowerCase();
+      var latinMatch = spLower.match(/\b([a-z]{3,})\s+([a-z]{3,})\b/);
+      var latinBinomial = latinMatch ? (latinMatch[1] + ' ' + latinMatch[2]) : '';
+      var genus = latinMatch ? latinMatch[1] : '';
+      var zhMatches = (spStr || '').match(/[\u4e00-\u9fa5]{2,}/g) || [];
+      var taxMatches = spLower.match(/(?:taxid:?|taxonomy\/)?([0-9]{3,7})/g) || [];
+      return {
+        raw: spLower,
+        latin: latinBinomial,
+        genus: genus,
+        zh: zhMatches,
+        taxids: taxMatches
+      };
+    }
+
+    var targetSpInfo = parseSpeciesIdentifiers(targetSp);
+
     function isSpeciesMatched(geneSpStr) {
       if (!targetSp) return true;
-      var checkStr = (geneSpStr || '') + ' ' + artSp + ' ' + artObjs;
-      var tokens = targetSp.split(/[\s()（）/、]+/).filter(function(t){ return t.length >= 2; });
-      return tokens.some(function(t){ return checkStr.includes(t); });
+      var checkStr = ((geneSpStr || '') + ' ' + artSp + ' ' + artObjs).toLowerCase();
+      var candInfo = parseSpeciesIdentifiers(checkStr);
+
+      // 1. TaxID 匹配优先
+      if (targetSpInfo.taxids.length && candInfo.taxids.length) {
+        if (targetSpInfo.taxids.some(function(t){ return candInfo.taxids.includes(t); })) return true;
+      }
+
+      // 2. 完整拉丁双名法匹配 (禁止仅凭属名判定为同一物种)
+      if (targetSpInfo.latin && candInfo.latin) {
+        if (targetSpInfo.latin === candInfo.latin) return true;
+        if (targetSpInfo.genus === candInfo.genus) return false;
+      }
+
+      // 3. 中文物种名精确匹配
+      if (targetSpInfo.zh.length && candInfo.zh.length) {
+        if (targetSpInfo.zh.some(function(z){ return candInfo.zh.includes(z); })) return true;
+      }
+
+      // 4. 后备：如果目标物种完整拉丁学名包含在文本中
+      if (targetSpInfo.latin && checkStr.includes(targetSpInfo.latin)) return true;
+
+      return false;
     }
 
     // 1. Check structured genes array (compatible with both strings and objects)
@@ -653,7 +759,14 @@
           var tag = spLabel ? ('精确定位关注基因 [' + sym + '] (' + spLabel + ')') : ('精确定位关注基因 [' + sym + ']');
           return { score: 1.0, tags: [tag] };
         } else if (expandHomology) {
-          return { score: 0.80, tags: ['同源基因拓展 [' + sym + '] (跨物种)'] };
+          var hasHomologyEv = ['homolog', 'ortholog', 'paralog', '同源', 'syntenic', 'orthologs'].some(function(w){
+            return fullText.includes(w);
+          });
+          if (hasHomologyEv) {
+            return { score: 0.80, tags: ['同源基因拓展 [' + sym + '] (跨物种)'] };
+          } else {
+            return { score: 0.35, tags: ['同名跨物种基因待核验候选 [' + sym + ']'] };
+          }
         }
       }
     }
@@ -679,8 +792,15 @@
     if (textHit) {
       if (isSpeciesMatched()) {
         return { score: 0.90, tags: ['文献涉及关注基因 [' + sym + ']'] };
-      } else if (expandHomology && (fullText.includes('homolog') || fullText.includes('ortholog') || fullText.includes('同源'))) {
-        return { score: 0.75, tags: ['文献提及同源候选 [' + sym + ']'] };
+      } else if (expandHomology) {
+        var hasHomologyEvText = ['homolog', 'ortholog', 'paralog', '同源', 'syntenic', 'orthologs'].some(function(w){
+          return fullText.includes(w);
+        });
+        if (hasHomologyEvText) {
+          return { score: 0.75, tags: ['文献提及同源候选 [' + sym + ']'] };
+        } else {
+          return { score: 0.35, tags: ['同名跨物种基因待核验候选 [' + sym + ']'] };
+        }
       }
     }
 
@@ -787,16 +907,31 @@
         }
       });
 
-      // Weighted personal score with dynamic normalization (only active dimensions participate)
-      var hasActiveTopic = (followedTopics.length > 0 || followedSubtopics.length > 0);
-      var hasActiveSpecies = (followedSpecies.length > 0);
-      var hasActiveGene = (followedGenes.length > 0);
-      var hasActiveMethod = (followedMethods.length > 0);
+      // Weighted personal score with dynamic normalization (only active non-paused dimensions participate)
+      var activeTopics = (state.profile.followed_topics || []).filter(function(t){ return t.status !== 'paused'; });
+      var activeSubtopics = (state.profile.followed_subtopics || []).filter(function(st){ return st.status !== 'paused'; });
+      var activeSpecies = (state.profile.followed_species || []).filter(function(s){ return s.status !== 'paused'; });
+      var activeGenes = (state.profile.followed_genes || []).filter(function(g){ return g.status !== 'paused'; });
+      var activeMethods = (state.profile.followed_methods || []).filter(function(m){ return m.status !== 'paused'; });
 
-      var wTopic = hasActiveTopic ? (Number(weights.topic) || 0.35) : 0.0;
-      var wSpecies = hasActiveSpecies ? (Number(weights.species) || 0.25) : 0.0;
-      var wGene = hasActiveGene ? (Number(weights.gene) || 0.25) : 0.0;
-      var wMethod = hasActiveMethod ? (Number(weights.method) || 0.15) : 0.0;
+      var hasActiveTopic = (activeTopics.length > 0 || activeSubtopics.length > 0);
+      var hasActiveSpecies = (activeSpecies.length > 0);
+      var hasActiveGene = (activeGenes.length > 0);
+      var hasActiveMethod = (activeMethods.length > 0);
+
+      function parseDimWeight(val, defVal) {
+        if (typeof val === 'number' && !isNaN(val)) return val;
+        if (typeof val === 'string' && val.trim() !== '') {
+          var n = Number(val);
+          if (!isNaN(n)) return n;
+        }
+        return defVal;
+      }
+
+      var wTopic = hasActiveTopic ? parseDimWeight(weights.topic, 0.35) : 0.0;
+      var wSpecies = hasActiveSpecies ? parseDimWeight(weights.species, 0.25) : 0.0;
+      var wGene = hasActiveGene ? parseDimWeight(weights.gene, 0.25) : 0.0;
+      var wMethod = hasActiveMethod ? parseDimWeight(weights.method, 0.15) : 0.0;
 
       var totalActiveW = wTopic + wSpecies + wGene + wMethod;
       var pScore = 0.50; // Neutral baseline when all active weights are 0
@@ -1431,6 +1566,8 @@
           if (!proceed) return;
         }
 
+        var reqId = 'req_' + Date.now() + '_' + Math.random().toString(36).slice(2, 8);
+        var triggerTimestamp = Date.now();
         var quota = parseInt($('slider-discovery-quota').value, 10) || 5;
         var githubToken = localStorage.getItem('gr_sync_github_token');
         var localEndpoint = localStorage.getItem('gr_sync_endpoint') || 'http://127.0.0.1:8765/api/profile';
@@ -1446,11 +1583,22 @@
           var dResp = await fetch(localDiscoveryUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ quota: quota, profile: state.profile })
+            body: JSON.stringify({ request_id: reqId, quota: quota, profile: state.profile })
           });
           if (dResp.ok) {
             triggeredLocally = true;
-            updateDiscoveryStatusUI('completed', '✓ 本地任务已完成', '已通过本地流水线服务完成检索与专刊生成！', '<a href="personal-supplement/index.html" target="_blank" style="color:#15803d;font-weight:700;">查看最新科研专刊 ➔</a>');
+            var targetSuppUrl = 'personal-supplement/index.html';
+            try {
+              var sResp = await fetch('assets/data/supplement-index.json?_t=' + Date.now());
+              if (sResp.ok) {
+                var sData = await sResp.json();
+                var supps = sData.supplements || [];
+                var matchedSupp = supps.find(function(s){ return s.request_id === reqId; }) || supps[0];
+                if (matchedSupp && matchedSupp.url) targetSuppUrl = matchedSupp.url;
+              }
+            } catch(e) {}
+
+            updateDiscoveryStatusUI('completed', '✓ 本地任务已完成', '已通过本地流水线服务完成检索与专刊生成！', '<a href="' + targetSuppUrl + '" target="_blank" style="color:#15803d;font-weight:700;">查看最新科研专刊 ➔</a>');
             await renderSupplements();
             await renderCostStats();
             btn.disabled = false;
@@ -1462,7 +1610,7 @@
         // 2. 尝试云端 GitHub Actions workflow_dispatch
         if (githubToken) {
           try {
-            updateDiscoveryStatusUI('queued', '正在触发云端工作流', '向私有流水线提交 workflow_dispatch 调度请求...');
+            updateDiscoveryStatusUI('queued', '正在触发云端工作流', '向私有流水线提交 workflow_dispatch 调度请求 (Request ID: ' + reqId + ')...');
             var dispatchUrl = 'https://api.github.com/repos/hao1006sy-source/genome-radar-pipeline/actions/workflows/discovery.yml/dispatches';
             var dispResp = await fetch(dispatchUrl, {
               method: 'POST',
@@ -1474,9 +1622,10 @@
               body: JSON.stringify({
                 ref: 'main',
                 inputs: {
+                  request_id: reqId,
                   quota: String(quota),
                   profile_version: state.profile.profile_version || 'v3.1.0',
-                  publish: true
+                  publish: 'true'
                 }
               })
             });
@@ -1486,38 +1635,45 @@
               throw new Error(errJson.message || 'HTTP ' + dispResp.status);
             }
 
-            // 等待 3 秒后获取刚触发的 Run ID
-            updateDiscoveryStatusUI('queued', '工作流已排队 (Queued)', '已成功触发云端 Actions 工作流，正在获取运行实例...');
-            await new Promise(function(resolve){ setTimeout(resolve, 3000); });
-
-            var runsUrl = 'https://api.github.com/repos/hao1006sy-source/genome-radar-pipeline/actions/workflows/discovery.yml/runs?event=workflow_dispatch&per_page=1';
-            var runsResp = await fetch(runsUrl, {
-              headers: {
-                'Authorization': 'Bearer ' + githubToken,
-                'Accept': 'application/vnd.github.v3+json'
+            // 循环轮询匹配本次调度生成的真实工作流实例 (过滤 created_at >= triggerTimestamp - 5000)
+            updateDiscoveryStatusUI('queued', '工作流已排队 (Queued)', '已提交调度请求，正在精准关联对应的运行实例...');
+            var matchedRun = null;
+            for (var attempt = 0; attempt < 8; attempt++) {
+              await new Promise(function(resolve){ setTimeout(resolve, 2000); });
+              var runsUrl = 'https://api.github.com/repos/hao1006sy-source/genome-radar-pipeline/actions/workflows/discovery.yml/runs?event=workflow_dispatch&per_page=5';
+              var runsResp = await fetch(runsUrl, {
+                headers: {
+                  'Authorization': 'Bearer ' + githubToken,
+                  'Accept': 'application/vnd.github.v3+json'
+                }
+              });
+              if (runsResp.ok) {
+                var runsData = await runsResp.json();
+                var runs = runsData.workflow_runs || [];
+                matchedRun = runs.find(function(r) {
+                  return new Date(r.created_at).getTime() >= (triggerTimestamp - 5000);
+                });
+                if (matchedRun) break;
               }
-            });
+            }
 
-            if (runsResp.ok) {
-              var runsData = await runsResp.json();
-              var latestRun = (runsData.workflow_runs || [])[0];
-              if (latestRun) {
-                var runId = latestRun.id;
-                localStorage.setItem(ACTIVE_DISCOVERY_KEY, JSON.stringify({
-                  run_id: runId,
-                  started_at: Date.now(),
-                  quota: quota,
-                  profile_version: state.profile.profile_version
-                }));
-                var linkHtml = '<a href="' + latestRun.html_url + '" target="_blank" style="color:#0284c7;text-decoration:none;">查看 GitHub Actions 实时运行日志 (Run #' + runId + ')</a>';
-                updateDiscoveryStatusUI('in_progress', '云端流水线运行中', '已进入实时运行状态机：检索学术数据库 ➔ 核验初筛 ➔ DeepSeek解读 ➔ 发布专刊', linkHtml);
+            if (matchedRun) {
+              var runId = matchedRun.id;
+              localStorage.setItem(ACTIVE_DISCOVERY_KEY, JSON.stringify({
+                run_id: runId,
+                request_id: reqId,
+                started_at: triggerTimestamp,
+                quota: quota,
+                profile_version: state.profile.profile_version
+              }));
+              var linkHtml = '<a href="' + matchedRun.html_url + '" target="_blank" style="color:#0284c7;text-decoration:none;">查看 GitHub Actions 实时运行日志 (Run #' + runId + ')</a>';
+              updateDiscoveryStatusUI('in_progress', '云端流水线运行中', '已进入实时运行状态机：检索学术数据库 ➔ 核验初筛 ➔ DeepSeek解读 ➔ 发布专刊', linkHtml);
 
-                if (discoveryPollTimer) clearInterval(discoveryPollTimer);
-                discoveryPollTimer = setInterval(function(){
-                  pollDiscoveryRun(runId, githubToken);
-                }, 5000);
-                return;
-              }
+              if (discoveryPollTimer) clearInterval(discoveryPollTimer);
+              discoveryPollTimer = setInterval(function(){
+                pollDiscoveryRun(runId, githubToken, reqId);
+              }, 5000);
+              return;
             }
 
             updateDiscoveryStatusUI('in_progress', '任务已调度', '工作流已成功派发至云端执行，请稍后刷新专刊列表。');

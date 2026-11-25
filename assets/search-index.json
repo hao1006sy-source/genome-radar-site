@@ -14931,15 +14931,15 @@
       }
     },
     {
-      "id": "2026-11-25-supplement:31915383",
+      "id": "2026-11-25-supplement:33239791",
       "issue_date": "2026-11-25",
       "article_num": 1,
       "title_zh": "六倍体普通小麦泛基因组图谱：全面揭示大尺度染色体结构变异与野生种渗入",
-      "title_en": "A pan-genome of hexaploid bread wheat",
-      "doi": "10.1038/s41588-019-0557-7",
-      "pmid": "31915383",
-      "journal": "Nat Genet",
-      "pub_date": "2020-01-08",
+      "title_en": "Multiple wheat genomes reveal global variation in modern breeding",
+      "doi": "10.1038/s41586-020-2961-x",
+      "pmid": "33239791",
+      "journal": "Nature",
+      "pub_date": "2020-11-25",
       "primary_topic": "pangenome",
       "subtopics": [
         "crop-pan-genome",
@@ -14998,49 +14998,15 @@
       "source_label": "个人科研专刊"
     },
     {
-      "id": "2026-11-25-supplement:31278385",
+      "id": "2026-11-25-supplement:27856901",
       "issue_date": "2026-11-25",
       "article_num": 3,
-      "title_zh": "拟南芥根系单细胞转录组图谱：解析植物组织发育轨迹与细胞命运决定",
-      "title_en": "A single-cell RNA-seq atlas of Arabidopsis root development",
-      "doi": "10.1038/s41477-019-0466-4",
-      "pmid": "31278385",
-      "journal": "Nat Plants",
-      "pub_date": "2019-07-08",
-      "primary_topic": "single-cell",
-      "subtopics": [
-        "single-cell-transcriptomics",
-        "cell-lineage-differentiation"
-      ],
-      "primary_species": "拟南芥 (Arabidopsis thaliana)",
-      "genes": [
-        {
-          "symbol": "WUS",
-          "name": "干细胞维持转录因子",
-          "species": "拟南芥",
-          "role": "干细胞分生区发育命运决定"
-        }
-      ],
-      "research_methods": [
-        "单细胞 RNA 测序 (scRNA-seq)",
-        "拟时序细胞谱系发育轨迹分析",
-        "细胞类型特异标记基因原位杂交"
-      ],
-      "takeaway": "首次构建了植物根系高分辨率单细胞转录组细胞图谱，在单细胞分辨率追踪了从分生组织干细胞向成熟表皮与维管束的分化发育轨迹。",
-      "url": "personal-supplement/2026-11-25/index.html?article=3",
-      "source_type": "personal_supplement",
-      "source_label": "个人科研专刊"
-    },
-    {
-      "id": "2026-11-25-supplement:27842067",
-      "issue_date": "2026-11-25",
-      "article_num": 4,
       "title_zh": "加速光保护恢复提升光合效率与作物生物量：合成生物学改造型农艺突破",
       "title_en": "Improving photosynthesis and crop productivity by accelerating recovery from photoprotection",
-      "doi": "10.1038/nature20580",
-      "pmid": "27842067",
-      "journal": "Nature",
-      "pub_date": "2016-11-14",
+      "doi": "10.1126/science.aai8878",
+      "pmid": "27856901",
+      "journal": "Science",
+      "pub_date": "2016-11-18",
       "primary_topic": "functional-genomics",
       "subtopics": [
         "stress-immunity-mechanisms",
@@ -15067,33 +15033,60 @@
         "大田生物量与光合效率评测"
       ],
       "takeaway": "首次通过基因工程协同加速植物在光照波动下的非光化学淬灭 (NPQ) 恢复，在大田试验中实现作物生物量增产 15%~20%。",
+      "url": "personal-supplement/2026-11-25/index.html?article=3",
+      "source_type": "personal_supplement",
+      "source_label": "个人科研专刊"
+    },
+    {
+      "id": "2026-11-25-supplement:30913408",
+      "issue_date": "2026-11-25",
+      "article_num": 4,
+      "title_zh": "拟南芥根系单细胞转录组图谱：解析植物组织发育轨迹与细胞命运决定",
+      "title_en": "Spatiotemporal Developmental Trajectories in the Arabidopsis Root Revealed Using High-Throughput Single-Cell RNA Sequencing",
+      "doi": "10.1016/j.devcel.2019.02.022",
+      "pmid": "30913408",
+      "journal": "Dev Cell",
+      "pub_date": "2019-03-25",
+      "primary_topic": "single-cell",
+      "subtopics": [
+        "single-cell-transcriptomics",
+        "cell-lineage-differentiation"
+      ],
+      "primary_species": "拟南芥 (Arabidopsis thaliana)",
+      "genes": [
+        {
+          "symbol": "WUS",
+          "name": "干细胞维持转录因子",
+          "species": "拟南芥",
+          "role": "干细胞分生区发育命运决定"
+        }
+      ],
+      "research_methods": [
+        "单细胞 RNA 测序 (scRNA-seq)",
+        "拟时序细胞谱系发育轨迹分析",
+        "细胞类型特异标记基因原位杂交"
+      ],
+      "takeaway": "首次构建了植物根系高分辨率单细胞转录组细胞图谱，在单细胞分辨率追踪了从分生组织干细胞向成熟表皮与维管束的分化发育轨迹。",
       "url": "personal-supplement/2026-11-25/index.html?article=4",
       "source_type": "personal_supplement",
       "source_label": "个人科研专刊"
     },
     {
-      "id": "2026-11-25-supplement:32727518",
+      "id": "2026-11-25-supplement:42304680",
       "issue_date": "2026-11-25",
       "article_num": 5,
-      "title_zh": "Minigraph 泛基因组图构建算法：建立多基因组结构变异拓扑坐标系",
-      "title_en": "Designing and constructing pan-genome graphs with minigraph",
-      "doi": "10.1186/s13059-020-02168-z",
-      "pmid": "32727518",
-      "journal": "Genome Biol",
-      "pub_date": "2020-07-28",
-      "primary_topic": "pangenome",
-      "subtopics": [
-        "graph-pangenome",
-        "structural-variation-pan"
-      ],
-      "primary_species": "植物通用 / 泛基因组基准",
+      "title_zh": "破译甘蔗基因组育种之谜：现状、策略与未来挑战",
+      "title_en": "Decoding the Mystery of Sugarcane Genome-Based Breeding: Current Advancements, Strategies, and Future Challenges",
+      "doi": "10.1111/pce.70679",
+      "pmid": "42304680",
+      "journal": "Plant, cell & environment",
+      "pub_date": "2026-06-16",
+      "primary_topic": "personal-supplement",
+      "subtopics": [],
+      "primary_species": "作物通用",
       "genes": [],
-      "research_methods": [
-        "图形泛基因组构建算法 (Minigraph/vg)",
-        "变异图谱拓扑构建",
-        "结构变异图谱对齐"
-      ],
-      "takeaway": "李恒团队提出了图基因组构建工具 Minigraph，采用序列图拓扑数据结构实现了多基因组大尺度结构变异的高效整合与秒级图谱构建。",
+      "research_methods": [],
+      "takeaway": "综述甘蔗基因组学进展，聚焦多倍体组装算法与图形泛基因组，提出大数据驱动育种新策略。",
       "url": "personal-supplement/2026-11-25/index.html?article=5",
       "source_type": "personal_supplement",
       "source_label": "个人科研专刊"
