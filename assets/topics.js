@@ -450,12 +450,20 @@
         : '';
 
       var radarLink = '';
-      if (p.radar_article_id) {
-        // 分割 issue 和 article_number
+      var directUrl = p.article_url || '';
+      if (!directUrl && (p.article_id || p.doi)) {
+        var matchedArt = state.allArticles.find(function (a) {
+          return (p.article_id && a.id === p.article_id) || (p.doi && a.doi && a.doi.toLowerCase() === p.doi.toLowerCase());
+        });
+        if (matchedArt && matchedArt.article_url) {
+          directUrl = matchedArt.article_url;
+        }
+      }
+      if (!directUrl && p.radar_article_id) {
         var parts = p.radar_article_id.split(':');
-        var iss = parts[0];
-        var num = parts[1] || '1';
-        var directUrl = iss + '/index.html?article=' + num;
+        directUrl = parts[0] + '/index.html?article=' + (parts[1] || '1');
+      }
+      if (directUrl) {
         radarLink = '<a class="btn-action btn-primary-action" href="' + directUrl + '">周报精读直达 →</a>';
       }
 

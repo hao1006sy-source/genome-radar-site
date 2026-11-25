@@ -22,8 +22,8 @@
     "category": "frontier",
     "topic_id": "assembly-annotation",
     "subtopic_id": "polyploid-haplotype",
-    "title_zh": "组装十元体长穗偃麦草 41.33 Gb 超大基因组并解析同源交换",
-    "title_en": "Haplotype-Resolved Genome Assembly of Decaploid Thinopyrum ponticum",
+    "title_zh": "组装40 Gb十倍体长穗偃麦草同源亚基因组",
+    "title_en": "The homoeolog-resolved assembly of the 40-Gb decaploid Thinopyrum ponticum genome reveals extensive homoeologous exchange and recombination, segmental allopolyploid organization, and allelic variations for wheat improvement.",
     "authors": "中国农业科学院团队 / 合作课题组",
     "journal": "Mol Plant",
     "publication_date": "2026-09-30",
@@ -32,8 +32,9 @@
     "contribution": "攻克 41.33 Gb 超大十元体植物基因组的单倍型同源分辨组装难题，解析了同源染色体交换与小麦远缘杂交抗性等位基因。",
     "reason": "多倍体巨型植物基因组组装技术极致突破的代表作，为解决多倍体作物育种提供了全新范本。",
     "milestone_id": null,
-    "radar_article_id": "2026-10-04:1",
-    "url": "https://doi.org/10.1016/j.cell.2026.09.015"
+    "url": "https://doi.org/10.1016/j.cell.2026.09.015",
+    "article_id": "2026-10-04:42817168",
+    "article_url": "2026-10-04/index.html?article=1"
   },
   {
     "id": "REP-ASM-02",
@@ -76,8 +77,8 @@
     "category": "frontier",
     "topic_id": "epigenetics",
     "subtopic_id": "dna-methylation",
-    "title_zh": "DDM1 协同染色质重塑维持复杂植物基因组稳定性的结构机理",
-    "title_en": "Structural Basis of DDM1 in Maintaining Epigenetic Stability in Complex Plant Genomes",
+    "title_zh": "解析DDM1塑造跨代表观遗传的染色质状态",
+    "title_en": "DDM1 Shapes Transgenerational Epigenetic Inheritance of Diverse Chromatin States.",
     "authors": "冷泉港实验室 / 清华大学团队",
     "journal": "Plant Cell Environ",
     "publication_date": "2026-10-27",
@@ -86,8 +87,9 @@
     "contribution": "解析了经典染色质重塑蛋白 DDM1 识别异染色质密集转座子并引导 DNA 甲基化酶接触 DNA 核心的冷冻电镜结构。",
     "reason": "完美回答了紧密异染色质内部如何实现长程表观遗传沉默的分子生物学机理。",
     "milestone_id": null,
-    "radar_article_id": "2026-11-01:12",
-    "url": "https://doi.org/10.1126/science.adg8812"
+    "url": "https://doi.org/10.1126/science.adg8812",
+    "article_id": "2026-11-01:42944616",
+    "article_url": "2026-11-01/index.html?article=12"
   },
   {
     "id": "REP-EPI-02",
@@ -130,8 +132,8 @@
     "category": "frontier",
     "topic_id": "evolution",
     "subtopic_id": "synteny-collinearity",
-    "title_zh": "发布 Streptochaeta 染色体级基因组，重建禾本科祖先核型",
-    "title_en": "Chromosome-Level Genome of Streptochaeta angustifolia and Ancestral Grass Karyotype",
+    "title_zh": "发布染色体级 Streptochaeta 基因组，重建禾本科祖先核型",
+    "title_en": "Chromosome-level Streptochaeta genome elucidates the ancestral karyotype and allopolyploid origin of grasses.",
     "authors": "中国科学院植物研究所 / 国际禾本科演化联盟",
     "journal": "Nat Commun",
     "publication_date": "2026-08-31",
@@ -140,8 +142,9 @@
     "contribution": "破译禾本科最基部代表种染色体级序列，系统重建了拥有 12 条原染色体的禾本科共同祖先核型及其裂变融合历史。",
     "reason": "解答了困扰植物比较基因组学数十年的禾本科起源与祖先染色体构型难题。",
     "milestone_id": null,
-    "radar_article_id": "2026-10-04:2",
-    "url": "https://doi.org/10.1038/s41588-026-01925-1"
+    "url": "https://doi.org/10.1038/s41588-026-01925-1",
+    "article_id": "2026-10-04:42811024",
+    "article_url": "2026-10-04/index.html?article=2"
   },
   {
     "id": "REP-EVO-02",
@@ -185,7 +188,7 @@
     "topic_id": "functional-genomics",
     "subtopic_id": "stress-immunity-mechanisms",
     "title_zh": "定位 OsAKR 揭示水稻突变体抗旱增产机制",
-    "title_en": "Metabolic and Gene Expression Profile Reveal Genetic Basis of Reproductive Stage Drought Tolerance in a Drought-Defying Rice Mutant",
+    "title_en": "Metabolic and Gene Expression Profile Reveal Genetic Basis of Reproductive Stage Drought Tolerance in a Drought-Defying Rice Mutant.",
     "authors": "Venkata Ramanarao Mulpuri, Senthil-Kumar Muthappa et al.",
     "journal": "Plant Cell Environ",
     "publication_date": "2026-10-01",
@@ -195,7 +198,8 @@
     "reason": "基因组雷达第40周收录的植物抗逆功能基因组学与表型验证前沿代表文献。",
     "milestone_id": null,
     "url": "https://doi.org/10.1111/pce.70929",
-    "radar_article_id": "2026-10-04:10"
+    "article_id": "2026-10-04:42820932",
+    "article_url": "2026-10-04/index.html?article=10"
   },
   {
     "id": "REP-FUN-02",
@@ -239,7 +243,7 @@
     "topic_id": "genome-editing-breeding",
     "subtopic_id": "multiplex-gene-editing",
     "title_zh": "一次敲除29个基因重塑大豆营养品质",
-    "title_en": "An ultra-multiplex CRISPR/Cas9 system for simultaneous editing of 29 genes reshapes the nutritional profile of soybean",
+    "title_en": "An ultra-multiplex CRISPR/Cas9 system for simultaneous editing of 29 genes reshapes the nutritional profile of soybean.",
     "authors": "Yuan Li, Wei Zhang, Caixia Gao, Shulin Liu et al.",
     "journal": "J Integr Plant Biol",
     "publication_date": "2026-11-16",
@@ -249,7 +253,8 @@
     "reason": "基因组雷达第47周收录的多靶点超高通量植物基因组编辑与性状创制代表性论文。",
     "milestone_id": null,
     "url": "https://doi.org/10.1111/jipb.70438",
-    "radar_article_id": "2026-11-22:13"
+    "article_id": "2026-11-22:43036950",
+    "article_url": "2026-11-22/index.html?article=13"
   },
   {
     "id": "REP-EDT-02",
@@ -346,8 +351,8 @@
     "category": "frontier",
     "topic_id": "pangenome",
     "subtopic_id": "crop-wild-pangenome",
-    "title_zh": "构建二倍体与多倍体大麦属染色体级比较基因组图谱",
-    "title_en": "Chromosome-scale comparative genomic atlas of diploid and polyploid Hordeum species",
+    "title_zh": "构建二倍体与多倍体大麦属比较基因组图谱",
+    "title_en": "Structural and regulatory evolution across the genus Hordeum.",
     "authors": "国际大麦合作研究联盟",
     "journal": "Nature",
     "publication_date": "2026-11-18",
@@ -356,8 +361,9 @@
     "contribution": "覆盖大麦属全属所有二倍体及代表性多倍体，构建染色体级泛基因组比对框架，揭示编码区保守而调控区快速更替的进化规律。",
     "reason": "跨属级作物全属超级泛基因组构建与网状演化分析的最新标杆。",
     "milestone_id": null,
-    "radar_article_id": "2026-11-22:1",
-    "url": "https://doi.org/10.1038/s41588-026-01980-w"
+    "url": "https://doi.org/10.1038/s41588-026-01980-w",
+    "article_id": "2026-11-22:43052436",
+    "article_url": "2026-11-22/index.html?article=1"
   },
   {
     "id": "REP-PAN-02",
@@ -400,8 +406,8 @@
     "category": "frontier",
     "topic_id": "single-cell",
     "subtopic_id": "spatial-transcriptomics",
-    "title_zh": "单核转录组图谱揭示芸薹属杂交胚败育的细胞程序",
-    "title_en": "Single-nucleus transcriptomic atlas reveals cellular programs of hybrid embryo abortion in Brassica",
+    "title_zh": "单核转录组图谱揭示杂交胚败育的细胞程序",
+    "title_en": "Single-nucleus transcriptome atlas of Brassica developing seeds provides cellular and molecular insights into embryo abortion in interspecific hybrids.",
     "authors": "华中农业大学十字花科团队",
     "journal": "Mol Plant",
     "publication_date": "2026-10-01",
@@ -410,8 +416,9 @@
     "contribution": "在单细胞分辨率下解析了远缘杂交胚乳发育早衰与胚胎败育的异质性细胞类型与致死信号级联通路。",
     "reason": "应用单核单细胞技术成功攻关作物远缘杂交生殖隔离难题的杰出范例。",
     "milestone_id": null,
-    "radar_article_id": "2026-10-04:4",
-    "url": "https://doi.org/10.1038/s41421-026-00720-3"
+    "url": "https://doi.org/10.1038/s41421-026-00720-3",
+    "article_id": "2026-10-04:42823797",
+    "article_url": "2026-10-04/index.html?article=4"
   },
   {
     "id": "REP-SC-02",
@@ -455,17 +462,18 @@
     "topic_id": "variation-gwas",
     "subtopic_id": "fine-mapping-causal",
     "title_zh": "定位玉米籽粒脱水三类性状的稳定位点与候选基因",
-    "title_en": "Genetic dissection of kernel dehydration traits in maize using a recombinant inbred line population: key loci and candidate genes",
+    "title_en": "Genetic dissection of kernel dehydration traits in maize using a recombinant inbred line population: key loci and candidate genes.",
     "authors": "Jianhua Shen, Pengfei Rong, Xiaohong Yang et al.",
     "journal": "Plant J",
-    "publication_date": "2026-11-20",
+    "publication_date": "2026-11-22",
     "doi": "10.1111/tpj.71256",
     "citation_count_level": "前沿突破 (本站精选)",
     "contribution": "五环境下系统定位控制玉米籽粒脱水速率与含水量的 100 个非冗余 QTL，锁定 9 个核心候选功能基因。",
     "reason": "基因组雷达第47周收录的作物高密度连锁定位与农艺性状解析代表性论文。",
     "milestone_id": null,
-    "radar_article_id": "2026-11-22:11",
-    "url": "https://doi.org/10.1111/tpj.71256"
+    "url": "https://doi.org/10.1111/tpj.71256",
+    "article_id": "2026-11-22:43062106",
+    "article_url": "2026-11-22/index.html?article=11"
   },
   {
     "id": "REP-VAR-02",
