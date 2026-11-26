@@ -185,27 +185,32 @@
         localStorage.removeItem(ACTIVE_DISCOVERY_KEY);
 
         if (conclusion === 'success') {
-          var targetSuppUrl = 'personal-supplement/index.html';
-          var suppLabel = '直达最新生成的科研专刊 ➔';
+          var targetSuppUrl = '';
+          var suppLabel = '';
+          var matchedSupp = null;
           try {
             var sResp = await fetch('assets/data/supplement-index.json?_t=' + Date.now());
             if (sResp.ok) {
               var sData = await sResp.json();
               var supps = sData.supplements || [];
-              var matchedSupp = null;
               if (reqId) {
                 matchedSupp = supps.find(function(s){ return s.request_id === reqId; });
+              } else if (supps.length > 0) {
+                matchedSupp = supps[0];
               }
-              if (!matchedSupp && supps.length > 0) matchedSupp = supps[0];
               if (matchedSupp) {
-                targetSuppUrl = matchedSupp.url || targetSuppUrl;
+                targetSuppUrl = matchedSupp.url || ('personal-supplement/' + matchedSupp.date + '/index.html');
                 suppLabel = '直达最新科研专刊 (' + (matchedSupp.date || '最新') + ') ➔';
               }
             }
           } catch(e) {}
 
-          links += ' | <a href="' + targetSuppUrl + '" style="color:#15803d;font-weight:700;text-decoration:none;">' + escapeHtml(suppLabel) + '</a>';
-          updateDiscoveryStatusUI('completed', '✓ 已完成 (Success)', '历史文献发现任务已顺利完成！个人科研专刊已自动发布至全站，并更新全站搜索索引与成本统计。', links);
+          if (matchedSupp && targetSuppUrl) {
+            links += ' | <a href="' + targetSuppUrl + '" style="color:#15803d;font-weight:700;text-decoration:none;">' + escapeHtml(suppLabel) + '</a>';
+            updateDiscoveryStatusUI('completed', '✓ 已完成 (Success)', '历史文献发现任务已顺利完成！个人科研专刊已自动发布至全站，并更新全站搜索索引与成本统计。', links);
+          } else {
+            updateDiscoveryStatusUI('in_progress', '⏳ 等待发布生效', '云端流水线已执行成功，正在等待 GitHub Pages 网站部署更新（请求ID: ' + escapeHtml(reqId || '最新') + '）。请稍候刷新页面查看。', links);
+          }
           await renderSupplements();
           await renderCostStats();
         } else {
@@ -759,10 +764,20 @@
           var tag = spLabel ? ('精确定位关注基因 [' + sym + '] (' + spLabel + ')') : ('精确定位关注基因 [' + sym + ']');
           return { score: 1.0, tags: [tag] };
         } else if (expandHomology) {
-          var hasHomologyEv = ['homolog', 'ortholog', 'paralog', '同源', 'syntenic', 'orthologs'].some(function(w){
-            return fullText.includes(w);
-          });
-          if (hasHomologyEv) {
+          var escapedSym = symLower.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+          var hasConcreteEv = false;
+          if (item && typeof item === 'object') {
+            if (item.is_homolog || item.relationship === 'homolog') hasConcreteEv = true;
+            var evStr = String(item.evidence || '').toLowerCase();
+            if (['ortholog of', 'homolog of', 'paralog of', '同源'].some(function(w){ return evStr.includes(w); })) hasConcreteEv = true;
+          }
+          if (!hasConcreteEv) {
+            var p1 = new RegExp('(?:ortholog|homolog|paralog|syntenic|同源)(?:ous)?(?:\\s+\\w+){0,3}\\s+(?:\\b|_)' + escapedSym + '(?:\\b|_)', 'i');
+            var p2 = new RegExp('(?:\\b|_)' + escapedSym + '(?:\\b|_)\\s+(?:ortholog|homolog|paralog|同源)', 'i');
+            var p3 = new RegExp('(?:\\b|_)' + escapedSym + '(?:\\b|_)[^\\.\\n]{0,30}(?:ortholog|homolog|paralog|同源)', 'i');
+            hasConcreteEv = p1.test(fullText) || p2.test(fullText) || p3.test(fullText);
+          }
+          if (hasConcreteEv) {
             return { score: 0.80, tags: ['同源基因拓展 [' + sym + '] (跨物种)'] };
           } else {
             return { score: 0.35, tags: ['同名跨物种基因待核验候选 [' + sym + ']'] };
@@ -793,10 +808,11 @@
       if (isSpeciesMatched()) {
         return { score: 0.90, tags: ['文献涉及关注基因 [' + sym + ']'] };
       } else if (expandHomology) {
-        var hasHomologyEvText = ['homolog', 'ortholog', 'paralog', '同源', 'syntenic', 'orthologs'].some(function(w){
-          return fullText.includes(w);
-        });
-        if (hasHomologyEvText) {
+        var p1 = new RegExp('(?:ortholog|homolog|paralog|syntenic|同源)(?:ous)?(?:\\s+\\w+){0,3}\\s+(?:\\b|_)' + escapedSym + '(?:\\b|_)', 'i');
+        var p2 = new RegExp('(?:\\b|_)' + escapedSym + '(?:\\b|_)\\s+(?:ortholog|homolog|paralog|同源)', 'i');
+        var p3 = new RegExp('(?:\\b|_)' + escapedSym + '(?:\\b|_)[^\\.\\n]{0,30}(?:ortholog|homolog|paralog|同源)', 'i');
+        var hasConcreteEvText = p1.test(fullText) || p2.test(fullText) || p3.test(fullText);
+        if (hasConcreteEvText) {
           return { score: 0.75, tags: ['文献提及同源候选 [' + sym + ']'] };
         } else {
           return { score: 0.35, tags: ['同名跨物种基因待核验候选 [' + sym + ']'] };

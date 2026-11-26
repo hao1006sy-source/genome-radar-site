@@ -1,9 +1,11 @@
 {
-  "total_runs": 0,
-  "last_updated": null,
-  "total_cost_usd": 0.0,
-  "total_cost_cny": 0.0,
-  "total_tokens": 0,
-  "api_calls": 0,
+  "total_runs": 1,
+  "last_updated": "2026-11-26T01:54:47.017735+00:00",
+  "total_cost_usd": 0.002129,
+  "total_cost_cny": 0.0152,
+  "total_tokens": 3422,
+  "prompt_tokens": 2114,
+  "completion_tokens": 1308,
+  "api_calls": 3,
   "model": "deepseek-flash"
 }

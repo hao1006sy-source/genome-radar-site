@@ -14931,21 +14931,115 @@
       }
     },
     {
-      "id": "2026-11-25-supplement:33239791",
+      "id": "2026-11-25-supplement:39604736",
+      "issue": "2026-11-25-supplement",
       "issue_date": "2026-11-25",
+      "issue_week": "科研专刊 (2026-11-25)",
+      "article_number": 1,
       "article_num": 1,
+      "title_zh": "小麦泛基因组桥接结构变异与生境及育种",
+      "title_en": "Pan-genome bridges wheat structural variations with habitat and breeding",
+      "journal": "Nature",
+      "publication_date": "2025-01-01",
+      "pub_date": "2025-01-01",
+      "research_direction": [
+        "pangenome"
+      ],
+      "keywords": [],
+      "category": "研究文章",
+      "summary": "构建小麦泛基因组，揭示结构变异驱动环境适应与育种选择。 泛基因组分析发现结构变异与生境适应和育种选择显著关联，关键基因如VRN1和Rht1的结构变异影响开花和株高。",
+      "abstract": "Pan-genome bridges wheat structural variations with habitat and breeding",
+      "impact_factor": null,
+      "doi": "10.1038/s41586-024-08277-0",
+      "pmid": "39604736",
+      "article_url": "personal-supplement/2026-11-25/index.html?article=1",
+      "url": "personal-supplement/2026-11-25/index.html?article=1",
+      "primary_topic": "pangenome",
+      "secondary_topics": [],
+      "subtopics": [],
+      "primary_species": "植物通用",
+      "research_objects": [
+        "植物通用"
+      ],
+      "research_methods": [],
+      "research_methods_evidence": [],
+      "academic_quality": {
+        "final_score": 0.95,
+        "source": "deepseek_llm",
+        "tier": "A"
+      },
+      "genes": [],
+      "source_type": "personal_supplement",
+      "source_label": "个人科研专刊",
+      "takeaway": "构建小麦泛基因组，揭示结构变异驱动环境适应与育种选择。"
+    },
+    {
+      "id": "2026-11-25-supplement:33239791",
+      "issue": "2026-11-25-supplement",
+      "issue_date": "2026-11-25",
+      "issue_week": "科研专刊 (2026-11-25)",
+      "article_number": 2,
+      "article_num": 2,
       "title_zh": "六倍体普通小麦泛基因组图谱：全面揭示大尺度染色体结构变异与野生种渗入",
       "title_en": "Multiple wheat genomes reveal global variation in modern breeding",
+      "journal": "Nature",
+      "publication_date": "2020-11-25",
+      "pub_date": "2020-11-25",
+      "research_direction": [
+        "pangenome"
+      ],
+      "keywords": [
+        "crop-pan-genome",
+        "structural-variation-pan"
+      ],
+      "category": "研究文章",
+      "summary": "国际团队组装了 15 套高精度六倍体小麦基因组，构建了普通小麦全景泛基因组，系统解析了小麦亚基因组间的不平衡演化与抗病位点多样性。 发现结构变异非均匀富集于抗病 NLR 基因家族，野生种染色体片段的大规模渗入显著增强了现代栽培种的抗逆与抗病可塑性。",
+      "abstract": "组装了多套六倍体普通小麦基因组，全面揭示结构变异与野生种渗入图谱。",
+      "impact_factor": 64.8,
       "doi": "10.1038/s41586-020-2961-x",
       "pmid": "33239791",
-      "journal": "Nature",
-      "pub_date": "2020-11-25",
+      "article_url": "personal-supplement/2026-11-25/index.html?article=2",
+      "url": "personal-supplement/2026-11-25/index.html?article=2",
       "primary_topic": "pangenome",
+      "secondary_topics": [],
       "subtopics": [
         "crop-pan-genome",
         "structural-variation-pan"
       ],
       "primary_species": "小麦 (Triticum aestivum)",
+      "research_objects": [
+        "小麦 (Triticum aestivum)"
+      ],
+      "research_methods": [
+        "多组装泛基因组比对",
+        "大片段染色体渐渗检测",
+        "抗病基因簇多样性分析"
+      ],
+      "research_methods_evidence": [
+        {
+          "method": "多组装泛基因组比对",
+          "evidence_status": "confirmed",
+          "evidence_source": "abstract/deepseek",
+          "evidence_excerpt": "国际团队组装了 15 套高精度六倍体小麦基因组，构建了普通小麦全景泛基因组，系统解析了小麦亚基因组间的不平衡演化与抗病位点多样性。"
+        },
+        {
+          "method": "大片段染色体渐渗检测",
+          "evidence_status": "confirmed",
+          "evidence_source": "abstract/deepseek",
+          "evidence_excerpt": "国际团队组装了 15 套高精度六倍体小麦基因组，构建了普通小麦全景泛基因组，系统解析了小麦亚基因组间的不平衡演化与抗病位点多样性。"
+        },
+        {
+          "method": "抗病基因簇多样性分析",
+          "evidence_status": "confirmed",
+          "evidence_source": "abstract/deepseek",
+          "evidence_excerpt": "国际团队组装了 15 套高精度六倍体小麦基因组，构建了普通小麦全景泛基因组，系统解析了小麦亚基因组间的不平衡演化与抗病位点多样性。"
+        }
+      ],
+      "academic_quality": {
+        "final_score": 0.92,
+        "source": "verified_offline_corpus",
+        "tier": "A"
+      },
       "genes": [
         {
           "symbol": "NLRs",
@@ -14954,31 +15048,118 @@
           "role": "广谱抗病性"
         }
       ],
-      "research_methods": [
-        "多组装泛基因组比对",
-        "大片段染色体渐渗检测",
-        "抗病基因簇多样性分析"
-      ],
-      "takeaway": "国际团队组装了 15 套高精度六倍体小麦基因组，构建了普通小麦全景泛基因组，系统解析了小麦亚基因组间的不平衡演化与抗病位点多样性。",
-      "url": "personal-supplement/2026-11-25/index.html?article=1",
       "source_type": "personal_supplement",
-      "source_label": "个人科研专刊"
+      "source_label": "个人科研专刊",
+      "takeaway": "国际团队组装了 15 套高精度六倍体小麦基因组，构建了普通小麦全景泛基因组，系统解析了小麦亚基因组间的不平衡演化与抗病位点多样性。"
+    },
+    {
+      "id": "2026-11-25-supplement:40189201",
+      "issue": "2026-11-25-supplement",
+      "issue_date": "2026-11-25",
+      "issue_week": "科研专刊 (2026-11-25)",
+      "article_number": 3,
+      "article_num": 3,
+      "title_zh": "泛基因组构建揭示六倍体小麦未利用多样性",
+      "title_en": "Structural variation-based and gene-based pangenome construction reveals untapped diversity of hexaploid wheat",
+      "journal": "J Genet Genomics",
+      "publication_date": "2025-01-01",
+      "pub_date": "2025-01-01",
+      "research_direction": [
+        "pangenome"
+      ],
+      "keywords": [],
+      "category": "研究文章",
+      "summary": "基于结构变异与基因的泛基因组构建，揭示六倍体小麦中大量未利用的结构变异与基因多样性。 泛基因组分析发现大量未利用的结构变异和基因，其中结构变异影响基因表达与表型，基因存在-缺失变异涉及抗病与品质相关基因。",
+      "abstract": "Structural variation-based and gene-based pangenome construction reveals untapped diversity of hexaploid wheat",
+      "impact_factor": null,
+      "doi": "10.1016/j.jgg.2025.03.015",
+      "pmid": "40189201",
+      "article_url": "personal-supplement/2026-11-25/index.html?article=3",
+      "url": "personal-supplement/2026-11-25/index.html?article=3",
+      "primary_topic": "pangenome",
+      "secondary_topics": [],
+      "subtopics": [],
+      "primary_species": "植物通用",
+      "research_objects": [
+        "植物通用"
+      ],
+      "research_methods": [],
+      "research_methods_evidence": [],
+      "academic_quality": {
+        "final_score": 0.8,
+        "source": "deepseek_llm",
+        "tier": "A"
+      },
+      "genes": [],
+      "source_type": "personal_supplement",
+      "source_label": "个人科研专刊",
+      "takeaway": "基于结构变异与基因的泛基因组构建，揭示六倍体小麦中大量未利用的结构变异与基因多样性。"
     },
     {
       "id": "2026-11-25-supplement:31634902",
+      "issue": "2026-11-25-supplement",
       "issue_date": "2026-11-25",
-      "article_num": 2,
+      "issue_week": "科研专刊 (2026-11-25)",
+      "article_number": 4,
+      "article_num": 4,
       "title_zh": "先导编辑技术突破：无需双链断裂与供体 DNA 的精准基因组搜索与替换",
       "title_en": "Search-and-replace genome editing without double-strand breaks or donor DNA",
+      "journal": "Nature",
+      "publication_date": "2019-10-21",
+      "pub_date": "2019-10-21",
+      "research_direction": [
+        "genome-editing-breeding"
+      ],
+      "keywords": [
+        "crispr-cas-systems"
+      ],
+      "category": "研究文章",
+      "summary": "开发了革命性的先导编辑 (Prime Editing) 系统，通过 pegRNA 与逆转录酶融合 Cas9，在植物与动植物细胞中实现了高保真定点替换与微片段插入。 无需依赖 DNA 双链断裂 (DSB) 和外源供体 DNA，即可高效实现全部 12 种单碱基互变、特定序列定点插入与缺失，大幅降低了传统 CRISPR 的副产物与脱靶损伤。",
+      "abstract": "开发了先导编辑系统，在植物与动植物细胞中实现精准单碱基替换与微片段定点修饰。",
+      "impact_factor": 64.8,
       "doi": "10.1038/s41586-019-1711-4",
       "pmid": "31634902",
-      "journal": "Nature",
-      "pub_date": "2019-10-21",
+      "article_url": "personal-supplement/2026-11-25/index.html?article=4",
+      "url": "personal-supplement/2026-11-25/index.html?article=4",
       "primary_topic": "genome-editing-breeding",
+      "secondary_topics": [],
       "subtopics": [
         "crispr-cas-systems"
       ],
       "primary_species": "植物通用 / 模式生物",
+      "research_objects": [
+        "植物通用 / 模式生物"
+      ],
+      "research_methods": [
+        "先导编辑 (Prime Editing)",
+        "逆转录工程改造",
+        "定点突变效率评测"
+      ],
+      "research_methods_evidence": [
+        {
+          "method": "先导编辑 (Prime Editing)",
+          "evidence_status": "confirmed",
+          "evidence_source": "abstract/deepseek",
+          "evidence_excerpt": "开发了革命性的先导编辑 (Prime Editing) 系统，通过 pegRNA 与逆转录酶融合 Cas9，在植物与动植物细胞中实现了高保真定点替换与微片段插入。"
+        },
+        {
+          "method": "逆转录工程改造",
+          "evidence_status": "confirmed",
+          "evidence_source": "abstract/deepseek",
+          "evidence_excerpt": "开发了革命性的先导编辑 (Prime Editing) 系统，通过 pegRNA 与逆转录酶融合 Cas9，在植物与动植物细胞中实现了高保真定点替换与微片段插入。"
+        },
+        {
+          "method": "定点突变效率评测",
+          "evidence_status": "confirmed",
+          "evidence_source": "abstract/deepseek",
+          "evidence_excerpt": "开发了革命性的先导编辑 (Prime Editing) 系统，通过 pegRNA 与逆转录酶融合 Cas9，在植物与动植物细胞中实现了高保真定点替换与微片段插入。"
+        }
+      ],
+      "academic_quality": {
+        "final_score": 0.98,
+        "source": "verified_offline_corpus",
+        "tier": "A"
+      },
       "genes": [
         {
           "symbol": "PE2/PE3",
@@ -14987,109 +15168,52 @@
           "role": "无双链断裂精准定点编辑"
         }
       ],
-      "research_methods": [
-        "先导编辑 (Prime Editing)",
-        "逆转录工程改造",
-        "定点突变效率评测"
-      ],
-      "takeaway": "开发了革命性的先导编辑 (Prime Editing) 系统，通过 pegRNA 与逆转录酶融合 Cas9，在植物与动植物细胞中实现了高保真定点替换与微片段插入。",
-      "url": "personal-supplement/2026-11-25/index.html?article=2",
       "source_type": "personal_supplement",
-      "source_label": "个人科研专刊"
+      "source_label": "个人科研专刊",
+      "takeaway": "开发了革命性的先导编辑 (Prime Editing) 系统，通过 pegRNA 与逆转录酶融合 Cas9，在植物与动植物细胞中实现了高保真定点替换与微片段插入。"
     },
     {
-      "id": "2026-11-25-supplement:27856901",
+      "id": "2026-11-25-supplement:38951917",
+      "issue": "2026-11-25-supplement",
       "issue_date": "2026-11-25",
-      "article_num": 3,
-      "title_zh": "加速光保护恢复提升光合效率与作物生物量：合成生物学改造型农艺突破",
-      "title_en": "Improving photosynthesis and crop productivity by accelerating recovery from photoprotection",
-      "doi": "10.1126/science.aai8878",
-      "pmid": "27856901",
-      "journal": "Science",
-      "pub_date": "2016-11-18",
-      "primary_topic": "functional-genomics",
-      "subtopics": [
-        "stress-immunity-mechanisms",
-        "photosynthesis-efficiency"
-      ],
-      "primary_species": "烟草 (Nicotiana tabacum) / 作物通用",
-      "genes": [
-        {
-          "symbol": "PsbS",
-          "name": "光系统 II 亚基 S",
-          "species": "通用",
-          "role": "非光化学淬灭 (NPQ) 快速感应"
-        },
-        {
-          "symbol": "VDE",
-          "name": "紫黄质脱环氧化酶",
-          "species": "通用",
-          "role": "叶黄素循环激活"
-        }
-      ],
-      "research_methods": [
-        "转基因光保护基因叠加表达",
-        "叶绿素荧光动力学测定",
-        "大田生物量与光合效率评测"
-      ],
-      "takeaway": "首次通过基因工程协同加速植物在光照波动下的非光化学淬灭 (NPQ) 恢复，在大田试验中实现作物生物量增产 15%~20%。",
-      "url": "personal-supplement/2026-11-25/index.html?article=3",
-      "source_type": "personal_supplement",
-      "source_label": "个人科研专刊"
-    },
-    {
-      "id": "2026-11-25-supplement:30913408",
-      "issue_date": "2026-11-25",
-      "article_num": 4,
-      "title_zh": "拟南芥根系单细胞转录组图谱：解析植物组织发育轨迹与细胞命运决定",
-      "title_en": "Spatiotemporal Developmental Trajectories in the Arabidopsis Root Revealed Using High-Throughput Single-Cell RNA Sequencing",
-      "doi": "10.1016/j.devcel.2019.02.022",
-      "pmid": "30913408",
-      "journal": "Dev Cell",
-      "pub_date": "2019-03-25",
-      "primary_topic": "single-cell",
-      "subtopics": [
-        "single-cell-transcriptomics",
-        "cell-lineage-differentiation"
-      ],
-      "primary_species": "拟南芥 (Arabidopsis thaliana)",
-      "genes": [
-        {
-          "symbol": "WUS",
-          "name": "干细胞维持转录因子",
-          "species": "拟南芥",
-          "role": "干细胞分生区发育命运决定"
-        }
-      ],
-      "research_methods": [
-        "单细胞 RNA 测序 (scRNA-seq)",
-        "拟时序细胞谱系发育轨迹分析",
-        "细胞类型特异标记基因原位杂交"
-      ],
-      "takeaway": "首次构建了植物根系高分辨率单细胞转录组细胞图谱，在单细胞分辨率追踪了从分生组织干细胞向成熟表皮与维管束的分化发育轨迹。",
-      "url": "personal-supplement/2026-11-25/index.html?article=4",
-      "source_type": "personal_supplement",
-      "source_label": "个人科研专刊"
-    },
-    {
-      "id": "2026-11-25-supplement:42304680",
-      "issue_date": "2026-11-25",
+      "issue_week": "科研专刊 (2026-11-25)",
+      "article_number": 5,
       "article_num": 5,
-      "title_zh": "破译甘蔗基因组育种之谜：现状、策略与未来挑战",
-      "title_en": "Decoding the Mystery of Sugarcane Genome-Based Breeding: Current Advancements, Strategies, and Future Challenges",
-      "doi": "10.1111/pce.70679",
-      "pmid": "42304680",
-      "journal": "Plant, cell & environment",
-      "pub_date": "2026-06-16",
-      "primary_topic": "personal-supplement",
-      "subtopics": [],
-      "primary_species": "作物通用",
-      "genes": [],
-      "research_methods": [],
-      "takeaway": "综述甘蔗基因组学进展，聚焦多倍体组装算法与图形泛基因组，提出大数据驱动育种新策略。",
+      "title_zh": "超低覆盖测序标记小麦大CNV区段",
+      "title_en": "Tagging large CNV blocks in wheat boosts digitalization of germplasm resources by ultra-low-coverage sequencing",
+      "journal": "Genome Biol",
+      "publication_date": "2024-01-01",
+      "pub_date": "2024-01-01",
+      "research_direction": [
+        "pangenome"
+      ],
+      "keywords": [],
+      "category": "研究文章",
+      "summary": "0.5×超低覆盖测序结合大CNV区段标签，实现小麦种质资源低成本数字化。 大CNV区段可在超低覆盖测序下稳定分型，标签策略将种质数字化成本压至常规重测序的零头，并保留大CNV这一传统SNP标记盲区的变异信息。",
+      "abstract": "Tagging large CNV blocks in wheat boosts digitalization of germplasm resources by ultra-low-coverage sequencing",
+      "impact_factor": null,
+      "doi": "10.1186/s13059-024-03315-6",
+      "pmid": "38951917",
+      "article_url": "personal-supplement/2026-11-25/index.html?article=5",
       "url": "personal-supplement/2026-11-25/index.html?article=5",
+      "primary_topic": "pangenome",
+      "secondary_topics": [],
+      "subtopics": [],
+      "primary_species": "植物通用",
+      "research_objects": [
+        "植物通用"
+      ],
+      "research_methods": [],
+      "research_methods_evidence": [],
+      "academic_quality": {
+        "final_score": 0.78,
+        "source": "deepseek_llm",
+        "tier": "A"
+      },
+      "genes": [],
       "source_type": "personal_supplement",
-      "source_label": "个人科研专刊"
+      "source_label": "个人科研专刊",
+      "takeaway": "0.5×超低覆盖测序结合大CNV区段标签，实现小麦种质资源低成本数字化。"
     }
   ],
   "retired_articles": [
@@ -17744,5 +17868,6 @@
       "withdrawal_reason": "收录范围整改；原个人收藏和笔记继续保留"
     }
   ],
-  "total_articles": 165
+  "total_articles": 165,
+  "supplement_article_count": 5
 }

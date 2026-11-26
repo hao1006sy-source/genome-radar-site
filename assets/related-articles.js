@@ -75,7 +75,7 @@
   }
   function validUrl(item) {
     var url = String(item.article_url || '');
-    return /^\d{4}-\d{2}-\d{2}\/index\.html\?article=[1-9]\d*$/.test(url) ? url : '';
+    return /^(?:personal-supplement\/)?\d{4}-\d{2}-\d{2}\/index\.html\?article=[1-9]\d*$/.test(url) ? url : '';
   }
   function render(index) {
     var current = currentRecord(index), pages = document.querySelectorAll('.article-page');
