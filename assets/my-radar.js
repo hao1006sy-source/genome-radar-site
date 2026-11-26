@@ -195,12 +195,10 @@
               var supps = sData.supplements || [];
               if (reqId) {
                 matchedSupp = supps.find(function(s){ return s.request_id === reqId; });
-              } else if (supps.length > 0) {
-                matchedSupp = supps[0];
               }
               if (matchedSupp) {
-                targetSuppUrl = matchedSupp.url || ('personal-supplement/' + matchedSupp.date + '/index.html');
-                suppLabel = '直达最新科研专刊 (' + (matchedSupp.date || '最新') + ') ➔';
+                targetSuppUrl = matchedSupp.url || ('personal-supplement/' + (matchedSupp.supplement_id || matchedSupp.date) + '/index.html');
+                suppLabel = '直达最新科研专刊 (' + (matchedSupp.supplement_id || matchedSupp.date || '最新') + ') ➔';
               }
             }
           } catch(e) {}
@@ -231,10 +229,11 @@
       if (runInfo.run_id && githubToken) {
         var elapsed = Date.now() - (runInfo.started_at || 0);
         if (elapsed < 30 * 60 * 1000) {
+          var savedReqId = runInfo.request_id || null;
           updateDiscoveryStatusUI('in_progress', '恢复监控中', '检测到此前启动的发现任务 (Run #' + runInfo.run_id + ')，正在恢复状态追踪...');
-          pollDiscoveryRun(runInfo.run_id, githubToken);
+          pollDiscoveryRun(runInfo.run_id, githubToken, savedReqId);
           discoveryPollTimer = setInterval(function() {
-            pollDiscoveryRun(runInfo.run_id, githubToken);
+            pollDiscoveryRun(runInfo.run_id, githubToken, savedReqId);
           }, 5000);
         } else {
           localStorage.removeItem(ACTIVE_DISCOVERY_KEY);
@@ -1609,7 +1608,7 @@
               if (sResp.ok) {
                 var sData = await sResp.json();
                 var supps = sData.supplements || [];
-                var matchedSupp = supps.find(function(s){ return s.request_id === reqId; }) || supps[0];
+                var matchedSupp = supps.find(function(s){ return s.request_id === reqId; });
                 if (matchedSupp && matchedSupp.url) targetSuppUrl = matchedSupp.url;
               }
             } catch(e) {}
@@ -1651,12 +1650,12 @@
               throw new Error(errJson.message || 'HTTP ' + dispResp.status);
             }
 
-            // 循环轮询匹配本次调度生成的真实工作流实例 (过滤 created_at >= triggerTimestamp - 5000)
+            // 循环轮询匹配本次调度生成的真实工作流实例 (根据 request_id 精准匹配 run-name)
             updateDiscoveryStatusUI('queued', '工作流已排队 (Queued)', '已提交调度请求，正在精准关联对应的运行实例...');
             var matchedRun = null;
             for (var attempt = 0; attempt < 8; attempt++) {
               await new Promise(function(resolve){ setTimeout(resolve, 2000); });
-              var runsUrl = 'https://api.github.com/repos/hao1006sy-source/genome-radar-pipeline/actions/workflows/discovery.yml/runs?event=workflow_dispatch&per_page=5';
+              var runsUrl = 'https://api.github.com/repos/hao1006sy-source/genome-radar-pipeline/actions/workflows/discovery.yml/runs?event=workflow_dispatch&per_page=10';
               var runsResp = await fetch(runsUrl, {
                 headers: {
                   'Authorization': 'Bearer ' + githubToken,
@@ -1667,7 +1666,8 @@
                 var runsData = await runsResp.json();
                 var runs = runsData.workflow_runs || [];
                 matchedRun = runs.find(function(r) {
-                  return new Date(r.created_at).getTime() >= (triggerTimestamp - 5000);
+                  var runTitle = r.display_title || r.name || '';
+                  return runTitle.indexOf(reqId) !== -1;
                 });
                 if (matchedRun) break;
               }

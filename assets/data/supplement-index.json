@@ -1,7 +1,632 @@
 {
-  "total_supplements": 1,
-  "last_updated": "2026-11-26T01:54:46.992406+00:00",
+  "total_supplements": 3,
+  "last_updated": "2026-11-26T02:28:07.667399+00:00",
   "supplements": [
+    {
+      "supplement_id": "2026-11-26-supp-02",
+      "request_id": "req-test-closure-02",
+      "date": "2026-11-26",
+      "title": "基因组雷达 · 历史文献发现专刊 (2026-11-26-supp-02)",
+      "article_count": 5,
+      "url": "personal-supplement/2026-11-26-supp-02/index.html",
+      "profile_identity": "植物基因组学研究员",
+      "profile_version": "v3.1.0-clean",
+      "articles": [
+        {
+          "id": "2026-11-26-supp-02:30913408",
+          "article_number": 1,
+          "article_num": 1,
+          "title_zh": "拟南芥根系单细胞转录组图谱：解析植物组织发育轨迹与细胞命运决定",
+          "title_en": "Spatiotemporal Developmental Trajectories in the Arabidopsis Root Revealed Using High-Throughput Single-Cell RNA Sequencing",
+          "journal": "Dev Cell",
+          "year": 2019,
+          "doi": "10.1016/j.devcel.2019.02.022",
+          "pmid": "30913408",
+          "publication_date": "2019-03-25",
+          "summary": "首次构建了植物根系高分辨率单细胞转录组细胞图谱，在单细胞分辨率追踪了从分生组织干细胞向成熟表皮与维管束的分化发育轨迹。 揭示了不同细胞类型具有独特的环境感应与抗逆转录特征，发现了控制根系不同细胞层分化的核心转录因子梯度网络。",
+          "primary_topic": "single-cell",
+          "secondary_topics": [],
+          "subtopics": [
+            "single-cell-transcriptomics",
+            "cell-lineage-differentiation"
+          ],
+          "research_objects": [
+            "拟南芥根系原生质体 (Arabidopsis thaliana root)"
+          ],
+          "research_methods": [
+            "单细胞 RNA 测序 (scRNA-seq)",
+            "拟时序细胞谱系发育轨迹分析",
+            "细胞标记基因原位验证"
+          ],
+          "research_methods_evidence": [
+            {
+              "method": "单细胞 RNA 测序 (scRNA-seq)",
+              "evidence_status": "confirmed",
+              "evidence_source": "fulltext",
+              "evidence_excerpt": "Drop-seq and 10x Genomics scRNA-seq were applied to thousands of root protoplasts."
+            },
+            {
+              "method": "拟时序细胞谱系发育轨迹分析",
+              "evidence_status": "confirmed",
+              "evidence_source": "fulltext",
+              "evidence_excerpt": "monocle-based pseudotime ordering of cells from stem cell niche to differentiated tissues"
+            },
+            {
+              "method": "细胞标记基因原位验证",
+              "evidence_status": "confirmed",
+              "evidence_source": "fulltext",
+              "evidence_excerpt": "fluorescent reporter lines and RNA in situ hybridization confirming cell-type cluster identities"
+            }
+          ],
+          "academic_quality": {
+            "overall_score": 94.0,
+            "content_score": 94.0,
+            "dimensions": {
+              "scientific_importance": 94.5,
+              "methodological_innovation": 95.0,
+              "data_resource_value": 94.0,
+              "reliability": 94.0,
+              "representativeness": 94.0,
+              "heuristic_value": 94.5
+            },
+            "rationale": "首次在单细胞分辨率系统绘制植物根系发育图谱，开创了植物组织器官单细胞时空解析的新路径。",
+            "auxiliary_metrics": {
+              "journal": "Dev Cell",
+              "impact_factor": 11.8,
+              "quartile": "Q1",
+              "is_cover_highlight": false
+            }
+          },
+          "genes": [
+            {
+              "symbol": "WUS",
+              "name": "干细胞维持转录因子",
+              "species": "拟南芥",
+              "role": "干细胞分生区发育命运决定"
+            }
+          ],
+          "final_score": 28.55,
+          "personal_score": 0.5,
+          "academic_score": 94.0,
+          "url": "personal-supplement/2026-11-26-supp-02/index.html?article=1",
+          "article_url": "personal-supplement/2026-11-26-supp-02/index.html?article=1",
+          "source_type": "personal_supplement"
+        },
+        {
+          "id": "2026-11-26-supp-02:42792618",
+          "article_number": 2,
+          "article_num": 2,
+          "title_zh": "从关联到因果：下一代GWAS与泛基因组推动谷物基因发现",
+          "title_en": "From Association to Causality: Next-Generation GWAS, Pangenomes, and Multi-Omics Driving Gene Discovery and Precision Breeding in Cereal Crops",
+          "journal": "Biology",
+          "year": 2026,
+          "doi": "10.3390/biology15181673",
+          "pmid": "42792618",
+          "publication_date": "2026-09-21",
+          "summary": "综述下一代GWAS、泛基因组与多组学整合如何将谷物复杂性状的统计关联推向因果基因与精准育种。 传统基于SNP的GWAS可能遗漏结构变异与存在-缺失变异，显著关联本身不能识别因果基因或变异；多位点与环境感知模型可提升复杂遗传效应检测，泛基因组与图基因组参考拓宽可用于关联分析的变异范围，多组学整合为候选基因优先级排序和关联位点解读提供功能证据。",
+          "primary_topic": "pangenome",
+          "secondary_topics": [],
+          "subtopics": [],
+          "research_objects": [
+            "植物通用"
+          ],
+          "research_methods": [],
+          "research_methods_evidence": [],
+          "academic_quality": {},
+          "genes": [],
+          "final_score": 0.93,
+          "personal_score": 0.95,
+          "academic_score": 0.9,
+          "url": "personal-supplement/2026-11-26-supp-02/index.html?article=2",
+          "article_url": "personal-supplement/2026-11-26-supp-02/index.html?article=2",
+          "source_type": "personal_supplement"
+        },
+        {
+          "id": "2026-11-26-supp-02:41988419",
+          "article_number": 3,
+          "article_num": 3,
+          "title_zh": "多倍体作物泛基因组解析与育种应用",
+          "title_en": "Pan-genomics of polyploid crops: from complexity to breeding",
+          "journal": "Frontiers in plant science",
+          "year": 2026,
+          "doi": "10.3389/fpls.2026.1800432",
+          "pmid": "41988419",
+          "publication_date": "2026-03-31",
+          "summary": "综述多倍体作物泛基因组进展，强调解析亚基因组与同源交换以推动育种应用。 泛基因组通过纳入物种或属内个体的核心和可变序列/基因，克服了参考偏差，更全面地代表基因组多样性；结构变异作为性状多样性和基因组进化的关键驱动因素，在基于单一线性参考基因组的分析中常被低估。",
+          "primary_topic": "pangenome",
+          "secondary_topics": [],
+          "subtopics": [],
+          "research_objects": [
+            "植物通用"
+          ],
+          "research_methods": [],
+          "research_methods_evidence": [],
+          "academic_quality": {},
+          "genes": [],
+          "final_score": 0.908,
+          "personal_score": 0.92,
+          "academic_score": 0.89,
+          "url": "personal-supplement/2026-11-26-supp-02/index.html?article=3",
+          "article_url": "personal-supplement/2026-11-26-supp-02/index.html?article=3",
+          "source_type": "personal_supplement"
+        },
+        {
+          "id": "2026-11-26-supp-02:42688996",
+          "article_number": 4,
+          "article_num": 4,
+          "title_zh": "番茄基因组解码与设计育种进展",
+          "title_en": "Advances in genomics-driven genetic decoding and genomic design breeding in tomato",
+          "journal": "Horticulture research",
+          "year": 2026,
+          "doi": "10.1093/hr/uhag172",
+          "pmid": "42688996",
+          "publication_date": "2026-05-04",
+          "summary": "综述番茄驯化与改良的基因组解码进展，提出整合基因组选择与人工智能的设计育种框架。 人工选择优先固定产量相关等位基因，导致遗传多样性收窄，风味相关位点尤为突出；比较基因组学揭示关键性状的遗传架构与调控机制。",
+          "primary_topic": "pangenome",
+          "secondary_topics": [],
+          "subtopics": [],
+          "research_objects": [
+            "植物通用"
+          ],
+          "research_methods": [],
+          "research_methods_evidence": [],
+          "academic_quality": {},
+          "genes": [],
+          "final_score": 0.892,
+          "personal_score": 0.9,
+          "academic_score": 0.88,
+          "url": "personal-supplement/2026-11-26-supp-02/index.html?article=4",
+          "article_url": "personal-supplement/2026-11-26-supp-02/index.html?article=4",
+          "source_type": "personal_supplement"
+        },
+        {
+          "id": "2026-11-26-supp-02:42654900",
+          "article_number": 5,
+          "article_num": 5,
+          "title_zh": "解析植物结构变异形成机制与功能",
+          "title_en": "Structural Variation and Its Roles in Plant Genomes",
+          "journal": "Plants (Basel, Switzerland)",
+          "year": 2026,
+          "doi": "10.3390/plants15162498",
+          "pmid": "42654900",
+          "publication_date": "2026-08-18",
+          "summary": "综述植物结构变异形成机制、分类与功能后果，强调长读长测序和图泛基因组克服线性参考局限。 SV通过改变序列内容、基因剂量、调控景观和染色体组织重塑基因组架构；长读长测序和图泛基因组克服传统线性参考基因组局限，实现更全面的遗传多样性表征；多组学整合可解析SV对基因调控和复杂农艺性状的影响。",
+          "primary_topic": "pangenome",
+          "secondary_topics": [],
+          "subtopics": [],
+          "research_objects": [
+            "植物通用"
+          ],
+          "research_methods": [],
+          "research_methods_evidence": [],
+          "academic_quality": {},
+          "genes": [],
+          "final_score": 0.868,
+          "personal_score": 0.88,
+          "academic_score": 0.85,
+          "url": "personal-supplement/2026-11-26-supp-02/index.html?article=5",
+          "article_url": "personal-supplement/2026-11-26-supp-02/index.html?article=5",
+          "source_type": "personal_supplement"
+        }
+      ]
+    },
+    {
+      "supplement_id": "2026-11-26-supp-01",
+      "request_id": "req-test-closure-01",
+      "date": "2026-11-26",
+      "title": "基因组雷达 · 历史文献发现专刊 (2026-11-26-supp-01)",
+      "article_count": 5,
+      "url": "personal-supplement/2026-11-26-supp-01/index.html",
+      "profile_identity": "植物基因组学研究员",
+      "profile_version": "v3.1.0-clean",
+      "articles": [
+        {
+          "id": "2026-11-26-supp-01:31634902",
+          "article_number": 1,
+          "article_num": 1,
+          "title_zh": "先导编辑底层技术突破：无需双链断裂与供体 DNA 的精准基因组搜索与替换",
+          "title_en": "Search-and-replace genome editing without double-strand breaks or donor DNA",
+          "journal": "Nature",
+          "year": 2019,
+          "doi": "10.1038/s41586-019-1711-4",
+          "pmid": "31634902",
+          "publication_date": "2019-10-21",
+          "summary": "开发了划时代的先导编辑系统，在人源细胞系中实现无双链断裂的高精度全类型单碱基替换与小片段插入缺失。 在无需依赖 DNA 双链断裂 (DSB) 和外源供体 DNA 的前提下，高效完成了 12 种单碱基互变、特定片段精准插入与删除，编辑副产物与脱靶率较传统 CRISPR-Cas9 显著降低。",
+          "primary_topic": "genome-editing-breeding",
+          "secondary_topics": [],
+          "subtopics": [
+            "prime-editing",
+            "crispr-cas-systems"
+          ],
+          "research_objects": [
+            "人源细胞系 (HEK293T/HeLa/U2OS)",
+            "小鼠原代皮质神经元"
+          ],
+          "research_methods": [
+            "先导编辑 (Prime Editing)",
+            "逆转录酶工程改造",
+            "靶向定点编辑效率测定",
+            "全基因组脱靶评估"
+          ],
+          "research_methods_evidence": [
+            {
+              "method": "先导编辑 (Prime Editing)",
+              "evidence_status": "confirmed",
+              "evidence_source": "fulltext",
+              "evidence_excerpt": "We engineer prime editors consisting of an engineered reverse transcriptase fused to an RNA-guided Cas9 nickase and a prime editing guide RNA (pegRNA)."
+            },
+            {
+              "method": "逆转录酶工程改造",
+              "evidence_status": "confirmed",
+              "evidence_source": "fulltext",
+              "evidence_excerpt": "engineered M-MLV reverse transcriptase (RT) variants (D200N/L603W/T330P/T306K/W313F) to enhance edit efficiency"
+            },
+            {
+              "method": "靶向定点编辑效率测定",
+              "evidence_status": "confirmed",
+              "evidence_source": "fulltext",
+              "evidence_excerpt": "tested in human cells across >175 edits including transitions, transversions, insertions and deletions"
+            },
+            {
+              "method": "全基因组脱靶评估",
+              "evidence_status": "confirmed",
+              "evidence_source": "fulltext",
+              "evidence_excerpt": "evaluated off-target editing at genomic loci with high sequence similarity using high-throughput sequencing"
+            }
+          ],
+          "academic_quality": {
+            "overall_score": 98.5,
+            "content_score": 98.0,
+            "dimensions": {
+              "scientific_importance": 99.0,
+              "methodological_innovation": 99.5,
+              "data_resource_value": 96.0,
+              "reliability": 98.5,
+              "representativeness": 99.0,
+              "heuristic_value": 99.0
+            },
+            "rationale": "提出颠覆性先导编辑范式，作为跨物种底层基因编辑工具，为后续植物精准育种提供了根本技术基石。",
+            "auxiliary_metrics": {
+              "journal": "Nature",
+              "impact_factor": 64.8,
+              "quartile": "Q1",
+              "is_cover_highlight": true
+            }
+          },
+          "genes": [
+            {
+              "symbol": "PE2/PE3",
+              "name": "先导编辑复合酶系统",
+              "species": "通用工程酶",
+              "role": "无双链断裂精准定点搜索与替换"
+            }
+          ],
+          "final_score": 29.9,
+          "personal_score": 0.5,
+          "academic_score": 98.5,
+          "url": "personal-supplement/2026-11-26-supp-01/index.html?article=1",
+          "article_url": "personal-supplement/2026-11-26-supp-01/index.html?article=1",
+          "source_type": "personal_supplement"
+        },
+        {
+          "id": "2026-11-26-supp-01:33239791",
+          "article_number": 2,
+          "article_num": 2,
+          "title_zh": "六倍体普通小麦泛基因组图谱：全面揭示大尺度染色体结构变异与野生种渗入",
+          "title_en": "Multiple wheat genomes reveal global variation in modern breeding",
+          "journal": "Nature",
+          "year": 2020,
+          "doi": "10.1038/s41586-020-2961-x",
+          "pmid": "33239791",
+          "publication_date": "2020-11-25",
+          "summary": "国际团队组装了 15 套高精度六倍体小麦基因组，构建了普通小麦全景泛基因组，系统解析了小麦亚基因组间的不平衡演化与抗病位点多样性。 发现结构变异非均匀富集于抗病 NLR 基因家族，野生种染色体片段的大规模渗入显著增强了现代栽培种的抗逆与抗病可塑性。",
+          "primary_topic": "pangenome",
+          "secondary_topics": [],
+          "subtopics": [
+            "crop-wild-pangenome",
+            "structural-variation-pan"
+          ],
+          "research_objects": [
+            "六倍体普通小麦 (Triticum aestivum)",
+            "野生二粒小麦及粗山羊草渐渗系"
+          ],
+          "research_methods": [
+            "泛基因组从头组装",
+            "大片段染色体渐渗检测",
+            "抗病基因簇 (NLR) 拷贝数变异分析"
+          ],
+          "research_methods_evidence": [
+            {
+              "method": "泛基因组从头组装",
+              "evidence_status": "confirmed",
+              "evidence_source": "fulltext",
+              "evidence_excerpt": "Ten pseudomolecule-level assemblies of hexaploid wheat and five additional scaffold-level assemblies."
+            },
+            {
+              "method": "大片段染色体渐渗检测",
+              "evidence_status": "confirmed",
+              "evidence_source": "fulltext",
+              "evidence_excerpt": "identified extensive introgressions from wild emmer and Aegilops tauschii shaping breeding pools"
+            },
+            {
+              "method": "抗病基因簇 (NLR) 拷贝数变异分析",
+              "evidence_status": "confirmed",
+              "evidence_source": "fulltext",
+              "evidence_excerpt": "annotated large-scale copy-number variation and sequence diversification in NLR disease resistance gene clusters"
+            }
+          ],
+          "academic_quality": {
+            "overall_score": 97.5,
+            "content_score": 97.0,
+            "dimensions": {
+              "scientific_importance": 98.0,
+              "methodological_innovation": 96.5,
+              "data_resource_value": 98.5,
+              "reliability": 97.5,
+              "representativeness": 98.0,
+              "heuristic_value": 97.0
+            },
+            "rationale": "全面破解六倍体复杂小麦全景泛基因组与野生渐渗网络，是麦类作物设计育种的里程碑数据基建。",
+            "auxiliary_metrics": {
+              "journal": "Nature",
+              "impact_factor": 64.8,
+              "quartile": "Q1",
+              "is_cover_highlight": true
+            }
+          },
+          "genes": [
+            {
+              "symbol": "NLRs",
+              "name": "核苷酸结合富亮氨酸重复抗病受体家族",
+              "species": "小麦",
+              "role": "广谱抗病性"
+            }
+          ],
+          "final_score": 29.6,
+          "personal_score": 0.5,
+          "academic_score": 97.5,
+          "url": "personal-supplement/2026-11-26-supp-01/index.html?article=2",
+          "article_url": "personal-supplement/2026-11-26-supp-01/index.html?article=2",
+          "source_type": "personal_supplement"
+        },
+        {
+          "id": "2026-11-26-supp-01:27856901",
+          "article_number": 3,
+          "article_num": 3,
+          "title_zh": "加速光保护恢复提升光合效率与作物生物量：合成生物学改造型农艺突破",
+          "title_en": "Improving photosynthesis and crop productivity by accelerating recovery from photoprotection",
+          "journal": "Science",
+          "year": 2016,
+          "doi": "10.1126/science.aai8878",
+          "pmid": "27856901",
+          "publication_date": "2016-11-18",
+          "summary": "首次通过基因工程协同加速植物在光照波动下的非光化学淬灭 (NPQ) 恢复，在大田试验中实现作物生物量增产 15%~20%。 有效减少了遮阴时多余能量以热能形式被浪费的比例，使叶片能够瞬间恢复二氧化碳同化效率，显著提高全株碳利用与生物积累。",
+          "primary_topic": "functional-genomics",
+          "secondary_topics": [],
+          "subtopics": [
+            "plant-developmental-genomics",
+            "gene-function-validation"
+          ],
+          "research_objects": [
+            "烟草 (Nicotiana tabacum)",
+            "光保护机制模型"
+          ],
+          "research_methods": [
+            "多基因协同转化过表达",
+            "叶绿素荧光动态动力学测定",
+            "大田微区生物量测定"
+          ],
+          "research_methods_evidence": [
+            {
+              "method": "多基因协同转化过表达",
+              "evidence_status": "confirmed",
+              "evidence_source": "fulltext",
+              "evidence_excerpt": "Engineered plants with accelerated nonphotochemical quenching (NPQ) relaxation by overexpressing VDE, PsbS and ZEP."
+            },
+            {
+              "method": "叶绿素荧光动态动力学测定",
+              "evidence_status": "confirmed",
+              "evidence_source": "fulltext",
+              "evidence_excerpt": "measuring rapid NPQ relaxation dynamics and instantaneous chlorophyll fluorescence during light transitions"
+            },
+            {
+              "method": "大田微区生物量测定",
+              "evidence_status": "confirmed",
+              "evidence_source": "fulltext",
+              "evidence_excerpt": "replicated field trials demonstrating 15% to 20% increases in total plant dry biomass"
+            }
+          ],
+          "academic_quality": {
+            "overall_score": 96.5,
+            "content_score": 96.0,
+            "dimensions": {
+              "scientific_importance": 97.5,
+              "methodological_innovation": 97.0,
+              "data_resource_value": 93.5,
+              "reliability": 96.5,
+              "representativeness": 96.0,
+              "heuristic_value": 98.0
+            },
+            "rationale": "通过合成生物学改造突破了光合效率提升的理论天花板，大田生物量增益显著，启发了主要粮食作物的光能利用改造。",
+            "auxiliary_metrics": {
+              "journal": "Science",
+              "impact_factor": 44.7,
+              "quartile": "Q1",
+              "is_cover_highlight": true
+            }
+          },
+          "genes": [
+            {
+              "symbol": "PsbS",
+              "name": "光系统 II 亚基 S",
+              "species": "通用",
+              "role": "非光化学淬灭 (NPQ) 快速感应"
+            },
+            {
+              "symbol": "VDE",
+              "name": "紫黄质脱环氧化酶",
+              "species": "通用",
+              "role": "叶黄素循环激活"
+            }
+          ],
+          "final_score": 29.3,
+          "personal_score": 0.5,
+          "academic_score": 96.5,
+          "url": "personal-supplement/2026-11-26-supp-01/index.html?article=3",
+          "article_url": "personal-supplement/2026-11-26-supp-01/index.html?article=3",
+          "source_type": "personal_supplement"
+        },
+        {
+          "id": "2026-11-26-supp-01:33066802",
+          "article_number": 4,
+          "article_num": 4,
+          "title_zh": "Minigraph 泛基因组图构建算法：建立多基因组结构变异拓扑坐标系",
+          "title_en": "The design and construction of reference pangenome graphs with minigraph",
+          "journal": "Genome Biol",
+          "year": 2020,
+          "doi": "10.1186/s13059-020-02168-z",
+          "pmid": "33066802",
+          "publication_date": "2020-10-16",
+          "summary": "李恒团队提出了图基因组构建工具 Minigraph，采用序列图拓扑数据结构实现了多基因组大尺度结构变异的高效整合与秒级图谱构建。 成功消除了基于单一线性参考基因组分析带来的坐标参考偏倚 (Reference bias)，大幅降低了大尺度基因组图谱的图路径爆炸与计算复杂度。",
+          "primary_topic": "pangenome",
+          "secondary_topics": [],
+          "subtopics": [
+            "graph-pangenome",
+            "structural-variation-pan"
+          ],
+          "research_objects": [
+            "图形泛基因组算法基准",
+            "真核生物参考图谱"
+          ],
+          "research_methods": [
+            "图形泛基因组构建算法 (Minigraph/vg)",
+            "变异图谱拓扑构建",
+            "结构变异图谱对齐"
+          ],
+          "research_methods_evidence": [
+            {
+              "method": "图形泛基因组构建算法 (Minigraph/vg)",
+              "evidence_status": "confirmed",
+              "evidence_source": "fulltext",
+              "evidence_excerpt": "We describe minigraph, a proof-of-concept tool to construct and augment sequence graphs from multiple assemblies."
+            },
+            {
+              "method": "变异图谱拓扑构建",
+              "evidence_status": "confirmed",
+              "evidence_source": "fulltext",
+              "evidence_excerpt": "minigraph iteratively aligns an assembly against a sequence graph and adds variants not in the graph into it."
+            },
+            {
+              "method": "结构变异图谱对齐",
+              "evidence_status": "confirmed",
+              "evidence_source": "fulltext",
+              "evidence_excerpt": "mapping query assemblies to graph paths to detect structural variations >=50 bp"
+            }
+          ],
+          "academic_quality": {
+            "overall_score": 96.0,
+            "content_score": 95.5,
+            "dimensions": {
+              "scientific_importance": 97.0,
+              "methodological_innovation": 98.0,
+              "data_resource_value": 94.0,
+              "reliability": 96.0,
+              "representativeness": 96.5,
+              "heuristic_value": 97.0
+            },
+            "rationale": "提出基于序列图拓扑的增量构建算法，奠定了泛基因组从线性参考到图参考的算法底层。",
+            "auxiliary_metrics": {
+              "journal": "Genome Biol",
+              "impact_factor": 12.3,
+              "quartile": "Q1",
+              "is_cover_highlight": false
+            }
+          },
+          "genes": [],
+          "final_score": 29.15,
+          "personal_score": 0.5,
+          "academic_score": 96.0,
+          "url": "personal-supplement/2026-11-26-supp-01/index.html?article=4",
+          "article_url": "personal-supplement/2026-11-26-supp-01/index.html?article=4",
+          "source_type": "personal_supplement"
+        },
+        {
+          "id": "2026-11-26-supp-01:22217600",
+          "article_number": 5,
+          "article_num": 5,
+          "title_zh": "MCScanX 多基因组共线性检测与基因倍增分类算法工具包",
+          "title_en": "MCScanX: a toolkit for detection and evolutionary analysis of gene synteny and collinearity",
+          "journal": "Nucleic Acids Res",
+          "year": 2012,
+          "doi": "10.1093/nar/gkr1293",
+          "pmid": "22217600",
+          "publication_date": "2012-01-04",
+          "summary": "王育鹏与唐海宝等人发布了共线性检测标准工具 MCScanX，实现了跨物种染色体共线性区块检测与五类基因复制模式的系统性划分。 极大提高了在多倍化复杂植物基因组中识别同源染色体共线性区块的容错率与运行速度，并支持微观与宏观共线性多重可视化。",
+          "primary_topic": "evolution",
+          "secondary_topics": [],
+          "subtopics": [
+            "synteny-collinearity",
+            "polyploidy-wgd"
+          ],
+          "research_objects": [
+            "大豆 (Glycine max)",
+            "拟南芥 (Arabidopsis thaliana)",
+            "植物多倍化比较基因组"
+          ],
+          "research_methods": [
+            "多基因组共线性分析 (MCScanX)",
+            "全基因组复制 (WGD) 分析",
+            "串联与转座重复基因分类"
+          ],
+          "research_methods_evidence": [
+            {
+              "method": "多基因组共线性分析 (MCScanX)",
+              "evidence_status": "confirmed",
+              "evidence_source": "fulltext",
+              "evidence_excerpt": "MCScanX adopts a dynamic programming algorithm to detect collinear blocks of genes within and across genomes."
+            },
+            {
+              "method": "全基因组复制 (WGD) 分析",
+              "evidence_status": "confirmed",
+              "evidence_source": "fulltext",
+              "evidence_excerpt": "calculating synonymous mutation rates (Ks) and detecting ancient genome duplications"
+            },
+            {
+              "method": "串联与转座重复基因分类",
+              "evidence_status": "confirmed",
+              "evidence_source": "fulltext",
+              "evidence_excerpt": "classifying duplicated genes into WGD/segmental, tandem, proximal and transposed duplications"
+            }
+          ],
+          "academic_quality": {
+            "overall_score": 95.0,
+            "content_score": 94.5,
+            "dimensions": {
+              "scientific_importance": 95.0,
+              "methodological_innovation": 96.0,
+              "data_resource_value": 93.0,
+              "reliability": 96.5,
+              "representativeness": 97.0,
+              "heuristic_value": 94.5
+            },
+            "rationale": "建立了植物多倍化与染色体共线性识别的标准算法工具，历经十余年检验依然是行业标杆。",
+            "auxiliary_metrics": {
+              "journal": "Nucleic Acids Res",
+              "impact_factor": 19.16,
+              "quartile": "Q1",
+              "is_cover_highlight": false
+            }
+          },
+          "genes": [],
+          "final_score": 28.85,
+          "personal_score": 0.5,
+          "academic_score": 95.0,
+          "url": "personal-supplement/2026-11-26-supp-01/index.html?article=5",
+          "article_url": "personal-supplement/2026-11-26-supp-01/index.html?article=5",
+          "source_type": "personal_supplement"
+        }
+      ]
+    },
     {
       "supplement_id": "2026-11-25-supplement",
       "request_id": "test_run_v3_1_3_live",

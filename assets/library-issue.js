@@ -1,7 +1,7 @@
 (function(){
   'use strict';
   const S = window.GenomeLibrary;
-  const issueMatch = location.pathname.match(/(?:personal-supplement\/)?(\d{4}-\d{2}-\d{2})\/index\.html$/);
+  const issueMatch = location.pathname.match(/(?:personal-supplement\/)?(\d{4}-\d{2}-\d{2}(?:-supp-\d+)?)\/index\.html$/);
   if (!S || !issueMatch) return;
 
   const isSupplement = location.pathname.includes('/personal-supplement/');

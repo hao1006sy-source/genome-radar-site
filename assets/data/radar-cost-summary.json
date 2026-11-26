@@ -1,11 +1,23 @@
 {
-  "total_runs": 1,
-  "last_updated": "2026-11-26T01:54:47.017735+00:00",
-  "total_cost_usd": 0.002129,
-  "total_cost_cny": 0.0152,
-  "total_tokens": 3422,
-  "prompt_tokens": 2114,
-  "completion_tokens": 1308,
-  "api_calls": 3,
+  "total_runs": 3,
+  "last_updated": "2026-11-26T02:28:07.686671+00:00",
+  "total_cost_usd": 0.009809,
+  "total_cost_cny": 0.0701,
+  "total_api_calls": 17,
+  "total_local_cache_hits": 1,
+  "total_tokens": 13624,
+  "total_prompt_tokens": 8837,
+  "total_completion_tokens": 4787,
+  "total_api_cache_hit_tokens": 2432,
+  "current_run_metrics": {
+    "api_calls": 10,
+    "local_cache_hits": 1,
+    "prompt_tokens": 5257,
+    "completion_tokens": 2796,
+    "api_cache_hit_tokens": 1792,
+    "api_cache_miss_tokens": 3465,
+    "cost_usd": 0.004405,
+    "cost_cny": 0.0315
+  },
   "model": "deepseek-flash"
 }

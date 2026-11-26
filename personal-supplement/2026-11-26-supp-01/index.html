@@ -1,0 +1,1573 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>基因组雷达 · 个人科研专刊 (2026-11-26-supp-01)</title>
+<meta name="description" content="个人科研专刊 (2026-11-26-supp-01) 植物与基因组学论文扫读，5 篇，一篇一页。">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --ui:"Noto Sans SC","思源黑体","Source Han Sans SC","Microsoft YaHei","微软雅黑",sans-serif;
+  --desk:#e7e4dc; --sheet:#fffdf8; --ink:#1b1f22; --body:#282d31; --muted:#71767c;
+  --faint:#9aa0a6; --line:#ddd7c8; --accent:#2f6b4f; --amber:#8a6d1f; --blue:#2b5d86;
+  --z:1;                     /* 页面缩放：整张纸等比放大，横向仍占满一屏 */
+}
+html,body{height:100%}
+body{
+  margin:0; background:var(--desk); color:var(--ink);
+  font-family:var(--ui);
+  font-size:19px; line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  display:flex; flex-direction:column; height:100dvh; overflow:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+.serif{font-family:var(--ui)}
+a{color:inherit}
+button{font:inherit}
+
+/* ---------- top bar ---------- */
+.topbar{
+  flex:none; display:flex; align-items:center; gap:14px; padding:0 20px; height:50px;
+  background:rgba(255,253,248,.94); border-bottom:1px solid var(--line); z-index:20;
+}
+.brand{display:flex; align-items:baseline; gap:9px; min-width:0}
+.brand b{font-size:18px; letter-spacing:.06em; font-weight:800; color:#14181b; white-space:nowrap}
+.brand .en{font-size:9.5px; letter-spacing:.18em; color:var(--faint); text-transform:uppercase; white-space:nowrap}
+.issue-tag{font-size:12.5px; color:var(--accent); font-weight:600; letter-spacing:.04em; white-space:nowrap}
+.tools{margin-left:auto; display:flex; align-items:center; gap:2px}
+.tools button{
+  background:none; border:1px solid transparent; color:var(--muted); cursor:pointer;
+  font-size:13px; padding:5px 10px; border-radius:5px; transition:.15s;
+}
+.tools button:hover{border-color:var(--line); color:var(--ink); background:var(--sheet)}
+.tools .back{text-decoration:none; border:1px solid transparent; border-radius:5px;
+  color:var(--muted); font-size:13px; padding:5px 10px; transition:.15s}
+.tools .back:hover{border-color:var(--line); color:var(--ink); background:var(--sheet)}
+.zoom{display:flex; align-items:center; gap:1px; margin-left:6px;
+  border:1px solid var(--line); border-radius:6px; overflow:hidden; background:var(--sheet)}
+.zoom button{border:0; border-radius:0; padding:4px 9px; font-size:14px; line-height:1; color:var(--muted)}
+.zoom button:hover{background:#f0ebdd; color:var(--ink); border:0}
+.zoom .zlab{min-width:52px; text-align:center; font-size:12.5px; color:var(--muted);
+  font-variant-numeric:tabular-nums; cursor:pointer; user-select:none; padding:0 2px}
+.zoom .zlab:hover{color:var(--ink)}
+
+/* ---------- deck ---------- */
+.deck{
+  flex:1; min-height:0; display:flex; overflow-x:auto; overflow-y:hidden;
+  scroll-snap-type:x mandatory; scrollbar-width:none;
+}
+.deck::-webkit-scrollbar{display:none}
+.page{
+  flex:0 0 100%; width:100%; height:100%; overflow-y:auto; overflow-x:hidden;
+  scroll-snap-align:start; display:flex; padding:12px 14px;
+}
+.sheet{
+  position:relative; zoom:var(--z);
+  width:100%; min-height:100%; margin:auto;
+  display:flex; flex-direction:column;
+  background:var(--sheet); border:1px solid #e2dccd; border-radius:2px;
+  box-shadow:0 1px 1px rgba(60,50,30,.05), 0 14px 34px -22px rgba(60,50,30,.45);
+  padding:30px 46px 22px;
+}
+
+/* ---------- head ---------- */
+.head{position:relative; display:flex; align-items:baseline; gap:12px; font-size:15px;
+  color:var(--muted); padding:0 60px 8px 0; border-bottom:1px solid #d3ccb9}
+.head .jn{font-weight:800; color:#1b2018; font-size:16.5px; letter-spacing:.02em}
+.head .sep{color:#cfc9ba}
+.head .met{display:inline-flex; align-items:baseline; gap:7px; margin-left:3px}
+.head .met b{font-size:12.5px; font-weight:800; padding:2px 7px; border-radius:3px; background:#e9efe4; color:#2c5a44; letter-spacing:.02em}
+.head .met b.weak{background:#f1efe6; color:#7b7668}
+.head .met i{font-style:normal; font-size:12.5px; font-weight:700; color:#6d6a5e}
+.head .crumb{color:var(--muted)}
+.head .rt{margin-left:auto; display:flex; align-items:baseline; gap:12px; color:var(--muted)}
+.head .kind{letter-spacing:.06em}
+.head .lv{font-size:12.5px; padding:1px 7px; border-radius:2px; letter-spacing:.04em}
+.lv.abstract{background:#f4f0e2; color:var(--amber)}
+.lv.fulltext{background:#e7f0e9; color:var(--accent)}
+.lv.oa_url{background:#eef0e6; color:#6b7a3c}
+.lv.preprint{background:#e8eef5; color:var(--blue)}
+.head .no{position:absolute; right:-6px; top:-20px; font-family:var(--ui); font-size:46px;
+  line-height:1; font-weight:800; color:#ece6d5; letter-spacing:.01em}
+
+h2.t-zh{margin:16px 0 0; font-size:46px; line-height:1.28; font-weight:800; color:#14181b; letter-spacing:-.005em}
+.t-en{margin:10px 0 0; font-size:15.5px; color:#a2a8ae; line-height:1.45; letter-spacing:.005em}
+
+.lead{
+  margin:14px 0 0; padding:12px 16px 12px 15px; background:#f5f0e2; border-left:3px solid #2f6b4f;
+  font-size:21px; line-height:1.72; color:#2e332c; letter-spacing:.005em;
+}
+
+/* ---------- 2x2 blocks ---------- */
+.art-body{flex:1 0 auto; display:flex; flex-direction:column}
+.grid{margin-top:18px; display:grid; grid-template-columns:1fr 1fr; gap:20px 56px}
+.blk h3{
+  margin:0 0 10px; padding-bottom:7px; border-bottom:1px solid #cfc9b8;
+  font-size:21px; font-weight:800; letter-spacing:.02em; color:#24503a;
+}
+.blk p{margin:0; font-size:19px; line-height:1.70; color:#2b3136; letter-spacing:.005em}
+
+.stage{
+  margin-top:auto; padding-top:8px; border-top:1px solid var(--line);
+  font-size:14.5px; color:var(--muted);
+}
+.stage b{color:#24503a; font-weight:800; letter-spacing:.03em; margin-right:11px}
+
+.foot{margin-top:9px; display:flex; align-items:center; gap:18px; font-size:14px; color:var(--muted)}
+.foot .doi{font-family:var(--ui); font-size:14px; color:#1b2018; letter-spacing:.01em; font-weight:600}
+.foot .doi i{font-style:normal; color:var(--faint); margin-right:7px; font-family:inherit;
+  letter-spacing:.14em; font-size:11.5px; font-weight:700}
+.foot a{text-decoration:none; border-bottom:1px solid #e0dacb; color:var(--muted); padding-bottom:1px}
+.foot a:hover{color:var(--accent); border-color:var(--accent)}
+.foot .src{margin-left:auto}
+.foot .affil{margin-left:auto; margin-right:22px; font-size:13.5px; color:#4a5049; max-width:64ch; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.star{background:none; border:none; cursor:pointer; font-size:15px; color:#d3cdbd; padding:0 2px; line-height:1}
+.star[data-on="1"]{color:#d29b2c}
+
+/* ---------- pager ---------- */
+.dots{
+  flex:none; display:flex; align-items:center; justify-content:center; gap:5px;
+  height:32px; background:rgba(255,253,248,.94); border-top:1px solid var(--line);
+}
+.dots i{width:4.5px; height:4.5px; border-radius:50%; background:#d2ccbd; cursor:pointer; transition:.18s}
+.dots i.on{background:var(--accent); transform:scale(1.5)}
+.pgnum{font-size:10.5px; color:var(--muted); letter-spacing:.1em; margin-left:10px; min-width:50px}
+
+/* ---------- toc ---------- */
+.toc{
+  position:fixed; inset:0; z-index:40; display:none; align-items:stretch; justify-content:flex-start;
+  padding:0; background:rgba(28,34,29,.52); backdrop-filter:blur(2px) saturate(.7);
+  overscroll-behavior:contain;
+}
+.toc.open{display:flex}
+.toc-inner{
+  position:relative; isolation:isolate; display:flex; flex-direction:column; gap:0;
+  width:clamp(420px,53vw,900px); height:100%; max-height:100dvh; min-height:0;
+  padding:22px 28px 18px; overflow:hidden; color:#29352d; background:#fbfaf5;
+  box-shadow:12px 0 30px rgba(20,31,23,.16);
+}
+.toc-header{
+  position:relative; display:flex; flex:none; align-items:flex-start; justify-content:space-between;
+  min-height:68px; gap:14px; padding:0 48px 12px 0; overflow:hidden;
+  border-bottom:1px solid #cfd5c8;
+}
+.toc-heading{position:relative; z-index:1; display:grid; grid-template-columns:34px auto minmax(0,1fr); grid-template-rows:auto auto; align-items:center; column-gap:10px; row-gap:4px; max-width:100%}
+.toc-brand-mark{grid-column:1; grid-row:1 / span 2; width:32px; height:32px; color:#315e43}
+.toc-title{grid-column:2; grid-row:1; margin:0; color:#173e2d; font-size:30px; line-height:1.2; letter-spacing:.09em; font-weight:800}
+.toc-en{grid-column:3; grid-row:1; color:#5f695a; font-family:Georgia,serif; font-size:10.5px; letter-spacing:.22em; font-style:italic; white-space:nowrap}
+.toc-meta{grid-column:2 / span 2; grid-row:2; margin:0; color:#355b43; font-family:Georgia,var(--ui); font-size:15px; line-height:1.35; letter-spacing:.035em}
+.toc-header-art{position:absolute; z-index:0; top:-35px; right:5px; width:190px; height:130px; object-fit:cover; object-position:50% 36%; opacity:.34; pointer-events:none}
+.toc-close{
+  position:absolute; z-index:2; top:0; right:0; display:grid; place-items:center; width:38px; height:38px;
+  border:1px solid #dce1d1; border-radius:50%; background:#eef0e4; color:#173e2d;
+  font-size:22px; line-height:1; cursor:pointer; transition:background .16s,transform .16s;
+}
+.toc-close:hover{background:#e2e8d5; transform:rotate(4deg)}
+.toc-search{display:flex; flex:none; align-items:center; gap:12px; min-height:42px; margin:14px 0 10px; padding:0 12px;
+  border:1px solid #6c856f; border-radius:6px; background:#fffdf8; color:#244934}
+.toc-search:focus-within{border-color:#315f42; box-shadow:0 0 0 2px rgba(49,95,66,.12)}
+.toc-search-icon{flex:none; width:18px; height:18px; color:#3e6445}
+.toc-search input{flex:1; min-width:0; border:0; outline:0; padding:8px 0; background:transparent; color:#29352d; font:inherit; font-size:14px}
+.toc-search input::placeholder{color:#646c60; opacity:1}
+.toc-count{flex:none; color:#5e685a; font-size:12px; white-space:nowrap; font-variant-numeric:tabular-nums}
+.toc-groups{flex:1; min-height:0; overflow-y:auto; padding-right:3px; overscroll-behavior:contain; scrollbar-color:#c6cdbb transparent; scrollbar-width:thin}
+.toc-group{margin:0 0 10px}
+.toc-group[hidden],.toc-item[hidden]{display:none!important}
+.toc-group-head{display:flex; align-items:baseline; gap:12px; padding:8px 2px 7px; border-bottom:1px solid #bfcbb8}
+.toc-group-head h3{display:flex; align-items:center; flex-wrap:wrap; gap:9px; margin:0; color:#173e2d; font-size:18px; line-height:1.25; font-weight:800}
+.toc-group-icon{flex:none; width:28px; height:28px; color:#4d704c}
+.toc-group-en{color:#606b5b; font-family:Georgia,serif; font-size:10px; font-style:italic; letter-spacing:.2em; font-weight:500}
+.toc-group-count{margin-left:auto; color:#5f6859; font-size:12px; white-space:nowrap}
+.toc-group ol{list-style:none; margin:0; padding:0}
+.toc-item{border-bottom:1px dotted #ddd9ce}
+.toc-row{display:grid; grid-template-columns:30px minmax(0,1fr) minmax(86px,auto); gap:10px; align-items:center;
+  width:100%; min-height:30px; border:0; border-left:3px solid transparent; padding:5px 8px; text-align:left;
+  background:transparent; color:#30352f; font:inherit; font-size:13.5px; line-height:1.4; cursor:pointer;
+  transition:background .14s,color .14s,border-color .14s}
+.toc-row:hover,.toc-row.is-current{border-left-color:#4c7352; background:#edf0e3; color:#173e2d}
+.toc-row .i{color:#5f6b46; font-family:Georgia,serif; font-size:13px; font-weight:700; font-variant-numeric:tabular-nums}
+.toc-row .t{font-weight:650}
+.toc-row .j{color:#5f655c; font-family:Georgia,var(--ui); font-size:11.5px; text-align:right; white-space:nowrap}
+.toc-row:focus-visible,.toc-preview:focus-visible,.toc-close:focus-visible{outline:2px solid #315f42; outline-offset:2px}
+.toc-empty{flex:none; margin:0; padding:12px 3px; color:#5e685a; font-size:13px}
+.toc-preview{display:grid; flex:none; grid-template-columns:116px minmax(0,1fr) 38px; align-items:center; gap:14px;
+  width:100%; margin-top:12px; padding:11px; border:1px solid #d8dec9; border-radius:9px;
+  background:#f3f3e8; color:inherit; text-align:left; cursor:pointer; transition:border-color .16s,background .16s}
+.toc-preview:hover{border-color:#aab99d; background:#eff1e4}
+.toc-preview:disabled{cursor:default; opacity:.64}
+.toc-preview img{display:block; width:116px; height:96px; border-radius:6px; object-fit:cover; object-position:50% 39%; background:#e5e9d9}
+.toc-preview-copy{display:grid; min-width:0; gap:3px}
+.toc-preview-top{display:flex; align-items:baseline; gap:9px; color:#596647; font-family:Georgia,serif}
+.toc-preview-number{font-size:17px; font-style:italic; font-weight:700; font-variant-numeric:tabular-nums}
+.toc-preview-title{display:-webkit-box; overflow:hidden; margin:0; color:#173e2d; font-size:16px; line-height:1.38; font-weight:800; -webkit-box-orient:vertical; -webkit-line-clamp:2}
+.toc-preview-meta{display:flex; align-items:center; gap:9px; color:#5e6755; font-size:11.5px}
+.toc-preview-summary{display:-webkit-box; overflow:hidden; margin:0; color:#5f665b; font-size:12px; line-height:1.48; -webkit-box-orient:vertical; -webkit-line-clamp:2}
+.toc-preview-arrow{display:grid; place-items:center; width:36px; height:36px; justify-self:end; border-radius:50%; background:#e5ead7; color:#214a33; transition:transform .16s,background .16s}
+.toc-preview-arrow svg{width:18px; height:18px}
+.toc-preview:hover .toc-preview-arrow{transform:translateX(2px); background:#dce5cb}
+.toc-sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+@media (max-width:980px) and (min-width:681px){
+  .toc-inner{width:min(660px,78vw); padding:20px 22px 16px}
+  .toc-group{margin-bottom:6px}
+  .toc-group-head{padding:5px 2px 4px}
+  .toc-row{grid-template-columns:28px minmax(0,1fr) minmax(72px,auto); gap:8px; min-height:26px; padding:4px 6px; font-size:12px; line-height:1.32}
+  .toc-preview{grid-template-columns:96px minmax(0,1fr) 36px; gap:11px}
+  .toc-preview img{width:96px; height:88px}
+  .toc-preview-title{font-size:14.5px}
+}
+@media (max-width:680px){
+  .toc-inner{width:100%; padding:16px 14px 14px}
+  .toc-header{min-height:62px; padding-right:46px}
+  .toc-brand-mark{width:28px; height:28px}
+  .toc-title{font-size:24px}
+  .toc-en{font-size:9px; letter-spacing:.16em}
+  .toc-meta{font-size:13px}
+  .toc-header-art{display:none}
+  .toc-search{gap:8px; min-height:40px; margin:11px 0 8px; padding:0 9px}
+  .toc-search input{font-size:13px}
+  .toc-count{font-size:10.5px}
+  .toc-group{margin-bottom:8px}
+  .toc-group-head{padding:7px 1px 6px}
+  .toc-group-head h3{font-size:16px; gap:7px}
+  .toc-group-en{font-size:8.5px; letter-spacing:.14em}
+  .toc-group-count{font-size:10.5px}
+  .toc-row{grid-template-columns:25px minmax(0,1fr) minmax(70px,auto); gap:7px; min-height:31px; padding:5px 5px; font-size:12px}
+  .toc-row .i{font-size:11.5px}
+  .toc-row .j{font-size:10px}
+  .toc-preview{grid-template-columns:74px minmax(0,1fr) 32px; gap:9px; margin-top:8px; padding:8px}
+  .toc-preview img{width:74px; height:76px}
+  .toc-preview-title{font-size:13.5px}
+  .toc-preview-meta{font-size:10px; gap:6px}
+  .toc-preview-summary{font-size:10.5px; line-height:1.4}
+  .toc-preview-arrow{width:30px; height:30px; font-size:19px}
+}
+/* ---------- 封面 ---------- */
+.cover .sheet{padding:48px 56px 40px}
+.cv-kicker{font-size:12px; letter-spacing:.3em; color:#a8aea9; text-transform:uppercase; font-weight:700}
+.cv-title{margin:9px 0 0; font-size:58px; letter-spacing:.08em; font-weight:800; color:#14181b; line-height:1.15}
+.cv-week{margin-top:13px; font-size:17px; color:var(--accent); letter-spacing:.05em; font-weight:600}
+.cv-rule{height:5px; background:#14181b; margin:18px 0 22px; border-radius:1px}
+.cv-hl{margin:0; font-size:23px; line-height:1.78; color:#2b3136; max-width:1400px}
+.cv-body{flex:1 0 auto; display:flex; flex-direction:column}
+.cv-intro{margin:22px 0 0; font-size:15.5px; line-height:1.85; color:#4a5149; max-width:1400px}
+.cv-pts{margin:26px 0 0; padding:0; list-style:none; max-width:1400px}
+.cv-pts li{display:flex; gap:14px; padding:9px 0; border-top:1px solid var(--line);
+  font-size:16.5px; line-height:1.58; color:#2b3136}
+.cv-pts li:last-child{border-bottom:1px solid var(--line)}
+.cv-pts .n{flex:none; font-size:12.5px; font-weight:800; color:#b3ac99; letter-spacing:.1em;
+  padding-top:4px; min-width:22px}
+.cv-src{margin-top:20px; font-size:14px; color:var(--muted); line-height:1.8}
+.cv-hint{margin-top:auto; padding-top:12px; border-top:1px solid var(--line); font-size:14px; color:var(--muted)}
+
+/* ---------- 连读模式 ---------- */
+html.flow body{height:auto; overflow:auto; display:block}
+html.flow .deck{display:block; overflow:visible; height:auto}
+html.flow .page{display:block; height:auto; width:auto; overflow:visible; padding:14px 14px 0}
+html.flow .page:last-child{padding-bottom:44px}
+html.flow .sheet{max-width:1600px; box-shadow:none; border:none; border-bottom:1px dotted #cbc5b6; border-radius:0; padding:24px 36px 20px}
+html.flow .dots{display:none}
+html.flow .topbar{position:sticky; top:0}
+
+@media (max-width:680px){
+  .brand .en{display:none}
+  .topbar{padding:0 12px; gap:6px}
+  .issue-tag{display:none}
+  .tools{gap:0}
+  .tools button{padding:5px 6px; font-size:11.5px; white-space:nowrap}
+  .tools .back{padding:5px 6px; font-size:11.5px}
+  .zoom{display:none}          /* 手机上用手指缩放，顶栏这组省掉 */
+  .page{padding:12px 10px}
+  .sheet{padding:22px 18px 18px}
+  h2.t-zh{font-size:30px; line-height:1.34}
+  .t-en{font-size:13px}
+  .lead{font-size:17px; padding:11px 13px; margin-top:13px}
+  .grid{grid-template-columns:1fr; gap:13px; margin-top:14px}
+  .blk p{font-size:16.5px; line-height:1.76}
+  .blk h3{font-size:18.5px; padding-bottom:6px}
+  .head{gap:7px; font-size:12px; flex-wrap:wrap; padding-right:0}
+  .head .no{display:none}
+  .stage{font-size:12px}
+  .foot{gap:10px; flex-wrap:wrap}
+  .foot .doi{font-size:11.5px}
+  .foot .affil{margin:0; max-width:100%; flex-basis:100%}
+  .cv-title{font-size:38px}
+  .cv-hl{font-size:18px; line-height:1.76}
+  .cv-intro{font-size:14px; line-height:1.8; margin-top:16px}
+  .cv-pts{margin-top:18px}
+  .cv-pts li{font-size:14.5px; padding:9px 0}
+  .toc-inner{width:100%;padding:16px 14px 14px}
+}
+
+@media (max-height:720px) and (min-width:681px){
+  .sheet{padding:22px 34px 16px}
+  h2.t-zh{font-size:34px}
+  .lead{margin-top:12px; padding:9px 13px; font-size:18px; line-height:1.7}
+  .grid{margin-top:14px; gap:14px 36px}
+  .blk p{font-size:16px; line-height:1.68}
+  .stage{margin-top:11px; padding-top:7px}
+  .cv-title{font-size:40px}
+  .cv-hl{font-size:19px; line-height:1.7}
+  .cv-intro{font-size:14px; line-height:1.75; margin-top:14px}
+  .cv-pts{margin-top:16px}
+  .cv-pts li{font-size:14.5px; padding:8px 0}
+}
+
+@media print{
+  @page{size:A4 landscape; margin:11mm}
+  html,body{height:auto; overflow:visible; background:#fff; display:block}
+  .topbar,.dots,.toc,.star{display:none !important}
+.sheet{zoom:1 !important; width:100% !important; min-height:0 !important}
+  .deck{display:block; overflow:visible; height:auto}
+  .page{display:block; height:auto; width:auto; overflow:visible; padding:0;
+    break-after:page; page-break-after:always}
+  .page:last-child{break-after:auto; page-break-after:auto}
+  .sheet{min-height:0; display:block; border:none; box-shadow:none; border-radius:0; padding:0;
+    break-inside:avoid; page-break-inside:avoid}
+  h2.t-zh{font-size:20pt}
+  .lead{font-size:11pt; line-height:1.6}
+  .blk p{font-size:10pt; line-height:1.6}
+  .blk h3{font-size:10pt}
+  .head,.stage,.foot{font-size:8pt}
+}
+
+:root{
+  --cover-paper:#f8f6f0; --cover-forest:#173e2d; --cover-ink:#292d28;
+  --cover-leaf:#657a53; --cover-line:#d9dccf; --cover-mist:#e7ebd9;
+  --editorial:"Noto Serif SC","Source Han Serif SC","Songti SC","STSong","SimSun",serif;
+}
+body{background:#f0eee7;color:var(--cover-ink)}
+.serif,.cv-title,.cv-week,.cv-pts .n,.section-heading h2{font-family:var(--editorial)}
+.topbar{
+  height:56px;padding:0 clamp(16px,3.2vw,54px);gap:14px;
+  background:rgba(251,250,245,.97);border-bottom:1px solid #cfd3c7;
+}
+.brand{align-items:baseline;gap:11px}
+.brand b{color:var(--cover-forest);font-size:19px;letter-spacing:.08em}
+.brand .en{color:#687866;font-size:10px;letter-spacing:.22em}
+.issue-tag{padding-left:17px;border-left:1px solid #c9cdbf;color:var(--cover-forest);
+  font-family:var(--editorial);font-size:15px;letter-spacing:.04em}
+.tools{gap:0}
+.tools button,.tools .back{padding:5px 12px;color:#51594f;font-size:13px;border-radius:0}
+.tools button:hover,.tools .back:hover{background:#f0f1e8;border-color:transparent;color:var(--cover-forest)}
+.zoom{border:1px solid #d7dacb;border-radius:999px;background:#fbfaf5}
+.zoom .zlab{color:var(--cover-forest)}
+.page.cover{padding:10px clamp(12px,1.4vw,24px) 10px}
+.cover .sheet{
+  flex:none;width:100%;max-width:none;min-height:100%;margin:0 auto;
+  padding:clamp(20px,2.4vh,34px) clamp(26px,2.4vw,46px) clamp(14px,1.6vh,22px);
+  display:flex;flex-direction:column;
+  border:1px solid #e0dfd4;border-radius:2px;
+  background:linear-gradient(118deg,#fdfcf7 0%,#f8f6f0 66%,#fbfaf5 100%);
+  box-shadow:0 9px 34px rgba(40,53,37,.055);
+}
+.cover-hero{
+  flex:none;position:relative;display:block;min-height:0;
+  padding:0 0 clamp(14px,1.8vh,22px);
+  border-bottom:1px solid var(--cover-line);
+}
+.cover-copy{position:relative;z-index:2;max-width:none;padding:0}
+.cv-kicker{font-size:clamp(11px,0.8vw,13px);letter-spacing:.25em;color:#78836d;text-transform:uppercase;font-weight:700}
+.cv-title{margin:6px 0 0;font-size:clamp(58px,min(4.8vw,8.4vh),86px);letter-spacing:.08em;
+  font-weight:800;color:var(--cover-forest);line-height:1.08}
+.cv-week{display:flex;align-items:baseline;flex-wrap:wrap;gap:12px;margin-top:clamp(8px,1.1vh,14px);color:var(--cover-forest);
+  font-size:clamp(22px,min(1.55vw,2.8vh),29px);letter-spacing:.025em;font-weight:650}
+.cv-week time{font-family:var(--ui);font-size:clamp(15px,1vw,18px);color:#757d6e;font-weight:500;letter-spacing:.04em}
+.cv-week .cv-sep{color:#909984;font-size:clamp(16px,1.1vw,20px)}
+.cv-rule{width:64px;height:3px;background:var(--cover-forest);margin:clamp(10px,1.4vh,16px) 0;border-radius:2px}
+.cv-hl{max-width:none;margin:0;color:#262c27;font-family:var(--editorial);
+  font-size:clamp(20px,min(1.32vw,2.5vh),25.5px);line-height:1.56;text-wrap:pretty}
+.cv-intro{max-width:none;margin:clamp(8px,1vh,13px) 0 0;color:#52594e;font-family:var(--editorial);
+  font-size:clamp(16px,min(1.02vw,1.95vh),19.5px);line-height:1.6}
+.cover-window{margin:clamp(6px,0.9vh,11px) 0 0;color:#7a8670;font-size:clamp(13px,0.85vw,15px);letter-spacing:.04em}
+.cover-bottom{display:flex;flex-direction:column;gap:clamp(12px,1.6vh,20px);flex:1 0 auto;margin-top:clamp(12px,1.6vh,20px)}
+.cover-highlights{flex:none;margin:0;min-width:0}
+.section-heading{display:flex;align-items:baseline;gap:13px;margin:0 0 6px}
+.section-heading h2{margin:0;color:var(--cover-forest);font-size:clamp(24px,min(1.6vw,3vh),31px);line-height:1.3;font-weight:800}
+.section-heading span{color:#8b907f;font-size:clamp(10px,0.72vw,12px);font-weight:700;letter-spacing:.26em}
+.cv-pts{display:block;max-width:none;margin:4px 0 0;padding:0;list-style:none}
+.cv-pts li{display:grid;grid-template-columns:46px minmax(0,1fr);align-items:start;gap:14px;
+  padding:clamp(6px,0.85vh,10px) 4px;border-top:1px solid #e0dfd4;color:#2b312a;font-family:var(--editorial);
+  font-size:clamp(17.5px,min(1.08vw,2.15vh),21px);line-height:1.52}
+.cv-pts li:last-child{border-bottom:1px solid #e0dfd4}
+.cv-pts .n{display:grid;place-items:center;width:40px;height:26px;min-width:0;margin-top:2px;
+  padding:0;border-radius:8px;background:#e8ecd9;color:var(--cover-forest);font-size:16px;
+  font-weight:700;font-style:italic;letter-spacing:0}
+.cover-journals{flex:none;display:flex;align-items:center;flex-wrap:wrap;gap:10px 18px;
+  margin-top:auto;padding:clamp(10px,1.2vh,14px) 0 4px;border-top:1px solid #cbd1bf;border-bottom:0;border-left:0}
+.cover-journals .section-heading{margin:0;padding:0;border:0;white-space:nowrap}
+.cover-journals .section-heading h2{font-size:clamp(18px,1.15vw,22px)}
+.cv-journals{display:flex;align-items:center;flex-wrap:wrap;gap:8px 10px;margin:0;padding:0;list-style:none}
+.journal-chip{display:inline-flex;align-items:center;gap:7px;padding:4px 12px;border:1px solid #dfe3d3;
+  border-radius:999px;background:rgba(237,240,226,.72);color:#354b3b;font-size:clamp(13.5px,0.85vw,15.5px);line-height:1.4;white-space:nowrap}
+.journal-chip b{font-size:clamp(13px,0.8vw,14.5px);color:var(--cover-forest);font-weight:700}
+.journal-more{margin-left:3px;padding-left:12px;border-left:1px solid #c9cdbf;color:#73796e;
+  font-family:var(--editorial);font-size:clamp(13px,0.82vw,14.5px);white-space:nowrap}
+.cover .cv-hint{flex:none;margin-top:clamp(8px,1vh,12px);padding:8px 0 0;border-top:1px solid var(--cover-line);color:#8a8f84;font-size:clamp(12px,0.8vw,13.5px);line-height:1.5;text-align:center}
+
+.cover .sheet[data-fit="1"]{padding-top:12px;padding-bottom:10px}
+.cover .sheet[data-fit="1"] .cover-hero{padding-bottom:10px}
+.cover .sheet[data-fit="1"] .cv-rule{margin:7px 0}
+.cover .sheet[data-fit="1"] .cover-bottom{gap:8px;margin-top:8px}
+.cover .sheet[data-fit="1"] .cv-pts li{padding:4px 4px;line-height:1.42}
+.cover .sheet[data-fit="1"] .cover-journals{padding:7px 0 2px}
+.cover .sheet[data-fit="1"] .cv-hint{margin-top:6px;padding-top:6px}
+.cover .sheet[data-fit="2"]{padding-top:10px;padding-bottom:8px}
+.cover .sheet[data-fit="2"] .cover-hero{padding-bottom:8px}
+.cover .sheet[data-fit="2"] .cv-kicker{display:none}
+.cover .sheet[data-fit="2"] .cv-title{font-size:clamp(46px,3.8vw,68px);margin-top:0}
+.cover .sheet[data-fit="2"] .cv-week{margin-top:4px;font-size:clamp(18px,1.3vw,24px)}
+.cover .sheet[data-fit="2"] .cv-rule{margin:6px 0}
+.cover .sheet[data-fit="2"] .cv-hl{font-size:clamp(17px,1.1vw,21px);line-height:1.42}
+.cover .sheet[data-fit="2"] .cv-intro{margin-top:4px;font-size:clamp(14px,0.9vw,17px);line-height:1.42}
+.cover .sheet[data-fit="2"] .cover-window{margin-top:4px}
+.cover .sheet[data-fit="2"] .cover-bottom{gap:6px;margin-top:6px}
+.cover .sheet[data-fit="2"] .section-heading{margin-bottom:2px}
+.cover .sheet[data-fit="2"] .section-heading h2{font-size:clamp(20px,1.35vw,26px)}
+.cover .sheet[data-fit="2"] .cv-pts li{font-size:clamp(15.5px,0.95vw,18.5px);padding:3px 4px;line-height:1.36}
+.cover .sheet[data-fit="2"] .cover-journals{padding:6px 0 2px}
+.cover .sheet[data-fit="2"] .journal-chip{padding:2px 9px;font-size:12.5px}
+.cover .sheet[data-fit="2"] .cv-hint{margin-top:4px;padding-top:4px;font-size:11.5px}
+
+@media(max-width:960px){
+  .topbar{padding:0 16px;gap:8px}
+  .tools button,.tools .back{padding:5px 8px;font-size:12px}
+  .cover .sheet{padding:18px 22px 14px}
+  .cv-title{font-size:clamp(46px,6.3vw,62px)}
+  .cv-week{font-size:19px}
+  .cv-hl{font-size:17px;line-height:1.6}
+  .cv-intro{font-size:14.5px}
+  .cv-pts li{font-size:15.5px;gap:10px;padding:7px 4px}
+}
+@media(max-width:680px){
+  .topbar{height:48px;padding:0 10px;gap:5px}
+  .brand{gap:5px}
+  .brand b{font-size:15px;letter-spacing:.04em}
+  .tools button,.tools .back{padding:5px 5px;font-size:10.5px}
+  .page.cover{padding:0 8px 10px}
+  .cover .sheet{height:auto;min-height:0;padding:18px 16px 12px}
+  .cover-hero{padding:0 0 14px}
+  .cv-kicker{font-size:10px;letter-spacing:.17em}
+  .cv-title{font-size:clamp(40px,10.5vw,50px);letter-spacing:.06em}
+  .cv-week{gap:8px;margin-top:10px;font-size:17px}
+  .cv-week time{font-size:12px}
+  .cv-rule{width:44px;margin:12px 0}
+  .cv-hl{font-size:16px;line-height:1.68}
+  .cv-intro{font-size:13.5px;line-height:1.65;margin-top:8px}
+  .cover-window{font-size:11px;margin-top:7px}
+  .cover-bottom{gap:14px;margin-top:14px}
+  .section-heading{gap:8px;margin-bottom:4px}
+  .section-heading h2{font-size:20px}
+  .section-heading span{font-size:9px;letter-spacing:.2em}
+  .cv-pts li{grid-template-columns:34px minmax(0,1fr);gap:8px;padding:7px 1px;font-size:14px;line-height:1.52}
+  .cv-pts .n{width:30px;height:21px;font-size:14px;border-radius:7px}
+  .cover-journals{flex-direction:column;align-items:flex-start;gap:8px;padding:10px 0 6px}
+  .cover-journals .section-heading h2{font-size:18px}
+  .cv-journals{gap:6px}
+  .journal-chip{padding:3px 9px;font-size:12px;gap:5px}
+  .journal-chip b{font-size:11.5px}
+  .journal-more{padding-left:8px;font-size:12px}
+  .cover .cv-hint{font-size:10.5px}
+}
+@media print{
+  .cover .sheet{min-height:0!important;padding:7mm 9mm 4mm!important;background:#fff!important;box-shadow:none}
+  .cover-hero{min-height:0;padding-bottom:4mm}
+  .cv-title{font-size:34pt}
+  .cv-week{font-size:14pt}
+  .cv-hl{font-size:11pt;line-height:1.55}
+  .cv-intro{font-size:8.5pt;line-height:1.5}
+  .cover-window{font-size:7.5pt}
+  .cover-bottom{gap:4mm;margin-top:4mm}
+  .section-heading h2{font-size:14pt}
+  .cv-pts li{font-size:9pt;line-height:1.4;padding:1.8mm 2mm;grid-template-columns:11mm 1fr;gap:3mm}
+  .cv-pts .n{width:9mm;height:6mm;font-size:9pt}
+  .cover-journals{padding:2.5mm 0;gap:3mm 6mm}
+  .cover-journals .section-heading h2{font-size:11pt}
+  .journal-chip{font-size:7.5pt;padding:1mm 2.5mm}
+  .cover .cv-hint{font-size:6.5pt}
+}
+
+.article-page{
+  --art-h2:clamp(38px,min(2.75vw,5vh),52px);
+  --art-ten:clamp(18.5px,min(1.2vw,2.25vh),22.5px);
+  --art-lead:clamp(20px,min(1.28vw,2.4vh),23.5px);
+  --art-h3:clamp(24px,min(1.55vw,2.9vh),29.5px);
+  --art-p:clamp(19.5px,min(1.22vw,2.35vh),23px);
+  --art-lh:1.60;
+  --art-meta:clamp(15px,0.9vw,16.5px);
+  --art-foot:clamp(14.5px,0.88vw,16px);
+  --art-gap-row:clamp(14px,1.7vh,24px);
+  --art-gap-col:clamp(36px,2.8vw,54px);
+  padding:8px clamp(10px,1.1vw,20px);
+  background:#f0eee7;
+}
+.article-page .sheet{
+  flex:none;width:100%;max-width:none;min-height:100%;margin:0 auto;
+  padding:clamp(16px,2vh,26px) clamp(24px,2.1vw,40px) clamp(14px,1.6vh,22px);
+  overflow:visible;align-self:flex-start;isolation:isolate;
+  border:1px solid #e0dfd4;border-radius:2px;background:#fbfaf5;
+  box-shadow:0 9px 30px rgba(40,53,37,.05);
+}
+.article-page .detail-ornament{display:none!important}
+.article-page .sheet>*:not(.detail-ornament){position:relative;z-index:1}
+.article-page .head{
+  display:flex;align-items:center;flex-wrap:wrap;gap:10px 14px;
+  padding:0 0 clamp(8px,1vh,12px);border-bottom:1px solid #cbd1c3;
+  color:#687067;font-size:var(--art-meta);line-height:1.45;
+}
+.article-page .head .jn{
+  color:#173e2d;font-family:var(--editorial);font-size:clamp(20px,1.3vw,24px);font-style:italic;font-weight:700;
+}
+.article-page .head .sep{color:#b9c0b3}
+.article-page .head .met{display:inline-flex;align-items:center;gap:8px;margin-left:2px}
+.article-page .head .met b{padding:3px 10px;border-radius:8px;background:#e7ebd9;color:#24503a;font-size:clamp(12.5px,0.8vw,14px);font-weight:750}
+.article-page .head .met b.weak{background:#f0eee5;color:#625e52}
+.article-page .head .met i{color:#555d53;font-size:clamp(13px,0.82vw,14.5px);font-style:normal;font-weight:500}
+.article-page .head .crumb{color:#697068}
+.article-page .head .rt{display:flex;align-items:center;flex-wrap:wrap;gap:8px 16px;margin-left:auto;color:#697068}
+.article-page .head .kind{letter-spacing:.02em}
+.article-page .head .lv{padding:2px 9px;border-radius:6px;background:#f0eee5;color:#625e52;font-size:clamp(12px,0.78vw,13.5px);letter-spacing:.02em}
+.article-page .head .lv.fulltext{background:#e7ebd9;color:#24503a}
+.article-page .head .lv.oa_url{background:#eef0e6;color:#4f6343}
+.article-page .head .lv.preprint{background:#eeefe9;color:#687067}
+.article-page .head .no{
+  position:static;top:auto;right:auto;padding:3px 11px;border-radius:6px;
+  background:#eeebdc;color:#62552e;font-family:var(--editorial);font-size:clamp(13px,0.84vw,14.5px);
+  font-weight:650;line-height:1.4;letter-spacing:.03em;white-space:nowrap;
+}
+.article-page h2.t-zh{
+  max-width:none;margin:clamp(14px,1.8vh,24px) 0 0;color:#173e2d;font-family:var(--editorial);
+  font-size:var(--art-h2);font-weight:760;line-height:1.25;letter-spacing:-.03em;
+  text-wrap:pretty;
+}
+.article-page .t-en{
+  max-width:none;margin:clamp(6px,0.8vh,10px) 0 0;color:#5f685f;font-family:Georgia,"Times New Roman",serif;
+  font-size:var(--art-ten);line-height:1.45;letter-spacing:.005em;
+}
+.article-page .title-rule{
+  width:60px;height:3px;margin:clamp(10px,1.3vh,16px) 0;border:0;background:#24503a;
+}
+.article-page .lead{
+  display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;gap:16px;
+  margin:0;padding:clamp(10px,1.2vh,14px) 20px;border-left:4px solid #24503a;border-radius:3px;
+  background:#f0f0e5;color:#2b312a;font-family:var(--editorial);font-size:var(--art-lead);line-height:1.58;
+}
+.article-page .lead-label{
+  padding-right:16px;border-right:1px solid #b8c1ad;color:#173e2d;
+  font-size:var(--art-lead);font-weight:750;white-space:nowrap;
+}
+.article-page .lead-copy{min-width:0}
+.article-page .art-body{flex:1 0 auto;display:flex;flex-direction:column}
+.article-page .grid{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  gap:var(--art-gap-row) var(--art-gap-col);margin:clamp(14px,1.8vh,22px) 0 clamp(14px,1.6vh,20px);
+}
+.article-page .blk h3{
+  margin:0 0 8px;padding-bottom:7px;border-bottom:1px solid #aeb9aa;
+  color:#173e2d;font-family:var(--editorial);font-size:var(--art-h3);font-weight:750;letter-spacing:.015em;
+}
+.article-page .blk p{
+  margin:0;color:#2b302b;font-size:var(--art-p);line-height:var(--art-lh);letter-spacing:.005em;
+}
+.article-page .stage{
+  margin-top:auto;padding:10px 2px 0;border-top:1px solid #d6d9ce;
+  color:#586158;font-size:var(--art-foot);line-height:1.55;
+}
+.article-page .stage b{margin-right:10px;color:#41563c;font-size:clamp(13px,0.82vw,14.5px);font-weight:750;letter-spacing:.06em}
+.article-page .foot{
+  display:flex;align-items:center;flex-wrap:wrap;gap:10px 22px;
+  margin-top:clamp(10px,1.2vh,15px);padding:clamp(10px,1.2vh,14px) 2px 0;border-top:1px solid #cbd1c3;
+  color:#586158;font-size:var(--art-foot);line-height:1.5;
+}
+.article-page .foot .doi{color:#262c27;font-size:var(--art-foot);font-weight:650;overflow-wrap:anywhere}
+.article-page .foot .doi i{margin-right:8px;color:#626b62;font-size:clamp(12px,0.78vw,13.5px);letter-spacing:.12em}
+.article-page .foot a{border-bottom:1px solid #c7cec0;color:#4f5a4e;text-decoration:none}
+.article-page .foot a:hover{border-color:#24503a;color:#173e2d}
+.article-page .foot .affil{flex:1 1 220px;min-width:140px;max-width:none;margin:0;color:#434a42;white-space:normal;overflow-wrap:anywhere}
+.article-page .foot .src{margin-left:auto;color:#24503a;white-space:nowrap}
+.article-page .star{flex:none;color:#aaa58f;font-size:17px}
+.article-page .star[data-on="1"]{color:#a88d43}
+
+/* 非缩放两级紧凑适配（绝不缩小 zoom，保证字号清晰可读） */
+.article-page .sheet[data-fit="1"]{
+  padding-top:14px;padding-bottom:12px;
+  --art-lh:1.56;--art-gap-row:12px;
+}
+.article-page .sheet[data-fit="1"] h2.t-zh{margin-top:10px}
+.article-page .sheet[data-fit="1"] .title-rule{margin:9px 0}
+.article-page .sheet[data-fit="1"] .lead{padding:9px 16px;line-height:1.52}
+.article-page .sheet[data-fit="1"] .grid{margin:12px 0 10px}
+.article-page .sheet[data-fit="1"] .blk h3{margin-bottom:5px;padding-bottom:5px}
+.article-page .sheet[data-fit="1"] .foot{margin-top:8px;padding-top:9px}
+
+.article-page .sheet[data-fit="2"]{
+  padding-top:12px;padding-bottom:10px;
+  --art-h2:clamp(33px,2.25vw,44px);
+  --art-ten:clamp(16px,1.02vw,20px);
+  --art-lead:clamp(18px,1.08vw,21px);
+  --art-h3:clamp(21px,1.32vw,26px);
+  --art-p:clamp(18px,1.05vw,20px);
+  --art-lh:1.55;
+  --art-gap-row:10px;
+}
+.article-page .sheet[data-fit="2"] h2.t-zh{margin-top:8px}
+.article-page .sheet[data-fit="2"] .title-rule{margin:8px 0}
+.article-page .sheet[data-fit="2"] .lead{padding:8px 15px;line-height:1.5}
+.article-page .sheet[data-fit="2"] .grid{margin:10px 0 8px}
+.article-page .sheet[data-fit="2"] .blk h3{margin-bottom:4px;padding-bottom:4px}
+.article-page .sheet[data-fit="2"] .stage{padding-top:7px}
+.article-page .sheet[data-fit="2"] .foot{margin-top:7px;padding-top:8px}
+
+html.flow .page.article-page{padding:0 16px 16px}
+html.flow .page.article-page:last-child{padding-bottom:44px}
+html.flow .page.article-page .sheet{
+  max-width:1600px;min-height:0;padding:30px 40px 26px;border:0;
+  border-bottom:1px solid #d6d9ce;background:#fbfaf5;box-shadow:none;
+}
+@media(max-width:960px){
+  .article-page{padding:8px 10px}
+  .article-page .sheet{padding:20px 22px 18px}
+  .article-page h2.t-zh{font-size:clamp(30px,4.2vw,42px)}
+  .article-page .grid{column-gap:28px}
+  .article-page .blk p{font-size:17px;line-height:1.65}
+}
+@media(max-width:820px){
+  .article-page .grid{grid-template-columns:1fr;gap:20px}
+}
+@media(max-width:680px){
+  .article-page{padding:0}
+  .article-page .sheet{min-height:100%;padding:20px 18px 18px;border:0;box-shadow:none}
+  .article-page .head{align-items:flex-start;gap:6px 9px;padding-bottom:10px;font-size:12px}
+  .article-page .head .jn{font-size:17px}
+  .article-page .head .met{gap:5px}
+  .article-page .head .met b{padding:2px 7px;font-size:11px}
+  .article-page .head .met i{font-size:11.5px}
+  .article-page .head .rt{flex-basis:100%;margin-left:0;gap:7px 11px}
+  .article-page .head .no{display:inline-flex;font-size:11px}
+  .article-page h2.t-zh{margin-top:18px;font-size:28px;line-height:1.36;letter-spacing:-.02em}
+  .article-page .t-en{margin-top:7px;font-size:14.5px;line-height:1.55}
+  .article-page .title-rule{width:46px;height:2px;margin:13px 0}
+  .article-page .lead{grid-template-columns:1fr;gap:5px;margin:0;padding:11px 13px;font-size:16px;line-height:1.65}
+  .article-page .lead-label{padding:0;border:0;font-size:14.5px}
+  .article-page .grid{grid-template-columns:1fr;gap:18px;margin:18px 0}
+  .article-page .blk h3{margin-bottom:6px;padding-bottom:5px;font-size:19px}
+  .article-page .blk p{font-size:16px;line-height:1.75}
+  .article-page .stage{margin-top:10px;padding-top:9px;font-size:12.5px}
+  .article-page .foot{gap:9px 15px;margin-top:13px;padding:12px 0 0;font-size:12.5px}
+  .article-page .foot .doi{font-size:12.5px}
+  .article-page .foot .affil{flex-basis:100%;min-width:100%;order:3}
+  .article-page .foot .src{margin-left:auto}
+  html.flow .page.article-page{padding:0 8px 12px}
+  html.flow .page.article-page .sheet{padding:20px 16px 18px}
+}
+@media print{
+  .article-page{height:auto!important;min-height:0!important;padding:0!important;overflow:visible!important;break-after:page;page-break-after:always;background:#fff!important}
+  .article-page:last-child{break-after:auto;page-break-after:auto}
+  .article-page .sheet{width:100%!important;max-width:none!important;min-height:0!important;padding:6mm 8mm 5mm!important;
+    border:0!important;background:#fff!important;box-shadow:none!important;overflow:visible!important}
+  .article-page h2.t-zh{margin-top:7mm;font-size:23pt}
+  .article-page .t-en{font-size:9pt}
+  .article-page .lead{font-size:10pt;line-height:1.55}
+  .article-page .grid{gap:5mm 10mm;margin:7mm 1mm 5mm}
+  .article-page .blk h3{font-size:12pt}
+  .article-page .blk p{font-size:9.5pt;line-height:1.55}
+  .article-page .stage,.article-page .foot{font-size:8pt}
+}
+
+.export-dialog{width:min(520px,calc(100vw - 32px));padding:0;border:1px solid #d9ddce;border-radius:18px;background:#fbfaf5;color:#203b2c;box-shadow:0 24px 80px rgba(34,49,38,.24)}
+.export-dialog::backdrop{background:rgba(21,31,25,.40);backdrop-filter:blur(3px)}
+.export-dialog-inner{padding:25px 27px 28px}
+.export-dialog-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px}
+.export-kicker{margin:0 0 5px;color:#7e8b73;font:600 10px/1.4 Georgia,serif;letter-spacing:.2em}
+.export-dialog h2{margin:0;color:#173e2d;font:700 23px/1.35 "Noto Serif SC","Songti SC",serif}
+.export-close{width:34px;height:34px;border:1px solid #d9ddce;border-radius:50%;background:#f3f2e8;color:#456248;font-size:21px;line-height:1;cursor:pointer}
+.export-note{margin:15px 0 17px;color:#70786d;font-size:13px;line-height:1.7}
+.export-options{display:grid;gap:10px}
+.export-option{display:grid;grid-template-columns:38px minmax(0,1fr) 20px;align-items:center;gap:12px;padding:13px 15px;border:1px solid #dfe2d5;border-radius:12px;background:#fffef9;text-align:left;color:#26382e;cursor:pointer}
+.export-option:hover:not(:disabled){border-color:#87a07a;background:#f4f5e9;transform:translateY(-1px)}
+.export-option:focus-visible,.export-close:focus-visible{outline:3px solid #aec39e;outline-offset:2px}
+.export-option:disabled{opacity:.58;cursor:not-allowed}
+.export-option-number{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#e9eddc;color:#27533b;font:600 14px Georgia,serif}
+.export-option b{display:block;font-size:14px}
+.export-option small{display:block;margin-top:3px;color:#778073;font-size:11px}
+.export-arrow{color:#315c40;font-size:17px}
+@media(max-width:640px){.export-dialog-inner{padding:20px 17px 21px}}
+
+.personal-relevance-panel {
+  margin-top: 14px;
+  padding: 12px 18px;
+  background: #f4f8f4;
+  border: 1px solid #c9decb;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pr-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #173e2d;
+  letter-spacing: 0.02em;
+}
+.pr-badge {
+  background: #173e2d;
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+.pr-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.pr-tag {
+  font-size: 11.5px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: #fff;
+  border: 1px solid #d4e5d6;
+  color: #2c5943;
+  font-weight: 600;
+}
+.pr-body {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #282d31;
+}
+.pr-takeaway {
+  font-size: 13px;
+  color: #52584e;
+  border-left: 3px solid #2f6b4f;
+  padding-left: 10px;
+  margin-top: 4px;
+}
+</style>
+<link rel="stylesheet" href="../../assets/library-issue.css">
+<link rel="stylesheet" href="../../assets/site-nav.css">
+<link rel="stylesheet" href="../../assets/radar-terms.css">
+<link rel="stylesheet" href="../../assets/related-articles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><b class="serif">基因组雷达</b><span class="en">PERSONAL SUPPLEMENT</span></div>
+  <span class="issue-tag">个人科研专刊 (2026-11-26-supp-01)</span>
+  <div class="tools">
+    <a class="back" href="../../index.html">首页</a>
+    <a class="back" href="../../my-radar.html">我的科研雷达</a>
+    <a class="library-nav" href="../../library.html">我的文献库</a>
+    <button id="tocBtn" aria-controls="toc" aria-expanded="false">目录</button>
+    <button id="viewBtn">连读</button>
+    <button id="exportBtn" type="button" aria-haspopup="dialog" aria-controls="exportDialog">打印 / PDF</button>
+    <span class="zoom">
+      <button id="zoomOut" title="缩小">−</button>
+      <span class="zlab" id="zoomLab" title="点一下复位到 100%">100%</span>
+      <button id="zoomIn" title="放大">+</button>
+    </span>
+  </div>
+</header>
+
+<main class="deck" id="deck">
+<section class="page cover" id="cover">
+  <article class="sheet">
+    <div class="cover-hero">
+      <div class="cover-copy">
+        <div class="cv-kicker">PERSONAL RESEARCH SUPPLEMENT · 科研发现专刊</div>
+        <h1 class="cv-title serif">基因组雷达 · 个人科研专刊</h1>
+        <div class="cv-week">
+          <strong>个人科研专刊 (2026-11-26-supp-01)</strong><span class="cv-sep">·</span><span>专属定制对象：科研人员</span><span class="cv-sep">·</span><span>5 篇精选</span>
+        </div>
+        <div class="cv-rule"></div>
+        <p class="cv-hl">基于个人科研画像发现的 5 篇高相关与突破性学术文献</p>
+        <p class="cv-intro">结合您在「我的科研雷达」中关注的专题、物种、基因与实验方法，经全球学术数据库检索、去重与智能研判深度生成的定制科研专刊。</p>
+        <p class="cover-window">检索窗口　基于四维科研画像动态检索与深度智能研判 · 历史文献发现</p>
+      </div>
+    </div>
+    <div class="cover-bottom">
+    <section class="cover-highlights" id="highlights" aria-labelledby="highlights-title">
+      <div class="section-heading">
+        <h2 id="highlights-title">专刊精选</h2><span>HIGHLIGHTS</span>
+      </div>
+      <ol class="cv-pts"><li><span class="n">01</span><span>先导编辑底层技术突破：无需双链断裂与供体 DNA 的精准基因组搜索与替换</span></li><li><span class="n">02</span><span>六倍体普通小麦泛基因组图谱：全面揭示大尺度染色体结构变异与野生种渗入</span></li><li><span class="n">03</span><span>加速光保护恢复提升光合效率与作物生物量：合成生物学改造型农艺突破</span></li><li><span class="n">04</span><span>Minigraph 泛基因组图构建算法：建立多基因组结构变异拓扑坐标系</span></li></ol>
+    </section>
+    <section class="cover-journals" aria-labelledby="journals-title">
+      <div class="section-heading">
+        <h2 id="journals-title">本期来源期刊</h2><span>JOURNALS</span>
+      </div>
+      <ul class="cv-journals"><li class="journal-chip"><span>Nature</span><b>2</b></li><li class="journal-chip"><span>Science</span><b>1</b></li><li class="journal-chip"><span>Genome Biol</span><b>1</b></li><li class="journal-chip"><span>Nucleic Acids Res</span><b>1</b></li></ul>
+    </section>
+    </div>
+    <div class="cv-hint">滚轮 / 方向键 / 左右滑动翻页　·　「目录」跳转文章　·　「连读」纵向阅读　·　「打印 / PDF」导出 A4 横向</div>
+  </article>
+</section>
+<section class="page article-page">
+  <article class="sheet">
+    <div class="head">
+      <span class="jn">Nature</span><span class="met"><b>1区 Top</b><i>IF 50.5</i></span>
+      <span class="sep">|</span>
+      <span class="crumb">研究文章</span>
+      <span class="rt">
+        <span class="kind">原创研究</span>
+        <span>2019-10-21</span>
+        <span class="lv abstract">仅摘要</span>
+        <span class="no">文章 01</span>
+      </span>
+    </div>
+    <div class="art-body">
+    <h2 class="t-zh">先导编辑底层技术突破：无需双链断裂与供体 DNA 的精准基因组搜索与替换</h2>
+    <p class="t-en">Search-and-replace genome editing without double-strand breaks or donor DNA</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">开发了划时代的先导编辑系统，在人源细胞系中实现无双链断裂的高精度全类型单碱基替换与小片段插入缺失。</span></p>
+    <div class="grid">
+      <section class="blk"><h3>做了什么</h3><p>将催化失活的 Cas9 切割酶与工程化逆转录酶融合，设计兼具靶向定位与逆转录模板功能的 pegRNA，系统评估了人源细胞及神经元中 175 余种基因修饰效率。</p></section>
+      <section class="blk"><h3>结论</h3><p>在无需依赖 DNA 双链断裂 (DSB) 和外源供体 DNA 的前提下，高效完成了 12 种单碱基互变、特定片段精准插入与删除，编辑副产物与脱靶率较传统 CRISPR-Cas9 显著降低。</p></section>
+      <section class="blk"><h3>为什么值得关注</h3><p>确立了基因组精准编辑的全新技术范式。该底层技术随后被植物学者迅速引入水稻和小麦，成为作物精准分子设计育种的核心工具之一。</p></section>
+      <section class="blk"><h3>未来展望</h3><p>后续需优化其在植物等复杂真核体系中的启动子适配、pegRNA 稳定表达及作物组织培养递送效率。</p></section>
+    </div>
+    <div class="personal-relevance-panel">
+      <div class="pr-head">
+        <span>🎯 学术专题关联分析与研究启示</span>
+        <span class="pr-badge">综合匹配: 2990%</span>
+      </div>
+      <div class="pr-tags"><span class="pr-tag">植物基因组学前沿</span><span class="pr-tag">作物基因组</span><span class="pr-tag">目标功能基因</span><span class="pr-tag">组学分析方法</span></div>
+      <div class="pr-body">先导编辑无需DSB和供体DNA即可精准替换作物目标功能基因的单碱基，其全基因组脱靶评估流程可直接迁移至作物组学分析，提升编辑安全性。</div>
+      <div class="pr-takeaway"><b>💡 研究拓展启示:</b> 在作物原生质体中测试先导编辑对目标基因的碱基替换效率，并采用全基因组测序评估脱靶。</div>
+    </div>
+    </div>
+    <div class="stage"><b>当前研究阶段</b>跨物种底层工具开创性突破</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1038/s41586-019-1711-4</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/31634902/" target="_blank" rel="noopener">PMID 31634902</a>
+      <span class="affil" title=""></span>
+      <a class="src" href="https://doi.org/10.1038/s41586-019-1711-4" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="" title="加入待精读" aria-label="加入待精读">★</button>
+    </div>
+  </article>
+</section>
+<section class="page article-page">
+  <article class="sheet">
+    <div class="head">
+      <span class="jn">Nature</span><span class="met"><b>1区 Top</b><i>IF 50.5</i></span>
+      <span class="sep">|</span>
+      <span class="crumb">研究文章</span>
+      <span class="rt">
+        <span class="kind">原创研究</span>
+        <span>2020-11-25</span>
+        <span class="lv abstract">仅摘要</span>
+        <span class="no">文章 02</span>
+      </span>
+    </div>
+    <div class="art-body">
+    <h2 class="t-zh">六倍体普通小麦泛基因组图谱：全面揭示大尺度染色体结构变异与野生种渗入</h2>
+    <p class="t-en">Multiple wheat genomes reveal global variation in modern breeding</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">国际团队组装了 15 套高精度六倍体小麦基因组，构建了普通小麦全景泛基因组，系统解析了小麦亚基因组间的不平衡演化与抗病位点多样性。</span></p>
+    <div class="grid">
+      <section class="blk"><h3>做了什么</h3><p>对 10 份代表性六倍体小麦品种进行假分子级别组装，比较鉴定了数以万计的基因拷贝数变异 (CNV)、大片段染色体倒位及来自野生二粒小麦和粗山羊草的渐渗片段。</p></section>
+      <section class="blk"><h3>结论</h3><p>发现结构变异非均匀富集于抗病 NLR 基因家族，野生种染色体片段的大规模渗入显著增强了现代栽培种的抗逆与抗病可塑性。</p></section>
+      <section class="blk"><h3>为什么值得关注</h3><p>彻底解决了六倍体超大异源多倍体基因组变异解析难题，成为麦类作物全基因组设计育种的里程碑级数据基础设施。</p></section>
+      <section class="blk"><h3>未来展望</h3><p>进一步结合单倍型图谱开发基于泛基因组的多态性标记，加速野生抗性基因的快速渗入育种。</p></section>
+    </div>
+    <div class="personal-relevance-panel">
+      <div class="pr-head">
+        <span>🎯 学术专题关联分析与研究启示</span>
+        <span class="pr-badge">综合匹配: 2960%</span>
+      </div>
+      <div class="pr-tags"><span class="pr-tag">植物基因组学前沿</span><span class="pr-tag">作物基因组</span><span class="pr-tag">目标功能基因</span><span class="pr-tag">组学分析方法</span></div>
+      <div class="pr-body">该论文的泛基因组组装与结构变异分析框架可直接迁移至作物目标功能基因研究，尤其NLR基因簇拷贝数变异与渐渗检测策略，为解析目标基因在种质间的存在-缺失变异提供方法学范本。</div>
+      <div class="pr-takeaway"><b>💡 研究拓展启示:</b> 对目标基因所在区段开展泛基因组存在-缺失变异扫描，结合渐渗片段检测验证其野生种来源与育种价值。</div>
+    </div>
+    </div>
+    <div class="stage"><b>当前研究阶段</b>大宗农作物泛基因组重大里程碑</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1038/s41586-020-2961-x</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/33239791/" target="_blank" rel="noopener">PMID 33239791</a>
+      <span class="affil" title=""></span>
+      <a class="src" href="https://doi.org/10.1038/s41586-020-2961-x" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="" title="加入待精读" aria-label="加入待精读">★</button>
+    </div>
+  </article>
+</section>
+<section class="page article-page">
+  <article class="sheet">
+    <div class="head">
+      <span class="jn">Science</span><span class="met"><b>1区 Top</b><i>IF 44.7</i></span>
+      <span class="sep">|</span>
+      <span class="crumb">研究文章</span>
+      <span class="rt">
+        <span class="kind">原创研究</span>
+        <span>2016-11-18</span>
+        <span class="lv abstract">仅摘要</span>
+        <span class="no">文章 03</span>
+      </span>
+    </div>
+    <div class="art-body">
+    <h2 class="t-zh">加速光保护恢复提升光合效率与作物生物量：合成生物学改造型农艺突破</h2>
+    <p class="t-en">Improving photosynthesis and crop productivity by accelerating recovery from photoprotection</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">首次通过基因工程协同加速植物在光照波动下的非光化学淬灭 (NPQ) 恢复，在大田试验中实现作物生物量增产 15%~20%。</span></p>
+    <div class="grid">
+      <section class="blk"><h3>做了什么</h3><p>协同过表达紫黄质脱环氧化酶 (VDE)、玉米黄质环氧化酶 (ZEP) 及光系统 II 亚基 S (PsbS) 三个核心基因，大幅缩短强光向弱光转换时能量耗散状态的弛豫时间。</p></section>
+      <section class="blk"><h3>结论</h3><p>有效减少了遮阴时多余能量以热能形式被浪费的比例，使叶片能够瞬间恢复二氧化碳同化效率，显著提高全株碳利用与生物积累。</p></section>
+      <section class="blk"><h3>为什么值得关注</h3><p>打破了传统认为光合作用基本途径难以大幅提高生产潜力的学术认知，为提高水稻、玉米和小麦的光能利用率指明了崭新工程化路径。</p></section>
+      <section class="blk"><h3>未来展望</h3><p>将该三基因光保护调控回路推广转育至水稻与大豆等粮食作物中进行大田多环境测试。</p></section>
+    </div>
+    <div class="personal-relevance-panel">
+      <div class="pr-head">
+        <span>🎯 学术专题关联分析与研究启示</span>
+        <span class="pr-badge">综合匹配: 2930%</span>
+      </div>
+      <div class="pr-tags"><span class="pr-tag">植物基因组学前沿</span><span class="pr-tag">作物基因组</span><span class="pr-tag">目标功能基因</span><span class="pr-tag">组学分析方法</span></div>
+      <div class="pr-body">该论文证明多基因协同调控光保护恢复可提升大田生物量，为作物目标功能基因的组学挖掘提供表型-基因关联新维度，尤其NPQ动力学可作为组学分析中的高价值生理性状。</div>
+      <div class="pr-takeaway"><b>💡 研究拓展启示:</b> 在目标作物中整合叶绿素荧光动态组学与转录组，定位NPQ恢复相关候选基因，设计多基因过表达载体并开展大田微区验证。</div>
+    </div>
+    </div>
+    <div class="stage"><b>当前研究阶段</b>作物光合生理与功能基因组学突破</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1126/science.aai8878</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/27856901/" target="_blank" rel="noopener">PMID 27856901</a>
+      <span class="affil" title=""></span>
+      <a class="src" href="https://doi.org/10.1126/science.aai8878" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="" title="加入待精读" aria-label="加入待精读">★</button>
+    </div>
+  </article>
+</section>
+<section class="page article-page">
+  <article class="sheet">
+    <div class="head">
+      <span class="jn">Genome Biol</span><span class="met"><b>1区</b><i>IF 10.1</i></span>
+      <span class="sep">|</span>
+      <span class="crumb">研究文章</span>
+      <span class="rt">
+        <span class="kind">原创研究</span>
+        <span>2020-10-16</span>
+        <span class="lv abstract">仅摘要</span>
+        <span class="no">文章 04</span>
+      </span>
+    </div>
+    <div class="art-body">
+    <h2 class="t-zh">Minigraph 泛基因组图构建算法：建立多基因组结构变异拓扑坐标系</h2>
+    <p class="t-en">The design and construction of reference pangenome graphs with minigraph</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">李恒团队提出了图基因组构建工具 Minigraph，采用序列图拓扑数据结构实现了多基因组大尺度结构变异的高效整合与秒级图谱构建。</span></p>
+    <div class="grid">
+      <section class="blk"><h3>做了什么</h3><p>设计了 rGFA 变异图数据结构与图比对增量算法，迭代将多个单倍型基因组的大片段结构变异 (SV ≥ 50 bp) 整合为统一的泛基因组图谱。</p></section>
+      <section class="blk"><h3>结论</h3><p>成功消除了基于单一线性参考基因组分析带来的坐标参考偏倚 (Reference bias)，大幅降低了大尺度基因组图谱的图路径爆炸与计算复杂度。</p></section>
+      <section class="blk"><h3>为什么值得关注</h3><p>奠定了现代动植物泛基因组从“一维线性序列”向“多维图拓扑空间”转型的算法底层，成为全球主要作物超级泛基因组构建的核心工具链。</p></section>
+      <section class="blk"><h3>未来展望</h3><p>拓展结合高分辨率碱基级比对算法，支持微小 SNP/InDel 与复杂结构变异的多尺度联合索引。</p></section>
+    </div>
+    <div class="personal-relevance-panel">
+      <div class="pr-head">
+        <span>🎯 学术专题关联分析与研究启示</span>
+        <span class="pr-badge">综合匹配: 2915%</span>
+      </div>
+      <div class="pr-tags"><span class="pr-tag">植物基因组学前沿</span><span class="pr-tag">作物基因组</span><span class="pr-tag">目标功能基因</span><span class="pr-tag">组学分析方法</span></div>
+      <div class="pr-body">Minigraph图泛基因组可整合作物多品种结构变异，消除单参考偏倚，为目标功能基因的SV关联分析提供拓扑坐标系，契合组学分析需求。</div>
+      <div class="pr-takeaway"><b>💡 研究拓展启示:</b> 用Minigraph构建作物多品种泛基因组图，将目标基因区SV映射至图坐标，开展关联验证。</div>
+    </div>
+    </div>
+    <div class="stage"><b>当前研究阶段</b>工业级计算生物学工具奠基</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1186/s13059-020-02168-z</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/33066802/" target="_blank" rel="noopener">PMID 33066802</a>
+      <span class="affil" title=""></span>
+      <a class="src" href="https://doi.org/10.1186/s13059-020-02168-z" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="" title="加入待精读" aria-label="加入待精读">★</button>
+    </div>
+  </article>
+</section>
+<section class="page article-page">
+  <article class="sheet">
+    <div class="head">
+      <span class="jn">Nucleic Acids Res</span><span class="met"><b>1区</b><i>IF 16.6</i></span>
+      <span class="sep">|</span>
+      <span class="crumb">研究文章</span>
+      <span class="rt">
+        <span class="kind">原创研究</span>
+        <span>2012-01-04</span>
+        <span class="lv abstract">仅摘要</span>
+        <span class="no">文章 05</span>
+      </span>
+    </div>
+    <div class="art-body">
+    <h2 class="t-zh">MCScanX 多基因组共线性检测与基因倍增分类算法工具包</h2>
+    <p class="t-en">MCScanX: a toolkit for detection and evolutionary analysis of gene synteny and collinearity</p>
+    <hr class="title-rule" aria-hidden="true">
+    <p class="lead"><span class="lead-label">核心发现</span><span class="lead-copy">王育鹏与唐海宝等人发布了共线性检测标准工具 MCScanX，实现了跨物种染色体共线性区块检测与五类基因复制模式的系统性划分。</span></p>
+    <div class="grid">
+      <section class="blk"><h3>做了什么</h3><p>基于动态规划与有向无环图 (DAG) 算法，对全基因组同源基因对进行局部共线性链延伸，并将复制基因严格分类为 WGD、串联、近端及转座重复。</p></section>
+      <section class="blk"><h3>结论</h3><p>极大提高了在多倍化复杂植物基因组中识别同源染色体共线性区块的容错率与运行速度，并支持微观与宏观共线性多重可视化。</p></section>
+      <section class="blk"><h3>为什么值得关注</h3><p>成为过去十余年全球植物比较基因组学、古染色体多倍化推断及亚基因组演化追踪的通用金标准工具。</p></section>
+      <section class="blk"><h3>未来展望</h3><p>演进结合染色体三维构象与单倍型分相组装数据，解析复杂同源多倍体的非对称演化。</p></section>
+    </div>
+    <div class="personal-relevance-panel">
+      <div class="pr-head">
+        <span>🎯 学术专题关联分析与研究启示</span>
+        <span class="pr-badge">综合匹配: 2885%</span>
+      </div>
+      <div class="pr-tags"><span class="pr-tag">植物基因组学前沿</span><span class="pr-tag">作物基因组</span><span class="pr-tag">目标功能基因</span><span class="pr-tag">组学分析方法</span></div>
+      <div class="pr-body">MCScanX可精准解析作物多倍化历史与目标功能基因的复制起源，为组学分析中同源基因簇的界定提供标准化流程，直接支撑基因倍增分类与共线性区块鉴定。</div>
+      <div class="pr-takeaway"><b>💡 研究拓展启示:</b> 用MCScanX对目标作物及近缘种做共线性扫描，分类目标基因复制模式，结合WGD事件定位同源区块并验证。</div>
+    </div>
+    </div>
+    <div class="stage"><b>当前研究阶段</b>全球通用经典生物信息算法</div>
+    <div class="foot">
+      <span class="doi"><i>DOI</i>10.1093/nar/gkr1293</span>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/22217600/" target="_blank" rel="noopener">PMID 22217600</a>
+      <span class="affil" title=""></span>
+      <a class="src" href="https://doi.org/10.1093/nar/gkr1293" target="_blank" rel="noopener">原始论文 ↗</a>
+      <button class="star" data-id="" title="加入待精读" aria-label="加入待精读">★</button>
+    </div>
+  </article>
+</section>
+</main>
+
+<div class="dots" id="dots"></div>
+
+<div class="toc" id="toc" role="dialog" aria-modal="true" aria-labelledby="tocTitle" aria-describedby="tocMeta" aria-hidden="true">
+  <div class="toc-inner">
+    <div class="toc-header">
+      <div class="toc-heading">
+        <svg class="toc-brand-mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <path d="M23.8 42C22.4 30.8 22.8 19.6 28 6" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/>
+          <path d="M25.8 27.4C16.4 27.2 10.7 22 8.1 13.1c9.4.2 15.1 5.4 17.7 14.3Z" fill="#e7ebd9" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="M25.2 32.1c1.1-9.5 6.5-15.1 15.3-17.3-1 9.3-6.3 14.9-15.3 17.3Z" fill="#e7ebd9" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="m11 15 12 11m15-8L27 30" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M18 41h16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+        <h2 class="toc-title" id="tocTitle">本期目录</h2>
+        <span class="toc-en">SUPPLEMENT CONTENTS</span>
+        <p class="toc-meta" id="tocMeta">5 篇 · 基于四维科研画像动态检索与深度智能研判 · 历史文献发现</p>
+      </div>
+      <img class="toc-header-art" src="../../assets/weekly-cover-art.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <button class="toc-close" id="tocClose" type="button" aria-label="关闭目录">×</button>
+    </div>
+    <div class="toc-search" role="search">
+      <label class="toc-sr-only" for="tocSearch">搜索标题、期刊或主题</label>
+      <svg class="toc-search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="10.8" cy="10.8" r="6.5" stroke="currentColor" stroke-width="1.8"/>
+        <path d="m16 16 4.2 4.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      <input id="tocSearch" type="search" placeholder="搜索标题、期刊或主题" autocomplete="off" aria-controls="tocGroups">
+      <span class="toc-count" id="tocCount" aria-live="polite"></span>
+    </div>
+    <p class="toc-empty" id="tocEmpty" hidden>没有匹配的论文，试试标题、期刊或主题词。</p>
+    <div class="toc-groups" id="tocGroups"><section class="toc-group" data-toc-group="research"><div class="toc-group-head"><h3><svg class="toc-group-icon" viewBox="0 0 38 38" fill="none" aria-hidden="true"><path d="M4 8c6-2 11-.8 15 3v22c-4-3.8-9-5-15-3V8Zm30 0c-6-2-11-.8-15 3v22c4-3.8 9-5 15-3V8Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 13c2-.3 4 0 6 1m14-1c-2-.3-4 0-6 1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg><span>研究文章</span><span class="toc-group-en">RESEARCH ARTICLES</span></h3><span class="toc-group-count" data-group-count>共 5 篇</span></div><ol><li class="toc-item"><button type="button" class="toc-row" data-i="1" data-search="先导编辑底层技术突破：无需双链断裂与供体 DNA 的精准基因组搜索与替换 Search-and-replace genome editing without double-strand breaks or donor DNA Nature 研究文章" data-title="先导编辑底层技术突破：无需双链断裂与供体 DNA 的精准基因组搜索与替换" data-journal="Nature" data-date="2019-10-21" data-lead="开发了划时代的先导编辑系统，在人源细胞系中实现无双链断裂的高精度全类型单碱基替换与小片段插入缺失。" aria-pressed="false"><span class="i">01</span><span class="t">先导编辑底层技术突破：无需双链断裂与供体 DNA 的精准基因组搜索与替换</span><span class="j">Nature</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="2" data-search="六倍体普通小麦泛基因组图谱：全面揭示大尺度染色体结构变异与野生种渗入 Multiple wheat genomes reveal global variation in modern breeding Nature 研究文章" data-title="六倍体普通小麦泛基因组图谱：全面揭示大尺度染色体结构变异与野生种渗入" data-journal="Nature" data-date="2020-11-25" data-lead="国际团队组装了 15 套高精度六倍体小麦基因组，构建了普通小麦全景泛基因组，系统解析了小麦亚基因组间的不平衡演化与抗病位点多样性。" aria-pressed="false"><span class="i">02</span><span class="t">六倍体普通小麦泛基因组图谱：全面揭示大尺度染色体结构变异与野生种渗入</span><span class="j">Nature</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="3" data-search="加速光保护恢复提升光合效率与作物生物量：合成生物学改造型农艺突破 Improving photosynthesis and crop productivity by accelerating recovery from photoprotection Science 研究文章" data-title="加速光保护恢复提升光合效率与作物生物量：合成生物学改造型农艺突破" data-journal="Science" data-date="2016-11-18" data-lead="首次通过基因工程协同加速植物在光照波动下的非光化学淬灭 (NPQ) 恢复，在大田试验中实现作物生物量增产 15%~20%。" aria-pressed="false"><span class="i">03</span><span class="t">加速光保护恢复提升光合效率与作物生物量：合成生物学改造型农艺突破</span><span class="j">Science</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="4" data-search="Minigraph 泛基因组图构建算法：建立多基因组结构变异拓扑坐标系 The design and construction of reference pangenome graphs with minigraph Genome Biol 研究文章" data-title="Minigraph 泛基因组图构建算法：建立多基因组结构变异拓扑坐标系" data-journal="Genome Biol" data-date="2020-10-16" data-lead="李恒团队提出了图基因组构建工具 Minigraph，采用序列图拓扑数据结构实现了多基因组大尺度结构变异的高效整合与秒级图谱构建。" aria-pressed="false"><span class="i">04</span><span class="t">Minigraph 泛基因组图构建算法：建立多基因组结构变异拓扑坐标系</span><span class="j">Genome Biol</span></button></li><li class="toc-item"><button type="button" class="toc-row" data-i="5" data-search="MCScanX 多基因组共线性检测与基因倍增分类算法工具包 MCScanX: a toolkit for detection and evolutionary analysis of gene synteny and collinearity Nucleic Acids Res 研究文章" data-title="MCScanX 多基因组共线性检测与基因倍增分类算法工具包" data-journal="Nucleic Acids Res" data-date="2012-01-04" data-lead="王育鹏与唐海宝等人发布了共线性检测标准工具 MCScanX，实现了跨物种染色体共线性区块检测与五类基因复制模式的系统性划分。" aria-pressed="false"><span class="i">05</span><span class="t">MCScanX 多基因组共线性检测与基因倍增分类算法工具包</span><span class="j">Nucleic Acids Res</span></button></li></ol></section></div>
+    <button class="toc-preview" id="tocPreviewOpen" type="button" aria-label="进入所选文章">
+      <img src="../../assets/weekly-cover-art.webp" alt="" aria-hidden="true" loading="lazy" decoding="async">
+      <span class="toc-preview-copy">
+        <span class="toc-preview-top"><span class="toc-preview-number" id="tocPreviewNumber">01</span></span>
+        <span class="toc-preview-title" id="tocPreviewTitle"></span>
+        <span class="toc-preview-meta"><span id="tocPreviewJournal"></span><span aria-hidden="true">·</span><time id="tocPreviewDate"></time></span>
+        <span class="toc-preview-summary" id="tocPreviewSummary"></span>
+      </span>
+      <span class="toc-preview-arrow" aria-hidden="true"><svg viewBox="0 0 20 20" fill="none">
+        <path d="M3 10h13m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg></span>
+    </button>
+  </div>
+</div>
+
+<dialog class="export-dialog" id="exportDialog" aria-labelledby="exportTitle">
+  <div class="export-dialog-inner">
+    <div class="export-dialog-head">
+      <div><p class="export-kicker">PRINT / PDF</p><h2 id="exportTitle">选择导出范围</h2></div>
+      <button id="exportClose" class="export-close" type="button" aria-label="关闭">×</button>
+    </div>
+    <p class="export-note" id="exportNote">PDF 将使用适合 A4 纵向阅读的学术简报版式。</p>
+    <div class="export-options">
+      <button class="export-option" id="exportArticle" type="button">
+        <span class="export-option-number">01</span>
+        <span><b>导出当前文章</b><small id="exportArticleHint">请先打开一篇文章</small></span>
+        <span class="export-arrow" aria-hidden="true">↗</span>
+      </button>
+      <button class="export-option" id="exportIssue" type="button">
+        <span class="export-option-number">全</span>
+        <span><b>导出本期全部文章</b><small>5 篇 · 含封面与目录</small></span>
+        <span class="export-arrow" aria-hidden="true">↗</span>
+      </button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  var deck=document.getElementById('deck');
+  var pages=[].slice.call(document.querySelectorAll('.page'));
+  var dots=document.getElementById('dots');
+  var toc=document.getElementById('toc');
+  var n=pages.length, cur=0;
+  var exportBtn=document.getElementById('exportBtn');
+  var exportDialog=document.getElementById('exportDialog');
+  var exportArticle=document.getElementById('exportArticle');
+  var exportIssue=document.getElementById('exportIssue');
+  var exportClose=document.getElementById('exportClose');
+  var exportHint=document.getElementById('exportArticleHint');
+  var exportNote=document.getElementById('exportNote');
+
+  function flow(){ return document.documentElement.classList.contains('flow'); }
+
+  function openPrintPage(mode){
+    if(mode==='article' && cur===0) return;
+    var target=new URL('print.html',window.location.href);
+    target.searchParams.set('mode',mode);
+    target.searchParams.set('autoprint','1');
+    if(mode==='article') target.searchParams.set('article',String(cur));
+    window.open(target.href,'_blank','noopener');
+    exportDialog.close();
+  }
+  exportBtn.addEventListener('click',function(){
+    var hasArticle=cur>0;
+    exportArticle.disabled=!hasArticle;
+    exportHint.textContent=hasArticle?'当前选择：第 '+String(cur).padStart(2,'0')+' 篇':'请先打开一篇文章';
+    exportNote.textContent=hasArticle?'将导出当前正在阅读的文章。也可生成包含本期全部文章的完整简报。':'打开任意文章后即可导出单篇；整期简报随时可用。';
+    exportDialog.showModal();
+  });
+  exportArticle.addEventListener('click',function(){openPrintPage('article')});
+  exportIssue.addEventListener('click',function(){openPrintPage('issue')});
+  exportClose.addEventListener('click',function(){exportDialog.close()});
+  exportDialog.addEventListener('click',function(event){if(event.target===exportDialog) exportDialog.close()});
+
+  function articleFromUrl(){
+    var raw=new URLSearchParams(window.location.search).get('article');
+    if(!raw || !/^[1-9]\d*$/.test(raw)) return 0;
+    var value=parseInt(raw,10);
+    return value>0 && value<n ? value : 0;
+  }
+
+  var initialArticle=articleFromUrl();
+  var targetLocked = initialArticle > 0;
+  var targetSettled = !targetLocked;
+  var holdInitialArticle = targetLocked;
+
+  if (targetLocked) {
+    window.__GR_LOCATING_TARGET = true;
+    window.__GR_TARGET_ARTICLE = initialArticle;
+  }
+
+  function unlockTarget(){
+    if (!targetLocked && targetSettled) return;
+    targetLocked = false;
+    targetSettled = true;
+    holdInitialArticle = false;
+    window.__GR_LOCATING_TARGET = false;
+  }
+
+  function writeArticleUrl(i,mode){
+    if(!mode) return;
+    // 目标文章定位期间，禁止任何将 URL 参数清空或覆盖的调用
+    if(targetLocked && !targetSettled && i !== initialArticle) return;
+    var url=new URL(window.location.href);
+    if(i>0) url.searchParams.set('article',String(i));
+    else url.searchParams.delete('article');
+    var next=url.pathname+(url.search||'')+url.hash;
+    var current=window.location.pathname+window.location.search+window.location.hash;
+    if(next===current) return;
+    if(mode==='push') window.history.pushState(window.history.state,'',next);
+    else window.history.replaceState(window.history.state,'',next);
+  }
+
+  var tocButton=document.getElementById('tocBtn');
+  var tocClose=document.getElementById('tocClose');
+  var tocSearch=document.getElementById('tocSearch');
+  var tocButtons=[].slice.call(toc.querySelectorAll('button.toc-row[data-i]'));
+  var tocGroups=[].slice.call(toc.querySelectorAll('.toc-group'));
+  var tocCount=document.getElementById('tocCount');
+  var tocEmpty=document.getElementById('tocEmpty');
+  var tocPreviewOpen=document.getElementById('tocPreviewOpen');
+  var selectedTocButton=null;
+
+  function selectToc(button,focusButton){
+    if(!button) return;
+    selectedTocButton=button;
+    tocButtons.forEach(function(b){
+      var active=b===button;
+      b.classList.toggle('is-current',active);
+      b.setAttribute('aria-pressed',active?'true':'false');
+    });
+    document.getElementById('tocPreviewNumber').textContent=('0'+button.getAttribute('data-i')).slice(-2);
+    document.getElementById('tocPreviewTitle').textContent=button.getAttribute('data-title')||'';
+    document.getElementById('tocPreviewJournal').textContent=button.getAttribute('data-journal')||'';
+    document.getElementById('tocPreviewDate').textContent=button.getAttribute('data-date')||'';
+    document.getElementById('tocPreviewSummary').textContent=button.getAttribute('data-lead')||'';
+    tocPreviewOpen.setAttribute('data-target-i',button.getAttribute('data-i'));
+    tocPreviewOpen.setAttribute('aria-label','阅读第 '+button.getAttribute('data-i')+' 篇：'+(button.getAttribute('data-title')||''));
+    if(focusButton) button.focus();
+  }
+
+  function filterToc(){
+    var terms=(tocSearch.value||'').trim().toLocaleLowerCase().split(' ').filter(Boolean);
+    var visible=0;
+    tocButtons.forEach(function(b){
+      var hay=(b.getAttribute('data-search')||'').toLocaleLowerCase();
+      var show=terms.every(function(term){return hay.indexOf(term)>=0});
+      b.parentNode.style.display=show?'':'none';
+      if(show) visible++;
+    });
+    tocGroups.forEach(function(group){
+      var any=[].slice.call(group.querySelectorAll('li')).some(function(li){return li.style.display!=='none'});
+      group.style.display=any?'':'none';
+    });
+    tocCount.textContent=terms.length?('找到 '+visible+' 篇 / 共 '+tocButtons.length+' 篇'):('共 '+tocButtons.length+' 篇');
+    tocEmpty.hidden=visible>0;
+    var currentVisible=selectedTocButton && selectedTocButton.parentNode.style.display!=='none'?selectedTocButton:null;
+    var firstVisible=tocButtons.filter(function(b){return b.parentNode.style.display!=='none'})[0]||null;
+    selectToc(currentVisible||firstVisible,false);
+  }
+
+  function moveTocSelection(step){
+    var visible=tocButtons.filter(function(b){return b.parentNode.style.display!=='none'});
+    if(!visible.length) return;
+    var idx=visible.indexOf(selectedTocButton);
+    if(idx===-1) idx=0;
+    else idx=Math.max(0,Math.min(visible.length-1,idx+step));
+    selectToc(visible[idx],true);
+    visible[idx].scrollIntoView({block:'nearest'});
+  }
+
+  tocSearch.addEventListener('input',filterToc);
+  tocButtons.forEach(function(b){
+    b.addEventListener('mouseenter',function(){selectToc(b,false)});
+    b.addEventListener('focus',function(){selectToc(b,false)});
+    b.addEventListener('click',function(){
+      var target=parseInt(b.getAttribute('data-i'),10);
+      if(!target) return;
+      closeToc(false);
+      unlockTarget();
+      go(target);
+    });
+  });
+
+  // ---- 导航点 ----
+  var dotsArr=[];
+  for(var i=0;i<n;i++){
+    var d=document.createElement('i');
+    if(i===0) d.className='on';
+    (function(idx){
+      d.addEventListener('click',function(){
+        unlockTarget();
+        go(idx);
+      });
+    })(i);
+    dots.appendChild(d);
+    dotsArr.push(d);
+  }
+  var num=document.getElementById('num');
+
+  function mark(i,historyMode){
+    cur=i;
+    dotsArr.forEach(function(d,k){ d.className = k===i?'on':'' });
+    if(num) num.textContent = i===0 ? '封面' : i+' / '+(n-1);
+    writeArticleUrl(i,historyMode);
+  }
+
+  function go(i,options){
+    options=options||{};
+    if(!options.keepInitial && !targetLocked) holdInitialArticle=false;
+    i=Math.max(0,Math.min(n-1,i));
+    var isFlow = flow();
+    if(isFlow){
+      if(pages[i]){
+        pages[i].scrollIntoView({ behavior: options.behavior || 'auto', block: 'start' });
+      }
+    } else {
+      var far = Math.abs(i-cur) > 2;
+      var behavior=options.behavior||(far?'auto':'smooth');
+      var targetLeft = pages[i].offsetLeft - deck.offsetLeft;
+      deck.scrollTo({left: targetLeft, behavior: behavior});
+    }
+    mark(i,options.history===false?null:(options.history==='replace'?'replace':'push'));
+  }
+
+  var raf=false;
+  deck.addEventListener('scroll',function(){
+    if(targetLocked && !targetSettled){
+      return;
+    }
+    if(raf) return; raf=true;
+    requestAnimationFrame(function(){
+      raf=false;
+      if(targetLocked && !targetSettled) return;
+      var i=Math.round(deck.scrollLeft/Math.max(1,deck.clientWidth));
+      if(i!==cur) mark(Math.max(0,Math.min(n-1,i)),'replace');
+    });
+  },{passive:true});
+
+  // 滚轮：页内可滚就先滚，滚到头再翻页
+  var acc=0, last=0, cool=0;
+  deck.addEventListener('wheel',function(e){
+    if(flow()) return;
+    if(Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;   // 横向手势交给原生
+    var dy = e.deltaY;
+    if(e.deltaMode===1) dy*=16; else if(e.deltaMode===2) dy*=deck.clientHeight;
+    if(!dy) return;
+
+    var pg=pages[cur];
+    var scrollable = pg.scrollHeight - pg.clientHeight > 2;
+    if(scrollable){
+      var atTop = pg.scrollTop <= 1;
+      var atBot = pg.scrollTop + pg.clientHeight >= pg.scrollHeight - 2;
+      if((dy>0 && !atBot) || (dy<0 && !atTop)){
+        e.preventDefault();
+        pg.scrollTop += dy;
+        acc=0;
+        return;
+      }
+      if(dy>0 && atBot) pg.scrollTop = pg.scrollHeight;
+      if(dy<0 && atTop) pg.scrollTop = 0;
+    }
+
+    e.preventDefault();
+    var now=Date.now();
+    if(now-last>260) acc=0;
+    last=now;
+    acc+=dy;
+    if(now<cool) return;
+    if(Math.abs(acc) < 55) return;
+    var dir = acc>0 ? 1 : -1;
+    acc=0; cool=now+320;
+    unlockTarget();
+    go(cur+dir);
+  },{passive:false});
+
+  function closeToc(restoreFocus){
+    toc.classList.remove('open');
+    toc.setAttribute('aria-hidden','true');
+    tocButton.setAttribute('aria-expanded','false');
+    if(restoreFocus!==false) tocButton.focus();
+  }
+  function openToc(){
+    tocSearch.value='';
+    filterToc();
+    var current=cur>0?tocButtons.filter(function(b){return parseInt(b.getAttribute('data-i'),10)===cur})[0]:null;
+    selectToc(current||tocButtons[0],false);
+    toc.classList.add('open');
+    toc.setAttribute('aria-hidden','false');
+    tocButton.setAttribute('aria-expanded','true');
+    window.requestAnimationFrame(function(){tocSearch.focus()});
+  }
+  document.addEventListener('keydown',function(e){
+    if(e.metaKey||e.ctrlKey||e.altKey) return;
+    var k=e.key;
+    if(toc.classList.contains('open')){
+      if(k==='Escape'){e.preventDefault();closeToc();return}
+      if(k==='ArrowDown'){e.preventDefault();moveTocSelection(1);return}
+      if(k==='ArrowUp'){e.preventDefault();moveTocSelection(-1);return}
+      return;
+    }
+    if(e.target.closest('input,textarea,select,[contenteditable="true"]')) return;
+    if(flow()) return;
+    if(k==='ArrowRight'||k==='ArrowDown'||k==='PageDown'||k===' '){ e.preventDefault(); unlockTarget(); go(cur+1); }
+    else if(k==='ArrowLeft'||k==='ArrowUp'||k==='PageUp'){ e.preventDefault(); unlockTarget(); go(cur-1); }
+    else if(k==='Home'){ e.preventDefault(); unlockTarget(); go(0); }
+    else if(k==='End'){ e.preventDefault(); unlockTarget(); go(n-1); }
+  });
+  tocButton.addEventListener('click',openToc);
+  tocClose.addEventListener('click',function(){closeToc()});
+  toc.addEventListener('click',function(e){if(e.target===toc) closeToc()});
+  tocPreviewOpen.addEventListener('click',function(){
+    var target=parseInt(tocPreviewOpen.getAttribute('data-target-i'),10);
+    if(!target) return;
+    closeToc(false);
+    unlockTarget();
+    if(flow()){ document.documentElement.classList.remove('flow'); syncViewBtn(); }
+    go(target);
+  });
+  toc.addEventListener('keydown',function(e){
+    if(e.key!=='Tab') return;
+    var focusable=[].slice.call(toc.querySelectorAll('button:not([disabled]),[href],input:not([disabled]),[tabindex="0"]')).filter(function(el){return el.offsetParent!==null});
+    if(!focusable.length) return;
+    var first=focusable[0], lastEl=focusable[focusable.length-1];
+    if(e.shiftKey && document.activeElement===first){ e.preventDefault(); lastEl.focus(); }
+    else if(!e.shiftKey && document.activeElement===lastEl){ e.preventDefault(); first.focus(); }
+  });
+
+  var viewBtn=document.getElementById('viewBtn');
+  function syncViewBtn(){ viewBtn.textContent = flow() ? '展页' : '连读'; }
+  viewBtn.addEventListener('click',function(){
+    var on=document.documentElement.classList.toggle('flow');
+    syncViewBtn();
+    if(on){
+      // 切换到连读（纵向）模式：将视口平滑滚动到当前文章页首
+      if(pages[cur]){
+        setTimeout(function(){
+          pages[cur].scrollIntoView({ behavior: 'auto', block: 'start' });
+        }, 30);
+      }
+    } else {
+      // 切换回展页（横向）模式：恢复横向定位
+      window.scrollTo(0,0);
+      deck.scrollLeft = pages[cur].offsetLeft - deck.offsetLeft;
+      mark(cur, 'replace');
+    }
+  });
+  syncViewBtn();
+
+  // ---- 缩放：Ctrl/⌘ + 滚轮，或顶栏 − / + ----
+  var ZKEY='gr_zoom', zLab=document.getElementById('zoomLab');
+  var z=parseFloat(localStorage.getItem(ZKEY)||'1');
+  if(!(z>=0.6 && z<=2)) z=1;
+
+  var sheets = [].slice.call(document.querySelectorAll('.page .sheet'));
+  function fitAll(){
+    var isFlow = document.documentElement.classList.contains('flow');
+    var isMobile = window.innerWidth <= 820;
+    for(var k=0;k<sheets.length;k++){
+      var sh=sheets[k], pg=sh.parentNode;
+      sh.style.zoom = z;
+      sh.removeAttribute('data-fit');
+      if(isFlow || isMobile){
+        pg.scrollTop = 0;
+        continue;
+      }
+      if(pg.scrollHeight - pg.clientHeight > 2){
+        sh.setAttribute('data-fit', '1');
+        if(pg.scrollHeight - pg.clientHeight > 2){
+          sh.setAttribute('data-fit', '2');
+        }
+      }
+      pg.scrollTop = 0;
+    }
+  }
+
+  function setZoom(v, quiet){
+    z = Math.max(0.6, Math.min(2, Math.round(v*100)/100));
+    document.documentElement.style.setProperty('--z', z);
+    zLab.textContent = Math.round(z*100)+'%';
+    try{ localStorage.setItem(ZKEY, z); }catch(e){}
+    fitAll();
+    if(!quiet){
+      requestAnimationFrame(function(){ realign(true) });
+      setTimeout(function(){ realign(true) }, 160);
+    }
+  }
+  setZoom(z, true);
+
+  document.getElementById('zoomIn').addEventListener('click', function(){ setZoom(z+0.1); });
+  document.getElementById('zoomOut').addEventListener('click', function(){ setZoom(z-0.1); });
+  zLab.addEventListener('click', function(){ setZoom(1); });
+
+  window.addEventListener('wheel', function(e){
+    if(!(e.ctrlKey||e.metaKey)) return;
+    e.preventDefault();
+    setZoom(z - e.deltaY*0.0015);
+  }, {passive:false});
+
+  document.addEventListener('keydown', function(e){
+    if(!(e.ctrlKey||e.metaKey)) return;
+    if(e.key==='=' || e.key==='+'){ e.preventDefault(); setZoom(z+0.1); }
+    else if(e.key==='-'){ e.preventDefault(); setZoom(z-0.1); }
+    else if(e.key==='0'){ e.preventDefault(); setZoom(1); }
+  });
+
+  var touched=false;
+  ['wheel','keydown','pointerdown','touchstart'].forEach(function(t){
+    window.addEventListener(t, function(){
+      if (targetSettled) {
+        touched=true;
+        holdInitialArticle=false;
+      }
+    }, {passive:true, once:true});
+  });
+
+  function realign(force){
+    if(targetLocked && !targetSettled){
+      var target=initialArticle;
+      if(!flow() && pages[target]){
+        deck.scrollLeft = pages[target].offsetLeft - deck.offsetLeft;
+      }
+      if(pages[target]) pages[target].scrollTop = 0;
+      mark(target, 'replace');
+      return;
+    }
+    if(touched && !force) return;
+    var i=holdInitialArticle && !touched ? initialArticle :
+      Math.max(0, Math.min(n-1, Math.round(deck.scrollLeft/Math.max(1,deck.clientWidth))));
+    deck.scrollLeft = i*deck.clientWidth;
+    if(pages[i]) pages[i].scrollTop = 0;
+    mark(i,'replace');
+  }
+
+  var rzTimer=null;
+  window.addEventListener('resize', function(){
+    clearTimeout(rzTimer);
+    rzTimer = setTimeout(function(){ fitAll(); realign(true); }, 200);
+  });
+
+  // ---- 核心修复：文章目标直达精确定位引擎 ----
+  function applyTargetArticle(smooth){
+    if(!targetLocked || initialArticle <= 0 || initialArticle >= n) return;
+    cur = initialArticle;
+    if(dotsArr[initialArticle]){
+      dotsArr.forEach(function(d,k){ d.className = k===initialArticle?'on':''; });
+    }
+    if(num){
+      num.textContent = initialArticle+' / '+(n-1);
+    }
+    if(flow()){
+      if(pages[initialArticle]){
+        pages[initialArticle].scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' });
+      }
+    } else {
+      if(pages[initialArticle]){
+        var targetLeft = pages[initialArticle].offsetLeft - deck.offsetLeft;
+        deck.scrollLeft = targetLeft;
+      }
+    }
+    writeArticleUrl(initialArticle, 'replace');
+  }
+
+  // 1. 脚本执行时刻立即执行首次同步定位（此时 DOM 已就绪，无需等待所有大图异步加载完成）
+  if(targetLocked){
+    applyTargetArticle(false);
+  }
+
+  // 2. DOMContentLoaded 时刻再次校准
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){
+      if(targetLocked) applyTargetArticle(false);
+    }, {once:true});
+  }
+
+  // 3. window load 时刻结合 fitAll 缩排再次校准，并进入安全锁定解除流程
+  window.addEventListener('load', function(){
+    fitAll();
+    if(targetLocked){
+      applyTargetArticle(false);
+      // 分段再次校验，防止延迟字体或异步图片撑开导致微量偏移
+      [60, 180, 400, 750].forEach(function(t){
+        setTimeout(function(){
+          if(targetLocked) applyTargetArticle(false);
+        }, t);
+      });
+      // 900ms 后解除初始化锁定，转入日常交互监听
+      setTimeout(function(){
+        targetSettled = true;
+        targetLocked = false;
+        window.__GR_LOCATING_TARGET = false;
+      }, 900);
+    }
+    requestAnimationFrame(realign);
+    [120, 320, 700].forEach(function(t){ setTimeout(realign, t); });
+    setTimeout(fitAll, 400);
+  });
+
+  window.addEventListener('popstate',function(){
+    unlockTarget();
+    go(articleFromUrl(),{history:false,behavior:'auto'});
+  });
+})();
+</script>
+<script src="../../assets/library-store.js"></script>
+<script src="../../assets/library-issue.js"></script>
+<script src="../../assets/radar-terms.js"></script>
+<script src="../../assets/reading-progress.js"></script>
+<script src="../../assets/related-articles.js"></script>
+<script src="../../assets/site-nav.js"></script>
+</body>
+</html>
